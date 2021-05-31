@@ -8,8 +8,7 @@ Version:                1.9.5
 %gometa
 
 %global common_description %{expand:
-Consul is a distributed, highly available, and data center aware solution to
-connect and configure applications across dynamic, distributed infrastructure.}
+# FIXME}
 
 %global golicenses      LICENSE NOTICE.md ui/packages/consul-\\\
                         ui/app/utils/dom/event-target/event-target-\\\
@@ -302,7 +301,7 @@ connect and configure applications across dynamic, distributed infrastructure.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Consul is a distributed, highly available, and data center aware solution to connect and configure applications across dynamic, distributed infrastructure
+Summary:        None
 
 # Upstream license specification: MIT and MPL-2.0
 License:        MIT and MPLv2.0

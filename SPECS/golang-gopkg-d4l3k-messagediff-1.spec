@@ -9,14 +9,14 @@ Version:                1.2.1
 %gometa
 
 %global common_description %{expand:
-A library for doing diffs of arbitrary Golang structs.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          example CHANGELOG.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        A library for doing diffs of arbitrary Golang structs
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}
