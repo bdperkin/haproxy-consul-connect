@@ -4,15 +4,15 @@ for SPEC in $@; do
     echo "Reading ${SPEC}"
 
     if [ ! -f ${SPEC} ]; then
-    echo "Cannot find ${SPEC}"
-    exit 1
+        echo "Cannot find ${SPEC}"
+        exit 1
     fi
 
     GOIPATH=$(grep -P '^%global\s+goipath(0)?\s+' ${SPEC} | awk '{print $3}' | cut -d\/ -f1-3)
 
     if [ "${GOIPATH}" == "" ]; then
-    echo "Cannot find goipath in ${SPEC}"
-    exit 1
+        echo "Cannot find goipath in ${SPEC}"
+        exit 1
     fi
 
     echo "goipath in ${SPEC} is ${GOIPATH}"
@@ -20,7 +20,7 @@ for SPEC in $@; do
     FORGEURL=$(grep -P '^%global\s+forgeurl(0)?\s+' ${SPEC} | awk '{print $3}')
 
     if [ "${FORGEURL}" == "" ]; then
-    echo "Cannot find forgeurl in ${SPEC}"
+        echo "Cannot find forgeurl in ${SPEC}"
     fi
 
     echo "forgeurl in ${SPEC} is ${FORGEURL}"
@@ -31,17 +31,21 @@ for SPEC in $@; do
         echo "Cannot find tag in ${SPEC}"
     fi
 
+    echo "tag in ${SPEC} is ${TAG}"
+
     COMMIT=$(grep -P '^%global\s+commit\s+' ${SPEC} | awk '{print $3}')
 
     if [ "${COMMIT}" == "" ]; then
-    echo "Cannot find commit in ${SPEC}"
+        echo "Cannot find commit in ${SPEC}"
     fi
+
+    echo "commit in ${SPEC} is ${COMMIT}"
 
     PROJECT=$(echo ${GOIPATH} | rev | cut -d\/ -f1 | rev | cut -d\. -f1)
 
     if [ "${PROJECT}" == "" ]; then
-    echo "Cannot find project in ${GOIPATH}"
-    exit 1
+        echo "Cannot find project in ${GOIPATH}"
+        exit 1
     fi
 
     echo "project in ${GOIPATH} is ${PROJECT}"
@@ -57,8 +61,8 @@ for SPEC in $@; do
     VERSION=$(grep -P '^Version:\s+' ${SPEC} | awk '{print $2}')
 
     if [ "${VERSION}" == "" ]; then
-    echo "Cannot find Version in ${SPEC}"
-    exit 1
+        echo "Cannot find Version in ${SPEC}"
+        exit 1
     fi
 
     echo "Version in ${SPEC} is ${VERSION}"
@@ -72,44 +76,45 @@ for SPEC in $@; do
     URL="${IPATHURL}/archive/v${VERSION}/${SRCFILE}"
 
     if [ "${COMMIT}" != "" ]; then
-    SRCFILE="${PROJECT}-${COMMIT}.tar.gz"
-    DSTFILE="${FORGE}-${COMMIT}.tar.gz"
-    URL="${IPATHURL}/archive/${COMMIT}.tar.gz"
+        SRCFILE="${PROJECT}-${COMMIT}.tar.gz"
+        DSTFILE="${FORGE}-${COMMIT}.tar.gz"
+        URL="${IPATHURL}/archive/${COMMIT}.tar.gz"
     fi
 
     if [ "${TAG}" != "" ]; then
-        SRCFILE="${PROJECT}-${TAG}.tar.gz"
-        DSTFILE="${FORGE}-${TAG}.tar.gz"
+        TAGSTR=$(echo ${TAG} | sed -e 's/\//\-/g')
+        SRCFILE="${PROJECT}-${TAGSTR}.tar.gz"
+        DSTFILE="${FORGE}-${TAGSTR}.tar.gz"
         URL="${IPATHURL}/archive/${TAG}/${SRCFILE}"
     fi
 
     if [ -f ${SRCFILE} ]; then
-    /bin/rm ${SRCFILE}
-    if [ $? -ne 0 ]; then
-        echo "Problem removing ${SRCFILE}"
-        exit 1
-    fi
+        /bin/rm ${SRCFILE}
+        if [ $? -ne 0 ]; then
+            echo "Problem removing ${SRCFILE}"
+            exit 1
+        fi
     fi
 
-    echo "Getting ${URL}"
-
-    wget -O ${SRCFILE} "${URL}"
-    if [ $? -ne 0 ]; then
-    echo "Problem downloading ${URL}"
-    URL="${IPATHURL}/archive/${VERSION}/${SRCFILE}"
-    echo "Trying ${URL} instead"
-    echo "Getting ${URL}"
+    echo "Saving ${URL} to ${SRCFILE}"
 
     wget -O ${SRCFILE} "${URL}"
     if [ $? -ne 0 ]; then
-        echo "Problem downloading ${URL}"
-        exit 1
-    fi
+        echo "Problem downloading ${URL} to ${SRCFILE}"
+        URL="${IPATHURL}/archive/${VERSION}/${SRCFILE}"
+        echo "Trying ${URL} instead"
+        echo "Getting ${URL}"
+        
+        wget -O ${SRCFILE} "${URL}"
+        if [ $? -ne 0 ]; then
+            echo "Problem downloading ${URL} to ${SRCFILE}"
+            exit 1
+        fi
     fi
 
     if [ "${FORGE}" != "${PROJECT}" ]; then
         cp -a ${SRCFILE} ${DSTFILE}
-    if [ $? -ne 0 ]; then
+        if [ $? -ne 0 ]; then
             echo "Problem copying from ${SRCFILE} to ${DSTFILE}"
         fi
     fi
