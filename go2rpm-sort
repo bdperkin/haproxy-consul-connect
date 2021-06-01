@@ -8,6 +8,11 @@ for SPEC in $@; do
     exit 1
     fi
 
+    VERSION=$(basename $(grep ^Version ${SPEC} | awk '{print $2}') | sed -e 's/^v//g')
+    if [ "${VERSION}" != "" ]; then
+        sed -i -e "s/^Version:                .*/Version:                ${VERSION}/g" ${SPEC}
+    fi
+
     UNSORTED=$(grep -v '^for cmd in cmd/\* ; do$' ${SPEC} | grep -P '^for cmd in .*; do$')
     if [ "${UNSORTED}" != "" ]; then
         UNSORTEDITEMS=$(echo "${UNSORTED}" | sed -e 's/^for cmd in //g' | sed -e 's/; do$//g')
