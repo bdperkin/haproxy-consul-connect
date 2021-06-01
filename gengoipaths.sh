@@ -21,7 +21,7 @@ for IPATH in $(cat packages.txt); do
     fi
     echo "FPATH: ${FPATH}"
 
-    DVERSION=$(grep -P 'data-version=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2)
+    DVERSION=$(grep -P 'data-version=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2 | sed -e 's/\+incompatible//g')
     DMODPATH=$(grep -P 'data-mpath=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2)
     DPKGPATH=$(grep -P 'data-ppath=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2)
     DTYPE=$(grep -P 'data-pagetype=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2)
