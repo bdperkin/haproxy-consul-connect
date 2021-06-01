@@ -4,8 +4,8 @@ set -eu
 
 rm -rf {RPMS,SOURCES,SPECS,SRPMS}
 mkdir {RPMS,SOURCES,SPECS,SRPMS}
-rsync -avx SOURCES-fixed/ SOURCES/
-rsync -avx SPECS-fixed/ SPECS/
+#rsync -avx SOURCES-fixed/ SOURCES/
+#rsync -avx SPECS-fixed/ SPECS/
 
 for SPEC in $(ls SPECS/*); do
     mock -r fedora-rawhide-x86_64 --buildsrpm --spec ${SPEC} --sources SOURCES
