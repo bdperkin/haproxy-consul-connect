@@ -9,8 +9,7 @@ Version:                3.4.9
 %gometa
 
 %global common_description %{expand:
-Distributed reliable key-value store for the most critical data of a
-distributed system.}
+# FIXME}
 
 %global golicenses      LICENSE NOTICE
 %global godocs          CONTRIBUTING.md MAINTAINERS_RULES.md README.md code-\\\
@@ -142,7 +141,7 @@ distributed system.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Distributed reliable key-value store for the most critical data of a distributed system
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

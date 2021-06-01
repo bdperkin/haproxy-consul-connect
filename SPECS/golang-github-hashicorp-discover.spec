@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Discover nodes in cloud environments.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@ Discover nodes in cloud environments.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Discover nodes in cloud environments
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

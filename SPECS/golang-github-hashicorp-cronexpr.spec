@@ -8,13 +8,13 @@ Version:                1.1.1
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Cron expression parser in Go language (golang).}
 
 %global godocs          README.md cronexpr/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Cron expression parser in Go language (golang)
 
 License:        # FIXME
 

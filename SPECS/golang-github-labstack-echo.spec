@@ -8,7 +8,7 @@ Version:                4.3.0
 %gometa
 
 %global common_description %{expand:
-High performance, minimalist Go web framework.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md README.md _fixture/_fixture/README.md\\\
@@ -16,7 +16,7 @@ High performance, minimalist Go web framework.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        High performance, minimalist Go web framework
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

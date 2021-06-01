@@ -8,15 +8,14 @@ Version:                1.2.3
 %gometa
 
 %global common_description %{expand:
-BuntDB is an embeddable, in-memory key/value database for Go with custom
-indexing and geospatial support.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        BuntDB is an embeddable, in-memory key/value database for Go with custom indexing and geospatial support
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

@@ -8,14 +8,14 @@ Version:                0.2.1
 %gometa
 
 %global common_description %{expand:
-Provides functions to perform atomic, fsync-safe disk operations.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Provides functions to perform atomic, fsync-safe disk operations
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

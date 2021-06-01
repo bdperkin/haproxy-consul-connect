@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Go-cty specific functions; mainly used in HCL2 templates.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Go-cty specific functions; mainly used in HCL2 templates
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

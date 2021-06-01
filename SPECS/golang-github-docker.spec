@@ -8,8 +8,7 @@ Version:                1.12.6
 %gometa
 
 %global common_description %{expand:
-Moby Project - a collaborative project for the container ecosystem to assemble
-container-based systems.}
+# FIXME}
 
 %global golicenses      LICENSE NOTICE contrib/syntax/vim/LICENSE\\\
                         contrib/selinux-fedora-24/docker-engine-\\\
@@ -78,7 +77,7 @@ container-based systems.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Moby Project - a collaborative project for the container ecosystem to assemble container-based systems
+Summary:        None
 
 # Upstream license specification: Apache-2.0 and BSD-2-Clause and BSD-3-Clause and GPL-2.0-only
 License:        ASL 2.0 and BSD and GPL-2.0-only

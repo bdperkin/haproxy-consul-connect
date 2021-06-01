@@ -9,7 +9,7 @@ Version:                1.29.1
 %gometa
 
 %global common_description %{expand:
-The Go language implementation of gRPC. HTTP/2 based RPC.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          examples AUTHORS CODE-OF-CONDUCT.md GOVERNANCE.md\\\
@@ -28,7 +28,7 @@ The Go language implementation of gRPC. HTTP/2 based RPC.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        The Go language implementation of gRPC. HTTP/2 based RPC
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

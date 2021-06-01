@@ -8,8 +8,7 @@ Version:                0.5.0
 %gometa
 
 %global common_description %{expand:
-Package gostackparse parses goroutines stack traces as produced by panic() or
-debug.Stack() at ~300 MiB/s.}
+# FIXME}
 
 %global golicenses      LICENSE-3rdparty.csv LICENSE-APACHE LICENSE-BSD3\\\
                         LICENSE
@@ -26,7 +25,7 @@ debug.Stack() at ~300 MiB/s.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package gostackparse parses goroutines stack traces as produced by panic() or debug.Stack() at ~300 MiB/s
+Summary:        None
 
 # Upstream license specification: Apache-2.0 and BSD-3-Clause
 License:        ASL 2.0 and BSD
