@@ -8,7 +8,7 @@ for SPEC in $@; do
     exit 1
     fi
 
-    VERSION=$(basename $(grep ^Version ${SPEC} | awk '{print $2}') | sed -e 's/^v//g')
+    VERSION=$(basename $(grep ^Version ${SPEC} | awk '{print $2}') | sed -e 's/^v//g' | sed -e 's/\-/\~/g')
     if [ "${VERSION}" != "" ]; then
         sed -i -e "s/^Version:                .*/Version:                ${VERSION}/g" ${SPEC}
     fi
