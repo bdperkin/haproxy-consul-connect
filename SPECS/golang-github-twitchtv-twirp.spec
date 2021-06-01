@@ -8,7 +8,7 @@ Version:                8.0.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+A simple RPC framework with protobuf service definitions.}
 
 %global golicenses      LICENSE NOTICE license_test.go\\\
                         _tools/src/github.com/kisielk/errcheck/LICENSE\\\
@@ -23,7 +23,7 @@ Version:                8.0.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        A simple RPC framework with protobuf service definitions
 
 # Upstream license specification: Apache-2.0 and MIT
 License:        ASL 2.0 and MIT

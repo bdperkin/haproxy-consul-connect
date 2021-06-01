@@ -8,8 +8,7 @@ Version:                0.25.2
 %gometa
 
 %global common_description %{expand:
-Template rendering, notifier, and supervisor for @HashiCorp Consul and Vault
-data.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          docs examples CHANGELOG.md README.md scripts/readme-\\\
@@ -17,7 +16,7 @@ data.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Template rendering, notifier, and supervisor for @HashiCorp Consul and Vault data
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

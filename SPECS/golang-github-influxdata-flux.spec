@@ -3,7 +3,7 @@
 
 # https://github.com/influxdata/flux
 %global goipath         github.com/influxdata/flux
-Version:                0.117.0
+Version:                0.117.1
 
 %gometa
 

@@ -8,7 +8,7 @@ Version:                2.10.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+⚡️ Express inspired web framework written in Go.}
 
 %global golicenses      LICENSE
 %global godocs          middleware/basicauth/README.md\\\
@@ -29,7 +29,7 @@ Version:                2.10.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        ⚡️ Express inspired web framework written in Go
 
 # Upstream license specification: BSD-3-Clause and MIT
 License:        BSD and MIT

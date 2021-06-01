@@ -3,7 +3,7 @@
 
 # https://github.com/tencentcloud/tencentcloud-sdk-go
 %global goipath         github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm
-Version:                1.0.99
+%global commit          244267cd902785f6430c74f5837dd1ce1be46419
 
 %gometa
 
@@ -14,7 +14,8 @@ Version:                1.0.99
 %global godocs          examples CHANGELOG.md README.md products.md
 
 Name:           %{goname}
-Release:        1%{?dist}
+Version:        0
+Release:        0.1%{?dist}
 Summary:        None
 
 # Upstream license specification: Apache-2.0

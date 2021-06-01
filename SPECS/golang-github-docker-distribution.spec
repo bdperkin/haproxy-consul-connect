@@ -3,26 +3,23 @@
 
 # https://github.com/docker/distribution
 %global goipath         github.com/docker/distribution
-Version:                2.7.1
-%global commit          d80a63f1eaa215246eee566f4426d2f2ceecc06e
+Version:                2.6.2
 
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+The toolkit to pack, ship, store, and deliver container content.}
 
 %global golicenses      LICENSE
-%global godocs          docs ADOPTERS.md BUILDING.md CODE-OF-CONDUCT.md\\\
-                        CONTRIBUTING.md GOVERNANCE.md README.md ROADMAP.md\\\
+%global godocs          docs AUTHORS BUILDING.md CHANGELOG.md CONTRIBUTING.md\\\
+                        README.md RELEASE-CHECKLIST.md ROADMAP.md\\\
                         contrib/apache/README.MD contrib/compose/README.md\\\
                         contrib/docker-integration/README.md\\\
-                        project/hooks/README.md releases/README.md\\\
-                        releases/v2.5.0-changelog.txt\\\
-                        releases/v2.6.0-changelog.txt
+                        project/hooks/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        The toolkit to pack, ship, store, and deliver container content
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -33,93 +30,37 @@ BuildRequires:  golang(github.com/aws/aws-sdk-go/aws)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/awserr)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/corehandlers)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/credentials)
-BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/endpoints)
+BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds)
+BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/ec2metadata)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/request)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/session)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/cloudfront/sign)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/s3)
 BuildRequires:  golang(github.com/Azure/azure-sdk-for-go/storage)
-BuildRequires:  golang(github.com/bshuster-repo/logrus-logstash-hook)
 BuildRequires:  golang(github.com/bugsnag/bugsnag-go)
-BuildRequires:  golang(github.com/denverdino/aliyungo/cdn/auth)
-BuildRequires:  golang(github.com/distribution/distribution/v3)
-BuildRequires:  golang(github.com/distribution/distribution/v3/configuration)
-BuildRequires:  golang(github.com/distribution/distribution/v3/context)
-BuildRequires:  golang(github.com/distribution/distribution/v3/digestset)
-BuildRequires:  golang(github.com/distribution/distribution/v3/health)
-BuildRequires:  golang(github.com/distribution/distribution/v3/health/checks)
-BuildRequires:  golang(github.com/distribution/distribution/v3/manifest)
-BuildRequires:  golang(github.com/distribution/distribution/v3/manifest/manifestlist)
-BuildRequires:  golang(github.com/distribution/distribution/v3/manifest/ocischema)
-BuildRequires:  golang(github.com/distribution/distribution/v3/manifest/schema1)
-BuildRequires:  golang(github.com/distribution/distribution/v3/manifest/schema2)
-BuildRequires:  golang(github.com/distribution/distribution/v3/metrics)
-BuildRequires:  golang(github.com/distribution/distribution/v3/notifications)
-BuildRequires:  golang(github.com/distribution/distribution/v3/reference)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/api/errcode)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/api/v2)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/auth)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/auth/htpasswd)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/auth/silly)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/auth/token)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/client)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/client/auth)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/client/auth/challenge)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/client/transport)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/handlers)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/listener)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/middleware/registry)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/middleware/repository)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/proxy)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/proxy/scheduler)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/cache)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/cache/memory)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/cache/metrics)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/cache/redis)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/azure)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/base)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/factory)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/filesystem)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/gcs)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/inmemory)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/middleware)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/middleware/alicdn)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/middleware/cloudfront)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/middleware/redirect)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/oss)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/s3-aws)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/swift)
-BuildRequires:  golang(github.com/distribution/distribution/v3/uuid)
-BuildRequires:  golang(github.com/distribution/distribution/v3/version)
-BuildRequires:  golang(github.com/docker/go-events)
-BuildRequires:  golang(github.com/docker/go-metrics)
+BuildRequires:  golang(github.com/docker/goamz/aws)
+BuildRequires:  golang(github.com/docker/goamz/s3)
 BuildRequires:  golang(github.com/docker/libtrust)
-BuildRequires:  golang(github.com/gomodule/redigo/redis)
+BuildRequires:  golang(github.com/garyburd/redigo/redis)
 BuildRequires:  golang(github.com/gorilla/handlers)
 BuildRequires:  golang(github.com/gorilla/mux)
 BuildRequires:  golang(github.com/mitchellh/mapstructure)
 BuildRequires:  golang(github.com/ncw/swift)
-BuildRequires:  golang(github.com/opencontainers/go-digest)
-BuildRequires:  golang(github.com/opencontainers/image-spec/specs-go/v1)
-BuildRequires:  golang(github.com/Shopify/logrus-bugsnag)
-BuildRequires:  golang(github.com/sirupsen/logrus)
+BuildRequires:  golang(github.com/Sirupsen/logrus)
+BuildRequires:  golang(github.com/Sirupsen/logrus/formatters/logstash)
 BuildRequires:  golang(github.com/spf13/cobra)
+BuildRequires:  golang(github.com/stevvooe/resumable)
+BuildRequires:  golang(github.com/stevvooe/resumable/sha256)
+BuildRequires:  golang(github.com/stevvooe/resumable/sha512)
 BuildRequires:  golang(github.com/yvasiyarov/gorelic)
-BuildRequires:  golang(golang.org/x/crypto/acme)
-BuildRequires:  golang(golang.org/x/crypto/acme/autocert)
 BuildRequires:  golang(golang.org/x/crypto/bcrypt)
+BuildRequires:  golang(golang.org/x/net/context)
 BuildRequires:  golang(gopkg.in/check.v1)
 BuildRequires:  golang(gopkg.in/yaml.v2)
+BuildRequires:  golang(rsc.io/letsencrypt)
 
 %if %{with check}
 # Tests
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/cache/cachecheck)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/testdriver)
-BuildRequires:  golang(github.com/distribution/distribution/v3/registry/storage/driver/testsuites)
-BuildRequires:  golang(github.com/distribution/distribution/v3/testutil)
 BuildRequires:  golang(github.com/ncw/swift/swifttest)
 %endif
 
@@ -151,11 +92,10 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc docs ADOPTERS.md BUILDING.md CODE-OF-CONDUCT.md CONTRIBUTING.md
-%doc GOVERNANCE.md README.md ROADMAP.md contrib/apache/README.MD
+%doc docs AUTHORS BUILDING.md CHANGELOG.md CONTRIBUTING.md README.md
+%doc RELEASE-CHECKLIST.md ROADMAP.md contrib/apache/README.MD
 %doc contrib/compose/README.md contrib/docker-integration/README.md
-%doc project/hooks/README.md releases/README.md releases/v2.5.0-changelog.txt
-%doc releases/v2.6.0-changelog.txt
+%doc project/hooks/README.md
 %{_bindir}/*
 
 %gopkgfiles

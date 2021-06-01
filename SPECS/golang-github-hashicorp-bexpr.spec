@@ -3,7 +3,7 @@
 
 # https://github.com/hashicorp/go-bexpr
 %global goipath         github.com/hashicorp/go-bexpr
-Version:                0.1.7
+Version:                0.1.8
 
 %gometa
 

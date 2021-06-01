@@ -11,7 +11,7 @@ Version:                1.0.173
 # FIXME}
 
 %global golicenses      LICENSE
-%global godocs          examples CHANGELOG.md README.md products.md
+%global godocs          examples README.md CHANGELOG.md products.md
 
 Name:           %{goname}
 Release:        1%{?dist}

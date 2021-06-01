@@ -4,140 +4,35 @@
 # https://github.com/etcd-io/etcd
 %global goipath         go.etcd.io/etcd/api/v3
 %global forgeurl        https://github.com/etcd-io/etcd
-Version:                3.4.9
+Version:                3.5.0~beta.4
 
 %gometa
 
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE NOTICE
-%global godocs          CONTRIBUTING.md MAINTAINERS_RULES.md README.md code-\\\
-                        of-conduct.md Documentation/README.md\\\
-                        Documentation/branch_management.md\\\
-                        Documentation/demo.md Documentation/dl_build.md\\\
-                        Documentation/docs.md Documentation/faq.md\\\
-                        Documentation/integrations.md\\\
-                        Documentation/metrics.md Documentation/production-\\\
-                        users.md Documentation/reporting_bugs.md\\\
-                        Documentation/tuning.md Documentation/dev-\\\
-                        guide/api_concurrency_reference_v3.md\\\
-                        Documentation/dev-guide/api_grpc_gateway.md\\\
-                        Documentation/dev-guide/api_reference_v3.md\\\
-                        Documentation/dev-guide/experimental_apis.md\\\
-                        Documentation/dev-guide/grpc_naming.md\\\
-                        Documentation/dev-guide/interacting_v3.md\\\
-                        Documentation/dev-guide/limit.md Documentation/dev-\\\
-                        guide/local_cluster.md\\\
-                        Documentation/benchmarks/README.md\\\
-                        Documentation/benchmarks/etcd-2-1-0-alpha-\\\
-                        benchmarks.md\\\
-                        Documentation/benchmarks/etcd-2-2-0-benchmarks.md\\\
-                        Documentation/benchmarks/etcd-2-2-0-rc-benchmarks.md\\\
-                        Documentation/benchmarks/etcd-2-2-0-rc-memory-\\\
-                        benchmarks.md Documentation/benchmarks/etcd-3-demo-\\\
-                        benchmarks.md Documentation/benchmarks/etcd-3-watch-\\\
-                        memory-benchmark.md Documentation/benchmarks/etcd-\\\
-                        storage-memory-benchmark.md Documentation/dev-\\\
-                        internal/discovery_protocol.md Documentation/dev-\\\
-                        internal/logging.md Documentation/dev-\\\
-                        internal/release.md Documentation/etcd-\\\
-                        mixin/README.md Documentation/learning/api.md\\\
-                        Documentation/learning/api_guarantees.md\\\
-                        Documentation/learning/data_model.md\\\
-                        Documentation/learning/design-auth-v3.md\\\
-                        Documentation/learning/design-client.md\\\
-                        Documentation/learning/design-learner.md\\\
-                        Documentation/learning/glossary.md\\\
-                        Documentation/learning/why.md Documentation/op-\\\
-                        guide/authentication.md Documentation/op-\\\
-                        guide/clustering.md Documentation/op-\\\
-                        guide/configuration.md Documentation/op-\\\
-                        guide/container.md Documentation/op-guide/failures.md\\\
-                        Documentation/op-guide/gateway.md Documentation/op-\\\
-                        guide/grpc_proxy.md Documentation/op-\\\
-                        guide/hardware.md Documentation/op-\\\
-                        guide/maintenance.md Documentation/op-\\\
-                        guide/monitoring.md Documentation/op-\\\
-                        guide/performance.md Documentation/op-\\\
-                        guide/recovery.md Documentation/op-guide/runtime-\\\
-                        configuration.md Documentation/op-guide/runtime-\\\
-                        reconf-design.md Documentation/op-guide/security.md\\\
-                        Documentation/op-guide/supported-platform.md\\\
-                        Documentation/op-guide/v2-migration.md\\\
-                        Documentation/op-guide/versioning.md\\\
-                        Documentation/platforms/aws.md\\\
-                        Documentation/platforms/container-linux-systemd.md\\\
-                        Documentation/platforms/freebsd.md\\\
-                        Documentation/rfc/v3api.md\\\
-                        Documentation/triage/PRs.md\\\
-                        Documentation/triage/issues.md\\\
-                        Documentation/upgrades/upgrade_3_0.md\\\
-                        Documentation/upgrades/upgrade_3_1.md\\\
-                        Documentation/upgrades/upgrade_3_2.md\\\
-                        Documentation/upgrades/upgrade_3_3.md\\\
-                        Documentation/upgrades/upgrade_3_4.md\\\
-                        Documentation/upgrades/upgrade_3_5.md\\\
-                        Documentation/upgrades/upgrading-etcd.md\\\
-                        Documentation/v2/04_to_2_snapshot_migration.md\\\
-                        Documentation/v2/README.md\\\
-                        Documentation/v2/admin_guide.md\\\
-                        Documentation/v2/api.md Documentation/v2/api_v3.md\\\
-                        Documentation/v2/auth_api.md\\\
-                        Documentation/v2/authentication.md\\\
-                        Documentation/v2/backward_compatibility.md\\\
-                        Documentation/v2/branch_management.md\\\
-                        Documentation/v2/clustering.md\\\
-                        Documentation/v2/configuration.md\\\
-                        Documentation/v2/discovery_protocol.md\\\
-                        Documentation/v2/docker_guide.md\\\
-                        Documentation/v2/errorcode.md Documentation/v2/faq.md\\\
-                        Documentation/v2/glossary.md\\\
-                        Documentation/v2/internal-protocol-versioning.md\\\
-                        Documentation/v2/libraries-and-tools.md\\\
-                        Documentation/v2/members_api.md\\\
-                        Documentation/v2/metrics.md\\\
-                        Documentation/v2/other_apis.md\\\
-                        Documentation/v2/production-users.md\\\
-                        Documentation/v2/proxy.md\\\
-                        Documentation/v2/reporting_bugs.md\\\
-                        Documentation/v2/runtime-configuration.md\\\
-                        Documentation/v2/runtime-reconf-design.md\\\
-                        Documentation/v2/security.md\\\
-                        Documentation/v2/tuning.md\\\
-                        Documentation/v2/upgrade_2_1.md\\\
-                        Documentation/v2/upgrade_2_2.md\\\
-                        Documentation/v2/upgrade_2_3.md\\\
-                        Documentation/v2/benchmarks/README.md\\\
-                        Documentation/v2/benchmarks/etcd-2-1-0-alpha-\\\
-                        benchmarks.md\\\
-                        Documentation/v2/benchmarks/etcd-2-2-0-benchmarks.md\\\
-                        Documentation/v2/benchmarks/etcd-2-2-0-rc-\\\
-                        benchmarks.md\\\
-                        Documentation/v2/benchmarks/etcd-2-2-0-rc-memory-\\\
-                        benchmarks.md\\\
-                        Documentation/v2/benchmarks/etcd-3-demo-benchmarks.md\\\
-                        Documentation/v2/benchmarks/etcd-3-watch-memory-\\\
-                        benchmark.md Documentation/v2/benchmarks/etcd-\\\
-                        storage-memory-benchmark.md\\\
-                        Documentation/v2/dev/release.md\\\
-                        Documentation/v2/platforms/freebsd.md\\\
-                        Documentation/v2/rfc/v3api.md contrib/README.md\\\
-                        contrib/raftexample/README.md\\\
+%global golicenses      LICENSE api/LICENSE client/pkg/LICENSE\\\
+                        client/v2/LICENSE client/v3/LICENSE etcdctl/LICENSE\\\
+                        etcdutl/LICENSE pkg/LICENSE raft/LICENSE\\\
+                        server/LICENSE
+%global godocs          CONTRIBUTING.md GOVERNANCE.md README.md ROADMAP.md\\\
+                        code-of-conduct.md Documentation/README.md\\\
+                        client/v2/README.md client/v3/README.md\\\
+                        contrib/README.md contrib/lock/README.md\\\
+                        contrib/mixin/README.md contrib/raftexample/README.md\\\
                         contrib/systemd/etcd3-multinode/README.md doc\\\
-                        etcdctl/README.md etcdctl/READMEv2.md hack/README.md\\\
+                        etcdctl/README.md etcdctl/READMEv2.md\\\
+                        etcdutl/README.md hack/README.md\\\
                         hack/benchmark/README.md hack/insta-\\\
                         discovery/README.md hack/kubernetes-deploy/README.md\\\
                         hack/patch/README.md hack/tls-setup/README.md\\\
-                        pkg/README.md pkg/adt/README.md raft/design.md\\\
-                        raft/README.md scripts/README security/email-\\\
-                        templates.md security/README.md security/security-\\\
+                        pkg/README.md pkg/adt/README.md raft/README.md\\\
+                        raft/design.md scripts/README security/README.md\\\
+                        security/email-templates.md security/security-\\\
                         release-process.md tools/benchmark/README.md\\\
                         tools/etcd-dump-db/README.md tools/etcd-dump-\\\
                         logs/README.md tools/etcd-dump-metrics/README\\\
-                        tools/local-tester/README.md client/README.md\\\
-                        clientv3/README.md functional/README.md\\\
-                        integration/fixtures-expired/README
+                        tools/local-tester/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -151,19 +46,20 @@ Source0:        %{gosource}
 BuildRequires:  golang(github.com/bgentry/speakeasy)
 BuildRequires:  golang(github.com/cockroachdb/datadriven)
 BuildRequires:  golang(github.com/coreos/go-semver/semver)
-BuildRequires:  golang(github.com/coreos/go-systemd/daemon)
-BuildRequires:  golang(github.com/coreos/go-systemd/journal)
-BuildRequires:  golang(github.com/coreos/pkg/capnslog)
+BuildRequires:  golang(github.com/coreos/go-systemd/v22/daemon)
+BuildRequires:  golang(github.com/coreos/go-systemd/v22/journal)
 BuildRequires:  golang(github.com/creack/pty)
-BuildRequires:  golang(github.com/dgrijalva/jwt-go)
 BuildRequires:  golang(github.com/dustin/go-humanize)
+BuildRequires:  golang(github.com/etcd-io/gofail/runtime)
+BuildRequires:  golang(github.com/form3tech-oss/jwt-go)
 BuildRequires:  golang(github.com/gogo/protobuf/gogoproto)
 BuildRequires:  golang(github.com/gogo/protobuf/proto)
 BuildRequires:  golang(github.com/golang/groupcache/lru)
+BuildRequires:  golang(github.com/golang/protobuf/descriptor)
 BuildRequires:  golang(github.com/golang/protobuf/proto)
 BuildRequires:  golang(github.com/google/btree)
-BuildRequires:  golang(github.com/google/uuid)
 BuildRequires:  golang(github.com/grpc-ecosystem/go-grpc-middleware)
+BuildRequires:  golang(github.com/grpc-ecosystem/go-grpc-middleware/logging/settable)
 BuildRequires:  golang(github.com/grpc-ecosystem/go-grpc-prometheus)
 BuildRequires:  golang(github.com/grpc-ecosystem/grpc-gateway/runtime)
 BuildRequires:  golang(github.com/grpc-ecosystem/grpc-gateway/utilities)
@@ -176,149 +72,161 @@ BuildRequires:  golang(github.com/prometheus/client_golang/prometheus/promhttp)
 BuildRequires:  golang(github.com/soheilhy/cmux)
 BuildRequires:  golang(github.com/spf13/cobra)
 BuildRequires:  golang(github.com/spf13/pflag)
+BuildRequires:  golang(github.com/stretchr/testify/assert)
 BuildRequires:  golang(github.com/tmc/grpc-websocket-proxy/wsproxy)
 BuildRequires:  golang(github.com/urfave/cli)
 BuildRequires:  golang(github.com/xiang90/probing)
 BuildRequires:  golang(go.etcd.io/bbolt)
-BuildRequires:  golang(go.etcd.io/etcd/auth)
-BuildRequires:  golang(go.etcd.io/etcd/auth/authpb)
-BuildRequires:  golang(go.etcd.io/etcd/client)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3/balancer)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3/balancer/connectivity)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3/balancer/picker)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3/balancer/resolver/endpoint)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3/concurrency)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3/credentials)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3/leasing)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3/mirror)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3/namespace)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3/naming)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3/ordering)
-BuildRequires:  golang(go.etcd.io/etcd/clientv3/snapshot)
-BuildRequires:  golang(go.etcd.io/etcd/embed)
-BuildRequires:  golang(go.etcd.io/etcd/etcdctl/ctlv2)
-BuildRequires:  golang(go.etcd.io/etcd/etcdctl/ctlv2/command)
-BuildRequires:  golang(go.etcd.io/etcd/etcdctl/ctlv3)
-BuildRequires:  golang(go.etcd.io/etcd/etcdctl/ctlv3/command)
-BuildRequires:  golang(go.etcd.io/etcd/etcdmain)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/etcdhttp)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/membership)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/rafthttp)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/snap)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/snap/snappb)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v2auth)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v2discovery)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v2error)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v2http)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v2http/httptypes)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v2stats)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v2store)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v2v3)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v3alarm)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v3client)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v3compactor)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v3election)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v3election/v3electionpb)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v3election/v3electionpb/gw)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v3lock)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v3lock/v3lockpb)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v3lock/v3lockpb/gw)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v3rpc)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/api/v3rpc/rpctypes)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/etcdserverpb)
-BuildRequires:  golang(go.etcd.io/etcd/etcdserver/etcdserverpb/gw)
-BuildRequires:  golang(go.etcd.io/etcd/functional/agent)
-BuildRequires:  golang(go.etcd.io/etcd/functional/rpcpb)
-BuildRequires:  golang(go.etcd.io/etcd/functional/runner)
-BuildRequires:  golang(go.etcd.io/etcd/functional/tester)
-BuildRequires:  golang(go.etcd.io/etcd/lease)
-BuildRequires:  golang(go.etcd.io/etcd/lease/leasehttp)
-BuildRequires:  golang(go.etcd.io/etcd/lease/leasepb)
-BuildRequires:  golang(go.etcd.io/etcd/mvcc)
-BuildRequires:  golang(go.etcd.io/etcd/mvcc/backend)
-BuildRequires:  golang(go.etcd.io/etcd/mvcc/mvccpb)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/adt)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/contention)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/cpuutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/crc)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/debugutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/expect)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/fileutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/flags)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/httputil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/idutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/ioutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/logutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/netutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/osutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/pathutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/pbutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/proxy)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/report)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/runtime)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/schedule)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/srv)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/stringutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/systemd)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/testutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/tlsutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/traceutil)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/transport)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/types)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/wait)
-BuildRequires:  golang(go.etcd.io/etcd/proxy/grpcproxy)
-BuildRequires:  golang(go.etcd.io/etcd/proxy/grpcproxy/adapter)
-BuildRequires:  golang(go.etcd.io/etcd/proxy/grpcproxy/cache)
-BuildRequires:  golang(go.etcd.io/etcd/proxy/httpproxy)
-BuildRequires:  golang(go.etcd.io/etcd/proxy/tcpproxy)
-BuildRequires:  golang(go.etcd.io/etcd/raft)
-BuildRequires:  golang(go.etcd.io/etcd/raft/confchange)
-BuildRequires:  golang(go.etcd.io/etcd/raft/quorum)
-BuildRequires:  golang(go.etcd.io/etcd/raft/raftpb)
-BuildRequires:  golang(go.etcd.io/etcd/raft/tracker)
-BuildRequires:  golang(go.etcd.io/etcd/tools/benchmark/cmd)
-BuildRequires:  golang(go.etcd.io/etcd/version)
-BuildRequires:  golang(go.etcd.io/etcd/wal)
-BuildRequires:  golang(go.etcd.io/etcd/wal/walpb)
+BuildRequires:  golang(go.etcd.io/etcd/client/pkg/v3/fileutil)
+BuildRequires:  golang(go.etcd.io/etcd/client/pkg/v3/logutil)
+BuildRequires:  golang(go.etcd.io/etcd/client/pkg/v3/pathutil)
+BuildRequires:  golang(go.etcd.io/etcd/client/pkg/v3/srv)
+BuildRequires:  golang(go.etcd.io/etcd/client/pkg/v3/systemd)
+BuildRequires:  golang(go.etcd.io/etcd/client/pkg/v3/testutil)
+BuildRequires:  golang(go.etcd.io/etcd/client/pkg/v3/tlsutil)
+BuildRequires:  golang(go.etcd.io/etcd/client/pkg/v3/transport)
+BuildRequires:  golang(go.etcd.io/etcd/client/pkg/v3/types)
+BuildRequires:  golang(go.etcd.io/etcd/client/v2)
+BuildRequires:  golang(go.etcd.io/etcd/client/v3)
+BuildRequires:  golang(go.etcd.io/etcd/client/v3/concurrency)
+BuildRequires:  golang(go.etcd.io/etcd/client/v3/credentials)
+BuildRequires:  golang(go.etcd.io/etcd/client/v3/internal/endpoint)
+BuildRequires:  golang(go.etcd.io/etcd/client/v3/internal/resolver)
+BuildRequires:  golang(go.etcd.io/etcd/client/v3/leasing)
+BuildRequires:  golang(go.etcd.io/etcd/client/v3/mirror)
+BuildRequires:  golang(go.etcd.io/etcd/client/v3/namespace)
+BuildRequires:  golang(go.etcd.io/etcd/client/v3/naming/endpoints)
+BuildRequires:  golang(go.etcd.io/etcd/client/v3/naming/endpoints/internal)
+BuildRequires:  golang(go.etcd.io/etcd/client/v3/ordering)
+BuildRequires:  golang(go.etcd.io/etcd/client/v3/snapshot)
+BuildRequires:  golang(go.etcd.io/etcd/etcdctl/v3/ctlv2)
+BuildRequires:  golang(go.etcd.io/etcd/etcdctl/v3/ctlv2/command)
+BuildRequires:  golang(go.etcd.io/etcd/etcdctl/v3/ctlv3)
+BuildRequires:  golang(go.etcd.io/etcd/etcdctl/v3/ctlv3/command)
+BuildRequires:  golang(go.etcd.io/etcd/etcdutl/v3/etcdutl)
+BuildRequires:  golang(go.etcd.io/etcd/etcdutl/v3/snapshot)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/adt)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/cobrautl)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/contention)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/cpuutil)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/crc)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/debugutil)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/expect)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/flags)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/httputil)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/idutil)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/ioutil)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/netutil)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/osutil)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/pbutil)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/proxy)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/report)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/runtime)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/schedule)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/stringutil)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/traceutil)
+BuildRequires:  golang(go.etcd.io/etcd/pkg/v3/wait)
+BuildRequires:  golang(go.etcd.io/etcd/raft/v3)
+BuildRequires:  golang(go.etcd.io/etcd/raft/v3/confchange)
+BuildRequires:  golang(go.etcd.io/etcd/raft/v3/quorum)
+BuildRequires:  golang(go.etcd.io/etcd/raft/v3/raftpb)
+BuildRequires:  golang(go.etcd.io/etcd/raft/v3/tracker)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/auth)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/config)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/datadir)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/embed)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdmain)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/etcdhttp)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/membership)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/rafthttp)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/snap)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/snap/snappb)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v2auth)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v2discovery)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v2error)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v2http)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v2http/httptypes)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v2stats)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v2store)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v2v3)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v3alarm)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v3client)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v3compactor)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v3election)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v3election/v3electionpb)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v3election/v3electionpb/gw)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v3lock)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v3lock/v3lockpb)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v3lock/v3lockpb/gw)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/api/v3rpc)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/etcdserver/cindex)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/lease)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/lease/leasehttp)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/lease/leasepb)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/mvcc)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/mvcc/backend)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/mvcc/buckets)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/proxy/grpcproxy)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/proxy/grpcproxy/adapter)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/proxy/grpcproxy/cache)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/proxy/httpproxy)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/proxy/tcpproxy)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/verify)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/wal)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/wal/walpb)
+BuildRequires:  golang(go.etcd.io/etcd/tests/v3/functional/agent)
+BuildRequires:  golang(go.etcd.io/etcd/tests/v3/functional/rpcpb)
+BuildRequires:  golang(go.etcd.io/etcd/tests/v3/functional/runner)
+BuildRequires:  golang(go.etcd.io/etcd/tests/v3/functional/tester)
+BuildRequires:  golang(go.etcd.io/etcd/tests/v3/integration)
+BuildRequires:  golang(go.etcd.io/etcd/v3/tools/benchmark/cmd)
+BuildRequires:  golang(go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc)
+BuildRequires:  golang(go.opentelemetry.io/otel/exporters/otlp)
+BuildRequires:  golang(go.opentelemetry.io/otel/exporters/otlp/otlpgrpc)
+BuildRequires:  golang(go.opentelemetry.io/otel/propagation)
+BuildRequires:  golang(go.opentelemetry.io/otel/sdk/resource)
+BuildRequires:  golang(go.opentelemetry.io/otel/sdk/trace)
+BuildRequires:  golang(go.opentelemetry.io/otel/semconv)
+BuildRequires:  golang(go.uber.org/multierr)
 BuildRequires:  golang(go.uber.org/zap)
 BuildRequires:  golang(go.uber.org/zap/zapcore)
+BuildRequires:  golang(go.uber.org/zap/zapgrpc)
+BuildRequires:  golang(go.uber.org/zap/zaptest)
 BuildRequires:  golang(golang.org/x/crypto/bcrypt)
-BuildRequires:  golang(golang.org/x/net/context)
 BuildRequires:  golang(golang.org/x/net/http2)
 BuildRequires:  golang(golang.org/x/net/trace)
+BuildRequires:  golang(golang.org/x/sys/unix)
 BuildRequires:  golang(golang.org/x/time/rate)
+BuildRequires:  golang(google.golang.org/genproto/googleapis/api/annotations)
 BuildRequires:  golang(google.golang.org/grpc)
-BuildRequires:  golang(google.golang.org/grpc/balancer)
 BuildRequires:  golang(google.golang.org/grpc/codes)
-BuildRequires:  golang(google.golang.org/grpc/connectivity)
 BuildRequires:  golang(google.golang.org/grpc/credentials)
 BuildRequires:  golang(google.golang.org/grpc/grpclog)
 BuildRequires:  golang(google.golang.org/grpc/health)
 BuildRequires:  golang(google.golang.org/grpc/health/grpc_health_v1)
 BuildRequires:  golang(google.golang.org/grpc/keepalive)
 BuildRequires:  golang(google.golang.org/grpc/metadata)
-BuildRequires:  golang(google.golang.org/grpc/naming)
 BuildRequires:  golang(google.golang.org/grpc/peer)
 BuildRequires:  golang(google.golang.org/grpc/resolver)
-BuildRequires:  golang(google.golang.org/grpc/resolver/dns)
-BuildRequires:  golang(google.golang.org/grpc/resolver/passthrough)
+BuildRequires:  golang(google.golang.org/grpc/resolver/manual)
+BuildRequires:  golang(google.golang.org/grpc/serviceconfig)
 BuildRequires:  golang(google.golang.org/grpc/status)
+BuildRequires:  golang(google.golang.org/grpc/test/grpc_testing)
 BuildRequires:  golang(gopkg.in/cheggaaa/pb.v1)
+BuildRequires:  golang(gopkg.in/natefinch/lumberjack.v2)
 BuildRequires:  golang(gopkg.in/yaml.v2)
 BuildRequires:  golang(sigs.k8s.io/yaml)
 
 %if %{with check}
 # Tests
 BuildRequires:  golang(github.com/prometheus/client_model/go)
-BuildRequires:  golang(go.etcd.io/etcd/contrib/recipes)
-BuildRequires:  golang(go.etcd.io/etcd/integration)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/mock/mockserver)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/mock/mockstorage)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/mock/mockstore)
-BuildRequires:  golang(go.etcd.io/etcd/pkg/mock/mockwait)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/mock/mockstorage)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/mock/mockstore)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/mock/mockwait)
+BuildRequires:  golang(go.etcd.io/etcd/server/v3/mvcc/backend/testing)
+BuildRequires:  golang(golang.org/x/sync/errgroup)
 %endif
 
 %description
@@ -331,7 +239,7 @@ BuildRequires:  golang(go.etcd.io/etcd/pkg/mock/mockwait)
 
 %build
 %gobuild -o %{gobuilddir}/bin/v3 %{goipath}
-for cmd in contrib/raftexample etcdctl tools/benchmark tools/etcd-dump-db tools/etcd-dump-logs tools/etcd-dump-metrics tools/local-tester/bridge; do
+for cmd in contrib/lock/client contrib/lock/storage contrib/raftexample etcdctl etcdutl server tools/benchmark tools/etcd-dump-db tools/etcd-dump-logs tools/etcd-dump-metrics tools/local-tester/bridge; do
   %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
 done
 
@@ -346,94 +254,22 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE NOTICE
-%doc CONTRIBUTING.md MAINTAINERS_RULES.md README.md code-of-conduct.md
-%doc Documentation/README.md Documentation/branch_management.md
-%doc Documentation/demo.md Documentation/dl_build.md Documentation/docs.md
-%doc Documentation/faq.md Documentation/integrations.md Documentation/metrics.md
-%doc Documentation/production-users.md Documentation/reporting_bugs.md
-%doc Documentation/tuning.md
-%doc Documentation/dev-guide/api_concurrency_reference_v3.md
-%doc Documentation/dev-guide/api_grpc_gateway.md
-%doc Documentation/dev-guide/api_reference_v3.md
-%doc Documentation/dev-guide/experimental_apis.md
-%doc Documentation/dev-guide/grpc_naming.md
-%doc Documentation/dev-guide/interacting_v3.md Documentation/dev-guide/limit.md
-%doc Documentation/dev-guide/local_cluster.md Documentation/benchmarks/README.md
-%doc Documentation/benchmarks/etcd-2-1-0-alpha-benchmarks.md
-%doc Documentation/benchmarks/etcd-2-2-0-benchmarks.md
-%doc Documentation/benchmarks/etcd-2-2-0-rc-benchmarks.md
-%doc Documentation/benchmarks/etcd-2-2-0-rc-memory-benchmarks.md
-%doc Documentation/benchmarks/etcd-3-demo-benchmarks.md
-%doc Documentation/benchmarks/etcd-3-watch-memory-benchmark.md
-%doc Documentation/benchmarks/etcd-storage-memory-benchmark.md
-%doc Documentation/dev-internal/discovery_protocol.md
-%doc Documentation/dev-internal/logging.md Documentation/dev-internal/release.md
-%doc Documentation/etcd-mixin/README.md Documentation/learning/api.md
-%doc Documentation/learning/api_guarantees.md
-%doc Documentation/learning/data_model.md
-%doc Documentation/learning/design-auth-v3.md
-%doc Documentation/learning/design-client.md
-%doc Documentation/learning/design-learner.md Documentation/learning/glossary.md
-%doc Documentation/learning/why.md Documentation/op-guide/authentication.md
-%doc Documentation/op-guide/clustering.md
-%doc Documentation/op-guide/configuration.md Documentation/op-guide/container.md
-%doc Documentation/op-guide/failures.md Documentation/op-guide/gateway.md
-%doc Documentation/op-guide/grpc_proxy.md Documentation/op-guide/hardware.md
-%doc Documentation/op-guide/maintenance.md Documentation/op-guide/monitoring.md
-%doc Documentation/op-guide/performance.md Documentation/op-guide/recovery.md
-%doc Documentation/op-guide/runtime-configuration.md
-%doc Documentation/op-guide/runtime-reconf-design.md
-%doc Documentation/op-guide/security.md
-%doc Documentation/op-guide/supported-platform.md
-%doc Documentation/op-guide/v2-migration.md Documentation/op-guide/versioning.md
-%doc Documentation/platforms/aws.md
-%doc Documentation/platforms/container-linux-systemd.md
-%doc Documentation/platforms/freebsd.md Documentation/rfc/v3api.md
-%doc Documentation/triage/PRs.md Documentation/triage/issues.md
-%doc Documentation/upgrades/upgrade_3_0.md Documentation/upgrades/upgrade_3_1.md
-%doc Documentation/upgrades/upgrade_3_2.md Documentation/upgrades/upgrade_3_3.md
-%doc Documentation/upgrades/upgrade_3_4.md Documentation/upgrades/upgrade_3_5.md
-%doc Documentation/upgrades/upgrading-etcd.md
-%doc Documentation/v2/04_to_2_snapshot_migration.md Documentation/v2/README.md
-%doc Documentation/v2/admin_guide.md Documentation/v2/api.md
-%doc Documentation/v2/api_v3.md Documentation/v2/auth_api.md
-%doc Documentation/v2/authentication.md
-%doc Documentation/v2/backward_compatibility.md
-%doc Documentation/v2/branch_management.md Documentation/v2/clustering.md
-%doc Documentation/v2/configuration.md Documentation/v2/discovery_protocol.md
-%doc Documentation/v2/docker_guide.md Documentation/v2/errorcode.md
-%doc Documentation/v2/faq.md Documentation/v2/glossary.md
-%doc Documentation/v2/internal-protocol-versioning.md
-%doc Documentation/v2/libraries-and-tools.md Documentation/v2/members_api.md
-%doc Documentation/v2/metrics.md Documentation/v2/other_apis.md
-%doc Documentation/v2/production-users.md Documentation/v2/proxy.md
-%doc Documentation/v2/reporting_bugs.md
-%doc Documentation/v2/runtime-configuration.md
-%doc Documentation/v2/runtime-reconf-design.md Documentation/v2/security.md
-%doc Documentation/v2/tuning.md Documentation/v2/upgrade_2_1.md
-%doc Documentation/v2/upgrade_2_2.md Documentation/v2/upgrade_2_3.md
-%doc Documentation/v2/benchmarks/README.md
-%doc Documentation/v2/benchmarks/etcd-2-1-0-alpha-benchmarks.md
-%doc Documentation/v2/benchmarks/etcd-2-2-0-benchmarks.md
-%doc Documentation/v2/benchmarks/etcd-2-2-0-rc-benchmarks.md
-%doc Documentation/v2/benchmarks/etcd-2-2-0-rc-memory-benchmarks.md
-%doc Documentation/v2/benchmarks/etcd-3-demo-benchmarks.md
-%doc Documentation/v2/benchmarks/etcd-3-watch-memory-benchmark.md
-%doc Documentation/v2/benchmarks/etcd-storage-memory-benchmark.md
-%doc Documentation/v2/dev/release.md Documentation/v2/platforms/freebsd.md
-%doc Documentation/v2/rfc/v3api.md contrib/README.md
+%license LICENSE api/LICENSE client/pkg/LICENSE client/v2/LICENSE
+%license client/v3/LICENSE etcdctl/LICENSE etcdutl/LICENSE pkg/LICENSE
+%license raft/LICENSE server/LICENSE
+%doc CONTRIBUTING.md GOVERNANCE.md README.md ROADMAP.md code-of-conduct.md
+%doc Documentation/README.md client/v2/README.md client/v3/README.md
+%doc contrib/README.md contrib/lock/README.md contrib/mixin/README.md
 %doc contrib/raftexample/README.md contrib/systemd/etcd3-multinode/README.md doc
-%doc etcdctl/README.md etcdctl/READMEv2.md hack/README.md
+%doc etcdctl/README.md etcdctl/READMEv2.md etcdutl/README.md hack/README.md
 %doc hack/benchmark/README.md hack/insta-discovery/README.md
 %doc hack/kubernetes-deploy/README.md hack/patch/README.md
-%doc hack/tls-setup/README.md pkg/README.md pkg/adt/README.md raft/design.md
-%doc raft/README.md scripts/README security/email-templates.md
-%doc security/README.md security/security-release-process.md
+%doc hack/tls-setup/README.md pkg/README.md pkg/adt/README.md raft/README.md
+%doc raft/design.md scripts/README security/README.md
+%doc security/email-templates.md security/security-release-process.md
 %doc tools/benchmark/README.md tools/etcd-dump-db/README.md
 %doc tools/etcd-dump-logs/README.md tools/etcd-dump-metrics/README
-%doc tools/local-tester/README.md client/README.md clientv3/README.md
-%doc functional/README.md integration/fixtures-expired/README
+%doc tools/local-tester/README.md
 %{_bindir}/*
 
 %gopkgfiles

@@ -4,6 +4,8 @@
 # https://github.com/hashicorp/vault
 %global goipath         github.com/hashicorp/vault/api
 Version:                1.1.0
+%global tag             api/v1.1.0
+%global commit          fb730b62a40e6cc4fc8e2f0257c673454bca3b86
 
 %gometa
 
@@ -17,199 +19,342 @@ Version:                1.1.0
                         ui/app/routes/vault/cluster/license.js\\\
                         ui/app/templates/components/license-info.hbs\\\
                         ui/app/templates/vault/cluster/license.hbs\\\
-                        website/LICENSE.md\\\
-                        website/source/api/system/license.html.md
-%global godocs          CONTRIBUTING.md CHANGELOG.md README.md\\\
+                        website/content/api-docs/system/license.mdx
+%global godocs          CHANGELOG.md CONTRIBUTING.md README.md api/README.md\\\
                         builtin/credential/cert/test-fixtures/generate.txt\\\
+                        command/agent/README.md\\\
                         physical/foundationdb/README.md\\\
-                        plugins/database/mssql/README.md ui/README.md\\\
-                        ui/public/robots.txt website/README.md docs\\\
-                        website/source/404.html.md website/source/robots.txt\\\
-                        website/source/api/libraries.html.md\\\
-                        website/source/api/overview.html.md\\\
-                        website/source/api/relatedtools.html.md\\\
-                        website/source/api/auth/index.html.md\\\
-                        website/source/api/auth/app-id/index.html.md\\\
-                        website/source/api/auth/approle/index.html.md\\\
-                        website/source/api/auth/aws/index.html.md\\\
-                        website/source/api/auth/azure/index.html.md\\\
-                        website/source/api/auth/cert/index.html.md\\\
-                        website/source/api/auth/gcp/index.html.md\\\
-                        website/source/api/auth/github/index.html.md\\\
-                        website/source/api/auth/kubernetes/index.html.md\\\
-                        website/source/api/auth/ldap/index.html.md\\\
-                        website/source/api/auth/okta/index.html.md\\\
-                        website/source/api/auth/radius/index.html.md\\\
-                        website/source/api/auth/token/index.html.md\\\
-                        website/source/api/auth/userpass/index.html.md\\\
-                        website/source/api/auth/alicloud/index.html.md\\\
-                        website/source/api/auth/jwt/index.html.md\\\
-                        website/source/api/auth/jwt/index_beta.html.md\\\
-                        website/source/api/secret/index.html.md\\\
-                        website/source/api/secret/ad/index.html.md\\\
-                        website/source/api/secret/aws/index.html.md\\\
-                        website/source/api/secret/cassandra/index.html.md\\\
-                        website/source/api/secret/consul/index.html.md\\\
-                        website/source/api/secret/cubbyhole/index.html.md\\\
-                        website/source/api/secret/databases/cassandra.html.md\\\
-                        website/source/api/secret/databases/hanadb.html.md\\\
-                        website/source/api/secret/databases/index.html.md\\\
-                        website/source/api/secret/databases/influxdb.html.md\\\
-                        website/source/api/secret/databases/mongodb.html.md\\\
-                        website/source/api/secret/databases/mssql.html.md\\\
-                        website/source/api/secret/databases/mysql-\\\
-                        maria.html.md\\\
-                        website/source/api/secret/databases/oracle.html.md we\\\
-                        bsite/source/api/secret/databases/postgresql.html.md\\\
-                        website/source/api/secret/gcp/index.html.md\\\
-                        website/source/api/secret/identity/entity-\\\
-                        alias.html.md\\\
-                        website/source/api/secret/identity/entity.html.md\\\
-                        website/source/api/secret/identity/group-\\\
-                        alias.html.md\\\
-                        website/source/api/secret/identity/group.html.md\\\
-                        website/source/api/secret/identity/identity-\\\
-                        groups.html.md\\\
-                        website/source/api/secret/identity/index.html.md\\\
-                        website/source/api/secret/identity/lookup.html.md\\\
-                        website/source/api/secret/kv/index.html.md\\\
-                        website/source/api/secret/kv/kv-v1.html.md\\\
-                        website/source/api/secret/kv/kv-v2.html.md\\\
-                        website/source/api/secret/mongodb/index.html.md\\\
-                        website/source/api/secret/mssql/index.html.md\\\
-                        website/source/api/secret/mysql/index.html.md\\\
-                        website/source/api/secret/nomad/index.html.md\\\
-                        website/source/api/secret/pki/index.html.md\\\
-                        website/source/api/secret/postgresql/index.html.md\\\
-                        website/source/api/secret/rabbitmq/index.html.md\\\
-                        website/source/api/secret/ssh/index.html.md\\\
-                        website/source/api/secret/totp/index.html.md\\\
-                        website/source/api/secret/transit/index.html.md\\\
-                        website/source/api/secret/alicloud/index.html.md\\\
-                        website/source/api/secret/azure/index.html.md\\\
-                        website/source/api/secret/gcpkms/index.html.md\\\
-                        website/source/api/system/init.html.md\\\
-                        website/source/api/system/internal-specs-\\\
-                        openapi.html.md website/source/api/system/key-\\\
-                        status.html.md\\\
-                        website/source/api/system/leader.html.md\\\
-                        website/source/api/system/leases.html.md\\\
-                        website/source/api/system/mounts.html.md\\\
-                        website/source/api/system/namespaces.html.md\\\
-                        website/source/api/system/plugins-catalog.html.md\\\
-                        website/source/api/system/plugins-reload-\\\
-                        backend.html.md\\\
-                        website/source/api/system/policies.html.md\\\
-                        website/source/api/system/policy.html.md\\\
-                        website/source/api/system/raw.html.md\\\
-                        website/source/api/system/rekey-recovery-key.html.md\\\
-                        website/source/api/system/rekey.html.md\\\
-                        website/source/api/system/remount.html.md\\\
-                        website/source/api/system/rotate.html.md\\\
-                        website/source/api/system/seal-status.html.md\\\
-                        website/source/api/system/seal.html.md\\\
-                        website/source/api/system/step-down.html.md\\\
-                        website/source/api/system/tools.html.md\\\
-                        website/source/api/system/unseal.html.md\\\
-                        website/source/api/system/wrapping-lookup.html.md\\\
-                        website/source/api/system/wrapping-rewrap.html.md\\\
-                        website/source/api/system/wrapping-unwrap.html.md\\\
-                        website/source/api/system/wrapping-wrap.html.md\\\
-                        website/source/api/system/audit-hash.html.md\\\
-                        website/source/api/system/audit.html.md\\\
-                        website/source/api/system/auth.html.md\\\
-                        website/source/api/system/capabilities-\\\
-                        accessor.html.md\\\
-                        website/source/api/system/capabilities-self.html.md\\\
-                        website/source/api/system/capabilities.html.md\\\
-                        website/source/api/system/config-auditing.html.md\\\
-                        website/source/api/system/config-control-\\\
-                        group.html.md website/source/api/system/config-\\\
-                        cors.html.md website/source/api/system/config-\\\
-                        ui.html.md website/source/api/system/control-\\\
-                        group.html.md website/source/api/system/generate-\\\
-                        root.html.md website/source/api/system/health.html.md\\\
-                        website/source/api/system/index.html.md\\\
-                        website/source/api/system/internal-ui-mounts.html.md\\\
-                        website/source/api/system/mfa/duo.html.md\\\
-                        website/source/api/system/mfa/index.html.md\\\
-                        website/source/api/system/mfa/okta.html.md\\\
-                        website/source/api/system/mfa/pingid.html.md\\\
-                        website/source/api/system/mfa/totp.html.md\\\
-                        website/source/api/system/replication/index.html.md\\\
-                        website/source/api/system/replication/replication-\\\
-                        dr.html.md\\\
-                        website/source/api/system/replication/replication-\\\
-                        performance.html.md\\\
-                        website/source/guides/index.html.md\\\
-                        website/source/guides/encryption/index.html.md\\\
-                        website/source/guides/encryption/spring-demo.html.md\\\
-                        website/source/guides/encryption/transit-\\\
-                        rewrap.html.md\\\
-                        website/source/guides/encryption/transit.html.md\\\
-                        website/source/guides/getting-started/index.html.md\\\
-                        website/source/guides/identity/approle-trusted-\\\
-                        entities.html.md\\\
-                        website/source/guides/identity/authentication.html.md\\\
-                        website/source/guides/identity/control-groups.html.md\\\
-                        website/source/guides/identity/identity.html.md\\\
-                        website/source/guides/identity/index.html.md\\\
-                        website/source/guides/identity/lease.html.md\\\
-                        website/source/guides/identity/policies.html.md\\\
-                        website/source/guides/identity/policy-\\\
-                        templating.html.md\\\
-                        website/source/guides/identity/secure-intro.html.md\\\
-                        website/source/guides/identity/sentinel.html.md\\\
-                        website/source/guides/operations/autounseal-aws-\\\
-                        kms.html.md\\\
-                        website/source/guides/operations/deployment-\\\
-                        guide.html.md\\\
-                        website/source/guides/operations/disaster-\\\
-                        recovery.html.md\\\
-                        website/source/guides/operations/generate-\\\
-                        root.html.md\\\
-                        website/source/guides/operations/index.html.md\\\
-                        website/source/guides/operations/monitoring.html.md\\\
-                        website/source/guides/operations/mount-filter.html.md\\\
-                        website/source/guides/operations/multi-tenant.html.md\\\
-                        website/source/guides/operations/performance-\\\
-                        nodes.html.md\\\
-                        website/source/guides/operations/plugin-\\\
-                        backends.html.md\\\
-                        website/source/guides/operations/production.html.md\\\
-                        website/source/guides/operations/reference-\\\
-                        architecture.html.md\\\
-                        website/source/guides/operations/rekeying-and-\\\
-                        rotating.html.md\\\
-                        website/source/guides/operations/replication.html.md\\\
-                        website/source/guides/operations/seal-wrap.html.md\\\
-                        website/source/guides/operations/vault-ha-\\\
-                        consul.html.md website/source/guides/secret-mgmt/app-\\\
-                        integration.html.md website/source/guides/secret-\\\
-                        mgmt/cubbyhole.html.md website/source/guides/secret-\\\
-                        mgmt/db-root-rotation.html.md\\\
-                        website/source/guides/secret-mgmt/dynamic-\\\
-                        secrets.html.md website/source/guides/secret-\\\
-                        mgmt/index.html.md website/source/guides/secret-\\\
-                        mgmt/pki-engine.html.md website/source/guides/secret-\\\
-                        mgmt/ssh-otp.html.md website/source/guides/secret-\\\
-                        mgmt/static-secrets.html.md\\\
-                        website/source/guides/secret-mgmt/versioned-\\\
-                        kv.html.md website/source/intro/getting-\\\
-                        started/apis.html.md website/source/intro/getting-\\\
-                        started/authentication.html.md\\\
-                        website/source/intro/getting-started/deploy.html.md\\\
-                        website/source/intro/getting-started/dev-\\\
-                        server.html.md website/source/intro/getting-\\\
-                        started/dynamic-secrets.html.md\\\
-                        website/source/intro/getting-started/first-\\\
-                        secret.html.md website/source/intro/getting-\\\
-                        started/help.html.md website/source/intro/getting-\\\
-                        started/index.html.md website/source/intro/getting-\\\
-                        started/next-steps.html.md\\\
-                        website/source/intro/getting-started/policies.html.md\\\
-                        website/source/intro/getting-started/secrets-\\\
-                        engines.html.md terraform/aws/README.md
+                        plugins/database/mongodb/README.md\\\
+                        plugins/database/mssql/README.md ui/MODULE_REPORT.md\\\
+                        ui/README.md ui/lib/core/addon/helpers/changelog-url-\\\
+                        for.js ui/lib/core/app/helpers/changelog-url-for.js\\\
+                        ui/lib/core/stories/alert-banner.md\\\
+                        ui/lib/core/stories/alert-inline.md\\\
+                        ui/lib/core/stories/box-radio.md\\\
+                        ui/lib/core/stories/chevron.md\\\
+                        ui/lib/core/stories/confirm-action.md\\\
+                        ui/lib/core/stories/confirm.md\\\
+                        ui/lib/core/stories/doc-link.md\\\
+                        ui/lib/core/stories/empty-state.md\\\
+                        ui/lib/core/stories/form-field-groups.md\\\
+                        ui/lib/core/stories/form-field.md\\\
+                        ui/lib/core/stories/form-save-buttons.md\\\
+                        ui/lib/core/stories/icon.md ui/lib/core/stories/info-\\\
+                        table-row.md ui/lib/core/stories/info-table.md\\\
+                        ui/lib/core/stories/layout-loading.md\\\
+                        ui/lib/core/stories/list-view.md\\\
+                        ui/lib/core/stories/masked-input.md\\\
+                        ui/lib/core/stories/message-error.md\\\
+                        ui/lib/core/stories/message.md\\\
+                        ui/lib/core/stories/popup-menu.md\\\
+                        ui/lib/core/stories/search-select.md\\\
+                        ui/lib/core/stories/select.md\\\
+                        ui/lib/core/stories/toggle-button.md\\\
+                        ui/lib/core/stories/ttl-form.md\\\
+                        ui/lib/core/stories/ttl-picker.md\\\
+                        ui/lib/core/stories/ttl-picker2.md\\\
+                        ui/lib/core/stories/vault-logo-spinner.md\\\
+                        ui/lib/core/stories/toolbar/toolbar-actions.md\\\
+                        ui/lib/core/stories/toolbar/toolbar-download-\\\
+                        button.md ui/lib/core/stories/toolbar/toolbar-\\\
+                        filters.md ui/lib/core/stories/toolbar/toolbar-\\\
+                        link.md ui/lib/core/stories/toolbar/toolbar-secret-\\\
+                        link.md ui/lib/core/stories/toolbar/toolbar.md\\\
+                        ui/public/robots.txt ui/stories/alert-popup.md\\\
+                        ui/stories/auth-form.md ui/stories/file-to-array-\\\
+                        buffer.md ui/stories/selectable-card.md\\\
+                        ui/stories/toggle.md ui/stories/auth-config-\\\
+                        form/config.md ui/stories/auth-config-form/options.md\\\
+                        website/README.md\\\
+                        website/components/columns/README.md\\\
+                        website/components/inline-tag/README.md docs\\\
+                        website/content/security.mdx website/content/api-\\\
+                        docs/index.mdx website/content/api-docs/libraries.mdx\\\
+                        website/content/api-docs/relatedtools.mdx\\\
+                        website/content/api-docs/auth/alicloud.mdx\\\
+                        website/content/api-docs/auth/app-id.mdx\\\
+                        website/content/api-docs/auth/approle.mdx\\\
+                        website/content/api-docs/auth/aws.mdx\\\
+                        website/content/api-docs/auth/azure.mdx\\\
+                        website/content/api-docs/auth/cert.mdx\\\
+                        website/content/api-docs/auth/cf.mdx\\\
+                        website/content/api-docs/auth/gcp.mdx\\\
+                        website/content/api-docs/auth/github.mdx\\\
+                        website/content/api-docs/auth/index.mdx\\\
+                        website/content/api-docs/auth/jwt.mdx\\\
+                        website/content/api-docs/auth/kerberos.mdx\\\
+                        website/content/api-docs/auth/kubernetes.mdx\\\
+                        website/content/api-docs/auth/ldap.mdx\\\
+                        website/content/api-docs/auth/oci.mdx\\\
+                        website/content/api-docs/auth/okta.mdx\\\
+                        website/content/api-docs/auth/radius.mdx\\\
+                        website/content/api-docs/auth/token.mdx\\\
+                        website/content/api-docs/auth/userpass.mdx\\\
+                        website/content/api-docs/secret/ad.mdx\\\
+                        website/content/api-docs/secret/alicloud.mdx\\\
+                        website/content/api-docs/secret/aws.mdx\\\
+                        website/content/api-docs/secret/azure.mdx\\\
+                        website/content/api-docs/secret/cassandra.mdx\\\
+                        website/content/api-docs/secret/consul.mdx\\\
+                        website/content/api-docs/secret/cubbyhole.mdx\\\
+                        website/content/api-docs/secret/gcp.mdx\\\
+                        website/content/api-docs/secret/gcpkms.mdx\\\
+                        website/content/api-docs/secret/index.mdx\\\
+                        website/content/api-docs/secret/key-management.mdx\\\
+                        website/content/api-docs/secret/kmip.mdx\\\
+                        website/content/api-docs/secret/mongodbatlas.mdx\\\
+                        website/content/api-docs/secret/nomad.mdx\\\
+                        website/content/api-docs/secret/openldap.mdx\\\
+                        website/content/api-docs/secret/pki.mdx\\\
+                        website/content/api-docs/secret/rabbitmq.mdx\\\
+                        website/content/api-docs/secret/ssh.mdx\\\
+                        website/content/api-docs/secret/terraform.mdx\\\
+                        website/content/api-docs/secret/totp.mdx\\\
+                        website/content/api-docs/secret/transform.mdx\\\
+                        website/content/api-docs/secret/transit.mdx\\\
+                        website/content/api-\\\
+                        docs/secret/databases/cassandra.mdx\\\
+                        website/content/api-\\\
+                        docs/secret/databases/couchbase.mdx\\\
+                        website/content/api-\\\
+                        docs/secret/databases/elasticdb.mdx\\\
+                        website/content/api-docs/secret/databases/hanadb.mdx\\\
+                        website/content/api-docs/secret/databases/index.mdx\\\
+                        website/content/api-\\\
+                        docs/secret/databases/influxdb.mdx\\\
+                        website/content/api-docs/secret/databases/mongodb.mdx\\\
+                        website/content/api-\\\
+                        docs/secret/databases/mongodbatlas.mdx\\\
+                        website/content/api-docs/secret/databases/mssql.mdx\\\
+                        website/content/api-docs/secret/databases/mysql-\\\
+                        maria.mdx website/content/api-\\\
+                        docs/secret/databases/oracle.mdx website/content/api-\\\
+                        docs/secret/databases/postgresql.mdx\\\
+                        website/content/api-\\\
+                        docs/secret/databases/redshift.mdx\\\
+                        website/content/api-\\\
+                        docs/secret/databases/snowflake.mdx\\\
+                        website/content/api-docs/secret/identity/entity-\\\
+                        alias.mdx website/content/api-\\\
+                        docs/secret/identity/entity.mdx website/content/api-\\\
+                        docs/secret/identity/group-alias.mdx\\\
+                        website/content/api-docs/secret/identity/group.mdx\\\
+                        website/content/api-docs/secret/identity/index.mdx\\\
+                        website/content/api-docs/secret/identity/lookup.mdx\\\
+                        website/content/api-docs/secret/identity/tokens.mdx\\\
+                        website/content/api-docs/secret/kv/index.mdx\\\
+                        website/content/api-docs/secret/kv/kv-v1.mdx\\\
+                        website/content/api-docs/secret/kv/kv-v2.mdx\\\
+                        website/content/api-docs/system/audit-hash.mdx\\\
+                        website/content/api-docs/system/audit.mdx\\\
+                        website/content/api-docs/system/auth.mdx\\\
+                        website/content/api-docs/system/capabilities-\\\
+                        accessor.mdx website/content/api-\\\
+                        docs/system/capabilities-self.mdx\\\
+                        website/content/api-docs/system/capabilities.mdx\\\
+                        website/content/api-docs/system/config-auditing.mdx\\\
+                        website/content/api-docs/system/config-control-\\\
+                        group.mdx website/content/api-docs/system/config-\\\
+                        cors.mdx website/content/api-docs/system/config-\\\
+                        state.mdx website/content/api-docs/system/config-\\\
+                        ui.mdx website/content/api-docs/system/control-\\\
+                        group.mdx website/content/api-docs/system/generate-\\\
+                        recovery-token.mdx website/content/api-\\\
+                        docs/system/generate-root.mdx website/content/api-\\\
+                        docs/system/health.mdx website/content/api-\\\
+                        docs/system/host-info.mdx website/content/api-\\\
+                        docs/system/index.mdx website/content/api-\\\
+                        docs/system/init.mdx website/content/api-\\\
+                        docs/system/internal-counters.mdx\\\
+                        website/content/api-docs/system/internal-specs-\\\
+                        openapi.mdx website/content/api-docs/system/internal-\\\
+                        ui-feature.mdx website/content/api-\\\
+                        docs/system/internal-ui-mounts.mdx\\\
+                        website/content/api-docs/system/key-status.mdx\\\
+                        website/content/api-docs/system/leader.mdx\\\
+                        website/content/api-docs/system/lease-count-\\\
+                        quotas.mdx website/content/api-docs/system/leases.mdx\\\
+                        website/content/api-docs/system/metrics.mdx\\\
+                        website/content/api-docs/system/monitor.mdx\\\
+                        website/content/api-docs/system/mounts.mdx\\\
+                        website/content/api-docs/system/namespaces.mdx\\\
+                        website/content/api-docs/system/plugins-catalog.mdx\\\
+                        website/content/api-docs/system/plugins-reload-\\\
+                        backend.mdx website/content/api-docs/system/policies-\\\
+                        password.mdx website/content/api-\\\
+                        docs/system/policies.mdx website/content/api-\\\
+                        docs/system/policy.mdx website/content/api-\\\
+                        docs/system/pprof.mdx website/content/api-\\\
+                        docs/system/quotas-config.mdx website/content/api-\\\
+                        docs/system/rate-limit-quotas.mdx\\\
+                        website/content/api-docs/system/raw.mdx\\\
+                        website/content/api-docs/system/rekey-recovery-\\\
+                        key.mdx website/content/api-docs/system/rekey.mdx\\\
+                        website/content/api-docs/system/remount.mdx\\\
+                        website/content/api-docs/system/rotate-config.mdx\\\
+                        website/content/api-docs/system/rotate.mdx\\\
+                        website/content/api-docs/system/seal-status.mdx\\\
+                        website/content/api-docs/system/seal.mdx\\\
+                        website/content/api-docs/system/sealwrap-rewrap.mdx\\\
+                        website/content/api-docs/system/step-down.mdx\\\
+                        website/content/api-docs/system/tools.mdx\\\
+                        website/content/api-docs/system/unseal.mdx\\\
+                        website/content/api-docs/system/wrapping-lookup.mdx\\\
+                        website/content/api-docs/system/wrapping-rewrap.mdx\\\
+                        website/content/api-docs/system/wrapping-unwrap.mdx\\\
+                        website/content/api-docs/system/wrapping-wrap.mdx\\\
+                        website/content/api-docs/system/mfa/duo.mdx\\\
+                        website/content/api-docs/system/mfa/index.mdx\\\
+                        website/content/api-docs/system/mfa/okta.mdx\\\
+                        website/content/api-docs/system/mfa/pingid.mdx\\\
+                        website/content/api-docs/system/mfa/totp.mdx\\\
+                        website/content/api-docs/system/replication/index.mdx\\\
+                        website/content/api-\\\
+                        docs/system/replication/replication-dr.mdx\\\
+                        website/content/api-\\\
+                        docs/system/replication/replication-performance.mdx\\\
+                        website/content/api-docs/system/storage/index.mdx\\\
+                        website/content/api-docs/system/storage/raft.mdx\\\
+                        website/content/api-\\\
+                        docs/system/storage/raftautosnapshots.mdx\\\
+                        website/content/guides/getting-started.mdx\\\
+                        website/content/guides/index.mdx\\\
+                        website/content/guides/encryption/index.mdx\\\
+                        website/content/guides/encryption/spring-demo.mdx\\\
+                        website/content/guides/encryption/transit-rewrap.mdx\\\
+                        website/content/guides/encryption/transit.mdx\\\
+                        website/content/guides/identity/approle-trusted-\\\
+                        entities.mdx\\\
+                        website/content/guides/identity/authentication.mdx\\\
+                        website/content/guides/identity/control-groups.mdx\\\
+                        website/content/guides/identity/identity.mdx\\\
+                        website/content/guides/identity/index.mdx\\\
+                        website/content/guides/identity/lease.mdx\\\
+                        website/content/guides/identity/policies.mdx\\\
+                        website/content/guides/identity/policy-templating.mdx\\\
+                        website/content/guides/identity/secure-intro.mdx\\\
+                        website/content/guides/identity/sentinel.mdx\\\
+                        website/content/guides/operations/autounseal-aws-\\\
+                        kms.mdx website/content/guides/operations/deployment-\\\
+                        guide.mdx website/content/guides/operations/disaster-\\\
+                        recovery.mdx\\\
+                        website/content/guides/operations/generate-root.mdx\\\
+                        website/content/guides/operations/index.mdx\\\
+                        website/content/guides/operations/monitoring.mdx\\\
+                        website/content/guides/operations/mount-filter.mdx\\\
+                        website/content/guides/operations/multi-tenant.mdx\\\
+                        website/content/guides/operations/performance-\\\
+                        nodes.mdx website/content/guides/operations/plugin-\\\
+                        backends.mdx\\\
+                        website/content/guides/operations/production.mdx\\\
+                        website/content/guides/operations/reference-\\\
+                        architecture.mdx\\\
+                        website/content/guides/operations/rekeying-and-\\\
+                        rotating.mdx\\\
+                        website/content/guides/operations/replication.mdx\\\
+                        website/content/guides/operations/seal-wrap.mdx\\\
+                        website/content/guides/operations/vault-ha-consul.mdx\\\
+                        website/content/guides/secret-mgmt/app-\\\
+                        integration.mdx website/content/guides/secret-\\\
+                        mgmt/cubbyhole.mdx website/content/guides/secret-\\\
+                        mgmt/db-root-rotation.mdx\\\
+                        website/content/guides/secret-mgmt/dynamic-\\\
+                        secrets.mdx website/content/guides/secret-\\\
+                        mgmt/index.mdx website/content/guides/secret-\\\
+                        mgmt/pki-engine.mdx website/content/guides/secret-\\\
+                        mgmt/ssh-otp.mdx website/content/guides/secret-\\\
+                        mgmt/static-secrets.mdx\\\
+                        website/content/guides/secret-mgmt/versioned-kv.mdx\\\
+                        website/content/intro/index.mdx\\\
+                        website/content/intro/getting-started/apis.mdx\\\
+                        website/content/intro/getting-\\\
+                        started/authentication.mdx\\\
+                        website/content/intro/getting-started/deploy.mdx\\\
+                        website/content/intro/getting-started/dev-server.mdx\\\
+                        website/content/intro/getting-started/dynamic-\\\
+                        secrets.mdx website/content/intro/getting-\\\
+                        started/first-secret.mdx\\\
+                        website/content/intro/getting-started/help.mdx\\\
+                        website/content/intro/getting-started/index.mdx\\\
+                        website/content/intro/getting-started/next-steps.mdx\\\
+                        website/content/intro/getting-started/policies.mdx\\\
+                        website/content/intro/getting-started/secrets-\\\
+                        engines.mdx website/content/partials/aws-auth-\\\
+                        metadata-fix.mdx website/content/partials/aws-auth-\\\
+                        metadata-issue.mdx website/content/partials/aws-imds-\\\
+                        timeout-upgrade.mdx website/content/partials/aws-\\\
+                        imds-timeout.mdx website/content/partials/aws-\\\
+                        invalid-header-fix.mdx website/content/partials/aws-\\\
+                        invalid-header.mdx website/content/partials/aws-sts-\\\
+                        issue.mdx website/content/partials/builds-without-\\\
+                        ui.mdx website/content/partials/enterprise-\\\
+                        licenses.mdx website/content/partials/ldap-upndomain-\\\
+                        issue.mdx website/content/partials/okta-group-\\\
+                        pagination.mdx website/content/partials/primary-\\\
+                        cluster-addr-change.mdx\\\
+                        website/content/partials/tokenfields.mdx\\\
+                        website/content/partials/tokenstorefields.mdx docs\\\
+                        docs changelog/10072.txt changelog/10077.txt\\\
+                        changelog/10131.txt changelog/10231.txt\\\
+                        changelog/10365.txt changelog/10375.txt\\\
+                        changelog/10384.txt changelog/10386.txt\\\
+                        changelog/10416.txt changelog/10417.txt\\\
+                        changelog/10424.txt changelog/10433.txt\\\
+                        changelog/10444.txt changelog/10456.txt\\\
+                        changelog/10487.txt changelog/10489.txt\\\
+                        changelog/10490.txt changelog/10491.txt\\\
+                        changelog/10498.txt changelog/10514.txt\\\
+                        changelog/10520.txt changelog/10536.txt\\\
+                        changelog/10537.txt changelog/10546.txt\\\
+                        changelog/10556.txt changelog/10558.txt\\\
+                        changelog/10579.txt changelog/10588.txt\\\
+                        changelog/10596.txt changelog/10603.txt\\\
+                        changelog/10609.txt changelog/10613.txt\\\
+                        changelog/10644.txt changelog/10650.txt\\\
+                        changelog/10653.txt changelog/10655.txt\\\
+                        changelog/10677.txt changelog/10684.txt\\\
+                        changelog/10689.txt changelog/10705.txt\\\
+                        changelog/10708.txt changelog/10725.txt\\\
+                        changelog/10726.txt changelog/10730.txt\\\
+                        changelog/10743.txt changelog/10744.txt\\\
+                        changelog/10756.txt changelog/10757.txt\\\
+                        changelog/10758.txt changelog/10759.txt\\\
+                        changelog/10766.txt changelog/10767.txt\\\
+                        changelog/10812.txt changelog/10826.txt\\\
+                        changelog/10833.txt changelog/10834.txt\\\
+                        changelog/10848.txt changelog/10850.txt\\\
+                        changelog/10855.txt changelog/10858.txt\\\
+                        changelog/10877.txt changelog/10901.txt\\\
+                        changelog/10904.txt changelog/10906.txt\\\
+                        changelog/10919.txt changelog/10927.txt\\\
+                        changelog/10931.txt changelog/10938.txt\\\
+                        changelog/10942.txt changelog/10949.txt\\\
+                        changelog/10951.txt changelog/10952.txt\\\
+                        changelog/10953.txt changelog/10964.txt\\\
+                        changelog/10980.txt changelog/10982.txt\\\
+                        changelog/10992.txt changelog/10995.txt\\\
+                        changelog/10996.txt changelog/10997.txt\\\
+                        changelog/11011.txt changelog/11015.txt\\\
+                        changelog/11018.txt changelog/11022.txt\\\
+                        changelog/11060.txt changelog/11094.txt\\\
+                        changelog/11113.txt changelog/11119.txt\\\
+                        changelog/11127.txt changelog/11142.txt\\\
+                        changelog/11173.txt changelog/11182.txt\\\
+                        changelog/11213.txt changelog/11226.txt\\\
+                        changelog/9972.txt changelog/README.md changelog/_\\\
+                        1686.txt changelog/_1622.txt changelog/_1633.txt\\\
+                        changelog/_1637.txt changelog/_1642.txt\\\
+                        changelog/_1656.txt changelog/_1659.txt\\\
+                        changelog/_1663.txt changelog/_1680.txt\\\
+                        changelog/_1705.txt changelog/_1712.txt\\\
+                        changelog/_1739.txt changelog/_2021Jan20.txt\\\
+                        changelog/_2021Jan26.txt changelog/changelog.tmpl\\\
+                        dependencies/2-25-21/deps-upgrade-output.txt\\\
+                        dependencies/2-25-21/deps-upgrade.txt\\\
+                        internalshared/README.md sdk/README.md\\\
+                        sdk/database/dbplugin/README.md sdk/queue/README.md\\\
+                        serviceregistration/kubernetes/testing/README.md\\\
+                        terraform/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -220,13 +365,12 @@ License:        MPLv2.0
 URL:            %{gourl}
 Source0:        %{gosource}
 
-BuildRequires:  golang(cloud.google.com/go/kms/apiv1)
+BuildRequires:  golang(cloud.google.com/go/monitoring/apiv3)
 BuildRequires:  golang(cloud.google.com/go/spanner)
 BuildRequires:  golang(cloud.google.com/go/storage)
-BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/sdk)
+BuildRequires:  golang(github.com/aerospike/aerospike-client-go)
 BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth)
 BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials/providers)
-BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/services/kms)
 BuildRequires:  golang(github.com/aliyun/aliyun-oss-go-sdk/oss)
 BuildRequires:  golang(github.com/armon/go-metrics)
 BuildRequires:  golang(github.com/armon/go-metrics/circonus)
@@ -238,6 +382,7 @@ BuildRequires:  golang(github.com/asaskevich/govalidator)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/arn)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/awserr)
+BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/client)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/credentials)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/credentials/stscreds)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/defaults)
@@ -250,21 +395,24 @@ BuildRequires:  golang(github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattrib
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/ec2)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/iam)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/iam/iamiface)
-BuildRequires:  golang(github.com/aws/aws-sdk-go/service/kms)
-BuildRequires:  golang(github.com/aws/aws-sdk-go/service/kms/kmsiface)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/s3)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/sts)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/sts/stsiface)
-BuildRequires:  golang(github.com/Azure/azure-sdk-for-go/services/keyvault/2016-10-01/keyvault)
-BuildRequires:  golang(github.com/Azure/azure-sdk-for-go/storage)
-BuildRequires:  golang(github.com/Azure/go-autorest/autorest)
+BuildRequires:  golang(github.com/Azure/azure-storage-blob-go/azblob)
+BuildRequires:  golang(github.com/Azure/go-autorest/autorest/adal)
 BuildRequires:  golang(github.com/Azure/go-autorest/autorest/azure)
-BuildRequires:  golang(github.com/Azure/go-autorest/autorest/azure/auth)
-BuildRequires:  golang(github.com/Azure/go-autorest/autorest/to)
+BuildRequires:  golang(github.com/cenkalti/backoff/v3)
 BuildRequires:  golang(github.com/chrismalek/oktasdk-go/okta)
 BuildRequires:  golang(github.com/cockroachdb/cockroach-go/crdb)
 BuildRequires:  golang(github.com/coreos/go-semver/semver)
 BuildRequires:  golang(github.com/denisenkom/go-mssqldb)
+BuildRequires:  golang(github.com/docker/docker/api/types)
+BuildRequires:  golang(github.com/docker/docker/api/types/container)
+BuildRequires:  golang(github.com/docker/docker/api/types/network)
+BuildRequires:  golang(github.com/docker/docker/api/types/strslice)
+BuildRequires:  golang(github.com/docker/docker/client)
+BuildRequires:  golang(github.com/docker/docker/pkg/archive)
+BuildRequires:  golang(github.com/docker/go-connections/nat)
 BuildRequires:  golang(github.com/duosecurity/duo_api_golang)
 BuildRequires:  golang(github.com/duosecurity/duo_api_golang/authapi)
 BuildRequires:  golang(github.com/elazarl/go-bindata-assetfs)
@@ -273,25 +421,44 @@ BuildRequires:  golang(github.com/fatih/structs)
 BuildRequires:  golang(github.com/fullsailor/pkcs7)
 BuildRequires:  golang(github.com/ghodss/yaml)
 BuildRequires:  golang(github.com/go-errors/errors)
-BuildRequires:  golang(github.com/go-ldap/ldap)
+BuildRequires:  golang(github.com/go-ldap/ldap/v3)
 BuildRequires:  golang(github.com/go-sql-driver/mysql)
+BuildRequires:  golang(github.com/go-test/deep)
 BuildRequires:  golang(github.com/gocql/gocql)
 BuildRequires:  golang(github.com/golang/protobuf/proto)
 BuildRequires:  golang(github.com/golang/protobuf/ptypes)
 BuildRequires:  golang(github.com/golang/protobuf/ptypes/any)
+BuildRequires:  golang(github.com/golang/protobuf/ptypes/struct)
 BuildRequires:  golang(github.com/golang/protobuf/ptypes/timestamp)
 BuildRequires:  golang(github.com/golang/snappy)
 BuildRequires:  golang(github.com/google/go-github/github)
+BuildRequires:  golang(github.com/google/go-metrics-stackdriver)
+BuildRequires:  golang(github.com/google/go-metrics-stackdriver/vault)
+BuildRequires:  golang(github.com/hashicorp/consul-template/config)
+BuildRequires:  golang(github.com/hashicorp/consul-template/logging)
+BuildRequires:  golang(github.com/hashicorp/consul-template/manager)
 BuildRequires:  golang(github.com/hashicorp/consul/api)
-BuildRequires:  golang(github.com/hashicorp/consul/lib)
 BuildRequires:  golang(github.com/hashicorp/errwrap)
 BuildRequires:  golang(github.com/hashicorp/go-cleanhttp)
+BuildRequires:  golang(github.com/hashicorp/go-discover)
+BuildRequires:  golang(github.com/hashicorp/go-discover/provider/k8s)
 BuildRequires:  golang(github.com/hashicorp/go-gcp-common/gcputil)
 BuildRequires:  golang(github.com/hashicorp/go-hclog)
 BuildRequires:  golang(github.com/hashicorp/go-immutable-radix)
+BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping)
+BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/entropy)
+BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/aead)
+BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/alicloudkms)
+BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/awskms)
+BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/azurekeyvault)
+BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/gcpckms)
+BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/ocikms)
+BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/transit)
 BuildRequires:  golang(github.com/hashicorp/go-memdb)
+BuildRequires:  golang(github.com/hashicorp/go-msgpack/codec)
 BuildRequires:  golang(github.com/hashicorp/go-multierror)
 BuildRequires:  golang(github.com/hashicorp/go-plugin)
+BuildRequires:  golang(github.com/hashicorp/go-raftchunking)
 BuildRequires:  golang(github.com/hashicorp/go-retryablehttp)
 BuildRequires:  golang(github.com/hashicorp/go-rootcerts)
 BuildRequires:  golang(github.com/hashicorp/go-sockaddr)
@@ -303,7 +470,11 @@ BuildRequires:  golang(github.com/hashicorp/hcl)
 BuildRequires:  golang(github.com/hashicorp/hcl/hcl/ast)
 BuildRequires:  golang(github.com/hashicorp/hcl/hcl/printer)
 BuildRequires:  golang(github.com/hashicorp/nomad/api)
+BuildRequires:  golang(github.com/hashicorp/raft)
+BuildRequires:  golang(github.com/hashicorp/raft-autopilot)
+BuildRequires:  golang(github.com/hashicorp/raft-snapshot)
 BuildRequires:  golang(github.com/influxdata/influxdb/client/v2)
+BuildRequires:  golang(github.com/jcmturner/gokrb5/v8/spnego)
 BuildRequires:  golang(github.com/jefferai/isbadcipher)
 BuildRequires:  golang(github.com/jefferai/jsonx)
 BuildRequires:  golang(github.com/joyent/triton-go)
@@ -316,6 +487,7 @@ BuildRequires:  golang(github.com/kr/pretty)
 BuildRequires:  golang(github.com/kr/text)
 BuildRequires:  golang(github.com/lib/pq)
 BuildRequires:  golang(github.com/mattn/go-colorable)
+BuildRequires:  golang(github.com/mholt/archiver)
 BuildRequires:  golang(github.com/michaelklishin/rabbit-hole)
 BuildRequires:  golang(github.com/mitchellh/cli)
 BuildRequires:  golang(github.com/mitchellh/copystructure)
@@ -323,9 +495,14 @@ BuildRequires:  golang(github.com/mitchellh/go-homedir)
 BuildRequires:  golang(github.com/mitchellh/go-testing-interface)
 BuildRequires:  golang(github.com/mitchellh/mapstructure)
 BuildRequires:  golang(github.com/mitchellh/reflectwalk)
+BuildRequires:  golang(github.com/natefinch/atomic)
 BuildRequires:  golang(github.com/ncw/swift)
 BuildRequires:  golang(github.com/NYTimes/gziphandler)
 BuildRequires:  golang(github.com/oklog/run)
+BuildRequires:  golang(github.com/okta/okta-sdk-golang/v2/okta)
+BuildRequires:  golang(github.com/oracle/oci-go-sdk/common)
+BuildRequires:  golang(github.com/oracle/oci-go-sdk/common/auth)
+BuildRequires:  golang(github.com/oracle/oci-go-sdk/objectstorage)
 BuildRequires:  golang(github.com/patrickmn/go-cache)
 BuildRequires:  golang(github.com/pierrec/lz4)
 BuildRequires:  golang(github.com/pkg/errors)
@@ -334,17 +511,30 @@ BuildRequires:  golang(github.com/pquerna/otp)
 BuildRequires:  golang(github.com/pquerna/otp/totp)
 BuildRequires:  golang(github.com/prometheus/client_golang/prometheus)
 BuildRequires:  golang(github.com/prometheus/common/expfmt)
+BuildRequires:  golang(github.com/rboyer/safeio)
 BuildRequires:  golang(github.com/ryanuber/columnize)
 BuildRequires:  golang(github.com/ryanuber/go-glob)
 BuildRequires:  golang(github.com/samuel/go-zookeeper/zk)
 BuildRequires:  golang(github.com/SAP/go-hdb/driver)
-BuildRequires:  golang(github.com/SermoDigital/jose/crypto)
-BuildRequires:  golang(github.com/SermoDigital/jose/jws)
-BuildRequires:  golang(github.com/SermoDigital/jose/jwt)
+BuildRequires:  golang(github.com/sethvargo/go-limiter)
+BuildRequires:  golang(github.com/sethvargo/go-limiter/httplimit)
+BuildRequires:  golang(github.com/sethvargo/go-limiter/memorystore)
+BuildRequires:  golang(github.com/shirou/gopsutil/cpu)
+BuildRequires:  golang(github.com/shirou/gopsutil/disk)
+BuildRequires:  golang(github.com/shirou/gopsutil/host)
+BuildRequires:  golang(github.com/shirou/gopsutil/mem)
+BuildRequires:  golang(github.com/stretchr/testify/require)
+BuildRequires:  golang(go.etcd.io/bbolt)
 BuildRequires:  golang(go.etcd.io/etcd/client)
 BuildRequires:  golang(go.etcd.io/etcd/clientv3)
 BuildRequires:  golang(go.etcd.io/etcd/clientv3/concurrency)
 BuildRequires:  golang(go.etcd.io/etcd/pkg/transport)
+BuildRequires:  golang(go.mongodb.org/mongo-driver/mongo)
+BuildRequires:  golang(go.mongodb.org/mongo-driver/mongo/options)
+BuildRequires:  golang(go.mongodb.org/mongo-driver/mongo/readpref)
+BuildRequires:  golang(go.mongodb.org/mongo-driver/mongo/writeconcern)
+BuildRequires:  golang(go.mongodb.org/mongo-driver/x/mongo/driver/connstring)
+BuildRequires:  golang(go.uber.org/atomic)
 BuildRequires:  golang(golang.org/x/crypto/bcrypt)
 BuildRequires:  golang(golang.org/x/crypto/blake2b)
 BuildRequires:  golang(golang.org/x/crypto/chacha20poly1305)
@@ -357,6 +547,7 @@ BuildRequires:  golang(golang.org/x/crypto/ssh)
 BuildRequires:  golang(golang.org/x/crypto/ssh/agent)
 BuildRequires:  golang(golang.org/x/crypto/ssh/terminal)
 BuildRequires:  golang(golang.org/x/net/context)
+BuildRequires:  golang(golang.org/x/net/http/httpproxy)
 BuildRequires:  golang(golang.org/x/net/http2)
 BuildRequires:  golang(golang.org/x/net/idna)
 BuildRequires:  golang(golang.org/x/oauth2)
@@ -366,12 +557,15 @@ BuildRequires:  golang(google.golang.org/api/googleapi)
 BuildRequires:  golang(google.golang.org/api/iam/v1)
 BuildRequires:  golang(google.golang.org/api/iterator)
 BuildRequires:  golang(google.golang.org/api/option)
-BuildRequires:  golang(google.golang.org/genproto/googleapis/cloud/kms/v1)
 BuildRequires:  golang(google.golang.org/grpc)
 BuildRequires:  golang(google.golang.org/grpc/codes)
 BuildRequires:  golang(google.golang.org/grpc/grpclog)
 BuildRequires:  golang(google.golang.org/grpc/keepalive)
 BuildRequires:  golang(google.golang.org/grpc/status)
+BuildRequires:  golang(google.golang.org/protobuf/proto)
+BuildRequires:  golang(google.golang.org/protobuf/reflect/protoreflect)
+BuildRequires:  golang(google.golang.org/protobuf/runtime/protoimpl)
+BuildRequires:  golang(google.golang.org/protobuf/types/known/structpb)
 BuildRequires:  golang(gopkg.in/mgo.v2)
 BuildRequires:  golang(gopkg.in/square/go-jose.v2)
 BuildRequires:  golang(gopkg.in/square/go-jose.v2/jwt)
@@ -380,12 +574,19 @@ BuildRequires:  golang(layeh.com/radius/rfc2865)
 
 %if %{with check}
 # Tests
+BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/sdk)
 BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials)
 BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/services/sts)
-BuildRequires:  golang(github.com/go-test/deep)
-BuildRequires:  golang(github.com/gogo/protobuf/proto)
+BuildRequires:  golang(github.com/hashicorp/go-raftchunking/types)
+BuildRequires:  golang(github.com/mongodb/go-client-mongodb-atlas/mongodbatlas)
+BuildRequires:  golang(github.com/okta/okta-sdk-golang/v2/okta/query)
 BuildRequires:  golang(github.com/ory/dockertest)
-BuildRequires:  golang(gopkg.in/ory-am/dockertest.v2)
+BuildRequires:  golang(github.com/ory/dockertest/v3)
+BuildRequires:  golang(github.com/ory/dockertest/v3/docker/pkg/ioutils)
+BuildRequires:  golang(github.com/Sectorbob/mlab-ns2/gae/ns/digest)
+BuildRequires:  golang(github.com/stretchr/testify/assert)
+BuildRequires:  golang(github.com/stretchr/testify/mock)
+BuildRequires:  golang(google.golang.org/protobuf/types/known/timestamppb)
 %endif
 
 %description
@@ -398,7 +599,7 @@ BuildRequires:  golang(gopkg.in/ory-am/dockertest.v2)
 
 %build
 %gobuild -o %{gobuilddir}/bin/api %{goipath}
-for cmd in logical/plugin/mock/mock-plugin plugins/database/cassandra/cassandra-database-plugin plugins/database/hana/hana-database-plugin plugins/database/influxdb/influxdb-database-plugin plugins/database/mongodb/mongodb-database-plugin plugins/database/mssql/mssql-database-plugin plugins/database/mysql/mysql-database-plugin plugins/database/mysql/mysql-legacy-database-plugin plugins/database/postgresql/postgresql-database-plugin; do
+for cmd in plugins/database/cassandra/cassandra-database-plugin plugins/database/hana/hana-database-plugin plugins/database/influxdb/influxdb-database-plugin plugins/database/mongodb/mongodb-database-plugin plugins/database/mssql/mssql-database-plugin plugins/database/mysql/mysql-database-plugin plugins/database/mysql/mysql-legacy-database-plugin plugins/database/postgresql/postgresql-database-plugin plugins/database/redshift/redshift-database-plugin; do
   %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
 done
 
@@ -417,172 +618,278 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %license ui/app/controllers/vault/cluster/license.js ui/app/models/license.js
 %license ui/app/routes/vault/cluster/license.js
 %license ui/app/templates/components/license-info.hbs
-%license ui/app/templates/vault/cluster/license.hbs website/LICENSE.md
-%license website/source/api/system/license.html.md
-%doc CONTRIBUTING.md CHANGELOG.md README.md
-%doc builtin/credential/cert/test-fixtures/generate.txt
-%doc physical/foundationdb/README.md plugins/database/mssql/README.md
-%doc ui/README.md ui/public/robots.txt website/README.md docs
-%doc website/source/404.html.md website/source/robots.txt
-%doc website/source/api/libraries.html.md website/source/api/overview.html.md
-%doc website/source/api/relatedtools.html.md
-%doc website/source/api/auth/index.html.md
-%doc website/source/api/auth/app-id/index.html.md
-%doc website/source/api/auth/approle/index.html.md
-%doc website/source/api/auth/aws/index.html.md
-%doc website/source/api/auth/azure/index.html.md
-%doc website/source/api/auth/cert/index.html.md
-%doc website/source/api/auth/gcp/index.html.md
-%doc website/source/api/auth/github/index.html.md
-%doc website/source/api/auth/kubernetes/index.html.md
-%doc website/source/api/auth/ldap/index.html.md
-%doc website/source/api/auth/okta/index.html.md
-%doc website/source/api/auth/radius/index.html.md
-%doc website/source/api/auth/token/index.html.md
-%doc website/source/api/auth/userpass/index.html.md
-%doc website/source/api/auth/alicloud/index.html.md
-%doc website/source/api/auth/jwt/index.html.md
-%doc website/source/api/auth/jwt/index_beta.html.md
-%doc website/source/api/secret/index.html.md
-%doc website/source/api/secret/ad/index.html.md
-%doc website/source/api/secret/aws/index.html.md
-%doc website/source/api/secret/cassandra/index.html.md
-%doc website/source/api/secret/consul/index.html.md
-%doc website/source/api/secret/cubbyhole/index.html.md
-%doc website/source/api/secret/databases/cassandra.html.md
-%doc website/source/api/secret/databases/hanadb.html.md
-%doc website/source/api/secret/databases/index.html.md
-%doc website/source/api/secret/databases/influxdb.html.md
-%doc website/source/api/secret/databases/mongodb.html.md
-%doc website/source/api/secret/databases/mssql.html.md
-%doc website/source/api/secret/databases/mysql-maria.html.md
-%doc website/source/api/secret/databases/oracle.html.md
-%doc website/source/api/secret/databases/postgresql.html.md
-%doc website/source/api/secret/gcp/index.html.md
-%doc website/source/api/secret/identity/entity-alias.html.md
-%doc website/source/api/secret/identity/entity.html.md
-%doc website/source/api/secret/identity/group-alias.html.md
-%doc website/source/api/secret/identity/group.html.md
-%doc website/source/api/secret/identity/identity-groups.html.md
-%doc website/source/api/secret/identity/index.html.md
-%doc website/source/api/secret/identity/lookup.html.md
-%doc website/source/api/secret/kv/index.html.md
-%doc website/source/api/secret/kv/kv-v1.html.md
-%doc website/source/api/secret/kv/kv-v2.html.md
-%doc website/source/api/secret/mongodb/index.html.md
-%doc website/source/api/secret/mssql/index.html.md
-%doc website/source/api/secret/mysql/index.html.md
-%doc website/source/api/secret/nomad/index.html.md
-%doc website/source/api/secret/pki/index.html.md
-%doc website/source/api/secret/postgresql/index.html.md
-%doc website/source/api/secret/rabbitmq/index.html.md
-%doc website/source/api/secret/ssh/index.html.md
-%doc website/source/api/secret/totp/index.html.md
-%doc website/source/api/secret/transit/index.html.md
-%doc website/source/api/secret/alicloud/index.html.md
-%doc website/source/api/secret/azure/index.html.md
-%doc website/source/api/secret/gcpkms/index.html.md
-%doc website/source/api/system/init.html.md
-%doc website/source/api/system/internal-specs-openapi.html.md
-%doc website/source/api/system/key-status.html.md
-%doc website/source/api/system/leader.html.md
-%doc website/source/api/system/leases.html.md
-%doc website/source/api/system/mounts.html.md
-%doc website/source/api/system/namespaces.html.md
-%doc website/source/api/system/plugins-catalog.html.md
-%doc website/source/api/system/plugins-reload-backend.html.md
-%doc website/source/api/system/policies.html.md
-%doc website/source/api/system/policy.html.md
-%doc website/source/api/system/raw.html.md
-%doc website/source/api/system/rekey-recovery-key.html.md
-%doc website/source/api/system/rekey.html.md
-%doc website/source/api/system/remount.html.md
-%doc website/source/api/system/rotate.html.md
-%doc website/source/api/system/seal-status.html.md
-%doc website/source/api/system/seal.html.md
-%doc website/source/api/system/step-down.html.md
-%doc website/source/api/system/tools.html.md
-%doc website/source/api/system/unseal.html.md
-%doc website/source/api/system/wrapping-lookup.html.md
-%doc website/source/api/system/wrapping-rewrap.html.md
-%doc website/source/api/system/wrapping-unwrap.html.md
-%doc website/source/api/system/wrapping-wrap.html.md
-%doc website/source/api/system/audit-hash.html.md
-%doc website/source/api/system/audit.html.md
-%doc website/source/api/system/auth.html.md
-%doc website/source/api/system/capabilities-accessor.html.md
-%doc website/source/api/system/capabilities-self.html.md
-%doc website/source/api/system/capabilities.html.md
-%doc website/source/api/system/config-auditing.html.md
-%doc website/source/api/system/config-control-group.html.md
-%doc website/source/api/system/config-cors.html.md
-%doc website/source/api/system/config-ui.html.md
-%doc website/source/api/system/control-group.html.md
-%doc website/source/api/system/generate-root.html.md
-%doc website/source/api/system/health.html.md
-%doc website/source/api/system/index.html.md
-%doc website/source/api/system/internal-ui-mounts.html.md
-%doc website/source/api/system/mfa/duo.html.md
-%doc website/source/api/system/mfa/index.html.md
-%doc website/source/api/system/mfa/okta.html.md
-%doc website/source/api/system/mfa/pingid.html.md
-%doc website/source/api/system/mfa/totp.html.md
-%doc website/source/api/system/replication/index.html.md
-%doc website/source/api/system/replication/replication-dr.html.md
-%doc website/source/api/system/replication/replication-performance.html.md
-%doc website/source/guides/index.html.md
-%doc website/source/guides/encryption/index.html.md
-%doc website/source/guides/encryption/spring-demo.html.md
-%doc website/source/guides/encryption/transit-rewrap.html.md
-%doc website/source/guides/encryption/transit.html.md
-%doc website/source/guides/getting-started/index.html.md
-%doc website/source/guides/identity/approle-trusted-entities.html.md
-%doc website/source/guides/identity/authentication.html.md
-%doc website/source/guides/identity/control-groups.html.md
-%doc website/source/guides/identity/identity.html.md
-%doc website/source/guides/identity/index.html.md
-%doc website/source/guides/identity/lease.html.md
-%doc website/source/guides/identity/policies.html.md
-%doc website/source/guides/identity/policy-templating.html.md
-%doc website/source/guides/identity/secure-intro.html.md
-%doc website/source/guides/identity/sentinel.html.md
-%doc website/source/guides/operations/autounseal-aws-kms.html.md
-%doc website/source/guides/operations/deployment-guide.html.md
-%doc website/source/guides/operations/disaster-recovery.html.md
-%doc website/source/guides/operations/generate-root.html.md
-%doc website/source/guides/operations/index.html.md
-%doc website/source/guides/operations/monitoring.html.md
-%doc website/source/guides/operations/mount-filter.html.md
-%doc website/source/guides/operations/multi-tenant.html.md
-%doc website/source/guides/operations/performance-nodes.html.md
-%doc website/source/guides/operations/plugin-backends.html.md
-%doc website/source/guides/operations/production.html.md
-%doc website/source/guides/operations/reference-architecture.html.md
-%doc website/source/guides/operations/rekeying-and-rotating.html.md
-%doc website/source/guides/operations/replication.html.md
-%doc website/source/guides/operations/seal-wrap.html.md
-%doc website/source/guides/operations/vault-ha-consul.html.md
-%doc website/source/guides/secret-mgmt/app-integration.html.md
-%doc website/source/guides/secret-mgmt/cubbyhole.html.md
-%doc website/source/guides/secret-mgmt/db-root-rotation.html.md
-%doc website/source/guides/secret-mgmt/dynamic-secrets.html.md
-%doc website/source/guides/secret-mgmt/index.html.md
-%doc website/source/guides/secret-mgmt/pki-engine.html.md
-%doc website/source/guides/secret-mgmt/ssh-otp.html.md
-%doc website/source/guides/secret-mgmt/static-secrets.html.md
-%doc website/source/guides/secret-mgmt/versioned-kv.html.md
-%doc website/source/intro/getting-started/apis.html.md
-%doc website/source/intro/getting-started/authentication.html.md
-%doc website/source/intro/getting-started/deploy.html.md
-%doc website/source/intro/getting-started/dev-server.html.md
-%doc website/source/intro/getting-started/dynamic-secrets.html.md
-%doc website/source/intro/getting-started/first-secret.html.md
-%doc website/source/intro/getting-started/help.html.md
-%doc website/source/intro/getting-started/index.html.md
-%doc website/source/intro/getting-started/next-steps.html.md
-%doc website/source/intro/getting-started/policies.html.md
-%doc website/source/intro/getting-started/secrets-engines.html.md
-%doc terraform/aws/README.md
+%license ui/app/templates/vault/cluster/license.hbs
+%license website/content/api-docs/system/license.mdx
+%doc CHANGELOG.md CONTRIBUTING.md README.md api/README.md
+%doc builtin/credential/cert/test-fixtures/generate.txt command/agent/README.md
+%doc physical/foundationdb/README.md plugins/database/mongodb/README.md
+%doc plugins/database/mssql/README.md ui/MODULE_REPORT.md ui/README.md
+%doc ui/lib/core/addon/helpers/changelog-url-for.js
+%doc ui/lib/core/app/helpers/changelog-url-for.js
+%doc ui/lib/core/stories/alert-banner.md ui/lib/core/stories/alert-inline.md
+%doc ui/lib/core/stories/box-radio.md ui/lib/core/stories/chevron.md
+%doc ui/lib/core/stories/confirm-action.md ui/lib/core/stories/confirm.md
+%doc ui/lib/core/stories/doc-link.md ui/lib/core/stories/empty-state.md
+%doc ui/lib/core/stories/form-field-groups.md ui/lib/core/stories/form-field.md
+%doc ui/lib/core/stories/form-save-buttons.md ui/lib/core/stories/icon.md
+%doc ui/lib/core/stories/info-table-row.md ui/lib/core/stories/info-table.md
+%doc ui/lib/core/stories/layout-loading.md ui/lib/core/stories/list-view.md
+%doc ui/lib/core/stories/masked-input.md ui/lib/core/stories/message-error.md
+%doc ui/lib/core/stories/message.md ui/lib/core/stories/popup-menu.md
+%doc ui/lib/core/stories/search-select.md ui/lib/core/stories/select.md
+%doc ui/lib/core/stories/toggle-button.md ui/lib/core/stories/ttl-form.md
+%doc ui/lib/core/stories/ttl-picker.md ui/lib/core/stories/ttl-picker2.md
+%doc ui/lib/core/stories/vault-logo-spinner.md
+%doc ui/lib/core/stories/toolbar/toolbar-actions.md
+%doc ui/lib/core/stories/toolbar/toolbar-download-button.md
+%doc ui/lib/core/stories/toolbar/toolbar-filters.md
+%doc ui/lib/core/stories/toolbar/toolbar-link.md
+%doc ui/lib/core/stories/toolbar/toolbar-secret-link.md
+%doc ui/lib/core/stories/toolbar/toolbar.md ui/public/robots.txt
+%doc ui/stories/alert-popup.md ui/stories/auth-form.md
+%doc ui/stories/file-to-array-buffer.md ui/stories/selectable-card.md
+%doc ui/stories/toggle.md ui/stories/auth-config-form/config.md
+%doc ui/stories/auth-config-form/options.md website/README.md
+%doc website/components/columns/README.md
+%doc website/components/inline-tag/README.md docs website/content/security.mdx
+%doc website/content/api-docs/index.mdx website/content/api-docs/libraries.mdx
+%doc website/content/api-docs/relatedtools.mdx
+%doc website/content/api-docs/auth/alicloud.mdx
+%doc website/content/api-docs/auth/app-id.mdx
+%doc website/content/api-docs/auth/approle.mdx
+%doc website/content/api-docs/auth/aws.mdx
+%doc website/content/api-docs/auth/azure.mdx
+%doc website/content/api-docs/auth/cert.mdx website/content/api-docs/auth/cf.mdx
+%doc website/content/api-docs/auth/gcp.mdx
+%doc website/content/api-docs/auth/github.mdx
+%doc website/content/api-docs/auth/index.mdx
+%doc website/content/api-docs/auth/jwt.mdx
+%doc website/content/api-docs/auth/kerberos.mdx
+%doc website/content/api-docs/auth/kubernetes.mdx
+%doc website/content/api-docs/auth/ldap.mdx
+%doc website/content/api-docs/auth/oci.mdx
+%doc website/content/api-docs/auth/okta.mdx
+%doc website/content/api-docs/auth/radius.mdx
+%doc website/content/api-docs/auth/token.mdx
+%doc website/content/api-docs/auth/userpass.mdx
+%doc website/content/api-docs/secret/ad.mdx
+%doc website/content/api-docs/secret/alicloud.mdx
+%doc website/content/api-docs/secret/aws.mdx
+%doc website/content/api-docs/secret/azure.mdx
+%doc website/content/api-docs/secret/cassandra.mdx
+%doc website/content/api-docs/secret/consul.mdx
+%doc website/content/api-docs/secret/cubbyhole.mdx
+%doc website/content/api-docs/secret/gcp.mdx
+%doc website/content/api-docs/secret/gcpkms.mdx
+%doc website/content/api-docs/secret/index.mdx
+%doc website/content/api-docs/secret/key-management.mdx
+%doc website/content/api-docs/secret/kmip.mdx
+%doc website/content/api-docs/secret/mongodbatlas.mdx
+%doc website/content/api-docs/secret/nomad.mdx
+%doc website/content/api-docs/secret/openldap.mdx
+%doc website/content/api-docs/secret/pki.mdx
+%doc website/content/api-docs/secret/rabbitmq.mdx
+%doc website/content/api-docs/secret/ssh.mdx
+%doc website/content/api-docs/secret/terraform.mdx
+%doc website/content/api-docs/secret/totp.mdx
+%doc website/content/api-docs/secret/transform.mdx
+%doc website/content/api-docs/secret/transit.mdx
+%doc website/content/api-docs/secret/databases/cassandra.mdx
+%doc website/content/api-docs/secret/databases/couchbase.mdx
+%doc website/content/api-docs/secret/databases/elasticdb.mdx
+%doc website/content/api-docs/secret/databases/hanadb.mdx
+%doc website/content/api-docs/secret/databases/index.mdx
+%doc website/content/api-docs/secret/databases/influxdb.mdx
+%doc website/content/api-docs/secret/databases/mongodb.mdx
+%doc website/content/api-docs/secret/databases/mongodbatlas.mdx
+%doc website/content/api-docs/secret/databases/mssql.mdx
+%doc website/content/api-docs/secret/databases/mysql-maria.mdx
+%doc website/content/api-docs/secret/databases/oracle.mdx
+%doc website/content/api-docs/secret/databases/postgresql.mdx
+%doc website/content/api-docs/secret/databases/redshift.mdx
+%doc website/content/api-docs/secret/databases/snowflake.mdx
+%doc website/content/api-docs/secret/identity/entity-alias.mdx
+%doc website/content/api-docs/secret/identity/entity.mdx
+%doc website/content/api-docs/secret/identity/group-alias.mdx
+%doc website/content/api-docs/secret/identity/group.mdx
+%doc website/content/api-docs/secret/identity/index.mdx
+%doc website/content/api-docs/secret/identity/lookup.mdx
+%doc website/content/api-docs/secret/identity/tokens.mdx
+%doc website/content/api-docs/secret/kv/index.mdx
+%doc website/content/api-docs/secret/kv/kv-v1.mdx
+%doc website/content/api-docs/secret/kv/kv-v2.mdx
+%doc website/content/api-docs/system/audit-hash.mdx
+%doc website/content/api-docs/system/audit.mdx
+%doc website/content/api-docs/system/auth.mdx
+%doc website/content/api-docs/system/capabilities-accessor.mdx
+%doc website/content/api-docs/system/capabilities-self.mdx
+%doc website/content/api-docs/system/capabilities.mdx
+%doc website/content/api-docs/system/config-auditing.mdx
+%doc website/content/api-docs/system/config-control-group.mdx
+%doc website/content/api-docs/system/config-cors.mdx
+%doc website/content/api-docs/system/config-state.mdx
+%doc website/content/api-docs/system/config-ui.mdx
+%doc website/content/api-docs/system/control-group.mdx
+%doc website/content/api-docs/system/generate-recovery-token.mdx
+%doc website/content/api-docs/system/generate-root.mdx
+%doc website/content/api-docs/system/health.mdx
+%doc website/content/api-docs/system/host-info.mdx
+%doc website/content/api-docs/system/index.mdx
+%doc website/content/api-docs/system/init.mdx
+%doc website/content/api-docs/system/internal-counters.mdx
+%doc website/content/api-docs/system/internal-specs-openapi.mdx
+%doc website/content/api-docs/system/internal-ui-feature.mdx
+%doc website/content/api-docs/system/internal-ui-mounts.mdx
+%doc website/content/api-docs/system/key-status.mdx
+%doc website/content/api-docs/system/leader.mdx
+%doc website/content/api-docs/system/lease-count-quotas.mdx
+%doc website/content/api-docs/system/leases.mdx
+%doc website/content/api-docs/system/metrics.mdx
+%doc website/content/api-docs/system/monitor.mdx
+%doc website/content/api-docs/system/mounts.mdx
+%doc website/content/api-docs/system/namespaces.mdx
+%doc website/content/api-docs/system/plugins-catalog.mdx
+%doc website/content/api-docs/system/plugins-reload-backend.mdx
+%doc website/content/api-docs/system/policies-password.mdx
+%doc website/content/api-docs/system/policies.mdx
+%doc website/content/api-docs/system/policy.mdx
+%doc website/content/api-docs/system/pprof.mdx
+%doc website/content/api-docs/system/quotas-config.mdx
+%doc website/content/api-docs/system/rate-limit-quotas.mdx
+%doc website/content/api-docs/system/raw.mdx
+%doc website/content/api-docs/system/rekey-recovery-key.mdx
+%doc website/content/api-docs/system/rekey.mdx
+%doc website/content/api-docs/system/remount.mdx
+%doc website/content/api-docs/system/rotate-config.mdx
+%doc website/content/api-docs/system/rotate.mdx
+%doc website/content/api-docs/system/seal-status.mdx
+%doc website/content/api-docs/system/seal.mdx
+%doc website/content/api-docs/system/sealwrap-rewrap.mdx
+%doc website/content/api-docs/system/step-down.mdx
+%doc website/content/api-docs/system/tools.mdx
+%doc website/content/api-docs/system/unseal.mdx
+%doc website/content/api-docs/system/wrapping-lookup.mdx
+%doc website/content/api-docs/system/wrapping-rewrap.mdx
+%doc website/content/api-docs/system/wrapping-unwrap.mdx
+%doc website/content/api-docs/system/wrapping-wrap.mdx
+%doc website/content/api-docs/system/mfa/duo.mdx
+%doc website/content/api-docs/system/mfa/index.mdx
+%doc website/content/api-docs/system/mfa/okta.mdx
+%doc website/content/api-docs/system/mfa/pingid.mdx
+%doc website/content/api-docs/system/mfa/totp.mdx
+%doc website/content/api-docs/system/replication/index.mdx
+%doc website/content/api-docs/system/replication/replication-dr.mdx
+%doc website/content/api-docs/system/replication/replication-performance.mdx
+%doc website/content/api-docs/system/storage/index.mdx
+%doc website/content/api-docs/system/storage/raft.mdx
+%doc website/content/api-docs/system/storage/raftautosnapshots.mdx
+%doc website/content/guides/getting-started.mdx website/content/guides/index.mdx
+%doc website/content/guides/encryption/index.mdx
+%doc website/content/guides/encryption/spring-demo.mdx
+%doc website/content/guides/encryption/transit-rewrap.mdx
+%doc website/content/guides/encryption/transit.mdx
+%doc website/content/guides/identity/approle-trusted-entities.mdx
+%doc website/content/guides/identity/authentication.mdx
+%doc website/content/guides/identity/control-groups.mdx
+%doc website/content/guides/identity/identity.mdx
+%doc website/content/guides/identity/index.mdx
+%doc website/content/guides/identity/lease.mdx
+%doc website/content/guides/identity/policies.mdx
+%doc website/content/guides/identity/policy-templating.mdx
+%doc website/content/guides/identity/secure-intro.mdx
+%doc website/content/guides/identity/sentinel.mdx
+%doc website/content/guides/operations/autounseal-aws-kms.mdx
+%doc website/content/guides/operations/deployment-guide.mdx
+%doc website/content/guides/operations/disaster-recovery.mdx
+%doc website/content/guides/operations/generate-root.mdx
+%doc website/content/guides/operations/index.mdx
+%doc website/content/guides/operations/monitoring.mdx
+%doc website/content/guides/operations/mount-filter.mdx
+%doc website/content/guides/operations/multi-tenant.mdx
+%doc website/content/guides/operations/performance-nodes.mdx
+%doc website/content/guides/operations/plugin-backends.mdx
+%doc website/content/guides/operations/production.mdx
+%doc website/content/guides/operations/reference-architecture.mdx
+%doc website/content/guides/operations/rekeying-and-rotating.mdx
+%doc website/content/guides/operations/replication.mdx
+%doc website/content/guides/operations/seal-wrap.mdx
+%doc website/content/guides/operations/vault-ha-consul.mdx
+%doc website/content/guides/secret-mgmt/app-integration.mdx
+%doc website/content/guides/secret-mgmt/cubbyhole.mdx
+%doc website/content/guides/secret-mgmt/db-root-rotation.mdx
+%doc website/content/guides/secret-mgmt/dynamic-secrets.mdx
+%doc website/content/guides/secret-mgmt/index.mdx
+%doc website/content/guides/secret-mgmt/pki-engine.mdx
+%doc website/content/guides/secret-mgmt/ssh-otp.mdx
+%doc website/content/guides/secret-mgmt/static-secrets.mdx
+%doc website/content/guides/secret-mgmt/versioned-kv.mdx
+%doc website/content/intro/index.mdx
+%doc website/content/intro/getting-started/apis.mdx
+%doc website/content/intro/getting-started/authentication.mdx
+%doc website/content/intro/getting-started/deploy.mdx
+%doc website/content/intro/getting-started/dev-server.mdx
+%doc website/content/intro/getting-started/dynamic-secrets.mdx
+%doc website/content/intro/getting-started/first-secret.mdx
+%doc website/content/intro/getting-started/help.mdx
+%doc website/content/intro/getting-started/index.mdx
+%doc website/content/intro/getting-started/next-steps.mdx
+%doc website/content/intro/getting-started/policies.mdx
+%doc website/content/intro/getting-started/secrets-engines.mdx
+%doc website/content/partials/aws-auth-metadata-fix.mdx
+%doc website/content/partials/aws-auth-metadata-issue.mdx
+%doc website/content/partials/aws-imds-timeout-upgrade.mdx
+%doc website/content/partials/aws-imds-timeout.mdx
+%doc website/content/partials/aws-invalid-header-fix.mdx
+%doc website/content/partials/aws-invalid-header.mdx
+%doc website/content/partials/aws-sts-issue.mdx
+%doc website/content/partials/builds-without-ui.mdx
+%doc website/content/partials/enterprise-licenses.mdx
+%doc website/content/partials/ldap-upndomain-issue.mdx
+%doc website/content/partials/okta-group-pagination.mdx
+%doc website/content/partials/primary-cluster-addr-change.mdx
+%doc website/content/partials/tokenfields.mdx
+%doc website/content/partials/tokenstorefields.mdx docs docs changelog/10072.txt
+%doc changelog/10077.txt changelog/10131.txt changelog/10231.txt
+%doc changelog/10365.txt changelog/10375.txt changelog/10384.txt
+%doc changelog/10386.txt changelog/10416.txt changelog/10417.txt
+%doc changelog/10424.txt changelog/10433.txt changelog/10444.txt
+%doc changelog/10456.txt changelog/10487.txt changelog/10489.txt
+%doc changelog/10490.txt changelog/10491.txt changelog/10498.txt
+%doc changelog/10514.txt changelog/10520.txt changelog/10536.txt
+%doc changelog/10537.txt changelog/10546.txt changelog/10556.txt
+%doc changelog/10558.txt changelog/10579.txt changelog/10588.txt
+%doc changelog/10596.txt changelog/10603.txt changelog/10609.txt
+%doc changelog/10613.txt changelog/10644.txt changelog/10650.txt
+%doc changelog/10653.txt changelog/10655.txt changelog/10677.txt
+%doc changelog/10684.txt changelog/10689.txt changelog/10705.txt
+%doc changelog/10708.txt changelog/10725.txt changelog/10726.txt
+%doc changelog/10730.txt changelog/10743.txt changelog/10744.txt
+%doc changelog/10756.txt changelog/10757.txt changelog/10758.txt
+%doc changelog/10759.txt changelog/10766.txt changelog/10767.txt
+%doc changelog/10812.txt changelog/10826.txt changelog/10833.txt
+%doc changelog/10834.txt changelog/10848.txt changelog/10850.txt
+%doc changelog/10855.txt changelog/10858.txt changelog/10877.txt
+%doc changelog/10901.txt changelog/10904.txt changelog/10906.txt
+%doc changelog/10919.txt changelog/10927.txt changelog/10931.txt
+%doc changelog/10938.txt changelog/10942.txt changelog/10949.txt
+%doc changelog/10951.txt changelog/10952.txt changelog/10953.txt
+%doc changelog/10964.txt changelog/10980.txt changelog/10982.txt
+%doc changelog/10992.txt changelog/10995.txt changelog/10996.txt
+%doc changelog/10997.txt changelog/11011.txt changelog/11015.txt
+%doc changelog/11018.txt changelog/11022.txt changelog/11060.txt
+%doc changelog/11094.txt changelog/11113.txt changelog/11119.txt
+%doc changelog/11127.txt changelog/11142.txt changelog/11173.txt
+%doc changelog/11182.txt changelog/11213.txt changelog/11226.txt
+%doc changelog/9972.txt changelog/README.md changelog/_ 1686.txt
+%doc changelog/_1622.txt changelog/_1633.txt changelog/_1637.txt
+%doc changelog/_1642.txt changelog/_1656.txt changelog/_1659.txt
+%doc changelog/_1663.txt changelog/_1680.txt changelog/_1705.txt
+%doc changelog/_1712.txt changelog/_1739.txt changelog/_2021Jan20.txt
+%doc changelog/_2021Jan26.txt changelog/changelog.tmpl
+%doc dependencies/2-25-21/deps-upgrade-output.txt
+%doc dependencies/2-25-21/deps-upgrade.txt internalshared/README.md
+%doc sdk/README.md sdk/database/dbplugin/README.md sdk/queue/README.md
+%doc serviceregistration/kubernetes/testing/README.md terraform/README.md
 %{_bindir}/*
 
 %gopkgfiles

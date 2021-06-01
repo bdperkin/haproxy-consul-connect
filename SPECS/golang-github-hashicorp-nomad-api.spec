@@ -3,7 +3,7 @@
 
 # https://github.com/hashicorp/nomad
 %global goipath         github.com/hashicorp/nomad/api
-Version:                1.1.0
+%global commit          19792e5a6bec9842f4d3ae904a317b0e2db0d182
 
 %gometa
 
@@ -13,9 +13,8 @@ Version:                1.1.0
 %global golicenses      LICENSE command/license.go command/license_get.go\\\
                         command/license_get_test.go helper/exptime/LICENSE.md\\\
                         website/LICENSE.md website/content/api-\\\
-                        docs/operator/license.mdx\\\
-                        website/content/docs/enterprise/license.mdx
-%global godocs          README.md CHANGELOG.md client/allocdir/input/test.txt\\\
+                        docs/operator/license.mdx
+%global godocs          CHANGELOG.md README.md client/allocdir/input/test.txt\\\
                         contributing/README.md contributing/checklist-\\\
                         command.md contributing/checklist-jobspec.md\\\
                         contributing/checklist-rpc-endpoint.md\\\
@@ -86,10 +85,11 @@ Version:                1.1.0
                         website/content/partials/envvars.mdx\\\
                         website/content/partials/general_options.mdx website/\\\
                         content/partials/general_options_no_namespace.mdx\\\
-                        docs website/public/robots.txt dist/README.md
+                        docs website/public/robots.txt
 
 Name:           %{goname}
-Release:        1%{?dist}
+Version:        0
+Release:        0.1%{?dist}
 Summary:        None
 
 # Upstream license specification: BSD-3-Clause and MPL-2.0
@@ -289,8 +289,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %license LICENSE command/license.go command/license_get.go
 %license command/license_get_test.go helper/exptime/LICENSE.md
 %license website/LICENSE.md website/content/api-docs/operator/license.mdx
-%license website/content/docs/enterprise/license.mdx
-%doc README.md CHANGELOG.md client/allocdir/input/test.txt
+%doc CHANGELOG.md README.md client/allocdir/input/test.txt
 %doc contributing/README.md contributing/checklist-command.md
 %doc contributing/checklist-jobspec.md contributing/checklist-rpc-endpoint.md
 %doc contributing/golang.md contributing/issue-labels.md demo/csi/README.md
@@ -342,7 +341,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc website/content/partials/envvars.mdx
 %doc website/content/partials/general_options.mdx
 %doc website/content/partials/general_options_no_namespace.mdx docs
-%doc website/public/robots.txt dist/README.md
+%doc website/public/robots.txt
 %{_bindir}/*
 
 %gopkgfiles

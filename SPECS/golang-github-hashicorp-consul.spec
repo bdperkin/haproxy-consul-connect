@@ -210,8 +210,8 @@ Version:                1.9.5
                         website/content/commands/watch.mdx\\\
                         website/content/commands/acl/bootstrap.mdx\\\
                         website/content/commands/acl/index.mdx\\\
-                        website/content/commands/acl/set-agent-token.mdx\\\
                         website/content/commands/acl/translate-rules.mdx\\\
+                        website/content/commands/acl/set-agent-token.mdx\\\
                         website/content/commands/acl/auth-method/create.mdx\\\
                         website/content/commands/acl/auth-method/delete.mdx\\\
                         website/content/commands/acl/auth-method/index.mdx\\\
@@ -612,8 +612,8 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc website/content/commands/version.mdx website/content/commands/watch.mdx
 %doc website/content/commands/acl/bootstrap.mdx
 %doc website/content/commands/acl/index.mdx
-%doc website/content/commands/acl/set-agent-token.mdx
 %doc website/content/commands/acl/translate-rules.mdx
+%doc website/content/commands/acl/set-agent-token.mdx
 %doc website/content/commands/acl/auth-method/create.mdx
 %doc website/content/commands/acl/auth-method/delete.mdx
 %doc website/content/commands/acl/auth-method/index.mdx

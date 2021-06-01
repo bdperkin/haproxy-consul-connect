@@ -3,20 +3,20 @@
 
 # https://github.com/dgrijalva/jwt-go
 %global goipath         github.com/dgrijalva/jwt-go/v4
-Version:                3.2.0
+Version:                4.0.0~preview1
 
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Golang implementation of JSON Web Tokens (JWT).}
 
 %global golicenses      LICENSE
-%global godocs          MIGRATION_GUIDE.md VERSION_HISTORY.md README.md\\\
+%global godocs          MIGRATION_GUIDE.md README.md VERSION_HISTORY.md\\\
                         cmd/jwt/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Golang implementation of JSON Web Tokens (JWT)
 
 License:        MIT
 URL:            %{gourl}
@@ -47,7 +47,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc MIGRATION_GUIDE.md VERSION_HISTORY.md README.md cmd/jwt/README.md
+%doc MIGRATION_GUIDE.md README.md VERSION_HISTORY.md cmd/jwt/README.md
 %{_bindir}/*
 
 %gopkgfiles

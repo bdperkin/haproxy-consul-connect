@@ -8,7 +8,7 @@ Version:                1.5.7
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+VSphere Integrated Containers Engine is a container runtime for vSphere.}
 
 %global golicenses      LICENSE doc/bundle/NOTICE
 %global godocs          doc CONTRIBUTING.md OWNERS.md README.md\\\
@@ -21,7 +21,7 @@ Version:                1.5.7
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        VSphere Integrated Containers Engine is a container runtime for vSphere
 
 License:        # FIXME
 

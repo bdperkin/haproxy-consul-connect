@@ -8,14 +8,14 @@ Version:                1.11.1
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Command Line Interface for Scaleway.}
 
 %global golicenses      LICENSE.md
 %global godocs          examples README.md dist/README.md pkg/api/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Command Line Interface for Scaleway
 
 License:        MIT
 URL:            %{gourl}

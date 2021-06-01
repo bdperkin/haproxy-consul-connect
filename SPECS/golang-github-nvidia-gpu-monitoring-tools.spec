@@ -3,9 +3,7 @@
 
 # https://github.com/NVIDIA/gpu-monitoring-tools
 %global goipath         github.com/NVIDIA/gpu-monitoring-tools
-Version:                2.3.1
-%global tag             2.3.1
-%global commit          e03f8e2eea3bfd4ef38c77ea08a9395af23ebd1b
+%global commit          7fbe8db267003a42c61c152c2b3f71cec37a8a43
 
 %gometa
 
@@ -20,7 +18,8 @@ Tools for monitoring NVIDIA GPUs on Linux.}
                         exporter/templates/NOTES.txt
 
 Name:           %{goname}
-Release:        1%{?dist}
+Version:        0
+Release:        0.1%{?dist}
 Summary:        Tools for monitoring NVIDIA GPUs on Linux
 
 # Upstream license specification: Apache-2.0
