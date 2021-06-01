@@ -16,7 +16,7 @@ for PKG in $(cat packages.txt); do
     fi
     if [ "${FPATH}" == "" ]; then
         echo "Cannot determine FPATH for ${PKG}"
-        exit 1
+        continue
     fi
     TAG=$(grep -P 'data-version=".*"' ${TMPFILE} | head -1 | cut -d\" -f2)
     echo "${TAG}" | grep '-'
