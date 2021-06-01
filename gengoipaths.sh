@@ -6,7 +6,7 @@ for IPATH in $(cat packages.txt); do
     echo "========== BEGIN ${IPATH} =========="
     echo "IPATH: ${IPATH}"
 
-    NAME=$(basename ${IPATH})
+    NAME=$(basename $(echo "${IPATH}" | sed -e 's/\/v[0-9]\+$//g'))
     echo "NAME: ${NAME}"
 
     PKGGODEVFILE=$(mktemp)
@@ -17,7 +17,7 @@ for IPATH in $(cat packages.txt); do
     FPATH=$(grep -A 7 Repository ${PKGGODEVFILE} | grep -P -o '<a href=".*" ' | cut -d\" -f2 | grep -P -o "https:\/\/.*")
     if [ "${FPATH}" == "" ]; then
         echo "Cannot find FPATH"
-        exit 1
+        continue
     fi
     echo "FPATH: ${FPATH}"
 
@@ -76,6 +76,7 @@ for IPATH in $(cat packages.txt); do
                 fi
             else
                 echo "Invalid VERSION: ${DVERSION}"
+                echo "Invalid TAG: ${TAG}"
                 exit 1
             fi
         elif [ ${WORDS} -gt 2 ]; then
