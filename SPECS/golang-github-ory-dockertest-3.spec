@@ -8,7 +8,8 @@ Version:                3.6.5
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Write better integration tests! Dockertest helps you boot up ephermal docker
+images for your Go tests with minimal work.}
 
 %global golicenses      LICENSE docker/DOCKER-LICENSE docker/LICENSE
 %global godocs          docs examples README.md SECURITY.md CONTRIBUTING.md\\\
@@ -18,7 +19,7 @@ Version:                3.6.5
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Write better integration tests! Dockertest helps you boot up ephermal docker images for your Go tests with minimal work
 
 # Upstream license specification: Apache-2.0 and BSD-2-Clause
 License:        ASL 2.0 and BSD

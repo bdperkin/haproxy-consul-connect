@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Atomic is a go package for atomic file writing.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Atomic is a go package for atomic file writing
 
 License:        MIT
 URL:            %{gourl}

@@ -8,14 +8,14 @@ Version:                0.3.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Frame Streams implementation in Go.}
 
 %global golicenses      COPYRIGHT LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Frame Streams implementation in Go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

@@ -8,7 +8,7 @@ Version:                0.15.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+A Golang client for the Equinix Metal API. (Packet is now Equinix Metal).}
 
 %global golicenses      LICENSE.txt
 %global godocs          examples CHANGELOG.md CONTRIBUTING.md OWNERS.md\\\
@@ -16,7 +16,7 @@ Version:                0.15.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        A Golang client for the Equinix Metal API. (Packet is now Equinix Metal)
 
 License:        # FIXME
 

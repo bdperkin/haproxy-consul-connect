@@ -8,7 +8,7 @@ Version:                1.9.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Scalable datastore for metrics, events, and real-time analytics.}
 
 %global golicenses      LICENSE
 %global godocs          CODING_GUIDELINES.md QUERIES.md TODO.md\\\
@@ -35,7 +35,7 @@ Version:                1.9.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Scalable datastore for metrics, events, and real-time analytics
 
 License:        MIT
 URL:            %{gourl}

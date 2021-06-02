@@ -8,15 +8,14 @@ Version:                1.0.6
 %gometa
 
 %global common_description %{expand:
-An implementation of the SPOP protocol in Go.
-https://www.haproxy.org/download/2.0/doc/SPOE.txt.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          example README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        An implementation of the SPOP protocol in Go. https://www.haproxy.org/download/2.0/doc/SPOE.txt
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

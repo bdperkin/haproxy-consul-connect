@@ -9,15 +9,14 @@ Version:                1.0.10
 %gometa
 
 %global common_description %{expand:
-A simple, goroutine-safe, cache with a global TTL, a fixed size and an LRU
-eviction policy for Go (golang).}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        A simple, goroutine-safe, cache with a global TTL, a fixed size and an LRU eviction policy for Go (golang)
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}
