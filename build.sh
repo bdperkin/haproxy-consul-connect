@@ -50,6 +50,11 @@ for LINE in $(grep -v '^#' goipaths.txt | tac); do
     echo "${CMD}"
     ${CMD}
     SPEC=$(grep -H "^%global goipath         ${IPATH}$" *.spec | cut -d: -f1)
+    if [ "https://${IPATH}" != "${FORGE}" ]; then
+        ESCFORGE=$(echo ${FORGE} | sed -e 's/\//\\\//g')
+        sed -i -e '/%global forgeurl /d' ${SPEC}
+        sed -i -e "/^%global goipath .*/a %global forgeurl        ${ESCFORGE}" ${SPEC}
+    fi
     ../go2rpm-sort ${SPEC}
     popd
     pushd SOURCES
