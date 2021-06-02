@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package iptree implements radix tree data structure for IPv4 and IPv6 networks.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Package iptree implements radix tree data structure for IPv4 and IPv6 networks
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

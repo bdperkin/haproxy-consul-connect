@@ -8,14 +8,14 @@ Version:                0.6.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package limiter defines rate limiting systems.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Package limiter defines rate limiting systems
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

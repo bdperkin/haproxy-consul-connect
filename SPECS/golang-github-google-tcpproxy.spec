@@ -8,7 +8,9 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package tcpproxy lets users build TCP proxies, optionally making routing
+decisions based on HTTP/1 Host headers and the SNI hostname in TLS
+connections. Typical usage:}
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md README.md cmd/tlsrouter/README.md
@@ -16,7 +18,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Package tcpproxy lets users build TCP proxies, optionally making routing decisions based on HTTP/1 Host headers and the SNI hostname in TLS connections
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

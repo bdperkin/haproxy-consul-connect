@@ -8,14 +8,17 @@ Version:                1.2.3
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package buntdb implements a low-level in-memory key/value store in pure Go. It
+persists to disk, is ACID compliant, and uses locking for multiple readers and
+a single writer. Bunt is ideal for projects that need a dependable database,
+and favor speed over data size.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Package buntdb implements a low-level in-memory key/value store in pure Go
 
 License:        MIT
 URL:            %{gourl}

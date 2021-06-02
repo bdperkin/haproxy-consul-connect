@@ -8,14 +8,15 @@ Version:                1.0.3
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+See reference at https://sldn.softlayer.com/article/object-filters. Examples
+in the README.md file and in the examples directory.}
 
 %global golicenses      LICENSE
 %global godocs          examples README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        See reference at https://sldn
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

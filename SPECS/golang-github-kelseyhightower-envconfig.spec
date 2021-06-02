@@ -8,14 +8,16 @@ Version:                1.4.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package envconfig implements decoding of environment variables based on a user
+defined specification. A typical use is using environment variables for
+configuration settings.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Package envconfig implements decoding of environment variables based on a user defined specification
 
 License:        MIT
 URL:            %{gourl}

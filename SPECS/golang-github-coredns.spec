@@ -8,7 +8,7 @@ Version:                1.8.4
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package dnsutil contains DNS related helper functions.}
 
 %global golicenses      LICENSE
 %global godocs          ADOPTERS.md CODE_OF_CONDUCT.md CONTRIBUTING.md\\\
@@ -69,7 +69,7 @@ Version:                1.8.4
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Package dnsutil contains DNS related helper functions
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

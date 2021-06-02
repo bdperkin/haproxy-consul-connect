@@ -9,7 +9,7 @@ Version:                3.5.0~beta.4
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package ctlv2 contains the main entry point for the etcdctl for v2 API.}
 
 %global golicenses      LICENSE api/LICENSE client/pkg/LICENSE\\\
                         client/v2/LICENSE client/v3/LICENSE etcdctl/LICENSE\\\
@@ -36,7 +36,7 @@ Version:                3.5.0~beta.4
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Package ctlv2 contains the main entry point for the etcdctl for v2 API
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

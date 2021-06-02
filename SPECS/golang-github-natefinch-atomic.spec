@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+package atomic provides functions to atomically change files.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        package atomic provides functions to atomically change files
 
 License:        MIT
 URL:            %{gourl}

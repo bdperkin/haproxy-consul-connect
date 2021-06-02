@@ -11,7 +11,8 @@ Version:                2.305.0~beta.4
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package client provides bindings for the etcd APIs. Create a Config and
+exchange it for a Client:}
 
 %global golicenses      LICENSE api/LICENSE client/pkg/LICENSE\\\
                         client/v2/LICENSE client/v3/LICENSE etcdctl/LICENSE\\\
@@ -38,7 +39,7 @@ Version:                2.305.0~beta.4
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Package client provides bindings for the etcd APIs
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

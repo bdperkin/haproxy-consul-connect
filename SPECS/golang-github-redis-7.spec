@@ -9,14 +9,14 @@ Version:                7.4.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package redis implements a Redis client.}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Package redis implements a Redis client
 
 # Upstream license specification: BSD-2-Clause
 License:        BSD

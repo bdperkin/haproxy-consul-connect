@@ -8,7 +8,8 @@ Version:                0.15.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package packngo implements the Equinix Metal API documented at
+https://metal.equinix.com/developers/api.}
 
 %global golicenses      LICENSE.txt
 %global godocs          examples CHANGELOG.md CONTRIBUTING.md OWNERS.md\\\
@@ -16,7 +17,7 @@ Version:                0.15.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Package packngo implements the Equinix Metal API documented at https://metal
 
 License:        # FIXME
 

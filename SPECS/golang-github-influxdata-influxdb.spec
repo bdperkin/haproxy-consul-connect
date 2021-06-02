@@ -8,7 +8,7 @@ Version:                1.9.1
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package client (v2) is the current official Go client for InfluxDB.}
 
 %global golicenses      LICENSE
 %global godocs          CODING_GUIDELINES.md QUERIES.md TODO.md\\\
@@ -35,7 +35,7 @@ Version:                1.9.1
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Package client (v2) is the current official Go client for InfluxDB
 
 License:        MIT
 URL:            %{gourl}

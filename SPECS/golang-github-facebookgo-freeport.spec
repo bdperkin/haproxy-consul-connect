@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package freeport provides an API to find a free port to bind to.}
 
 %global golicenses      license
 %global godocs          readme.md
@@ -16,7 +16,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Package freeport provides an API to find a free port to bind to
 
 # Upstream license specification: BSD-3-Clause
 License:        BSD

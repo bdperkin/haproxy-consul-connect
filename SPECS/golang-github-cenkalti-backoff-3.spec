@@ -9,14 +9,15 @@ Version:                3.2.2
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package backoff implements backoff algorithms for retrying operations. Use
+Retry function for retrying operations that may fail.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Package backoff implements backoff algorithms for retrying operations
 
 License:        MIT
 URL:            %{gourl}

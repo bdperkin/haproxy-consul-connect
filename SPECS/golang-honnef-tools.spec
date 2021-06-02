@@ -9,7 +9,7 @@ Version:                0.2.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+staticcheck analyses Go code and makes it better.}
 
 %global golicenses      LICENSE LICENSE-THIRD-PARTY go/gcsizes/LICENSE\\\
                         go/ir/LICENSE
@@ -18,7 +18,7 @@ Version:                0.2.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        staticcheck analyses Go code and makes it better
 
 # Upstream license specification: BSD-3-Clause and MIT
 License:        BSD and MIT

@@ -9,7 +9,9 @@ Version:                3.0.75
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package elastic provides an interface to the Elasticsearch server
+(http://www.elasticsearch.org/). The first thing you do is to create a Client.
+If you have Elasticsearch}
 
 %global golicenses      LICENSE backoff/LICENSE uritemplates/LICENSE
 %global godocs          CHANGELOG-3.0.md CODE_OF_CONDUCT.md ISSUE_TEMPLATE.md\\\
@@ -18,7 +20,7 @@ Version:                3.0.75
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Package elastic provides an interface to the Elasticsearch server (http://www
 
 License:        MIT
 URL:            %{gourl}

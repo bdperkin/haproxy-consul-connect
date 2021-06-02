@@ -8,14 +8,14 @@ Version:                1.11.1
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Package api contains client and functions to interact with Scaleway API}
 
 %global golicenses      LICENSE.md
 %global godocs          examples README.md dist/README.md pkg/api/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Package api contains client and functions to interact with Scaleway API
 
 License:        MIT
 URL:            %{gourl}

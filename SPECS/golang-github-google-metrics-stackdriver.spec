@@ -8,14 +8,15 @@ Version:                0.2.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Copyright 2019 Google LLC Licensed under the Apache License, Version 2.0 (the
+"License");}
 
 %global golicenses      LICENSE
 %global godocs          example CONTRIBUTING.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Copyright 2019 Google LLC Licensed under the Apache License, Version 2
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
