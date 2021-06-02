@@ -9,7 +9,9 @@ Version:                0.34.0
 %gometa
 
 %global common_description %{expand:
-Google Cloud Client Libraries for Go.}
+Package metadata provides access to Google Compute Engine (GCE) metadata and
+API service accounts. This package is a wrapper around the GCE metadata
+service,}
 
 %global golicenses      LICENSE license_test.go
 %global godocs          CODE_OF_CONDUCT.md AUTHORS CONTRIBUTING.md\\\
@@ -22,7 +24,7 @@ Google Cloud Client Libraries for Go.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Google Cloud Client Libraries for Go
+Summary:        Package metadata provides access to Google Compute Engine (GCE) metadata and API service accounts
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

@@ -8,14 +8,14 @@ Version:                0.168.1
 %gometa
 
 %global common_description %{expand:
-Deliver Go binaries as fast and easily as possible.}
+# FIXME}
 
 %global golicenses      LICENSE.md
 %global godocs          CODE_OF_CONDUCT.md CONTRIBUTING.md README.md docs
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Deliver Go binaries as fast and easily as possible
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

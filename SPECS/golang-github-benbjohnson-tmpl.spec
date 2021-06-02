@@ -8,14 +8,14 @@ Version:                1.1.0
 %gometa
 
 %global common_description %{expand:
-Command line interface to Go's text/template library.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Command line interface to Go's text/template library
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

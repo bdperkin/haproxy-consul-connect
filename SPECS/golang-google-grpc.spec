@@ -9,7 +9,9 @@ Version:                1.13.0
 %gometa
 
 %global common_description %{expand:
-The Go language implementation of gRPC. HTTP/2 based RPC.}
+Package transport defines and implements message oriented communication
+channel to complete various transactions (e.g., an RPC). It is meant for
+grpc-internal usage and is not intended to be imported directly by users.}
 
 %global golicenses      LICENSE
 %global godocs          examples AUTHORS CONTRIBUTING.md README.md\\\
@@ -25,7 +27,7 @@ The Go language implementation of gRPC. HTTP/2 based RPC.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        The Go language implementation of gRPC. HTTP/2 based RPC
+Summary:        Package transport defines and implements message oriented communication channel to complete various transactions (e
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

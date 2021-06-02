@@ -9,14 +9,14 @@ Version:                0.21.1
 %gometa
 
 %global common_description %{expand:
-Kubelet component configs.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md code-of-conduct.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Kubelet component configs
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

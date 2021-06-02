@@ -9,7 +9,7 @@
 %gometa
 
 %global common_description %{expand:
-Tencent Cloud API 3.0 SDK for Golang.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          examples CHANGELOG.md README.md products.md
@@ -17,7 +17,7 @@ Tencent Cloud API 3.0 SDK for Golang.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Tencent Cloud API 3.0 SDK for Golang
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

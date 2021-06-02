@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Basic terminal cursor manipulation.}
+# FIXME}
 
 %global golicenses      LICENSE.md
 %global godocs          README.md
@@ -16,7 +16,7 @@ Basic terminal cursor manipulation.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Basic terminal cursor manipulation
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

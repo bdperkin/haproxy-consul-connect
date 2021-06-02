@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Go generated proto packages.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          AUTHORS README.md
@@ -16,7 +16,7 @@ Go generated proto packages.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Go generated proto packages
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

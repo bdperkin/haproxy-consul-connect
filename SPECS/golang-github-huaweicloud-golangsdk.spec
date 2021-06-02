@@ -8,8 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Golangsdk: this is a sdk only using by inner projects. please refer to
-https://github.com/huaweicloud/huaweicloud-sdk-go.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md FAQ.md MIGRATING.md README.md\\\
@@ -24,7 +23,7 @@ https://github.com/huaweicloud/huaweicloud-sdk-go.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Golangsdk: this is a sdk only using by inner projects. please refer to https://github.com/huaweicloud/huaweicloud-sdk-go
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

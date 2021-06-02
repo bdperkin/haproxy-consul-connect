@@ -8,8 +8,8 @@ Version:                0.6.1
 %gometa
 
 %global common_description %{expand:
-Notary is a project that allows anyone to have trust over arbitrary collections
-of data.}
+Package client implements everything required for interacting with a Notary
+repository.}
 
 %global golicenses      LICENSE tuf/LICENSE
 %global godocs          docs CONTRIBUTING.md CONTRIBUTORS\\\
@@ -21,7 +21,7 @@ of data.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Notary is a project that allows anyone to have trust over arbitrary collections of data
+Summary:        Package client implements everything required for interacting with a Notary repository
 
 # Upstream license specification: Apache-2.0 and BSD-3-Clause
 License:        ASL 2.0 and BSD

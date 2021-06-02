@@ -8,7 +8,7 @@ Version:                1.0.2
 %gometa
 
 %global common_description %{expand:
-OCI Runtime Specification.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          ChangeLog GOVERNANCE.md RELEASES.md bundle.md config-\\\
@@ -19,7 +19,7 @@ OCI Runtime Specification.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        OCI Runtime Specification
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
