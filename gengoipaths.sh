@@ -36,6 +36,14 @@ for IPATH in $(cat packages.txt); do
         continue
     fi
 
+    grep "^${DMODPATH}," goipaths-overrides.txt
+    if [ $? -eq 0 ]; then
+        echo -n "OVERRIDE: "
+        LINE=$(grep "^${DMODPATH}," goipaths-overrides.txt)
+        echo "${LINE}" | tee -a goipaths.txt
+        continue
+    fi
+
     VERSION=$(echo ${DVERSION} | sed -e 's/^v//g')
     echo "VERSION: ${VERSION}"
 
