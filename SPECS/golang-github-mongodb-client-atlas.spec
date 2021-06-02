@@ -8,7 +8,7 @@ Version:                0.3.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Go Client for MongoDB Atlas.}
 
 %global golicenses      LICENSE
 %global godocs          CODEOWNERS.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -16,7 +16,7 @@ Version:                0.3.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Go Client for MongoDB Atlas
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

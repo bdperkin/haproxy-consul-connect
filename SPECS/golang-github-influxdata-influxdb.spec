@@ -8,7 +8,7 @@ Version:                1.9.1
 %gometa
 
 %global common_description %{expand:
-Package client (v2) is the current official Go client for InfluxDB.}
+Scalable datastore for metrics, events, and real-time analytics.}
 
 %global golicenses      LICENSE
 %global godocs          CODING_GUIDELINES.md QUERIES.md TODO.md\\\
@@ -35,7 +35,7 @@ Package client (v2) is the current official Go client for InfluxDB.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package client (v2) is the current official Go client for InfluxDB
+Summary:        Scalable datastore for metrics, events, and real-time analytics
 
 License:        MIT
 URL:            %{gourl}

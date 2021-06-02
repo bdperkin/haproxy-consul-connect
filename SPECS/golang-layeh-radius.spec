@@ -9,7 +9,7 @@
 %gometa
 
 %global common_description %{expand:
-Package radius provides a RADIUS client and server (RFC 2865, RFC 2866).}
+A Go (golang) RADIUS client and server implementation.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -17,7 +17,7 @@ Package radius provides a RADIUS client and server (RFC 2865, RFC 2866).}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Package radius provides a RADIUS client and server (RFC 2865, RFC 2866)
+Summary:        A Go (golang) RADIUS client and server implementation
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

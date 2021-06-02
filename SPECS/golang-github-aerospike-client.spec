@@ -8,8 +8,7 @@ Version:                4.5.2
 %gometa
 
 %global common_description %{expand:
-Package aerospike provides a client to connect and interact with an Aerospike
-cluster. This is the official Go implementation of the Aerospike Client.}
+Aerospike Client Go.}
 
 %global golicenses      LICENSE pkg/bcrypt/LICENSE
 %global godocs          docs examples CHANGELOG.md README.md\\\
@@ -17,7 +16,7 @@ cluster. This is the official Go implementation of the Aerospike Client.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package aerospike provides a client to connect and interact with an Aerospike cluster
+Summary:        Aerospike Client Go
 
 # Upstream license specification: Apache-2.0 and BSD-3-Clause
 License:        ASL 2.0 and BSD

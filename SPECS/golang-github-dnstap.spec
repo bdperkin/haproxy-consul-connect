@@ -8,14 +8,15 @@ Version:                0.4.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Flexible, structured event replication format for DNS servers (command-line
+tool and Golang package).}
 
 %global golicenses      COPYRIGHT LICENSE dnstap.pb/LICENSE
 %global godocs          README dnstap.pb/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Flexible, structured event replication format for DNS servers (command-line tool and Golang package)
 
 # Upstream license specification: Apache-2.0 and CC0-1.0
 License:        ASL 2.0 and CC0

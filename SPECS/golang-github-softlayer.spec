@@ -8,15 +8,14 @@ Version:                1.0.3
 %gometa
 
 %global common_description %{expand:
-See reference at https://sldn.softlayer.com/article/object-filters. Examples
-in the README.md file and in the examples directory.}
+SoftLayer API Client for the Go Language.}
 
 %global golicenses      LICENSE
 %global godocs          examples README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        See reference at https://sldn
+Summary:        SoftLayer API Client for the Go Language
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

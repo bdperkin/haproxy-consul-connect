@@ -8,15 +8,15 @@ Version:                0.2.0
 %gometa
 
 %global common_description %{expand:
-Copyright 2019 Google LLC Licensed under the Apache License, Version 2.0 (the
-"License");}
+This library provides a stackdriver sink for applications instrumented with the
+go-metrics library.}
 
 %global golicenses      LICENSE
 %global godocs          example CONTRIBUTING.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Copyright 2019 Google LLC Licensed under the Apache License, Version 2
+Summary:        This library provides a stackdriver sink for applications instrumented with the go-metrics library
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

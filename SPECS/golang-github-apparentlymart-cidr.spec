@@ -8,14 +8,13 @@ Version:                1.1.0
 %gometa
 
 %global common_description %{expand:
-Package cidr is a collection of assorted utilities for computing network and
-host addresses within network ranges. It expects a CIDR-type address structure
-where addresses are divided into}
+Go library for various manipulations of CIDR netmasks and their associated
+addresses.}
 
 %global golicenses      LICENSE
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package cidr is a collection of assorted utilities for computing network and host addresses within network ranges
+Summary:        Go library for various manipulations of CIDR netmasks and their associated addresses
 
 License:        MIT
 URL:            %{gourl}

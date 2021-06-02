@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-package atomic provides functions to atomically change files.}
+Atomic is a go package for atomic file writing.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@ package atomic provides functions to atomically change files.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        package atomic provides functions to atomically change files
+Summary:        Atomic is a go package for atomic file writing
 
 License:        MIT
 URL:            %{gourl}

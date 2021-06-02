@@ -8,11 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-The digest package provides an implementation of http.RoundTripper that takes
-care of HTTP Digest Authentication (http://www.ietf.org/rfc/rfc2617.txt). This
-only implements the MD5 and "auth" portions of the RFC, but that covers the
-majority of avalible server side implementations including apache web server.
-Example usage:}
+Automatically exported from code.google.com/p/mlab-ns2.}
 
 %global golicenses      COPYING
 %global godocs          CONTRIBUTORS gae/static/robots.txt
@@ -20,7 +16,7 @@ Example usage:}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        The digest package provides an implementation of http
+Summary:        Automatically exported from code.google.com/p/mlab-ns2
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

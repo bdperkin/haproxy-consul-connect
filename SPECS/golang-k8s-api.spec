@@ -9,14 +9,14 @@ Version:                0.21.1
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+The canonical location of the Kubernetes API definition.}
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md README.md code-of-conduct.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        The canonical location of the Kubernetes API definition
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

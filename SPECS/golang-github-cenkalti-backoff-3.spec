@@ -9,15 +9,14 @@ Version:                3.2.2
 %gometa
 
 %global common_description %{expand:
-Package backoff implements backoff algorithms for retrying operations. Use
-Retry function for retrying operations that may fail.}
+⏱ The exponential backoff algorithm in Go.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package backoff implements backoff algorithms for retrying operations
+Summary:        ⏱ The exponential backoff algorithm in Go
 
 License:        MIT
 URL:            %{gourl}

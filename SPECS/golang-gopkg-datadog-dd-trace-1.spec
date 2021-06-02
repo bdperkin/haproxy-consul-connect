@@ -9,8 +9,7 @@ Version:                1.31.1
 %gometa
 
 %global common_description %{expand:
-Package ext contains a set of Datadog-specific constants. Most of them are
-used for setting span metadata.}
+A Go tracing package for Datadog APM.}
 
 %global golicenses      LICENSE LICENSE-3rdparty.csv LICENSE-APACHE LICENSE-\\\
                         BSD3 NOTICE
@@ -19,7 +18,7 @@ used for setting span metadata.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package ext contains a set of Datadog-specific constants
+Summary:        A Go tracing package for Datadog APM
 
 # Upstream license specification: Apache-2.0 and BSD-3-Clause
 License:        ASL 2.0 and BSD

@@ -8,8 +8,7 @@ Version:                0.15.0
 %gometa
 
 %global common_description %{expand:
-Package packngo implements the Equinix Metal API documented at
-https://metal.equinix.com/developers/api.}
+A Golang client for the Equinix Metal API. (Packet is now Equinix Metal).}
 
 %global golicenses      LICENSE.txt
 %global godocs          examples CHANGELOG.md CONTRIBUTING.md OWNERS.md\\\
@@ -17,7 +16,7 @@ https://metal.equinix.com/developers/api.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package packngo implements the Equinix Metal API documented at https://metal
+Summary:        A Golang client for the Equinix Metal API. (Packet is now Equinix Metal)
 
 License:        # FIXME
 
