@@ -69,6 +69,7 @@ for SPEC in $@; do
 
     sed -i -e 's/ASL and 2.0/ASL 2.0/g' ${SPEC}
     sed -i -e 's/# and FIXME/# FIXME/g' ${SPEC}
+    sed -i -e 's/\ $//g' ${SPEC}
 
     rm ${GREPFILE}
 done
