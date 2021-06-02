@@ -8,14 +8,14 @@ Version:                0.6.0
 %gometa
 
 %global common_description %{expand:
-A supersonic rate limiting package for Go with HTTP middleware.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        A supersonic rate limiting package for Go with HTTP middleware
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

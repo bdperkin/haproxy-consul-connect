@@ -10,14 +10,14 @@ Version:                0.1.0
 %gometa
 
 %global common_description %{expand:
-KMS wrapping libraries split out from Vault.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md entropy/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        KMS wrapping libraries split out from Vault
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Automatically exported from code.google.com/p/mlab-ns2.}
+# FIXME}
 
 %global golicenses      COPYING
 %global godocs          CONTRIBUTORS gae/static/robots.txt
@@ -16,7 +16,7 @@ Automatically exported from code.google.com/p/mlab-ns2.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Automatically exported from code.google.com/p/mlab-ns2
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

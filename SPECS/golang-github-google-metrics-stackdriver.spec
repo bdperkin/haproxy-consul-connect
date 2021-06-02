@@ -8,15 +8,14 @@ Version:                0.2.0
 %gometa
 
 %global common_description %{expand:
-This library provides a stackdriver sink for applications instrumented with the
-go-metrics library.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          example CONTRIBUTING.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        This library provides a stackdriver sink for applications instrumented with the go-metrics library
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

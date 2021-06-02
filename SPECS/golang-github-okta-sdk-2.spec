@@ -8,14 +8,14 @@ Version:                2.3.0
 %gometa
 
 %global common_description %{expand:
-Okta-sdk-golang.}
+# FIXME}
 
 %global golicenses      LICENSE.md NOTICE.md
 %global godocs          CHANGELOG.md CONTRIBUTING.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Okta-sdk-golang
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

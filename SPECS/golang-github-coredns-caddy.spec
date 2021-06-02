@@ -8,14 +8,14 @@ Version:                1.1.1
 %gometa
 
 %global common_description %{expand:
-Fast, multi-platform web server with automatic HTTPS.}
+# FIXME}
 
 %global golicenses      LICENSE.txt
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Fast, multi-platform web server with automatic HTTPS
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

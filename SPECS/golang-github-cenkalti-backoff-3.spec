@@ -8,14 +8,14 @@ Version:                3.2.2
 %gometa
 
 %global common_description %{expand:
-⏱ The exponential backoff algorithm in Go.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        ⏱ The exponential backoff algorithm in Go
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}
