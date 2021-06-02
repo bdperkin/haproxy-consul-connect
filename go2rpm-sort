@@ -8,6 +8,17 @@ for SPEC in $@; do
     exit 1
     fi
 
+    IPATH=$(grep '%global goipath ' ${SPEC} | awk '{print $3}')
+    DOCS=$(grep "^${IPATH}," goipaths-docs.txt)
+    SUMMARY=$(echo ${DOCS} | cut -d\, -f2 | sed -e 's/\&#44;/,/g' | sed -e 's/\//\\\//g')
+    DESCRIPTION=$(echo ${DOCS} | cut -d\, -f3 | sed -e 's/\&#44;/,/g' | fold -w 79 -s | sed -e 's/\//\\\//g' | sed -E ':a;N;$!ba;s/\r{0,1}\n/\\n/g')
+    if [ "${SUMMARY}" != "" ]; then
+        sed -i -e "s/^Summary:        None$/Summary:        ${SUMMARY}/g" ${SPEC}
+    fi
+    if [ "${DESCRIPTION}" != "" ]; then
+        sed -i -e "s/^# FIXME}$/${DESCRIPTION}}/g" ${SPEC}
+    fi
+
     VERSION=$(basename $(grep ^Version ${SPEC} | awk '{print $2}') | sed -e 's/^v//g' | sed -e 's/\-/\~/g')
     if [ "${VERSION}" != "" ]; then
         sed -i -e "s/^Version:                .*/Version:                ${VERSION}/g" ${SPEC}

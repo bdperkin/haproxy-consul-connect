@@ -1,6 +1,7 @@
 #! /bin/bash
 
 echo "#IPATH,FORGE,SUBDIR,ALTIPATHS,VERSION,TAG,COMMIT,SRCTGZ,DSTTGZ,TYPE" > goipaths.txt
+echo "#IPATH,SUMMARY,DESCRIPTION" > goipaths-docs.txt
 
 for IPATH in $(cat packages.txt); do
     echo "========== BEGIN ${IPATH} =========="
@@ -109,6 +110,12 @@ for IPATH in $(cat packages.txt); do
     LINE="${DMODPATH},${FPATH},,,${VERSION},${TAG},${COMMIT},,,${DTYPE}"
     echo -n "ENTRY: "
     echo "${LINE}" | tee -a goipaths.txt
+
+    DESCRIPTION=$(cat ${PKGGODEVFILE} | grep -A 1000 'Documentation-overviewHeader' | grep -m 1 -B 100 '^</p>'  | grep -A 100 '^<p>' | tidy 2>/dev/null | lynx -dump -nolist -stdin | sed -e 's/^   //g' | tr '\n' ' ' | sed -e 's/,/\&#44;/g')
+    SUMMARY=$(echo ${DESCRIPTION} | cut -d\. -f1)
+    DOCS="${DMODPATH},${SUMMARY},${DESCRIPTION}"
+    echo -n "DOCS: "
+    echo "${DOCS}" | tee -a goipaths-docs.txt
 
     rm ${PKGGODEVFILE} ${GITLSFILE}
     echo "=========== END ${IPATH} ==========="
