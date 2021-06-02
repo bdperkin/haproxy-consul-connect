@@ -67,5 +67,5 @@ for LINE in $(grep -v '^#' goipaths.txt | tac); do
     mv /var/lib/mock/fedora-rawhide-x86_64/result/*.src.rpm SRPMS
 done
 
-mock -r fedora-rawhide-x86_64 --chain --recurse $(ls -ctra SRPMS/*.src.rpm) 2>&1 | tee build.log
+mock -r fedora-rawhide-x86_64 --chain --recurse $(for s in SRPMS/*.src.rpm; do r=$(rpm -qp --requires ${s} | grep '^golang(' | wc -l) && t=$(stat -c %W ${s}) && echo ${r},${t},${s}; done  | sort -n | cut -d, -f3) 2>&1 | tee build.log
 
