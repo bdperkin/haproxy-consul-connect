@@ -3,6 +3,7 @@
 
 # https://github.com/ory/dockertest
 %global goipath         github.com/ory/dockertest/v3
+%global forgeurl        https://github.com/ory/dockertest
 Version:                3.6.5
 
 %gometa

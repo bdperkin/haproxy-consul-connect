@@ -3,7 +3,8 @@
 
 # https://github.com/hashicorp/nomad
 %global goipath         github.com/hashicorp/nomad/api
-%global commit          19792e5a6bec9842f4d3ae904a317b0e2db0d182
+%global forgeurl        https://github.com/hashicorp/nomad
+%global commit          5b828b9e4442684e378ef55850d85613c7f0d141
 
 %gometa
 

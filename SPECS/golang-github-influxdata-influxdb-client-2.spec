@@ -3,6 +3,7 @@
 
 # https://github.com/influxdata/influxdb-client-go
 %global goipath         github.com/influxdata/influxdb-client-go/v2
+%global forgeurl        https://github.com/influxdata/influxdb-client-go
 Version:                2.3.0
 
 %gometa

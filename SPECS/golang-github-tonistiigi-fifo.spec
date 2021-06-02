@@ -3,7 +3,7 @@
 
 # https://github.com/tonistiigi/fifo
 %global goipath         github.com/tonistiigi/fifo
-Version:                1.0.0
+%global commit          650e8a8a179d040123db61f016cb133143e7a581
 
 %gometa
 
@@ -14,7 +14,8 @@ Fifo pkg for Go.}
 %global godocs          readme.md
 
 Name:           %{goname}
-Release:        1%{?dist}
+Version:        0
+Release:        0.1%{?dist}
 Summary:        Fifo pkg for Go
 
 # Upstream license specification: Apache-2.0

@@ -3,6 +3,7 @@
 
 # https://github.com/dgrijalva/jwt-go
 %global goipath         github.com/dgrijalva/jwt-go/v4
+%global forgeurl        https://github.com/dgrijalva/jwt-go
 Version:                4.0.0~preview1
 
 %gometa

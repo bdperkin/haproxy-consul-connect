@@ -3,6 +3,7 @@
 
 # https://github.com/cenkalti/backoff
 %global goipath         github.com/cenkalti/backoff/v3
+%global forgeurl        https://github.com/cenkalti/backoff
 Version:                3.2.2
 
 %gometa

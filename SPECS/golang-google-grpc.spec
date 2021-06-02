@@ -4,58 +4,44 @@
 # https://github.com/grpc/grpc-go
 %global goipath         google.golang.org/grpc
 %global forgeurl        https://github.com/grpc/grpc-go
-Version:                1.29.1
+Version:                1.13.0
 
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+The Go language implementation of gRPC. HTTP/2 based RPC.}
 
 %global golicenses      LICENSE
-%global godocs          examples AUTHORS CODE-OF-CONDUCT.md GOVERNANCE.md\\\
-                        MAINTAINERS.md CONTRIBUTING.md README.md\\\
-                        Documentation/benchmark.md\\\
+%global godocs          examples AUTHORS CONTRIBUTING.md README.md\\\
                         Documentation/compression.md\\\
-                        Documentation/concurrency.md Documentation/grpc-auth-\\\
-                        support.md Documentation/log_levels.md\\\
-                        Documentation/proxy.md Documentation/versioning.md\\\
+                        Documentation/log_levels.md\\\
+                        Documentation/versioning.md\\\
+                        Documentation/concurrency.md\\\
                         Documentation/encoding.md Documentation/gomock-\\\
-                        example.md Documentation/grpc-metadata.md\\\
-                        Documentation/keepalive.md Documentation/rpc-\\\
+                        example.md Documentation/grpc-auth-support.md\\\
+                        Documentation/grpc-metadata.md Documentation/rpc-\\\
                         errors.md Documentation/server-reflection-tutorial.md\\\
-                        reflection/README.md\\\
-                        reflection/grpc_testingv3/README.md
+                        Documentation/stickiness.md reflection/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        The Go language implementation of gRPC. HTTP/2 based RPC
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
 URL:            %{gourl}
 Source0:        %{gosource}
 
-BuildRequires:  golang(github.com/cncf/udpa/go/udpa/data/orca/v1)
-BuildRequires:  golang(github.com/envoyproxy/go-control-plane/envoy/api/v2)
-BuildRequires:  golang(github.com/envoyproxy/go-control-plane/envoy/api/v2/core)
-BuildRequires:  golang(github.com/envoyproxy/go-control-plane/envoy/api/v2/endpoint)
-BuildRequires:  golang(github.com/envoyproxy/go-control-plane/envoy/api/v2/route)
-BuildRequires:  golang(github.com/envoyproxy/go-control-plane/envoy/config/filter/network/http_connection_manager/v2)
-BuildRequires:  golang(github.com/envoyproxy/go-control-plane/envoy/service/discovery/v2)
-BuildRequires:  golang(github.com/envoyproxy/go-control-plane/envoy/service/load_stats/v2)
-BuildRequires:  golang(github.com/envoyproxy/go-control-plane/envoy/type)
 BuildRequires:  golang(github.com/golang/glog)
 BuildRequires:  golang(github.com/golang/mock/gomock)
-BuildRequires:  golang(github.com/golang/protobuf/jsonpb)
 BuildRequires:  golang(github.com/golang/protobuf/proto)
 BuildRequires:  golang(github.com/golang/protobuf/protoc-gen-go/descriptor)
 BuildRequires:  golang(github.com/golang/protobuf/ptypes)
 BuildRequires:  golang(github.com/golang/protobuf/ptypes/any)
 BuildRequires:  golang(github.com/golang/protobuf/ptypes/duration)
-BuildRequires:  golang(github.com/golang/protobuf/ptypes/struct)
 BuildRequires:  golang(github.com/golang/protobuf/ptypes/timestamp)
 BuildRequires:  golang(github.com/golang/protobuf/ptypes/wrappers)
-BuildRequires:  golang(github.com/google/go-cmp/cmp)
+BuildRequires:  golang(golang.org/x/net/context)
 BuildRequires:  golang(golang.org/x/net/http2)
 BuildRequires:  golang(golang.org/x/net/http2/hpack)
 BuildRequires:  golang(golang.org/x/net/trace)
@@ -63,14 +49,12 @@ BuildRequires:  golang(golang.org/x/oauth2)
 BuildRequires:  golang(golang.org/x/oauth2/google)
 BuildRequires:  golang(golang.org/x/oauth2/jwt)
 BuildRequires:  golang(golang.org/x/sys/unix)
-BuildRequires:  golang(google.golang.org/genproto/googleapis/rpc/code)
 BuildRequires:  golang(google.golang.org/genproto/googleapis/rpc/errdetails)
 BuildRequires:  golang(google.golang.org/genproto/googleapis/rpc/status)
 
 %if %{with check}
 # Tests
-BuildRequires:  golang(github.com/envoyproxy/go-control-plane/envoy/config/listener/v2)
-BuildRequires:  golang(github.com/google/go-cmp/cmp/cmpopts)
+BuildRequires:  golang(google.golang.org/genproto/googleapis/rpc/code)
 %endif
 
 %description
@@ -82,7 +66,7 @@ BuildRequires:  golang(github.com/google/go-cmp/cmp/cmpopts)
 %goprep
 
 %build
-for cmd in benchmark/benchmain benchmark/benchresult benchmark/client benchmark/server benchmark/worker interop/alts/client interop/alts/server interop/client interop/fake_grpclb interop/grpclb_fallback interop/http2 interop/server interop/xds/client interop/xds/server stress/client stress/metrics_client; do
+for cmd in benchmark/benchmain benchmark/benchresult benchmark/client benchmark/server benchmark/worker interop/alts/client interop/alts/server interop/client interop/http2 interop/server stress/client stress/metrics_client; do
   %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
 done
 
@@ -98,15 +82,13 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc examples AUTHORS CODE-OF-CONDUCT.md GOVERNANCE.md MAINTAINERS.md
-%doc CONTRIBUTING.md README.md Documentation/benchmark.md
-%doc Documentation/compression.md Documentation/concurrency.md
-%doc Documentation/grpc-auth-support.md Documentation/log_levels.md
-%doc Documentation/proxy.md Documentation/versioning.md
-%doc Documentation/encoding.md Documentation/gomock-example.md
-%doc Documentation/grpc-metadata.md Documentation/keepalive.md
-%doc Documentation/rpc-errors.md Documentation/server-reflection-tutorial.md
-%doc reflection/README.md reflection/grpc_testingv3/README.md
+%doc examples AUTHORS CONTRIBUTING.md README.md Documentation/compression.md
+%doc Documentation/log_levels.md Documentation/versioning.md
+%doc Documentation/concurrency.md Documentation/encoding.md
+%doc Documentation/gomock-example.md Documentation/grpc-auth-support.md
+%doc Documentation/grpc-metadata.md Documentation/rpc-errors.md
+%doc Documentation/server-reflection-tutorial.md Documentation/stickiness.md
+%doc reflection/README.md
 %{_bindir}/*
 
 %gopkgfiles

@@ -9,13 +9,13 @@ Version:                1.1.0
 %gometa
 
 %global common_description %{expand:
-GORM PostgreSQL driver.}
+# FIXME}
 
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        GORM PostgreSQL driver
+Summary:        None
 
 License:        # FIXME
 

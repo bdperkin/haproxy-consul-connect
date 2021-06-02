@@ -3,6 +3,7 @@
 
 # https://github.com/hashicorp/go-kms-wrapping
 %global goipath         github.com/hashicorp/go-kms-wrapping/entropy
+%global forgeurl        https://github.com/hashicorp/go-kms-wrapping
 Version:                0.1.0
 %global tag             entropy/v0.1.0
 %global commit          5bf905ee4d7d5a98dd57ca2dc7305c9be9087ac3

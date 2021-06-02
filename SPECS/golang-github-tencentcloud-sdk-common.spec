@@ -3,6 +3,7 @@
 
 # https://github.com/tencentcloud/tencentcloud-sdk-go
 %global goipath         github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common
+%global forgeurl        https://github.com/tencentcloud/tencentcloud-sdk-go
 Version:                1.0.173
 
 %gometa

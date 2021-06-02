@@ -3,7 +3,8 @@
 
 # https://github.com/tencentcloud/tencentcloud-sdk-go
 %global goipath         github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/kms
-%global commit          244267cd902785f6430c74f5837dd1ce1be46419
+%global forgeurl        https://github.com/tencentcloud/tencentcloud-sdk-go
+%global commit          41e03f14c6ede068bd9a13d13d2f57174eee440e
 
 %gometa
 

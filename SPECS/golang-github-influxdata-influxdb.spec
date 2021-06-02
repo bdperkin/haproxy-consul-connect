@@ -3,7 +3,7 @@
 
 # https://github.com/influxdata/influxdb
 %global goipath         github.com/influxdata/influxdb
-Version:                1.9.0
+Version:                1.9.1
 
 %gometa
 

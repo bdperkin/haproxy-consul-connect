@@ -12,9 +12,10 @@ Version:                0.34.0
 Google Cloud Client Libraries for Go.}
 
 %global golicenses      LICENSE license_test.go
-%global godocs          CODE_OF_CONDUCT.md README.md RELEASING.md old-news.md\\\
-                        CONTRIBUTING.md issue_template.md AUTHORS CHANGES.md\\\
-                        CONTRIBUTORS bigquery/benchmarks/README.md examples\\\
+%global godocs          CODE_OF_CONDUCT.md AUTHORS CONTRIBUTING.md\\\
+                        CONTRIBUTORS README.md RELEASING.md CHANGES.md\\\
+                        issue_template.md old-news.md\\\
+                        bigquery/benchmarks/README.md examples\\\
                         httpreplay/cmd/httpr/README.md\\\
                         logging/apiv2/README.md profiler/mocks/README.md\\\
                         pubsub/apiv1/README.md vision/apiv1/README.md
@@ -239,8 +240,8 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE license_test.go
-%doc CODE_OF_CONDUCT.md README.md RELEASING.md old-news.md CONTRIBUTING.md
-%doc issue_template.md AUTHORS CHANGES.md CONTRIBUTORS
+%doc CODE_OF_CONDUCT.md AUTHORS CONTRIBUTING.md CONTRIBUTORS README.md
+%doc RELEASING.md CHANGES.md issue_template.md old-news.md
 %doc bigquery/benchmarks/README.md examples httpreplay/cmd/httpr/README.md
 %doc logging/apiv2/README.md profiler/mocks/README.md pubsub/apiv1/README.md
 %doc vision/apiv1/README.md

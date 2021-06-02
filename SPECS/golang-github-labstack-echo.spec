@@ -8,14 +8,14 @@ Version:                3.3.10
 %gometa
 
 %global common_description %{expand:
-High performance, minimalist Go web framework.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        High performance, minimalist Go web framework
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

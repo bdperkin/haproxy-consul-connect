@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Package arp implements the ARP protocol, as described in RFC 826. MIT Licensed.}
+# FIXME}
 
 %global golicenses      LICENSE.md
 %global godocs          README.md cmd/arpc/README.md
@@ -16,7 +16,7 @@ Package arp implements the ARP protocol, as described in RFC 826. MIT Licensed.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Package arp implements the ARP protocol, as described in RFC 826. MIT Licensed
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

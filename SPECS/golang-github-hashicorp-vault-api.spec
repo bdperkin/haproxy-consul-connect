@@ -3,6 +3,7 @@
 
 # https://github.com/hashicorp/vault
 %global goipath         github.com/hashicorp/vault/api
+%global forgeurl        https://github.com/hashicorp/vault
 Version:                1.1.0
 %global tag             api/v1.1.0
 %global commit          fb730b62a40e6cc4fc8e2f0257c673454bca3b86

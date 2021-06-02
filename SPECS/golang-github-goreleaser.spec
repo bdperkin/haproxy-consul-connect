@@ -3,7 +3,7 @@
 
 # https://github.com/goreleaser/goreleaser
 %global goipath         github.com/goreleaser/goreleaser
-Version:                0.167.0
+Version:                0.168.1
 
 %gometa
 

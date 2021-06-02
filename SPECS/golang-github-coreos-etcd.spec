@@ -4,7 +4,6 @@
 # https://github.com/coreos/go-etcd
 %global goipath         github.com/coreos/go-etcd
 Version:                2.0.0
-%global commit          003851be7bb0694fe3cc457a49529a19388ee7cf
 
 %gometa
 
@@ -23,8 +22,6 @@ Summary:        DEPRECATED - please use the official client at https://github.co
 License:        ASL 2.0
 URL:            %{gourl}
 Source0:        %{gosource}
-
-BuildRequires:  golang(github.com/ugorji/go/codec)
 
 %description
 %{common_description}

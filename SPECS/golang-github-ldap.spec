@@ -3,26 +3,25 @@
 
 # https://github.com/go-ldap/ldap
 %global goipath         github.com/go-ldap/ldap
-Version:                3.3.0
+Version:                3.0.3
 
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Basic LDAP v3 functionality for the GO programming language.}
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Basic LDAP v3 functionality for the GO programming language
 
 License:        MIT
 URL:            %{gourl}
 Source0:        %{gosource}
 
-BuildRequires:  golang(github.com/Azure/go-ntlmssp)
-BuildRequires:  golang(github.com/go-asn1-ber/asn1-ber)
+BuildRequires:  golang(gopkg.in/asn1-ber.v1)
 
 %description
 %{common_description}

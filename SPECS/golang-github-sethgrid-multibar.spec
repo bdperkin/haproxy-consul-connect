@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Display multiple progress bars in Go (golang).}
+# FIXME}
 
 %global golicenses      LICENSE.md
 %global godocs          README.md
@@ -16,7 +16,7 @@ Display multiple progress bars in Go (golang).}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Display multiple progress bars in Go (golang)
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

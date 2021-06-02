@@ -3,6 +3,7 @@
 
 # https://github.com/go-pg/pg
 %global goipath         github.com/go-pg/pg/v10
+%global forgeurl        https://github.com/go-pg/pg
 Version:                10.9.3
 
 %gometa

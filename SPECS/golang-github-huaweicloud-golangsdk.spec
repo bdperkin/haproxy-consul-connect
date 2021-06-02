@@ -3,7 +3,7 @@
 
 # https://github.com/huaweicloud/golangsdk
 %global goipath         github.com/huaweicloud/golangsdk
-%global commit          c90ae4249a7119416d3365507fbc90cd29954707
+%global commit          3d6e5cdfc40f1b888f9a765b683bbbbed15ae4ea
 
 %gometa
 

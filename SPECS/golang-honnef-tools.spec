@@ -9,7 +9,7 @@ Version:                0.2.0
 %gometa
 
 %global common_description %{expand:
-Staticcheck - The advanced Go linter.}
+# FIXME}
 
 %global golicenses      LICENSE LICENSE-THIRD-PARTY go/gcsizes/LICENSE\\\
                         go/ir/LICENSE
@@ -18,7 +18,7 @@ Staticcheck - The advanced Go linter.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Staticcheck - The advanced Go linter
+Summary:        None
 
 # Upstream license specification: BSD-3-Clause and MIT
 License:        BSD and MIT

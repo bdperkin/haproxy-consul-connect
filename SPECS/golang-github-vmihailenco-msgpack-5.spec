@@ -3,6 +3,7 @@
 
 # https://github.com/vmihailenco/msgpack
 %global goipath         github.com/vmihailenco/msgpack/v5
+%global forgeurl        https://github.com/vmihailenco/msgpack
 Version:                5.3.4
 
 %gometa

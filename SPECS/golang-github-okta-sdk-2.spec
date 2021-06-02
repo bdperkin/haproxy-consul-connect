@@ -3,6 +3,7 @@
 
 # https://github.com/okta/okta-sdk-golang
 %global goipath         github.com/okta/okta-sdk-golang/v2
+%global forgeurl        https://github.com/okta/okta-sdk-golang
 Version:                2.3.0
 
 %gometa

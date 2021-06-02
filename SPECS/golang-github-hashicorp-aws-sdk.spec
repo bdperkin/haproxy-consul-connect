@@ -3,9 +3,7 @@
 
 # https://github.com/hashicorp/aws-sdk-go
 %global goipath         github.com/hashicorp/aws-sdk-go
-Version:                tf0.4.0
-%global tag             tf0.4.0
-%global commit          1d5c8f6b881ab3e2e0c3e737886732bbfd1ced27
+%global commit          e6ea0192eee4640f32ec73c0cbb71f63e4f2b65a
 
 %gometa
 
@@ -17,7 +15,8 @@ awslabs/aws-sdk-go instead.}
 %global godocs          README.md
 
 Name:           %{goname}
-Release:        1%{?dist}
+Version:        0
+Release:        0.1%{?dist}
 Summary:        A fork of awslabs/aws-sdk-go to keep hashicorp/terraform stable. You should use awslabs/aws-sdk-go instead
 
 # Upstream license specification: Apache-2.0
