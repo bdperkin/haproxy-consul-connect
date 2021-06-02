@@ -1,1 +1,9 @@
 github.com/haproxytech/haproxy-consul-connect
+github.com/criteo/haproxy-spoe-go
+github.com/facebookgo/freeport
+github.com/hashicorp/consul/agent
+github.com/hashicorp/consul/agent/connect
+github.com/hashicorp/consul/command/connect/proxy
+github.com/hashicorp/consul/testrpc
+gopkg.in/d4l3k/messagediff.v1
+zvelo.io/ttlru

@@ -9,19 +9,15 @@ Version:                1.0.10
 %gometa
 
 %global common_description %{expand:
-Package ttlru provides a simple, goroutine safe, cache with a fixed number of
-entries. Each entry has a per-cache defined TTL. This TTL is reset on both
-modification and access to the value. As a result, if the cache is full, and
-no items have expired, when adding a new item, the item with the soonest
-expiration will be evicted. It is based on the LRU implementation in
-golang-lru:}
+A simple, goroutine-safe, cache with a global TTL, a fixed size and an LRU
+eviction policy for Go (golang).}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package ttlru provides a simple, goroutine safe, cache with a fixed number of entries
+Summary:        A simple, goroutine-safe, cache with a global TTL, a fixed size and an LRU eviction policy for Go (golang)
 
 License:        MIT
 URL:            %{gourl}

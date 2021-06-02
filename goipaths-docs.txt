@@ -1,2 +1,7 @@
 #IPATH,SUMMARY,DESCRIPTION
 github.com/haproxytech/haproxy-consul-connect,, 
+github.com/criteo/haproxy-spoe-go,, 
+github.com/facebookgo/freeport,Package freeport provides an API to find a free port to bind to,Package freeport provides an API to find a free port to bind to. 
+github.com/hashicorp/consul,, 
+gopkg.in/d4l3k/messagediff.v1,, 
+zvelo.io/ttlru,Package ttlru provides a simple&#44; goroutine safe&#44; cache with a fixed number of entries,Package ttlru provides a simple&#44; goroutine safe&#44; cache with a fixed number of entries. Each entry has a per-cache defined TTL. This TTL is reset on both modification and access to the value. As a result&#44; if the cache is full&#44; and no items have expired&#44; when adding a new item&#44; the item with the soonest expiration will be evicted.  It is based on the LRU implementation in golang-lru: 
