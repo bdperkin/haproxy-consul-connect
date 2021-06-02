@@ -8,8 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Package discover provides functions to get metadata for different cloud
-environments.}
+Discover nodes in cloud environments.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -17,7 +16,7 @@ environments.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Package discover provides functions to get metadata for different cloud environments
+Summary:        Discover nodes in cloud environments
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

@@ -7,3 +7,16 @@ github.com/hashicorp/consul/command/connect/proxy
 github.com/hashicorp/consul/testrpc
 gopkg.in/d4l3k/messagediff.v1
 zvelo.io/ttlru
+github.com/coredns/coredns/plugin/pkg/dnsutil
+github.com/google/tcpproxy
+github.com/hashicorp/go-bexpr
+github.com/hashicorp/go-connlimit
+github.com/hashicorp/go-discover
+github.com/hashicorp/go-discover/provider/k8s
+github.com/hashicorp/go-raftchunking
+github.com/hashicorp/go-raftchunking/types
+github.com/hashicorp/raft-autopilot
+github.com/hashicorp/vault/api
+github.com/mitchellh/pointerstructure
+github.com/rboyer/safeio
+github.com/d4l3k/messagediff/testdata

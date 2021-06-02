@@ -8,7 +8,7 @@ Version:                1.8.4
 %gometa
 
 %global common_description %{expand:
-Package dnsutil contains DNS related helper functions.}
+CoreDNS is a DNS server that chains plugins.}
 
 %global golicenses      LICENSE
 %global godocs          ADOPTERS.md CODE_OF_CONDUCT.md CONTRIBUTING.md\\\
@@ -69,7 +69,7 @@ Package dnsutil contains DNS related helper functions.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package dnsutil contains DNS related helper functions
+Summary:        CoreDNS is a DNS server that chains plugins
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
