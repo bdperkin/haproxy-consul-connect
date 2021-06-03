@@ -26,6 +26,7 @@ for IPATH in $(cat packages.txt); do
         DMODPATH=${IPATH}
         DPKGPATH=${IPATH}
     fi
+    ALTIPATHS=""
     ALTIPATH=$(echo "${FPATH}" | sed -e 's/^https:\/\///g')
     if [ "${ALTIPATH}" != "${DMODPATH}" ]; then
         ALTIPATHS=${ALTIPATH}
