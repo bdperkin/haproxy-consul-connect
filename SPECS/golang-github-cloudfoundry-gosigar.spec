@@ -11,7 +11,7 @@ Version:                1.2.0
 Total.}
 
 %global golicenses      LICENSE NOTICE
-%global godocs          examples README.md ci/README.md psnotify/README.md
+%global godocs          examples README.md README-ci.md README-psnotify.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -36,6 +36,8 @@ BuildRequires:  golang(github.com/onsi/gomega/gexec)
 
 %prep
 %goprep
+mv ci/README.md README-ci.md
+mv psnotify/README.md README-psnotify.md
 
 %build
 for cmd in fixtures/memory fixtures/stress; do
@@ -54,7 +56,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE NOTICE
-%doc examples README.md ci/README.md psnotify/README.md
+%doc examples README.md README-ci.md README-psnotify.md
 %{_bindir}/*
 
 %gopkgfiles

@@ -11,7 +11,7 @@
 # FIXME}
 
 %global golicenses      LICENSE
-%global godocs          CONTRIBUTING.md README.md cmd/tlsrouter/README.md
+%global godocs          CONTRIBUTING.md README.md README-cmd-tlsrouter.md
 
 Name:           %{goname}
 Version:        0
@@ -35,6 +35,7 @@ BuildRequires:  golang(github.com/armon/go-proxyproto)
 
 %prep
 %goprep
+mv cmd/tlsrouter/README.md README-cmd-tlsrouter.md
 
 %build
 for cmd in cmd/* ; do
@@ -56,7 +57,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc CONTRIBUTING.md README.md cmd/tlsrouter/README.md
+%doc CONTRIBUTING.md README.md README-cmd-tlsrouter.md
 %{_bindir}/*
 
 %gopkgfiles

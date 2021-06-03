@@ -10,8 +10,8 @@ Version:                0.4.0
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      COPYRIGHT LICENSE dnstap.pb/LICENSE
-%global godocs          README dnstap.pb/README.md
+%global golicenses      COPYRIGHT LICENSE LICENSE-dnstap.pb
+%global godocs          README README-dnstap.pb.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -35,6 +35,8 @@ BuildRequires:  golang(google.golang.org/protobuf/runtime/protoimpl)
 
 %prep
 %goprep
+mv dnstap.pb/LICENSE LICENSE-dnstap.pb
+mv dnstap.pb/README.md README-dnstap.pb.md
 
 %build
 for cmd in dnstap; do
@@ -52,8 +54,8 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license COPYRIGHT LICENSE dnstap.pb/LICENSE
-%doc README dnstap.pb/README.md
+%license COPYRIGHT LICENSE LICENSE-dnstap.pb
+%doc README README-dnstap.pb.md
 %{_bindir}/*
 
 %gopkgfiles

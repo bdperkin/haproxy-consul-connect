@@ -12,10 +12,10 @@
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md README.md RELEASE.md\\\
-                        bindings/go/samples/dcgm/README.md\\\
-                        bindings/go/samples/dcgm/restApi/README.md\\\
-                        bindings/go/samples/nvml/README.md deployment/dcgm-\\\
-                        exporter/templates/NOTES.txt
+                        README-bindings-go-samples-dcgm.md\\\
+                        README-bindings-go-samples-dcgm-restApi.md\\\
+                        README-bindings-go-samples-nvml.md\\\
+                        NOTES-deployment-dcgm-exporter-templates.txt
 
 Name:           %{goname}
 Version:        0
@@ -48,6 +48,10 @@ BuildRequires:  golang(k8s.io/kubernetes/pkg/kubelet/util)
 
 %prep
 %goprep
+mv bindings/go/samples/dcgm/README.md README-bindings-go-samples-dcgm.md
+mv bindings/go/samples/dcgm/restApi/README.md README-bindings-go-samples-dcgm-restApi.md
+mv bindings/go/samples/nvml/README.md README-bindings-go-samples-nvml.md
+mv deployment/dcgm-exporter/templates/NOTES.txt NOTES-deployment-dcgm-exporter-templates.txt
 
 %build
 for cmd in bindings/go/samples/dcgm/deviceInfo bindings/go/samples/dcgm/dmon bindings/go/samples/dcgm/health bindings/go/samples/dcgm/hostengineStatus bindings/go/samples/dcgm/policy bindings/go/samples/dcgm/processInfo bindings/go/samples/dcgm/restApi bindings/go/samples/dcgm/topology bindings/go/samples/nvml/deviceInfo bindings/go/samples/nvml/dmon bindings/go/samples/nvml/processInfo pkg; do
@@ -66,10 +70,10 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc CONTRIBUTING.md README.md RELEASE.md bindings/go/samples/dcgm/README.md
-%doc bindings/go/samples/dcgm/restApi/README.md
-%doc bindings/go/samples/nvml/README.md
-%doc deployment/dcgm-exporter/templates/NOTES.txt
+%doc CONTRIBUTING.md README.md RELEASE.md README-bindings-go-samples-dcgm.md
+%doc README-bindings-go-samples-dcgm-restApi.md
+%doc README-bindings-go-samples-nvml.md
+%doc NOTES-deployment-dcgm-exporter-templates.txt
 %{_bindir}/*
 
 %gopkgfiles

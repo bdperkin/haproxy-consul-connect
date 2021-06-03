@@ -13,15 +13,17 @@ The Go language implementation of gRPC. HTTP/2 based RPC.}
 
 %global golicenses      LICENSE
 %global godocs          examples AUTHORS CONTRIBUTING.md README.md\\\
-                        Documentation/compression.md\\\
-                        Documentation/log_levels.md\\\
-                        Documentation/versioning.md\\\
-                        Documentation/concurrency.md\\\
-                        Documentation/encoding.md Documentation/gomock-\\\
-                        example.md Documentation/grpc-auth-support.md\\\
-                        Documentation/grpc-metadata.md Documentation/rpc-\\\
-                        errors.md Documentation/server-reflection-tutorial.md\\\
-                        Documentation/stickiness.md reflection/README.md
+                        compression-Documentation.md\\\
+                        log_levels-Documentation.md\\\
+                        versioning-Documentation.md\\\
+                        concurrency-Documentation.md\\\
+                        encoding-Documentation.md\\\
+                        gomock-example-Documentation.md\\\
+                        grpc-auth-support-Documentation.md\\\
+                        grpc-metadata-Documentation.md\\\
+                        rpc-errors-Documentation.md\\\
+                        server-reflection-tutorial-Documentation.md\\\
+                        stickiness-Documentation.md README-reflection.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -64,6 +66,18 @@ BuildRequires:  golang(google.golang.org/genproto/googleapis/rpc/code)
 
 %prep
 %goprep
+mv Documentation/compression.md compression-Documentation.md
+mv Documentation/log_levels.md log_levels-Documentation.md
+mv Documentation/versioning.md versioning-Documentation.md
+mv Documentation/concurrency.md concurrency-Documentation.md
+mv Documentation/encoding.md encoding-Documentation.md
+mv Documentation/gomock-example.md gomock-example-Documentation.md
+mv Documentation/grpc-auth-support.md grpc-auth-support-Documentation.md
+mv Documentation/grpc-metadata.md grpc-metadata-Documentation.md
+mv Documentation/rpc-errors.md rpc-errors-Documentation.md
+mv Documentation/server-reflection-tutorial.md server-reflection-tutorial-Documentation.md
+mv Documentation/stickiness.md stickiness-Documentation.md
+mv reflection/README.md README-reflection.md
 
 %build
 for cmd in benchmark/benchmain benchmark/benchresult benchmark/client benchmark/server benchmark/worker interop/alts/client interop/alts/server interop/client interop/http2 interop/server stress/client stress/metrics_client; do
@@ -82,13 +96,13 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc examples AUTHORS CONTRIBUTING.md README.md Documentation/compression.md
-%doc Documentation/log_levels.md Documentation/versioning.md
-%doc Documentation/concurrency.md Documentation/encoding.md
-%doc Documentation/gomock-example.md Documentation/grpc-auth-support.md
-%doc Documentation/grpc-metadata.md Documentation/rpc-errors.md
-%doc Documentation/server-reflection-tutorial.md Documentation/stickiness.md
-%doc reflection/README.md
+%doc examples AUTHORS CONTRIBUTING.md README.md compression-Documentation.md
+%doc log_levels-Documentation.md versioning-Documentation.md
+%doc concurrency-Documentation.md encoding-Documentation.md
+%doc gomock-example-Documentation.md grpc-auth-support-Documentation.md
+%doc grpc-metadata-Documentation.md rpc-errors-Documentation.md
+%doc server-reflection-tutorial-Documentation.md stickiness-Documentation.md
+%doc README-reflection.md
 %{_bindir}/*
 
 %gopkgfiles

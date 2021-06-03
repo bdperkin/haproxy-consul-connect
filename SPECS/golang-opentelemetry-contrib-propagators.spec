@@ -5,11 +5,13 @@
 %global goipath         go.opentelemetry.io/contrib/propagators
 %global forgeurl        https://github.com/open-telemetry/opentelemetry-go-contrib
 Version:                0.20.0
+%global tag             propagators/v0.20.0
+%global commit          e6ada1eb7197aade19edd561a4a226dc3f768d71
 
 %gometa
 
 %global common_description %{expand:
-Collection of extensions for OpenTelemetry-Go.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -22,7 +24,7 @@ Collection of extensions for OpenTelemetry-Go.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Collection of extensions for OpenTelemetry-Go
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

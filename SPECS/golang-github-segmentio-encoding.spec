@@ -10,33 +10,33 @@ Version:                0.2.19
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE json/fuzz/LICENSE
-%global godocs          README.md benchmarks/results/easyjson+gzip.txt\\\
-                        benchmarks/results/easyjson+snappy.txt\\\
-                        benchmarks/results/easyjson+zstd.txt\\\
-                        benchmarks/results/encoding-json+gzip.txt\\\
-                        benchmarks/results/encoding-json+snappy.txt\\\
-                        benchmarks/results/encoding-json+zstd.txt\\\
-                        benchmarks/results/json-iterator+gzip.txt\\\
-                        benchmarks/results/json-iterator+snappy.txt\\\
-                        benchmarks/results/json-iterator+zstd.txt\\\
-                        benchmarks/results/json-iterator.txt\\\
-                        benchmarks/results/segment-encoding-json+gzip.txt\\\
-                        benchmarks/results/segment-encoding-json+snappy.txt\\\
-                        benchmarks/results/segment-encoding-json+zstd.txt\\\
-                        benchmarks/results/segment-protobuf-v1+gzip.txt\\\
-                        benchmarks/results/segment-protobuf-v1+snappy.txt\\\
-                        benchmarks/results/segment-protobuf-v1+zstd.txt\\\
-                        benchmarks/results/segment-protobuf-v1.txt\\\
-                        benchmarks/results/tinylib-msgp+gzip.txt\\\
-                        benchmarks/results/tinylib-msgp+snappy.txt\\\
-                        benchmarks/results/tinylib-msgp+zstd.txt\\\
-                        benchmarks/results/tinylib-msgp.txt\\\
-                        benchmarks/results/vmihailenco-msgpack+gzip.txt\\\
-                        benchmarks/results/vmihailenco-msgpack+snappy.txt\\\
-                        benchmarks/results/vmihailenco-msgpack+zstd.txt\\\
-                        benchmarks/results/vmihailenco-msgpack.txt\\\
-                        json/README.md
+%global golicenses      LICENSE LICENSE-json-fuzz
+%global godocs          README.md easyjson+gzip-benchmarks-results.txt\\\
+                        easyjson+snappy-benchmarks-results.txt\\\
+                        easyjson+zstd-benchmarks-results.txt\\\
+                        encoding-json+gzip-benchmarks-results.txt\\\
+                        encoding-json+snappy-benchmarks-results.txt\\\
+                        encoding-json+zstd-benchmarks-results.txt\\\
+                        json-iterator+gzip-benchmarks-results.txt\\\
+                        json-iterator+snappy-benchmarks-results.txt\\\
+                        json-iterator+zstd-benchmarks-results.txt\\\
+                        json-iterator-benchmarks-results.txt\\\
+                        segment-encoding-json+gzip-benchmarks-results.txt\\\
+                        segment-encoding-json+snappy-benchmarks-results.txt\\\
+                        segment-encoding-json+zstd-benchmarks-results.txt\\\
+                        segment-protobuf-v1+gzip-benchmarks-results.txt\\\
+                        segment-protobuf-v1+snappy-benchmarks-results.txt\\\
+                        segment-protobuf-v1+zstd-benchmarks-results.txt\\\
+                        segment-protobuf-v1-benchmarks-results.txt\\\
+                        tinylib-msgp+gzip-benchmarks-results.txt\\\
+                        tinylib-msgp+snappy-benchmarks-results.txt\\\
+                        tinylib-msgp+zstd-benchmarks-results.txt\\\
+                        tinylib-msgp-benchmarks-results.txt\\\
+                        vmihailenco-msgpack+gzip-benchmarks-results.txt\\\
+                        vmihailenco-msgpack+snappy-benchmarks-results.txt\\\
+                        vmihailenco-msgpack+zstd-benchmarks-results.txt\\\
+                        vmihailenco-msgpack-benchmarks-results.txt\\\
+                        README-json.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -59,6 +59,33 @@ BuildRequires:  golang(google.golang.org/protobuf/runtime/protoimpl)
 
 %prep
 %goprep
+mv json/fuzz/LICENSE LICENSE-json-fuzz
+mv benchmarks/results/easyjson+gzip.txt easyjson+gzip-benchmarks-results.txt
+mv benchmarks/results/easyjson+snappy.txt easyjson+snappy-benchmarks-results.txt
+mv benchmarks/results/easyjson+zstd.txt easyjson+zstd-benchmarks-results.txt
+mv benchmarks/results/encoding-json+gzip.txt encoding-json+gzip-benchmarks-results.txt
+mv benchmarks/results/encoding-json+snappy.txt encoding-json+snappy-benchmarks-results.txt
+mv benchmarks/results/encoding-json+zstd.txt encoding-json+zstd-benchmarks-results.txt
+mv benchmarks/results/json-iterator+gzip.txt json-iterator+gzip-benchmarks-results.txt
+mv benchmarks/results/json-iterator+snappy.txt json-iterator+snappy-benchmarks-results.txt
+mv benchmarks/results/json-iterator+zstd.txt json-iterator+zstd-benchmarks-results.txt
+mv benchmarks/results/json-iterator.txt json-iterator-benchmarks-results.txt
+mv benchmarks/results/segment-encoding-json+gzip.txt segment-encoding-json+gzip-benchmarks-results.txt
+mv benchmarks/results/segment-encoding-json+snappy.txt segment-encoding-json+snappy-benchmarks-results.txt
+mv benchmarks/results/segment-encoding-json+zstd.txt segment-encoding-json+zstd-benchmarks-results.txt
+mv benchmarks/results/segment-protobuf-v1+gzip.txt segment-protobuf-v1+gzip-benchmarks-results.txt
+mv benchmarks/results/segment-protobuf-v1+snappy.txt segment-protobuf-v1+snappy-benchmarks-results.txt
+mv benchmarks/results/segment-protobuf-v1+zstd.txt segment-protobuf-v1+zstd-benchmarks-results.txt
+mv benchmarks/results/segment-protobuf-v1.txt segment-protobuf-v1-benchmarks-results.txt
+mv benchmarks/results/tinylib-msgp+gzip.txt tinylib-msgp+gzip-benchmarks-results.txt
+mv benchmarks/results/tinylib-msgp+snappy.txt tinylib-msgp+snappy-benchmarks-results.txt
+mv benchmarks/results/tinylib-msgp+zstd.txt tinylib-msgp+zstd-benchmarks-results.txt
+mv benchmarks/results/tinylib-msgp.txt tinylib-msgp-benchmarks-results.txt
+mv benchmarks/results/vmihailenco-msgpack+gzip.txt vmihailenco-msgpack+gzip-benchmarks-results.txt
+mv benchmarks/results/vmihailenco-msgpack+snappy.txt vmihailenco-msgpack+snappy-benchmarks-results.txt
+mv benchmarks/results/vmihailenco-msgpack+zstd.txt vmihailenco-msgpack+zstd-benchmarks-results.txt
+mv benchmarks/results/vmihailenco-msgpack.txt vmihailenco-msgpack-benchmarks-results.txt
+mv json/README.md README-json.md
 
 %build
 for cmd in ascii json/bugs/issue11 json/bugs/issue18 json/bugs/issue84 proto/fixtures/generate; do
@@ -76,31 +103,31 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE json/fuzz/LICENSE
-%doc README.md benchmarks/results/easyjson+gzip.txt
-%doc benchmarks/results/easyjson+snappy.txt benchmarks/results/easyjson+zstd.txt
-%doc benchmarks/results/encoding-json+gzip.txt
-%doc benchmarks/results/encoding-json+snappy.txt
-%doc benchmarks/results/encoding-json+zstd.txt
-%doc benchmarks/results/json-iterator+gzip.txt
-%doc benchmarks/results/json-iterator+snappy.txt
-%doc benchmarks/results/json-iterator+zstd.txt
-%doc benchmarks/results/json-iterator.txt
-%doc benchmarks/results/segment-encoding-json+gzip.txt
-%doc benchmarks/results/segment-encoding-json+snappy.txt
-%doc benchmarks/results/segment-encoding-json+zstd.txt
-%doc benchmarks/results/segment-protobuf-v1+gzip.txt
-%doc benchmarks/results/segment-protobuf-v1+snappy.txt
-%doc benchmarks/results/segment-protobuf-v1+zstd.txt
-%doc benchmarks/results/segment-protobuf-v1.txt
-%doc benchmarks/results/tinylib-msgp+gzip.txt
-%doc benchmarks/results/tinylib-msgp+snappy.txt
-%doc benchmarks/results/tinylib-msgp+zstd.txt
-%doc benchmarks/results/tinylib-msgp.txt
-%doc benchmarks/results/vmihailenco-msgpack+gzip.txt
-%doc benchmarks/results/vmihailenco-msgpack+snappy.txt
-%doc benchmarks/results/vmihailenco-msgpack+zstd.txt
-%doc benchmarks/results/vmihailenco-msgpack.txt json/README.md
+%license LICENSE LICENSE-json-fuzz
+%doc README.md easyjson+gzip-benchmarks-results.txt
+%doc easyjson+snappy-benchmarks-results.txt easyjson+zstd-benchmarks-results.txt
+%doc encoding-json+gzip-benchmarks-results.txt
+%doc encoding-json+snappy-benchmarks-results.txt
+%doc encoding-json+zstd-benchmarks-results.txt
+%doc json-iterator+gzip-benchmarks-results.txt
+%doc json-iterator+snappy-benchmarks-results.txt
+%doc json-iterator+zstd-benchmarks-results.txt
+%doc json-iterator-benchmarks-results.txt
+%doc segment-encoding-json+gzip-benchmarks-results.txt
+%doc segment-encoding-json+snappy-benchmarks-results.txt
+%doc segment-encoding-json+zstd-benchmarks-results.txt
+%doc segment-protobuf-v1+gzip-benchmarks-results.txt
+%doc segment-protobuf-v1+snappy-benchmarks-results.txt
+%doc segment-protobuf-v1+zstd-benchmarks-results.txt
+%doc segment-protobuf-v1-benchmarks-results.txt
+%doc tinylib-msgp+gzip-benchmarks-results.txt
+%doc tinylib-msgp+snappy-benchmarks-results.txt
+%doc tinylib-msgp+zstd-benchmarks-results.txt
+%doc tinylib-msgp-benchmarks-results.txt
+%doc vmihailenco-msgpack+gzip-benchmarks-results.txt
+%doc vmihailenco-msgpack+snappy-benchmarks-results.txt
+%doc vmihailenco-msgpack+zstd-benchmarks-results.txt
+%doc vmihailenco-msgpack-benchmarks-results.txt README-json.md
 %{_bindir}/*
 
 %gopkgfiles

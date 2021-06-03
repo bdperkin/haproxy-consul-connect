@@ -11,7 +11,7 @@
 # FIXME}
 
 %global golicenses      LICENSE.md
-%global godocs          README.md cmd/arpc/README.md
+%global godocs          README.md README-cmd-arpc.md
 
 Name:           %{goname}
 Version:        0
@@ -32,6 +32,7 @@ BuildRequires:  golang(github.com/mdlayher/raw)
 
 %prep
 %goprep
+mv cmd/arpc/README.md README-cmd-arpc.md
 
 %build
 for cmd in cmd/* ; do
@@ -50,7 +51,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE.md
-%doc README.md cmd/arpc/README.md
+%doc README.md README-cmd-arpc.md
 %{_bindir}/*
 
 %gopkgfiles

@@ -9,7 +9,7 @@ Version:                0.20.0
 %gometa
 
 %global common_description %{expand:
-Collection of extensions for OpenTelemetry-Go.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -22,7 +22,7 @@ Collection of extensions for OpenTelemetry-Go.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Collection of extensions for OpenTelemetry-Go
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

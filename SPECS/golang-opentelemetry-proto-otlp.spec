@@ -5,6 +5,8 @@
 %global goipath         go.opentelemetry.io/proto/otlp
 %global forgeurl        https://github.com/open-telemetry/opentelemetry-proto-go
 Version:                0.9.0
+%global tag             otlp/v0.9.0
+%global commit          1dd5289a98f0b45d2d459750f083e1b805aa05ed
 
 %gometa
 

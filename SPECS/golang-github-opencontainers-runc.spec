@@ -13,14 +13,15 @@ specification.}
 
 %global golicenses      LICENSE NOTICE
 %global godocs          PRINCIPLES.md CONTRIBUTING.md MAINTAINERS_GUIDE.md\\\
-                        README.md libcontainer/README.md libcontainer/SPEC.md\\\
-                        libcontainer/nsenter/README.md man/README.md\\\
-                        man/runc-checkpoint.8.md man/runc-delete.8.md\\\
-                        man/runc-events.8.md man/runc-exec.8.md man/runc-\\\
-                        kill.8.md man/runc-list.8.md man/runc-pause.8.md\\\
-                        man/runc-restore.8.md man/runc-resume.8.md man/runc-\\\
-                        spec.8.md man/runc-start.8.md man/runc-state.8.md\\\
-                        man/runc.8.md
+                        README.md README-libcontainer.md\\\
+                        SPEC-libcontainer.md README-libcontainer-nsenter.md\\\
+                        README-man.md runc-checkpoint.8-man.md\\\
+                        runc-delete.8-man.md runc-events.8-man.md\\\
+                        runc-exec.8-man.md runc-kill.8-man.md\\\
+                        runc-list.8-man.md runc-pause.8-man.md\\\
+                        runc-restore.8-man.md runc-resume.8-man.md\\\
+                        runc-spec.8-man.md runc-start.8-man.md\\\
+                        runc-state.8-man.md runc.8-man.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -54,6 +55,23 @@ BuildRequires:  golang(github.com/vishvananda/netlink/nl)
 
 %prep
 %goprep
+mv libcontainer/README.md README-libcontainer.md
+mv libcontainer/SPEC.md SPEC-libcontainer.md
+mv libcontainer/nsenter/README.md README-libcontainer-nsenter.md
+mv man/README.md README-man.md
+mv man/runc-checkpoint.8.md runc-checkpoint.8-man.md
+mv man/runc-delete.8.md runc-delete.8-man.md
+mv man/runc-events.8.md runc-events.8-man.md
+mv man/runc-exec.8.md runc-exec.8-man.md
+mv man/runc-kill.8.md runc-kill.8-man.md
+mv man/runc-list.8.md runc-list.8-man.md
+mv man/runc-pause.8.md runc-pause.8-man.md
+mv man/runc-restore.8.md runc-restore.8-man.md
+mv man/runc-resume.8.md runc-resume.8-man.md
+mv man/runc-spec.8.md runc-spec.8-man.md
+mv man/runc-start.8.md runc-start.8-man.md
+mv man/runc-state.8.md runc-state.8-man.md
+mv man/runc.8.md runc.8-man.md
 
 %build
 %gobuild -o %{gobuilddir}/bin/runc %{goipath}
@@ -71,12 +89,12 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license LICENSE NOTICE
 %doc PRINCIPLES.md CONTRIBUTING.md MAINTAINERS_GUIDE.md README.md
-%doc libcontainer/README.md libcontainer/SPEC.md libcontainer/nsenter/README.md
-%doc man/README.md man/runc-checkpoint.8.md man/runc-delete.8.md
-%doc man/runc-events.8.md man/runc-exec.8.md man/runc-kill.8.md
-%doc man/runc-list.8.md man/runc-pause.8.md man/runc-restore.8.md
-%doc man/runc-resume.8.md man/runc-spec.8.md man/runc-start.8.md
-%doc man/runc-state.8.md man/runc.8.md
+%doc README-libcontainer.md SPEC-libcontainer.md README-libcontainer-nsenter.md
+%doc README-man.md runc-checkpoint.8-man.md runc-delete.8-man.md
+%doc runc-events.8-man.md runc-exec.8-man.md runc-kill.8-man.md
+%doc runc-list.8-man.md runc-pause.8-man.md runc-restore.8-man.md
+%doc runc-resume.8-man.md runc-spec.8-man.md runc-start.8-man.md
+%doc runc-state.8-man.md runc.8-man.md
 %{_bindir}/*
 
 %gopkgfiles

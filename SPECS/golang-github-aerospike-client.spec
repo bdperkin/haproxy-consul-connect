@@ -10,9 +10,9 @@ Version:                4.5.2
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE pkg/bcrypt/LICENSE
+%global golicenses      LICENSE LICENSE-pkg-bcrypt
 %global godocs          docs examples CHANGELOG.md README.md\\\
-                        pkg/bcrypt/README tools/benchmark/README.md
+                        README-pkg-bcrypt README-tools-benchmark.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -40,6 +40,9 @@ BuildRequires:  golang(github.com/onsi/gomega)
 
 %prep
 %goprep
+mv pkg/bcrypt/LICENSE LICENSE-pkg-bcrypt
+mv pkg/bcrypt/README README-pkg-bcrypt
+mv tools/benchmark/README.md README-tools-benchmark.md
 
 %build
 for cmd in tools/asinfo tools/benchmark tools/cli; do
@@ -57,9 +60,9 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE pkg/bcrypt/LICENSE
-%doc docs examples CHANGELOG.md README.md pkg/bcrypt/README
-%doc tools/benchmark/README.md
+%license LICENSE LICENSE-pkg-bcrypt
+%doc docs examples CHANGELOG.md README.md README-pkg-bcrypt
+%doc README-tools-benchmark.md
 %{_bindir}/*
 
 %gopkgfiles

@@ -11,11 +11,11 @@ Version:                3.6.5
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE docker/DOCKER-LICENSE docker/LICENSE
+%global golicenses      LICENSE DOCKER-LICENSE-docker LICENSE-docker
 %global godocs          docs examples README.md SECURITY.md CONTRIBUTING.md\\\
-                        docker/AUTHORS docker/README.markdown\\\
-                        docker/pkg/README.md docker/pkg/archive/README.md\\\
-                        docker/types/versions/README.md
+                        AUTHORS-docker README-docker.markdown\\\
+                        README-docker-pkg.md README-docker-pkg-archive.md\\\
+                        README-docker-types-versions.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -55,6 +55,13 @@ BuildRequires:  golang(gotest.tools/v3/assert/cmp)
 
 %prep
 %goprep
+mv docker/DOCKER-LICENSE DOCKER-LICENSE-docker
+mv docker/LICENSE LICENSE-docker
+mv docker/AUTHORS AUTHORS-docker
+mv docker/README.markdown README-docker.markdown
+mv docker/pkg/README.md README-docker-pkg.md
+mv docker/pkg/archive/README.md README-docker-pkg-archive.md
+mv docker/types/versions/README.md README-docker-types-versions.md
 
 %build
 for cmd in docker/pkg/archive; do
@@ -72,10 +79,10 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE docker/DOCKER-LICENSE docker/LICENSE
-%doc docs examples README.md SECURITY.md CONTRIBUTING.md docker/AUTHORS
-%doc docker/README.markdown docker/pkg/README.md docker/pkg/archive/README.md
-%doc docker/types/versions/README.md
+%license LICENSE DOCKER-LICENSE-docker LICENSE-docker
+%doc docs examples README.md SECURITY.md CONTRIBUTING.md AUTHORS-docker
+%doc README-docker.markdown README-docker-pkg.md README-docker-pkg-archive.md
+%doc README-docker-types-versions.md
 %{_bindir}/*
 
 %gopkgfiles

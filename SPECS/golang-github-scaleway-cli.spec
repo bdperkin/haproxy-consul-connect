@@ -11,7 +11,7 @@ Version:                1.11.1
 # FIXME}
 
 %global golicenses      LICENSE.md
-%global godocs          examples README.md dist/README.md pkg/api/README.md
+%global godocs          examples README.md README-dist.md README-pkg-api.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -52,6 +52,8 @@ BuildRequires:  golang(github.com/stretchr/testify/assert)
 
 %prep
 %goprep
+mv dist/README.md README-dist.md
+mv pkg/api/README.md README-pkg-api.md
 
 %build
 for cmd in cmd/* ; do
@@ -70,7 +72,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE.md
-%doc examples README.md dist/README.md pkg/api/README.md
+%doc examples README.md README-dist.md README-pkg-api.md
 %{_bindir}/*
 
 %gopkgfiles

@@ -8,20 +8,19 @@ Version:                0.6.1
 %gometa
 
 %global common_description %{expand:
-Notary is a project that allows anyone to have trust over arbitrary collections
-of data.}
+# FIXME}
 
-%global golicenses      LICENSE tuf/LICENSE
+%global golicenses      LICENSE LICENSE-tuf
 %global godocs          docs CONTRIBUTING.md CONTRIBUTORS\\\
                         MAINTAINERS_RULES.md README.md CHANGELOG.md\\\
-                        ROADMAP.md fixtures/compatibility/README.md\\\
-                        fixtures/compatibility/notary0.1/README.txt\\\
-                        migrations/README.md trustmanager/importLogic.md\\\
-                        tuf/README.md
+                        ROADMAP.md README-fixtures-compatibility.md\\\
+                        README-fixtures-compatibility-notary0.1.txt\\\
+                        README-migrations.md importLogic-trustmanager.md\\\
+                        README-tuf.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Notary is a project that allows anyone to have trust over arbitrary collections of data
+Summary:        None
 
 # Upstream license specification: Apache-2.0 and BSD-3-Clause
 License:        ASL 2.0 and BSD
@@ -110,6 +109,12 @@ BuildRequires:  golang(github.com/theupdateframework/notary/tuf/testutils/interf
 
 %prep
 %goprep
+mv tuf/LICENSE LICENSE-tuf
+mv fixtures/compatibility/README.md README-fixtures-compatibility.md
+mv fixtures/compatibility/notary0.1/README.txt README-fixtures-compatibility-notary0.1.txt
+mv migrations/README.md README-migrations.md
+mv trustmanager/importLogic.md importLogic-trustmanager.md
+mv tuf/README.md README-tuf.md
 
 %build
 for cmd in cmd/* ; do
@@ -127,11 +132,11 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE tuf/LICENSE
+%license LICENSE LICENSE-tuf
 %doc docs CONTRIBUTING.md CONTRIBUTORS MAINTAINERS_RULES.md README.md
-%doc CHANGELOG.md ROADMAP.md fixtures/compatibility/README.md
-%doc fixtures/compatibility/notary0.1/README.txt migrations/README.md
-%doc trustmanager/importLogic.md tuf/README.md
+%doc CHANGELOG.md ROADMAP.md README-fixtures-compatibility.md
+%doc README-fixtures-compatibility-notary0.1.txt README-migrations.md
+%doc importLogic-trustmanager.md README-tuf.md
 %{_bindir}/*
 
 %gopkgfiles

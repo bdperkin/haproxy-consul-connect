@@ -11,15 +11,15 @@ Version:                8.0.0
 # FIXME}
 
 %global golicenses      LICENSE NOTICE license_test.go\\\
-                        _tools/src/github.com/kisielk/errcheck/LICENSE\\\
-                        _tools/src/github.com/kisielk/gotool/LICENSE\\\
-                        _tools/src/github.com/twitchtv/retool/LICENSE
+                        LICENSE-_tools-src-github.com-kisielk-errcheck\\\
+                        LICENSE-_tools-src-github.com-kisielk-gotool\\\
+                        LICENSE-_tools-src-github.com-twitchtv-retool
 %global godocs          docs example CONTRIBUTING.md PROTOCOL.md\\\
                         requirements.txt README.md\\\
-                        _tools/src/github.com/kisielk/errcheck/README.md\\\
-                        _tools/src/github.com/kisielk/gotool/README.md\\\
-                        _tools/src/github.com/twitchtv/retool/README.md\\\
-                        clientcompat/README.md
+                        README-_tools-src-github.com-kisielk-errcheck.md\\\
+                        README-_tools-src-github.com-kisielk-gotool.md\\\
+                        README-_tools-src-github.com-twitchtv-retool.md\\\
+                        README-clientcompat.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -53,6 +53,13 @@ BuildRequires:  golang(github.com/stretchr/testify/require)
 
 %prep
 %goprep
+mv _tools/src/github.com/kisielk/errcheck/LICENSE LICENSE-_tools-src-github.com-kisielk-errcheck
+mv _tools/src/github.com/kisielk/gotool/LICENSE LICENSE-_tools-src-github.com-kisielk-gotool
+mv _tools/src/github.com/twitchtv/retool/LICENSE LICENSE-_tools-src-github.com-twitchtv-retool
+mv _tools/src/github.com/kisielk/errcheck/README.md README-_tools-src-github.com-kisielk-errcheck.md
+mv _tools/src/github.com/kisielk/gotool/README.md README-_tools-src-github.com-kisielk-gotool.md
+mv _tools/src/github.com/twitchtv/retool/README.md README-_tools-src-github.com-twitchtv-retool.md
+mv clientcompat/README.md README-clientcompat.md
 
 %build
 for cmd in clientcompat clientcompat/gocompat protoc-gen-twirp protoc-gen-twirp_python _tools/src/github.com/kisielk/errcheck _tools/src/github.com/twitchtv/retool; do
@@ -71,13 +78,13 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE NOTICE license_test.go
-%license _tools/src/github.com/kisielk/errcheck/LICENSE
-%license _tools/src/github.com/kisielk/gotool/LICENSE
-%license _tools/src/github.com/twitchtv/retool/LICENSE
+%license LICENSE-_tools-src-github.com-kisielk-errcheck
+%license LICENSE-_tools-src-github.com-kisielk-gotool
+%license LICENSE-_tools-src-github.com-twitchtv-retool
 %doc docs example CONTRIBUTING.md PROTOCOL.md requirements.txt README.md
-%doc _tools/src/github.com/kisielk/errcheck/README.md
-%doc _tools/src/github.com/kisielk/gotool/README.md
-%doc _tools/src/github.com/twitchtv/retool/README.md clientcompat/README.md
+%doc README-_tools-src-github.com-kisielk-errcheck.md
+%doc README-_tools-src-github.com-kisielk-gotool.md
+%doc README-_tools-src-github.com-twitchtv-retool.md README-clientcompat.md
 %{_bindir}/*
 
 %gopkgfiles

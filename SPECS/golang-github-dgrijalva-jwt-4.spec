@@ -13,7 +13,7 @@ Version:                4.0.0~preview1
 
 %global golicenses      LICENSE
 %global godocs          MIGRATION_GUIDE.md README.md VERSION_HISTORY.md\\\
-                        cmd/jwt/README.md
+                        README-cmd-jwt.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -30,6 +30,7 @@ Source0:        %{gosource}
 
 %prep
 %goprep
+mv cmd/jwt/README.md README-cmd-jwt.md
 
 %build
 for cmd in cmd/* ; do
@@ -48,7 +49,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc MIGRATION_GUIDE.md README.md VERSION_HISTORY.md cmd/jwt/README.md
+%doc MIGRATION_GUIDE.md README.md VERSION_HISTORY.md README-cmd-jwt.md
 %{_bindir}/*
 
 %gopkgfiles

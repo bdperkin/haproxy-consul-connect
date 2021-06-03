@@ -12,16 +12,16 @@ Version:                0.5.0
 
 %global golicenses      LICENSE-3rdparty.csv LICENSE-APACHE LICENSE-BSD3\\\
                         LICENSE
-%global godocs          example CONTRIBUTING.md README.md test-\\\
-                        fixtures/cgo.txt test-fixtures/empty_input.txt test-\\\
-                        fixtures/empty_stack.txt test-\\\
-                        fixtures/errorhandling.txt test-\\\
-                        fixtures/frameselided.txt test-\\\
-                        fixtures/frameselided_goroutine.txt test-\\\
-                        fixtures/lockedm.txt test-\\\
-                        fixtures/partial_createdby.txt test-\\\
-                        fixtures/partial_stack.txt test-\\\
-                        fixtures/waitsince.txt
+%global godocs          example CONTRIBUTING.md README.md\\\
+                        cgo-test-fixtures.txt empty_input-test-fixtures.txt\\\
+                        empty_stack-test-fixtures.txt\\\
+                        errorhandling-test-fixtures.txt\\\
+                        frameselided-test-fixtures.txt\\\
+                        frameselided_goroutine-test-fixtures.txt\\\
+                        lockedm-test-fixtures.txt\\\
+                        partial_createdby-test-fixtures.txt\\\
+                        partial_stack-test-fixtures.txt\\\
+                        waitsince-test-fixtures.txt
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -44,6 +44,16 @@ BuildRequires:  golang(github.com/stretchr/testify/require)
 
 %prep
 %goprep
+mv test-fixtures/cgo.txt cgo-test-fixtures.txt
+mv test-fixtures/empty_input.txt empty_input-test-fixtures.txt
+mv test-fixtures/empty_stack.txt empty_stack-test-fixtures.txt
+mv test-fixtures/errorhandling.txt errorhandling-test-fixtures.txt
+mv test-fixtures/frameselided.txt frameselided-test-fixtures.txt
+mv test-fixtures/frameselided_goroutine.txt frameselided_goroutine-test-fixtures.txt
+mv test-fixtures/lockedm.txt lockedm-test-fixtures.txt
+mv test-fixtures/partial_createdby.txt partial_createdby-test-fixtures.txt
+mv test-fixtures/partial_stack.txt partial_stack-test-fixtures.txt
+mv test-fixtures/waitsince.txt waitsince-test-fixtures.txt
 
 %build
 for cmd in cmd/* ; do
@@ -65,12 +75,12 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE-3rdparty.csv LICENSE-APACHE LICENSE-BSD3 LICENSE
-%doc example CONTRIBUTING.md README.md test-fixtures/cgo.txt
-%doc test-fixtures/empty_input.txt test-fixtures/empty_stack.txt
-%doc test-fixtures/errorhandling.txt test-fixtures/frameselided.txt
-%doc test-fixtures/frameselided_goroutine.txt test-fixtures/lockedm.txt
-%doc test-fixtures/partial_createdby.txt test-fixtures/partial_stack.txt
-%doc test-fixtures/waitsince.txt
+%doc example CONTRIBUTING.md README.md cgo-test-fixtures.txt
+%doc empty_input-test-fixtures.txt empty_stack-test-fixtures.txt
+%doc errorhandling-test-fixtures.txt frameselided-test-fixtures.txt
+%doc frameselided_goroutine-test-fixtures.txt lockedm-test-fixtures.txt
+%doc partial_createdby-test-fixtures.txt partial_stack-test-fixtures.txt
+%doc waitsince-test-fixtures.txt
 %{_bindir}/*
 
 %gopkgfiles

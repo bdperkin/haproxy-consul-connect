@@ -10,70 +10,76 @@ Version:                1.12.6
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE NOTICE contrib/syntax/vim/LICENSE\\\
-                        contrib/selinux-fedora-24/docker-engine-\\\
-                        selinux/LICENSE contrib/selinux-oraclelinux-7/docker-\\\
-                        engine-selinux/LICENSE contrib/selinux/docker-engine-\\\
-                        selinux/LICENSE pkg/mflag/LICENSE\\\
-                        pkg/symlink/LICENSE.APACHE pkg/symlink/LICENSE.BSD
+%global golicenses      LICENSE NOTICE LICENSE-contrib-syntax-vim\\\
+                        LICENSE-contrib-selinux-fedora-24-docker-engine-selinux\\\
+                        LICENSE-contrib-selinux-oraclelinux-7-docker-engine-selinux\\\
+                        LICENSE-contrib-selinux-docker-engine-selinux\\\
+                        LICENSE-pkg-mflag LICENSE-pkg-symlink.APACHE\\\
+                        LICENSE-pkg-symlink.BSD
 %global godocs          docs AUTHORS CHANGELOG.md CONTRIBUTING.md README.md\\\
-                        ROADMAP.md VENDORING.md api/README.md\\\
-                        cmd/dockerd/README.md contrib/README.md\\\
-                        contrib/docker-device-tool/README.md\\\
-                        contrib/syntax/nano/README.md\\\
-                        contrib/syntax/textmate/README.md doc\\\
-                        contrib/syntax/vim/README.md\\\
-                        contrib/builder/deb/amd64/README.md\\\
-                        contrib/builder/rpm/amd64/README.md contrib/desktop-\\\
-                        integration/README.md contrib/selinux-\\\
-                        fedora-24/docker-engine-selinux/README.md\\\
-                        contrib/selinux-oraclelinux-7/docker-engine-\\\
-                        selinux/README.md contrib/vagrant-docker/README.md\\\
-                        daemon/graphdriver/devmapper/README.md\\\
-                        hack/make/README.md hack/Jenkins/readme.md\\\
-                        image/spec/v1.1.md image/spec/v1.2.md\\\
-                        image/spec/v1.md pkg/README.md pkg/archive/README.md\\\
-                        pkg/discovery/README.md pkg/locker/README.md\\\
-                        pkg/plugins/pluginrpc-gen/README.md\\\
-                        pkg/reexec/README.md pkg/signal/README.md\\\
-                        pkg/stringid/README.md pkg/sysinfo/README.md\\\
-                        pkg/tarsum/tarsum_spec.md pkg/useragent/README.md\\\
-                        example pkg/mflag/README.md pkg/stringutils/README.md\\\
-                        pkg/symlink/README.md project/BRANCHES-AND-TAGS.md\\\
-                        project/PATCH-RELEASES.md project/PRINCIPLES.md\\\
-                        project/ARM.md project/CONTRIBUTORS.md\\\
-                        project/GOVERNANCE.md project/IRC-ADMINISTRATION.md\\\
-                        project/ISSUE-TRIAGE.md project/PACKAGE-REPO-\\\
-                        MAINTENANCE.md project/PACKAGERS.md project/README.md\\\
-                        project/RELEASE-CHECKLIST.md project/RELEASE-\\\
-                        PROCESS.md project/REVIEWING.md project/TOOLS.md\\\
-                        experimental/README.md experimental/docker-stacks-\\\
-                        and-bundles.md experimental/plugins_graphdriver.md\\\
-                        experimental/vlan-networks.md man/Dockerfile.5.md\\\
-                        man/README.md man/docker-attach.1.md man/docker-\\\
-                        build.1.md man/docker-commit.1.md man/docker-config-\\\
-                        json.5.md man/docker-cp.1.md man/docker-create.1.md\\\
-                        man/docker-diff.1.md man/docker-events.1.md\\\
-                        man/docker-exec.1.md man/docker-export.1.md\\\
-                        man/docker-history.1.md man/docker-images.1.md\\\
-                        man/docker-import.1.md man/docker-info.1.md\\\
-                        man/docker-inspect.1.md man/docker-kill.1.md\\\
-                        man/docker-load.1.md man/docker-login.1.md\\\
-                        man/docker-logout.1.md man/docker-logs.1.md\\\
-                        man/docker-network-connect.1.md man/docker-network-\\\
-                        create.1.md man/docker-network-disconnect.1.md\\\
-                        man/docker-network-inspect.1.md man/docker-network-\\\
-                        ls.1.md man/docker-network-rm.1.md man/docker-\\\
-                        pause.1.md man/docker-port.1.md man/docker-ps.1.md\\\
-                        man/docker-pull.1.md man/docker-push.1.md man/docker-\\\
-                        rename.1.md man/docker-restart.1.md man/docker-\\\
-                        rm.1.md man/docker-rmi.1.md man/docker-run.1.md\\\
-                        man/docker-save.1.md man/docker-search.1.md\\\
-                        man/docker-start.1.md man/docker-stats.1.md\\\
-                        man/docker-stop.1.md man/docker-tag.1.md man/docker-\\\
-                        top.1.md man/docker-unpause.1.md man/docker-\\\
-                        update.1.md man/docker-version.1.md man/docker-\\\
-                        wait.1.md man/docker.1.md man/dockerd.8.md
+                        ROADMAP.md VENDORING.md README-api.md\\\
+                        README-cmd-dockerd.md README-contrib.md\\\
+                        README-contrib-docker-device-tool.md\\\
+                        README-contrib-syntax-nano.md\\\
+                        README-contrib-syntax-textmate.md doc\\\
+                        README-contrib-syntax-vim.md\\\
+                        README-contrib-builder-deb-amd64.md\\\
+                        README-contrib-builder-rpm-amd64.md\\\
+                        README-contrib-desktop-integration.md\\\
+                        README-contrib-selinux-fedora-24-docker-engine-selinux.md\\\
+                        README-contrib-selinux-oraclelinux-7-docker-engine-selinux.md\\\
+                        README-contrib-vagrant-docker.md\\\
+                        README-daemon-graphdriver-devmapper.md\\\
+                        README-hack-make.md readme-hack-Jenkins.md\\\
+                        v1.1-image-spec.md v1.2-image-spec.md\\\
+                        v1-image-spec.md README-pkg.md README-pkg-archive.md\\\
+                        README-pkg-discovery.md README-pkg-locker.md\\\
+                        README-pkg-plugins-pluginrpc-gen.md\\\
+                        README-pkg-reexec.md README-pkg-signal.md\\\
+                        README-pkg-stringid.md README-pkg-sysinfo.md\\\
+                        tarsum_spec-pkg-tarsum.md README-pkg-useragent.md\\\
+                        example README-pkg-mflag.md\\\
+                        README-pkg-stringutils.md README-pkg-symlink.md\\\
+                        BRANCHES-AND-TAGS-project.md\\\
+                        PATCH-RELEASES-project.md PRINCIPLES-project.md\\\
+                        ARM-project.md CONTRIBUTORS-project.md\\\
+                        GOVERNANCE-project.md IRC-ADMINISTRATION-project.md\\\
+                        ISSUE-TRIAGE-project.md\\\
+                        PACKAGE-REPO-MAINTENANCE-project.md\\\
+                        PACKAGERS-project.md README-project.md\\\
+                        RELEASE-CHECKLIST-project.md\\\
+                        RELEASE-PROCESS-project.md REVIEWING-project.md\\\
+                        TOOLS-project.md README-experimental.md\\\
+                        docker-stacks-and-bundles-experimental.md\\\
+                        plugins_graphdriver-experimental.md\\\
+                        vlan-networks-experimental.md Dockerfile.5-man.md\\\
+                        README-man.md docker-attach.1-man.md\\\
+                        docker-build.1-man.md docker-commit.1-man.md\\\
+                        docker-config-json.5-man.md docker-cp.1-man.md\\\
+                        docker-create.1-man.md docker-diff.1-man.md\\\
+                        docker-events.1-man.md docker-exec.1-man.md\\\
+                        docker-export.1-man.md docker-history.1-man.md\\\
+                        docker-images.1-man.md docker-import.1-man.md\\\
+                        docker-info.1-man.md docker-inspect.1-man.md\\\
+                        docker-kill.1-man.md docker-load.1-man.md\\\
+                        docker-login.1-man.md docker-logout.1-man.md\\\
+                        docker-logs.1-man.md docker-network-connect.1-man.md\\\
+                        docker-network-create.1-man.md\\\
+                        docker-network-disconnect.1-man.md\\\
+                        docker-network-inspect.1-man.md\\\
+                        docker-network-ls.1-man.md\\\
+                        docker-network-rm.1-man.md docker-pause.1-man.md\\\
+                        docker-port.1-man.md docker-ps.1-man.md\\\
+                        docker-pull.1-man.md docker-push.1-man.md\\\
+                        docker-rename.1-man.md docker-restart.1-man.md\\\
+                        docker-rm.1-man.md docker-rmi.1-man.md\\\
+                        docker-run.1-man.md docker-save.1-man.md\\\
+                        docker-search.1-man.md docker-start.1-man.md\\\
+                        docker-stats.1-man.md docker-stop.1-man.md\\\
+                        docker-tag.1-man.md docker-top.1-man.md\\\
+                        docker-unpause.1-man.md docker-update.1-man.md\\\
+                        docker-version.1-man.md docker-wait.1-man.md\\\
+                        docker.1-man.md dockerd.8-man.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -217,6 +223,116 @@ BuildRequires:  golang(github.com/vishvananda/netlink)
 
 %prep
 %goprep
+mv contrib/syntax/vim/LICENSE LICENSE-contrib-syntax-vim
+mv contrib/selinux-fedora-24/docker-engine-selinux/LICENSE LICENSE-contrib-selinux-fedora-24-docker-engine-selinux
+mv contrib/selinux-oraclelinux-7/docker-engine-selinux/LICENSE LICENSE-contrib-selinux-oraclelinux-7-docker-engine-selinux
+mv contrib/selinux/docker-engine-selinux/LICENSE LICENSE-contrib-selinux-docker-engine-selinux
+mv pkg/mflag/LICENSE LICENSE-pkg-mflag
+mv pkg/symlink/LICENSE.APACHE LICENSE-pkg-symlink.APACHE
+mv pkg/symlink/LICENSE.BSD LICENSE-pkg-symlink.BSD
+mv api/README.md README-api.md
+mv cmd/dockerd/README.md README-cmd-dockerd.md
+mv contrib/README.md README-contrib.md
+mv contrib/docker-device-tool/README.md README-contrib-docker-device-tool.md
+mv contrib/syntax/nano/README.md README-contrib-syntax-nano.md
+mv contrib/syntax/textmate/README.md README-contrib-syntax-textmate.md
+mv contrib/syntax/vim/README.md README-contrib-syntax-vim.md
+mv contrib/builder/deb/amd64/README.md README-contrib-builder-deb-amd64.md
+mv contrib/builder/rpm/amd64/README.md README-contrib-builder-rpm-amd64.md
+mv contrib/desktop-integration/README.md README-contrib-desktop-integration.md
+mv contrib/selinux-fedora-24/docker-engine-selinux/README.md README-contrib-selinux-fedora-24-docker-engine-selinux.md
+mv contrib/selinux-oraclelinux-7/docker-engine-selinux/README.md README-contrib-selinux-oraclelinux-7-docker-engine-selinux.md
+mv contrib/vagrant-docker/README.md README-contrib-vagrant-docker.md
+mv daemon/graphdriver/devmapper/README.md README-daemon-graphdriver-devmapper.md
+mv hack/make/README.md README-hack-make.md
+mv hack/Jenkins/readme.md readme-hack-Jenkins.md
+mv image/spec/v1.1.md v1.1-image-spec.md
+mv image/spec/v1.2.md v1.2-image-spec.md
+mv image/spec/v1.md v1-image-spec.md
+mv pkg/README.md README-pkg.md
+mv pkg/archive/README.md README-pkg-archive.md
+mv pkg/discovery/README.md README-pkg-discovery.md
+mv pkg/locker/README.md README-pkg-locker.md
+mv pkg/plugins/pluginrpc-gen/README.md README-pkg-plugins-pluginrpc-gen.md
+mv pkg/reexec/README.md README-pkg-reexec.md
+mv pkg/signal/README.md README-pkg-signal.md
+mv pkg/stringid/README.md README-pkg-stringid.md
+mv pkg/sysinfo/README.md README-pkg-sysinfo.md
+mv pkg/tarsum/tarsum_spec.md tarsum_spec-pkg-tarsum.md
+mv pkg/useragent/README.md README-pkg-useragent.md
+mv pkg/mflag/README.md README-pkg-mflag.md
+mv pkg/stringutils/README.md README-pkg-stringutils.md
+mv pkg/symlink/README.md README-pkg-symlink.md
+mv project/BRANCHES-AND-TAGS.md BRANCHES-AND-TAGS-project.md
+mv project/PATCH-RELEASES.md PATCH-RELEASES-project.md
+mv project/PRINCIPLES.md PRINCIPLES-project.md
+mv project/ARM.md ARM-project.md
+mv project/CONTRIBUTORS.md CONTRIBUTORS-project.md
+mv project/GOVERNANCE.md GOVERNANCE-project.md
+mv project/IRC-ADMINISTRATION.md IRC-ADMINISTRATION-project.md
+mv project/ISSUE-TRIAGE.md ISSUE-TRIAGE-project.md
+mv project/PACKAGE-REPO-MAINTENANCE.md PACKAGE-REPO-MAINTENANCE-project.md
+mv project/PACKAGERS.md PACKAGERS-project.md
+mv project/README.md README-project.md
+mv project/RELEASE-CHECKLIST.md RELEASE-CHECKLIST-project.md
+mv project/RELEASE-PROCESS.md RELEASE-PROCESS-project.md
+mv project/REVIEWING.md REVIEWING-project.md
+mv project/TOOLS.md TOOLS-project.md
+mv experimental/README.md README-experimental.md
+mv experimental/docker-stacks-and-bundles.md docker-stacks-and-bundles-experimental.md
+mv experimental/plugins_graphdriver.md plugins_graphdriver-experimental.md
+mv experimental/vlan-networks.md vlan-networks-experimental.md
+mv man/Dockerfile.5.md Dockerfile.5-man.md
+mv man/README.md README-man.md
+mv man/docker-attach.1.md docker-attach.1-man.md
+mv man/docker-build.1.md docker-build.1-man.md
+mv man/docker-commit.1.md docker-commit.1-man.md
+mv man/docker-config-json.5.md docker-config-json.5-man.md
+mv man/docker-cp.1.md docker-cp.1-man.md
+mv man/docker-create.1.md docker-create.1-man.md
+mv man/docker-diff.1.md docker-diff.1-man.md
+mv man/docker-events.1.md docker-events.1-man.md
+mv man/docker-exec.1.md docker-exec.1-man.md
+mv man/docker-export.1.md docker-export.1-man.md
+mv man/docker-history.1.md docker-history.1-man.md
+mv man/docker-images.1.md docker-images.1-man.md
+mv man/docker-import.1.md docker-import.1-man.md
+mv man/docker-info.1.md docker-info.1-man.md
+mv man/docker-inspect.1.md docker-inspect.1-man.md
+mv man/docker-kill.1.md docker-kill.1-man.md
+mv man/docker-load.1.md docker-load.1-man.md
+mv man/docker-login.1.md docker-login.1-man.md
+mv man/docker-logout.1.md docker-logout.1-man.md
+mv man/docker-logs.1.md docker-logs.1-man.md
+mv man/docker-network-connect.1.md docker-network-connect.1-man.md
+mv man/docker-network-create.1.md docker-network-create.1-man.md
+mv man/docker-network-disconnect.1.md docker-network-disconnect.1-man.md
+mv man/docker-network-inspect.1.md docker-network-inspect.1-man.md
+mv man/docker-network-ls.1.md docker-network-ls.1-man.md
+mv man/docker-network-rm.1.md docker-network-rm.1-man.md
+mv man/docker-pause.1.md docker-pause.1-man.md
+mv man/docker-port.1.md docker-port.1-man.md
+mv man/docker-ps.1.md docker-ps.1-man.md
+mv man/docker-pull.1.md docker-pull.1-man.md
+mv man/docker-push.1.md docker-push.1-man.md
+mv man/docker-rename.1.md docker-rename.1-man.md
+mv man/docker-restart.1.md docker-restart.1-man.md
+mv man/docker-rm.1.md docker-rm.1-man.md
+mv man/docker-rmi.1.md docker-rmi.1-man.md
+mv man/docker-run.1.md docker-run.1-man.md
+mv man/docker-save.1.md docker-save.1-man.md
+mv man/docker-search.1.md docker-search.1-man.md
+mv man/docker-start.1.md docker-start.1-man.md
+mv man/docker-stats.1.md docker-stats.1-man.md
+mv man/docker-stop.1.md docker-stop.1-man.md
+mv man/docker-tag.1.md docker-tag.1-man.md
+mv man/docker-top.1.md docker-top.1-man.md
+mv man/docker-unpause.1.md docker-unpause.1-man.md
+mv man/docker-update.1.md docker-update.1-man.md
+mv man/docker-version.1.md docker-version.1-man.md
+mv man/docker-wait.1.md docker-wait.1-man.md
+mv man/docker.1.md docker.1-man.md
+mv man/dockerd.8.md dockerd.8-man.md
 
 %build
 for cmd in cmd/* ; do
@@ -237,53 +353,53 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE NOTICE contrib/syntax/vim/LICENSE
-%license contrib/selinux-fedora-24/docker-engine-selinux/LICENSE
-%license contrib/selinux-oraclelinux-7/docker-engine-selinux/LICENSE
-%license contrib/selinux/docker-engine-selinux/LICENSE pkg/mflag/LICENSE
-%license pkg/symlink/LICENSE.APACHE pkg/symlink/LICENSE.BSD
+%license LICENSE NOTICE LICENSE-contrib-syntax-vim
+%license LICENSE-contrib-selinux-fedora-24-docker-engine-selinux
+%license LICENSE-contrib-selinux-oraclelinux-7-docker-engine-selinux
+%license LICENSE-contrib-selinux-docker-engine-selinux LICENSE-pkg-mflag
+%license LICENSE-pkg-symlink.APACHE LICENSE-pkg-symlink.BSD
 %doc docs AUTHORS CHANGELOG.md CONTRIBUTING.md README.md ROADMAP.md VENDORING.md
-%doc api/README.md cmd/dockerd/README.md contrib/README.md
-%doc contrib/docker-device-tool/README.md contrib/syntax/nano/README.md
-%doc contrib/syntax/textmate/README.md doc contrib/syntax/vim/README.md
-%doc contrib/builder/deb/amd64/README.md contrib/builder/rpm/amd64/README.md
-%doc contrib/desktop-integration/README.md
-%doc contrib/selinux-fedora-24/docker-engine-selinux/README.md
-%doc contrib/selinux-oraclelinux-7/docker-engine-selinux/README.md
-%doc contrib/vagrant-docker/README.md daemon/graphdriver/devmapper/README.md
-%doc hack/make/README.md hack/Jenkins/readme.md image/spec/v1.1.md
-%doc image/spec/v1.2.md image/spec/v1.md pkg/README.md pkg/archive/README.md
-%doc pkg/discovery/README.md pkg/locker/README.md
-%doc pkg/plugins/pluginrpc-gen/README.md pkg/reexec/README.md
-%doc pkg/signal/README.md pkg/stringid/README.md pkg/sysinfo/README.md
-%doc pkg/tarsum/tarsum_spec.md pkg/useragent/README.md example
-%doc pkg/mflag/README.md pkg/stringutils/README.md pkg/symlink/README.md
-%doc project/BRANCHES-AND-TAGS.md project/PATCH-RELEASES.md
-%doc project/PRINCIPLES.md project/ARM.md project/CONTRIBUTORS.md
-%doc project/GOVERNANCE.md project/IRC-ADMINISTRATION.md project/ISSUE-TRIAGE.md
-%doc project/PACKAGE-REPO-MAINTENANCE.md project/PACKAGERS.md project/README.md
-%doc project/RELEASE-CHECKLIST.md project/RELEASE-PROCESS.md
-%doc project/REVIEWING.md project/TOOLS.md experimental/README.md
-%doc experimental/docker-stacks-and-bundles.md
-%doc experimental/plugins_graphdriver.md experimental/vlan-networks.md
-%doc man/Dockerfile.5.md man/README.md man/docker-attach.1.md
-%doc man/docker-build.1.md man/docker-commit.1.md man/docker-config-json.5.md
-%doc man/docker-cp.1.md man/docker-create.1.md man/docker-diff.1.md
-%doc man/docker-events.1.md man/docker-exec.1.md man/docker-export.1.md
-%doc man/docker-history.1.md man/docker-images.1.md man/docker-import.1.md
-%doc man/docker-info.1.md man/docker-inspect.1.md man/docker-kill.1.md
-%doc man/docker-load.1.md man/docker-login.1.md man/docker-logout.1.md
-%doc man/docker-logs.1.md man/docker-network-connect.1.md
-%doc man/docker-network-create.1.md man/docker-network-disconnect.1.md
-%doc man/docker-network-inspect.1.md man/docker-network-ls.1.md
-%doc man/docker-network-rm.1.md man/docker-pause.1.md man/docker-port.1.md
-%doc man/docker-ps.1.md man/docker-pull.1.md man/docker-push.1.md
-%doc man/docker-rename.1.md man/docker-restart.1.md man/docker-rm.1.md
-%doc man/docker-rmi.1.md man/docker-run.1.md man/docker-save.1.md
-%doc man/docker-search.1.md man/docker-start.1.md man/docker-stats.1.md
-%doc man/docker-stop.1.md man/docker-tag.1.md man/docker-top.1.md
-%doc man/docker-unpause.1.md man/docker-update.1.md man/docker-version.1.md
-%doc man/docker-wait.1.md man/docker.1.md man/dockerd.8.md
+%doc README-api.md README-cmd-dockerd.md README-contrib.md
+%doc README-contrib-docker-device-tool.md README-contrib-syntax-nano.md
+%doc README-contrib-syntax-textmate.md doc README-contrib-syntax-vim.md
+%doc README-contrib-builder-deb-amd64.md README-contrib-builder-rpm-amd64.md
+%doc README-contrib-desktop-integration.md
+%doc README-contrib-selinux-fedora-24-docker-engine-selinux.md
+%doc README-contrib-selinux-oraclelinux-7-docker-engine-selinux.md
+%doc README-contrib-vagrant-docker.md README-daemon-graphdriver-devmapper.md
+%doc README-hack-make.md readme-hack-Jenkins.md v1.1-image-spec.md
+%doc v1.2-image-spec.md v1-image-spec.md README-pkg.md README-pkg-archive.md
+%doc README-pkg-discovery.md README-pkg-locker.md
+%doc README-pkg-plugins-pluginrpc-gen.md README-pkg-reexec.md
+%doc README-pkg-signal.md README-pkg-stringid.md README-pkg-sysinfo.md
+%doc tarsum_spec-pkg-tarsum.md README-pkg-useragent.md example
+%doc README-pkg-mflag.md README-pkg-stringutils.md README-pkg-symlink.md
+%doc BRANCHES-AND-TAGS-project.md PATCH-RELEASES-project.md
+%doc PRINCIPLES-project.md ARM-project.md CONTRIBUTORS-project.md
+%doc GOVERNANCE-project.md IRC-ADMINISTRATION-project.md ISSUE-TRIAGE-project.md
+%doc PACKAGE-REPO-MAINTENANCE-project.md PACKAGERS-project.md README-project.md
+%doc RELEASE-CHECKLIST-project.md RELEASE-PROCESS-project.md
+%doc REVIEWING-project.md TOOLS-project.md README-experimental.md
+%doc docker-stacks-and-bundles-experimental.md
+%doc plugins_graphdriver-experimental.md vlan-networks-experimental.md
+%doc Dockerfile.5-man.md README-man.md docker-attach.1-man.md
+%doc docker-build.1-man.md docker-commit.1-man.md docker-config-json.5-man.md
+%doc docker-cp.1-man.md docker-create.1-man.md docker-diff.1-man.md
+%doc docker-events.1-man.md docker-exec.1-man.md docker-export.1-man.md
+%doc docker-history.1-man.md docker-images.1-man.md docker-import.1-man.md
+%doc docker-info.1-man.md docker-inspect.1-man.md docker-kill.1-man.md
+%doc docker-load.1-man.md docker-login.1-man.md docker-logout.1-man.md
+%doc docker-logs.1-man.md docker-network-connect.1-man.md
+%doc docker-network-create.1-man.md docker-network-disconnect.1-man.md
+%doc docker-network-inspect.1-man.md docker-network-ls.1-man.md
+%doc docker-network-rm.1-man.md docker-pause.1-man.md docker-port.1-man.md
+%doc docker-ps.1-man.md docker-pull.1-man.md docker-push.1-man.md
+%doc docker-rename.1-man.md docker-restart.1-man.md docker-rm.1-man.md
+%doc docker-rmi.1-man.md docker-run.1-man.md docker-save.1-man.md
+%doc docker-search.1-man.md docker-start.1-man.md docker-stats.1-man.md
+%doc docker-stop.1-man.md docker-tag.1-man.md docker-top.1-man.md
+%doc docker-unpause.1-man.md docker-update.1-man.md docker-version.1-man.md
+%doc docker-wait.1-man.md docker.1-man.md dockerd.8-man.md
 %{_bindir}/*
 
 %gopkgfiles

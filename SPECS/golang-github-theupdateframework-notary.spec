@@ -11,13 +11,13 @@ Version:                0.7.0
 Notary is a project that allows anyone to have trust over arbitrary collections
 of data.}
 
-%global golicenses      LICENSE tuf/LICENSE
+%global golicenses      LICENSE LICENSE-tuf
 %global godocs          docs CODE_OF_CONDUCT.md CONTRIBUTING.md CONTRIBUTORS\\\
                         README.md CHANGELOG.md MAINTAINERS_RULES.md\\\
-                        fixtures/compatibility/README.md\\\
-                        fixtures/compatibility/notary0.1/README.txt\\\
-                        migrations/README.md trustmanager/importLogic.md\\\
-                        tuf/README.md
+                        README-fixtures-compatibility.md\\\
+                        README-fixtures-compatibility-notary0.1.txt\\\
+                        README-migrations.md importLogic-trustmanager.md\\\
+                        README-tuf.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -79,6 +79,12 @@ BuildRequires:  golang(github.com/mattn/go-sqlite3)
 
 %prep
 %goprep
+mv tuf/LICENSE LICENSE-tuf
+mv fixtures/compatibility/README.md README-fixtures-compatibility.md
+mv fixtures/compatibility/notary0.1/README.txt README-fixtures-compatibility-notary0.1.txt
+mv migrations/README.md README-migrations.md
+mv trustmanager/importLogic.md importLogic-trustmanager.md
+mv tuf/README.md README-tuf.md
 
 %build
 for cmd in cmd/* ; do
@@ -96,11 +102,11 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE tuf/LICENSE
+%license LICENSE LICENSE-tuf
 %doc docs CODE_OF_CONDUCT.md CONTRIBUTING.md CONTRIBUTORS README.md CHANGELOG.md
-%doc MAINTAINERS_RULES.md fixtures/compatibility/README.md
-%doc fixtures/compatibility/notary0.1/README.txt migrations/README.md
-%doc trustmanager/importLogic.md tuf/README.md
+%doc MAINTAINERS_RULES.md README-fixtures-compatibility.md
+%doc README-fixtures-compatibility-notary0.1.txt README-migrations.md
+%doc importLogic-trustmanager.md README-tuf.md
 %{_bindir}/*
 
 %gopkgfiles

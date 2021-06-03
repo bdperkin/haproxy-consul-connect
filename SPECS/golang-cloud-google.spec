@@ -14,13 +14,13 @@ Google Cloud Client Libraries for Go.}
 %global golicenses      LICENSE license_test.go
 %global godocs          CODE_OF_CONDUCT.md CHANGES.md CONTRIBUTING.md\\\
                         README.md RELEASING.md issue_template.md\\\
-                        bigquery/README.md bigquery/benchmarks/README.md\\\
-                        datastore/README.md examples\\\
-                        httpreplay/cmd/httpr/README.md logging/README.md\\\
-                        logging/apiv2/README.md profiler/mocks/README.md\\\
-                        pubsub/README.md pubsub/apiv1/README.md\\\
-                        spanner/README.md storage/README.md\\\
-                        vision/apiv1/README.md
+                        README-bigquery.md README-bigquery-benchmarks.md\\\
+                        README-datastore.md examples\\\
+                        README-httpreplay-cmd-httpr.md README-logging.md\\\
+                        README-logging-apiv2.md README-profiler-mocks.md\\\
+                        README-pubsub.md README-pubsub-apiv1.md\\\
+                        README-spanner.md README-storage.md\\\
+                        README-vision-apiv1.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -177,6 +177,18 @@ BuildRequires:  golang(google.golang.org/api/logging/v2)
 
 %prep
 %goprep
+mv bigquery/README.md README-bigquery.md
+mv bigquery/benchmarks/README.md README-bigquery-benchmarks.md
+mv datastore/README.md README-datastore.md
+mv httpreplay/cmd/httpr/README.md README-httpreplay-cmd-httpr.md
+mv logging/README.md README-logging.md
+mv logging/apiv2/README.md README-logging-apiv2.md
+mv profiler/mocks/README.md README-profiler-mocks.md
+mv pubsub/README.md README-pubsub.md
+mv pubsub/apiv1/README.md README-pubsub-apiv1.md
+mv spanner/README.md README-spanner.md
+mv storage/README.md README-storage.md
+mv vision/apiv1/README.md README-vision-apiv1.md
 
 %build
 for cmd in cmd/* ; do
@@ -199,11 +211,11 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license LICENSE license_test.go
 %doc CODE_OF_CONDUCT.md CHANGES.md CONTRIBUTING.md README.md RELEASING.md
-%doc issue_template.md bigquery/README.md bigquery/benchmarks/README.md
-%doc datastore/README.md examples httpreplay/cmd/httpr/README.md
-%doc logging/README.md logging/apiv2/README.md profiler/mocks/README.md
-%doc pubsub/README.md pubsub/apiv1/README.md spanner/README.md storage/README.md
-%doc vision/apiv1/README.md
+%doc issue_template.md README-bigquery.md README-bigquery-benchmarks.md
+%doc README-datastore.md examples README-httpreplay-cmd-httpr.md
+%doc README-logging.md README-logging-apiv2.md README-profiler-mocks.md
+%doc README-pubsub.md README-pubsub-apiv1.md README-spanner.md README-storage.md
+%doc README-vision-apiv1.md
 %{_bindir}/*
 
 %gopkgfiles

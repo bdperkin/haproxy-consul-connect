@@ -10,9 +10,10 @@ Version:                1.7.0
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE kafka/librdkafka_vendor/LICENSES.txt
-%global godocs          examples CHANGELOG.md README.md kafka/README.md\\\
-                        kafka/librdkafka_vendor/README.md kafkatest/README.md
+%global golicenses      LICENSE LICENSES-kafka-librdkafka_vendor.txt
+%global godocs          examples CHANGELOG.md README.md README-kafka.md\\\
+                        README-kafka-librdkafka_vendor.md\\\
+                        README-kafkatest.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -33,6 +34,10 @@ BuildRequires:  golang(gopkg.in/alecthomas/kingpin.v2)
 
 %prep
 %goprep
+mv kafka/librdkafka_vendor/LICENSES.txt LICENSES-kafka-librdkafka_vendor.txt
+mv kafka/README.md README-kafka.md
+mv kafka/librdkafka_vendor/README.md README-kafka-librdkafka_vendor.md
+mv kafkatest/README.md README-kafkatest.md
 
 %build
 for cmd in kafka/go_rdkafka_generr kafkatest/go_verifiable_consumer kafkatest/go_verifiable_producer; do
@@ -50,9 +55,9 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE kafka/librdkafka_vendor/LICENSES.txt
-%doc examples CHANGELOG.md README.md kafka/README.md
-%doc kafka/librdkafka_vendor/README.md kafkatest/README.md
+%license LICENSE LICENSES-kafka-librdkafka_vendor.txt
+%doc examples CHANGELOG.md README.md README-kafka.md
+%doc README-kafka-librdkafka_vendor.md README-kafkatest.md
 %{_bindir}/*
 
 %gopkgfiles

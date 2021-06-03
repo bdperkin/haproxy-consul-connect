@@ -11,8 +11,8 @@ Version:                0.25.2
 # FIXME}
 
 %global golicenses      LICENSE
-%global godocs          docs examples CHANGELOG.md README.md scripts/readme-\\\
-                        toc.sh
+%global godocs          docs examples CHANGELOG.md README.md\\\
+                        readme-toc-scripts.sh
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -54,6 +54,7 @@ BuildRequires:  golang(github.com/stretchr/testify/require)
 
 %prep
 %goprep
+mv scripts/readme-toc.sh readme-toc-scripts.sh
 
 %build
 %gobuild -o %{gobuilddir}/bin/consul-template %{goipath}
@@ -70,7 +71,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc docs examples CHANGELOG.md README.md scripts/readme-toc.sh
+%doc docs examples CHANGELOG.md README.md readme-toc-scripts.sh
 %{_bindir}/*
 
 %gopkgfiles

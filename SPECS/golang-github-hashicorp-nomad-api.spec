@@ -4,89 +4,93 @@
 # https://github.com/hashicorp/nomad
 %global goipath         github.com/hashicorp/nomad/api
 %global forgeurl        https://github.com/hashicorp/nomad
-%global commit          f3654593b630a88f135b628b81711bdbc574eafb
+%global commit          0be58d72f4ec8db6a5671b8f357afb190dc8e3c4
 
 %gometa
 
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE command/license.go command/license_get.go\\\
-                        command/license_get_test.go helper/exptime/LICENSE.md\\\
-                        website/LICENSE.md website/content/api-\\\
-                        docs/operator/license.mdx
-%global godocs          CHANGELOG.md README.md client/allocdir/input/test.txt\\\
-                        contributing/README.md contributing/checklist-\\\
-                        command.md contributing/checklist-jobspec.md\\\
-                        contributing/checklist-rpc-endpoint.md\\\
-                        contributing/golang.md contributing/issue-labels.md\\\
-                        demo/csi/README.md demo/csi/ceph-csi-plugin/README.md\\\
-                        demo/csi/cinder-csi-plugin/README.md\\\
-                        demo/csi/digitalocean/README.md\\\
-                        demo/csi/hostpath/README.md demo/tls/README.md\\\
-                        demo/vagrant/README.md dev/README.md dev/docker-\\\
-                        clients/README.md dev/tls_cluster/README.md\\\
-                        dev/vault/README.md devices/gpu/nvidia/README.md\\\
-                        drivers/shared/executor/test-resources/busybox/README\\\
-                        example e2e/README.md e2e/consulacls/README.md\\\
-                        e2e/terraform/README.md\\\
-                        e2e/terraform/config/shared/README.md\\\
-                        e2e/terraform/packer/README.md\\\
-                        e2e/terraform/packer/windows-2016-amd64/README.md\\\
-                        e2e/terraform/userdata/README.md\\\
-                        e2e/upgrades/README.md e2e/vaultcompat/README.md\\\
-                        integrations/grafana_dashboards/README.md\\\
-                        integrations/prometheus/README.md\\\
-                        jobspec2/addrs/README.md\\\
-                        nomad/structs/config/README.md example\\\
-                        plugins/shared/cmd/launcher/README.md examples\\\
-                        terraform/README.md terraform/aws/README.md\\\
-                        terraform/azure/README.md terraform/gcp/README.md\\\
-                        tools/buf/README.md ui/DEVELOPMENT_MODE.md\\\
-                        ui/README.md ui/public/robots.txt\\\
-                        website/.markdownlintrc website/README.md docs\\\
-                        website/content/api-docs/acl-policies.mdx\\\
-                        website/content/api-docs/acl-tokens.mdx\\\
-                        website/content/api-docs/agent.mdx\\\
-                        website/content/api-docs/allocations.mdx\\\
-                        website/content/api-docs/client.mdx\\\
-                        website/content/api-docs/deployments.mdx\\\
-                        website/content/api-docs/evaluations.mdx\\\
-                        website/content/api-docs/events.mdx\\\
-                        website/content/api-docs/index.mdx\\\
-                        website/content/api-docs/jobs.mdx\\\
-                        website/content/api-docs/json-jobs.mdx\\\
-                        website/content/api-docs/libraries-and-sdks.mdx\\\
-                        website/content/api-docs/metrics.mdx\\\
-                        website/content/api-docs/namespaces.mdx\\\
-                        website/content/api-docs/nodes.mdx\\\
-                        website/content/api-docs/plugins.mdx\\\
-                        website/content/api-docs/quotas.mdx\\\
-                        website/content/api-docs/recommendations.mdx\\\
-                        website/content/api-docs/regions.mdx\\\
-                        website/content/api-docs/scaling-policies.mdx\\\
-                        website/content/api-docs/search.mdx\\\
-                        website/content/api-docs/sentinel-policies.mdx\\\
-                        website/content/api-docs/status.mdx\\\
-                        website/content/api-docs/system.mdx\\\
-                        website/content/api-docs/ui.mdx website/content/api-\\\
-                        docs/validate.mdx website/content/api-\\\
-                        docs/volumes.mdx website/content/api-\\\
-                        docs/operator/autopilot.mdx website/content/api-\\\
-                        docs/operator/index.mdx website/content/api-\\\
-                        docs/operator/raft.mdx website/content/api-\\\
-                        docs/operator/scheduler.mdx website/content/api-\\\
-                        docs/operator/snapshot.mdx\\\
-                        website/content/intro/index.mdx\\\
-                        website/content/intro/use-cases.mdx\\\
-                        website/content/intro/vs/ecs.mdx\\\
-                        website/content/intro/vs/index.mdx\\\
-                        website/content/intro/vs/mesos.mdx\\\
-                        website/content/intro/vs/terraform.mdx\\\
-                        website/content/partials/envvars.mdx\\\
-                        website/content/partials/general_options.mdx website/\\\
-                        content/partials/general_options_no_namespace.mdx\\\
-                        docs website/public/robots.txt
+%global golicenses      LICENSE license-command.go license_get-command.go\\\
+                        license_get_test-command.go\\\
+                        LICENSE-helper-exptime.md LICENSE-website.md\\\
+                        license-website-content-api-docs-operator.mdx
+%global godocs          README.md CHANGELOG.md\\\
+                        test-client-allocdir-input.txt\\\
+                        README-contributing.md\\\
+                        checklist-command-contributing.md\\\
+                        checklist-jobspec-contributing.md\\\
+                        checklist-rpc-endpoint-contributing.md\\\
+                        golang-contributing.md issue-labels-contributing.md\\\
+                        README-demo-csi.md\\\
+                        README-demo-csi-ceph-csi-plugin.md\\\
+                        README-demo-csi-cinder-csi-plugin.md\\\
+                        README-demo-csi-digitalocean.md\\\
+                        README-demo-csi-hostpath.md README-demo-tls.md\\\
+                        README-demo-vagrant.md README-dev.md\\\
+                        README-dev-docker-clients.md\\\
+                        README-dev-tls_cluster.md README-dev-vault.md\\\
+                        README-devices-gpu-nvidia.md\\\
+                        README-drivers-shared-executor-test-resources-busybox\\\
+                        example README-e2e.md README-e2e-consulacls.md\\\
+                        README-e2e-terraform.md\\\
+                        README-e2e-terraform-config-shared.md\\\
+                        README-e2e-terraform-packer.md\\\
+                        README-e2e-terraform-packer-windows-2016-amd64.md\\\
+                        README-e2e-terraform-userdata.md\\\
+                        README-e2e-upgrades.md README-e2e-vaultcompat.md\\\
+                        README-integrations-grafana_dashboards.md\\\
+                        README-integrations-prometheus.md\\\
+                        README-jobspec2-addrs.md\\\
+                        README-nomad-structs-config.md example\\\
+                        README-plugins-shared-cmd-launcher.md examples\\\
+                        README-terraform.md README-terraform-aws.md\\\
+                        README-terraform-azure.md README-terraform-gcp.md\\\
+                        README-tools-buf.md DEVELOPMENT_MODE-ui.md\\\
+                        README-ui.md robots-ui-public.txt\\\
+                        -website.markdownlintrc README-website.md docs\\\
+                        acl-policies-website-content-api-docs.mdx\\\
+                        acl-tokens-website-content-api-docs.mdx\\\
+                        agent-website-content-api-docs.mdx\\\
+                        allocations-website-content-api-docs.mdx\\\
+                        client-website-content-api-docs.mdx\\\
+                        deployments-website-content-api-docs.mdx\\\
+                        evaluations-website-content-api-docs.mdx\\\
+                        events-website-content-api-docs.mdx\\\
+                        index-website-content-api-docs.mdx\\\
+                        jobs-website-content-api-docs.mdx\\\
+                        json-jobs-website-content-api-docs.mdx\\\
+                        libraries-and-sdks-website-content-api-docs.mdx\\\
+                        metrics-website-content-api-docs.mdx\\\
+                        namespaces-website-content-api-docs.mdx\\\
+                        nodes-website-content-api-docs.mdx\\\
+                        plugins-website-content-api-docs.mdx\\\
+                        quotas-website-content-api-docs.mdx\\\
+                        recommendations-website-content-api-docs.mdx\\\
+                        regions-website-content-api-docs.mdx\\\
+                        scaling-policies-website-content-api-docs.mdx\\\
+                        search-website-content-api-docs.mdx\\\
+                        sentinel-policies-website-content-api-docs.mdx\\\
+                        status-website-content-api-docs.mdx\\\
+                        system-website-content-api-docs.mdx\\\
+                        ui-website-content-api-docs.mdx\\\
+                        validate-website-content-api-docs.mdx\\\
+                        volumes-website-content-api-docs.mdx\\\
+                        autopilot-website-content-api-docs-operator.mdx\\\
+                        index-website-content-api-docs-operator.mdx\\\
+                        raft-website-content-api-docs-operator.mdx\\\
+                        scheduler-website-content-api-docs-operator.mdx\\\
+                        snapshot-website-content-api-docs-operator.mdx\\\
+                        index-website-content-intro.mdx\\\
+                        use-cases-website-content-intro.mdx\\\
+                        ecs-website-content-intro-vs.mdx\\\
+                        index-website-content-intro-vs.mdx\\\
+                        mesos-website-content-intro-vs.mdx\\\
+                        terraform-website-content-intro-vs.mdx\\\
+                        envvars-website-content-partials.mdx\\\
+                        general_options-website-content-partials.mdx\\\
+                        general_options_no_namespace-website-content-partials.mdx\\\
+                        docs robots-website-public.txt
 
 Name:           %{goname}
 Version:        0
@@ -269,6 +273,98 @@ BuildRequires:  golang(github.com/stretchr/testify/mock)
 
 %prep
 %goprep
+mv command/license.go license-command.go
+mv command/license_get.go license_get-command.go
+mv command/license_get_test.go license_get_test-command.go
+mv helper/exptime/LICENSE.md LICENSE-helper-exptime.md
+mv website/LICENSE.md LICENSE-website.md
+mv website/content/api-docs/operator/license.mdx license-website-content-api-docs-operator.mdx
+mv client/allocdir/input/test.txt test-client-allocdir-input.txt
+mv contributing/README.md README-contributing.md
+mv contributing/checklist-command.md checklist-command-contributing.md
+mv contributing/checklist-jobspec.md checklist-jobspec-contributing.md
+mv contributing/checklist-rpc-endpoint.md checklist-rpc-endpoint-contributing.md
+mv contributing/golang.md golang-contributing.md
+mv contributing/issue-labels.md issue-labels-contributing.md
+mv demo/csi/README.md README-demo-csi.md
+mv demo/csi/ceph-csi-plugin/README.md README-demo-csi-ceph-csi-plugin.md
+mv demo/csi/cinder-csi-plugin/README.md README-demo-csi-cinder-csi-plugin.md
+mv demo/csi/digitalocean/README.md README-demo-csi-digitalocean.md
+mv demo/csi/hostpath/README.md README-demo-csi-hostpath.md
+mv demo/tls/README.md README-demo-tls.md
+mv demo/vagrant/README.md README-demo-vagrant.md
+mv dev/README.md README-dev.md
+mv dev/docker-clients/README.md README-dev-docker-clients.md
+mv dev/tls_cluster/README.md README-dev-tls_cluster.md
+mv dev/vault/README.md README-dev-vault.md
+mv devices/gpu/nvidia/README.md README-devices-gpu-nvidia.md
+mv drivers/shared/executor/test-resources/busybox/README README-drivers-shared-executor-test-resources-busybox
+mv e2e/README.md README-e2e.md
+mv e2e/consulacls/README.md README-e2e-consulacls.md
+mv e2e/terraform/README.md README-e2e-terraform.md
+mv e2e/terraform/config/shared/README.md README-e2e-terraform-config-shared.md
+mv e2e/terraform/packer/README.md README-e2e-terraform-packer.md
+mv e2e/terraform/packer/windows-2016-amd64/README.md README-e2e-terraform-packer-windows-2016-amd64.md
+mv e2e/terraform/userdata/README.md README-e2e-terraform-userdata.md
+mv e2e/upgrades/README.md README-e2e-upgrades.md
+mv e2e/vaultcompat/README.md README-e2e-vaultcompat.md
+mv integrations/grafana_dashboards/README.md README-integrations-grafana_dashboards.md
+mv integrations/prometheus/README.md README-integrations-prometheus.md
+mv jobspec2/addrs/README.md README-jobspec2-addrs.md
+mv nomad/structs/config/README.md README-nomad-structs-config.md
+mv plugins/shared/cmd/launcher/README.md README-plugins-shared-cmd-launcher.md
+mv terraform/README.md README-terraform.md
+mv terraform/aws/README.md README-terraform-aws.md
+mv terraform/azure/README.md README-terraform-azure.md
+mv terraform/gcp/README.md README-terraform-gcp.md
+mv tools/buf/README.md README-tools-buf.md
+mv ui/DEVELOPMENT_MODE.md DEVELOPMENT_MODE-ui.md
+mv ui/README.md README-ui.md
+mv ui/public/robots.txt robots-ui-public.txt
+mv website/.markdownlintrc -website.markdownlintrc
+mv website/README.md README-website.md
+mv website/content/api-docs/acl-policies.mdx acl-policies-website-content-api-docs.mdx
+mv website/content/api-docs/acl-tokens.mdx acl-tokens-website-content-api-docs.mdx
+mv website/content/api-docs/agent.mdx agent-website-content-api-docs.mdx
+mv website/content/api-docs/allocations.mdx allocations-website-content-api-docs.mdx
+mv website/content/api-docs/client.mdx client-website-content-api-docs.mdx
+mv website/content/api-docs/deployments.mdx deployments-website-content-api-docs.mdx
+mv website/content/api-docs/evaluations.mdx evaluations-website-content-api-docs.mdx
+mv website/content/api-docs/events.mdx events-website-content-api-docs.mdx
+mv website/content/api-docs/index.mdx index-website-content-api-docs.mdx
+mv website/content/api-docs/jobs.mdx jobs-website-content-api-docs.mdx
+mv website/content/api-docs/json-jobs.mdx json-jobs-website-content-api-docs.mdx
+mv website/content/api-docs/libraries-and-sdks.mdx libraries-and-sdks-website-content-api-docs.mdx
+mv website/content/api-docs/metrics.mdx metrics-website-content-api-docs.mdx
+mv website/content/api-docs/namespaces.mdx namespaces-website-content-api-docs.mdx
+mv website/content/api-docs/nodes.mdx nodes-website-content-api-docs.mdx
+mv website/content/api-docs/plugins.mdx plugins-website-content-api-docs.mdx
+mv website/content/api-docs/quotas.mdx quotas-website-content-api-docs.mdx
+mv website/content/api-docs/recommendations.mdx recommendations-website-content-api-docs.mdx
+mv website/content/api-docs/regions.mdx regions-website-content-api-docs.mdx
+mv website/content/api-docs/scaling-policies.mdx scaling-policies-website-content-api-docs.mdx
+mv website/content/api-docs/search.mdx search-website-content-api-docs.mdx
+mv website/content/api-docs/sentinel-policies.mdx sentinel-policies-website-content-api-docs.mdx
+mv website/content/api-docs/status.mdx status-website-content-api-docs.mdx
+mv website/content/api-docs/system.mdx system-website-content-api-docs.mdx
+mv website/content/api-docs/ui.mdx ui-website-content-api-docs.mdx
+mv website/content/api-docs/validate.mdx validate-website-content-api-docs.mdx
+mv website/content/api-docs/volumes.mdx volumes-website-content-api-docs.mdx
+mv website/content/api-docs/operator/autopilot.mdx autopilot-website-content-api-docs-operator.mdx
+mv website/content/api-docs/operator/index.mdx index-website-content-api-docs-operator.mdx
+mv website/content/api-docs/operator/raft.mdx raft-website-content-api-docs-operator.mdx
+mv website/content/api-docs/operator/scheduler.mdx scheduler-website-content-api-docs-operator.mdx
+mv website/content/api-docs/operator/snapshot.mdx snapshot-website-content-api-docs-operator.mdx
+mv website/content/intro/index.mdx index-website-content-intro.mdx
+mv website/content/intro/use-cases.mdx use-cases-website-content-intro.mdx
+mv website/content/intro/vs/ecs.mdx ecs-website-content-intro-vs.mdx
+mv website/content/intro/vs/index.mdx index-website-content-intro-vs.mdx
+mv website/content/intro/vs/mesos.mdx mesos-website-content-intro-vs.mdx
+mv website/content/intro/vs/terraform.mdx terraform-website-content-intro-vs.mdx
+mv website/content/partials/envvars.mdx envvars-website-content-partials.mdx
+mv website/content/partials/general_options.mdx general_options-website-content-partials.mdx
+mv website/content/partials/general_options_no_namespace.mdx general_options_no_namespace-website-content-partials.mdx
+mv website/public/robots.txt robots-website-public.txt
 
 %build
 %gobuild -o %{gobuilddir}/bin/api %{goipath}
@@ -287,62 +383,62 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE command/license.go command/license_get.go
-%license command/license_get_test.go helper/exptime/LICENSE.md
-%license website/LICENSE.md website/content/api-docs/operator/license.mdx
-%doc CHANGELOG.md README.md client/allocdir/input/test.txt
-%doc contributing/README.md contributing/checklist-command.md
-%doc contributing/checklist-jobspec.md contributing/checklist-rpc-endpoint.md
-%doc contributing/golang.md contributing/issue-labels.md demo/csi/README.md
-%doc demo/csi/ceph-csi-plugin/README.md demo/csi/cinder-csi-plugin/README.md
-%doc demo/csi/digitalocean/README.md demo/csi/hostpath/README.md
-%doc demo/tls/README.md demo/vagrant/README.md dev/README.md
-%doc dev/docker-clients/README.md dev/tls_cluster/README.md dev/vault/README.md
-%doc devices/gpu/nvidia/README.md
-%doc drivers/shared/executor/test-resources/busybox/README example e2e/README.md
-%doc e2e/consulacls/README.md e2e/terraform/README.md
-%doc e2e/terraform/config/shared/README.md e2e/terraform/packer/README.md
-%doc e2e/terraform/packer/windows-2016-amd64/README.md
-%doc e2e/terraform/userdata/README.md e2e/upgrades/README.md
-%doc e2e/vaultcompat/README.md integrations/grafana_dashboards/README.md
-%doc integrations/prometheus/README.md jobspec2/addrs/README.md
-%doc nomad/structs/config/README.md example
-%doc plugins/shared/cmd/launcher/README.md examples terraform/README.md
-%doc terraform/aws/README.md terraform/azure/README.md terraform/gcp/README.md
-%doc tools/buf/README.md ui/DEVELOPMENT_MODE.md ui/README.md
-%doc ui/public/robots.txt website/.markdownlintrc website/README.md docs
-%doc website/content/api-docs/acl-policies.mdx
-%doc website/content/api-docs/acl-tokens.mdx website/content/api-docs/agent.mdx
-%doc website/content/api-docs/allocations.mdx
-%doc website/content/api-docs/client.mdx
-%doc website/content/api-docs/deployments.mdx
-%doc website/content/api-docs/evaluations.mdx
-%doc website/content/api-docs/events.mdx website/content/api-docs/index.mdx
-%doc website/content/api-docs/jobs.mdx website/content/api-docs/json-jobs.mdx
-%doc website/content/api-docs/libraries-and-sdks.mdx
-%doc website/content/api-docs/metrics.mdx
-%doc website/content/api-docs/namespaces.mdx website/content/api-docs/nodes.mdx
-%doc website/content/api-docs/plugins.mdx website/content/api-docs/quotas.mdx
-%doc website/content/api-docs/recommendations.mdx
-%doc website/content/api-docs/regions.mdx
-%doc website/content/api-docs/scaling-policies.mdx
-%doc website/content/api-docs/search.mdx
-%doc website/content/api-docs/sentinel-policies.mdx
-%doc website/content/api-docs/status.mdx website/content/api-docs/system.mdx
-%doc website/content/api-docs/ui.mdx website/content/api-docs/validate.mdx
-%doc website/content/api-docs/volumes.mdx
-%doc website/content/api-docs/operator/autopilot.mdx
-%doc website/content/api-docs/operator/index.mdx
-%doc website/content/api-docs/operator/raft.mdx
-%doc website/content/api-docs/operator/scheduler.mdx
-%doc website/content/api-docs/operator/snapshot.mdx
-%doc website/content/intro/index.mdx website/content/intro/use-cases.mdx
-%doc website/content/intro/vs/ecs.mdx website/content/intro/vs/index.mdx
-%doc website/content/intro/vs/mesos.mdx website/content/intro/vs/terraform.mdx
-%doc website/content/partials/envvars.mdx
-%doc website/content/partials/general_options.mdx
-%doc website/content/partials/general_options_no_namespace.mdx docs
-%doc website/public/robots.txt
+%license LICENSE license-command.go license_get-command.go
+%license license_get_test-command.go LICENSE-helper-exptime.md
+%license LICENSE-website.md license-website-content-api-docs-operator.mdx
+%doc README.md CHANGELOG.md test-client-allocdir-input.txt
+%doc README-contributing.md checklist-command-contributing.md
+%doc checklist-jobspec-contributing.md checklist-rpc-endpoint-contributing.md
+%doc golang-contributing.md issue-labels-contributing.md README-demo-csi.md
+%doc README-demo-csi-ceph-csi-plugin.md README-demo-csi-cinder-csi-plugin.md
+%doc README-demo-csi-digitalocean.md README-demo-csi-hostpath.md
+%doc README-demo-tls.md README-demo-vagrant.md README-dev.md
+%doc README-dev-docker-clients.md README-dev-tls_cluster.md README-dev-vault.md
+%doc README-devices-gpu-nvidia.md
+%doc README-drivers-shared-executor-test-resources-busybox example README-e2e.md
+%doc README-e2e-consulacls.md README-e2e-terraform.md
+%doc README-e2e-terraform-config-shared.md README-e2e-terraform-packer.md
+%doc README-e2e-terraform-packer-windows-2016-amd64.md
+%doc README-e2e-terraform-userdata.md README-e2e-upgrades.md
+%doc README-e2e-vaultcompat.md README-integrations-grafana_dashboards.md
+%doc README-integrations-prometheus.md README-jobspec2-addrs.md
+%doc README-nomad-structs-config.md example
+%doc README-plugins-shared-cmd-launcher.md examples README-terraform.md
+%doc README-terraform-aws.md README-terraform-azure.md README-terraform-gcp.md
+%doc README-tools-buf.md DEVELOPMENT_MODE-ui.md README-ui.md
+%doc robots-ui-public.txt -website.markdownlintrc README-website.md docs
+%doc acl-policies-website-content-api-docs.mdx
+%doc acl-tokens-website-content-api-docs.mdx agent-website-content-api-docs.mdx
+%doc allocations-website-content-api-docs.mdx
+%doc client-website-content-api-docs.mdx
+%doc deployments-website-content-api-docs.mdx
+%doc evaluations-website-content-api-docs.mdx
+%doc events-website-content-api-docs.mdx index-website-content-api-docs.mdx
+%doc jobs-website-content-api-docs.mdx json-jobs-website-content-api-docs.mdx
+%doc libraries-and-sdks-website-content-api-docs.mdx
+%doc metrics-website-content-api-docs.mdx
+%doc namespaces-website-content-api-docs.mdx nodes-website-content-api-docs.mdx
+%doc plugins-website-content-api-docs.mdx quotas-website-content-api-docs.mdx
+%doc recommendations-website-content-api-docs.mdx
+%doc regions-website-content-api-docs.mdx
+%doc scaling-policies-website-content-api-docs.mdx
+%doc search-website-content-api-docs.mdx
+%doc sentinel-policies-website-content-api-docs.mdx
+%doc status-website-content-api-docs.mdx system-website-content-api-docs.mdx
+%doc ui-website-content-api-docs.mdx validate-website-content-api-docs.mdx
+%doc volumes-website-content-api-docs.mdx
+%doc autopilot-website-content-api-docs-operator.mdx
+%doc index-website-content-api-docs-operator.mdx
+%doc raft-website-content-api-docs-operator.mdx
+%doc scheduler-website-content-api-docs-operator.mdx
+%doc snapshot-website-content-api-docs-operator.mdx
+%doc index-website-content-intro.mdx use-cases-website-content-intro.mdx
+%doc ecs-website-content-intro-vs.mdx index-website-content-intro-vs.mdx
+%doc mesos-website-content-intro-vs.mdx terraform-website-content-intro-vs.mdx
+%doc envvars-website-content-partials.mdx
+%doc general_options-website-content-partials.mdx
+%doc general_options_no_namespace-website-content-partials.mdx docs
+%doc robots-website-public.txt
 %{_bindir}/*
 
 %gopkgfiles

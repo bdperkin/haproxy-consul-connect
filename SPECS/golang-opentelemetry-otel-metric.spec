@@ -5,6 +5,8 @@
 %global goipath         go.opentelemetry.io/otel/metric
 %global forgeurl        https://github.com/open-telemetry/opentelemetry-go
 Version:                0.20.0
+%global tag             metric/v0.20.0
+%global commit          0b12670f0b0a04d5800c3ed53cf33624ada3f957
 
 %gometa
 

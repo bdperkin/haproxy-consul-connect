@@ -12,49 +12,49 @@ Version:                0.117.1
 
 %global golicenses      LICENSE
 %global godocs          docs examples TODO.txt CONTRIBUTING.md README.md\\\
-                        benchmarks/flux/README.md benchmarks/flux/curl-\\\
-                        format.txt colm/README.txt\\\
-                        colm/tableflux/expected/query01-expected.txt\\\
-                        colm/tableflux/expected/query02-expected.txt\\\
-                        colm/tableflux/expected/query03-expected.txt\\\
-                        colm/tableflux/expected/query04-expected.txt\\\
-                        colm/tableflux/expected/query05-expected.txt\\\
-                        colm/tableflux/expected/query06-expected.txt\\\
-                        colm/tableflux/expected/query07-expected.txt\\\
-                        colm/tableflux/expected/query08-expected.txt\\\
-                        colm/tableflux/expected/query09-expected.txt\\\
-                        colm/tableflux/expected/query10-expected.txt\\\
-                        colm/tableflux/expected/query11-expected.txt\\\
-                        colm/tableflux/expected/query12-expected.txt\\\
-                        colm/tableflux/expected/query13-expected.txt\\\
-                        colm/tableflux/expected/query14-expected.txt\\\
-                        colm/tableflux/expected/query15-expected.txt\\\
-                        colm/tableflux/expected/query16-expected.txt\\\
-                        colm/tableflux/expected/query17-expected.txt\\\
-                        colm/tableflux/expected/query18-expected.txt\\\
-                        colm/tableflux/expected/query19-expected.txt\\\
-                        colm/tableflux/expected/query20-expected.txt\\\
-                        colm/tableflux/expected/query21-expected.txt\\\
-                        colm/tableflux/expected/query22-expected.txt\\\
-                        colm/tableflux/expected/query23-expected.txt\\\
-                        colm/tableflux/expected/query24-expected.txt\\\
-                        colm/tableflux/expected/query25-expected.txt\\\
-                        colm/tableflux/expected/query26-expected.txt\\\
-                        libflux/README.md parser/grammar.md\\\
-                        querytest/README.md stdlib/README.md\\\
-                        stdlib/contrib/README.md stdlib/contrib/RohanSreerama\\\
-                        5/naiveBayesClassifier/README.md\\\
-                        stdlib/contrib/chobbs/discord/README.md\\\
-                        stdlib/contrib/sranka/opsgenie/README.md\\\
-                        stdlib/contrib/sranka/sensu/README.md\\\
-                        stdlib/contrib/sranka/teams/README.md\\\
-                        stdlib/contrib/sranka/telegram/README.md\\\
-                        stdlib/contrib/tomhollingworth/events/README.md\\\
-                        stdlib/contrib/bonitoo-io/tickscript/README.md\\\
-                        stdlib/contrib/bonitoo-io/victorops/README.md\\\
-                        stdlib/contrib/bonitoo-io/zenoss/README.md\\\
-                        stdlib/contrib/rhajek/bigpanda/README.md\\\
-                        stdlib/experimental/geo/README.md
+                        README-benchmarks-flux.md\\\
+                        curl-format-benchmarks-flux.txt README-colm.txt\\\
+                        query01-expected-colm-tableflux-expected.txt\\\
+                        query02-expected-colm-tableflux-expected.txt\\\
+                        query03-expected-colm-tableflux-expected.txt\\\
+                        query04-expected-colm-tableflux-expected.txt\\\
+                        query05-expected-colm-tableflux-expected.txt\\\
+                        query06-expected-colm-tableflux-expected.txt\\\
+                        query07-expected-colm-tableflux-expected.txt\\\
+                        query08-expected-colm-tableflux-expected.txt\\\
+                        query09-expected-colm-tableflux-expected.txt\\\
+                        query10-expected-colm-tableflux-expected.txt\\\
+                        query11-expected-colm-tableflux-expected.txt\\\
+                        query12-expected-colm-tableflux-expected.txt\\\
+                        query13-expected-colm-tableflux-expected.txt\\\
+                        query14-expected-colm-tableflux-expected.txt\\\
+                        query15-expected-colm-tableflux-expected.txt\\\
+                        query16-expected-colm-tableflux-expected.txt\\\
+                        query17-expected-colm-tableflux-expected.txt\\\
+                        query18-expected-colm-tableflux-expected.txt\\\
+                        query19-expected-colm-tableflux-expected.txt\\\
+                        query20-expected-colm-tableflux-expected.txt\\\
+                        query21-expected-colm-tableflux-expected.txt\\\
+                        query22-expected-colm-tableflux-expected.txt\\\
+                        query23-expected-colm-tableflux-expected.txt\\\
+                        query24-expected-colm-tableflux-expected.txt\\\
+                        query25-expected-colm-tableflux-expected.txt\\\
+                        query26-expected-colm-tableflux-expected.txt\\\
+                        README-libflux.md grammar-parser.md\\\
+                        README-querytest.md README-stdlib.md\\\
+                        README-stdlib-contrib.md\\\
+                        README-stdlib-contrib-RohanSreerama5-naiveBayesClassifier.md\\\
+                        README-stdlib-contrib-chobbs-discord.md\\\
+                        README-stdlib-contrib-sranka-opsgenie.md\\\
+                        README-stdlib-contrib-sranka-sensu.md\\\
+                        README-stdlib-contrib-sranka-teams.md\\\
+                        README-stdlib-contrib-sranka-telegram.md\\\
+                        README-stdlib-contrib-tomhollingworth-events.md\\\
+                        README-stdlib-contrib-bonitoo-io-tickscript.md\\\
+                        README-stdlib-contrib-bonitoo-io-victorops.md\\\
+                        README-stdlib-contrib-bonitoo-io-zenoss.md\\\
+                        README-stdlib-contrib-rhajek-bigpanda.md\\\
+                        README-stdlib-experimental-geo.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -142,6 +142,52 @@ BuildRequires:  golang(github.com/opentracing/opentracing-go/mocktracer)
 
 %prep
 %goprep
+mv benchmarks/flux/README.md README-benchmarks-flux.md
+mv benchmarks/flux/curl-format.txt curl-format-benchmarks-flux.txt
+mv colm/README.txt README-colm.txt
+mv colm/tableflux/expected/query01-expected.txt query01-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query02-expected.txt query02-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query03-expected.txt query03-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query04-expected.txt query04-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query05-expected.txt query05-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query06-expected.txt query06-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query07-expected.txt query07-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query08-expected.txt query08-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query09-expected.txt query09-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query10-expected.txt query10-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query11-expected.txt query11-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query12-expected.txt query12-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query13-expected.txt query13-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query14-expected.txt query14-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query15-expected.txt query15-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query16-expected.txt query16-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query17-expected.txt query17-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query18-expected.txt query18-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query19-expected.txt query19-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query20-expected.txt query20-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query21-expected.txt query21-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query22-expected.txt query22-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query23-expected.txt query23-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query24-expected.txt query24-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query25-expected.txt query25-expected-colm-tableflux-expected.txt
+mv colm/tableflux/expected/query26-expected.txt query26-expected-colm-tableflux-expected.txt
+mv libflux/README.md README-libflux.md
+mv parser/grammar.md grammar-parser.md
+mv querytest/README.md README-querytest.md
+mv stdlib/README.md README-stdlib.md
+mv stdlib/contrib/README.md README-stdlib-contrib.md
+mv stdlib/contrib/RohanSreerama5/naiveBayesClassifier/README.md README-stdlib-contrib-RohanSreerama5-naiveBayesClassifier.md
+mv stdlib/contrib/chobbs/discord/README.md README-stdlib-contrib-chobbs-discord.md
+mv stdlib/contrib/sranka/opsgenie/README.md README-stdlib-contrib-sranka-opsgenie.md
+mv stdlib/contrib/sranka/sensu/README.md README-stdlib-contrib-sranka-sensu.md
+mv stdlib/contrib/sranka/teams/README.md README-stdlib-contrib-sranka-teams.md
+mv stdlib/contrib/sranka/telegram/README.md README-stdlib-contrib-sranka-telegram.md
+mv stdlib/contrib/tomhollingworth/events/README.md README-stdlib-contrib-tomhollingworth-events.md
+mv stdlib/contrib/bonitoo-io/tickscript/README.md README-stdlib-contrib-bonitoo-io-tickscript.md
+mv stdlib/contrib/bonitoo-io/victorops/README.md README-stdlib-contrib-bonitoo-io-victorops.md
+mv stdlib/contrib/bonitoo-io/zenoss/README.md README-stdlib-contrib-bonitoo-io-zenoss.md
+mv stdlib/contrib/rhajek/bigpanda/README.md README-stdlib-contrib-rhajek-bigpanda.md
+mv stdlib/experimental/geo/README.md README-stdlib-experimental-geo.md
 
 %build
 for cmd in cmd/* ; do
@@ -163,46 +209,46 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc docs examples TODO.txt CONTRIBUTING.md README.md benchmarks/flux/README.md
-%doc benchmarks/flux/curl-format.txt colm/README.txt
-%doc colm/tableflux/expected/query01-expected.txt
-%doc colm/tableflux/expected/query02-expected.txt
-%doc colm/tableflux/expected/query03-expected.txt
-%doc colm/tableflux/expected/query04-expected.txt
-%doc colm/tableflux/expected/query05-expected.txt
-%doc colm/tableflux/expected/query06-expected.txt
-%doc colm/tableflux/expected/query07-expected.txt
-%doc colm/tableflux/expected/query08-expected.txt
-%doc colm/tableflux/expected/query09-expected.txt
-%doc colm/tableflux/expected/query10-expected.txt
-%doc colm/tableflux/expected/query11-expected.txt
-%doc colm/tableflux/expected/query12-expected.txt
-%doc colm/tableflux/expected/query13-expected.txt
-%doc colm/tableflux/expected/query14-expected.txt
-%doc colm/tableflux/expected/query15-expected.txt
-%doc colm/tableflux/expected/query16-expected.txt
-%doc colm/tableflux/expected/query17-expected.txt
-%doc colm/tableflux/expected/query18-expected.txt
-%doc colm/tableflux/expected/query19-expected.txt
-%doc colm/tableflux/expected/query20-expected.txt
-%doc colm/tableflux/expected/query21-expected.txt
-%doc colm/tableflux/expected/query22-expected.txt
-%doc colm/tableflux/expected/query23-expected.txt
-%doc colm/tableflux/expected/query24-expected.txt
-%doc colm/tableflux/expected/query25-expected.txt
-%doc colm/tableflux/expected/query26-expected.txt libflux/README.md
-%doc parser/grammar.md querytest/README.md stdlib/README.md
-%doc stdlib/contrib/README.md
-%doc stdlib/contrib/RohanSreerama5/naiveBayesClassifier/README.md
-%doc stdlib/contrib/chobbs/discord/README.md
-%doc stdlib/contrib/sranka/opsgenie/README.md
-%doc stdlib/contrib/sranka/sensu/README.md stdlib/contrib/sranka/teams/README.md
-%doc stdlib/contrib/sranka/telegram/README.md
-%doc stdlib/contrib/tomhollingworth/events/README.md
-%doc stdlib/contrib/bonitoo-io/tickscript/README.md
-%doc stdlib/contrib/bonitoo-io/victorops/README.md
-%doc stdlib/contrib/bonitoo-io/zenoss/README.md
-%doc stdlib/contrib/rhajek/bigpanda/README.md stdlib/experimental/geo/README.md
+%doc docs examples TODO.txt CONTRIBUTING.md README.md README-benchmarks-flux.md
+%doc curl-format-benchmarks-flux.txt README-colm.txt
+%doc query01-expected-colm-tableflux-expected.txt
+%doc query02-expected-colm-tableflux-expected.txt
+%doc query03-expected-colm-tableflux-expected.txt
+%doc query04-expected-colm-tableflux-expected.txt
+%doc query05-expected-colm-tableflux-expected.txt
+%doc query06-expected-colm-tableflux-expected.txt
+%doc query07-expected-colm-tableflux-expected.txt
+%doc query08-expected-colm-tableflux-expected.txt
+%doc query09-expected-colm-tableflux-expected.txt
+%doc query10-expected-colm-tableflux-expected.txt
+%doc query11-expected-colm-tableflux-expected.txt
+%doc query12-expected-colm-tableflux-expected.txt
+%doc query13-expected-colm-tableflux-expected.txt
+%doc query14-expected-colm-tableflux-expected.txt
+%doc query15-expected-colm-tableflux-expected.txt
+%doc query16-expected-colm-tableflux-expected.txt
+%doc query17-expected-colm-tableflux-expected.txt
+%doc query18-expected-colm-tableflux-expected.txt
+%doc query19-expected-colm-tableflux-expected.txt
+%doc query20-expected-colm-tableflux-expected.txt
+%doc query21-expected-colm-tableflux-expected.txt
+%doc query22-expected-colm-tableflux-expected.txt
+%doc query23-expected-colm-tableflux-expected.txt
+%doc query24-expected-colm-tableflux-expected.txt
+%doc query25-expected-colm-tableflux-expected.txt
+%doc query26-expected-colm-tableflux-expected.txt README-libflux.md
+%doc grammar-parser.md README-querytest.md README-stdlib.md
+%doc README-stdlib-contrib.md
+%doc README-stdlib-contrib-RohanSreerama5-naiveBayesClassifier.md
+%doc README-stdlib-contrib-chobbs-discord.md
+%doc README-stdlib-contrib-sranka-opsgenie.md
+%doc README-stdlib-contrib-sranka-sensu.md README-stdlib-contrib-sranka-teams.md
+%doc README-stdlib-contrib-sranka-telegram.md
+%doc README-stdlib-contrib-tomhollingworth-events.md
+%doc README-stdlib-contrib-bonitoo-io-tickscript.md
+%doc README-stdlib-contrib-bonitoo-io-victorops.md
+%doc README-stdlib-contrib-bonitoo-io-zenoss.md
+%doc README-stdlib-contrib-rhajek-bigpanda.md README-stdlib-experimental-geo.md
 %{_bindir}/*
 
 %gopkgfiles

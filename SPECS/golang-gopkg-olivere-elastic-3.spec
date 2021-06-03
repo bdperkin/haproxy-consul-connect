@@ -11,10 +11,10 @@ Version:                3.0.75
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE backoff/LICENSE uritemplates/LICENSE
-%global godocs          CHANGELOG-3.0.md CODE_OF_CONDUCT.md ISSUE_TEMPLATE.md\\\
-                        README.md CONTRIBUTING.md CONTRIBUTORS cluster-\\\
-                        test/README.md
+%global golicenses      LICENSE LICENSE-backoff LICENSE-uritemplates
+%global godocs          CHANGELOG-3.0.md CODE_OF_CONDUCT.md\\\
+                        ISSUE_TEMPLATE.md README.md CONTRIBUTING.md\\\
+                        CONTRIBUTORS README-cluster-test.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -36,6 +36,9 @@ BuildRequires:  golang(github.com/fortytw2/leaktest)
 
 %prep
 %goprep
+mv backoff/LICENSE LICENSE-backoff
+mv uritemplates/LICENSE LICENSE-uritemplates
+mv cluster-test/README.md README-cluster-test.md
 
 %build
 for cmd in cluster-test; do
@@ -53,9 +56,9 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE backoff/LICENSE uritemplates/LICENSE
+%license LICENSE LICENSE-backoff LICENSE-uritemplates
 %doc CHANGELOG-3.0.md CODE_OF_CONDUCT.md ISSUE_TEMPLATE.md README.md
-%doc CONTRIBUTING.md CONTRIBUTORS cluster-test/README.md
+%doc CONTRIBUTING.md CONTRIBUTORS README-cluster-test.md
 %{_bindir}/*
 
 %gopkgfiles

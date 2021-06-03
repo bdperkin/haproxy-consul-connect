@@ -10,294 +10,282 @@ Version:                1.9.5
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE NOTICE.md ui/packages/consul-\\\
-                        ui/app/utils/dom/event-target/event-target-\\\
-                        shim/LICENSE ui/packages/consul-ui/lib/block-\\\
-                        slots/LICENSE.md website/LICENSE.md\\\
-                        website/content/api-docs/operator/license.mdx\\\
-                        website/content/commands/license.mdx
+%global golicenses      LICENSE NOTICE.md\\\
+                        LICENSE-ui-packages-consul-ui-app-utils-dom-event-target-event-target-shim\\\
+                        LICENSE-ui-packages-consul-ui-lib-block-slots.md\\\
+                        LICENSE-website.md\\\
+                        license-website-content-api-docs-operator.mdx\\\
+                        license-website-content-commands.mdx
 %global godocs          INTERNALS.md README.md CHANGELOG.md\\\
-                        .changelog/10013.txt .changelog/10023.txt\\\
-                        .changelog/10025.txt .changelog/7628.txt\\\
-                        .changelog/7899.txt .changelog/7970.txt\\\
-                        .changelog/8158.txt .changelog/8190.txt\\\
-                        .changelog/8194.txt .changelog/8211.txt\\\
-                        .changelog/8216.txt .changelog/8218.txt\\\
-                        .changelog/8221.txt .changelog/8222.txt\\\
-                        .changelog/8268.txt .changelog/8311.txt\\\
-                        .changelog/8343.txt .changelog/8371.txt\\\
-                        .changelog/8458.txt .changelog/8470.txt\\\
-                        .changelog/8522.txt .changelog/8537.txt\\\
-                        .changelog/8545.txt .changelog/8547.txt\\\
-                        .changelog/8552.txt .changelog/8560.txt\\\
-                        .changelog/8569.txt .changelog/8575.txt\\\
-                        .changelog/8585.txt .changelog/8588.txt\\\
-                        .changelog/8596.txt .changelog/8599.txt\\\
-                        .changelog/8601.txt .changelog/8602.txt\\\
-                        .changelog/8603.txt .changelog/8606.txt\\\
-                        .changelog/8646.txt .changelog/8685.txt\\\
-                        .changelog/8694.txt .changelog/8703.txt\\\
-                        .changelog/8704.txt .changelog/8726.txt\\\
-                        .changelog/8731.txt .changelog/8741.txt\\\
-                        .changelog/8745.txt .changelog/8746.txt\\\
-                        .changelog/8747.txt .changelog/8764.txt\\\
-                        .changelog/8771.txt .changelog/8774.txt\\\
-                        .changelog/8781.txt .changelog/8784.txt\\\
-                        .changelog/8786.txt .changelog/8787.txt\\\
-                        .changelog/8788.txt .changelog/8822.txt\\\
-                        .changelog/8834.txt .changelog/8839.txt\\\
-                        .changelog/8846.txt .changelog/8855.txt\\\
-                        .changelog/8858.txt .changelog/8875.txt\\\
-                        .changelog/8877.txt .changelog/8924.txt\\\
-                        .changelog/9002.txt .changelog/9007.txt\\\
-                        .changelog/9008.txt .changelog/9009.txt\\\
-                        .changelog/9024.txt .changelog/9036.txt\\\
-                        .changelog/9042.txt .changelog/9059.txt\\\
-                        .changelog/9067.txt .changelog/9081.txt\\\
-                        .changelog/9088.txt .changelog/9099.txt\\\
-                        .changelog/9101.txt .changelog/9103.txt\\\
-                        .changelog/9113.txt .changelog/9119.txt\\\
-                        .changelog/9141.txt .changelog/9142.txt\\\
-                        .changelog/9151.txt .changelog/9156.txt\\\
-                        .changelog/9181.txt .changelog/9186.txt\\\
-                        .changelog/9191.txt .changelog/9198.txt\\\
-                        .changelog/9204.txt .changelog/9207.txt\\\
-                        .changelog/9229.txt .changelog/9240.txt\\\
-                        .changelog/9247.txt .changelog/9254.txt\\\
-                        .changelog/9262.txt .changelog/9271.txt\\\
-                        .changelog/9278.txt .changelog/9284.txt\\\
-                        .changelog/9296.txt .changelog/9318.txt\\\
-                        .changelog/9320.txt .changelog/9351.txt\\\
-                        .changelog/9366.txt .changelog/9410.txt\\\
-                        .changelog/9428.txt .changelog/9432.txt\\\
-                        .changelog/9440.txt .changelog/9442.txt\\\
-                        .changelog/9468.txt .changelog/9485.txt\\\
-                        .changelog/9487.txt .changelog/9498.txt\\\
-                        .changelog/9510.txt .changelog/9512.txt\\\
-                        .changelog/9513.txt .changelog/9519.txt\\\
-                        .changelog/9524.txt .changelog/9527.txt\\\
-                        .changelog/9528.txt .changelog/9530.txt\\\
-                        .changelog/9569.txt .changelog/9585.txt\\\
-                        .changelog/9589.txt .changelog/9593.txt\\\
-                        .changelog/9594.txt .changelog/9626.txt\\\
-                        .changelog/9650.txt .changelog/9651.txt\\\
-                        .changelog/9660.txt .changelog/9683.txt\\\
-                        .changelog/9689.txt .changelog/9715.txt\\\
-                        .changelog/9737.txt .changelog/9738.txt\\\
-                        .changelog/9749.txt .changelog/9752.txt\\\
-                        .changelog/9765.txt .changelog/9772.txt\\\
-                        .changelog/9806.txt .changelog/9847.txt\\\
-                        .changelog/9851.txt .changelog/9901.txt\\\
-                        .changelog/9923.txt .changelog/9967.txt\\\
-                        .changelog/9978.txt .changelog/9979.txt\\\
-                        .changelog/9980.txt .changelog/_619.txt\\\
-                        .changelog/_666.txt .changelog/_683.txt\\\
-                        .changelog/_745.txt .changelog/_795.txt\\\
-                        .changelog/_855.txt .changelog/_8621.txt\\\
-                        .changelog/_8825.txt .changelog/_8984.txt\\\
-                        .changelog/changelog.tmpl api/README.md\\\
-                        bench/README.md bench/results-0.2.md\\\
-                        bench/results-0.3.md bench/results-0.7.1.md\\\
-                        contributing/INTERNALS.md contributing/README.md\\\
-                        contributing/checklist-adding-config-fields.md\\\
-                        demo/vagrant-cluster/README.md sdk/README.md\\\
-                        sdk/testutil/README.md terraform/README.md\\\
-                        types/README.md ui/README.md ui/packages/consul-\\\
-                        ui/README.md ui/packages/consul-\\\
-                        ui/app/components/app-error/README.stories.mdx\\\
-                        ui/packages/consul-ui/app/components/auth-\\\
-                        dialog/README.mdx ui/packages/consul-\\\
-                        ui/app/components/auth-form/README.mdx\\\
-                        ui/packages/consul-ui/app/components/auth-\\\
-                        profile/README.mdx ui/packages/consul-\\\
-                        ui/app/components/consul/loader/README.mdx\\\
-                        ui/packages/consul-ui/app/components/consul/lock-\\\
-                        session/list/README.mdx ui/packages/consul-\\\
-                        ui/app/components/consul/metadata/list/README.mdx\\\
-                        ui/packages/consul-\\\
-                        ui/app/components/consul/nspace/list/README.mdx\\\
-                        ui/packages/consul-\\\
-                        ui/app/components/consul/policy/list/README.mdx\\\
-                        ui/packages/consul-\\\
-                        ui/app/components/consul/role/list/README.mdx\\\
-                        ui/packages/consul-\\\
-                        ui/app/components/consul/token/list/README.mdx\\\
-                        ui/packages/consul-ui/app/components/consul/token/rul\\\
-                        eset/list/README.mdx ui/packages/consul-\\\
-                        ui/app/components/copy-button/README.mdx\\\
-                        ui/packages/consul-ui/app/components/data-\\\
-                        collection/README.mdx ui/packages/consul-\\\
-                        ui/app/components/data-sink/README.mdx\\\
-                        ui/packages/consul-ui/app/components/data-\\\
-                        source/README.mdx ui/packages/consul-\\\
-                        ui/app/components/error-state/README.stories.mdx\\\
-                        ui/packages/consul-ui/app/components/event-\\\
-                        source/README.mdx ui/packages/consul-\\\
-                        ui/app/components/freetext-filter/README.stories.mdx\\\
-                        ui/packages/consul-ui/app/components/jwt-\\\
-                        source/README.mdx ui/packages/consul-\\\
-                        ui/app/components/notice/README.stories.mdx\\\
-                        ui/packages/consul-ui/app/components/ref/README.mdx\\\
-                        ui/packages/consul-ui/app/components/state-\\\
-                        chart/README.mdx ui/packages/consul-\\\
-                        ui/app/components/state/README.mdx\\\
-                        ui/packages/consul-ui/app/components/toggle-\\\
-                        button/README.mdx ui/packages/consul-\\\
-                        ui/app/components/token-source/README.mdx\\\
-                        ui/packages/consul-ui/lib/block-slots/README.md\\\
-                        ui/packages/consul-ui/mock-api/README.md\\\
-                        ui/packages/consul-ui/public/robots.txt\\\
-                        website/README.md docs website/content/security.mdx\\\
-                        website/content/api-docs/acl-legacy.mdx\\\
-                        website/content/api-docs/coordinate.mdx\\\
-                        website/content/api-docs/discovery-chain.mdx\\\
-                        website/content/api-docs/event.mdx\\\
-                        website/content/api-docs/index.mdx\\\
-                        website/content/api-docs/kv.mdx website/content/api-\\\
-                        docs/libraries-and-sdks.mdx website/content/api-\\\
-                        docs/query.mdx website/content/api-docs/session.mdx\\\
-                        website/content/api-docs/snapshot.mdx\\\
-                        website/content/api-docs/status.mdx\\\
-                        website/content/api-docs/txn.mdx website/content/api-\\\
-                        docs/config.mdx website/content/api-\\\
-                        docs/namespaces.mdx website/content/api-\\\
-                        docs/catalog.mdx website/content/api-docs/health.mdx\\\
-                        website/content/api-docs/acl/auth-methods.mdx\\\
-                        website/content/api-docs/acl/binding-rules.mdx\\\
-                        website/content/api-docs/acl/legacy.mdx\\\
-                        website/content/api-docs/acl/policies.mdx\\\
-                        website/content/api-docs/acl/roles.mdx\\\
-                        website/content/api-docs/acl/tokens.mdx\\\
-                        website/content/api-docs/acl/index.mdx\\\
-                        website/content/api-docs/agent/connect.mdx\\\
-                        website/content/api-docs/agent/index.mdx\\\
-                        website/content/api-docs/agent/check.mdx\\\
-                        website/content/api-docs/agent/service.mdx\\\
-                        website/content/api-docs/connect/index.mdx\\\
-                        website/content/api-docs/connect/intentions.mdx\\\
-                        website/content/api-docs/connect/ca.mdx\\\
-                        website/content/api-docs/features/blocking.mdx\\\
-                        website/content/api-docs/features/caching.mdx\\\
-                        website/content/api-docs/features/consistency.mdx\\\
-                        website/content/api-docs/features/filtering.mdx\\\
-                        website/content/api-docs/operator/area.mdx\\\
-                        website/content/api-docs/operator/autopilot.mdx\\\
-                        website/content/api-docs/operator/index.mdx\\\
-                        website/content/api-docs/operator/keyring.mdx\\\
-                        website/content/api-docs/operator/raft.mdx\\\
-                        website/content/api-docs/operator/segment.mdx\\\
-                        website/content/commands/agent.mdx\\\
-                        website/content/commands/debug.mdx\\\
-                        website/content/commands/event.mdx\\\
-                        website/content/commands/exec.mdx\\\
-                        website/content/commands/force-leave.mdx\\\
-                        website/content/commands/index.mdx\\\
-                        website/content/commands/info.mdx\\\
-                        website/content/commands/join.mdx\\\
-                        website/content/commands/keygen.mdx\\\
-                        website/content/commands/keyring.mdx\\\
-                        website/content/commands/leave.mdx\\\
-                        website/content/commands/lock.mdx\\\
-                        website/content/commands/login.mdx\\\
-                        website/content/commands/logout.mdx\\\
-                        website/content/commands/maint.mdx\\\
-                        website/content/commands/members.mdx\\\
-                        website/content/commands/monitor.mdx\\\
-                        website/content/commands/reload.mdx\\\
-                        website/content/commands/rtt.mdx\\\
-                        website/content/commands/validate.mdx\\\
-                        website/content/commands/version.mdx\\\
-                        website/content/commands/watch.mdx\\\
-                        website/content/commands/acl/bootstrap.mdx\\\
-                        website/content/commands/acl/index.mdx\\\
-                        website/content/commands/acl/translate-rules.mdx\\\
-                        website/content/commands/acl/set-agent-token.mdx\\\
-                        website/content/commands/acl/auth-method/create.mdx\\\
-                        website/content/commands/acl/auth-method/delete.mdx\\\
-                        website/content/commands/acl/auth-method/index.mdx\\\
-                        website/content/commands/acl/auth-method/list.mdx\\\
-                        website/content/commands/acl/auth-method/read.mdx\\\
-                        website/content/commands/acl/auth-method/update.mdx\\\
-                        website/content/commands/acl/binding-rule/create.mdx\\\
-                        website/content/commands/acl/binding-rule/delete.mdx\\\
-                        website/content/commands/acl/binding-rule/index.mdx\\\
-                        website/content/commands/acl/binding-rule/list.mdx\\\
-                        website/content/commands/acl/binding-rule/read.mdx\\\
-                        website/content/commands/acl/binding-rule/update.mdx\\\
-                        website/content/commands/acl/policy/create.mdx\\\
-                        website/content/commands/acl/policy/delete.mdx\\\
-                        website/content/commands/acl/policy/index.mdx\\\
-                        website/content/commands/acl/policy/list.mdx\\\
-                        website/content/commands/acl/policy/read.mdx\\\
-                        website/content/commands/acl/policy/update.mdx\\\
-                        website/content/commands/acl/role/create.mdx\\\
-                        website/content/commands/acl/role/delete.mdx\\\
-                        website/content/commands/acl/role/index.mdx\\\
-                        website/content/commands/acl/role/list.mdx\\\
-                        website/content/commands/acl/role/read.mdx\\\
-                        website/content/commands/acl/role/update.mdx\\\
-                        website/content/commands/acl/token/clone.mdx\\\
-                        website/content/commands/acl/token/create.mdx\\\
-                        website/content/commands/acl/token/delete.mdx\\\
-                        website/content/commands/acl/token/index.mdx\\\
-                        website/content/commands/acl/token/list.mdx\\\
-                        website/content/commands/acl/token/read.mdx\\\
-                        website/content/commands/acl/token/update.mdx\\\
-                        website/content/commands/catalog/datacenters.mdx\\\
-                        website/content/commands/catalog/index.mdx\\\
-                        website/content/commands/catalog/nodes.mdx\\\
-                        website/content/commands/catalog/services.mdx\\\
-                        website/content/commands/config/index.mdx\\\
-                        website/content/commands/config/write.mdx\\\
-                        website/content/commands/config/delete.mdx\\\
-                        website/content/commands/config/list.mdx\\\
-                        website/content/commands/config/read.mdx\\\
-                        website/content/commands/connect/expose.mdx\\\
-                        website/content/commands/connect/proxy.mdx\\\
-                        website/content/commands/connect/ca.mdx\\\
-                        website/content/commands/connect/envoy.mdx\\\
-                        website/content/commands/connect/index.mdx\\\
-                        website/content/commands/intention/check.mdx\\\
-                        website/content/commands/intention/create.mdx\\\
-                        website/content/commands/intention/delete.mdx\\\
-                        website/content/commands/intention/get.mdx\\\
-                        website/content/commands/intention/index.mdx\\\
-                        website/content/commands/intention/list.mdx\\\
-                        website/content/commands/intention/match.mdx\\\
-                        website/content/commands/kv/delete.mdx\\\
-                        website/content/commands/kv/export.mdx\\\
-                        website/content/commands/kv/get.mdx\\\
-                        website/content/commands/kv/index.mdx\\\
-                        website/content/commands/kv/put.mdx\\\
-                        website/content/commands/kv/import.mdx\\\
-                        website/content/commands/namespace/create.mdx\\\
-                        website/content/commands/namespace/delete.mdx\\\
-                        website/content/commands/namespace/index.mdx\\\
-                        website/content/commands/namespace/list.mdx\\\
-                        website/content/commands/namespace/read.mdx\\\
-                        website/content/commands/namespace/update.mdx\\\
-                        website/content/commands/namespace/write.mdx\\\
-                        website/content/commands/operator/area.mdx\\\
-                        website/content/commands/operator/autopilot.mdx\\\
-                        website/content/commands/operator/index.mdx\\\
-                        website/content/commands/operator/raft.mdx\\\
-                        website/content/commands/services/deregister.mdx\\\
-                        website/content/commands/services/index.mdx\\\
-                        website/content/commands/services/register.mdx\\\
-                        website/content/commands/snapshot/index.mdx\\\
-                        website/content/commands/snapshot/restore.mdx\\\
-                        website/content/commands/snapshot/save.mdx\\\
-                        website/content/commands/snapshot/agent.mdx\\\
-                        website/content/commands/snapshot/inspect.mdx\\\
-                        website/content/commands/tls/ca.mdx\\\
-                        website/content/commands/tls/cert.mdx\\\
-                        website/content/commands/tls/index.mdx website/conten\\\
-                        t/partials/http_api_namespace_options.mdx\\\
-                        website/content/partials/http_api_options_client.mdx\\\
-                        website/content/partials/http_api_options_server.mdx \\\
-                        website/content/partials/jwt_claim_mapping_details.md\\\
-                        x website/content/partials/jwt_or_oidc.mdx docs\\\
-                        website/public/robots.txt website/raw-assets/README
+                        10013-.changelog.txt 10023-.changelog.txt\\\
+                        10025-.changelog.txt 7628-.changelog.txt\\\
+                        7899-.changelog.txt 7970-.changelog.txt\\\
+                        8158-.changelog.txt 8190-.changelog.txt\\\
+                        8194-.changelog.txt 8211-.changelog.txt\\\
+                        8216-.changelog.txt 8218-.changelog.txt\\\
+                        8221-.changelog.txt 8222-.changelog.txt\\\
+                        8268-.changelog.txt 8311-.changelog.txt\\\
+                        8343-.changelog.txt 8371-.changelog.txt\\\
+                        8458-.changelog.txt 8470-.changelog.txt\\\
+                        8522-.changelog.txt 8537-.changelog.txt\\\
+                        8545-.changelog.txt 8547-.changelog.txt\\\
+                        8552-.changelog.txt 8560-.changelog.txt\\\
+                        8569-.changelog.txt 8575-.changelog.txt\\\
+                        8585-.changelog.txt 8588-.changelog.txt\\\
+                        8596-.changelog.txt 8599-.changelog.txt\\\
+                        8601-.changelog.txt 8602-.changelog.txt\\\
+                        8603-.changelog.txt 8606-.changelog.txt\\\
+                        8646-.changelog.txt 8685-.changelog.txt\\\
+                        8694-.changelog.txt 8703-.changelog.txt\\\
+                        8704-.changelog.txt 8726-.changelog.txt\\\
+                        8731-.changelog.txt 8741-.changelog.txt\\\
+                        8745-.changelog.txt 8746-.changelog.txt\\\
+                        8747-.changelog.txt 8764-.changelog.txt\\\
+                        8771-.changelog.txt 8774-.changelog.txt\\\
+                        8781-.changelog.txt 8784-.changelog.txt\\\
+                        8786-.changelog.txt 8787-.changelog.txt\\\
+                        8788-.changelog.txt 8822-.changelog.txt\\\
+                        8834-.changelog.txt 8839-.changelog.txt\\\
+                        8846-.changelog.txt 8855-.changelog.txt\\\
+                        8858-.changelog.txt 8875-.changelog.txt\\\
+                        8877-.changelog.txt 8924-.changelog.txt\\\
+                        9002-.changelog.txt 9007-.changelog.txt\\\
+                        9008-.changelog.txt 9009-.changelog.txt\\\
+                        9024-.changelog.txt 9036-.changelog.txt\\\
+                        9042-.changelog.txt 9059-.changelog.txt\\\
+                        9067-.changelog.txt 9081-.changelog.txt\\\
+                        9088-.changelog.txt 9099-.changelog.txt\\\
+                        9101-.changelog.txt 9103-.changelog.txt\\\
+                        9113-.changelog.txt 9119-.changelog.txt\\\
+                        9141-.changelog.txt 9142-.changelog.txt\\\
+                        9151-.changelog.txt 9156-.changelog.txt\\\
+                        9181-.changelog.txt 9186-.changelog.txt\\\
+                        9191-.changelog.txt 9198-.changelog.txt\\\
+                        9204-.changelog.txt 9207-.changelog.txt\\\
+                        9229-.changelog.txt 9240-.changelog.txt\\\
+                        9247-.changelog.txt 9254-.changelog.txt\\\
+                        9262-.changelog.txt 9271-.changelog.txt\\\
+                        9278-.changelog.txt 9284-.changelog.txt\\\
+                        9296-.changelog.txt 9318-.changelog.txt\\\
+                        9320-.changelog.txt 9351-.changelog.txt\\\
+                        9366-.changelog.txt 9410-.changelog.txt\\\
+                        9428-.changelog.txt 9432-.changelog.txt\\\
+                        9440-.changelog.txt 9442-.changelog.txt\\\
+                        9468-.changelog.txt 9485-.changelog.txt\\\
+                        9487-.changelog.txt 9498-.changelog.txt\\\
+                        9510-.changelog.txt 9512-.changelog.txt\\\
+                        9513-.changelog.txt 9519-.changelog.txt\\\
+                        9524-.changelog.txt 9527-.changelog.txt\\\
+                        9528-.changelog.txt 9530-.changelog.txt\\\
+                        9569-.changelog.txt 9585-.changelog.txt\\\
+                        9589-.changelog.txt 9593-.changelog.txt\\\
+                        9594-.changelog.txt 9626-.changelog.txt\\\
+                        9650-.changelog.txt 9651-.changelog.txt\\\
+                        9660-.changelog.txt 9683-.changelog.txt\\\
+                        9689-.changelog.txt 9715-.changelog.txt\\\
+                        9737-.changelog.txt 9738-.changelog.txt\\\
+                        9749-.changelog.txt 9752-.changelog.txt\\\
+                        9765-.changelog.txt 9772-.changelog.txt\\\
+                        9806-.changelog.txt 9847-.changelog.txt\\\
+                        9851-.changelog.txt 9901-.changelog.txt\\\
+                        9923-.changelog.txt 9967-.changelog.txt\\\
+                        9978-.changelog.txt 9979-.changelog.txt\\\
+                        9980-.changelog.txt _619-.changelog.txt\\\
+                        _666-.changelog.txt _683-.changelog.txt\\\
+                        _745-.changelog.txt _795-.changelog.txt\\\
+                        _855-.changelog.txt _8621-.changelog.txt\\\
+                        _8825-.changelog.txt _8984-.changelog.txt\\\
+                        changelog-.changelog.tmpl README-api.md\\\
+                        README-bench.md results-0.2-bench.md\\\
+                        results-0.3-bench.md results-0.7.1-bench.md\\\
+                        INTERNALS-contributing.md README-contributing.md\\\
+                        checklist-adding-config-fields-contributing.md\\\
+                        README-demo-vagrant-cluster.md README-sdk.md\\\
+                        README-sdk-testutil.md README-terraform.md\\\
+                        README-types.md README-ui.md\\\
+                        README-ui-packages-consul-ui.md\\\
+                        README.stories-ui-packages-consul-ui-app-components-app-error.mdx\\\
+                        README-ui-packages-consul-ui-app-components-auth-dialog.mdx\\\
+                        README-ui-packages-consul-ui-app-components-auth-form.mdx\\\
+                        README-ui-packages-consul-ui-app-components-auth-profile.mdx\\\
+                        README-ui-packages-consul-ui-app-components-consul-loader.mdx\\\
+                        README-ui-packages-consul-ui-app-components-consul-lock-session-list.mdx\\\
+                        README-ui-packages-consul-ui-app-components-consul-metadata-list.mdx\\\
+                        README-ui-packages-consul-ui-app-components-consul-nspace-list.mdx\\\
+                        README-ui-packages-consul-ui-app-components-consul-policy-list.mdx\\\
+                        README-ui-packages-consul-ui-app-components-consul-role-list.mdx\\\
+                        README-ui-packages-consul-ui-app-components-consul-token-list.mdx\\\
+                        README-ui-packages-consul-ui-app-components-consul-token-ruleset-list.mdx\\\
+                        README-ui-packages-consul-ui-app-components-copy-button.mdx\\\
+                        README-ui-packages-consul-ui-app-components-data-collection.mdx\\\
+                        README-ui-packages-consul-ui-app-components-data-sink.mdx\\\
+                        README-ui-packages-consul-ui-app-components-data-source.mdx\\\
+                        README.stories-ui-packages-consul-ui-app-components-error-state.mdx\\\
+                        README-ui-packages-consul-ui-app-components-event-source.mdx\\\
+                        README.stories-ui-packages-consul-ui-app-components-freetext-filter.mdx\\\
+                        README-ui-packages-consul-ui-app-components-jwt-source.mdx\\\
+                        README.stories-ui-packages-consul-ui-app-components-notice.mdx\\\
+                        README-ui-packages-consul-ui-app-components-ref.mdx\\\
+                        README-ui-packages-consul-ui-app-components-state-chart.mdx\\\
+                        README-ui-packages-consul-ui-app-components-state.mdx\\\
+                        README-ui-packages-consul-ui-app-components-toggle-button.mdx\\\
+                        README-ui-packages-consul-ui-app-components-token-source.mdx\\\
+                        README-ui-packages-consul-ui-lib-block-slots.md\\\
+                        README-ui-packages-consul-ui-mock-api.md\\\
+                        robots-ui-packages-consul-ui-public.txt\\\
+                        README-website.md docs security-website-content.mdx\\\
+                        acl-legacy-website-content-api-docs.mdx\\\
+                        coordinate-website-content-api-docs.mdx\\\
+                        discovery-chain-website-content-api-docs.mdx\\\
+                        event-website-content-api-docs.mdx\\\
+                        index-website-content-api-docs.mdx\\\
+                        kv-website-content-api-docs.mdx\\\
+                        libraries-and-sdks-website-content-api-docs.mdx\\\
+                        query-website-content-api-docs.mdx\\\
+                        session-website-content-api-docs.mdx\\\
+                        snapshot-website-content-api-docs.mdx\\\
+                        status-website-content-api-docs.mdx\\\
+                        txn-website-content-api-docs.mdx\\\
+                        config-website-content-api-docs.mdx\\\
+                        namespaces-website-content-api-docs.mdx\\\
+                        catalog-website-content-api-docs.mdx\\\
+                        health-website-content-api-docs.mdx\\\
+                        auth-methods-website-content-api-docs-acl.mdx\\\
+                        binding-rules-website-content-api-docs-acl.mdx\\\
+                        legacy-website-content-api-docs-acl.mdx\\\
+                        policies-website-content-api-docs-acl.mdx\\\
+                        roles-website-content-api-docs-acl.mdx\\\
+                        tokens-website-content-api-docs-acl.mdx\\\
+                        index-website-content-api-docs-acl.mdx\\\
+                        connect-website-content-api-docs-agent.mdx\\\
+                        index-website-content-api-docs-agent.mdx\\\
+                        check-website-content-api-docs-agent.mdx\\\
+                        service-website-content-api-docs-agent.mdx\\\
+                        index-website-content-api-docs-connect.mdx\\\
+                        intentions-website-content-api-docs-connect.mdx\\\
+                        ca-website-content-api-docs-connect.mdx\\\
+                        blocking-website-content-api-docs-features.mdx\\\
+                        caching-website-content-api-docs-features.mdx\\\
+                        consistency-website-content-api-docs-features.mdx\\\
+                        filtering-website-content-api-docs-features.mdx\\\
+                        area-website-content-api-docs-operator.mdx\\\
+                        autopilot-website-content-api-docs-operator.mdx\\\
+                        index-website-content-api-docs-operator.mdx\\\
+                        keyring-website-content-api-docs-operator.mdx\\\
+                        raft-website-content-api-docs-operator.mdx\\\
+                        segment-website-content-api-docs-operator.mdx\\\
+                        agent-website-content-commands.mdx\\\
+                        debug-website-content-commands.mdx\\\
+                        event-website-content-commands.mdx\\\
+                        exec-website-content-commands.mdx\\\
+                        force-leave-website-content-commands.mdx\\\
+                        index-website-content-commands.mdx\\\
+                        info-website-content-commands.mdx\\\
+                        join-website-content-commands.mdx\\\
+                        keygen-website-content-commands.mdx\\\
+                        keyring-website-content-commands.mdx\\\
+                        leave-website-content-commands.mdx\\\
+                        lock-website-content-commands.mdx\\\
+                        login-website-content-commands.mdx\\\
+                        logout-website-content-commands.mdx\\\
+                        maint-website-content-commands.mdx\\\
+                        members-website-content-commands.mdx\\\
+                        monitor-website-content-commands.mdx\\\
+                        reload-website-content-commands.mdx\\\
+                        rtt-website-content-commands.mdx\\\
+                        validate-website-content-commands.mdx\\\
+                        version-website-content-commands.mdx\\\
+                        watch-website-content-commands.mdx\\\
+                        bootstrap-website-content-commands-acl.mdx\\\
+                        index-website-content-commands-acl.mdx\\\
+                        translate-rules-website-content-commands-acl.mdx\\\
+                        set-agent-token-website-content-commands-acl.mdx\\\
+                        create-website-content-commands-acl-auth-method.mdx\\\
+                        delete-website-content-commands-acl-auth-method.mdx\\\
+                        index-website-content-commands-acl-auth-method.mdx\\\
+                        list-website-content-commands-acl-auth-method.mdx\\\
+                        read-website-content-commands-acl-auth-method.mdx\\\
+                        update-website-content-commands-acl-auth-method.mdx\\\
+                        create-website-content-commands-acl-binding-rule.mdx\\\
+                        delete-website-content-commands-acl-binding-rule.mdx\\\
+                        index-website-content-commands-acl-binding-rule.mdx\\\
+                        list-website-content-commands-acl-binding-rule.mdx\\\
+                        read-website-content-commands-acl-binding-rule.mdx\\\
+                        update-website-content-commands-acl-binding-rule.mdx\\\
+                        create-website-content-commands-acl-policy.mdx\\\
+                        delete-website-content-commands-acl-policy.mdx\\\
+                        index-website-content-commands-acl-policy.mdx\\\
+                        list-website-content-commands-acl-policy.mdx\\\
+                        read-website-content-commands-acl-policy.mdx\\\
+                        update-website-content-commands-acl-policy.mdx\\\
+                        create-website-content-commands-acl-role.mdx\\\
+                        delete-website-content-commands-acl-role.mdx\\\
+                        index-website-content-commands-acl-role.mdx\\\
+                        list-website-content-commands-acl-role.mdx\\\
+                        read-website-content-commands-acl-role.mdx\\\
+                        update-website-content-commands-acl-role.mdx\\\
+                        clone-website-content-commands-acl-token.mdx\\\
+                        create-website-content-commands-acl-token.mdx\\\
+                        delete-website-content-commands-acl-token.mdx\\\
+                        index-website-content-commands-acl-token.mdx\\\
+                        list-website-content-commands-acl-token.mdx\\\
+                        read-website-content-commands-acl-token.mdx\\\
+                        update-website-content-commands-acl-token.mdx\\\
+                        datacenters-website-content-commands-catalog.mdx\\\
+                        index-website-content-commands-catalog.mdx\\\
+                        nodes-website-content-commands-catalog.mdx\\\
+                        services-website-content-commands-catalog.mdx\\\
+                        index-website-content-commands-config.mdx\\\
+                        write-website-content-commands-config.mdx\\\
+                        delete-website-content-commands-config.mdx\\\
+                        list-website-content-commands-config.mdx\\\
+                        read-website-content-commands-config.mdx\\\
+                        expose-website-content-commands-connect.mdx\\\
+                        proxy-website-content-commands-connect.mdx\\\
+                        ca-website-content-commands-connect.mdx\\\
+                        envoy-website-content-commands-connect.mdx\\\
+                        index-website-content-commands-connect.mdx\\\
+                        check-website-content-commands-intention.mdx\\\
+                        create-website-content-commands-intention.mdx\\\
+                        delete-website-content-commands-intention.mdx\\\
+                        get-website-content-commands-intention.mdx\\\
+                        index-website-content-commands-intention.mdx\\\
+                        list-website-content-commands-intention.mdx\\\
+                        match-website-content-commands-intention.mdx\\\
+                        delete-website-content-commands-kv.mdx\\\
+                        export-website-content-commands-kv.mdx\\\
+                        get-website-content-commands-kv.mdx\\\
+                        index-website-content-commands-kv.mdx\\\
+                        put-website-content-commands-kv.mdx\\\
+                        import-website-content-commands-kv.mdx\\\
+                        create-website-content-commands-namespace.mdx\\\
+                        delete-website-content-commands-namespace.mdx\\\
+                        index-website-content-commands-namespace.mdx\\\
+                        list-website-content-commands-namespace.mdx\\\
+                        read-website-content-commands-namespace.mdx\\\
+                        update-website-content-commands-namespace.mdx\\\
+                        write-website-content-commands-namespace.mdx\\\
+                        area-website-content-commands-operator.mdx\\\
+                        autopilot-website-content-commands-operator.mdx\\\
+                        index-website-content-commands-operator.mdx\\\
+                        raft-website-content-commands-operator.mdx\\\
+                        deregister-website-content-commands-services.mdx\\\
+                        index-website-content-commands-services.mdx\\\
+                        register-website-content-commands-services.mdx\\\
+                        index-website-content-commands-snapshot.mdx\\\
+                        restore-website-content-commands-snapshot.mdx\\\
+                        save-website-content-commands-snapshot.mdx\\\
+                        agent-website-content-commands-snapshot.mdx\\\
+                        inspect-website-content-commands-snapshot.mdx\\\
+                        ca-website-content-commands-tls.mdx\\\
+                        cert-website-content-commands-tls.mdx\\\
+                        index-website-content-commands-tls.mdx\\\
+                        http_api_namespace_options-website-content-partials.mdx\\\
+                        http_api_options_client-website-content-partials.mdx\\\
+                        http_api_options_server-website-content-partials.mdx\\\
+                        jwt_claim_mapping_details-website-content-partials.mdx\\\
+                        jwt_or_oidc-website-content-partials.mdx docs\\\
+                        robots-website-public.txt README-website-raw-assets
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -453,6 +441,367 @@ BuildRequires:  golang(google.golang.org/grpc/health)
 
 %prep
 %goprep
+mv ui/packages/consul-ui/app/utils/dom/event-target/event-target-shim/LICENSE LICENSE-ui-packages-consul-ui-app-utils-dom-event-target-event-target-shim
+mv ui/packages/consul-ui/lib/block-slots/LICENSE.md LICENSE-ui-packages-consul-ui-lib-block-slots.md
+mv website/LICENSE.md LICENSE-website.md
+mv website/content/api-docs/operator/license.mdx license-website-content-api-docs-operator.mdx
+mv website/content/commands/license.mdx license-website-content-commands.mdx
+mv .changelog/10013.txt 10013-.changelog.txt
+mv .changelog/10023.txt 10023-.changelog.txt
+mv .changelog/10025.txt 10025-.changelog.txt
+mv .changelog/7628.txt 7628-.changelog.txt
+mv .changelog/7899.txt 7899-.changelog.txt
+mv .changelog/7970.txt 7970-.changelog.txt
+mv .changelog/8158.txt 8158-.changelog.txt
+mv .changelog/8190.txt 8190-.changelog.txt
+mv .changelog/8194.txt 8194-.changelog.txt
+mv .changelog/8211.txt 8211-.changelog.txt
+mv .changelog/8216.txt 8216-.changelog.txt
+mv .changelog/8218.txt 8218-.changelog.txt
+mv .changelog/8221.txt 8221-.changelog.txt
+mv .changelog/8222.txt 8222-.changelog.txt
+mv .changelog/8268.txt 8268-.changelog.txt
+mv .changelog/8311.txt 8311-.changelog.txt
+mv .changelog/8343.txt 8343-.changelog.txt
+mv .changelog/8371.txt 8371-.changelog.txt
+mv .changelog/8458.txt 8458-.changelog.txt
+mv .changelog/8470.txt 8470-.changelog.txt
+mv .changelog/8522.txt 8522-.changelog.txt
+mv .changelog/8537.txt 8537-.changelog.txt
+mv .changelog/8545.txt 8545-.changelog.txt
+mv .changelog/8547.txt 8547-.changelog.txt
+mv .changelog/8552.txt 8552-.changelog.txt
+mv .changelog/8560.txt 8560-.changelog.txt
+mv .changelog/8569.txt 8569-.changelog.txt
+mv .changelog/8575.txt 8575-.changelog.txt
+mv .changelog/8585.txt 8585-.changelog.txt
+mv .changelog/8588.txt 8588-.changelog.txt
+mv .changelog/8596.txt 8596-.changelog.txt
+mv .changelog/8599.txt 8599-.changelog.txt
+mv .changelog/8601.txt 8601-.changelog.txt
+mv .changelog/8602.txt 8602-.changelog.txt
+mv .changelog/8603.txt 8603-.changelog.txt
+mv .changelog/8606.txt 8606-.changelog.txt
+mv .changelog/8646.txt 8646-.changelog.txt
+mv .changelog/8685.txt 8685-.changelog.txt
+mv .changelog/8694.txt 8694-.changelog.txt
+mv .changelog/8703.txt 8703-.changelog.txt
+mv .changelog/8704.txt 8704-.changelog.txt
+mv .changelog/8726.txt 8726-.changelog.txt
+mv .changelog/8731.txt 8731-.changelog.txt
+mv .changelog/8741.txt 8741-.changelog.txt
+mv .changelog/8745.txt 8745-.changelog.txt
+mv .changelog/8746.txt 8746-.changelog.txt
+mv .changelog/8747.txt 8747-.changelog.txt
+mv .changelog/8764.txt 8764-.changelog.txt
+mv .changelog/8771.txt 8771-.changelog.txt
+mv .changelog/8774.txt 8774-.changelog.txt
+mv .changelog/8781.txt 8781-.changelog.txt
+mv .changelog/8784.txt 8784-.changelog.txt
+mv .changelog/8786.txt 8786-.changelog.txt
+mv .changelog/8787.txt 8787-.changelog.txt
+mv .changelog/8788.txt 8788-.changelog.txt
+mv .changelog/8822.txt 8822-.changelog.txt
+mv .changelog/8834.txt 8834-.changelog.txt
+mv .changelog/8839.txt 8839-.changelog.txt
+mv .changelog/8846.txt 8846-.changelog.txt
+mv .changelog/8855.txt 8855-.changelog.txt
+mv .changelog/8858.txt 8858-.changelog.txt
+mv .changelog/8875.txt 8875-.changelog.txt
+mv .changelog/8877.txt 8877-.changelog.txt
+mv .changelog/8924.txt 8924-.changelog.txt
+mv .changelog/9002.txt 9002-.changelog.txt
+mv .changelog/9007.txt 9007-.changelog.txt
+mv .changelog/9008.txt 9008-.changelog.txt
+mv .changelog/9009.txt 9009-.changelog.txt
+mv .changelog/9024.txt 9024-.changelog.txt
+mv .changelog/9036.txt 9036-.changelog.txt
+mv .changelog/9042.txt 9042-.changelog.txt
+mv .changelog/9059.txt 9059-.changelog.txt
+mv .changelog/9067.txt 9067-.changelog.txt
+mv .changelog/9081.txt 9081-.changelog.txt
+mv .changelog/9088.txt 9088-.changelog.txt
+mv .changelog/9099.txt 9099-.changelog.txt
+mv .changelog/9101.txt 9101-.changelog.txt
+mv .changelog/9103.txt 9103-.changelog.txt
+mv .changelog/9113.txt 9113-.changelog.txt
+mv .changelog/9119.txt 9119-.changelog.txt
+mv .changelog/9141.txt 9141-.changelog.txt
+mv .changelog/9142.txt 9142-.changelog.txt
+mv .changelog/9151.txt 9151-.changelog.txt
+mv .changelog/9156.txt 9156-.changelog.txt
+mv .changelog/9181.txt 9181-.changelog.txt
+mv .changelog/9186.txt 9186-.changelog.txt
+mv .changelog/9191.txt 9191-.changelog.txt
+mv .changelog/9198.txt 9198-.changelog.txt
+mv .changelog/9204.txt 9204-.changelog.txt
+mv .changelog/9207.txt 9207-.changelog.txt
+mv .changelog/9229.txt 9229-.changelog.txt
+mv .changelog/9240.txt 9240-.changelog.txt
+mv .changelog/9247.txt 9247-.changelog.txt
+mv .changelog/9254.txt 9254-.changelog.txt
+mv .changelog/9262.txt 9262-.changelog.txt
+mv .changelog/9271.txt 9271-.changelog.txt
+mv .changelog/9278.txt 9278-.changelog.txt
+mv .changelog/9284.txt 9284-.changelog.txt
+mv .changelog/9296.txt 9296-.changelog.txt
+mv .changelog/9318.txt 9318-.changelog.txt
+mv .changelog/9320.txt 9320-.changelog.txt
+mv .changelog/9351.txt 9351-.changelog.txt
+mv .changelog/9366.txt 9366-.changelog.txt
+mv .changelog/9410.txt 9410-.changelog.txt
+mv .changelog/9428.txt 9428-.changelog.txt
+mv .changelog/9432.txt 9432-.changelog.txt
+mv .changelog/9440.txt 9440-.changelog.txt
+mv .changelog/9442.txt 9442-.changelog.txt
+mv .changelog/9468.txt 9468-.changelog.txt
+mv .changelog/9485.txt 9485-.changelog.txt
+mv .changelog/9487.txt 9487-.changelog.txt
+mv .changelog/9498.txt 9498-.changelog.txt
+mv .changelog/9510.txt 9510-.changelog.txt
+mv .changelog/9512.txt 9512-.changelog.txt
+mv .changelog/9513.txt 9513-.changelog.txt
+mv .changelog/9519.txt 9519-.changelog.txt
+mv .changelog/9524.txt 9524-.changelog.txt
+mv .changelog/9527.txt 9527-.changelog.txt
+mv .changelog/9528.txt 9528-.changelog.txt
+mv .changelog/9530.txt 9530-.changelog.txt
+mv .changelog/9569.txt 9569-.changelog.txt
+mv .changelog/9585.txt 9585-.changelog.txt
+mv .changelog/9589.txt 9589-.changelog.txt
+mv .changelog/9593.txt 9593-.changelog.txt
+mv .changelog/9594.txt 9594-.changelog.txt
+mv .changelog/9626.txt 9626-.changelog.txt
+mv .changelog/9650.txt 9650-.changelog.txt
+mv .changelog/9651.txt 9651-.changelog.txt
+mv .changelog/9660.txt 9660-.changelog.txt
+mv .changelog/9683.txt 9683-.changelog.txt
+mv .changelog/9689.txt 9689-.changelog.txt
+mv .changelog/9715.txt 9715-.changelog.txt
+mv .changelog/9737.txt 9737-.changelog.txt
+mv .changelog/9738.txt 9738-.changelog.txt
+mv .changelog/9749.txt 9749-.changelog.txt
+mv .changelog/9752.txt 9752-.changelog.txt
+mv .changelog/9765.txt 9765-.changelog.txt
+mv .changelog/9772.txt 9772-.changelog.txt
+mv .changelog/9806.txt 9806-.changelog.txt
+mv .changelog/9847.txt 9847-.changelog.txt
+mv .changelog/9851.txt 9851-.changelog.txt
+mv .changelog/9901.txt 9901-.changelog.txt
+mv .changelog/9923.txt 9923-.changelog.txt
+mv .changelog/9967.txt 9967-.changelog.txt
+mv .changelog/9978.txt 9978-.changelog.txt
+mv .changelog/9979.txt 9979-.changelog.txt
+mv .changelog/9980.txt 9980-.changelog.txt
+mv .changelog/_619.txt _619-.changelog.txt
+mv .changelog/_666.txt _666-.changelog.txt
+mv .changelog/_683.txt _683-.changelog.txt
+mv .changelog/_745.txt _745-.changelog.txt
+mv .changelog/_795.txt _795-.changelog.txt
+mv .changelog/_855.txt _855-.changelog.txt
+mv .changelog/_8621.txt _8621-.changelog.txt
+mv .changelog/_8825.txt _8825-.changelog.txt
+mv .changelog/_8984.txt _8984-.changelog.txt
+mv .changelog/changelog.tmpl changelog-.changelog.tmpl
+mv api/README.md README-api.md
+mv bench/README.md README-bench.md
+mv bench/results-0.2.md results-0.2-bench.md
+mv bench/results-0.3.md results-0.3-bench.md
+mv bench/results-0.7.1.md results-0.7.1-bench.md
+mv contributing/INTERNALS.md INTERNALS-contributing.md
+mv contributing/README.md README-contributing.md
+mv contributing/checklist-adding-config-fields.md checklist-adding-config-fields-contributing.md
+mv demo/vagrant-cluster/README.md README-demo-vagrant-cluster.md
+mv sdk/README.md README-sdk.md
+mv sdk/testutil/README.md README-sdk-testutil.md
+mv terraform/README.md README-terraform.md
+mv types/README.md README-types.md
+mv ui/README.md README-ui.md
+mv ui/packages/consul-ui/README.md README-ui-packages-consul-ui.md
+mv ui/packages/consul-ui/app/components/app-error/README.stories.mdx README.stories-ui-packages-consul-ui-app-components-app-error.mdx
+mv ui/packages/consul-ui/app/components/auth-dialog/README.mdx README-ui-packages-consul-ui-app-components-auth-dialog.mdx
+mv ui/packages/consul-ui/app/components/auth-form/README.mdx README-ui-packages-consul-ui-app-components-auth-form.mdx
+mv ui/packages/consul-ui/app/components/auth-profile/README.mdx README-ui-packages-consul-ui-app-components-auth-profile.mdx
+mv ui/packages/consul-ui/app/components/consul/loader/README.mdx README-ui-packages-consul-ui-app-components-consul-loader.mdx
+mv ui/packages/consul-ui/app/components/consul/lock-session/list/README.mdx README-ui-packages-consul-ui-app-components-consul-lock-session-list.mdx
+mv ui/packages/consul-ui/app/components/consul/metadata/list/README.mdx README-ui-packages-consul-ui-app-components-consul-metadata-list.mdx
+mv ui/packages/consul-ui/app/components/consul/nspace/list/README.mdx README-ui-packages-consul-ui-app-components-consul-nspace-list.mdx
+mv ui/packages/consul-ui/app/components/consul/policy/list/README.mdx README-ui-packages-consul-ui-app-components-consul-policy-list.mdx
+mv ui/packages/consul-ui/app/components/consul/role/list/README.mdx README-ui-packages-consul-ui-app-components-consul-role-list.mdx
+mv ui/packages/consul-ui/app/components/consul/token/list/README.mdx README-ui-packages-consul-ui-app-components-consul-token-list.mdx
+mv ui/packages/consul-ui/app/components/consul/token/ruleset/list/README.mdx README-ui-packages-consul-ui-app-components-consul-token-ruleset-list.mdx
+mv ui/packages/consul-ui/app/components/copy-button/README.mdx README-ui-packages-consul-ui-app-components-copy-button.mdx
+mv ui/packages/consul-ui/app/components/data-collection/README.mdx README-ui-packages-consul-ui-app-components-data-collection.mdx
+mv ui/packages/consul-ui/app/components/data-sink/README.mdx README-ui-packages-consul-ui-app-components-data-sink.mdx
+mv ui/packages/consul-ui/app/components/data-source/README.mdx README-ui-packages-consul-ui-app-components-data-source.mdx
+mv ui/packages/consul-ui/app/components/error-state/README.stories.mdx README.stories-ui-packages-consul-ui-app-components-error-state.mdx
+mv ui/packages/consul-ui/app/components/event-source/README.mdx README-ui-packages-consul-ui-app-components-event-source.mdx
+mv ui/packages/consul-ui/app/components/freetext-filter/README.stories.mdx README.stories-ui-packages-consul-ui-app-components-freetext-filter.mdx
+mv ui/packages/consul-ui/app/components/jwt-source/README.mdx README-ui-packages-consul-ui-app-components-jwt-source.mdx
+mv ui/packages/consul-ui/app/components/notice/README.stories.mdx README.stories-ui-packages-consul-ui-app-components-notice.mdx
+mv ui/packages/consul-ui/app/components/ref/README.mdx README-ui-packages-consul-ui-app-components-ref.mdx
+mv ui/packages/consul-ui/app/components/state-chart/README.mdx README-ui-packages-consul-ui-app-components-state-chart.mdx
+mv ui/packages/consul-ui/app/components/state/README.mdx README-ui-packages-consul-ui-app-components-state.mdx
+mv ui/packages/consul-ui/app/components/toggle-button/README.mdx README-ui-packages-consul-ui-app-components-toggle-button.mdx
+mv ui/packages/consul-ui/app/components/token-source/README.mdx README-ui-packages-consul-ui-app-components-token-source.mdx
+mv ui/packages/consul-ui/lib/block-slots/README.md README-ui-packages-consul-ui-lib-block-slots.md
+mv ui/packages/consul-ui/mock-api/README.md README-ui-packages-consul-ui-mock-api.md
+mv ui/packages/consul-ui/public/robots.txt robots-ui-packages-consul-ui-public.txt
+mv website/README.md README-website.md
+mv website/content/security.mdx security-website-content.mdx
+mv website/content/api-docs/acl-legacy.mdx acl-legacy-website-content-api-docs.mdx
+mv website/content/api-docs/coordinate.mdx coordinate-website-content-api-docs.mdx
+mv website/content/api-docs/discovery-chain.mdx discovery-chain-website-content-api-docs.mdx
+mv website/content/api-docs/event.mdx event-website-content-api-docs.mdx
+mv website/content/api-docs/index.mdx index-website-content-api-docs.mdx
+mv website/content/api-docs/kv.mdx kv-website-content-api-docs.mdx
+mv website/content/api-docs/libraries-and-sdks.mdx libraries-and-sdks-website-content-api-docs.mdx
+mv website/content/api-docs/query.mdx query-website-content-api-docs.mdx
+mv website/content/api-docs/session.mdx session-website-content-api-docs.mdx
+mv website/content/api-docs/snapshot.mdx snapshot-website-content-api-docs.mdx
+mv website/content/api-docs/status.mdx status-website-content-api-docs.mdx
+mv website/content/api-docs/txn.mdx txn-website-content-api-docs.mdx
+mv website/content/api-docs/config.mdx config-website-content-api-docs.mdx
+mv website/content/api-docs/namespaces.mdx namespaces-website-content-api-docs.mdx
+mv website/content/api-docs/catalog.mdx catalog-website-content-api-docs.mdx
+mv website/content/api-docs/health.mdx health-website-content-api-docs.mdx
+mv website/content/api-docs/acl/auth-methods.mdx auth-methods-website-content-api-docs-acl.mdx
+mv website/content/api-docs/acl/binding-rules.mdx binding-rules-website-content-api-docs-acl.mdx
+mv website/content/api-docs/acl/legacy.mdx legacy-website-content-api-docs-acl.mdx
+mv website/content/api-docs/acl/policies.mdx policies-website-content-api-docs-acl.mdx
+mv website/content/api-docs/acl/roles.mdx roles-website-content-api-docs-acl.mdx
+mv website/content/api-docs/acl/tokens.mdx tokens-website-content-api-docs-acl.mdx
+mv website/content/api-docs/acl/index.mdx index-website-content-api-docs-acl.mdx
+mv website/content/api-docs/agent/connect.mdx connect-website-content-api-docs-agent.mdx
+mv website/content/api-docs/agent/index.mdx index-website-content-api-docs-agent.mdx
+mv website/content/api-docs/agent/check.mdx check-website-content-api-docs-agent.mdx
+mv website/content/api-docs/agent/service.mdx service-website-content-api-docs-agent.mdx
+mv website/content/api-docs/connect/index.mdx index-website-content-api-docs-connect.mdx
+mv website/content/api-docs/connect/intentions.mdx intentions-website-content-api-docs-connect.mdx
+mv website/content/api-docs/connect/ca.mdx ca-website-content-api-docs-connect.mdx
+mv website/content/api-docs/features/blocking.mdx blocking-website-content-api-docs-features.mdx
+mv website/content/api-docs/features/caching.mdx caching-website-content-api-docs-features.mdx
+mv website/content/api-docs/features/consistency.mdx consistency-website-content-api-docs-features.mdx
+mv website/content/api-docs/features/filtering.mdx filtering-website-content-api-docs-features.mdx
+mv website/content/api-docs/operator/area.mdx area-website-content-api-docs-operator.mdx
+mv website/content/api-docs/operator/autopilot.mdx autopilot-website-content-api-docs-operator.mdx
+mv website/content/api-docs/operator/index.mdx index-website-content-api-docs-operator.mdx
+mv website/content/api-docs/operator/keyring.mdx keyring-website-content-api-docs-operator.mdx
+mv website/content/api-docs/operator/raft.mdx raft-website-content-api-docs-operator.mdx
+mv website/content/api-docs/operator/segment.mdx segment-website-content-api-docs-operator.mdx
+mv website/content/commands/agent.mdx agent-website-content-commands.mdx
+mv website/content/commands/debug.mdx debug-website-content-commands.mdx
+mv website/content/commands/event.mdx event-website-content-commands.mdx
+mv website/content/commands/exec.mdx exec-website-content-commands.mdx
+mv website/content/commands/force-leave.mdx force-leave-website-content-commands.mdx
+mv website/content/commands/index.mdx index-website-content-commands.mdx
+mv website/content/commands/info.mdx info-website-content-commands.mdx
+mv website/content/commands/join.mdx join-website-content-commands.mdx
+mv website/content/commands/keygen.mdx keygen-website-content-commands.mdx
+mv website/content/commands/keyring.mdx keyring-website-content-commands.mdx
+mv website/content/commands/leave.mdx leave-website-content-commands.mdx
+mv website/content/commands/lock.mdx lock-website-content-commands.mdx
+mv website/content/commands/login.mdx login-website-content-commands.mdx
+mv website/content/commands/logout.mdx logout-website-content-commands.mdx
+mv website/content/commands/maint.mdx maint-website-content-commands.mdx
+mv website/content/commands/members.mdx members-website-content-commands.mdx
+mv website/content/commands/monitor.mdx monitor-website-content-commands.mdx
+mv website/content/commands/reload.mdx reload-website-content-commands.mdx
+mv website/content/commands/rtt.mdx rtt-website-content-commands.mdx
+mv website/content/commands/validate.mdx validate-website-content-commands.mdx
+mv website/content/commands/version.mdx version-website-content-commands.mdx
+mv website/content/commands/watch.mdx watch-website-content-commands.mdx
+mv website/content/commands/acl/bootstrap.mdx bootstrap-website-content-commands-acl.mdx
+mv website/content/commands/acl/index.mdx index-website-content-commands-acl.mdx
+mv website/content/commands/acl/translate-rules.mdx translate-rules-website-content-commands-acl.mdx
+mv website/content/commands/acl/set-agent-token.mdx set-agent-token-website-content-commands-acl.mdx
+mv website/content/commands/acl/auth-method/create.mdx create-website-content-commands-acl-auth-method.mdx
+mv website/content/commands/acl/auth-method/delete.mdx delete-website-content-commands-acl-auth-method.mdx
+mv website/content/commands/acl/auth-method/index.mdx index-website-content-commands-acl-auth-method.mdx
+mv website/content/commands/acl/auth-method/list.mdx list-website-content-commands-acl-auth-method.mdx
+mv website/content/commands/acl/auth-method/read.mdx read-website-content-commands-acl-auth-method.mdx
+mv website/content/commands/acl/auth-method/update.mdx update-website-content-commands-acl-auth-method.mdx
+mv website/content/commands/acl/binding-rule/create.mdx create-website-content-commands-acl-binding-rule.mdx
+mv website/content/commands/acl/binding-rule/delete.mdx delete-website-content-commands-acl-binding-rule.mdx
+mv website/content/commands/acl/binding-rule/index.mdx index-website-content-commands-acl-binding-rule.mdx
+mv website/content/commands/acl/binding-rule/list.mdx list-website-content-commands-acl-binding-rule.mdx
+mv website/content/commands/acl/binding-rule/read.mdx read-website-content-commands-acl-binding-rule.mdx
+mv website/content/commands/acl/binding-rule/update.mdx update-website-content-commands-acl-binding-rule.mdx
+mv website/content/commands/acl/policy/create.mdx create-website-content-commands-acl-policy.mdx
+mv website/content/commands/acl/policy/delete.mdx delete-website-content-commands-acl-policy.mdx
+mv website/content/commands/acl/policy/index.mdx index-website-content-commands-acl-policy.mdx
+mv website/content/commands/acl/policy/list.mdx list-website-content-commands-acl-policy.mdx
+mv website/content/commands/acl/policy/read.mdx read-website-content-commands-acl-policy.mdx
+mv website/content/commands/acl/policy/update.mdx update-website-content-commands-acl-policy.mdx
+mv website/content/commands/acl/role/create.mdx create-website-content-commands-acl-role.mdx
+mv website/content/commands/acl/role/delete.mdx delete-website-content-commands-acl-role.mdx
+mv website/content/commands/acl/role/index.mdx index-website-content-commands-acl-role.mdx
+mv website/content/commands/acl/role/list.mdx list-website-content-commands-acl-role.mdx
+mv website/content/commands/acl/role/read.mdx read-website-content-commands-acl-role.mdx
+mv website/content/commands/acl/role/update.mdx update-website-content-commands-acl-role.mdx
+mv website/content/commands/acl/token/clone.mdx clone-website-content-commands-acl-token.mdx
+mv website/content/commands/acl/token/create.mdx create-website-content-commands-acl-token.mdx
+mv website/content/commands/acl/token/delete.mdx delete-website-content-commands-acl-token.mdx
+mv website/content/commands/acl/token/index.mdx index-website-content-commands-acl-token.mdx
+mv website/content/commands/acl/token/list.mdx list-website-content-commands-acl-token.mdx
+mv website/content/commands/acl/token/read.mdx read-website-content-commands-acl-token.mdx
+mv website/content/commands/acl/token/update.mdx update-website-content-commands-acl-token.mdx
+mv website/content/commands/catalog/datacenters.mdx datacenters-website-content-commands-catalog.mdx
+mv website/content/commands/catalog/index.mdx index-website-content-commands-catalog.mdx
+mv website/content/commands/catalog/nodes.mdx nodes-website-content-commands-catalog.mdx
+mv website/content/commands/catalog/services.mdx services-website-content-commands-catalog.mdx
+mv website/content/commands/config/index.mdx index-website-content-commands-config.mdx
+mv website/content/commands/config/write.mdx write-website-content-commands-config.mdx
+mv website/content/commands/config/delete.mdx delete-website-content-commands-config.mdx
+mv website/content/commands/config/list.mdx list-website-content-commands-config.mdx
+mv website/content/commands/config/read.mdx read-website-content-commands-config.mdx
+mv website/content/commands/connect/expose.mdx expose-website-content-commands-connect.mdx
+mv website/content/commands/connect/proxy.mdx proxy-website-content-commands-connect.mdx
+mv website/content/commands/connect/ca.mdx ca-website-content-commands-connect.mdx
+mv website/content/commands/connect/envoy.mdx envoy-website-content-commands-connect.mdx
+mv website/content/commands/connect/index.mdx index-website-content-commands-connect.mdx
+mv website/content/commands/intention/check.mdx check-website-content-commands-intention.mdx
+mv website/content/commands/intention/create.mdx create-website-content-commands-intention.mdx
+mv website/content/commands/intention/delete.mdx delete-website-content-commands-intention.mdx
+mv website/content/commands/intention/get.mdx get-website-content-commands-intention.mdx
+mv website/content/commands/intention/index.mdx index-website-content-commands-intention.mdx
+mv website/content/commands/intention/list.mdx list-website-content-commands-intention.mdx
+mv website/content/commands/intention/match.mdx match-website-content-commands-intention.mdx
+mv website/content/commands/kv/delete.mdx delete-website-content-commands-kv.mdx
+mv website/content/commands/kv/export.mdx export-website-content-commands-kv.mdx
+mv website/content/commands/kv/get.mdx get-website-content-commands-kv.mdx
+mv website/content/commands/kv/index.mdx index-website-content-commands-kv.mdx
+mv website/content/commands/kv/put.mdx put-website-content-commands-kv.mdx
+mv website/content/commands/kv/import.mdx import-website-content-commands-kv.mdx
+mv website/content/commands/namespace/create.mdx create-website-content-commands-namespace.mdx
+mv website/content/commands/namespace/delete.mdx delete-website-content-commands-namespace.mdx
+mv website/content/commands/namespace/index.mdx index-website-content-commands-namespace.mdx
+mv website/content/commands/namespace/list.mdx list-website-content-commands-namespace.mdx
+mv website/content/commands/namespace/read.mdx read-website-content-commands-namespace.mdx
+mv website/content/commands/namespace/update.mdx update-website-content-commands-namespace.mdx
+mv website/content/commands/namespace/write.mdx write-website-content-commands-namespace.mdx
+mv website/content/commands/operator/area.mdx area-website-content-commands-operator.mdx
+mv website/content/commands/operator/autopilot.mdx autopilot-website-content-commands-operator.mdx
+mv website/content/commands/operator/index.mdx index-website-content-commands-operator.mdx
+mv website/content/commands/operator/raft.mdx raft-website-content-commands-operator.mdx
+mv website/content/commands/services/deregister.mdx deregister-website-content-commands-services.mdx
+mv website/content/commands/services/index.mdx index-website-content-commands-services.mdx
+mv website/content/commands/services/register.mdx register-website-content-commands-services.mdx
+mv website/content/commands/snapshot/index.mdx index-website-content-commands-snapshot.mdx
+mv website/content/commands/snapshot/restore.mdx restore-website-content-commands-snapshot.mdx
+mv website/content/commands/snapshot/save.mdx save-website-content-commands-snapshot.mdx
+mv website/content/commands/snapshot/agent.mdx agent-website-content-commands-snapshot.mdx
+mv website/content/commands/snapshot/inspect.mdx inspect-website-content-commands-snapshot.mdx
+mv website/content/commands/tls/ca.mdx ca-website-content-commands-tls.mdx
+mv website/content/commands/tls/cert.mdx cert-website-content-commands-tls.mdx
+mv website/content/commands/tls/index.mdx index-website-content-commands-tls.mdx
+mv website/content/partials/http_api_namespace_options.mdx http_api_namespace_options-website-content-partials.mdx
+mv website/content/partials/http_api_options_client.mdx http_api_options_client-website-content-partials.mdx
+mv website/content/partials/http_api_options_server.mdx http_api_options_server-website-content-partials.mdx
+mv website/content/partials/jwt_claim_mapping_details.mdx jwt_claim_mapping_details-website-content-partials.mdx
+mv website/content/partials/jwt_or_oidc.mdx jwt_or_oidc-website-content-partials.mdx
+mv website/public/robots.txt robots-website-public.txt
+mv website/raw-assets/README README-website-raw-assets
 
 %build
 %gobuild -o %{gobuilddir}/bin/consul %{goipath}
@@ -472,231 +821,231 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE NOTICE.md
-%license ui/packages/consul-ui/app/utils/dom/event-target/event-target-shim/LICENSE
-%license ui/packages/consul-ui/lib/block-slots/LICENSE.md website/LICENSE.md
-%license website/content/api-docs/operator/license.mdx
-%license website/content/commands/license.mdx
-%doc INTERNALS.md README.md CHANGELOG.md .changelog/10013.txt
-%doc .changelog/10023.txt .changelog/10025.txt .changelog/7628.txt
-%doc .changelog/7899.txt .changelog/7970.txt .changelog/8158.txt
-%doc .changelog/8190.txt .changelog/8194.txt .changelog/8211.txt
-%doc .changelog/8216.txt .changelog/8218.txt .changelog/8221.txt
-%doc .changelog/8222.txt .changelog/8268.txt .changelog/8311.txt
-%doc .changelog/8343.txt .changelog/8371.txt .changelog/8458.txt
-%doc .changelog/8470.txt .changelog/8522.txt .changelog/8537.txt
-%doc .changelog/8545.txt .changelog/8547.txt .changelog/8552.txt
-%doc .changelog/8560.txt .changelog/8569.txt .changelog/8575.txt
-%doc .changelog/8585.txt .changelog/8588.txt .changelog/8596.txt
-%doc .changelog/8599.txt .changelog/8601.txt .changelog/8602.txt
-%doc .changelog/8603.txt .changelog/8606.txt .changelog/8646.txt
-%doc .changelog/8685.txt .changelog/8694.txt .changelog/8703.txt
-%doc .changelog/8704.txt .changelog/8726.txt .changelog/8731.txt
-%doc .changelog/8741.txt .changelog/8745.txt .changelog/8746.txt
-%doc .changelog/8747.txt .changelog/8764.txt .changelog/8771.txt
-%doc .changelog/8774.txt .changelog/8781.txt .changelog/8784.txt
-%doc .changelog/8786.txt .changelog/8787.txt .changelog/8788.txt
-%doc .changelog/8822.txt .changelog/8834.txt .changelog/8839.txt
-%doc .changelog/8846.txt .changelog/8855.txt .changelog/8858.txt
-%doc .changelog/8875.txt .changelog/8877.txt .changelog/8924.txt
-%doc .changelog/9002.txt .changelog/9007.txt .changelog/9008.txt
-%doc .changelog/9009.txt .changelog/9024.txt .changelog/9036.txt
-%doc .changelog/9042.txt .changelog/9059.txt .changelog/9067.txt
-%doc .changelog/9081.txt .changelog/9088.txt .changelog/9099.txt
-%doc .changelog/9101.txt .changelog/9103.txt .changelog/9113.txt
-%doc .changelog/9119.txt .changelog/9141.txt .changelog/9142.txt
-%doc .changelog/9151.txt .changelog/9156.txt .changelog/9181.txt
-%doc .changelog/9186.txt .changelog/9191.txt .changelog/9198.txt
-%doc .changelog/9204.txt .changelog/9207.txt .changelog/9229.txt
-%doc .changelog/9240.txt .changelog/9247.txt .changelog/9254.txt
-%doc .changelog/9262.txt .changelog/9271.txt .changelog/9278.txt
-%doc .changelog/9284.txt .changelog/9296.txt .changelog/9318.txt
-%doc .changelog/9320.txt .changelog/9351.txt .changelog/9366.txt
-%doc .changelog/9410.txt .changelog/9428.txt .changelog/9432.txt
-%doc .changelog/9440.txt .changelog/9442.txt .changelog/9468.txt
-%doc .changelog/9485.txt .changelog/9487.txt .changelog/9498.txt
-%doc .changelog/9510.txt .changelog/9512.txt .changelog/9513.txt
-%doc .changelog/9519.txt .changelog/9524.txt .changelog/9527.txt
-%doc .changelog/9528.txt .changelog/9530.txt .changelog/9569.txt
-%doc .changelog/9585.txt .changelog/9589.txt .changelog/9593.txt
-%doc .changelog/9594.txt .changelog/9626.txt .changelog/9650.txt
-%doc .changelog/9651.txt .changelog/9660.txt .changelog/9683.txt
-%doc .changelog/9689.txt .changelog/9715.txt .changelog/9737.txt
-%doc .changelog/9738.txt .changelog/9749.txt .changelog/9752.txt
-%doc .changelog/9765.txt .changelog/9772.txt .changelog/9806.txt
-%doc .changelog/9847.txt .changelog/9851.txt .changelog/9901.txt
-%doc .changelog/9923.txt .changelog/9967.txt .changelog/9978.txt
-%doc .changelog/9979.txt .changelog/9980.txt .changelog/_619.txt
-%doc .changelog/_666.txt .changelog/_683.txt .changelog/_745.txt
-%doc .changelog/_795.txt .changelog/_855.txt .changelog/_8621.txt
-%doc .changelog/_8825.txt .changelog/_8984.txt .changelog/changelog.tmpl
-%doc api/README.md bench/README.md bench/results-0.2.md bench/results-0.3.md
-%doc bench/results-0.7.1.md contributing/INTERNALS.md contributing/README.md
-%doc contributing/checklist-adding-config-fields.md
-%doc demo/vagrant-cluster/README.md sdk/README.md sdk/testutil/README.md
-%doc terraform/README.md types/README.md ui/README.md
-%doc ui/packages/consul-ui/README.md
-%doc ui/packages/consul-ui/app/components/app-error/README.stories.mdx
-%doc ui/packages/consul-ui/app/components/auth-dialog/README.mdx
-%doc ui/packages/consul-ui/app/components/auth-form/README.mdx
-%doc ui/packages/consul-ui/app/components/auth-profile/README.mdx
-%doc ui/packages/consul-ui/app/components/consul/loader/README.mdx
-%doc ui/packages/consul-ui/app/components/consul/lock-session/list/README.mdx
-%doc ui/packages/consul-ui/app/components/consul/metadata/list/README.mdx
-%doc ui/packages/consul-ui/app/components/consul/nspace/list/README.mdx
-%doc ui/packages/consul-ui/app/components/consul/policy/list/README.mdx
-%doc ui/packages/consul-ui/app/components/consul/role/list/README.mdx
-%doc ui/packages/consul-ui/app/components/consul/token/list/README.mdx
-%doc ui/packages/consul-ui/app/components/consul/token/ruleset/list/README.mdx
-%doc ui/packages/consul-ui/app/components/copy-button/README.mdx
-%doc ui/packages/consul-ui/app/components/data-collection/README.mdx
-%doc ui/packages/consul-ui/app/components/data-sink/README.mdx
-%doc ui/packages/consul-ui/app/components/data-source/README.mdx
-%doc ui/packages/consul-ui/app/components/error-state/README.stories.mdx
-%doc ui/packages/consul-ui/app/components/event-source/README.mdx
-%doc ui/packages/consul-ui/app/components/freetext-filter/README.stories.mdx
-%doc ui/packages/consul-ui/app/components/jwt-source/README.mdx
-%doc ui/packages/consul-ui/app/components/notice/README.stories.mdx
-%doc ui/packages/consul-ui/app/components/ref/README.mdx
-%doc ui/packages/consul-ui/app/components/state-chart/README.mdx
-%doc ui/packages/consul-ui/app/components/state/README.mdx
-%doc ui/packages/consul-ui/app/components/toggle-button/README.mdx
-%doc ui/packages/consul-ui/app/components/token-source/README.mdx
-%doc ui/packages/consul-ui/lib/block-slots/README.md
-%doc ui/packages/consul-ui/mock-api/README.md
-%doc ui/packages/consul-ui/public/robots.txt website/README.md docs
-%doc website/content/security.mdx website/content/api-docs/acl-legacy.mdx
-%doc website/content/api-docs/coordinate.mdx
-%doc website/content/api-docs/discovery-chain.mdx
-%doc website/content/api-docs/event.mdx website/content/api-docs/index.mdx
-%doc website/content/api-docs/kv.mdx
-%doc website/content/api-docs/libraries-and-sdks.mdx
-%doc website/content/api-docs/query.mdx website/content/api-docs/session.mdx
-%doc website/content/api-docs/snapshot.mdx website/content/api-docs/status.mdx
-%doc website/content/api-docs/txn.mdx website/content/api-docs/config.mdx
-%doc website/content/api-docs/namespaces.mdx
-%doc website/content/api-docs/catalog.mdx website/content/api-docs/health.mdx
-%doc website/content/api-docs/acl/auth-methods.mdx
-%doc website/content/api-docs/acl/binding-rules.mdx
-%doc website/content/api-docs/acl/legacy.mdx
-%doc website/content/api-docs/acl/policies.mdx
-%doc website/content/api-docs/acl/roles.mdx
-%doc website/content/api-docs/acl/tokens.mdx
-%doc website/content/api-docs/acl/index.mdx
-%doc website/content/api-docs/agent/connect.mdx
-%doc website/content/api-docs/agent/index.mdx
-%doc website/content/api-docs/agent/check.mdx
-%doc website/content/api-docs/agent/service.mdx
-%doc website/content/api-docs/connect/index.mdx
-%doc website/content/api-docs/connect/intentions.mdx
-%doc website/content/api-docs/connect/ca.mdx
-%doc website/content/api-docs/features/blocking.mdx
-%doc website/content/api-docs/features/caching.mdx
-%doc website/content/api-docs/features/consistency.mdx
-%doc website/content/api-docs/features/filtering.mdx
-%doc website/content/api-docs/operator/area.mdx
-%doc website/content/api-docs/operator/autopilot.mdx
-%doc website/content/api-docs/operator/index.mdx
-%doc website/content/api-docs/operator/keyring.mdx
-%doc website/content/api-docs/operator/raft.mdx
-%doc website/content/api-docs/operator/segment.mdx
-%doc website/content/commands/agent.mdx website/content/commands/debug.mdx
-%doc website/content/commands/event.mdx website/content/commands/exec.mdx
-%doc website/content/commands/force-leave.mdx website/content/commands/index.mdx
-%doc website/content/commands/info.mdx website/content/commands/join.mdx
-%doc website/content/commands/keygen.mdx website/content/commands/keyring.mdx
-%doc website/content/commands/leave.mdx website/content/commands/lock.mdx
-%doc website/content/commands/login.mdx website/content/commands/logout.mdx
-%doc website/content/commands/maint.mdx website/content/commands/members.mdx
-%doc website/content/commands/monitor.mdx website/content/commands/reload.mdx
-%doc website/content/commands/rtt.mdx website/content/commands/validate.mdx
-%doc website/content/commands/version.mdx website/content/commands/watch.mdx
-%doc website/content/commands/acl/bootstrap.mdx
-%doc website/content/commands/acl/index.mdx
-%doc website/content/commands/acl/translate-rules.mdx
-%doc website/content/commands/acl/set-agent-token.mdx
-%doc website/content/commands/acl/auth-method/create.mdx
-%doc website/content/commands/acl/auth-method/delete.mdx
-%doc website/content/commands/acl/auth-method/index.mdx
-%doc website/content/commands/acl/auth-method/list.mdx
-%doc website/content/commands/acl/auth-method/read.mdx
-%doc website/content/commands/acl/auth-method/update.mdx
-%doc website/content/commands/acl/binding-rule/create.mdx
-%doc website/content/commands/acl/binding-rule/delete.mdx
-%doc website/content/commands/acl/binding-rule/index.mdx
-%doc website/content/commands/acl/binding-rule/list.mdx
-%doc website/content/commands/acl/binding-rule/read.mdx
-%doc website/content/commands/acl/binding-rule/update.mdx
-%doc website/content/commands/acl/policy/create.mdx
-%doc website/content/commands/acl/policy/delete.mdx
-%doc website/content/commands/acl/policy/index.mdx
-%doc website/content/commands/acl/policy/list.mdx
-%doc website/content/commands/acl/policy/read.mdx
-%doc website/content/commands/acl/policy/update.mdx
-%doc website/content/commands/acl/role/create.mdx
-%doc website/content/commands/acl/role/delete.mdx
-%doc website/content/commands/acl/role/index.mdx
-%doc website/content/commands/acl/role/list.mdx
-%doc website/content/commands/acl/role/read.mdx
-%doc website/content/commands/acl/role/update.mdx
-%doc website/content/commands/acl/token/clone.mdx
-%doc website/content/commands/acl/token/create.mdx
-%doc website/content/commands/acl/token/delete.mdx
-%doc website/content/commands/acl/token/index.mdx
-%doc website/content/commands/acl/token/list.mdx
-%doc website/content/commands/acl/token/read.mdx
-%doc website/content/commands/acl/token/update.mdx
-%doc website/content/commands/catalog/datacenters.mdx
-%doc website/content/commands/catalog/index.mdx
-%doc website/content/commands/catalog/nodes.mdx
-%doc website/content/commands/catalog/services.mdx
-%doc website/content/commands/config/index.mdx
-%doc website/content/commands/config/write.mdx
-%doc website/content/commands/config/delete.mdx
-%doc website/content/commands/config/list.mdx
-%doc website/content/commands/config/read.mdx
-%doc website/content/commands/connect/expose.mdx
-%doc website/content/commands/connect/proxy.mdx
-%doc website/content/commands/connect/ca.mdx
-%doc website/content/commands/connect/envoy.mdx
-%doc website/content/commands/connect/index.mdx
-%doc website/content/commands/intention/check.mdx
-%doc website/content/commands/intention/create.mdx
-%doc website/content/commands/intention/delete.mdx
-%doc website/content/commands/intention/get.mdx
-%doc website/content/commands/intention/index.mdx
-%doc website/content/commands/intention/list.mdx
-%doc website/content/commands/intention/match.mdx
-%doc website/content/commands/kv/delete.mdx
-%doc website/content/commands/kv/export.mdx website/content/commands/kv/get.mdx
-%doc website/content/commands/kv/index.mdx website/content/commands/kv/put.mdx
-%doc website/content/commands/kv/import.mdx
-%doc website/content/commands/namespace/create.mdx
-%doc website/content/commands/namespace/delete.mdx
-%doc website/content/commands/namespace/index.mdx
-%doc website/content/commands/namespace/list.mdx
-%doc website/content/commands/namespace/read.mdx
-%doc website/content/commands/namespace/update.mdx
-%doc website/content/commands/namespace/write.mdx
-%doc website/content/commands/operator/area.mdx
-%doc website/content/commands/operator/autopilot.mdx
-%doc website/content/commands/operator/index.mdx
-%doc website/content/commands/operator/raft.mdx
-%doc website/content/commands/services/deregister.mdx
-%doc website/content/commands/services/index.mdx
-%doc website/content/commands/services/register.mdx
-%doc website/content/commands/snapshot/index.mdx
-%doc website/content/commands/snapshot/restore.mdx
-%doc website/content/commands/snapshot/save.mdx
-%doc website/content/commands/snapshot/agent.mdx
-%doc website/content/commands/snapshot/inspect.mdx
-%doc website/content/commands/tls/ca.mdx website/content/commands/tls/cert.mdx
-%doc website/content/commands/tls/index.mdx
-%doc website/content/partials/http_api_namespace_options.mdx
-%doc website/content/partials/http_api_options_client.mdx
-%doc website/content/partials/http_api_options_server.mdx
-%doc website/content/partials/jwt_claim_mapping_details.mdx
-%doc website/content/partials/jwt_or_oidc.mdx docs website/public/robots.txt
-%doc website/raw-assets/README
+%license LICENSE-ui-packages-consul-ui-app-utils-dom-event-target-event-target-shim
+%license LICENSE-ui-packages-consul-ui-lib-block-slots.md LICENSE-website.md
+%license license-website-content-api-docs-operator.mdx
+%license license-website-content-commands.mdx
+%doc INTERNALS.md README.md CHANGELOG.md 10013-.changelog.txt
+%doc 10023-.changelog.txt 10025-.changelog.txt 7628-.changelog.txt
+%doc 7899-.changelog.txt 7970-.changelog.txt 8158-.changelog.txt
+%doc 8190-.changelog.txt 8194-.changelog.txt 8211-.changelog.txt
+%doc 8216-.changelog.txt 8218-.changelog.txt 8221-.changelog.txt
+%doc 8222-.changelog.txt 8268-.changelog.txt 8311-.changelog.txt
+%doc 8343-.changelog.txt 8371-.changelog.txt 8458-.changelog.txt
+%doc 8470-.changelog.txt 8522-.changelog.txt 8537-.changelog.txt
+%doc 8545-.changelog.txt 8547-.changelog.txt 8552-.changelog.txt
+%doc 8560-.changelog.txt 8569-.changelog.txt 8575-.changelog.txt
+%doc 8585-.changelog.txt 8588-.changelog.txt 8596-.changelog.txt
+%doc 8599-.changelog.txt 8601-.changelog.txt 8602-.changelog.txt
+%doc 8603-.changelog.txt 8606-.changelog.txt 8646-.changelog.txt
+%doc 8685-.changelog.txt 8694-.changelog.txt 8703-.changelog.txt
+%doc 8704-.changelog.txt 8726-.changelog.txt 8731-.changelog.txt
+%doc 8741-.changelog.txt 8745-.changelog.txt 8746-.changelog.txt
+%doc 8747-.changelog.txt 8764-.changelog.txt 8771-.changelog.txt
+%doc 8774-.changelog.txt 8781-.changelog.txt 8784-.changelog.txt
+%doc 8786-.changelog.txt 8787-.changelog.txt 8788-.changelog.txt
+%doc 8822-.changelog.txt 8834-.changelog.txt 8839-.changelog.txt
+%doc 8846-.changelog.txt 8855-.changelog.txt 8858-.changelog.txt
+%doc 8875-.changelog.txt 8877-.changelog.txt 8924-.changelog.txt
+%doc 9002-.changelog.txt 9007-.changelog.txt 9008-.changelog.txt
+%doc 9009-.changelog.txt 9024-.changelog.txt 9036-.changelog.txt
+%doc 9042-.changelog.txt 9059-.changelog.txt 9067-.changelog.txt
+%doc 9081-.changelog.txt 9088-.changelog.txt 9099-.changelog.txt
+%doc 9101-.changelog.txt 9103-.changelog.txt 9113-.changelog.txt
+%doc 9119-.changelog.txt 9141-.changelog.txt 9142-.changelog.txt
+%doc 9151-.changelog.txt 9156-.changelog.txt 9181-.changelog.txt
+%doc 9186-.changelog.txt 9191-.changelog.txt 9198-.changelog.txt
+%doc 9204-.changelog.txt 9207-.changelog.txt 9229-.changelog.txt
+%doc 9240-.changelog.txt 9247-.changelog.txt 9254-.changelog.txt
+%doc 9262-.changelog.txt 9271-.changelog.txt 9278-.changelog.txt
+%doc 9284-.changelog.txt 9296-.changelog.txt 9318-.changelog.txt
+%doc 9320-.changelog.txt 9351-.changelog.txt 9366-.changelog.txt
+%doc 9410-.changelog.txt 9428-.changelog.txt 9432-.changelog.txt
+%doc 9440-.changelog.txt 9442-.changelog.txt 9468-.changelog.txt
+%doc 9485-.changelog.txt 9487-.changelog.txt 9498-.changelog.txt
+%doc 9510-.changelog.txt 9512-.changelog.txt 9513-.changelog.txt
+%doc 9519-.changelog.txt 9524-.changelog.txt 9527-.changelog.txt
+%doc 9528-.changelog.txt 9530-.changelog.txt 9569-.changelog.txt
+%doc 9585-.changelog.txt 9589-.changelog.txt 9593-.changelog.txt
+%doc 9594-.changelog.txt 9626-.changelog.txt 9650-.changelog.txt
+%doc 9651-.changelog.txt 9660-.changelog.txt 9683-.changelog.txt
+%doc 9689-.changelog.txt 9715-.changelog.txt 9737-.changelog.txt
+%doc 9738-.changelog.txt 9749-.changelog.txt 9752-.changelog.txt
+%doc 9765-.changelog.txt 9772-.changelog.txt 9806-.changelog.txt
+%doc 9847-.changelog.txt 9851-.changelog.txt 9901-.changelog.txt
+%doc 9923-.changelog.txt 9967-.changelog.txt 9978-.changelog.txt
+%doc 9979-.changelog.txt 9980-.changelog.txt _619-.changelog.txt
+%doc _666-.changelog.txt _683-.changelog.txt _745-.changelog.txt
+%doc _795-.changelog.txt _855-.changelog.txt _8621-.changelog.txt
+%doc _8825-.changelog.txt _8984-.changelog.txt changelog-.changelog.tmpl
+%doc README-api.md README-bench.md results-0.2-bench.md results-0.3-bench.md
+%doc results-0.7.1-bench.md INTERNALS-contributing.md README-contributing.md
+%doc checklist-adding-config-fields-contributing.md
+%doc README-demo-vagrant-cluster.md README-sdk.md README-sdk-testutil.md
+%doc README-terraform.md README-types.md README-ui.md
+%doc ui/packages/consul-README-ui.md
+%doc README.stories-ui-packages-consul-ui-app-components-app-error.mdx
+%doc README-ui-packages-consul-ui-app-components-auth-dialog.mdx
+%doc README-ui-packages-consul-ui-app-components-auth-form.mdx
+%doc README-ui-packages-consul-ui-app-components-auth-profile.mdx
+%doc README-ui-packages-consul-ui-app-components-consul-loader.mdx
+%doc README-ui-packages-consul-ui-app-components-consul-lock-session-list.mdx
+%doc README-ui-packages-consul-ui-app-components-consul-metadata-list.mdx
+%doc README-ui-packages-consul-ui-app-components-consul-nspace-list.mdx
+%doc README-ui-packages-consul-ui-app-components-consul-policy-list.mdx
+%doc README-ui-packages-consul-ui-app-components-consul-role-list.mdx
+%doc README-ui-packages-consul-ui-app-components-consul-token-list.mdx
+%doc README-ui-packages-consul-ui-app-components-consul-token-ruleset-list.mdx
+%doc README-ui-packages-consul-ui-app-components-copy-button.mdx
+%doc README-ui-packages-consul-ui-app-components-data-collection.mdx
+%doc README-ui-packages-consul-ui-app-components-data-sink.mdx
+%doc README-ui-packages-consul-ui-app-components-data-source.mdx
+%doc README.stories-ui-packages-consul-ui-app-components-error-state.mdx
+%doc README-ui-packages-consul-ui-app-components-event-source.mdx
+%doc README.stories-ui-packages-consul-ui-app-components-freetext-filter.mdx
+%doc README-ui-packages-consul-ui-app-components-jwt-source.mdx
+%doc README.stories-ui-packages-consul-ui-app-components-notice.mdx
+%doc README-ui-packages-consul-ui-app-components-ref.mdx
+%doc README-ui-packages-consul-ui-app-components-state-chart.mdx
+%doc README-ui-packages-consul-ui-app-components-state.mdx
+%doc README-ui-packages-consul-ui-app-components-toggle-button.mdx
+%doc README-ui-packages-consul-ui-app-components-token-source.mdx
+%doc README-ui-packages-consul-ui-lib-block-slots.md
+%doc ui/packages/consul-ui/mock-README-api.md
+%doc robots-ui-packages-consul-ui-public.txt README-website.md docs
+%doc security-website-content.mdx acl-legacy-website-content-api-docs.mdx
+%doc coordinate-website-content-api-docs.mdx
+%doc discovery-chain-website-content-api-docs.mdx
+%doc event-website-content-api-docs.mdx index-website-content-api-docs.mdx
+%doc kv-website-content-api-docs.mdx
+%doc libraries-and-sdks-website-content-api-docs.mdx
+%doc query-website-content-api-docs.mdx session-website-content-api-docs.mdx
+%doc snapshot-website-content-api-docs.mdx status-website-content-api-docs.mdx
+%doc txn-website-content-api-docs.mdx config-website-content-api-docs.mdx
+%doc namespaces-website-content-api-docs.mdx
+%doc catalog-website-content-api-docs.mdx health-website-content-api-docs.mdx
+%doc auth-methods-website-content-api-docs-acl.mdx
+%doc binding-rules-website-content-api-docs-acl.mdx
+%doc legacy-website-content-api-docs-acl.mdx
+%doc policies-website-content-api-docs-acl.mdx
+%doc roles-website-content-api-docs-acl.mdx
+%doc tokens-website-content-api-docs-acl.mdx
+%doc index-website-content-api-docs-acl.mdx
+%doc connect-website-content-api-docs-agent.mdx
+%doc index-website-content-api-docs-agent.mdx
+%doc check-website-content-api-docs-agent.mdx
+%doc service-website-content-api-docs-agent.mdx
+%doc index-website-content-api-docs-connect.mdx
+%doc intentions-website-content-api-docs-connect.mdx
+%doc ca-website-content-api-docs-connect.mdx
+%doc blocking-website-content-api-docs-features.mdx
+%doc caching-website-content-api-docs-features.mdx
+%doc consistency-website-content-api-docs-features.mdx
+%doc filtering-website-content-api-docs-features.mdx
+%doc area-website-content-api-docs-operator.mdx
+%doc autopilot-website-content-api-docs-operator.mdx
+%doc index-website-content-api-docs-operator.mdx
+%doc keyring-website-content-api-docs-operator.mdx
+%doc raft-website-content-api-docs-operator.mdx
+%doc segment-website-content-api-docs-operator.mdx
+%doc agent-website-content-commands.mdx debug-website-content-commands.mdx
+%doc event-website-content-commands.mdx exec-website-content-commands.mdx
+%doc force-leave-website-content-commands.mdx index-website-content-commands.mdx
+%doc info-website-content-commands.mdx join-website-content-commands.mdx
+%doc keygen-website-content-commands.mdx keyring-website-content-commands.mdx
+%doc leave-website-content-commands.mdx lock-website-content-commands.mdx
+%doc login-website-content-commands.mdx logout-website-content-commands.mdx
+%doc maint-website-content-commands.mdx members-website-content-commands.mdx
+%doc monitor-website-content-commands.mdx reload-website-content-commands.mdx
+%doc rtt-website-content-commands.mdx validate-website-content-commands.mdx
+%doc version-website-content-commands.mdx watch-website-content-commands.mdx
+%doc bootstrap-website-content-commands-acl.mdx
+%doc index-website-content-commands-acl.mdx
+%doc translate-rules-website-content-commands-acl.mdx
+%doc set-agent-token-website-content-commands-acl.mdx
+%doc create-website-content-commands-acl-auth-method.mdx
+%doc delete-website-content-commands-acl-auth-method.mdx
+%doc index-website-content-commands-acl-auth-method.mdx
+%doc list-website-content-commands-acl-auth-method.mdx
+%doc read-website-content-commands-acl-auth-method.mdx
+%doc update-website-content-commands-acl-auth-method.mdx
+%doc create-website-content-commands-acl-binding-rule.mdx
+%doc delete-website-content-commands-acl-binding-rule.mdx
+%doc index-website-content-commands-acl-binding-rule.mdx
+%doc list-website-content-commands-acl-binding-rule.mdx
+%doc read-website-content-commands-acl-binding-rule.mdx
+%doc update-website-content-commands-acl-binding-rule.mdx
+%doc create-website-content-commands-acl-policy.mdx
+%doc delete-website-content-commands-acl-policy.mdx
+%doc index-website-content-commands-acl-policy.mdx
+%doc list-website-content-commands-acl-policy.mdx
+%doc read-website-content-commands-acl-policy.mdx
+%doc update-website-content-commands-acl-policy.mdx
+%doc create-website-content-commands-acl-role.mdx
+%doc delete-website-content-commands-acl-role.mdx
+%doc index-website-content-commands-acl-role.mdx
+%doc list-website-content-commands-acl-role.mdx
+%doc read-website-content-commands-acl-role.mdx
+%doc update-website-content-commands-acl-role.mdx
+%doc clone-website-content-commands-acl-token.mdx
+%doc create-website-content-commands-acl-token.mdx
+%doc delete-website-content-commands-acl-token.mdx
+%doc index-website-content-commands-acl-token.mdx
+%doc list-website-content-commands-acl-token.mdx
+%doc read-website-content-commands-acl-token.mdx
+%doc update-website-content-commands-acl-token.mdx
+%doc datacenters-website-content-commands-catalog.mdx
+%doc index-website-content-commands-catalog.mdx
+%doc nodes-website-content-commands-catalog.mdx
+%doc services-website-content-commands-catalog.mdx
+%doc index-website-content-commands-config.mdx
+%doc write-website-content-commands-config.mdx
+%doc delete-website-content-commands-config.mdx
+%doc list-website-content-commands-config.mdx
+%doc read-website-content-commands-config.mdx
+%doc expose-website-content-commands-connect.mdx
+%doc proxy-website-content-commands-connect.mdx
+%doc ca-website-content-commands-connect.mdx
+%doc envoy-website-content-commands-connect.mdx
+%doc index-website-content-commands-connect.mdx
+%doc check-website-content-commands-intention.mdx
+%doc create-website-content-commands-intention.mdx
+%doc delete-website-content-commands-intention.mdx
+%doc get-website-content-commands-intention.mdx
+%doc index-website-content-commands-intention.mdx
+%doc list-website-content-commands-intention.mdx
+%doc match-website-content-commands-intention.mdx
+%doc delete-website-content-commands-kv.mdx
+%doc export-website-content-commands-kv.mdx get-website-content-commands-kv.mdx
+%doc index-website-content-commands-kv.mdx put-website-content-commands-kv.mdx
+%doc import-website-content-commands-kv.mdx
+%doc create-website-content-commands-namespace.mdx
+%doc delete-website-content-commands-namespace.mdx
+%doc index-website-content-commands-namespace.mdx
+%doc list-website-content-commands-namespace.mdx
+%doc read-website-content-commands-namespace.mdx
+%doc update-website-content-commands-namespace.mdx
+%doc write-website-content-commands-namespace.mdx
+%doc area-website-content-commands-operator.mdx
+%doc autopilot-website-content-commands-operator.mdx
+%doc index-website-content-commands-operator.mdx
+%doc raft-website-content-commands-operator.mdx
+%doc deregister-website-content-commands-services.mdx
+%doc index-website-content-commands-services.mdx
+%doc register-website-content-commands-services.mdx
+%doc index-website-content-commands-snapshot.mdx
+%doc restore-website-content-commands-snapshot.mdx
+%doc save-website-content-commands-snapshot.mdx
+%doc agent-website-content-commands-snapshot.mdx
+%doc inspect-website-content-commands-snapshot.mdx
+%doc ca-website-content-commands-tls.mdx cert-website-content-commands-tls.mdx
+%doc index-website-content-commands-tls.mdx
+%doc http_api_namespace_options-website-content-partials.mdx
+%doc http_api_options_client-website-content-partials.mdx
+%doc http_api_options_server-website-content-partials.mdx
+%doc jwt_claim_mapping_details-website-content-partials.mdx
+%doc jwt_or_oidc-website-content-partials.mdx docs robots-website-public.txt
+%doc README-website-raw-assets
 %{_bindir}/*
 
 %gopkgfiles

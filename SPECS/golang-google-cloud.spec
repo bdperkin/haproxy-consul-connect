@@ -15,10 +15,10 @@ Google Cloud Client Libraries for Go.}
 %global godocs          CODE_OF_CONDUCT.md CONTRIBUTORS RELEASING.md\\\
                         README.md old-news.md AUTHORS CHANGES.md\\\
                         CONTRIBUTING.md issue_template.md\\\
-                        bigquery/benchmarks/README.md examples\\\
-                        httpreplay/cmd/httpr/README.md\\\
-                        logging/apiv2/README.md profiler/mocks/README.md\\\
-                        pubsub/apiv1/README.md vision/apiv1/README.md
+                        README-bigquery-benchmarks.md examples\\\
+                        README-httpreplay-cmd-httpr.md\\\
+                        README-logging-apiv2.md README-profiler-mocks.md\\\
+                        README-pubsub-apiv1.md README-vision-apiv1.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -219,6 +219,12 @@ BuildRequires:  golang(google.golang.org/api/iterator/testing)
 
 %prep
 %goprep
+mv bigquery/benchmarks/README.md README-bigquery-benchmarks.md
+mv httpreplay/cmd/httpr/README.md README-httpreplay-cmd-httpr.md
+mv logging/apiv2/README.md README-logging-apiv2.md
+mv profiler/mocks/README.md README-profiler-mocks.md
+mv pubsub/apiv1/README.md README-pubsub-apiv1.md
+mv vision/apiv1/README.md README-vision-apiv1.md
 
 %build
 for cmd in cmd/* ; do
@@ -241,9 +247,9 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license LICENSE license_test.go
 %doc CODE_OF_CONDUCT.md CONTRIBUTORS RELEASING.md README.md old-news.md AUTHORS
-%doc CHANGES.md CONTRIBUTING.md issue_template.md bigquery/benchmarks/README.md
-%doc examples httpreplay/cmd/httpr/README.md logging/apiv2/README.md
-%doc profiler/mocks/README.md pubsub/apiv1/README.md vision/apiv1/README.md
+%doc CHANGES.md CONTRIBUTING.md issue_template.md README-bigquery-benchmarks.md
+%doc examples README-httpreplay-cmd-httpr.md README-logging-apiv2.md
+%doc README-profiler-mocks.md README-pubsub-apiv1.md README-vision-apiv1.md
 %{_bindir}/*
 
 %gopkgfiles

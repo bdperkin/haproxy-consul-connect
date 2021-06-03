@@ -11,10 +11,10 @@ Version:                1.31.1
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE LICENSE-3rdparty.csv LICENSE-APACHE LICENSE-\\\
-                        BSD3 NOTICE
+%global golicenses      LICENSE LICENSE-3rdparty.csv LICENSE-APACHE\\\
+                        LICENSE-BSD3 NOTICE
 %global godocs          CONTRIBUTING.md MIGRATING.md README.md\\\
-                        contrib/README.md
+                        README-contrib.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -134,6 +134,7 @@ BuildRequires:  golang(k8s.io/client-go/tools/clientcmd/api)
 
 %prep
 %goprep
+mv contrib/README.md README-contrib.md
 
 %build
 %gobuild -o %{gobuilddir}/bin/dd-trace-go.v1 %{goipath}
@@ -153,7 +154,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE LICENSE-3rdparty.csv LICENSE-APACHE LICENSE-BSD3 NOTICE
-%doc CONTRIBUTING.md MIGRATING.md README.md contrib/README.md
+%doc CONTRIBUTING.md MIGRATING.md README.md README-contrib.md
 %{_bindir}/*
 
 %gopkgfiles

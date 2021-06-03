@@ -11,10 +11,10 @@ Version:                0.2.0
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE LICENSE-THIRD-PARTY go/gcsizes/LICENSE\\\
-                        go/ir/LICENSE
-%global godocs          doc README.md cmd/keyify/README.md\\\
-                        cmd/staticcheck/README.md cmd/structlayout/README.md
+%global golicenses      LICENSE LICENSE-THIRD-PARTY LICENSE-go-gcsizes\\\
+                        LICENSE-go-ir
+%global godocs          doc README.md README-cmd-keyify.md\\\
+                        README-cmd-staticcheck.md README-cmd-structlayout.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -44,6 +44,11 @@ BuildRequires:  golang(golang.org/x/tools/go/types/typeutil)
 
 %prep
 %goprep
+mv go/gcsizes/LICENSE LICENSE-go-gcsizes
+mv go/ir/LICENSE LICENSE-go-ir
+mv cmd/keyify/README.md README-cmd-keyify.md
+mv cmd/staticcheck/README.md README-cmd-staticcheck.md
+mv cmd/structlayout/README.md README-cmd-structlayout.md
 
 %build
 for cmd in cmd/* ; do
@@ -64,9 +69,9 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE LICENSE-THIRD-PARTY go/gcsizes/LICENSE go/ir/LICENSE
-%doc doc README.md cmd/keyify/README.md cmd/staticcheck/README.md
-%doc cmd/structlayout/README.md
+%license LICENSE LICENSE-THIRD-PARTY LICENSE-go-gcsizes LICENSE-go-ir
+%doc doc README.md README-cmd-keyify.md README-cmd-staticcheck.md
+%doc README-cmd-structlayout.md
 %{_bindir}/*
 
 %gopkgfiles

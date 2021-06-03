@@ -5,34 +5,40 @@
 %global goipath         go.etcd.io/etcd/etcdctl/v3
 %global forgeurl        https://github.com/etcd-io/etcd
 Version:                3.5.0~beta.4
+%global tag             etcdctl/v3.5.0-beta.4
+%global commit          c23ddb40dca5b3780ac53f103d6e44c19bb3337d
 
 %gometa
 
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE api/LICENSE client/pkg/LICENSE\\\
-                        client/v2/LICENSE client/v3/LICENSE etcdctl/LICENSE\\\
-                        etcdutl/LICENSE pkg/LICENSE raft/LICENSE\\\
-                        server/LICENSE
+%global golicenses      LICENSE LICENSE-api LICENSE-client-pkg\\\
+                        LICENSE-client-v2 LICENSE-client-v3 LICENSE-etcdctl\\\
+                        LICENSE-etcdutl LICENSE-pkg LICENSE-raft\\\
+                        LICENSE-server
 %global godocs          CONTRIBUTING.md GOVERNANCE.md README.md ROADMAP.md\\\
-                        code-of-conduct.md Documentation/README.md\\\
-                        client/v2/README.md client/v3/README.md\\\
-                        contrib/README.md contrib/lock/README.md\\\
-                        contrib/mixin/README.md contrib/raftexample/README.md\\\
-                        contrib/systemd/etcd3-multinode/README.md doc\\\
-                        etcdctl/README.md etcdctl/READMEv2.md\\\
-                        etcdutl/README.md hack/README.md\\\
-                        hack/benchmark/README.md hack/insta-\\\
-                        discovery/README.md hack/kubernetes-deploy/README.md\\\
-                        hack/patch/README.md hack/tls-setup/README.md\\\
-                        pkg/README.md pkg/adt/README.md raft/README.md\\\
-                        raft/design.md scripts/README security/README.md\\\
-                        security/email-templates.md security/security-\\\
-                        release-process.md tools/benchmark/README.md\\\
-                        tools/etcd-dump-db/README.md tools/etcd-dump-\\\
-                        logs/README.md tools/etcd-dump-metrics/README\\\
-                        tools/local-tester/README.md
+                        code-of-conduct.md README-Documentation.md\\\
+                        README-client-v2.md README-client-v3.md\\\
+                        README-contrib.md README-contrib-lock.md\\\
+                        README-contrib-mixin.md\\\
+                        README-contrib-raftexample.md\\\
+                        README-contrib-systemd-etcd3-multinode.md doc\\\
+                        README-etcdctl.md READMEv2-etcdctl.md\\\
+                        README-etcdutl.md README-hack.md\\\
+                        README-hack-benchmark.md\\\
+                        README-hack-insta-discovery.md\\\
+                        README-hack-kubernetes-deploy.md\\\
+                        README-hack-patch.md README-hack-tls-setup.md\\\
+                        README-pkg.md README-pkg-adt.md README-raft.md\\\
+                        design-raft.md README-scripts README-security.md\\\
+                        email-templates-security.md\\\
+                        security-release-process-security.md\\\
+                        README-tools-benchmark.md\\\
+                        README-tools-etcd-dump-db.md\\\
+                        README-tools-etcd-dump-logs.md\\\
+                        README-tools-etcd-dump-metrics\\\
+                        README-tools-local-tester.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -239,6 +245,45 @@ BuildRequires:  golang(golang.org/x/sync/errgroup)
 
 %prep
 %goprep
+mv api/LICENSE LICENSE-api
+mv client/pkg/LICENSE LICENSE-client-pkg
+mv client/v2/LICENSE LICENSE-client-v2
+mv client/v3/LICENSE LICENSE-client-v3
+mv etcdctl/LICENSE LICENSE-etcdctl
+mv etcdutl/LICENSE LICENSE-etcdutl
+mv pkg/LICENSE LICENSE-pkg
+mv raft/LICENSE LICENSE-raft
+mv server/LICENSE LICENSE-server
+mv Documentation/README.md README-Documentation.md
+mv client/v2/README.md README-client-v2.md
+mv client/v3/README.md README-client-v3.md
+mv contrib/README.md README-contrib.md
+mv contrib/lock/README.md README-contrib-lock.md
+mv contrib/mixin/README.md README-contrib-mixin.md
+mv contrib/raftexample/README.md README-contrib-raftexample.md
+mv contrib/systemd/etcd3-multinode/README.md README-contrib-systemd-etcd3-multinode.md
+mv etcdctl/README.md README-etcdctl.md
+mv etcdctl/READMEv2.md READMEv2-etcdctl.md
+mv etcdutl/README.md README-etcdutl.md
+mv hack/README.md README-hack.md
+mv hack/benchmark/README.md README-hack-benchmark.md
+mv hack/insta-discovery/README.md README-hack-insta-discovery.md
+mv hack/kubernetes-deploy/README.md README-hack-kubernetes-deploy.md
+mv hack/patch/README.md README-hack-patch.md
+mv hack/tls-setup/README.md README-hack-tls-setup.md
+mv pkg/README.md README-pkg.md
+mv pkg/adt/README.md README-pkg-adt.md
+mv raft/README.md README-raft.md
+mv raft/design.md design-raft.md
+mv scripts/README README-scripts
+mv security/README.md README-security.md
+mv security/email-templates.md email-templates-security.md
+mv security/security-release-process.md security-release-process-security.md
+mv tools/benchmark/README.md README-tools-benchmark.md
+mv tools/etcd-dump-db/README.md README-tools-etcd-dump-db.md
+mv tools/etcd-dump-logs/README.md README-tools-etcd-dump-logs.md
+mv tools/etcd-dump-metrics/README README-tools-etcd-dump-metrics
+mv tools/local-tester/README.md README-tools-local-tester.md
 
 %build
 %gobuild -o %{gobuilddir}/bin/v3 %{goipath}
@@ -257,22 +302,22 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE api/LICENSE client/pkg/LICENSE client/v2/LICENSE
-%license client/v3/LICENSE etcdctl/LICENSE etcdutl/LICENSE pkg/LICENSE
-%license raft/LICENSE server/LICENSE
+%license LICENSE LICENSE-api LICENSE-client-pkg LICENSE-client-v2
+%license LICENSE-client-v3 LICENSE-etcdctl LICENSE-etcdutl LICENSE-pkg
+%license LICENSE-raft LICENSE-server
 %doc CONTRIBUTING.md GOVERNANCE.md README.md ROADMAP.md code-of-conduct.md
-%doc Documentation/README.md client/v2/README.md client/v3/README.md
-%doc contrib/README.md contrib/lock/README.md contrib/mixin/README.md
-%doc contrib/raftexample/README.md contrib/systemd/etcd3-multinode/README.md doc
-%doc etcdctl/README.md etcdctl/READMEv2.md etcdutl/README.md hack/README.md
-%doc hack/benchmark/README.md hack/insta-discovery/README.md
-%doc hack/kubernetes-deploy/README.md hack/patch/README.md
-%doc hack/tls-setup/README.md pkg/README.md pkg/adt/README.md raft/README.md
-%doc raft/design.md scripts/README security/README.md
-%doc security/email-templates.md security/security-release-process.md
-%doc tools/benchmark/README.md tools/etcd-dump-db/README.md
-%doc tools/etcd-dump-logs/README.md tools/etcd-dump-metrics/README
-%doc tools/local-tester/README.md
+%doc README-Documentation.md README-client-v2.md README-client-v3.md
+%doc README-contrib.md README-contrib-lock.md README-contrib-mixin.md
+%doc README-contrib-raftexample.md README-contrib-systemd-etcd3-multinode.md doc
+%doc README-etcdctl.md READMEv2-etcdctl.md README-etcdutl.md README-hack.md
+%doc README-hack-benchmark.md README-hack-insta-discovery.md
+%doc README-hack-kubernetes-deploy.md README-hack-patch.md
+%doc README-hack-tls-setup.md README-pkg.md README-pkg-adt.md README-raft.md
+%doc design-raft.md README-scripts README-security.md
+%doc email-templates-security.md security-release-process-security.md
+%doc README-tools-benchmark.md README-tools-etcd-dump-db.md
+%doc README-tools-etcd-dump-logs.md README-tools-etcd-dump-metrics
+%doc README-tools-local-tester.md
 %{_bindir}/*
 
 %gopkgfiles

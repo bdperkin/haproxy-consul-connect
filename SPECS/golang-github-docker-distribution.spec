@@ -11,11 +11,12 @@ Version:                2.6.2
 # FIXME}
 
 %global golicenses      LICENSE
-%global godocs          docs AUTHORS BUILDING.md CHANGELOG.md CONTRIBUTING.md\\\
-                        README.md RELEASE-CHECKLIST.md ROADMAP.md\\\
-                        contrib/apache/README.MD contrib/compose/README.md\\\
-                        contrib/docker-integration/README.md\\\
-                        project/hooks/README.md
+%global godocs          docs AUTHORS BUILDING.md CHANGELOG.md\\\
+                        CONTRIBUTING.md README.md RELEASE-CHECKLIST.md\\\
+                        ROADMAP.md README-contrib-apache.MD\\\
+                        README-contrib-compose.md\\\
+                        README-contrib-docker-integration.md\\\
+                        README-project-hooks.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -71,6 +72,10 @@ BuildRequires:  golang(github.com/ncw/swift/swifttest)
 
 %prep
 %goprep
+mv contrib/apache/README.MD README-contrib-apache.MD
+mv contrib/compose/README.md README-contrib-compose.md
+mv contrib/docker-integration/README.md README-contrib-docker-integration.md
+mv project/hooks/README.md README-project-hooks.md
 
 %build
 for cmd in cmd/* ; do
@@ -93,9 +98,9 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license LICENSE
 %doc docs AUTHORS BUILDING.md CHANGELOG.md CONTRIBUTING.md README.md
-%doc RELEASE-CHECKLIST.md ROADMAP.md contrib/apache/README.MD
-%doc contrib/compose/README.md contrib/docker-integration/README.md
-%doc project/hooks/README.md
+%doc RELEASE-CHECKLIST.md ROADMAP.md README-contrib-apache.MD
+%doc README-contrib-compose.md README-contrib-docker-integration.md
+%doc README-project-hooks.md
 %{_bindir}/*
 
 %gopkgfiles

@@ -11,11 +11,12 @@ Version:                1.0.2
 OCI Runtime Specification.}
 
 %global golicenses      LICENSE
-%global godocs          ChangeLog GOVERNANCE.md RELEASES.md bundle.md config-\\\
-                        solaris.md config-vm.md glossary.md principles.md\\\
-                        runtime-linux.md spec.md style.md README.md config-\\\
-                        linux.md config-windows.md config.md\\\
-                        implementations.md runtime.md schema/README.md
+%global godocs          ChangeLog GOVERNANCE.md RELEASES.md bundle.md\\\
+                        config-solaris.md config-vm.md glossary.md\\\
+                        principles.md runtime-linux.md spec.md style.md\\\
+                        README.md config-linux.md config-windows.md\\\
+                        config.md implementations.md runtime.md\\\
+                        README-schema.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -35,6 +36,7 @@ BuildRequires:  golang(github.com/xeipuuv/gojsonschema)
 
 %prep
 %goprep
+mv schema/README.md README-schema.md
 
 %build
 for cmd in schema .tool; do
@@ -56,7 +58,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc ChangeLog GOVERNANCE.md RELEASES.md bundle.md config-solaris.md
 %doc config-vm.md glossary.md principles.md runtime-linux.md spec.md style.md
 %doc README.md config-linux.md config-windows.md config.md implementations.md
-%doc runtime.md schema/README.md
+%doc runtime.md README-schema.md
 %{_bindir}/*
 
 %gopkgfiles

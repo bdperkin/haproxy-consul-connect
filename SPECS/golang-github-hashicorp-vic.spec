@@ -10,14 +10,15 @@ Version:                1.5.0
 %global common_description %{expand:
 # FIXME}
 
-%global golicenses      LICENSE doc/bundle/NOTICE
+%global golicenses      LICENSE NOTICE-doc-bundle
 %global godocs          doc CONTRIBUTING.md OWNERS.md README.md\\\
-                        infra/machines/devbox/README.md\\\
-                        infra/scripts/README.md infra/util/vendor-manifest-\\\
-                        parser/README.md infra/dlv/README.md\\\
-                        infra/integration-image/scripts/README.md\\\
-                        isos/base/repos/README.md\\\
-                        lib/migration/plugins/plugins.md
+                        README-infra-machines-devbox.md\\\
+                        README-infra-scripts.md\\\
+                        README-infra-util-vendor-manifest-parser.md\\\
+                        README-infra-dlv.md\\\
+                        README-infra-integration-image-scripts.md\\\
+                        README-isos-base-repos.md\\\
+                        plugins-lib-migration-plugins.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -367,6 +368,14 @@ BuildRequires:  golang(golang.org/x/crypto/ssh/testdata)
 
 %prep
 %goprep
+mv doc/bundle/NOTICE NOTICE-doc-bundle
+mv infra/machines/devbox/README.md README-infra-machines-devbox.md
+mv infra/scripts/README.md README-infra-scripts.md
+mv infra/util/vendor-manifest-parser/README.md README-infra-util-vendor-manifest-parser.md
+mv infra/dlv/README.md README-infra-dlv.md
+mv infra/integration-image/scripts/README.md README-infra-integration-image-scripts.md
+mv isos/base/repos/README.md README-isos-base-repos.md
+mv lib/migration/plugins/plugins.md plugins-lib-migration-plugins.md
 
 %build
 for cmd in cmd/* ; do
@@ -387,11 +396,11 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE doc/bundle/NOTICE
-%doc doc CONTRIBUTING.md OWNERS.md README.md infra/machines/devbox/README.md
-%doc infra/scripts/README.md infra/util/vendor-manifest-parser/README.md
-%doc infra/dlv/README.md infra/integration-image/scripts/README.md
-%doc isos/base/repos/README.md lib/migration/plugins/plugins.md
+%license LICENSE NOTICE-doc-bundle
+%doc doc CONTRIBUTING.md OWNERS.md README.md README-infra-machines-devbox.md
+%doc README-infra-scripts.md README-infra-util-vendor-manifest-parser.md
+%doc README-infra-dlv.md README-infra-integration-image-scripts.md
+%doc README-isos-base-repos.md plugins-lib-migration-plugins.md
 %{_bindir}/*
 
 %gopkgfiles

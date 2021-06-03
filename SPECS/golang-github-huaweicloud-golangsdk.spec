@@ -12,13 +12,13 @@
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md FAQ.md MIGRATING.md README.md\\\
-                        STYLEGUIDE.md acceptance/README.md\\\
-                        openstack/antiddos/v1/antiddos/API-cn.md\\\
-                        openstack/antiddos/v1/antiddos/API-en.md\\\
-                        openstack/antiddos/v2/alarmreminding/API-cn.md\\\
-                        openstack/antiddos/v2/alarmreminding/API-en.md\\\
-                        openstack/imageservice/v2/README.md\\\
-                        openstack/obs/CHANGELOG openstack/obs/README.MD
+                        STYLEGUIDE.md README-acceptance.md\\\
+                        API-cn-openstack-antiddos-v1-antiddos.md\\\
+                        API-en-openstack-antiddos-v1-antiddos.md\\\
+                        API-cn-openstack-antiddos-v2-alarmreminding.md\\\
+                        API-en-openstack-antiddos-v2-alarmreminding.md\\\
+                        README-openstack-imageservice-v2.md\\\
+                        CHANGELOG-openstack-obs README-openstack-obs.MD
 
 Name:           %{goname}
 Version:        0
@@ -44,6 +44,14 @@ BuildRequires:  golang(golang.org/x/crypto/ssh)
 
 %prep
 %goprep
+mv acceptance/README.md README-acceptance.md
+mv openstack/antiddos/v1/antiddos/API-cn.md API-cn-openstack-antiddos-v1-antiddos.md
+mv openstack/antiddos/v1/antiddos/API-en.md API-en-openstack-antiddos-v1-antiddos.md
+mv openstack/antiddos/v2/alarmreminding/API-cn.md API-cn-openstack-antiddos-v2-alarmreminding.md
+mv openstack/antiddos/v2/alarmreminding/API-en.md API-en-openstack-antiddos-v2-alarmreminding.md
+mv openstack/imageservice/v2/README.md README-openstack-imageservice-v2.md
+mv openstack/obs/CHANGELOG CHANGELOG-openstack-obs
+mv openstack/obs/README.MD README-openstack-obs.MD
 
 %build
 for cmd in openstack/dcs/v1/maintainwindows openstack/dms/v1/maintainwindows; do
@@ -63,12 +71,12 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license LICENSE
 %doc CHANGELOG.md FAQ.md MIGRATING.md README.md STYLEGUIDE.md
-%doc acceptance/README.md openstack/antiddos/v1/antiddos/API-cn.md
-%doc openstack/antiddos/v1/antiddos/API-en.md
-%doc openstack/antiddos/v2/alarmreminding/API-cn.md
-%doc openstack/antiddos/v2/alarmreminding/API-en.md
-%doc openstack/imageservice/v2/README.md openstack/obs/CHANGELOG
-%doc openstack/obs/README.MD
+%doc README-acceptance.md API-cn-openstack-antiddos-v1-antiddos.md
+%doc API-en-openstack-antiddos-v1-antiddos.md
+%doc API-cn-openstack-antiddos-v2-alarmreminding.md
+%doc API-en-openstack-antiddos-v2-alarmreminding.md
+%doc README-openstack-imageservice-v2.md CHANGELOG-openstack-obs
+%doc README-openstack-obs.MD
 %{_bindir}/*
 
 %gopkgfiles
