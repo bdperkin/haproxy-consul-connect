@@ -8,6 +8,15 @@ for SPEC in $@; do
         exit 1
     fi
 
+    grep -q "^%license " ${SPEC}
+    if [ $? -ne 0 ]; then
+        continue
+    fi
+    grep -q "^%doc " ${SPEC}
+    if [ $? -ne 0 ]; then
+        continue
+    fi
+
     TMPFILE1=$(mktemp)
     TMPFILE2=$(mktemp)
     TMPFILE3=$(mktemp)
