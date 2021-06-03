@@ -8,7 +8,7 @@ Version:                1.8.4
 %gometa
 
 %global common_description %{expand:
-CoreDNS is a DNS server that chains plugins.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          ADOPTERS.md CODE_OF_CONDUCT.md CONTRIBUTING.md\\\
@@ -69,7 +69,7 @@ CoreDNS is a DNS server that chains plugins.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        CoreDNS is a DNS server that chains plugins
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

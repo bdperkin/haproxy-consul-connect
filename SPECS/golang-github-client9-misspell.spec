@@ -8,15 +8,14 @@ Version:                0.3.4
 %gometa
 
 %global common_description %{expand:
-The misspell command corrects commonly misspelled English words in source
-files.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md RELEASE-HOWTO.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        The misspell command corrects commonly misspelled English words in source files
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

@@ -8,17 +8,15 @@ Version:                1.2.3
 %gometa
 
 %global common_description %{expand:
-Package buntdb implements a low-level in-memory key/value store in pure Go. It
-persists to disk, is ACID compliant, and uses locking for multiple readers and
-a single writer. Bunt is ideal for projects that need a dependable database,
-and favor speed over data size.}
+BuntDB is an embeddable, in-memory key/value database for Go with custom
+indexing and geospatial support.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package buntdb implements a low-level in-memory key/value store in pure Go
+Summary:        BuntDB is an embeddable, in-memory key/value database for Go with custom indexing and geospatial support
 
 License:        MIT
 URL:            %{gourl}

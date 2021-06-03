@@ -8,16 +8,14 @@ Version:                1.3.0
 %gometa
 
 %global common_description %{expand:
-grpc_logsettable contains a thread-safe wrapper around grpc-logging
-infrastructure. The go-grpc assumes that logger can be only configured once as
-the `SetLoggerV2`}
+Golang gRPC Middlewares: interceptor chaining, auth, logging, retries and more.}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md CONTRIBUTING.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        grpc_logsettable contains a thread-safe wrapper around grpc-logging infrastructure
+Summary:        Golang gRPC Middlewares: interceptor chaining, auth, logging, retries and more
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

@@ -8,14 +8,14 @@ Version:                0.1.5
 %gometa
 
 %global common_description %{expand:
-Raft Autopilot.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Raft Autopilot
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

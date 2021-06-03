@@ -9,14 +9,14 @@ Version:                10.9.3
 %gometa
 
 %global common_description %{expand:
-pg provides PostgreSQL client.}
+Golang ORM with focus on PostgreSQL features and performance.}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md README.md example extra/pgotel/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        pg provides PostgreSQL client
+Summary:        Golang ORM with focus on PostgreSQL features and performance
 
 # Upstream license specification: BSD-2-Clause
 License:        BSD

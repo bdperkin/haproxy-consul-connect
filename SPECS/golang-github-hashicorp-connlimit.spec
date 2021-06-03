@@ -8,15 +8,14 @@ Version:                0.3.0
 %gometa
 
 %global common_description %{expand:
-A simple library that allows a network server to limit how may concurrent
-connections it supports from each client IP.}
+# FIXME}
 
 %global golicenses      LICENSE NOTICE.md
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        A simple library that allows a network server to limit how may concurrent connections it supports from each client IP
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

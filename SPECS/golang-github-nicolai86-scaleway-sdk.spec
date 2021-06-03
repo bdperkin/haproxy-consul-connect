@@ -8,14 +8,14 @@ Version:                1.11.1
 %gometa
 
 %global common_description %{expand:
-Minimal Scaleway API SDK.}
+# FIXME}
 
 %global golicenses      LICENSE.md
 %global godocs          examples README.md dist/README.md pkg/api/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Minimal Scaleway API SDK
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

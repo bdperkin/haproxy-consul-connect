@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-A Go library to find a free port.}
+# FIXME}
 
 %global golicenses      license
 %global godocs          readme.md
@@ -16,7 +16,7 @@ A Go library to find a free port.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        A Go library to find a free port
+Summary:        None
 
 # Upstream license specification: BSD-3-Clause
 License:        BSD

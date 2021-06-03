@@ -9,7 +9,8 @@ Version:                3.5.0~beta.4
 %gometa
 
 %global common_description %{expand:
-Package fileutil implements utility functions related to files and paths.}
+Distributed reliable key-value store for the most critical data of a
+distributed system.}
 
 %global golicenses      LICENSE api/LICENSE client/pkg/LICENSE\\\
                         client/v2/LICENSE client/v3/LICENSE etcdctl/LICENSE\\\
@@ -36,7 +37,7 @@ Package fileutil implements utility functions related to files and paths.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package fileutil implements utility functions related to files and paths
+Summary:        Distributed reliable key-value store for the most critical data of a distributed system
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

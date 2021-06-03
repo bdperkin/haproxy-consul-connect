@@ -26,7 +26,7 @@ debug.Stack() at ~300 MiB/s.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package gostackparse parses goroutines stack traces as produced by panic() or debug
+Summary:        Package gostackparse parses goroutines stack traces as produced by panic() or debug.Stack() at ~300 MiB/s
 
 # Upstream license specification: Apache-2.0 and BSD-3-Clause
 License:        ASL 2.0 and BSD

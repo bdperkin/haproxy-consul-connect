@@ -8,14 +8,14 @@ Version:                0.1.8
 %gometa
 
 %global common_description %{expand:
-Generic boolean expression evaluation in Go.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          examples README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Generic boolean expression evaluation in Go
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

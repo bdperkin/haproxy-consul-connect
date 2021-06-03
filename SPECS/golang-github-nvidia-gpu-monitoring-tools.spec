@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Tools for monitoring NVIDIA GPUs on Linux.}
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md README.md RELEASE.md\\\
@@ -20,7 +20,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Tools for monitoring NVIDIA GPUs on Linux
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

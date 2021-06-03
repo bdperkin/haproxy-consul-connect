@@ -8,15 +8,14 @@ Version:                1.0.1
 %gometa
 
 %global common_description %{expand:
-Fuzzy searching allows for flexibly matching a string with partial input,
-useful for filtering data very quickly based on lightweight user input.}
+:pig: Tiny and fast fuzzy search in Go.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Fuzzy searching allows for flexibly matching a string with partial input, useful for filtering data very quickly based on lightweight user input
+Summary:        :pig: Tiny and fast fuzzy search in Go
 
 License:        MIT
 URL:            %{gourl}

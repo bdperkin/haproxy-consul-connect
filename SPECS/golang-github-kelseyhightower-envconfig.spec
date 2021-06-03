@@ -8,16 +8,14 @@ Version:                1.4.0
 %gometa
 
 %global common_description %{expand:
-Package envconfig implements decoding of environment variables based on a user
-defined specification. A typical use is using environment variables for
-configuration settings.}
+Golang library for managing configuration data from environment variables.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package envconfig implements decoding of environment variables based on a user defined specification
+Summary:        Golang library for managing configuration data from environment variables
 
 License:        MIT
 URL:            %{gourl}

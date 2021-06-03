@@ -8,7 +8,7 @@ Version:                4.5.2
 %gometa
 
 %global common_description %{expand:
-Aerospike Client Go.}
+# FIXME}
 
 %global golicenses      LICENSE pkg/bcrypt/LICENSE
 %global godocs          docs examples CHANGELOG.md README.md\\\
@@ -16,7 +16,7 @@ Aerospike Client Go.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Aerospike Client Go
+Summary:        None
 
 # Upstream license specification: Apache-2.0 and BSD-3-Clause
 License:        ASL 2.0 and BSD

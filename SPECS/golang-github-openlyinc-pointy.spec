@@ -8,15 +8,14 @@ Version:                1.1.2
 %gometa
 
 %global common_description %{expand:
-Package pointy is a set of simple helper functions to provide a shorthand to
-get a pointer to a variable holding a constant.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package pointy is a set of simple helper functions to provide a shorthand to get a pointer to a variable holding a constant
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

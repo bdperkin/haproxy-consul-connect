@@ -9,9 +9,7 @@ Version:                0.20.0
 %gometa
 
 %global common_description %{expand:
-Package otlpgrpc provides an implementation of otlp.ProtocolDriver that
-connects to the collector and sends traces and metrics using gRPC. This
-package is currently in a pre-GA phase. Backwards incompatible}
+OpenTelemetry Go API and SDK.}
 
 %global golicenses      LICENSE
 %global godocs          example VERSIONING.md CHANGELOG.md CONTRIBUTING.md\\\
@@ -26,7 +24,7 @@ package is currently in a pre-GA phase. Backwards incompatible}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package otlpgrpc provides an implementation of otlp
+Summary:        OpenTelemetry Go API and SDK
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

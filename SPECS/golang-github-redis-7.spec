@@ -9,14 +9,14 @@ Version:                7.4.0
 %gometa
 
 %global common_description %{expand:
-Package redis implements a Redis client.}
+Type-safe Redis client for Golang.}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package redis implements a Redis client
+Summary:        Type-safe Redis client for Golang
 
 # Upstream license specification: BSD-2-Clause
 License:        BSD

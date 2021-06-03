@@ -8,7 +8,7 @@ Version:                2.6.2
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+The toolkit to pack, ship, store, and deliver container content.}
 
 %global golicenses      LICENSE
 %global godocs          docs AUTHORS BUILDING.md CHANGELOG.md CONTRIBUTING.md\\\
@@ -19,7 +19,7 @@ Version:                2.6.2
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        The toolkit to pack, ship, store, and deliver container content
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
