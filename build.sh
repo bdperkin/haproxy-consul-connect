@@ -4,8 +4,6 @@ set -eu
 
 rm -rf {RPMS,SOURCES,SPECS,SRPMS}
 mkdir {RPMS,SOURCES,SPECS,SRPMS}
-#rsync -avx SOURCES-fixed/ SOURCES/
-#rsync -avx SPECS-fixed/ SPECS/
 
 for SPEC in $(ls SPECS/*); do
     mock -r fedora-rawhide-x86_64 --buildsrpm --spec ${SPEC} --sources SOURCES
@@ -56,6 +54,7 @@ for LINE in $(grep -v '^#' goipaths.txt | tac); do
         sed -i -e "/^%global goipath .*/a %global forgeurl        ${ESCFORGE}" ${SPEC}
     fi
     ../go2rpm-sort ${SPEC}
+    ../go2rpm-docs ${SPEC}
     popd
     pushd SOURCES
     ../go2rpm-dl ../SPECS/${SPEC}
