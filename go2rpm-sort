@@ -4,8 +4,8 @@ for SPEC in $@; do
     echo "Reading ${SPEC}"
 
     if [ ! -f ${SPEC} ]; then
-    echo "Cannot find ${SPEC}"
-    exit 1
+        echo "Cannot find ${SPEC}"
+        exit 1
     fi
 
     IPATH=$(grep '%global goipath ' ${SPEC} | awk '{print $3}')
@@ -28,8 +28,8 @@ for SPEC in $@; do
     if [ "${UNSORTED}" != "" ]; then
         UNSORTEDITEMS=$(echo "${UNSORTED}" | sed -e 's/^for cmd in //g' | sed -e 's/; do$//g')
         SORTEDITEMS=$(for ITEM in ${UNSORTEDITEMS}; do
-            echo ${ITEM}
-        done | sort)
+                          echo ${ITEM}
+                      done | sort)
         SORTED="for cmd in"
         for ITEM in ${SORTEDITEMS}; do
             SORTED+=" ${ITEM}"
@@ -73,4 +73,3 @@ for SPEC in $@; do
 
     rm ${GREPFILE}
 done
-
