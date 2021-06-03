@@ -26,6 +26,10 @@ for IPATH in $(cat packages.txt); do
         DMODPATH=${IPATH}
         DPKGPATH=${IPATH}
     fi
+    ALTIPATH=$(echo "${FPATH}" | sed -e 's/^https:\/\///g')
+    if [ "${ALTIPATH}" != "${DMODPATH}" ]; then
+        ALTIPATHS=${ALTIPATH}
+    fi
     FNAME=$(basename $(echo "${FPATH}" | sed -e 's/\/v[0-9]\+$//g'))
     MNAME=$(basename $(echo "${DMODPATH}" | sed -e 's/\/v[0-9]\+$//g'))
     PNAME=$(basename $(echo "${DPKGPATH}" | sed -e 's/\/v[0-9]\+$//g'))
@@ -159,7 +163,7 @@ for IPATH in $(cat packages.txt); do
     echo "TAG: ${TAG}"
     echo "COMMIT: ${COMMIT}"
 
-    LINE="${DMODPATH},${FPATH},,,${VERSION},${TAG},${COMMIT},,,${DTYPE}"
+    LINE="${DMODPATH},${FPATH},,${ALTIPATHS},${VERSION},${TAG},${COMMIT},,,${DTYPE}"
     echo -n "ENTRY: "
     echo "${LINE}" | tee -a goipaths.txt
 
