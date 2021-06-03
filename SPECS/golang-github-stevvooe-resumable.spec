@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-A Subset of the Go `crypto` Package with a Resumable Hash Interface.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@ A Subset of the Go `crypto` Package with a Resumable Hash Interface.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        A Subset of the Go `crypto` Package with a Resumable Hash Interface
+Summary:        None
 
 # Upstream license specification: BSD-3-Clause
 License:        BSD

@@ -12,7 +12,7 @@ Version:                10.9.3
 # FIXME}
 
 %global golicenses      LICENSE
-%global godocs          CHANGELOG.md README.md example extra/pgotel/README.md
+%global godocs          README.md CHANGELOG.md example extra/pgotel/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}

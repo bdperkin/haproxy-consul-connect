@@ -9,14 +9,14 @@ Version:                0.23.0
 %gometa
 
 %global common_description %{expand:
-A stats collection and distributed tracing framework.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          examples AUTHORS CONTRIBUTING.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        A stats collection and distributed tracing framework
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

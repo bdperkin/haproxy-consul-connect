@@ -8,8 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Golang helpers for data sizes (kilobytes, petabytes), human readable sizes,
-parsing.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -17,7 +16,7 @@ parsing.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Golang helpers for data sizes (kilobytes, petabytes), human readable sizes, parsing
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

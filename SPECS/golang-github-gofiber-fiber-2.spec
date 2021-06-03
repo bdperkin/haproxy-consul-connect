@@ -4,7 +4,7 @@
 # https://github.com/gofiber/fiber
 %global goipath         github.com/gofiber/fiber/v2
 %global forgeurl        https://github.com/gofiber/fiber
-Version:                2.11.0
+Version:                2.10.0
 
 %gometa
 

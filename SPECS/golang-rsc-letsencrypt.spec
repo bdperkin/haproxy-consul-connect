@@ -9,14 +9,14 @@ Version:                0.0.3
 %gometa
 
 %global common_description %{expand:
-Manage TLS certificates automatically via LetsEncrypt.org.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Manage TLS certificates automatically via LetsEncrypt.org
+Summary:        None
 
 # Upstream license specification: BSD-3-Clause
 License:        BSD

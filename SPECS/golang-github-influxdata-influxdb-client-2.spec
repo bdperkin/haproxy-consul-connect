@@ -9,14 +9,14 @@ Version:                2.3.0
 %gometa
 
 %global common_description %{expand:
-InfluxDB 2 Go Client.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md CHANGELOG.md domain/Readme.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        InfluxDB 2 Go Client
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

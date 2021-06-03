@@ -9,14 +9,14 @@ Version:                0.9.0
 %gometa
 
 %global common_description %{expand:
-Generated code for OpenTelemetry protobuf data model.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Generated code for OpenTelemetry protobuf data model
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

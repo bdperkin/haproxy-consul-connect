@@ -8,7 +8,7 @@ Version:                0.10.0
 %gometa
 
 %global common_description %{expand:
-Structured, pluggable logging for Go.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          examples CHANGELOG.md README.md\\\
@@ -16,7 +16,7 @@ Structured, pluggable logging for Go.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Structured, pluggable logging for Go
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

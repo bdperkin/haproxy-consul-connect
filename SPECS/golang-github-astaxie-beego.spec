@@ -8,8 +8,7 @@ Version:                1.12.3
 %gometa
 
 %global common_description %{expand:
-Beego is an open-source, high-performance web framework for the Go programming
-language.}
+# FIXME}
 
 %global golicenses      LICENSE utils/captcha/LICENSE
 %global godocs          CONTRIBUTING.md README.md validation/README.md\\\
@@ -19,7 +18,7 @@ language.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Beego is an open-source, high-performance web framework for the Go programming language
+Summary:        None
 
 # Upstream license specification: Apache-2.0 and MIT
 License:        ASL 2.0 and MIT

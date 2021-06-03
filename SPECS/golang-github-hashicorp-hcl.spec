@@ -8,14 +8,14 @@ Version:                1.0.0
 %gometa
 
 %global common_description %{expand:
-HCL is the HashiCorp configuration language.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        HCL is the HashiCorp configuration language
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

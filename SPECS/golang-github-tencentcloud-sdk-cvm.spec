@@ -4,7 +4,7 @@
 # https://github.com/tencentcloud/tencentcloud-sdk-go
 %global goipath         github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm
 %global forgeurl        https://github.com/tencentcloud/tencentcloud-sdk-go
-%global commit          41e03f14c6ede068bd9a13d13d2f57174eee440e
+%global commit          38414569e5aa7f3adb26f43444cfe8cd2465286f
 
 %gometa
 
@@ -12,7 +12,7 @@
 # FIXME}
 
 %global golicenses      LICENSE
-%global godocs          examples README.md CHANGELOG.md products.md
+%global godocs          examples CHANGELOG.md README.md products.md
 
 Name:           %{goname}
 Version:        0
