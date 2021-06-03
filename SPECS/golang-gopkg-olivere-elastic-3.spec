@@ -9,7 +9,7 @@ Version:                3.0.75
 %gometa
 
 %global common_description %{expand:
-Elasticsearch client for Go.}
+# FIXME}
 
 %global golicenses      LICENSE backoff/LICENSE uritemplates/LICENSE
 %global godocs          CHANGELOG-3.0.md CODE_OF_CONDUCT.md ISSUE_TEMPLATE.md\\\
@@ -18,7 +18,7 @@ Elasticsearch client for Go.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Elasticsearch client for Go
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

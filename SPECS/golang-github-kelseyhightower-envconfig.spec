@@ -8,14 +8,14 @@ Version:                1.4.0
 %gometa
 
 %global common_description %{expand:
-Golang library for managing configuration data from environment variables.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Golang library for managing configuration data from environment variables
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

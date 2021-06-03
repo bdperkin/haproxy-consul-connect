@@ -8,8 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Implementation of XMLRPC protocol in Go language with some changes to interact
-with the SoftLayer api.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -17,7 +16,7 @@ with the SoftLayer api.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Implementation of XMLRPC protocol in Go language with some changes to interact with the SoftLayer api
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

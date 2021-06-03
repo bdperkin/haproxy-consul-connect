@@ -8,7 +8,8 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Boilerplate for testing of code involving DNS lookups, including unholy hacks
+to redirect net.Lookup* calls.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +17,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Boilerplate for testing of code involving DNS lookups, including unholy hacks to redirect net.Lookup* calls
 
 License:        MIT
 URL:            %{gourl}

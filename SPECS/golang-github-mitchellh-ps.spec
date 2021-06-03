@@ -8,14 +8,14 @@ Version:                1.0.0
 %gometa
 
 %global common_description %{expand:
-Find, list, and inspect processes from Go (golang).}
+# FIXME}
 
 %global golicenses      LICENSE.md
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Find, list, and inspect processes from Go (golang)
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

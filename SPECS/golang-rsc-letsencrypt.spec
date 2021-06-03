@@ -9,15 +9,14 @@ Version:                0.0.3
 %gometa
 
 %global common_description %{expand:
-Package letsencrypt is superseded by golang.org/x/crypto/acme/autocert. Use
-that instead. Everything in this package has been deleted.}
+Manage TLS certificates automatically via LetsEncrypt.org.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package letsencrypt is superseded by golang
+Summary:        Manage TLS certificates automatically via LetsEncrypt.org
 
 # Upstream license specification: BSD-3-Clause
 License:        BSD

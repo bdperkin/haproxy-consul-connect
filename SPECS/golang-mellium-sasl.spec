@@ -9,14 +9,14 @@ Version:                0.2.1
 %gometa
 
 %global common_description %{expand:
-An implementation of the Simple Authentication and Security Layer (SASL).}
+# FIXME}
 
 %global golicenses      LICENSE.md
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        An implementation of the Simple Authentication and Security Layer (SASL)
+Summary:        None
 
 # Upstream license specification: BSD-2-Clause
 License:        BSD

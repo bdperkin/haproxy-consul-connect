@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Fork of go-shlex from Google Code – not maintained.}
 
 %global golicenses      COPYING
 %global godocs          README.md
@@ -16,7 +16,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Fork of go-shlex from Google Code – not maintained
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

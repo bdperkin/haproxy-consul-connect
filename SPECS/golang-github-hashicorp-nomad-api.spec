@@ -4,7 +4,7 @@
 # https://github.com/hashicorp/nomad
 %global goipath         github.com/hashicorp/nomad/api
 %global forgeurl        https://github.com/hashicorp/nomad
-%global commit          5b828b9e4442684e378ef55850d85613c7f0d141
+%global commit          f3654593b630a88f135b628b81711bdbc574eafb
 
 %gometa
 

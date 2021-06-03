@@ -8,7 +8,7 @@ Version:                0.4.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+DEPRECATED: Please see https://github.com/docker/docker/tree/master/client.}
 
 %global golicenses      LICENSE client/transport/cancellable/LICENSE
 %global godocs          CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -16,7 +16,7 @@ Version:                0.4.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        DEPRECATED: Please see https://github.com/docker/docker/tree/master/client
 
 # Upstream license specification: Apache-2.0 and BSD-3-Clause
 License:        ASL 2.0 and BSD

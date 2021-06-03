@@ -9,14 +9,14 @@ Version:                2.3.0
 %gometa
 
 %global common_description %{expand:
-Package api provides clients for InfluxDB server APIs.}
+InfluxDB 2 Go Client.}
 
 %global golicenses      LICENSE
 %global godocs          README.md CHANGELOG.md domain/Readme.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package api provides clients for InfluxDB server APIs
+Summary:        InfluxDB 2 Go Client
 
 License:        MIT
 URL:            %{gourl}

@@ -9,7 +9,7 @@ Version:                0.20.0
 %gometa
 
 %global common_description %{expand:
-OpenTelemetry Go API and SDK.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          example VERSIONING.md CHANGELOG.md CONTRIBUTING.md\\\
@@ -24,7 +24,7 @@ OpenTelemetry Go API and SDK.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        OpenTelemetry Go API and SDK
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

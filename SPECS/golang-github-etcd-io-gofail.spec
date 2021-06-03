@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Failpoints for go.}
+# FIXME}
 
 %global golicenses      LICENSE NOTICE
 %global godocs          examples README.md code-of-conduct.md
@@ -16,7 +16,7 @@ Failpoints for go.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Failpoints for go
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

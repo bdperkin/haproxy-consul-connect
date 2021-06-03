@@ -8,8 +8,7 @@ Version:                0.2.19
 %gometa
 
 %global common_description %{expand:
-Go package containing implementations of efficient encoding, decoding, and
-validation APIs.}
+# FIXME}
 
 %global golicenses      LICENSE json/fuzz/LICENSE
 %global godocs          README.md benchmarks/results/easyjson+gzip.txt\\\
@@ -41,7 +40,7 @@ validation APIs.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Go package containing implementations of efficient encoding, decoding, and validation APIs
+Summary:        None
 
 # Upstream license specification: Apache-2.0 and MIT
 License:        ASL 2.0 and MIT

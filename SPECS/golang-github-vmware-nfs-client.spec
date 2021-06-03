@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-NFS client implementation for Golang.}
+# FIXME}
 
 %global golicenses      LICENSE_BSD-2.txt NOTICE.txt
 %global godocs          README.md example
@@ -16,7 +16,7 @@ NFS client implementation for Golang.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        NFS client implementation for Golang
+Summary:        None
 
 License:        # FIXME
 

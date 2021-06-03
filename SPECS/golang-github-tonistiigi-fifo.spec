@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Fifo pkg for Go.}
 
 %global golicenses      LICENSE
 %global godocs          readme.md
@@ -16,7 +16,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Fifo pkg for Go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

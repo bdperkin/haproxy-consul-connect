@@ -9,14 +9,12 @@ Version:                0.34.0
 %gometa
 
 %global common_description %{expand:
-Package metadata provides access to Google Compute Engine (GCE) metadata and
-API service accounts. This package is a wrapper around the GCE metadata
-service,}
+Google Cloud Client Libraries for Go.}
 
 %global golicenses      LICENSE license_test.go
-%global godocs          CODE_OF_CONDUCT.md AUTHORS CONTRIBUTING.md\\\
-                        CONTRIBUTORS README.md RELEASING.md CHANGES.md\\\
-                        issue_template.md old-news.md\\\
+%global godocs          CODE_OF_CONDUCT.md CONTRIBUTORS RELEASING.md\\\
+                        README.md old-news.md AUTHORS CHANGES.md\\\
+                        CONTRIBUTING.md issue_template.md\\\
                         bigquery/benchmarks/README.md examples\\\
                         httpreplay/cmd/httpr/README.md\\\
                         logging/apiv2/README.md profiler/mocks/README.md\\\
@@ -24,7 +22,7 @@ service,}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package metadata provides access to Google Compute Engine (GCE) metadata and API service accounts
+Summary:        Google Cloud Client Libraries for Go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -242,11 +240,10 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE license_test.go
-%doc CODE_OF_CONDUCT.md AUTHORS CONTRIBUTING.md CONTRIBUTORS README.md
-%doc RELEASING.md CHANGES.md issue_template.md old-news.md
-%doc bigquery/benchmarks/README.md examples httpreplay/cmd/httpr/README.md
-%doc logging/apiv2/README.md profiler/mocks/README.md pubsub/apiv1/README.md
-%doc vision/apiv1/README.md
+%doc CODE_OF_CONDUCT.md CONTRIBUTORS RELEASING.md README.md old-news.md AUTHORS
+%doc CHANGES.md CONTRIBUTING.md issue_template.md bigquery/benchmarks/README.md
+%doc examples httpreplay/cmd/httpr/README.md logging/apiv2/README.md
+%doc profiler/mocks/README.md pubsub/apiv1/README.md vision/apiv1/README.md
 %{_bindir}/*
 
 %gopkgfiles

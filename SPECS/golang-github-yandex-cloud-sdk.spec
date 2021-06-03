@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Yandex.Cloud Go SDK.}
+# FIXME}
 
 %global golicenses      LICENSE dial/LICENSE pkg/singleflight/LICENSE
 %global godocs          examples AUTHORS CONTRIBUTING.md README.md
@@ -16,7 +16,7 @@ Yandex.Cloud Go SDK.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Yandex.Cloud Go SDK
+Summary:        None
 
 # Upstream license specification: Apache-2.0 and MIT
 License:        ASL 2.0 and MIT

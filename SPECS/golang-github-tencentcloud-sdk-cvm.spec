@@ -12,7 +12,7 @@
 # FIXME}
 
 %global golicenses      LICENSE
-%global godocs          examples CHANGELOG.md README.md products.md
+%global godocs          examples README.md CHANGELOG.md products.md
 
 Name:           %{goname}
 Version:        0

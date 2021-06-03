@@ -108,3 +108,76 @@ github.com/sethgrid/multibar,,
 github.com/vmware/go-nfs-client,, 
 github.com/vmware/vic,, 
 k8s.io/apimachinery,, 
+github.com/sethgrid/curse,, 
+github.com/sean-/pager,, 
+github.com/tidwall/btree,, 
+github.com/tidwall/gjson,Package gjson provides searching for json strings,Package gjson provides searching for json strings. 
+github.com/tidwall/grect,, 
+github.com/tidwall/lotsa,, 
+github.com/tidwall/match,Package match provides a simple pattern matcher with unicode support,Package match provides a simple pattern matcher with unicode support. 
+github.com/tidwall/rtred,, 
+github.com/bmatcuk/doublestar,, 
+k8s.io/kubelet,, 
+github.com/go-pg/zerochecker,, 
+github.com/segmentio/encoding,, 
+github.com/tmthrgd/go-hex,Package hex is an efficient hexadecimal implementation for Golang,Package hex is an efficient hexadecimal implementation for Golang. 
+github.com/vmihailenco/bufpool,, 
+github.com/vmihailenco/msgpack/v5,, 
+go.opentelemetry.io/otel,package attribute provides key and value attributes,package attribute provides key and value attributes.  This package is currently in a pre-GA phase. Backwards incompatible changes 
+mellium.im/sasl,Package sasl implements the Simple Authentication and Security Layer (SASL) as defined by RFC 4422,Package sasl implements the Simple Authentication and Security Layer (SASL) as defined by RFC 4422.  Most users of this package will only need to create a Negotiator using 
+github.com/cheggaaa/pb,Simple console progress bars,Simple console progress bars 
+github.com/moby/spdystream,, 
+github.com/Sirupsen/logrus,, 
+github.com/stevvooe/resumable,Package resumable registers resumable versions of hash functions,Package resumable registers resumable versions of hash functions. Resumable varieties of hash functions are available via the standard crypto package. Support can be checked by type assertion against the resumable.Hash interface.  While one can use these sub-packages directly&#44; it makes more sense to 
+rsc.io/letsencrypt,Package letsencrypt is superseded by golang,Package letsencrypt is superseded by golang.org/x/crypto/acme/autocert. Use that instead.  Everything in this package has been deleted. 
+github.com/coreos/go-etcd,, 
+github.com/go-ldap/ldap,, 
+github.com/hashicorp/aws-sdk-go,Package aws contains support code for the various AWS clients in the github,Package aws contains support code for the various AWS clients in the github.com/hashicorp/aws-sdk-go/gen subpackages. 
+github.com/hashicorp/hcl,, 
+github.com/c2h5oh/datasize,, 
+github.com/benbjohnson/tmpl,, 
+github.com/foxcpp/go-mockdns,, 
+github.com/goreleaser/goreleaser,, 
+github.com/influxdata/changelog,, 
+github.com/influxdata/influxdb-client-go/v2,Package api provides clients for InfluxDB server APIs,Package api provides clients for InfluxDB server APIs. 
+go.opentelemetry.io/otel/example/namedtracer,, 
+go.opentelemetry.io/otel/exporters/trace/jaeger,, 
+go.opentelemetry.io/otel/metric,, 
+go.opentelemetry.io/otel/sdk/metric,, 
+go.opentelemetry.io/proto/otlp,Package v1 is a reverse proxy,Package v1 is a reverse proxy.  It translates gRPC into RESTful JSON APIs. 
+github.com/astaxie/beego,Package beego provide a MVC framework beego: an open-source&#44; high-performance&#44; modular&#44; full-stack web framework It is used for rapid development of RESTful APIs&#44; web apps and backend services in Go,Package beego provide a MVC framework beego: an open-source&#44; high-performance&#44; modular&#44; full-stack web framework  It is used for rapid development of RESTful APIs&#44; web apps and backend services in Go. 
+go.opencensus.io,Package exporter contains a log exporter that supports exporting OpenCensus metrics and spans to a logging framework,Package exporter contains a log exporter that supports exporting OpenCensus metrics and spans to a logging framework. 
+go.opentelemetry.io/contrib,Package contrib contains common values used across all instrumentation&#44; exporter&#44; and detector contributions,Package contrib contains common values used across all instrumentation&#44; exporter&#44; and detector contributions.  This package provides all of its functionality through its 
+go.opentelemetry.io/contrib/exporters/metric/cortex,, 
+go.opentelemetry.io/contrib/exporters/metric/cortex/utils,, 
+go.opentelemetry.io/contrib/exporters/metric/dogstatsd,, 
+go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama,Package otelsarama instruments the github,Package otelsarama instruments the github.com/Shopify/sarama package.  The consumer's span will be created as a child of the producer's span. 
+go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama/example,, 
+go.opentelemetry.io/contrib/instrumentation/github.com/astaxie/beego/otelbeego,Package otelbeego instruments the github,Package otelbeego instruments the github.com/astaxie/beego package. 
+go.opentelemetry.io/contrib/instrumentation/github.com/aws/aws-sdk-go-v2/otelaws,, 
+go.opentelemetry.io/contrib/instrumentation/github.com/bradfitz/gomemcache/memcache/otelmemcache,Package otelmemcache instruments github,Package otelmemcache instruments github.com/bradfitz/gomemcache/memcache.  This instrumentation provided is tracing instrumentation for the memcached 
+go.opentelemetry.io/contrib/instrumentation/github.com/emicklei/go-restful/otelrestful,Package otelrestful instruments github,Package otelrestful instruments github.com/emicklei/go-restful.  Instrumentation is provided to trace the emicklei/go-restful/v3 
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin,Package otelgin instruments the github,Package otelgin instruments the github.com/gin-gonic/gin package.  Currently there are two ways the code can be instrumented. One is 
+go.opentelemetry.io/contrib/instrumentation/github.com/go-kit/kit/otelkit,Package otelkit instruments the github,Package otelkit instruments the github.com/go-kit/kit package.  Compared to other instrumentation libraries provided by go-kit itself&#44; 
+go.opentelemetry.io/contrib/instrumentation/github.com/gocql/gocql/otelgocql,Package otelgocql instruments the github,Package otelgocql instruments the github.com/gocql/gocql package. 
+go.opentelemetry.io/contrib/instrumentation/github.com/gorilla/mux/otelmux,Package otelmux instruments the github,Package otelmux instruments the github.com/gorilla/mux package.  Currently only the routing of a received message can be instrumented. To do 
+go.opentelemetry.io/contrib/instrumentation/github.com/labstack/echo/otelecho,Package otelecho instruments the labstack/echo package (https://github,Package otelecho instruments the labstack/echo package (https://github.com/labstack/echo).  Currently only the routing of a received message can be instrumented. To do 
+go.opentelemetry.io/contrib/instrumentation/gopkg.in/macaron.v1/otelmacaron,Package otelmacaron instruments gopkg,Package otelmacaron instruments gopkg.in/macaron.v1.  Currently only the routing of a received message can be instrumented. To do 
+go.opentelemetry.io/contrib/instrumentation/host,Package host provides the conventional host metric instruments specified by OpenTelemetry,Package host provides the conventional host metric instruments specified by OpenTelemetry. Host metric events are sometimes collected through the OpenTelemetry Collector "hostmetrics" receiver running as an agent; this instrumentation is an alternative for processes that want to record the same information without an agent.  The metric events produced are listed here with attribute dimensions. 
+go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace,, 
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp,Package otelhttp provides an http,Package otelhttp provides an http.Handler and functions that are intended to be used to add tracing by wrapping existing handlers (with Handler) and routes WithRouteTag. 
+go.opentelemetry.io/contrib/instrumentation/runtime,package runtime implements the conventional runtime metrics specified by OpenTelemetry,package runtime implements the conventional runtime metrics specified by OpenTelemetry.  The metric events produced are: 
+go.opentelemetry.io/contrib/propagators,This package implements the B3 propagator specification as defined at https://github,This package implements the B3 propagator specification as defined at https://github.com/openzipkin/b3-propagation 
+github.com/docker/engine-api,, 
+github.com/docker/notary,Package client implements everything required for interacting with a Notary repository,Package client implements everything required for interacting with a Notary repository. 
+github.com/flynn-archive/go-shlex,, 
+github.com/opencontainers/runc,, 
+github.com/opencontainers/specs,, 
+github.com/tonistiigi/fifo,, 
+google.golang.org/cloud,Package metadata provides access to Google Compute Engine (GCE) metadata and API service accounts,Package metadata provides access to Google Compute Engine (GCE) metadata and API service accounts.  This package is a wrapper around the GCE metadata service&#44; 
+google.golang.org/grpc,Package transport defines and implements message oriented communication channel to complete various transactions (e,Package transport defines and implements message oriented communication channel to complete various transactions (e.g.&#44; an RPC). It is meant for grpc-internal usage and is not intended to be imported directly by users. 
+gopkg.in/fsnotify.v1,Package fsnotify provides a platform-independent interface for file system notifications,Package fsnotify provides a platform-independent interface for file system notifications. 
+github.com/kisielk/errcheck,Package errcheck is the library used to implement the errcheck command-line tool,Package errcheck is the library used to implement the errcheck command-line tool.  Note: The API of this package has not been finalized and may change at any point. 
+github.com/kisielk/gotool,Package gotool contains utility functions used to implement the standard "cmd/go" tool&#44; provided as a convenience to developers who want to write tools with similar semantics,Package gotool contains utility functions used to implement the standard "cmd/go" tool&#44; provided as a convenience to developers who want to write tools with similar semantics. 
+github.com/erikstmartin/go-testdb,, 
+golang.org/x/sync,Package errgroup provides synchronization&#44; error propagation&#44; and Context cancelation for groups of goroutines working on subtasks of a common task,Package errgroup provides synchronization&#44; error propagation&#44; and Context cancelation for groups of goroutines working on subtasks of a common task. 

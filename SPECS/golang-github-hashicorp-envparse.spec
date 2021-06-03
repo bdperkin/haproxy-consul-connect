@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Minimal environment variable parser for Go.}
+# FIXME}
 
 %global golicenses      LICENSE NOTICES.txt
 %global godocs          README.md
@@ -16,7 +16,7 @@ Minimal environment variable parser for Go.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Minimal environment variable parser for Go
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

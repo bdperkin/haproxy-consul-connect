@@ -9,14 +9,14 @@ Version:                0.2.9
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+An open and reliable container runtime.}
 
 %global golicenses      NOTICE LICENSE.code LICENSE.docs
 %global godocs          docs CONTRIBUTING.md README.md example
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        An open and reliable container runtime
 
 # Upstream license specification: Apache-2.0 and CC-BY-SA-4.0
 License:        ASL 2.0 and CC-BY-SA-4.0

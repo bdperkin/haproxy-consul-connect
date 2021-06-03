@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-An efficient assembly hexadecimal implementation for Golang.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@ An efficient assembly hexadecimal implementation for Golang.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        An efficient assembly hexadecimal implementation for Golang
+Summary:        None
 
 License:        Sleepycat
 URL:            %{gourl}

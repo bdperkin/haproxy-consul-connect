@@ -8,14 +8,14 @@ Version:                1.5.3
 %gometa
 
 %global common_description %{expand:
-Package for downloading things from a string URL using a variety of protocols.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package for downloading things from a string URL using a variety of protocols
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

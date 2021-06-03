@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Sync.Once with Reset().}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@ Sync.Once with Reset().}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Sync.Once with Reset()
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

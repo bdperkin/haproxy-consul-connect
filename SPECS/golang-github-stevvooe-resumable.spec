@@ -8,10 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Package resumable registers resumable versions of hash functions. Resumable
-varieties of hash functions are available via the standard crypto package.
-Support can be checked by type assertion against the resumable.Hash interface.
-While one can use these sub-packages directly, it makes more sense to}
+A Subset of the Go `crypto` Package with a Resumable Hash Interface.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -19,7 +16,7 @@ While one can use these sub-packages directly, it makes more sense to}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Package resumable registers resumable versions of hash functions
+Summary:        A Subset of the Go `crypto` Package with a Resumable Hash Interface
 
 # Upstream license specification: BSD-3-Clause
 License:        BSD

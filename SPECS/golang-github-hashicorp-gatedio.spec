@@ -8,14 +8,14 @@ Version:                0.5.0
 %gometa
 
 %global common_description %{expand:
-Provides a unified interface for wrapping io objects in a mutex.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Provides a unified interface for wrapping io objects in a mutex
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0
