@@ -7,8 +7,8 @@ for IPATH in $(cat packages.txt); do
     echo "========== BEGIN ${IPATH} =========="
     echo "IPATH: ${IPATH}"
 
-    NAME=$(basename $(echo "${IPATH}" | sed -e 's/\/v[0-9]\+$//g'))
-    echo "NAME: ${NAME}"
+    INAME=$(basename $(echo "${IPATH}" | sed -e 's/\/v[0-9]\+$//g'))
+    echo "INAME: ${INAME}"
 
     PKGGODEVFILE=$(mktemp)
     URL="https://pkg.go.dev/${IPATH}"
@@ -16,17 +16,20 @@ for IPATH in $(cat packages.txt); do
 
     curl -s ${URL} > ${PKGGODEVFILE}
     FPATH=$(grep -A 7 Repository ${PKGGODEVFILE} | grep -P -o '<a href=".*" ' | cut -d\" -f2 | grep -P -o "https:\/\/.*")
-    if [ "${FPATH}" == "" ]; then
-        echo "Cannot find FPATH"
-        continue
-    fi
-    echo "FPATH: ${FPATH}"
-
     DVERSION=$(grep -P 'data-version=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2 | sed -e 's/\+incompatible//g')
     DMODPATH=$(grep -P 'data-mpath=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2)
     DPKGPATH=$(grep -P 'data-ppath=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2)
     DTYPE=$(grep -P 'data-pagetype=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2)
-    for D in DVERSION DMODPATH DPKGPATH DTYPE; do
+    if [ "${FPATH}" == "" ]; then
+        echo "Cannot find FPATH"
+        FPATH="https://${IPATH}"
+        DMODPATH=${IPATH}
+        DPKGPATH=${IPATH}
+    fi
+    FNAME=$(basename $(echo "${FPATH}" | sed -e 's/\/v[0-9]\+$//g'))
+    MNAME=$(basename $(echo "${DMODPATH}" | sed -e 's/\/v[0-9]\+$//g'))
+    PNAME=$(basename $(echo "${DPKGPATH}" | sed -e 's/\/v[0-9]\+$//g'))
+    for D in FPATH FNAME DVERSION DMODPATH MNAME DPKGPATH PNAME DTYPE; do
         echo "${D}: ${!D}"
     done
 
@@ -50,51 +53,100 @@ for IPATH in $(cat packages.txt); do
 
     GITLSFILE=$(mktemp)
     git ls-remote ${FPATH}.git > ${GITLSFILE}
+    if [ $? -ne 0 ]; then
+        echo "Problem retrieving remote list of ${FPATH}.git"
+        continue
+    fi
 
-    TAG="${NAME}/${DVERSION}"
+    TAG="${INAME}/${DVERSION}"
     LINE=$(grep -P ".*\srefs/tags/${TAG}$" ${GITLSFILE})
     if [ $? -ne 0 ]; then
         LINE=$(grep -P ".*\srefs/heads/${TAG}$" ${GITLSFILE})
     fi
     WORDS=$(echo ${LINE} | wc -w)
     if [ ${WORDS} -lt 2 ]; then
-        TAG="${DVERSION}"
+        TAG="${FNAME}/${DVERSION}"
         LINE=$(grep -P ".*\srefs/tags/${TAG}$" ${GITLSFILE})
         if [ $? -ne 0 ]; then
             LINE=$(grep -P ".*\srefs/heads/${TAG}$" ${GITLSFILE})
         fi
         WORDS=$(echo ${LINE} | wc -w)
         if [ ${WORDS} -lt 2 ]; then
-            echo "Cannot find ${DVERSION} tag:"
-            cat ${GITLSFILE}
-            echo "${DVERSION}" | grep -P "^v0\.0\.0\-\d{14}\-[0-9a-f]{12}$"
-            if [ $? -eq 0 ]; then
-                LINE=$(grep -P ".*\sHEAD$" ${GITLSFILE})
+            TAG="${MNAME}/${DVERSION}"
+            LINE=$(grep -P ".*\srefs/tags/${TAG}$" ${GITLSFILE})
+            if [ $? -ne 0 ]; then
+                LINE=$(grep -P ".*\srefs/heads/${TAG}$" ${GITLSFILE})
+            fi
+            WORDS=$(echo ${LINE} | wc -w)
+            if [ ${WORDS} -lt 2 ]; then
+                TAG="${PNAME}/${DVERSION}"
+                LINE=$(grep -P ".*\srefs/tags/${TAG}$" ${GITLSFILE})
+                if [ $? -ne 0 ]; then
+                    LINE=$(grep -P ".*\srefs/heads/${TAG}$" ${GITLSFILE})
+                fi
                 WORDS=$(echo ${LINE} | wc -w)
                 if [ ${WORDS} -lt 2 ]; then
-                    echo "Cannot find HEAD"
-                    exit 1
+                    TAG="${DVERSION}"
+                    LINE=$(grep -P ".*\srefs/tags/${TAG}$" ${GITLSFILE})
+                    if [ $? -ne 0 ]; then
+                        LINE=$(grep -P ".*\srefs/heads/${TAG}$" ${GITLSFILE})
+                    fi
+                    WORDS=$(echo ${LINE} | wc -w)
+                    if [ ${WORDS} -lt 2 ]; then
+                        echo "Cannot find ${DVERSION} tag:"
+                        cat ${GITLSFILE}
+                        echo "${DVERSION}" | grep -P "^v0\.0\.0\-\d{14}\-[0-9a-f]{12}$"
+                        if [ $? -eq 0 ]; then
+                            LINE=$(grep -P ".*\sHEAD$" ${GITLSFILE})
+                            WORDS=$(echo ${LINE} | wc -w)
+                            if [ ${WORDS} -lt 2 ]; then
+                                echo "Cannot find HEAD"
+                                exit 1
+                            elif [ ${WORDS} -gt 2 ]; then
+                                echo "Found too many entries:"
+                                echo ${WORDS}
+                                exit 1
+                            else
+                                VERSION=""
+                                TAG=""
+                                COMMIT=$(echo ${LINE} | awk '{print $1}')
+                            fi
+                        else
+                            echo "Invalid VERSION: ${DVERSION}"
+                            echo "Invalid TAG: ${TAG}"
+                            exit 1
+                        fi
+                    elif [ ${WORDS} -gt 2 ]; then
+                        echo "Found too many entries:"
+                        echo ${WORDS}
+                        exit 1
+                    else
+                        TAG=""
+                        COMMIT=""
+                    fi
                 elif [ ${WORDS} -gt 2 ]; then
                     echo "Found too many entries:"
                     echo ${WORDS}
                     exit 1
                 else
                     VERSION=""
-                    TAG=""
                     COMMIT=$(echo ${LINE} | awk '{print $1}')
                 fi
-            else
-                echo "Invalid VERSION: ${DVERSION}"
-                echo "Invalid TAG: ${TAG}"
+            elif [ ${WORDS} -gt 2 ]; then
+                echo "Found too many entries:"
+                echo ${WORDS}
                 exit 1
+            else
+                VERSION=""
+                COMMIT=$(echo ${LINE} | awk '{print $1}')
             fi
         elif [ ${WORDS} -gt 2 ]; then
             echo "Found too many entries:"
             echo ${WORDS}
             exit 1
         else
-            TAG=""
-            COMMIT=""
+            VERSION=""
+            COMMIT=$(echo ${LINE} | awk '{print $1}')
         fi
     elif [ ${WORDS} -gt 2 ]; then
         echo "Found too many entries:"
