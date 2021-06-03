@@ -1,0 +1,99 @@
+#! /bin/bash
+
+for SPEC in $@; do
+    echo "Reading ${SPEC}"
+
+    if [ ! -f ${SPEC} ]; then
+        echo "Cannot find ${SPEC}"
+        exit 1
+    fi
+
+    TMPFILE1=$(mktemp)
+    TMPFILE2=$(mktemp)
+    TMPFILE3=$(mktemp)
+    cp ${SPEC} ${TMPFILE1}
+
+    LICS=$(grep -E "^%license " ${SPEC} | sed -e 's/^%license //g' | tr '\n' ' ')
+    DOCS=$(grep -E "^%doc " ${SPEC} | sed -e 's/^%doc //g' | tr '\n' ' ')
+
+    LINE="%global golicenses     "
+    for LIC in ${LICS}; do
+    NEWLIC=${LIC}
+        echo "${LIC}" | grep -q '/'
+        if [ $? -eq 0 ]; then
+            ESCLIC=$(echo "${LIC}" | sed -e 's/\//\\\//g')
+            DIR=$(dirname ${LIC})
+            FLAT=$(echo "${DIR}" | sed -e 's/\//\-/g')
+            BASE=$(basename ${LIC})
+            NEWLIC="${BASE}-${FLAT}"
+            echo "${BASE}" | grep -q '\.'
+            if [ $? -eq 0 ]; then
+                NAME=$(echo "${BASE}" | rev | cut -d\. -f2- | rev)
+                EXT=$(echo "${BASE}" | rev | cut -d\. -f1 | rev)
+                NEWLIC="${NAME}-${FLAT}.${EXT}"
+            fi
+            sed -i -e "s/${ESCLIC}/${NEWLIC}/g" ${TMPFILE1}
+            if [ $? -ne 0 ]; then
+                exit 1
+            fi
+            echo "mv ${LIC} ${NEWLIC}" >> ${TMPFILE2}
+        fi
+    LEN1=$(echo "${LINE}" | wc -c)
+    LEN2=$(echo "${NEWLIC}" | wc -c)
+    let LINELEN=${LEN1}+${LEN2}
+    if [ ${LINELEN} -gt 77 ]; then
+        echo "${LINE}\\\\\\" >> ${TMPFILE3}
+        LINE="                        ${NEWLIC}"
+    else
+        LINE="${LINE} ${NEWLIC}"
+    fi
+    done
+    echo "${LINE}" >> ${TMPFILE3}
+
+    LINE="%global godocs         "
+    for DOC in ${DOCS}; do
+    NEWDOC=${DOC}
+        echo "${DOC}" | grep -q '/'
+        if [ $? -eq 0 ]; then
+            ESCDOC=$(echo "${DOC}" | sed -e 's/\//\\\//g')
+            DIR=$(dirname ${DOC})
+            FLAT=$(echo "${DIR}" | sed -e 's/\//\-/g')
+            BASE=$(basename ${DOC})
+            NEWDOC="${BASE}-${FLAT}"
+            echo "${BASE}" | grep -q '\.'
+            if [ $? -eq 0 ]; then
+                NAME=$(echo "${BASE}" | rev | cut -d\. -f2- | rev)
+                EXT=$(echo "${BASE}" | rev | cut -d\. -f1 | rev)
+                NEWDOC="${NAME}-${FLAT}.${EXT}"
+            fi
+            sed -i -e "s/${ESCDOC}/${NEWDOC}/g" ${TMPFILE1}
+            if [ $? -ne 0 ]; then
+                exit 1
+            fi
+            echo "mv ${DOC} ${NEWDOC}" >> ${TMPFILE2}
+        fi
+    LEN1=$(echo "${LINE}" | wc -c)
+    LEN2=$(echo "${NEWDOC}" | wc -c)
+    let LINELEN=${LEN1}+${LEN2}
+    if [ ${LINELEN} -gt 77 ]; then
+        echo "${LINE}\\\\\\" >> ${TMPFILE3}
+        LINE="                        ${NEWDOC}"
+    else
+        LINE="${LINE} ${NEWDOC}"
+    fi
+    done
+    echo "${LINE}" >> ${TMPFILE3}
+
+    echo "" >> ${TMPFILE3}
+
+    grep -B 10000 '^%global golicenses ' ${TMPFILE1} | grep -v '^%global golicenses ' > ${SPEC}
+    cat ${TMPFILE3} >> ${SPEC}
+    grep -B 10000 '^%goprep$' ${TMPFILE1} | grep -A 10000 '^Name: ' >> ${SPEC}
+    cat ${TMPFILE2} >> ${SPEC}
+    grep -A 10000 '^%goprep$' ${TMPFILE1} | grep -v '^%goprep$' >> ${SPEC}
+
+    rm ${TMPFILE1}
+    rm ${TMPFILE2}
+    rm ${TMPFILE3}
+
+done
