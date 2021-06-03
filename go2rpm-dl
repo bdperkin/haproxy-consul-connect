@@ -108,15 +108,30 @@ for SPEC in $@; do
         URL=$(echo "${URL}" | sed -e 's/\~/\-/g')
         echo "Trying ${URL} instead"
         echo "Getting ${URL}"
-        
+
         wget -O ${SRCFILE} "${URL}"
         if [ $? -ne 0 ]; then
-            echo "Problem downloading ${URL} to ${SRCFILE}"
-            exit 1
+            if [ "${TAG}" != "" ]; then
+                SRCFILE="${TAGSTR}.tar.gz"
+                DSTFILE="${TAGSTR}.tar.gz"
+                URL="${IPATHURL}/archive/${TAG}.tar.gz"
+                URL=$(echo "${URL}" | sed -e 's/\~/\-/g')
+                echo "Trying ${URL} instead"
+                echo "Getting ${URL}"
+
+                wget -O ${SRCFILE} "${URL}"
+                if [ $? -ne 0 ]; then
+                    echo "Problem downloading ${URL} to ${SRCFILE}"
+                    exit 1
+                fi
+            else
+                echo "Problem downloading ${URL} to ${SRCFILE}"
+                exit 1
+            fi
         fi
     fi
 
-    if [ "${FORGE}" != "${PROJECT}" ]; then
+    if [ "${FORGE}" != "${PROJECT}" -a "${SRCFILE}" != "${DSTFILE}" ]; then
         cp -a ${SRCFILE} ${DSTFILE}
         if [ $? -ne 0 ]; then
             echo "Problem copying from ${SRCFILE} to ${DSTFILE}"
