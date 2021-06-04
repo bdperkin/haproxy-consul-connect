@@ -8,15 +8,17 @@ Version:                3.2.2
 
 %gometa
 
+%global goaltipaths     github.com/cenkalti/backoff
+
 %global common_description %{expand:
-# FIXME}
+⏱ The exponential backoff algorithm in Go.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        ⏱ The exponential backoff algorithm in Go
 
 License:        MIT
 URL:            %{gourl}

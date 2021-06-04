@@ -8,15 +8,17 @@ Version:                2.3.0
 
 %gometa
 
+%global goaltipaths     github.com/okta/okta-sdk-golang
+
 %global common_description %{expand:
-# FIXME}
+Okta-sdk-golang.}
 
 %global golicenses      LICENSE.md NOTICE.md
 %global godocs          CHANGELOG.md CONTRIBUTING.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Okta-sdk-golang
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

@@ -8,14 +8,16 @@ Version:                1.0.3
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+The archive utilities manage the internal format of a snapshot, which is a tar
+file with the following contents: meta.json - JSON-encoded snapshot metadata
+from Raft}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        The archive utilities manage the internal format of a snapshot, which is a tar file with the following contents: meta
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

@@ -4,18 +4,23 @@
 # https://github.com/hashicorp/nomad
 %global goipath         github.com/hashicorp/nomad/api
 %global forgeurl        https://github.com/hashicorp/nomad
-%global commit          0be58d72f4ec8db6a5671b8f357afb190dc8e3c4
+%global commit          24e963f26c9b41da27d8f7e1c2d7c005d6445d47
 
 %gometa
 
+%global goaltipaths     github.com/hashicorp/nomad
+
 %global common_description %{expand:
-# FIXME}
+Nomad is an easy-to-use, flexible, and performant workload orchestrator that
+can deploy a mix of microservice, batch, containerized, and non-containerized
+applications. Nomad is easy to operate and scale and has native Consul and
+Vault integrations.}
 
 %global golicenses      LICENSE license-command.go license_get-command.go\\\
                         license_get_test-command.go\\\
                         LICENSE-helper-exptime.md LICENSE-website.md\\\
                         license-website-content-api-docs-operator.mdx
-%global godocs          README.md CHANGELOG.md\\\
+%global godocs          CHANGELOG.md README.md\\\
                         test-client-allocdir-input.txt\\\
                         README-contributing.md\\\
                         checklist-command-contributing.md\\\
@@ -95,7 +100,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Nomad is an easy-to-use, flexible, and performant workload orchestrator that can deploy a mix of microservice, batch, containerized, and non-containerized applications. Nomad is easy to operate and scale and has native Consul and Vault integrations
 
 # Upstream license specification: BSD-3-Clause and MPL-2.0
 License:        BSD and MPLv2.0
@@ -386,7 +391,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %license LICENSE license-command.go license_get-command.go
 %license license_get_test-command.go LICENSE-helper-exptime.md
 %license LICENSE-website.md license-website-content-api-docs-operator.mdx
-%doc README.md CHANGELOG.md test-client-allocdir-input.txt
+%doc CHANGELOG.md README.md test-client-allocdir-input.txt
 %doc README-contributing.md checklist-command-contributing.md
 %doc checklist-jobspec-contributing.md checklist-rpc-endpoint-contributing.md
 %doc golang-contributing.md issue-labels-contributing.md README-demo-csi.md

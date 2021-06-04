@@ -8,8 +8,10 @@ Version:                1.31.1
 
 %gometa
 
+%global goaltipaths     github.com/DataDog/dd-trace-go
+
 %global common_description %{expand:
-# FIXME}
+A Go tracing package for Datadog APM.}
 
 %global golicenses      LICENSE LICENSE-3rdparty.csv LICENSE-APACHE\\\
                         LICENSE-BSD3 NOTICE
@@ -18,7 +20,7 @@ Version:                1.31.1
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        A Go tracing package for Datadog APM
 
 # Upstream license specification: Apache-2.0 and BSD-3-Clause
 License:        ASL 2.0 and BSD

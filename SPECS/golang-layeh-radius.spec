@@ -8,8 +8,10 @@
 
 %gometa
 
+%global goaltipaths     github.com/layeh/radius
+
 %global common_description %{expand:
-# FIXME}
+A Go (golang) RADIUS client and server implementation.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -17,7 +19,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        A Go (golang) RADIUS client and server implementation
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0
