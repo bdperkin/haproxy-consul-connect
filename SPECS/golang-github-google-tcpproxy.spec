@@ -8,7 +8,8 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Proxy TCP connections based on static rules, HTTP Host headers, and SNI server
+names (Go package or binary).}
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md README.md README-cmd-tlsrouter.md
@@ -16,7 +17,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Proxy TCP connections based on static rules, HTTP Host headers, and SNI server names (Go package or binary)
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

@@ -8,14 +8,15 @@ Version:                1.2.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Go library for addressing and reading/writing a specific value within any Go
+structure using a string syntax.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Go library for addressing and reading/writing a specific value within any Go structure using a string syntax
 
 License:        MIT
 URL:            %{gourl}
