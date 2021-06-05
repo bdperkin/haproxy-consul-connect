@@ -1,2 +1,0 @@
-#IPATH,FORGE,SUBDIR,ALTIPATHS,VERSION,TAG,COMMIT,SRCTGZ,DSTTGZ,TYPE
-github.com/docker/containerd,https://github.com/containerd/containerd,,,0.2.9,,,,,package

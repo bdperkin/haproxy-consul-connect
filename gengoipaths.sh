@@ -20,7 +20,15 @@ for MOD in $(cat packages.txt); do
 
     PKGGODEVFILE=$(mktemp)
     PKGGODEVURL="https://pkg.go.dev/${ROOTPATH}"
-    curl -s "${PKGGODEVURL}" > ${PKGGODEVFILE}
+    CURLRET=1
+    while [ ${CURLRET} -ne 0 ]; do
+        curl -f -s "${PKGGODEVURL}" > ${PKGGODEVFILE}
+        CURLRET=$?
+        if [ ${CURLRET} -ne 0 ]; then
+            PKGGODEVURL=$(dirname ${PKGGODEVURL})
+            REPOURL=$(dirname ${REPOURL})
+        fi
+    done
 
     FORGE=$(grep -A 7 Repository ${PKGGODEVFILE} | grep -P -o '<a href=".*" ' | cut -d\" -f2 | grep -P -o "https:\/\/.*")
     DVERSION=$(grep -P 'data-version=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2 | sed -e 's/\+incompatible//g')
@@ -32,6 +40,13 @@ for MOD in $(cat packages.txt); do
     SUBDIR=$(echo ${DPKGPATH} | sed -e "s/^${ESCDMODPATH}//g" | sed -e 's/^\///g')
     FORGEALTIPATH=$(echo ${FORGE} | sed -e 's/^http:\/\///g' | sed -e 's/^https:\/\///g')
     REPOALTIPATH=$(echo ${REPOURL} | sed -e 's/^http:\/\///g' | sed -e 's/^https:\/\///g')
+    if [ "${DVERSION}" == "" ]; then
+        DVERSION="HEAD"
+    fi
+    grep -q "^${DMODPATH}$" packages.txt
+    if [ $? -ne 0 ]; then
+        echo "${DMODPATH}" >> packages.txt
+    fi
     VERSION=$(basename ${DVERSION} | sed -e 's/^v//g')
     TAG=${DVERSION}
     IPATH=${DPKGPATH}
@@ -48,7 +63,7 @@ for MOD in $(cat packages.txt); do
 
     GITFILE=$(mktemp)
     git ls-remote ${FORGE} > ${GITFILE}
-    GITREFS=$(grep "/${DVERSION}$" ${GITFILE})
+    GITREFS=$(grep -P "\trefs/tags/${DVERSION}$" ${GITFILE})
     GITENTS=$(echo ${GITREFS} | wc -w)
     if [ ${GITENTS} -lt 2 ]; then
         GITREFS=$(grep -P "\tHEAD$" ${GITFILE})
@@ -75,16 +90,19 @@ for MOD in $(cat packages.txt); do
         COMMIT=""
     fi
 
-    LINE="${IPATH},${FORGE},${SUBDIR},${ALTIPATHS},${VERSION},${TAG},${COMMIT},${SRCTGZ},${DSTTGZ},${TYPE}"
-    echo -n "ENTRY: "
-    echo "${LINE}" | tee -a goipaths.txt
+    grep -q -P "^.*,${FORGE},.*" goipaths.txt
+    if [ $? -ne 0 -a "${SUBDIR}" == "" ]; then
+        LINE="${IPATH},${FORGE},${SUBDIR},${ALTIPATHS},${VERSION},${TAG},${COMMIT},${SRCTGZ},${DSTTGZ},${TYPE}"
+        echo -n "ENTRY: "
+        echo "${LINE}" | tee -a goipaths.txt
 
-    DESCRIPTION=$(cat ${PKGGODEVFILE} | grep -A 1000 'Documentation-overviewHeader' | grep -m 1 -B 100 '^</p>'  | grep -A 100 '^<p>' | tidy 2>/dev/null | lynx -dump -nolist -stdin | sed -e 's/^   //g' | tr '\n' ' ' | sed -e 's/,/\&#44;/g')
-    SUMMARY=$(echo ${DESCRIPTION} | cut -d\. -f1)
-    DOCS="${IPATH},${SUMMARY},${DESCRIPTION}"
-    echo -n "DOCS: "
-    echo "${DOCS}" | tee -a goipaths-docs.txt
+        DESCRIPTION=$(cat ${PKGGODEVFILE} | grep -A 1000 'Documentation-overviewHeader' | grep -m 1 -B 100 '^</p>'  | grep -A 100 '^<p>' | tidy 2>/dev/null | lynx -dump -nolist -stdin | sed -e 's/^   //g' | tr '\n' ' ' | sed -e 's/,/\&#44;/g')
+        SUMMARY=$(echo ${DESCRIPTION} | cut -d\. -f1)
+        DOCS="${IPATH},${SUMMARY},${DESCRIPTION}"
+        echo -n "DOCS: "
+        echo "${DOCS}" | tee -a goipaths-docs.txt
+    fi
 
     rm ${PKGGODEVFILE} ${GITFILE}
-    echo "=========== END ${IMPORT} ==========="
+    echo "=========== END ${MOD} ==========="
 done

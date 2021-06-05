@@ -2,49 +2,6 @@
 github.com/haproxytech/haproxy-consul-connect,, 
 github.com/criteo/haproxy-spoe-go,, 
 github.com/facebookgo/freeport,Package freeport provides an API to find a free port to bind to,Package freeport provides an API to find a free port to bind to. 
-github.com/hashicorp/consul,, 
 gopkg.in/d4l3k/messagediff.v1,, 
 zvelo.io/ttlru,Package ttlru provides a simple&#44; goroutine safe&#44; cache with a fixed number of entries,Package ttlru provides a simple&#44; goroutine safe&#44; cache with a fixed number of entries. Each entry has a per-cache defined TTL. This TTL is reset on both modification and access to the value. As a result&#44; if the cache is full&#44; and no items have expired&#44; when adding a new item&#44; the item with the soonest expiration will be evicted.  It is based on the LRU implementation in golang-lru: 
-github.com/coredns/coredns,Package dnsutil contains DNS related helper functions,Package dnsutil contains DNS related helper functions. 
-github.com/google/tcpproxy,Package tcpproxy lets users build TCP proxies&#44; optionally making routing decisions based on HTTP/1 Host headers and the SNI hostname in TLS connections,Package tcpproxy lets users build TCP proxies&#44; optionally making routing decisions based on HTTP/1 Host headers and the SNI hostname in TLS connections.  Typical usage: 
-github.com/hashicorp/go-bexpr,bexpr is an implementation of a generic boolean expression evaluator,bexpr is an implementation of a generic boolean expression evaluator. The general goal is to be able to evaluate some expression against some arbitrary data and get back a boolean of whether or not the data was matched by the expression 
-github.com/hashicorp/go-connlimit,, 
-github.com/hashicorp/go-discover,Package discover provides functions to get metadata for different cloud environments,Package discover provides functions to get metadata for different cloud environments. 
-github.com/hashicorp/go-raftchunking,, 
-github.com/hashicorp/raft-autopilot,This code was taken from the same implementation in a branch from Consul and then had the package updated and the mutex type unexported,This code was taken from the same implementation in a branch from Consul and then had the package updated and the mutex type unexported. 
-github.com/hashicorp/vault/api,, 
-github.com/mitchellh/pointerstructure,Package pointerstructure provides functions for identifying a specific value within any Go structure using a string syntax,Package pointerstructure provides functions for identifying a specific value within any Go structure using a string syntax.  The syntax used is based on JSON Pointer (RFC 6901). 
-github.com/rboyer/safeio,Package safeio provides functions to perform atomic&#44; fsync-safe disk operations,Package safeio provides functions to perform atomic&#44; fsync-safe disk operations. 
-github.com/hashicorp/vic,, 
-github.com/joyent/triton-go,, 
-github.com/nicolai86/scaleway-sdk,, 
-github.com/packethost/packngo,Package packngo implements the Equinix Metal API documented at https://metal,Package packngo implements the Equinix Metal API documented at https://metal.equinix.com/developers/api. 
-github.com/softlayer/softlayer-go,See reference at https://sldn,See reference at https://sldn.softlayer.com/article/object-filters. Examples in the README.md file and in the examples directory. 
-github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common,, 
-github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm,, 
-github.com/apparentlymart/go-cidr,Package cidr is a collection of assorted utilities for computing network and host addresses within network ranges,Package cidr is a collection of assorted utilities for computing network and host addresses within network ranges.  It expects a CIDR-type address structure where addresses are divided into 
-github.com/coredns/caddy,Package caddy implements the Caddy server manager,Package caddy implements the Caddy server manager.  To use this package: 
-github.com/dnstap/golang-dnstap,, 
-github.com/farsightsec/golang-framestream,, 
-github.com/infobloxopen/go-trees,Package iptree implements radix tree data structure for IPv4 and IPv6 networks,Package iptree implements radix tree data structure for IPv4 and IPv6 networks. 
-go.etcd.io/etcd/api/v3,, 
-go.etcd.io/etcd/client/v3,Package clientv3 implements the official Go etcd client for v3,Package clientv3 implements the official Go etcd client for v3.  Create client using `clientv3.New`: 
-gopkg.in/DataDog/dd-trace-go.v1,Package ext contains a set of Datadog-specific constants,Package ext contains a set of Datadog-specific constants. Most of them are used for setting span metadata. 
-k8s.io/api,, 
-github.com/Sectorbob/mlab-ns2,The digest package provides an implementation of http,The digest package provides an implementation of http.RoundTripper that takes care of HTTP Digest Authentication (http://www.ietf.org/rfc/rfc2617.txt). This only implements the MD5 and "auth" portions of the RFC&#44; but that covers the majority of avalible server side implementations including apache web server.  Example usage: 
-github.com/aerospike/aerospike-client-go,Package aerospike provides a client to connect and interact with an Aerospike cluster,Package aerospike provides a client to connect and interact with an Aerospike cluster. This is the official Go implementation of the Aerospike Client. 
-github.com/cenkalti/backoff/v3,Package backoff implements backoff algorithms for retrying operations,Package backoff implements backoff algorithms for retrying operations.  Use Retry function for retrying operations that may fail. 
-github.com/google/go-metrics-stackdriver,Copyright 2019 Google LLC Licensed under the Apache License&#44; Version 2,Copyright 2019 Google LLC  Licensed under the Apache License&#44; Version 2.0 (the "License"); 
-github.com/hashicorp/consul-template,, 
-github.com/hashicorp/go-kms-wrapping,, 
-github.com/hashicorp/go-kms-wrapping/entropy,, 
-github.com/hashicorp/nomad/api,, 
-github.com/hashicorp/raft-snapshot,The archive utilities manage the internal format of a snapshot&#44; which is a tar file with the following contents: meta,The archive utilities manage the internal format of a snapshot&#44; which is a tar file with the following contents:  meta.json - JSON-encoded snapshot metadata from Raft 
-github.com/influxdata/influxdb,Package client (v2) is the current official Go client for InfluxDB,Package client (v2) is the current official Go client for InfluxDB. 
-github.com/jefferai/isbadcipher,, 
-github.com/mongodb/go-client-mongodb-atlas,, 
-github.com/natefinch/atomic,package atomic provides functions to atomically change files,package atomic provides functions to atomically change files. 
-github.com/okta/okta-sdk-golang/v2,, 
-github.com/ory/dockertest/v3,, 
-github.com/sethvargo/go-limiter,Package limiter defines rate limiting systems,Package limiter defines rate limiting systems. 
-layeh.com/radius,Package radius provides a RADIUS client and server (RFC 2865&#44; RFC 2866),Package radius provides a RADIUS client and server (RFC 2865&#44; RFC 2866). 
+github.com/hashicorp/consul,, 

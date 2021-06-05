@@ -3,7 +3,7 @@
 
 # https://github.com/hashicorp/consul
 %global goipath         github.com/hashicorp/consul
-Version:                1.9.5
+Version:                1.9.6
 
 %gometa
 
@@ -19,70 +19,84 @@ connect and configure applications across dynamic, distributed infrastructure.}
                         license-website-content-commands.mdx
 %global godocs          INTERNALS.md README.md CHANGELOG.md\\\
                         10013-.changelog.txt 10023-.changelog.txt\\\
-                        10025-.changelog.txt 7628-.changelog.txt\\\
-                        7899-.changelog.txt 7970-.changelog.txt\\\
-                        8158-.changelog.txt 8190-.changelog.txt\\\
-                        8194-.changelog.txt 8211-.changelog.txt\\\
-                        8216-.changelog.txt 8218-.changelog.txt\\\
-                        8221-.changelog.txt 8222-.changelog.txt\\\
-                        8268-.changelog.txt 8311-.changelog.txt\\\
-                        8343-.changelog.txt 8371-.changelog.txt\\\
-                        8458-.changelog.txt 8470-.changelog.txt\\\
-                        8522-.changelog.txt 8537-.changelog.txt\\\
-                        8545-.changelog.txt 8547-.changelog.txt\\\
-                        8552-.changelog.txt 8560-.changelog.txt\\\
-                        8569-.changelog.txt 8575-.changelog.txt\\\
-                        8585-.changelog.txt 8588-.changelog.txt\\\
-                        8596-.changelog.txt 8599-.changelog.txt\\\
-                        8601-.changelog.txt 8602-.changelog.txt\\\
-                        8603-.changelog.txt 8606-.changelog.txt\\\
-                        8646-.changelog.txt 8685-.changelog.txt\\\
-                        8694-.changelog.txt 8703-.changelog.txt\\\
-                        8704-.changelog.txt 8726-.changelog.txt\\\
-                        8731-.changelog.txt 8741-.changelog.txt\\\
-                        8745-.changelog.txt 8746-.changelog.txt\\\
-                        8747-.changelog.txt 8764-.changelog.txt\\\
-                        8771-.changelog.txt 8774-.changelog.txt\\\
-                        8781-.changelog.txt 8784-.changelog.txt\\\
-                        8786-.changelog.txt 8787-.changelog.txt\\\
-                        8788-.changelog.txt 8822-.changelog.txt\\\
-                        8834-.changelog.txt 8839-.changelog.txt\\\
-                        8846-.changelog.txt 8855-.changelog.txt\\\
-                        8858-.changelog.txt 8875-.changelog.txt\\\
-                        8877-.changelog.txt 8924-.changelog.txt\\\
-                        9002-.changelog.txt 9007-.changelog.txt\\\
-                        9008-.changelog.txt 9009-.changelog.txt\\\
-                        9024-.changelog.txt 9036-.changelog.txt\\\
-                        9042-.changelog.txt 9059-.changelog.txt\\\
-                        9067-.changelog.txt 9081-.changelog.txt\\\
-                        9088-.changelog.txt 9099-.changelog.txt\\\
-                        9101-.changelog.txt 9103-.changelog.txt\\\
-                        9113-.changelog.txt 9119-.changelog.txt\\\
-                        9141-.changelog.txt 9142-.changelog.txt\\\
-                        9151-.changelog.txt 9156-.changelog.txt\\\
-                        9181-.changelog.txt 9186-.changelog.txt\\\
-                        9191-.changelog.txt 9198-.changelog.txt\\\
-                        9204-.changelog.txt 9207-.changelog.txt\\\
-                        9229-.changelog.txt 9240-.changelog.txt\\\
-                        9247-.changelog.txt 9254-.changelog.txt\\\
-                        9262-.changelog.txt 9271-.changelog.txt\\\
-                        9278-.changelog.txt 9284-.changelog.txt\\\
-                        9296-.changelog.txt 9318-.changelog.txt\\\
-                        9320-.changelog.txt 9351-.changelog.txt\\\
-                        9366-.changelog.txt 9410-.changelog.txt\\\
-                        9428-.changelog.txt 9432-.changelog.txt\\\
-                        9440-.changelog.txt 9442-.changelog.txt\\\
-                        9468-.changelog.txt 9485-.changelog.txt\\\
-                        9487-.changelog.txt 9498-.changelog.txt\\\
-                        9510-.changelog.txt 9512-.changelog.txt\\\
-                        9513-.changelog.txt 9519-.changelog.txt\\\
-                        9524-.changelog.txt 9527-.changelog.txt\\\
-                        9528-.changelog.txt 9530-.changelog.txt\\\
-                        9569-.changelog.txt 9585-.changelog.txt\\\
-                        9589-.changelog.txt 9593-.changelog.txt\\\
-                        9594-.changelog.txt 9626-.changelog.txt\\\
-                        9650-.changelog.txt 9651-.changelog.txt\\\
-                        9660-.changelog.txt 9683-.changelog.txt\\\
+                        10025-.changelog.txt 10062-.changelog.txt\\\
+                        10073-.changelog.txt 10091-.changelog.txt\\\
+                        10090-.changelog.txt 10100-.changelog.txt\\\
+                        10105-.changelog.txt 10121-.changelog.txt\\\
+                        10152-.changelog.txt 10157-.changelog.txt\\\
+                        10163-.changelog.txt 10174-.changelog.txt\\\
+                        10186-.changelog.txt 10188-.changelog.txt\\\
+                        10189-.changelog.txt 10225-.changelog.txt\\\
+                        10232-.changelog.txt 10239-.changelog.txt\\\
+                        10240-.changelog.txt 10273-.changelog.txt\\\
+                        10306-.changelog.txt 10324-.changelog.txt\\\
+                        10338-.changelog.txt 10340-.changelog.txt\\\
+                        8812-.changelog.txt _907-.changelog.txt\\\
+                        _917-.changelog.txt _923-.changelog.txt\\\
+                        7628-.changelog.txt 7899-.changelog.txt\\\
+                        7970-.changelog.txt 8158-.changelog.txt\\\
+                        8190-.changelog.txt 8194-.changelog.txt\\\
+                        8211-.changelog.txt 8216-.changelog.txt\\\
+                        8218-.changelog.txt 8221-.changelog.txt\\\
+                        8222-.changelog.txt 8268-.changelog.txt\\\
+                        8311-.changelog.txt 8343-.changelog.txt\\\
+                        8371-.changelog.txt 8458-.changelog.txt\\\
+                        8470-.changelog.txt 8522-.changelog.txt\\\
+                        8537-.changelog.txt 8545-.changelog.txt\\\
+                        8547-.changelog.txt 8552-.changelog.txt\\\
+                        8560-.changelog.txt 8569-.changelog.txt\\\
+                        8575-.changelog.txt 8585-.changelog.txt\\\
+                        8588-.changelog.txt 8596-.changelog.txt\\\
+                        8599-.changelog.txt 8601-.changelog.txt\\\
+                        8602-.changelog.txt 8603-.changelog.txt\\\
+                        8606-.changelog.txt 8646-.changelog.txt\\\
+                        8685-.changelog.txt 8694-.changelog.txt\\\
+                        8703-.changelog.txt 8704-.changelog.txt\\\
+                        8726-.changelog.txt 8731-.changelog.txt\\\
+                        8741-.changelog.txt 8745-.changelog.txt\\\
+                        8746-.changelog.txt 8747-.changelog.txt\\\
+                        8764-.changelog.txt 8771-.changelog.txt\\\
+                        8774-.changelog.txt 8781-.changelog.txt\\\
+                        8784-.changelog.txt 8786-.changelog.txt\\\
+                        8787-.changelog.txt 8788-.changelog.txt\\\
+                        8822-.changelog.txt 8834-.changelog.txt\\\
+                        8839-.changelog.txt 8846-.changelog.txt\\\
+                        8855-.changelog.txt 8858-.changelog.txt\\\
+                        8875-.changelog.txt 8877-.changelog.txt\\\
+                        8924-.changelog.txt 9002-.changelog.txt\\\
+                        9007-.changelog.txt 9008-.changelog.txt\\\
+                        9009-.changelog.txt 9024-.changelog.txt\\\
+                        9036-.changelog.txt 9042-.changelog.txt\\\
+                        9059-.changelog.txt 9067-.changelog.txt\\\
+                        9081-.changelog.txt 9088-.changelog.txt\\\
+                        9099-.changelog.txt 9101-.changelog.txt\\\
+                        9103-.changelog.txt 9113-.changelog.txt\\\
+                        9119-.changelog.txt 9141-.changelog.txt\\\
+                        9142-.changelog.txt 9151-.changelog.txt\\\
+                        9156-.changelog.txt 9181-.changelog.txt\\\
+                        9186-.changelog.txt 9191-.changelog.txt\\\
+                        9198-.changelog.txt 9204-.changelog.txt\\\
+                        9207-.changelog.txt 9229-.changelog.txt\\\
+                        9240-.changelog.txt 9247-.changelog.txt\\\
+                        9254-.changelog.txt 9262-.changelog.txt\\\
+                        9271-.changelog.txt 9278-.changelog.txt\\\
+                        9284-.changelog.txt 9296-.changelog.txt\\\
+                        9318-.changelog.txt 9320-.changelog.txt\\\
+                        9351-.changelog.txt 9366-.changelog.txt\\\
+                        9410-.changelog.txt 9428-.changelog.txt\\\
+                        9432-.changelog.txt 9440-.changelog.txt\\\
+                        9442-.changelog.txt 9468-.changelog.txt\\\
+                        9485-.changelog.txt 9487-.changelog.txt\\\
+                        9498-.changelog.txt 9510-.changelog.txt\\\
+                        9512-.changelog.txt 9513-.changelog.txt\\\
+                        9519-.changelog.txt 9524-.changelog.txt\\\
+                        9527-.changelog.txt 9528-.changelog.txt\\\
+                        9530-.changelog.txt 9569-.changelog.txt\\\
+                        9585-.changelog.txt 9589-.changelog.txt\\\
+                        9593-.changelog.txt 9594-.changelog.txt\\\
+                        9626-.changelog.txt 9650-.changelog.txt\\\
+                        9651-.changelog.txt 9660-.changelog.txt\\\
+                        9672-.changelog.txt 9683-.changelog.txt\\\
                         9689-.changelog.txt 9715-.changelog.txt\\\
                         9737-.changelog.txt 9738-.changelog.txt\\\
                         9749-.changelog.txt 9752-.changelog.txt\\\
@@ -129,8 +143,10 @@ connect and configure applications across dynamic, distributed infrastructure.}
                         README-ui-packages-consul-ui-app-components-ref.mdx\\\
                         README-ui-packages-consul-ui-app-components-state-chart.mdx\\\
                         README-ui-packages-consul-ui-app-components-state.mdx\\\
+                        README-ui-packages-consul-ui-app-components-tag-list.mdx\\\
                         README-ui-packages-consul-ui-app-components-toggle-button.mdx\\\
                         README-ui-packages-consul-ui-app-components-token-source.mdx\\\
+                        duration-from-ui-packages-consul-ui-app-helpers.mdx\\\
                         README-ui-packages-consul-ui-lib-block-slots.md\\\
                         README-ui-packages-consul-ui-mock-api.md\\\
                         robots-ui-packages-consul-ui-public.txt\\\
@@ -162,9 +178,9 @@ connect and configure applications across dynamic, distributed infrastructure.}
                         index-website-content-api-docs-agent.mdx\\\
                         check-website-content-api-docs-agent.mdx\\\
                         service-website-content-api-docs-agent.mdx\\\
+                        ca-website-content-api-docs-connect.mdx\\\
                         index-website-content-api-docs-connect.mdx\\\
                         intentions-website-content-api-docs-connect.mdx\\\
-                        ca-website-content-api-docs-connect.mdx\\\
                         blocking-website-content-api-docs-features.mdx\\\
                         caching-website-content-api-docs-features.mdx\\\
                         consistency-website-content-api-docs-features.mdx\\\
@@ -241,9 +257,9 @@ connect and configure applications across dynamic, distributed infrastructure.}
                         delete-website-content-commands-config.mdx\\\
                         list-website-content-commands-config.mdx\\\
                         read-website-content-commands-config.mdx\\\
+                        ca-website-content-commands-connect.mdx\\\
                         expose-website-content-commands-connect.mdx\\\
                         proxy-website-content-commands-connect.mdx\\\
-                        ca-website-content-commands-connect.mdx\\\
                         envoy-website-content-commands-connect.mdx\\\
                         index-website-content-commands-connect.mdx\\\
                         check-website-content-commands-intention.mdx\\\
@@ -450,6 +466,33 @@ mv website/content/commands/license.mdx license-website-content-commands.mdx
 mv .changelog/10013.txt 10013-.changelog.txt
 mv .changelog/10023.txt 10023-.changelog.txt
 mv .changelog/10025.txt 10025-.changelog.txt
+mv .changelog/10062.txt 10062-.changelog.txt
+mv .changelog/10073.txt 10073-.changelog.txt
+mv .changelog/10091.txt 10091-.changelog.txt
+mv .changelog/10090.txt 10090-.changelog.txt
+mv .changelog/10100.txt 10100-.changelog.txt
+mv .changelog/10105.txt 10105-.changelog.txt
+mv .changelog/10121.txt 10121-.changelog.txt
+mv .changelog/10152.txt 10152-.changelog.txt
+mv .changelog/10157.txt 10157-.changelog.txt
+mv .changelog/10163.txt 10163-.changelog.txt
+mv .changelog/10174.txt 10174-.changelog.txt
+mv .changelog/10186.txt 10186-.changelog.txt
+mv .changelog/10188.txt 10188-.changelog.txt
+mv .changelog/10189.txt 10189-.changelog.txt
+mv .changelog/10225.txt 10225-.changelog.txt
+mv .changelog/10232.txt 10232-.changelog.txt
+mv .changelog/10239.txt 10239-.changelog.txt
+mv .changelog/10240.txt 10240-.changelog.txt
+mv .changelog/10273.txt 10273-.changelog.txt
+mv .changelog/10306.txt 10306-.changelog.txt
+mv .changelog/10324.txt 10324-.changelog.txt
+mv .changelog/10338.txt 10338-.changelog.txt
+mv .changelog/10340.txt 10340-.changelog.txt
+mv .changelog/8812.txt 8812-.changelog.txt
+mv .changelog/_907.txt _907-.changelog.txt
+mv .changelog/_917.txt _917-.changelog.txt
+mv .changelog/_923.txt _923-.changelog.txt
 mv .changelog/7628.txt 7628-.changelog.txt
 mv .changelog/7899.txt 7899-.changelog.txt
 mv .changelog/7970.txt 7970-.changelog.txt
@@ -576,6 +619,7 @@ mv .changelog/9626.txt 9626-.changelog.txt
 mv .changelog/9650.txt 9650-.changelog.txt
 mv .changelog/9651.txt 9651-.changelog.txt
 mv .changelog/9660.txt 9660-.changelog.txt
+mv .changelog/9672.txt 9672-.changelog.txt
 mv .changelog/9683.txt 9683-.changelog.txt
 mv .changelog/9689.txt 9689-.changelog.txt
 mv .changelog/9715.txt 9715-.changelog.txt
@@ -643,8 +687,10 @@ mv ui/packages/consul-ui/app/components/notice/README.stories.mdx README.stories
 mv ui/packages/consul-ui/app/components/ref/README.mdx README-ui-packages-consul-ui-app-components-ref.mdx
 mv ui/packages/consul-ui/app/components/state-chart/README.mdx README-ui-packages-consul-ui-app-components-state-chart.mdx
 mv ui/packages/consul-ui/app/components/state/README.mdx README-ui-packages-consul-ui-app-components-state.mdx
+mv ui/packages/consul-ui/app/components/tag-list/README.mdx README-ui-packages-consul-ui-app-components-tag-list.mdx
 mv ui/packages/consul-ui/app/components/toggle-button/README.mdx README-ui-packages-consul-ui-app-components-toggle-button.mdx
 mv ui/packages/consul-ui/app/components/token-source/README.mdx README-ui-packages-consul-ui-app-components-token-source.mdx
+mv ui/packages/consul-ui/app/helpers/duration-from.mdx duration-from-ui-packages-consul-ui-app-helpers.mdx
 mv ui/packages/consul-ui/lib/block-slots/README.md README-ui-packages-consul-ui-lib-block-slots.md
 mv ui/packages/consul-ui/mock-api/README.md README-ui-packages-consul-ui-mock-api.md
 mv ui/packages/consul-ui/public/robots.txt robots-ui-packages-consul-ui-public.txt
@@ -677,9 +723,9 @@ mv website/content/api-docs/agent/connect.mdx connect-website-content-api-docs-a
 mv website/content/api-docs/agent/index.mdx index-website-content-api-docs-agent.mdx
 mv website/content/api-docs/agent/check.mdx check-website-content-api-docs-agent.mdx
 mv website/content/api-docs/agent/service.mdx service-website-content-api-docs-agent.mdx
+mv website/content/api-docs/connect/ca.mdx ca-website-content-api-docs-connect.mdx
 mv website/content/api-docs/connect/index.mdx index-website-content-api-docs-connect.mdx
 mv website/content/api-docs/connect/intentions.mdx intentions-website-content-api-docs-connect.mdx
-mv website/content/api-docs/connect/ca.mdx ca-website-content-api-docs-connect.mdx
 mv website/content/api-docs/features/blocking.mdx blocking-website-content-api-docs-features.mdx
 mv website/content/api-docs/features/caching.mdx caching-website-content-api-docs-features.mdx
 mv website/content/api-docs/features/consistency.mdx consistency-website-content-api-docs-features.mdx
@@ -756,9 +802,9 @@ mv website/content/commands/config/write.mdx write-website-content-commands-conf
 mv website/content/commands/config/delete.mdx delete-website-content-commands-config.mdx
 mv website/content/commands/config/list.mdx list-website-content-commands-config.mdx
 mv website/content/commands/config/read.mdx read-website-content-commands-config.mdx
+mv website/content/commands/connect/ca.mdx ca-website-content-commands-connect.mdx
 mv website/content/commands/connect/expose.mdx expose-website-content-commands-connect.mdx
 mv website/content/commands/connect/proxy.mdx proxy-website-content-commands-connect.mdx
-mv website/content/commands/connect/ca.mdx ca-website-content-commands-connect.mdx
 mv website/content/commands/connect/envoy.mdx envoy-website-content-commands-connect.mdx
 mv website/content/commands/connect/index.mdx index-website-content-commands-connect.mdx
 mv website/content/commands/intention/check.mdx check-website-content-commands-intention.mdx
@@ -827,7 +873,16 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %license license-website-content-api-docs-operator.mdx
 %license license-website-content-commands.mdx
 %doc INTERNALS.md README.md CHANGELOG.md 10013-.changelog.txt
-%doc 10023-.changelog.txt 10025-.changelog.txt 7628-.changelog.txt
+%doc 10023-.changelog.txt 10025-.changelog.txt 10062-.changelog.txt
+%doc 10073-.changelog.txt 10091-.changelog.txt 10090-.changelog.txt
+%doc 10100-.changelog.txt 10105-.changelog.txt 10121-.changelog.txt
+%doc 10152-.changelog.txt 10157-.changelog.txt 10163-.changelog.txt
+%doc 10174-.changelog.txt 10186-.changelog.txt 10188-.changelog.txt
+%doc 10189-.changelog.txt 10225-.changelog.txt 10232-.changelog.txt
+%doc 10239-.changelog.txt 10240-.changelog.txt 10273-.changelog.txt
+%doc 10306-.changelog.txt 10324-.changelog.txt 10338-.changelog.txt
+%doc 10340-.changelog.txt 8812-.changelog.txt _907-.changelog.txt
+%doc _917-.changelog.txt _923-.changelog.txt 7628-.changelog.txt
 %doc 7899-.changelog.txt 7970-.changelog.txt 8158-.changelog.txt
 %doc 8190-.changelog.txt 8194-.changelog.txt 8211-.changelog.txt
 %doc 8216-.changelog.txt 8218-.changelog.txt 8221-.changelog.txt
@@ -869,18 +924,19 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc 9528-.changelog.txt 9530-.changelog.txt 9569-.changelog.txt
 %doc 9585-.changelog.txt 9589-.changelog.txt 9593-.changelog.txt
 %doc 9594-.changelog.txt 9626-.changelog.txt 9650-.changelog.txt
-%doc 9651-.changelog.txt 9660-.changelog.txt 9683-.changelog.txt
-%doc 9689-.changelog.txt 9715-.changelog.txt 9737-.changelog.txt
-%doc 9738-.changelog.txt 9749-.changelog.txt 9752-.changelog.txt
-%doc 9765-.changelog.txt 9772-.changelog.txt 9806-.changelog.txt
-%doc 9847-.changelog.txt 9851-.changelog.txt 9901-.changelog.txt
-%doc 9923-.changelog.txt 9967-.changelog.txt 9978-.changelog.txt
-%doc 9979-.changelog.txt 9980-.changelog.txt _619-.changelog.txt
-%doc _666-.changelog.txt _683-.changelog.txt _745-.changelog.txt
-%doc _795-.changelog.txt _855-.changelog.txt _8621-.changelog.txt
-%doc _8825-.changelog.txt _8984-.changelog.txt changelog-.changelog.tmpl
-%doc README-api.md README-bench.md results-0.2-bench.md results-0.3-bench.md
-%doc results-0.7.1-bench.md INTERNALS-contributing.md README-contributing.md
+%doc 9651-.changelog.txt 9660-.changelog.txt 9672-.changelog.txt
+%doc 9683-.changelog.txt 9689-.changelog.txt 9715-.changelog.txt
+%doc 9737-.changelog.txt 9738-.changelog.txt 9749-.changelog.txt
+%doc 9752-.changelog.txt 9765-.changelog.txt 9772-.changelog.txt
+%doc 9806-.changelog.txt 9847-.changelog.txt 9851-.changelog.txt
+%doc 9901-.changelog.txt 9923-.changelog.txt 9967-.changelog.txt
+%doc 9978-.changelog.txt 9979-.changelog.txt 9980-.changelog.txt
+%doc _619-.changelog.txt _666-.changelog.txt _683-.changelog.txt
+%doc _745-.changelog.txt _795-.changelog.txt _855-.changelog.txt
+%doc _8621-.changelog.txt _8825-.changelog.txt _8984-.changelog.txt
+%doc changelog-.changelog.tmpl README-api.md README-bench.md
+%doc results-0.2-bench.md results-0.3-bench.md results-0.7.1-bench.md
+%doc INTERNALS-contributing.md README-contributing.md
 %doc checklist-adding-config-fields-contributing.md
 %doc README-demo-vagrant-cluster.md README-sdk.md README-sdk-testutil.md
 %doc README-terraform.md README-types.md README-ui.md
@@ -909,8 +965,10 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc README-ui-packages-consul-ui-app-components-ref.mdx
 %doc README-ui-packages-consul-ui-app-components-state-chart.mdx
 %doc README-ui-packages-consul-ui-app-components-state.mdx
+%doc README-ui-packages-consul-ui-app-components-tag-list.mdx
 %doc README-ui-packages-consul-ui-app-components-toggle-button.mdx
 %doc README-ui-packages-consul-ui-app-components-token-source.mdx
+%doc duration-from-ui-packages-consul-ui-app-helpers.mdx
 %doc README-ui-packages-consul-ui-lib-block-slots.md
 %doc ui/packages/consul-ui/mock-README-api.md
 %doc robots-ui-packages-consul-ui-public.txt README-website.md docs
@@ -936,9 +994,9 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc index-website-content-api-docs-agent.mdx
 %doc check-website-content-api-docs-agent.mdx
 %doc service-website-content-api-docs-agent.mdx
+%doc ca-website-content-api-docs-connect.mdx
 %doc index-website-content-api-docs-connect.mdx
 %doc intentions-website-content-api-docs-connect.mdx
-%doc ca-website-content-api-docs-connect.mdx
 %doc blocking-website-content-api-docs-features.mdx
 %doc caching-website-content-api-docs-features.mdx
 %doc consistency-website-content-api-docs-features.mdx
@@ -1004,9 +1062,9 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc delete-website-content-commands-config.mdx
 %doc list-website-content-commands-config.mdx
 %doc read-website-content-commands-config.mdx
+%doc ca-website-content-commands-connect.mdx
 %doc expose-website-content-commands-connect.mdx
 %doc proxy-website-content-commands-connect.mdx
-%doc ca-website-content-commands-connect.mdx
 %doc envoy-website-content-commands-connect.mdx
 %doc index-website-content-commands-connect.mdx
 %doc check-website-content-commands-intention.mdx
