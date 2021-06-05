@@ -4,7 +4,7 @@
 # https://github.com/hashicorp/nomad
 %global goipath         github.com/hashicorp/nomad/api
 %global forgeurl        https://github.com/hashicorp/nomad
-%global commit          24e963f26c9b41da27d8f7e1c2d7c005d6445d47
+Version:                1.0.6
 
 %gometa
 
@@ -17,25 +17,23 @@ applications. Nomad is easy to operate and scale and has native Consul and
 Vault integrations.}
 
 %global golicenses      LICENSE license-command.go license_get-command.go\\\
-                        license_get_test-command.go\\\
-                        LICENSE-helper-exptime.md LICENSE-website.md\\\
+                        license_get_test-command.go license_put-command.go\\\
+                        license_put_test-command.go LICENSE-website.md\\\
                         license-website-content-api-docs-operator.mdx
-%global godocs          CHANGELOG.md README.md\\\
+%global godocs          README.md CHANGELOG.md\\\
                         test-client-allocdir-input.txt\\\
-                        README-contributing.md\\\
                         checklist-command-contributing.md\\\
+                        issue-labels-contributing.md README-contributing.md\\\
                         checklist-jobspec-contributing.md\\\
                         checklist-rpc-endpoint-contributing.md\\\
-                        golang-contributing.md issue-labels-contributing.md\\\
-                        README-demo-csi.md\\\
+                        golang-contributing.md README-demo-csi.md\\\
                         README-demo-csi-ceph-csi-plugin.md\\\
                         README-demo-csi-cinder-csi-plugin.md\\\
-                        README-demo-csi-digitalocean.md\\\
-                        README-demo-csi-hostpath.md README-demo-tls.md\\\
+                        README-demo-csi-digitalocean.md README-demo-tls.md\\\
                         README-demo-vagrant.md README-dev.md\\\
                         README-dev-docker-clients.md\\\
                         README-dev-tls_cluster.md README-dev-vault.md\\\
-                        README-devices-gpu-nvidia.md\\\
+                        releasing-dev-guides.md README-devices-gpu-nvidia.md\\\
                         README-drivers-shared-executor-test-resources-busybox\\\
                         example README-e2e.md README-e2e-consulacls.md\\\
                         README-e2e-terraform.md\\\
@@ -92,18 +90,17 @@ Vault integrations.}
                         index-website-content-intro-vs.mdx\\\
                         mesos-website-content-intro-vs.mdx\\\
                         terraform-website-content-intro-vs.mdx\\\
-                        envvars-website-content-partials.mdx\\\
-                        general_options-website-content-partials.mdx\\\
                         general_options_no_namespace-website-content-partials.mdx\\\
-                        docs robots-website-public.txt
+                        envvars-website-content-partials.mdx\\\
+                        general_options-website-content-partials.mdx docs\\\
+                        robots-website-public.txt README-dist.md
 
 Name:           %{goname}
-Version:        0
-Release:        0.1%{?dist}
+Release:        1%{?dist}
 Summary:        Nomad is an easy-to-use, flexible, and performant workload orchestrator that can deploy a mix of microservice, batch, containerized, and non-containerized applications. Nomad is easy to operate and scale and has native Consul and Vault integrations
 
-# Upstream license specification: BSD-3-Clause and MPL-2.0
-License:        BSD and MPLv2.0
+# Upstream license specification: MPL-2.0
+License:        MPLv2.0
 URL:            %{gourl}
 Source0:        %{gosource}
 
@@ -117,7 +114,6 @@ BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/awserr)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/ec2metadata)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/session)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/ec2)
-BuildRequires:  golang(github.com/aws/aws-sdk-go/service/ecs)
 BuildRequires:  golang(github.com/boltdb/bolt)
 BuildRequires:  golang(github.com/container-storage-interface/spec/lib/go/csi)
 BuildRequires:  golang(github.com/containerd/go-cni)
@@ -129,6 +125,7 @@ BuildRequires:  golang(github.com/docker/cli/cli/config/configfile)
 BuildRequires:  golang(github.com/docker/cli/cli/config/types)
 BuildRequires:  golang(github.com/docker/distribution/reference)
 BuildRequires:  golang(github.com/docker/docker/api/types/registry)
+BuildRequires:  golang(github.com/docker/docker/oci/caps)
 BuildRequires:  golang(github.com/docker/docker/pkg/ioutils)
 BuildRequires:  golang(github.com/docker/docker/pkg/jsonmessage)
 BuildRequires:  golang(github.com/docker/docker/pkg/mount)
@@ -217,13 +214,11 @@ BuildRequires:  golang(github.com/NYTimes/gziphandler)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/cgroups)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/cgroups/fs)
-BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/cgroups/fscommon)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/configs)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/devices)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/nsenter)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/specconv)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/utils)
-BuildRequires:  golang(github.com/opencontainers/runtime-spec/specs-go)
 BuildRequires:  golang(github.com/pkg/errors)
 BuildRequires:  golang(github.com/posener/complete)
 BuildRequires:  golang(github.com/prometheus/client_golang/prometheus)
@@ -281,27 +276,28 @@ BuildRequires:  golang(github.com/stretchr/testify/mock)
 mv command/license.go license-command.go
 mv command/license_get.go license_get-command.go
 mv command/license_get_test.go license_get_test-command.go
-mv helper/exptime/LICENSE.md LICENSE-helper-exptime.md
+mv command/license_put.go license_put-command.go
+mv command/license_put_test.go license_put_test-command.go
 mv website/LICENSE.md LICENSE-website.md
 mv website/content/api-docs/operator/license.mdx license-website-content-api-docs-operator.mdx
 mv client/allocdir/input/test.txt test-client-allocdir-input.txt
-mv contributing/README.md README-contributing.md
 mv contributing/checklist-command.md checklist-command-contributing.md
+mv contributing/issue-labels.md issue-labels-contributing.md
+mv contributing/README.md README-contributing.md
 mv contributing/checklist-jobspec.md checklist-jobspec-contributing.md
 mv contributing/checklist-rpc-endpoint.md checklist-rpc-endpoint-contributing.md
 mv contributing/golang.md golang-contributing.md
-mv contributing/issue-labels.md issue-labels-contributing.md
 mv demo/csi/README.md README-demo-csi.md
 mv demo/csi/ceph-csi-plugin/README.md README-demo-csi-ceph-csi-plugin.md
 mv demo/csi/cinder-csi-plugin/README.md README-demo-csi-cinder-csi-plugin.md
 mv demo/csi/digitalocean/README.md README-demo-csi-digitalocean.md
-mv demo/csi/hostpath/README.md README-demo-csi-hostpath.md
 mv demo/tls/README.md README-demo-tls.md
 mv demo/vagrant/README.md README-demo-vagrant.md
 mv dev/README.md README-dev.md
 mv dev/docker-clients/README.md README-dev-docker-clients.md
 mv dev/tls_cluster/README.md README-dev-tls_cluster.md
 mv dev/vault/README.md README-dev-vault.md
+mv dev/guides/releasing.md releasing-dev-guides.md
 mv devices/gpu/nvidia/README.md README-devices-gpu-nvidia.md
 mv drivers/shared/executor/test-resources/busybox/README README-drivers-shared-executor-test-resources-busybox
 mv e2e/README.md README-e2e.md
@@ -366,10 +362,11 @@ mv website/content/intro/vs/ecs.mdx ecs-website-content-intro-vs.mdx
 mv website/content/intro/vs/index.mdx index-website-content-intro-vs.mdx
 mv website/content/intro/vs/mesos.mdx mesos-website-content-intro-vs.mdx
 mv website/content/intro/vs/terraform.mdx terraform-website-content-intro-vs.mdx
+mv website/content/partials/general_options_no_namespace.mdx general_options_no_namespace-website-content-partials.mdx
 mv website/content/partials/envvars.mdx envvars-website-content-partials.mdx
 mv website/content/partials/general_options.mdx general_options-website-content-partials.mdx
-mv website/content/partials/general_options_no_namespace.mdx general_options_no_namespace-website-content-partials.mdx
 mv website/public/robots.txt robots-website-public.txt
+mv dist/README.md README-dist.md
 
 %build
 %gobuild -o %{gobuilddir}/bin/api %{goipath}
@@ -389,17 +386,18 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE license-command.go license_get-command.go
-%license license_get_test-command.go LICENSE-helper-exptime.md
-%license LICENSE-website.md license-website-content-api-docs-operator.mdx
-%doc CHANGELOG.md README.md test-client-allocdir-input.txt
-%doc README-contributing.md checklist-command-contributing.md
-%doc checklist-jobspec-contributing.md checklist-rpc-endpoint-contributing.md
-%doc golang-contributing.md issue-labels-contributing.md README-demo-csi.md
-%doc README-demo-csi-ceph-csi-plugin.md README-demo-csi-cinder-csi-plugin.md
-%doc README-demo-csi-digitalocean.md README-demo-csi-hostpath.md
+%license license_get_test-command.go license_put-command.go
+%license license_put_test-command.go LICENSE-website.md
+%license license-website-content-api-docs-operator.mdx
+%doc README.md CHANGELOG.md test-client-allocdir-input.txt
+%doc checklist-command-contributing.md issue-labels-contributing.md
+%doc README-contributing.md checklist-jobspec-contributing.md
+%doc checklist-rpc-endpoint-contributing.md golang-contributing.md
+%doc README-demo-csi.md README-demo-csi-ceph-csi-plugin.md
+%doc README-demo-csi-cinder-csi-plugin.md README-demo-csi-digitalocean.md
 %doc README-demo-tls.md README-demo-vagrant.md README-dev.md
 %doc README-dev-docker-clients.md README-dev-tls_cluster.md README-dev-vault.md
-%doc README-devices-gpu-nvidia.md
+%doc releasing-dev-guides.md README-devices-gpu-nvidia.md
 %doc README-drivers-shared-executor-test-resources-busybox example README-e2e.md
 %doc README-e2e-consulacls.md README-e2e-terraform.md
 %doc README-e2e-terraform-config-shared.md README-e2e-terraform-packer.md
@@ -440,10 +438,10 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc index-website-content-intro.mdx use-cases-website-content-intro.mdx
 %doc ecs-website-content-intro-vs.mdx index-website-content-intro-vs.mdx
 %doc mesos-website-content-intro-vs.mdx terraform-website-content-intro-vs.mdx
+%doc general_options_no_namespace-website-content-partials.mdx
 %doc envvars-website-content-partials.mdx
-%doc general_options-website-content-partials.mdx
-%doc general_options_no_namespace-website-content-partials.mdx docs
-%doc robots-website-public.txt
+%doc general_options-website-content-partials.mdx docs robots-website-public.txt
+%doc README-dist.md
 %{_bindir}/*
 
 %gopkgfiles
