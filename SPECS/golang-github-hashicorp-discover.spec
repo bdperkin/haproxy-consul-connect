@@ -3,7 +3,7 @@
 
 # https://github.com/hashicorp/go-discover
 %global goipath         github.com/hashicorp/go-discover
-%global commit          738cb3105cd00a47802db675221543231671b2a1
+%global commit          464681ce6b6f4830ea42d0a3944c0396afcbdf7c
 
 %gometa
 
@@ -29,9 +29,10 @@ BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/defaults)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/ec2metadata)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/session)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/ec2)
-BuildRequires:  golang(github.com/Azure/azure-sdk-for-go/services/network/mgmt/2015-06-15/network)
+BuildRequires:  golang(github.com/Azure/azure-sdk-for-go/arm/network)
 BuildRequires:  golang(github.com/Azure/go-autorest/autorest)
-BuildRequires:  golang(github.com/Azure/go-autorest/autorest/azure/auth)
+BuildRequires:  golang(github.com/Azure/go-autorest/autorest/adal)
+BuildRequires:  golang(github.com/Azure/go-autorest/autorest/azure)
 BuildRequires:  golang(github.com/denverdino/aliyungo/common)
 BuildRequires:  golang(github.com/denverdino/aliyungo/ecs)
 BuildRequires:  golang(github.com/digitalocean/godo)
@@ -39,36 +40,13 @@ BuildRequires:  golang(github.com/gophercloud/gophercloud)
 BuildRequires:  golang(github.com/gophercloud/gophercloud/openstack)
 BuildRequires:  golang(github.com/gophercloud/gophercloud/openstack/compute/v2/servers)
 BuildRequires:  golang(github.com/gophercloud/gophercloud/pagination)
-BuildRequires:  golang(github.com/hashicorp/go-multierror)
-BuildRequires:  golang(github.com/hashicorp/mdns)
-BuildRequires:  golang(github.com/hashicorp/vic/pkg/vsphere/tags)
-BuildRequires:  golang(github.com/joyent/triton-go)
-BuildRequires:  golang(github.com/joyent/triton-go/authentication)
-BuildRequires:  golang(github.com/joyent/triton-go/compute)
-BuildRequires:  golang(github.com/linode/linodego)
-BuildRequires:  golang(github.com/mitchellh/go-homedir)
-BuildRequires:  golang(github.com/nicolai86/scaleway-sdk)
-BuildRequires:  golang(github.com/packethost/packngo)
+BuildRequires:  golang(github.com/nicolai86/scaleway-sdk/api)
 BuildRequires:  golang(github.com/softlayer/softlayer-go/filter)
 BuildRequires:  golang(github.com/softlayer/softlayer-go/services)
 BuildRequires:  golang(github.com/softlayer/softlayer-go/session)
-BuildRequires:  golang(github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common)
-BuildRequires:  golang(github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/profile)
-BuildRequires:  golang(github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm/v20170312)
-BuildRequires:  golang(github.com/vmware/govmomi)
-BuildRequires:  golang(github.com/vmware/govmomi/find)
-BuildRequires:  golang(github.com/vmware/govmomi/object)
-BuildRequires:  golang(github.com/vmware/govmomi/vim25/mo)
-BuildRequires:  golang(github.com/vmware/govmomi/vim25/types)
 BuildRequires:  golang(golang.org/x/oauth2)
 BuildRequires:  golang(golang.org/x/oauth2/google)
 BuildRequires:  golang(google.golang.org/api/compute/v1)
-BuildRequires:  golang(k8s.io/api/core/v1)
-BuildRequires:  golang(k8s.io/apimachinery/pkg/apis/meta/v1)
-BuildRequires:  golang(k8s.io/client-go/kubernetes)
-BuildRequires:  golang(k8s.io/client-go/plugin/pkg/client/auth)
-BuildRequires:  golang(k8s.io/client-go/rest)
-BuildRequires:  golang(k8s.io/client-go/tools/clientcmd)
 
 %description
 %{common_description}

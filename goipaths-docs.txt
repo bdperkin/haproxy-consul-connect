@@ -5,3 +5,12 @@ github.com/facebookgo/freeport,Package freeport provides an API to find a free p
 gopkg.in/d4l3k/messagediff.v1,, 
 zvelo.io/ttlru,Package ttlru provides a simple&#44; goroutine safe&#44; cache with a fixed number of entries,Package ttlru provides a simple&#44; goroutine safe&#44; cache with a fixed number of entries. Each entry has a per-cache defined TTL. This TTL is reset on both modification and access to the value. As a result&#44; if the cache is full&#44; and no items have expired&#44; when adding a new item&#44; the item with the soonest expiration will be evicted.  It is based on the LRU implementation in golang-lru: 
 github.com/hashicorp/consul,, 
+github.com/google/tcpproxy,Package tcpproxy lets users build TCP proxies&#44; optionally making routing decisions based on HTTP/1 Host headers and the SNI hostname in TLS connections,Package tcpproxy lets users build TCP proxies&#44; optionally making routing decisions based on HTTP/1 Host headers and the SNI hostname in TLS connections.  Typical usage: 
+github.com/hashicorp/go-bexpr,bexpr is an implementation of a generic boolean expression evaluator,bexpr is an implementation of a generic boolean expression evaluator. The general goal is to be able to evaluate some expression against some arbitrary data and get back a boolean of whether or not the data was matched by the expression 
+github.com/hashicorp/go-connlimit,, 
+github.com/hashicorp/go-discover,Package discover provides functions to get metadata for different cloud environments,Package discover provides functions to get metadata for different cloud environments. 
+github.com/hashicorp/go-raftchunking,, 
+github.com/hashicorp/raft-autopilot,This code was taken from the same implementation in a branch from Consul and then had the package updated and the mutex type unexported,This code was taken from the same implementation in a branch from Consul and then had the package updated and the mutex type unexported. 
+github.com/hashicorp/vault/api,, 
+github.com/mitchellh/pointerstructure,Package pointerstructure provides functions for identifying a specific value within any Go structure using a string syntax,Package pointerstructure provides functions for identifying a specific value within any Go structure using a string syntax.  The syntax used is based on JSON Pointer (RFC 6901). 
+github.com/rboyer/safeio,Package safeio provides functions to perform atomic&#44; fsync-safe disk operations,Package safeio provides functions to perform atomic&#44; fsync-safe disk operations. 

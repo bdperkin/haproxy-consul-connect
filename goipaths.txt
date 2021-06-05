@@ -5,3 +5,12 @@ github.com/facebookgo/freeport,https://github.com/facebookgo/freeport,,,0.0.0-20
 gopkg.in/d4l3k/messagediff.v1,https://github.com/d4l3k/messagediff,,github.com/d4l3k/messagediff,1.2.1,,,,,package
 zvelo.io/ttlru,https://github.com/zvelo/ttlru,,github.com/zvelo/ttlru,1.0.10,,,,,package
 github.com/hashicorp/consul,https://github.com/hashicorp/consul,,,1.9.6,,,,,command
+github.com/google/tcpproxy,https://github.com/google/tcpproxy,,,0.0.0-20200125044825-b6bb9b5b8252,,,,,package
+github.com/hashicorp/go-bexpr,https://github.com/hashicorp/go-bexpr,,,0.1.8,,,,,package
+github.com/hashicorp/go-connlimit,https://github.com/hashicorp/go-connlimit,,,0.3.0,,,,,package
+github.com/hashicorp/go-discover,https://github.com/hashicorp/go-discover,,,0.0.0-20201029210230-738cb3105cd0,,,,,package
+github.com/hashicorp/go-raftchunking,https://github.com/hashicorp/go-raftchunking,,,0.6.2,,,,,package
+github.com/hashicorp/raft-autopilot,https://github.com/hashicorp/raft-autopilot,,,0.1.5,,,,,package
+github.com/hashicorp/vault/api,https://github.com/hashicorp/vault,,github.com/hashicorp/vault,1.1.0,,,,,package
+github.com/mitchellh/pointerstructure,https://github.com/mitchellh/pointerstructure,,,1.2.0,,,,,package
+github.com/rboyer/safeio,https://github.com/rboyer/safeio,,,0.2.1,,,,,package

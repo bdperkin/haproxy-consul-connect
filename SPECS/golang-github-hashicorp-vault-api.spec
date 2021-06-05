@@ -5,8 +5,6 @@
 %global goipath         github.com/hashicorp/vault/api
 %global forgeurl        https://github.com/hashicorp/vault
 Version:                1.1.0
-%global tag             api/v1.1.0
-%global commit          fb730b62a40e6cc4fc8e2f0257c673454bca3b86
 
 %gometa
 
@@ -23,320 +21,174 @@ management.}
                         license-ui-app-routes-vault-cluster.js\\\
                         license-info-ui-app-templates-components.hbs\\\
                         license-ui-app-templates-vault-cluster.hbs\\\
-                        license-website-content-api-docs-system.mdx
-%global godocs          CHANGELOG.md CONTRIBUTING.md README.md README-api.md\\\
+                        LICENSE-website.md\\\
+                        license.html-website-source-api-system.md
+%global godocs          CONTRIBUTING.md CHANGELOG.md README.md\\\
                         generate-builtin-credential-cert-test-fixtures.txt\\\
-                        README-command-agent.md\\\
                         README-physical-foundationdb.md\\\
-                        README-plugins-database-mongodb.md\\\
-                        README-plugins-database-mssql.md MODULE_REPORT-ui.md\\\
-                        README-ui.md\\\
-                        changelog-url-for-ui-lib-core-addon-helpers.js\\\
-                        changelog-url-for-ui-lib-core-app-helpers.js\\\
-                        alert-banner-ui-lib-core-stories.md\\\
-                        alert-inline-ui-lib-core-stories.md\\\
-                        box-radio-ui-lib-core-stories.md\\\
-                        chevron-ui-lib-core-stories.md\\\
-                        confirm-action-ui-lib-core-stories.md\\\
-                        confirm-ui-lib-core-stories.md\\\
-                        doc-link-ui-lib-core-stories.md\\\
-                        empty-state-ui-lib-core-stories.md\\\
-                        form-field-groups-ui-lib-core-stories.md\\\
-                        form-field-ui-lib-core-stories.md\\\
-                        form-save-buttons-ui-lib-core-stories.md\\\
-                        icon-ui-lib-core-stories.md\\\
-                        info-table-row-ui-lib-core-stories.md\\\
-                        info-table-ui-lib-core-stories.md\\\
-                        layout-loading-ui-lib-core-stories.md\\\
-                        list-view-ui-lib-core-stories.md\\\
-                        masked-input-ui-lib-core-stories.md\\\
-                        message-error-ui-lib-core-stories.md\\\
-                        message-ui-lib-core-stories.md\\\
-                        popup-menu-ui-lib-core-stories.md\\\
-                        search-select-ui-lib-core-stories.md\\\
-                        select-ui-lib-core-stories.md\\\
-                        toggle-button-ui-lib-core-stories.md\\\
-                        ttl-form-ui-lib-core-stories.md\\\
-                        ttl-picker-ui-lib-core-stories.md\\\
-                        ttl-picker2-ui-lib-core-stories.md\\\
-                        vault-logo-spinner-ui-lib-core-stories.md\\\
-                        toolbar-actions-ui-lib-core-stories-toolbar.md\\\
-                        toolbar-download-button-ui-lib-core-stories-toolbar.md\\\
-                        toolbar-filters-ui-lib-core-stories-toolbar.md\\\
-                        toolbar-link-ui-lib-core-stories-toolbar.md\\\
-                        toolbar-secret-link-ui-lib-core-stories-toolbar.md\\\
-                        toolbar-ui-lib-core-stories-toolbar.md\\\
-                        robots-ui-public.txt alert-popup-ui-stories.md\\\
-                        auth-form-ui-stories.md\\\
-                        file-to-array-buffer-ui-stories.md\\\
-                        selectable-card-ui-stories.md toggle-ui-stories.md\\\
-                        config-ui-stories-auth-config-form.md\\\
-                        options-ui-stories-auth-config-form.md\\\
-                        README-website.md\\\
-                        README-website-components-columns.md\\\
-                        README-website-components-inline-tag.md docs\\\
-                        security-website-content.mdx\\\
-                        index-website-content-api-docs.mdx\\\
-                        libraries-website-content-api-docs.mdx\\\
-                        relatedtools-website-content-api-docs.mdx\\\
-                        alicloud-website-content-api-docs-auth.mdx\\\
-                        app-id-website-content-api-docs-auth.mdx\\\
-                        approle-website-content-api-docs-auth.mdx\\\
-                        aws-website-content-api-docs-auth.mdx\\\
-                        azure-website-content-api-docs-auth.mdx\\\
-                        cert-website-content-api-docs-auth.mdx\\\
-                        cf-website-content-api-docs-auth.mdx\\\
-                        gcp-website-content-api-docs-auth.mdx\\\
-                        github-website-content-api-docs-auth.mdx\\\
-                        index-website-content-api-docs-auth.mdx\\\
-                        jwt-website-content-api-docs-auth.mdx\\\
-                        kerberos-website-content-api-docs-auth.mdx\\\
-                        kubernetes-website-content-api-docs-auth.mdx\\\
-                        ldap-website-content-api-docs-auth.mdx\\\
-                        oci-website-content-api-docs-auth.mdx\\\
-                        okta-website-content-api-docs-auth.mdx\\\
-                        radius-website-content-api-docs-auth.mdx\\\
-                        token-website-content-api-docs-auth.mdx\\\
-                        userpass-website-content-api-docs-auth.mdx\\\
-                        ad-website-content-api-docs-secret.mdx\\\
-                        alicloud-website-content-api-docs-secret.mdx\\\
-                        aws-website-content-api-docs-secret.mdx\\\
-                        azure-website-content-api-docs-secret.mdx\\\
-                        cassandra-website-content-api-docs-secret.mdx\\\
-                        consul-website-content-api-docs-secret.mdx\\\
-                        cubbyhole-website-content-api-docs-secret.mdx\\\
-                        gcp-website-content-api-docs-secret.mdx\\\
-                        gcpkms-website-content-api-docs-secret.mdx\\\
-                        index-website-content-api-docs-secret.mdx\\\
-                        key-management-website-content-api-docs-secret.mdx\\\
-                        kmip-website-content-api-docs-secret.mdx\\\
-                        mongodbatlas-website-content-api-docs-secret.mdx\\\
-                        nomad-website-content-api-docs-secret.mdx\\\
-                        openldap-website-content-api-docs-secret.mdx\\\
-                        pki-website-content-api-docs-secret.mdx\\\
-                        rabbitmq-website-content-api-docs-secret.mdx\\\
-                        ssh-website-content-api-docs-secret.mdx\\\
-                        terraform-website-content-api-docs-secret.mdx\\\
-                        totp-website-content-api-docs-secret.mdx\\\
-                        transform-website-content-api-docs-secret.mdx\\\
-                        transit-website-content-api-docs-secret.mdx\\\
-                        cassandra-website-content-api-docs-secret-databases.mdx\\\
-                        couchbase-website-content-api-docs-secret-databases.mdx\\\
-                        elasticdb-website-content-api-docs-secret-databases.mdx\\\
-                        hanadb-website-content-api-docs-secret-databases.mdx\\\
-                        index-website-content-api-docs-secret-databases.mdx\\\
-                        influxdb-website-content-api-docs-secret-databases.mdx\\\
-                        mongodb-website-content-api-docs-secret-databases.mdx\\\
-                        mongodbatlas-website-content-api-docs-secret-databases.mdx\\\
-                        mssql-website-content-api-docs-secret-databases.mdx\\\
-                        mysql-maria-website-content-api-docs-secret-databases.mdx\\\
-                        oracle-website-content-api-docs-secret-databases.mdx\\\
-                        postgresql-website-content-api-docs-secret-databases.mdx\\\
-                        redshift-website-content-api-docs-secret-databases.mdx\\\
-                        snowflake-website-content-api-docs-secret-databases.mdx\\\
-                        entity-alias-website-content-api-docs-secret-identity.mdx\\\
-                        entity-website-content-api-docs-secret-identity.mdx\\\
-                        group-alias-website-content-api-docs-secret-identity.mdx\\\
-                        group-website-content-api-docs-secret-identity.mdx\\\
-                        index-website-content-api-docs-secret-identity.mdx\\\
-                        lookup-website-content-api-docs-secret-identity.mdx\\\
-                        tokens-website-content-api-docs-secret-identity.mdx\\\
-                        index-website-content-api-docs-secret-kv.mdx\\\
-                        kv-v1-website-content-api-docs-secret-kv.mdx\\\
-                        kv-v2-website-content-api-docs-secret-kv.mdx\\\
-                        audit-hash-website-content-api-docs-system.mdx\\\
-                        audit-website-content-api-docs-system.mdx\\\
-                        auth-website-content-api-docs-system.mdx\\\
-                        capabilities-accessor-website-content-api-docs-system.mdx\\\
-                        capabilities-self-website-content-api-docs-system.mdx\\\
-                        capabilities-website-content-api-docs-system.mdx\\\
-                        config-auditing-website-content-api-docs-system.mdx\\\
-                        config-control-group-website-content-api-docs-system.mdx\\\
-                        config-cors-website-content-api-docs-system.mdx\\\
-                        config-state-website-content-api-docs-system.mdx\\\
-                        config-ui-website-content-api-docs-system.mdx\\\
-                        control-group-website-content-api-docs-system.mdx\\\
-                        generate-recovery-token-website-content-api-docs-system.mdx\\\
-                        generate-root-website-content-api-docs-system.mdx\\\
-                        health-website-content-api-docs-system.mdx\\\
-                        host-info-website-content-api-docs-system.mdx\\\
-                        index-website-content-api-docs-system.mdx\\\
-                        init-website-content-api-docs-system.mdx\\\
-                        internal-counters-website-content-api-docs-system.mdx\\\
-                        internal-specs-openapi-website-content-api-docs-system.mdx\\\
-                        internal-ui-feature-website-content-api-docs-system.mdx\\\
-                        internal-ui-mounts-website-content-api-docs-system.mdx\\\
-                        key-status-website-content-api-docs-system.mdx\\\
-                        leader-website-content-api-docs-system.mdx\\\
-                        lease-count-quotas-website-content-api-docs-system.mdx\\\
-                        leases-website-content-api-docs-system.mdx\\\
-                        metrics-website-content-api-docs-system.mdx\\\
-                        monitor-website-content-api-docs-system.mdx\\\
-                        mounts-website-content-api-docs-system.mdx\\\
-                        namespaces-website-content-api-docs-system.mdx\\\
-                        plugins-catalog-website-content-api-docs-system.mdx\\\
-                        plugins-reload-backend-website-content-api-docs-system.mdx\\\
-                        policies-password-website-content-api-docs-system.mdx\\\
-                        policies-website-content-api-docs-system.mdx\\\
-                        policy-website-content-api-docs-system.mdx\\\
-                        pprof-website-content-api-docs-system.mdx\\\
-                        quotas-config-website-content-api-docs-system.mdx\\\
-                        rate-limit-quotas-website-content-api-docs-system.mdx\\\
-                        raw-website-content-api-docs-system.mdx\\\
-                        rekey-recovery-key-website-content-api-docs-system.mdx\\\
-                        rekey-website-content-api-docs-system.mdx\\\
-                        remount-website-content-api-docs-system.mdx\\\
-                        rotate-config-website-content-api-docs-system.mdx\\\
-                        rotate-website-content-api-docs-system.mdx\\\
-                        seal-status-website-content-api-docs-system.mdx\\\
-                        seal-website-content-api-docs-system.mdx\\\
-                        sealwrap-rewrap-website-content-api-docs-system.mdx\\\
-                        step-down-website-content-api-docs-system.mdx\\\
-                        tools-website-content-api-docs-system.mdx\\\
-                        unseal-website-content-api-docs-system.mdx\\\
-                        wrapping-lookup-website-content-api-docs-system.mdx\\\
-                        wrapping-rewrap-website-content-api-docs-system.mdx\\\
-                        wrapping-unwrap-website-content-api-docs-system.mdx\\\
-                        wrapping-wrap-website-content-api-docs-system.mdx\\\
-                        duo-website-content-api-docs-system-mfa.mdx\\\
-                        index-website-content-api-docs-system-mfa.mdx\\\
-                        okta-website-content-api-docs-system-mfa.mdx\\\
-                        pingid-website-content-api-docs-system-mfa.mdx\\\
-                        totp-website-content-api-docs-system-mfa.mdx\\\
-                        index-website-content-api-docs-system-replication.mdx\\\
-                        replication-dr-website-content-api-docs-system-replication.mdx\\\
-                        replication-performance-website-content-api-docs-system-replication.mdx\\\
-                        index-website-content-api-docs-system-storage.mdx\\\
-                        raft-website-content-api-docs-system-storage.mdx\\\
-                        raftautosnapshots-website-content-api-docs-system-storage.mdx\\\
-                        getting-started-website-content-guides.mdx\\\
-                        index-website-content-guides.mdx\\\
-                        index-website-content-guides-encryption.mdx\\\
-                        spring-demo-website-content-guides-encryption.mdx\\\
-                        transit-rewrap-website-content-guides-encryption.mdx\\\
-                        transit-website-content-guides-encryption.mdx\\\
-                        approle-trusted-entities-website-content-guides-identity.mdx\\\
-                        authentication-website-content-guides-identity.mdx\\\
-                        control-groups-website-content-guides-identity.mdx\\\
-                        identity-website-content-guides-identity.mdx\\\
-                        index-website-content-guides-identity.mdx\\\
-                        lease-website-content-guides-identity.mdx\\\
-                        policies-website-content-guides-identity.mdx\\\
-                        policy-templating-website-content-guides-identity.mdx\\\
-                        secure-intro-website-content-guides-identity.mdx\\\
-                        sentinel-website-content-guides-identity.mdx\\\
-                        autounseal-aws-kms-website-content-guides-operations.mdx\\\
-                        deployment-guide-website-content-guides-operations.mdx\\\
-                        disaster-recovery-website-content-guides-operations.mdx\\\
-                        generate-root-website-content-guides-operations.mdx\\\
-                        index-website-content-guides-operations.mdx\\\
-                        monitoring-website-content-guides-operations.mdx\\\
-                        mount-filter-website-content-guides-operations.mdx\\\
-                        multi-tenant-website-content-guides-operations.mdx\\\
-                        performance-nodes-website-content-guides-operations.mdx\\\
-                        plugin-backends-website-content-guides-operations.mdx\\\
-                        production-website-content-guides-operations.mdx\\\
-                        reference-architecture-website-content-guides-operations.mdx\\\
-                        rekeying-and-rotating-website-content-guides-operations.mdx\\\
-                        replication-website-content-guides-operations.mdx\\\
-                        seal-wrap-website-content-guides-operations.mdx\\\
-                        vault-ha-consul-website-content-guides-operations.mdx\\\
-                        app-integration-website-content-guides-secret-mgmt.mdx\\\
-                        cubbyhole-website-content-guides-secret-mgmt.mdx\\\
-                        db-root-rotation-website-content-guides-secret-mgmt.mdx\\\
-                        dynamic-secrets-website-content-guides-secret-mgmt.mdx\\\
-                        index-website-content-guides-secret-mgmt.mdx\\\
-                        pki-engine-website-content-guides-secret-mgmt.mdx\\\
-                        ssh-otp-website-content-guides-secret-mgmt.mdx\\\
-                        static-secrets-website-content-guides-secret-mgmt.mdx\\\
-                        versioned-kv-website-content-guides-secret-mgmt.mdx\\\
-                        index-website-content-intro.mdx\\\
-                        apis-website-content-intro-getting-started.mdx\\\
-                        authentication-website-content-intro-getting-started.mdx\\\
-                        deploy-website-content-intro-getting-started.mdx\\\
-                        dev-server-website-content-intro-getting-started.mdx\\\
-                        dynamic-secrets-website-content-intro-getting-started.mdx\\\
-                        first-secret-website-content-intro-getting-started.mdx\\\
-                        help-website-content-intro-getting-started.mdx\\\
-                        index-website-content-intro-getting-started.mdx\\\
-                        next-steps-website-content-intro-getting-started.mdx\\\
-                        policies-website-content-intro-getting-started.mdx\\\
-                        secrets-engines-website-content-intro-getting-started.mdx\\\
-                        aws-auth-metadata-fix-website-content-partials.mdx\\\
-                        aws-auth-metadata-issue-website-content-partials.mdx\\\
-                        aws-imds-timeout-upgrade-website-content-partials.mdx\\\
-                        aws-imds-timeout-website-content-partials.mdx\\\
-                        aws-invalid-header-fix-website-content-partials.mdx\\\
-                        aws-invalid-header-website-content-partials.mdx\\\
-                        aws-sts-issue-website-content-partials.mdx\\\
-                        builds-without-ui-website-content-partials.mdx\\\
-                        enterprise-licenses-website-content-partials.mdx\\\
-                        ldap-upndomain-issue-website-content-partials.mdx\\\
-                        okta-group-pagination-website-content-partials.mdx\\\
-                        primary-cluster-addr-change-website-content-partials.mdx\\\
-                        tokenfields-website-content-partials.mdx\\\
-                        tokenstorefields-website-content-partials.mdx docs\\\
-                        docs 10072-changelog.txt 10077-changelog.txt\\\
-                        10131-changelog.txt 10231-changelog.txt\\\
-                        10365-changelog.txt 10375-changelog.txt\\\
-                        10384-changelog.txt 10386-changelog.txt\\\
-                        10416-changelog.txt 10417-changelog.txt\\\
-                        10424-changelog.txt 10433-changelog.txt\\\
-                        10444-changelog.txt 10456-changelog.txt\\\
-                        10487-changelog.txt 10489-changelog.txt\\\
-                        10490-changelog.txt 10491-changelog.txt\\\
-                        10498-changelog.txt 10514-changelog.txt\\\
-                        10520-changelog.txt 10536-changelog.txt\\\
-                        10537-changelog.txt 10546-changelog.txt\\\
-                        10556-changelog.txt 10558-changelog.txt\\\
-                        10579-changelog.txt 10588-changelog.txt\\\
-                        10596-changelog.txt 10603-changelog.txt\\\
-                        10609-changelog.txt 10613-changelog.txt\\\
-                        10644-changelog.txt 10650-changelog.txt\\\
-                        10653-changelog.txt 10655-changelog.txt\\\
-                        10677-changelog.txt 10684-changelog.txt\\\
-                        10689-changelog.txt 10705-changelog.txt\\\
-                        10708-changelog.txt 10725-changelog.txt\\\
-                        10726-changelog.txt 10730-changelog.txt\\\
-                        10743-changelog.txt 10744-changelog.txt\\\
-                        10756-changelog.txt 10757-changelog.txt\\\
-                        10758-changelog.txt 10759-changelog.txt\\\
-                        10766-changelog.txt 10767-changelog.txt\\\
-                        10812-changelog.txt 10826-changelog.txt\\\
-                        10833-changelog.txt 10834-changelog.txt\\\
-                        10848-changelog.txt 10850-changelog.txt\\\
-                        10855-changelog.txt 10858-changelog.txt\\\
-                        10877-changelog.txt 10901-changelog.txt\\\
-                        10904-changelog.txt 10906-changelog.txt\\\
-                        10919-changelog.txt 10927-changelog.txt\\\
-                        10931-changelog.txt 10938-changelog.txt\\\
-                        10942-changelog.txt 10949-changelog.txt\\\
-                        10951-changelog.txt 10952-changelog.txt\\\
-                        10953-changelog.txt 10964-changelog.txt\\\
-                        10980-changelog.txt 10982-changelog.txt\\\
-                        10992-changelog.txt 10995-changelog.txt\\\
-                        10996-changelog.txt 10997-changelog.txt\\\
-                        11011-changelog.txt 11015-changelog.txt\\\
-                        11018-changelog.txt 11022-changelog.txt\\\
-                        11060-changelog.txt 11094-changelog.txt\\\
-                        11113-changelog.txt 11119-changelog.txt\\\
-                        11127-changelog.txt 11142-changelog.txt\\\
-                        11173-changelog.txt 11182-changelog.txt\\\
-                        11213-changelog.txt 11226-changelog.txt\\\
-                        9972-changelog.txt README-changelog.md _-changelog\\\
-                        1686.txt _1622-changelog.txt _1633-changelog.txt\\\
-                        _1637-changelog.txt _1642-changelog.txt\\\
-                        _1656-changelog.txt _1659-changelog.txt\\\
-                        _1663-changelog.txt _1680-changelog.txt\\\
-                        _1705-changelog.txt _1712-changelog.txt\\\
-                        _1739-changelog.txt _2021Jan20-changelog.txt\\\
-                        _2021Jan26-changelog.txt changelog-changelog.tmpl\\\
-                        deps-upgrade-output-dependencies-2-25-21.txt\\\
-                        deps-upgrade-dependencies-2-25-21.txt\\\
-                        README-internalshared.md README-sdk.md\\\
-                        README-sdk-database-dbplugin.md README-sdk-queue.md\\\
-                        README-serviceregistration-kubernetes-testing.md\\\
-                        README-terraform.md
+                        README-plugins-database-mssql.md README-ui.md\\\
+                        robots-ui-public.txt README-website.md docs\\\
+                        404.html-website-source.md robots-website-source.txt\\\
+                        libraries.html-website-source-api.md\\\
+                        overview.html-website-source-api.md\\\
+                        relatedtools.html-website-source-api.md\\\
+                        index.html-website-source-api-auth.md\\\
+                        index.html-website-source-api-auth-app-id.md\\\
+                        index.html-website-source-api-auth-approle.md\\\
+                        index.html-website-source-api-auth-aws.md\\\
+                        index.html-website-source-api-auth-azure.md\\\
+                        index.html-website-source-api-auth-cert.md\\\
+                        index.html-website-source-api-auth-gcp.md\\\
+                        index.html-website-source-api-auth-github.md\\\
+                        index.html-website-source-api-auth-kubernetes.md\\\
+                        index.html-website-source-api-auth-ldap.md\\\
+                        index.html-website-source-api-auth-okta.md\\\
+                        index.html-website-source-api-auth-radius.md\\\
+                        index.html-website-source-api-auth-token.md\\\
+                        index.html-website-source-api-auth-userpass.md\\\
+                        index.html-website-source-api-auth-alicloud.md\\\
+                        index.html-website-source-api-auth-jwt.md\\\
+                        index_beta.html-website-source-api-auth-jwt.md\\\
+                        index.html-website-source-api-secret.md\\\
+                        index.html-website-source-api-secret-ad.md\\\
+                        index.html-website-source-api-secret-aws.md\\\
+                        index.html-website-source-api-secret-cassandra.md\\\
+                        index.html-website-source-api-secret-consul.md\\\
+                        index.html-website-source-api-secret-cubbyhole.md\\\
+                        cassandra.html-website-source-api-secret-databases.md\\\
+                        hanadb.html-website-source-api-secret-databases.md\\\
+                        index.html-website-source-api-secret-databases.md\\\
+                        influxdb.html-website-source-api-secret-databases.md\\\
+                        mongodb.html-website-source-api-secret-databases.md\\\
+                        mssql.html-website-source-api-secret-databases.md\\\
+                        mysql-maria.html-website-source-api-secret-databases.md\\\
+                        oracle.html-website-source-api-secret-databases.md\\\
+                        postgresql.html-website-source-api-secret-databases.md\\\
+                        index.html-website-source-api-secret-gcp.md\\\
+                        entity-alias.html-website-source-api-secret-identity.md\\\
+                        entity.html-website-source-api-secret-identity.md\\\
+                        group-alias.html-website-source-api-secret-identity.md\\\
+                        group.html-website-source-api-secret-identity.md\\\
+                        identity-groups.html-website-source-api-secret-identity.md\\\
+                        index.html-website-source-api-secret-identity.md\\\
+                        lookup.html-website-source-api-secret-identity.md\\\
+                        index.html-website-source-api-secret-kv.md\\\
+                        kv-v1.html-website-source-api-secret-kv.md\\\
+                        kv-v2.html-website-source-api-secret-kv.md\\\
+                        index.html-website-source-api-secret-mongodb.md\\\
+                        index.html-website-source-api-secret-mssql.md\\\
+                        index.html-website-source-api-secret-mysql.md\\\
+                        index.html-website-source-api-secret-nomad.md\\\
+                        index.html-website-source-api-secret-pki.md\\\
+                        index.html-website-source-api-secret-postgresql.md\\\
+                        index.html-website-source-api-secret-rabbitmq.md\\\
+                        index.html-website-source-api-secret-ssh.md\\\
+                        index.html-website-source-api-secret-totp.md\\\
+                        index.html-website-source-api-secret-transit.md\\\
+                        index.html-website-source-api-secret-alicloud.md\\\
+                        index.html-website-source-api-secret-azure.md\\\
+                        index.html-website-source-api-secret-gcpkms.md\\\
+                        init.html-website-source-api-system.md\\\
+                        internal-specs-openapi.html-website-source-api-system.md\\\
+                        key-status.html-website-source-api-system.md\\\
+                        leader.html-website-source-api-system.md\\\
+                        leases.html-website-source-api-system.md\\\
+                        mounts.html-website-source-api-system.md\\\
+                        namespaces.html-website-source-api-system.md\\\
+                        plugins-catalog.html-website-source-api-system.md\\\
+                        plugins-reload-backend.html-website-source-api-system.md\\\
+                        policies.html-website-source-api-system.md\\\
+                        policy.html-website-source-api-system.md\\\
+                        raw.html-website-source-api-system.md\\\
+                        rekey-recovery-key.html-website-source-api-system.md\\\
+                        rekey.html-website-source-api-system.md\\\
+                        remount.html-website-source-api-system.md\\\
+                        rotate.html-website-source-api-system.md\\\
+                        seal-status.html-website-source-api-system.md\\\
+                        seal.html-website-source-api-system.md\\\
+                        step-down.html-website-source-api-system.md\\\
+                        tools.html-website-source-api-system.md\\\
+                        unseal.html-website-source-api-system.md\\\
+                        wrapping-lookup.html-website-source-api-system.md\\\
+                        wrapping-rewrap.html-website-source-api-system.md\\\
+                        wrapping-unwrap.html-website-source-api-system.md\\\
+                        wrapping-wrap.html-website-source-api-system.md\\\
+                        audit-hash.html-website-source-api-system.md\\\
+                        audit.html-website-source-api-system.md\\\
+                        auth.html-website-source-api-system.md\\\
+                        capabilities-accessor.html-website-source-api-system.md\\\
+                        capabilities-self.html-website-source-api-system.md\\\
+                        capabilities.html-website-source-api-system.md\\\
+                        config-auditing.html-website-source-api-system.md\\\
+                        config-control-group.html-website-source-api-system.md\\\
+                        config-cors.html-website-source-api-system.md\\\
+                        config-ui.html-website-source-api-system.md\\\
+                        control-group.html-website-source-api-system.md\\\
+                        generate-root.html-website-source-api-system.md\\\
+                        health.html-website-source-api-system.md\\\
+                        index.html-website-source-api-system.md\\\
+                        internal-ui-mounts.html-website-source-api-system.md\\\
+                        duo.html-website-source-api-system-mfa.md\\\
+                        index.html-website-source-api-system-mfa.md\\\
+                        okta.html-website-source-api-system-mfa.md\\\
+                        pingid.html-website-source-api-system-mfa.md\\\
+                        totp.html-website-source-api-system-mfa.md\\\
+                        index.html-website-source-api-system-replication.md\\\
+                        replication-dr.html-website-source-api-system-replication.md\\\
+                        replication-performance.html-website-source-api-system-replication.md\\\
+                        index.html-website-source-guides.md\\\
+                        index.html-website-source-guides-encryption.md\\\
+                        spring-demo.html-website-source-guides-encryption.md\\\
+                        transit-rewrap.html-website-source-guides-encryption.md\\\
+                        transit.html-website-source-guides-encryption.md\\\
+                        index.html-website-source-guides-getting-started.md\\\
+                        approle-trusted-entities.html-website-source-guides-identity.md\\\
+                        authentication.html-website-source-guides-identity.md\\\
+                        control-groups.html-website-source-guides-identity.md\\\
+                        identity.html-website-source-guides-identity.md\\\
+                        index.html-website-source-guides-identity.md\\\
+                        lease.html-website-source-guides-identity.md\\\
+                        policies.html-website-source-guides-identity.md\\\
+                        policy-templating.html-website-source-guides-identity.md\\\
+                        secure-intro.html-website-source-guides-identity.md\\\
+                        sentinel.html-website-source-guides-identity.md\\\
+                        autounseal-aws-kms.html-website-source-guides-operations.md\\\
+                        deployment-guide.html-website-source-guides-operations.md\\\
+                        disaster-recovery.html-website-source-guides-operations.md\\\
+                        generate-root.html-website-source-guides-operations.md\\\
+                        index.html-website-source-guides-operations.md\\\
+                        monitoring.html-website-source-guides-operations.md\\\
+                        mount-filter.html-website-source-guides-operations.md\\\
+                        multi-tenant.html-website-source-guides-operations.md\\\
+                        performance-nodes.html-website-source-guides-operations.md\\\
+                        plugin-backends.html-website-source-guides-operations.md\\\
+                        production.html-website-source-guides-operations.md\\\
+                        reference-architecture.html-website-source-guides-operations.md\\\
+                        rekeying-and-rotating.html-website-source-guides-operations.md\\\
+                        replication.html-website-source-guides-operations.md\\\
+                        seal-wrap.html-website-source-guides-operations.md\\\
+                        vault-ha-consul.html-website-source-guides-operations.md\\\
+                        app-integration.html-website-source-guides-secret-mgmt.md\\\
+                        cubbyhole.html-website-source-guides-secret-mgmt.md\\\
+                        db-root-rotation.html-website-source-guides-secret-mgmt.md\\\
+                        dynamic-secrets.html-website-source-guides-secret-mgmt.md\\\
+                        index.html-website-source-guides-secret-mgmt.md\\\
+                        pki-engine.html-website-source-guides-secret-mgmt.md\\\
+                        ssh-otp.html-website-source-guides-secret-mgmt.md\\\
+                        static-secrets.html-website-source-guides-secret-mgmt.md\\\
+                        versioned-kv.html-website-source-guides-secret-mgmt.md\\\
+                        apis.html-website-source-intro-getting-started.md\\\
+                        authentication.html-website-source-intro-getting-started.md\\\
+                        deploy.html-website-source-intro-getting-started.md\\\
+                        dev-server.html-website-source-intro-getting-started.md\\\
+                        dynamic-secrets.html-website-source-intro-getting-started.md\\\
+                        first-secret.html-website-source-intro-getting-started.md\\\
+                        help.html-website-source-intro-getting-started.md\\\
+                        index.html-website-source-intro-getting-started.md\\\
+                        next-steps.html-website-source-intro-getting-started.md\\\
+                        policies.html-website-source-intro-getting-started.md\\\
+                        secrets-engines.html-website-source-intro-getting-started.md\\\
+                        README-terraform-aws.md
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -347,12 +199,13 @@ License:        MPLv2.0
 URL:            %{gourl}
 Source0:        %{gosource}
 
-BuildRequires:  golang(cloud.google.com/go/monitoring/apiv3)
+BuildRequires:  golang(cloud.google.com/go/kms/apiv1)
 BuildRequires:  golang(cloud.google.com/go/spanner)
 BuildRequires:  golang(cloud.google.com/go/storage)
-BuildRequires:  golang(github.com/aerospike/aerospike-client-go)
+BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/sdk)
 BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth)
 BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials/providers)
+BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/services/kms)
 BuildRequires:  golang(github.com/aliyun/aliyun-oss-go-sdk/oss)
 BuildRequires:  golang(github.com/armon/go-metrics)
 BuildRequires:  golang(github.com/armon/go-metrics/circonus)
@@ -364,7 +217,6 @@ BuildRequires:  golang(github.com/asaskevich/govalidator)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/arn)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/awserr)
-BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/client)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/credentials)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/credentials/stscreds)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/defaults)
@@ -377,24 +229,21 @@ BuildRequires:  golang(github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattrib
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/ec2)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/iam)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/iam/iamiface)
+BuildRequires:  golang(github.com/aws/aws-sdk-go/service/kms)
+BuildRequires:  golang(github.com/aws/aws-sdk-go/service/kms/kmsiface)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/s3)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/sts)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/sts/stsiface)
-BuildRequires:  golang(github.com/Azure/azure-storage-blob-go/azblob)
-BuildRequires:  golang(github.com/Azure/go-autorest/autorest/adal)
+BuildRequires:  golang(github.com/Azure/azure-sdk-for-go/services/keyvault/2016-10-01/keyvault)
+BuildRequires:  golang(github.com/Azure/azure-sdk-for-go/storage)
+BuildRequires:  golang(github.com/Azure/go-autorest/autorest)
 BuildRequires:  golang(github.com/Azure/go-autorest/autorest/azure)
-BuildRequires:  golang(github.com/cenkalti/backoff/v3)
+BuildRequires:  golang(github.com/Azure/go-autorest/autorest/azure/auth)
+BuildRequires:  golang(github.com/Azure/go-autorest/autorest/to)
 BuildRequires:  golang(github.com/chrismalek/oktasdk-go/okta)
 BuildRequires:  golang(github.com/cockroachdb/cockroach-go/crdb)
 BuildRequires:  golang(github.com/coreos/go-semver/semver)
 BuildRequires:  golang(github.com/denisenkom/go-mssqldb)
-BuildRequires:  golang(github.com/docker/docker/api/types)
-BuildRequires:  golang(github.com/docker/docker/api/types/container)
-BuildRequires:  golang(github.com/docker/docker/api/types/network)
-BuildRequires:  golang(github.com/docker/docker/api/types/strslice)
-BuildRequires:  golang(github.com/docker/docker/client)
-BuildRequires:  golang(github.com/docker/docker/pkg/archive)
-BuildRequires:  golang(github.com/docker/go-connections/nat)
 BuildRequires:  golang(github.com/duosecurity/duo_api_golang)
 BuildRequires:  golang(github.com/duosecurity/duo_api_golang/authapi)
 BuildRequires:  golang(github.com/elazarl/go-bindata-assetfs)
@@ -403,44 +252,25 @@ BuildRequires:  golang(github.com/fatih/structs)
 BuildRequires:  golang(github.com/fullsailor/pkcs7)
 BuildRequires:  golang(github.com/ghodss/yaml)
 BuildRequires:  golang(github.com/go-errors/errors)
-BuildRequires:  golang(github.com/go-ldap/ldap/v3)
+BuildRequires:  golang(github.com/go-ldap/ldap)
 BuildRequires:  golang(github.com/go-sql-driver/mysql)
-BuildRequires:  golang(github.com/go-test/deep)
 BuildRequires:  golang(github.com/gocql/gocql)
 BuildRequires:  golang(github.com/golang/protobuf/proto)
 BuildRequires:  golang(github.com/golang/protobuf/ptypes)
 BuildRequires:  golang(github.com/golang/protobuf/ptypes/any)
-BuildRequires:  golang(github.com/golang/protobuf/ptypes/struct)
 BuildRequires:  golang(github.com/golang/protobuf/ptypes/timestamp)
 BuildRequires:  golang(github.com/golang/snappy)
 BuildRequires:  golang(github.com/google/go-github/github)
-BuildRequires:  golang(github.com/google/go-metrics-stackdriver)
-BuildRequires:  golang(github.com/google/go-metrics-stackdriver/vault)
-BuildRequires:  golang(github.com/hashicorp/consul-template/config)
-BuildRequires:  golang(github.com/hashicorp/consul-template/logging)
-BuildRequires:  golang(github.com/hashicorp/consul-template/manager)
 BuildRequires:  golang(github.com/hashicorp/consul/api)
+BuildRequires:  golang(github.com/hashicorp/consul/lib)
 BuildRequires:  golang(github.com/hashicorp/errwrap)
 BuildRequires:  golang(github.com/hashicorp/go-cleanhttp)
-BuildRequires:  golang(github.com/hashicorp/go-discover)
-BuildRequires:  golang(github.com/hashicorp/go-discover/provider/k8s)
 BuildRequires:  golang(github.com/hashicorp/go-gcp-common/gcputil)
 BuildRequires:  golang(github.com/hashicorp/go-hclog)
 BuildRequires:  golang(github.com/hashicorp/go-immutable-radix)
-BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping)
-BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/entropy)
-BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/aead)
-BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/alicloudkms)
-BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/awskms)
-BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/azurekeyvault)
-BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/gcpckms)
-BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/ocikms)
-BuildRequires:  golang(github.com/hashicorp/go-kms-wrapping/wrappers/transit)
 BuildRequires:  golang(github.com/hashicorp/go-memdb)
-BuildRequires:  golang(github.com/hashicorp/go-msgpack/codec)
 BuildRequires:  golang(github.com/hashicorp/go-multierror)
 BuildRequires:  golang(github.com/hashicorp/go-plugin)
-BuildRequires:  golang(github.com/hashicorp/go-raftchunking)
 BuildRequires:  golang(github.com/hashicorp/go-retryablehttp)
 BuildRequires:  golang(github.com/hashicorp/go-rootcerts)
 BuildRequires:  golang(github.com/hashicorp/go-sockaddr)
@@ -452,11 +282,7 @@ BuildRequires:  golang(github.com/hashicorp/hcl)
 BuildRequires:  golang(github.com/hashicorp/hcl/hcl/ast)
 BuildRequires:  golang(github.com/hashicorp/hcl/hcl/printer)
 BuildRequires:  golang(github.com/hashicorp/nomad/api)
-BuildRequires:  golang(github.com/hashicorp/raft)
-BuildRequires:  golang(github.com/hashicorp/raft-autopilot)
-BuildRequires:  golang(github.com/hashicorp/raft-snapshot)
 BuildRequires:  golang(github.com/influxdata/influxdb/client/v2)
-BuildRequires:  golang(github.com/jcmturner/gokrb5/v8/spnego)
 BuildRequires:  golang(github.com/jefferai/isbadcipher)
 BuildRequires:  golang(github.com/jefferai/jsonx)
 BuildRequires:  golang(github.com/joyent/triton-go)
@@ -469,7 +295,6 @@ BuildRequires:  golang(github.com/kr/pretty)
 BuildRequires:  golang(github.com/kr/text)
 BuildRequires:  golang(github.com/lib/pq)
 BuildRequires:  golang(github.com/mattn/go-colorable)
-BuildRequires:  golang(github.com/mholt/archiver)
 BuildRequires:  golang(github.com/michaelklishin/rabbit-hole)
 BuildRequires:  golang(github.com/mitchellh/cli)
 BuildRequires:  golang(github.com/mitchellh/copystructure)
@@ -477,14 +302,9 @@ BuildRequires:  golang(github.com/mitchellh/go-homedir)
 BuildRequires:  golang(github.com/mitchellh/go-testing-interface)
 BuildRequires:  golang(github.com/mitchellh/mapstructure)
 BuildRequires:  golang(github.com/mitchellh/reflectwalk)
-BuildRequires:  golang(github.com/natefinch/atomic)
 BuildRequires:  golang(github.com/ncw/swift)
 BuildRequires:  golang(github.com/NYTimes/gziphandler)
 BuildRequires:  golang(github.com/oklog/run)
-BuildRequires:  golang(github.com/okta/okta-sdk-golang/v2/okta)
-BuildRequires:  golang(github.com/oracle/oci-go-sdk/common)
-BuildRequires:  golang(github.com/oracle/oci-go-sdk/common/auth)
-BuildRequires:  golang(github.com/oracle/oci-go-sdk/objectstorage)
 BuildRequires:  golang(github.com/patrickmn/go-cache)
 BuildRequires:  golang(github.com/pierrec/lz4)
 BuildRequires:  golang(github.com/pkg/errors)
@@ -493,30 +313,17 @@ BuildRequires:  golang(github.com/pquerna/otp)
 BuildRequires:  golang(github.com/pquerna/otp/totp)
 BuildRequires:  golang(github.com/prometheus/client_golang/prometheus)
 BuildRequires:  golang(github.com/prometheus/common/expfmt)
-BuildRequires:  golang(github.com/rboyer/safeio)
 BuildRequires:  golang(github.com/ryanuber/columnize)
 BuildRequires:  golang(github.com/ryanuber/go-glob)
 BuildRequires:  golang(github.com/samuel/go-zookeeper/zk)
 BuildRequires:  golang(github.com/SAP/go-hdb/driver)
-BuildRequires:  golang(github.com/sethvargo/go-limiter)
-BuildRequires:  golang(github.com/sethvargo/go-limiter/httplimit)
-BuildRequires:  golang(github.com/sethvargo/go-limiter/memorystore)
-BuildRequires:  golang(github.com/shirou/gopsutil/cpu)
-BuildRequires:  golang(github.com/shirou/gopsutil/disk)
-BuildRequires:  golang(github.com/shirou/gopsutil/host)
-BuildRequires:  golang(github.com/shirou/gopsutil/mem)
-BuildRequires:  golang(github.com/stretchr/testify/require)
-BuildRequires:  golang(go.etcd.io/bbolt)
+BuildRequires:  golang(github.com/SermoDigital/jose/crypto)
+BuildRequires:  golang(github.com/SermoDigital/jose/jws)
+BuildRequires:  golang(github.com/SermoDigital/jose/jwt)
 BuildRequires:  golang(go.etcd.io/etcd/client)
 BuildRequires:  golang(go.etcd.io/etcd/clientv3)
 BuildRequires:  golang(go.etcd.io/etcd/clientv3/concurrency)
 BuildRequires:  golang(go.etcd.io/etcd/pkg/transport)
-BuildRequires:  golang(go.mongodb.org/mongo-driver/mongo)
-BuildRequires:  golang(go.mongodb.org/mongo-driver/mongo/options)
-BuildRequires:  golang(go.mongodb.org/mongo-driver/mongo/readpref)
-BuildRequires:  golang(go.mongodb.org/mongo-driver/mongo/writeconcern)
-BuildRequires:  golang(go.mongodb.org/mongo-driver/x/mongo/driver/connstring)
-BuildRequires:  golang(go.uber.org/atomic)
 BuildRequires:  golang(golang.org/x/crypto/bcrypt)
 BuildRequires:  golang(golang.org/x/crypto/blake2b)
 BuildRequires:  golang(golang.org/x/crypto/chacha20poly1305)
@@ -529,7 +336,6 @@ BuildRequires:  golang(golang.org/x/crypto/ssh)
 BuildRequires:  golang(golang.org/x/crypto/ssh/agent)
 BuildRequires:  golang(golang.org/x/crypto/ssh/terminal)
 BuildRequires:  golang(golang.org/x/net/context)
-BuildRequires:  golang(golang.org/x/net/http/httpproxy)
 BuildRequires:  golang(golang.org/x/net/http2)
 BuildRequires:  golang(golang.org/x/net/idna)
 BuildRequires:  golang(golang.org/x/oauth2)
@@ -539,15 +345,12 @@ BuildRequires:  golang(google.golang.org/api/googleapi)
 BuildRequires:  golang(google.golang.org/api/iam/v1)
 BuildRequires:  golang(google.golang.org/api/iterator)
 BuildRequires:  golang(google.golang.org/api/option)
+BuildRequires:  golang(google.golang.org/genproto/googleapis/cloud/kms/v1)
 BuildRequires:  golang(google.golang.org/grpc)
 BuildRequires:  golang(google.golang.org/grpc/codes)
 BuildRequires:  golang(google.golang.org/grpc/grpclog)
 BuildRequires:  golang(google.golang.org/grpc/keepalive)
 BuildRequires:  golang(google.golang.org/grpc/status)
-BuildRequires:  golang(google.golang.org/protobuf/proto)
-BuildRequires:  golang(google.golang.org/protobuf/reflect/protoreflect)
-BuildRequires:  golang(google.golang.org/protobuf/runtime/protoimpl)
-BuildRequires:  golang(google.golang.org/protobuf/types/known/structpb)
 BuildRequires:  golang(gopkg.in/mgo.v2)
 BuildRequires:  golang(gopkg.in/square/go-jose.v2)
 BuildRequires:  golang(gopkg.in/square/go-jose.v2/jwt)
@@ -556,19 +359,12 @@ BuildRequires:  golang(layeh.com/radius/rfc2865)
 
 %if %{with check}
 # Tests
-BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/sdk)
 BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials)
 BuildRequires:  golang(github.com/aliyun/alibaba-cloud-sdk-go/services/sts)
-BuildRequires:  golang(github.com/hashicorp/go-raftchunking/types)
-BuildRequires:  golang(github.com/mongodb/go-client-mongodb-atlas/mongodbatlas)
-BuildRequires:  golang(github.com/okta/okta-sdk-golang/v2/okta/query)
+BuildRequires:  golang(github.com/go-test/deep)
+BuildRequires:  golang(github.com/gogo/protobuf/proto)
 BuildRequires:  golang(github.com/ory/dockertest)
-BuildRequires:  golang(github.com/ory/dockertest/v3)
-BuildRequires:  golang(github.com/ory/dockertest/v3/docker/pkg/ioutils)
-BuildRequires:  golang(github.com/Sectorbob/mlab-ns2/gae/ns/digest)
-BuildRequires:  golang(github.com/stretchr/testify/assert)
-BuildRequires:  golang(github.com/stretchr/testify/mock)
-BuildRequires:  golang(google.golang.org/protobuf/types/known/timestamppb)
+BuildRequires:  golang(gopkg.in/ory-am/dockertest.v2)
 %endif
 
 %description
@@ -585,385 +381,180 @@ mv ui/app/models/license.js license-ui-app-models.js
 mv ui/app/routes/vault/cluster/license.js license-ui-app-routes-vault-cluster.js
 mv ui/app/templates/components/license-info.hbs license-info-ui-app-templates-components.hbs
 mv ui/app/templates/vault/cluster/license.hbs license-ui-app-templates-vault-cluster.hbs
-mv website/content/api-docs/system/license.mdx license-website-content-api-docs-system.mdx
-mv api/README.md README-api.md
+mv website/LICENSE.md LICENSE-website.md
+mv website/source/api/system/license.html.md license.html-website-source-api-system.md
 mv builtin/credential/cert/test-fixtures/generate.txt generate-builtin-credential-cert-test-fixtures.txt
-mv command/agent/README.md README-command-agent.md
 mv physical/foundationdb/README.md README-physical-foundationdb.md
-mv plugins/database/mongodb/README.md README-plugins-database-mongodb.md
 mv plugins/database/mssql/README.md README-plugins-database-mssql.md
-mv ui/MODULE_REPORT.md MODULE_REPORT-ui.md
 mv ui/README.md README-ui.md
-mv ui/lib/core/addon/helpers/changelog-url-for.js changelog-url-for-ui-lib-core-addon-helpers.js
-mv ui/lib/core/app/helpers/changelog-url-for.js changelog-url-for-ui-lib-core-app-helpers.js
-mv ui/lib/core/stories/alert-banner.md alert-banner-ui-lib-core-stories.md
-mv ui/lib/core/stories/alert-inline.md alert-inline-ui-lib-core-stories.md
-mv ui/lib/core/stories/box-radio.md box-radio-ui-lib-core-stories.md
-mv ui/lib/core/stories/chevron.md chevron-ui-lib-core-stories.md
-mv ui/lib/core/stories/confirm-action.md confirm-action-ui-lib-core-stories.md
-mv ui/lib/core/stories/confirm.md confirm-ui-lib-core-stories.md
-mv ui/lib/core/stories/doc-link.md doc-link-ui-lib-core-stories.md
-mv ui/lib/core/stories/empty-state.md empty-state-ui-lib-core-stories.md
-mv ui/lib/core/stories/form-field-groups.md form-field-groups-ui-lib-core-stories.md
-mv ui/lib/core/stories/form-field.md form-field-ui-lib-core-stories.md
-mv ui/lib/core/stories/form-save-buttons.md form-save-buttons-ui-lib-core-stories.md
-mv ui/lib/core/stories/icon.md icon-ui-lib-core-stories.md
-mv ui/lib/core/stories/info-table-row.md info-table-row-ui-lib-core-stories.md
-mv ui/lib/core/stories/info-table.md info-table-ui-lib-core-stories.md
-mv ui/lib/core/stories/layout-loading.md layout-loading-ui-lib-core-stories.md
-mv ui/lib/core/stories/list-view.md list-view-ui-lib-core-stories.md
-mv ui/lib/core/stories/masked-input.md masked-input-ui-lib-core-stories.md
-mv ui/lib/core/stories/message-error.md message-error-ui-lib-core-stories.md
-mv ui/lib/core/stories/message.md message-ui-lib-core-stories.md
-mv ui/lib/core/stories/popup-menu.md popup-menu-ui-lib-core-stories.md
-mv ui/lib/core/stories/search-select.md search-select-ui-lib-core-stories.md
-mv ui/lib/core/stories/select.md select-ui-lib-core-stories.md
-mv ui/lib/core/stories/toggle-button.md toggle-button-ui-lib-core-stories.md
-mv ui/lib/core/stories/ttl-form.md ttl-form-ui-lib-core-stories.md
-mv ui/lib/core/stories/ttl-picker.md ttl-picker-ui-lib-core-stories.md
-mv ui/lib/core/stories/ttl-picker2.md ttl-picker2-ui-lib-core-stories.md
-mv ui/lib/core/stories/vault-logo-spinner.md vault-logo-spinner-ui-lib-core-stories.md
-mv ui/lib/core/stories/toolbar/toolbar-actions.md toolbar-actions-ui-lib-core-stories-toolbar.md
-mv ui/lib/core/stories/toolbar/toolbar-download-button.md toolbar-download-button-ui-lib-core-stories-toolbar.md
-mv ui/lib/core/stories/toolbar/toolbar-filters.md toolbar-filters-ui-lib-core-stories-toolbar.md
-mv ui/lib/core/stories/toolbar/toolbar-link.md toolbar-link-ui-lib-core-stories-toolbar.md
-mv ui/lib/core/stories/toolbar/toolbar-secret-link.md toolbar-secret-link-ui-lib-core-stories-toolbar.md
-mv ui/lib/core/stories/toolbar/toolbar.md toolbar-ui-lib-core-stories-toolbar.md
 mv ui/public/robots.txt robots-ui-public.txt
-mv ui/stories/alert-popup.md alert-popup-ui-stories.md
-mv ui/stories/auth-form.md auth-form-ui-stories.md
-mv ui/stories/file-to-array-buffer.md file-to-array-buffer-ui-stories.md
-mv ui/stories/selectable-card.md selectable-card-ui-stories.md
-mv ui/stories/toggle.md toggle-ui-stories.md
-mv ui/stories/auth-config-form/config.md config-ui-stories-auth-config-form.md
-mv ui/stories/auth-config-form/options.md options-ui-stories-auth-config-form.md
 mv website/README.md README-website.md
-mv website/components/columns/README.md README-website-components-columns.md
-mv website/components/inline-tag/README.md README-website-components-inline-tag.md
-mv website/content/security.mdx security-website-content.mdx
-mv website/content/api-docs/index.mdx index-website-content-api-docs.mdx
-mv website/content/api-docs/libraries.mdx libraries-website-content-api-docs.mdx
-mv website/content/api-docs/relatedtools.mdx relatedtools-website-content-api-docs.mdx
-mv website/content/api-docs/auth/alicloud.mdx alicloud-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/app-id.mdx app-id-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/approle.mdx approle-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/aws.mdx aws-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/azure.mdx azure-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/cert.mdx cert-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/cf.mdx cf-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/gcp.mdx gcp-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/github.mdx github-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/index.mdx index-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/jwt.mdx jwt-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/kerberos.mdx kerberos-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/kubernetes.mdx kubernetes-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/ldap.mdx ldap-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/oci.mdx oci-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/okta.mdx okta-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/radius.mdx radius-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/token.mdx token-website-content-api-docs-auth.mdx
-mv website/content/api-docs/auth/userpass.mdx userpass-website-content-api-docs-auth.mdx
-mv website/content/api-docs/secret/ad.mdx ad-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/alicloud.mdx alicloud-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/aws.mdx aws-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/azure.mdx azure-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/cassandra.mdx cassandra-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/consul.mdx consul-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/cubbyhole.mdx cubbyhole-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/gcp.mdx gcp-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/gcpkms.mdx gcpkms-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/index.mdx index-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/key-management.mdx key-management-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/kmip.mdx kmip-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/mongodbatlas.mdx mongodbatlas-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/nomad.mdx nomad-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/openldap.mdx openldap-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/pki.mdx pki-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/rabbitmq.mdx rabbitmq-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/ssh.mdx ssh-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/terraform.mdx terraform-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/totp.mdx totp-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/transform.mdx transform-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/transit.mdx transit-website-content-api-docs-secret.mdx
-mv website/content/api-docs/secret/databases/cassandra.mdx cassandra-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/couchbase.mdx couchbase-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/elasticdb.mdx elasticdb-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/hanadb.mdx hanadb-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/index.mdx index-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/influxdb.mdx influxdb-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/mongodb.mdx mongodb-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/mongodbatlas.mdx mongodbatlas-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/mssql.mdx mssql-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/mysql-maria.mdx mysql-maria-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/oracle.mdx oracle-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/postgresql.mdx postgresql-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/redshift.mdx redshift-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/databases/snowflake.mdx snowflake-website-content-api-docs-secret-databases.mdx
-mv website/content/api-docs/secret/identity/entity-alias.mdx entity-alias-website-content-api-docs-secret-identity.mdx
-mv website/content/api-docs/secret/identity/entity.mdx entity-website-content-api-docs-secret-identity.mdx
-mv website/content/api-docs/secret/identity/group-alias.mdx group-alias-website-content-api-docs-secret-identity.mdx
-mv website/content/api-docs/secret/identity/group.mdx group-website-content-api-docs-secret-identity.mdx
-mv website/content/api-docs/secret/identity/index.mdx index-website-content-api-docs-secret-identity.mdx
-mv website/content/api-docs/secret/identity/lookup.mdx lookup-website-content-api-docs-secret-identity.mdx
-mv website/content/api-docs/secret/identity/tokens.mdx tokens-website-content-api-docs-secret-identity.mdx
-mv website/content/api-docs/secret/kv/index.mdx index-website-content-api-docs-secret-kv.mdx
-mv website/content/api-docs/secret/kv/kv-v1.mdx kv-v1-website-content-api-docs-secret-kv.mdx
-mv website/content/api-docs/secret/kv/kv-v2.mdx kv-v2-website-content-api-docs-secret-kv.mdx
-mv website/content/api-docs/system/audit-hash.mdx audit-hash-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/audit.mdx audit-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/auth.mdx auth-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/capabilities-accessor.mdx capabilities-accessor-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/capabilities-self.mdx capabilities-self-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/capabilities.mdx capabilities-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/config-auditing.mdx config-auditing-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/config-control-group.mdx config-control-group-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/config-cors.mdx config-cors-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/config-state.mdx config-state-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/config-ui.mdx config-ui-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/control-group.mdx control-group-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/generate-recovery-token.mdx generate-recovery-token-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/generate-root.mdx generate-root-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/health.mdx health-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/host-info.mdx host-info-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/index.mdx index-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/init.mdx init-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/internal-counters.mdx internal-counters-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/internal-specs-openapi.mdx internal-specs-openapi-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/internal-ui-feature.mdx internal-ui-feature-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/internal-ui-mounts.mdx internal-ui-mounts-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/key-status.mdx key-status-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/leader.mdx leader-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/lease-count-quotas.mdx lease-count-quotas-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/leases.mdx leases-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/metrics.mdx metrics-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/monitor.mdx monitor-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/mounts.mdx mounts-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/namespaces.mdx namespaces-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/plugins-catalog.mdx plugins-catalog-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/plugins-reload-backend.mdx plugins-reload-backend-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/policies-password.mdx policies-password-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/policies.mdx policies-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/policy.mdx policy-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/pprof.mdx pprof-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/quotas-config.mdx quotas-config-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/rate-limit-quotas.mdx rate-limit-quotas-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/raw.mdx raw-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/rekey-recovery-key.mdx rekey-recovery-key-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/rekey.mdx rekey-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/remount.mdx remount-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/rotate-config.mdx rotate-config-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/rotate.mdx rotate-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/seal-status.mdx seal-status-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/seal.mdx seal-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/sealwrap-rewrap.mdx sealwrap-rewrap-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/step-down.mdx step-down-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/tools.mdx tools-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/unseal.mdx unseal-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/wrapping-lookup.mdx wrapping-lookup-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/wrapping-rewrap.mdx wrapping-rewrap-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/wrapping-unwrap.mdx wrapping-unwrap-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/wrapping-wrap.mdx wrapping-wrap-website-content-api-docs-system.mdx
-mv website/content/api-docs/system/mfa/duo.mdx duo-website-content-api-docs-system-mfa.mdx
-mv website/content/api-docs/system/mfa/index.mdx index-website-content-api-docs-system-mfa.mdx
-mv website/content/api-docs/system/mfa/okta.mdx okta-website-content-api-docs-system-mfa.mdx
-mv website/content/api-docs/system/mfa/pingid.mdx pingid-website-content-api-docs-system-mfa.mdx
-mv website/content/api-docs/system/mfa/totp.mdx totp-website-content-api-docs-system-mfa.mdx
-mv website/content/api-docs/system/replication/index.mdx index-website-content-api-docs-system-replication.mdx
-mv website/content/api-docs/system/replication/replication-dr.mdx replication-dr-website-content-api-docs-system-replication.mdx
-mv website/content/api-docs/system/replication/replication-performance.mdx replication-performance-website-content-api-docs-system-replication.mdx
-mv website/content/api-docs/system/storage/index.mdx index-website-content-api-docs-system-storage.mdx
-mv website/content/api-docs/system/storage/raft.mdx raft-website-content-api-docs-system-storage.mdx
-mv website/content/api-docs/system/storage/raftautosnapshots.mdx raftautosnapshots-website-content-api-docs-system-storage.mdx
-mv website/content/guides/getting-started.mdx getting-started-website-content-guides.mdx
-mv website/content/guides/index.mdx index-website-content-guides.mdx
-mv website/content/guides/encryption/index.mdx index-website-content-guides-encryption.mdx
-mv website/content/guides/encryption/spring-demo.mdx spring-demo-website-content-guides-encryption.mdx
-mv website/content/guides/encryption/transit-rewrap.mdx transit-rewrap-website-content-guides-encryption.mdx
-mv website/content/guides/encryption/transit.mdx transit-website-content-guides-encryption.mdx
-mv website/content/guides/identity/approle-trusted-entities.mdx approle-trusted-entities-website-content-guides-identity.mdx
-mv website/content/guides/identity/authentication.mdx authentication-website-content-guides-identity.mdx
-mv website/content/guides/identity/control-groups.mdx control-groups-website-content-guides-identity.mdx
-mv website/content/guides/identity/identity.mdx identity-website-content-guides-identity.mdx
-mv website/content/guides/identity/index.mdx index-website-content-guides-identity.mdx
-mv website/content/guides/identity/lease.mdx lease-website-content-guides-identity.mdx
-mv website/content/guides/identity/policies.mdx policies-website-content-guides-identity.mdx
-mv website/content/guides/identity/policy-templating.mdx policy-templating-website-content-guides-identity.mdx
-mv website/content/guides/identity/secure-intro.mdx secure-intro-website-content-guides-identity.mdx
-mv website/content/guides/identity/sentinel.mdx sentinel-website-content-guides-identity.mdx
-mv website/content/guides/operations/autounseal-aws-kms.mdx autounseal-aws-kms-website-content-guides-operations.mdx
-mv website/content/guides/operations/deployment-guide.mdx deployment-guide-website-content-guides-operations.mdx
-mv website/content/guides/operations/disaster-recovery.mdx disaster-recovery-website-content-guides-operations.mdx
-mv website/content/guides/operations/generate-root.mdx generate-root-website-content-guides-operations.mdx
-mv website/content/guides/operations/index.mdx index-website-content-guides-operations.mdx
-mv website/content/guides/operations/monitoring.mdx monitoring-website-content-guides-operations.mdx
-mv website/content/guides/operations/mount-filter.mdx mount-filter-website-content-guides-operations.mdx
-mv website/content/guides/operations/multi-tenant.mdx multi-tenant-website-content-guides-operations.mdx
-mv website/content/guides/operations/performance-nodes.mdx performance-nodes-website-content-guides-operations.mdx
-mv website/content/guides/operations/plugin-backends.mdx plugin-backends-website-content-guides-operations.mdx
-mv website/content/guides/operations/production.mdx production-website-content-guides-operations.mdx
-mv website/content/guides/operations/reference-architecture.mdx reference-architecture-website-content-guides-operations.mdx
-mv website/content/guides/operations/rekeying-and-rotating.mdx rekeying-and-rotating-website-content-guides-operations.mdx
-mv website/content/guides/operations/replication.mdx replication-website-content-guides-operations.mdx
-mv website/content/guides/operations/seal-wrap.mdx seal-wrap-website-content-guides-operations.mdx
-mv website/content/guides/operations/vault-ha-consul.mdx vault-ha-consul-website-content-guides-operations.mdx
-mv website/content/guides/secret-mgmt/app-integration.mdx app-integration-website-content-guides-secret-mgmt.mdx
-mv website/content/guides/secret-mgmt/cubbyhole.mdx cubbyhole-website-content-guides-secret-mgmt.mdx
-mv website/content/guides/secret-mgmt/db-root-rotation.mdx db-root-rotation-website-content-guides-secret-mgmt.mdx
-mv website/content/guides/secret-mgmt/dynamic-secrets.mdx dynamic-secrets-website-content-guides-secret-mgmt.mdx
-mv website/content/guides/secret-mgmt/index.mdx index-website-content-guides-secret-mgmt.mdx
-mv website/content/guides/secret-mgmt/pki-engine.mdx pki-engine-website-content-guides-secret-mgmt.mdx
-mv website/content/guides/secret-mgmt/ssh-otp.mdx ssh-otp-website-content-guides-secret-mgmt.mdx
-mv website/content/guides/secret-mgmt/static-secrets.mdx static-secrets-website-content-guides-secret-mgmt.mdx
-mv website/content/guides/secret-mgmt/versioned-kv.mdx versioned-kv-website-content-guides-secret-mgmt.mdx
-mv website/content/intro/index.mdx index-website-content-intro.mdx
-mv website/content/intro/getting-started/apis.mdx apis-website-content-intro-getting-started.mdx
-mv website/content/intro/getting-started/authentication.mdx authentication-website-content-intro-getting-started.mdx
-mv website/content/intro/getting-started/deploy.mdx deploy-website-content-intro-getting-started.mdx
-mv website/content/intro/getting-started/dev-server.mdx dev-server-website-content-intro-getting-started.mdx
-mv website/content/intro/getting-started/dynamic-secrets.mdx dynamic-secrets-website-content-intro-getting-started.mdx
-mv website/content/intro/getting-started/first-secret.mdx first-secret-website-content-intro-getting-started.mdx
-mv website/content/intro/getting-started/help.mdx help-website-content-intro-getting-started.mdx
-mv website/content/intro/getting-started/index.mdx index-website-content-intro-getting-started.mdx
-mv website/content/intro/getting-started/next-steps.mdx next-steps-website-content-intro-getting-started.mdx
-mv website/content/intro/getting-started/policies.mdx policies-website-content-intro-getting-started.mdx
-mv website/content/intro/getting-started/secrets-engines.mdx secrets-engines-website-content-intro-getting-started.mdx
-mv website/content/partials/aws-auth-metadata-fix.mdx aws-auth-metadata-fix-website-content-partials.mdx
-mv website/content/partials/aws-auth-metadata-issue.mdx aws-auth-metadata-issue-website-content-partials.mdx
-mv website/content/partials/aws-imds-timeout-upgrade.mdx aws-imds-timeout-upgrade-website-content-partials.mdx
-mv website/content/partials/aws-imds-timeout.mdx aws-imds-timeout-website-content-partials.mdx
-mv website/content/partials/aws-invalid-header-fix.mdx aws-invalid-header-fix-website-content-partials.mdx
-mv website/content/partials/aws-invalid-header.mdx aws-invalid-header-website-content-partials.mdx
-mv website/content/partials/aws-sts-issue.mdx aws-sts-issue-website-content-partials.mdx
-mv website/content/partials/builds-without-ui.mdx builds-without-ui-website-content-partials.mdx
-mv website/content/partials/enterprise-licenses.mdx enterprise-licenses-website-content-partials.mdx
-mv website/content/partials/ldap-upndomain-issue.mdx ldap-upndomain-issue-website-content-partials.mdx
-mv website/content/partials/okta-group-pagination.mdx okta-group-pagination-website-content-partials.mdx
-mv website/content/partials/primary-cluster-addr-change.mdx primary-cluster-addr-change-website-content-partials.mdx
-mv website/content/partials/tokenfields.mdx tokenfields-website-content-partials.mdx
-mv website/content/partials/tokenstorefields.mdx tokenstorefields-website-content-partials.mdx
-mv changelog/10072.txt 10072-changelog.txt
-mv changelog/10077.txt 10077-changelog.txt
-mv changelog/10131.txt 10131-changelog.txt
-mv changelog/10231.txt 10231-changelog.txt
-mv changelog/10365.txt 10365-changelog.txt
-mv changelog/10375.txt 10375-changelog.txt
-mv changelog/10384.txt 10384-changelog.txt
-mv changelog/10386.txt 10386-changelog.txt
-mv changelog/10416.txt 10416-changelog.txt
-mv changelog/10417.txt 10417-changelog.txt
-mv changelog/10424.txt 10424-changelog.txt
-mv changelog/10433.txt 10433-changelog.txt
-mv changelog/10444.txt 10444-changelog.txt
-mv changelog/10456.txt 10456-changelog.txt
-mv changelog/10487.txt 10487-changelog.txt
-mv changelog/10489.txt 10489-changelog.txt
-mv changelog/10490.txt 10490-changelog.txt
-mv changelog/10491.txt 10491-changelog.txt
-mv changelog/10498.txt 10498-changelog.txt
-mv changelog/10514.txt 10514-changelog.txt
-mv changelog/10520.txt 10520-changelog.txt
-mv changelog/10536.txt 10536-changelog.txt
-mv changelog/10537.txt 10537-changelog.txt
-mv changelog/10546.txt 10546-changelog.txt
-mv changelog/10556.txt 10556-changelog.txt
-mv changelog/10558.txt 10558-changelog.txt
-mv changelog/10579.txt 10579-changelog.txt
-mv changelog/10588.txt 10588-changelog.txt
-mv changelog/10596.txt 10596-changelog.txt
-mv changelog/10603.txt 10603-changelog.txt
-mv changelog/10609.txt 10609-changelog.txt
-mv changelog/10613.txt 10613-changelog.txt
-mv changelog/10644.txt 10644-changelog.txt
-mv changelog/10650.txt 10650-changelog.txt
-mv changelog/10653.txt 10653-changelog.txt
-mv changelog/10655.txt 10655-changelog.txt
-mv changelog/10677.txt 10677-changelog.txt
-mv changelog/10684.txt 10684-changelog.txt
-mv changelog/10689.txt 10689-changelog.txt
-mv changelog/10705.txt 10705-changelog.txt
-mv changelog/10708.txt 10708-changelog.txt
-mv changelog/10725.txt 10725-changelog.txt
-mv changelog/10726.txt 10726-changelog.txt
-mv changelog/10730.txt 10730-changelog.txt
-mv changelog/10743.txt 10743-changelog.txt
-mv changelog/10744.txt 10744-changelog.txt
-mv changelog/10756.txt 10756-changelog.txt
-mv changelog/10757.txt 10757-changelog.txt
-mv changelog/10758.txt 10758-changelog.txt
-mv changelog/10759.txt 10759-changelog.txt
-mv changelog/10766.txt 10766-changelog.txt
-mv changelog/10767.txt 10767-changelog.txt
-mv changelog/10812.txt 10812-changelog.txt
-mv changelog/10826.txt 10826-changelog.txt
-mv changelog/10833.txt 10833-changelog.txt
-mv changelog/10834.txt 10834-changelog.txt
-mv changelog/10848.txt 10848-changelog.txt
-mv changelog/10850.txt 10850-changelog.txt
-mv changelog/10855.txt 10855-changelog.txt
-mv changelog/10858.txt 10858-changelog.txt
-mv changelog/10877.txt 10877-changelog.txt
-mv changelog/10901.txt 10901-changelog.txt
-mv changelog/10904.txt 10904-changelog.txt
-mv changelog/10906.txt 10906-changelog.txt
-mv changelog/10919.txt 10919-changelog.txt
-mv changelog/10927.txt 10927-changelog.txt
-mv changelog/10931.txt 10931-changelog.txt
-mv changelog/10938.txt 10938-changelog.txt
-mv changelog/10942.txt 10942-changelog.txt
-mv changelog/10949.txt 10949-changelog.txt
-mv changelog/10951.txt 10951-changelog.txt
-mv changelog/10952.txt 10952-changelog.txt
-mv changelog/10953.txt 10953-changelog.txt
-mv changelog/10964.txt 10964-changelog.txt
-mv changelog/10980.txt 10980-changelog.txt
-mv changelog/10982.txt 10982-changelog.txt
-mv changelog/10992.txt 10992-changelog.txt
-mv changelog/10995.txt 10995-changelog.txt
-mv changelog/10996.txt 10996-changelog.txt
-mv changelog/10997.txt 10997-changelog.txt
-mv changelog/11011.txt 11011-changelog.txt
-mv changelog/11015.txt 11015-changelog.txt
-mv changelog/11018.txt 11018-changelog.txt
-mv changelog/11022.txt 11022-changelog.txt
-mv changelog/11060.txt 11060-changelog.txt
-mv changelog/11094.txt 11094-changelog.txt
-mv changelog/11113.txt 11113-changelog.txt
-mv changelog/11119.txt 11119-changelog.txt
-mv changelog/11127.txt 11127-changelog.txt
-mv changelog/11142.txt 11142-changelog.txt
-mv changelog/11173.txt 11173-changelog.txt
-mv changelog/11182.txt 11182-changelog.txt
-mv changelog/11213.txt 11213-changelog.txt
-mv changelog/11226.txt 11226-changelog.txt
-mv changelog/9972.txt 9972-changelog.txt
-mv changelog/README.md README-changelog.md
-mv changelog/_ _-changelog
-mv changelog/_1622.txt _1622-changelog.txt
-mv changelog/_1633.txt _1633-changelog.txt
-mv changelog/_1637.txt _1637-changelog.txt
-mv changelog/_1642.txt _1642-changelog.txt
-mv changelog/_1656.txt _1656-changelog.txt
-mv changelog/_1659.txt _1659-changelog.txt
-mv changelog/_1663.txt _1663-changelog.txt
-mv changelog/_1680.txt _1680-changelog.txt
-mv changelog/_1705.txt _1705-changelog.txt
-mv changelog/_1712.txt _1712-changelog.txt
-mv changelog/_1739.txt _1739-changelog.txt
-mv changelog/_2021Jan20.txt _2021Jan20-changelog.txt
-mv changelog/_2021Jan26.txt _2021Jan26-changelog.txt
-mv changelog/changelog.tmpl changelog-changelog.tmpl
-mv dependencies/2-25-21/deps-upgrade-output.txt deps-upgrade-output-dependencies-2-25-21.txt
-mv dependencies/2-25-21/deps-upgrade.txt deps-upgrade-dependencies-2-25-21.txt
-mv internalshared/README.md README-internalshared.md
-mv sdk/README.md README-sdk.md
-mv sdk/database/dbplugin/README.md README-sdk-database-dbplugin.md
-mv sdk/queue/README.md README-sdk-queue.md
-mv serviceregistration/kubernetes/testing/README.md README-serviceregistration-kubernetes-testing.md
-mv terraform/README.md README-terraform.md
+mv website/source/404.html.md 404.html-website-source.md
+mv website/source/robots.txt robots-website-source.txt
+mv website/source/api/libraries.html.md libraries.html-website-source-api.md
+mv website/source/api/overview.html.md overview.html-website-source-api.md
+mv website/source/api/relatedtools.html.md relatedtools.html-website-source-api.md
+mv website/source/api/auth/index.html.md index.html-website-source-api-auth.md
+mv website/source/api/auth/app-id/index.html.md index.html-website-source-api-auth-app-id.md
+mv website/source/api/auth/approle/index.html.md index.html-website-source-api-auth-approle.md
+mv website/source/api/auth/aws/index.html.md index.html-website-source-api-auth-aws.md
+mv website/source/api/auth/azure/index.html.md index.html-website-source-api-auth-azure.md
+mv website/source/api/auth/cert/index.html.md index.html-website-source-api-auth-cert.md
+mv website/source/api/auth/gcp/index.html.md index.html-website-source-api-auth-gcp.md
+mv website/source/api/auth/github/index.html.md index.html-website-source-api-auth-github.md
+mv website/source/api/auth/kubernetes/index.html.md index.html-website-source-api-auth-kubernetes.md
+mv website/source/api/auth/ldap/index.html.md index.html-website-source-api-auth-ldap.md
+mv website/source/api/auth/okta/index.html.md index.html-website-source-api-auth-okta.md
+mv website/source/api/auth/radius/index.html.md index.html-website-source-api-auth-radius.md
+mv website/source/api/auth/token/index.html.md index.html-website-source-api-auth-token.md
+mv website/source/api/auth/userpass/index.html.md index.html-website-source-api-auth-userpass.md
+mv website/source/api/auth/alicloud/index.html.md index.html-website-source-api-auth-alicloud.md
+mv website/source/api/auth/jwt/index.html.md index.html-website-source-api-auth-jwt.md
+mv website/source/api/auth/jwt/index_beta.html.md index_beta.html-website-source-api-auth-jwt.md
+mv website/source/api/secret/index.html.md index.html-website-source-api-secret.md
+mv website/source/api/secret/ad/index.html.md index.html-website-source-api-secret-ad.md
+mv website/source/api/secret/aws/index.html.md index.html-website-source-api-secret-aws.md
+mv website/source/api/secret/cassandra/index.html.md index.html-website-source-api-secret-cassandra.md
+mv website/source/api/secret/consul/index.html.md index.html-website-source-api-secret-consul.md
+mv website/source/api/secret/cubbyhole/index.html.md index.html-website-source-api-secret-cubbyhole.md
+mv website/source/api/secret/databases/cassandra.html.md cassandra.html-website-source-api-secret-databases.md
+mv website/source/api/secret/databases/hanadb.html.md hanadb.html-website-source-api-secret-databases.md
+mv website/source/api/secret/databases/index.html.md index.html-website-source-api-secret-databases.md
+mv website/source/api/secret/databases/influxdb.html.md influxdb.html-website-source-api-secret-databases.md
+mv website/source/api/secret/databases/mongodb.html.md mongodb.html-website-source-api-secret-databases.md
+mv website/source/api/secret/databases/mssql.html.md mssql.html-website-source-api-secret-databases.md
+mv website/source/api/secret/databases/mysql-maria.html.md mysql-maria.html-website-source-api-secret-databases.md
+mv website/source/api/secret/databases/oracle.html.md oracle.html-website-source-api-secret-databases.md
+mv website/source/api/secret/databases/postgresql.html.md postgresql.html-website-source-api-secret-databases.md
+mv website/source/api/secret/gcp/index.html.md index.html-website-source-api-secret-gcp.md
+mv website/source/api/secret/identity/entity-alias.html.md entity-alias.html-website-source-api-secret-identity.md
+mv website/source/api/secret/identity/entity.html.md entity.html-website-source-api-secret-identity.md
+mv website/source/api/secret/identity/group-alias.html.md group-alias.html-website-source-api-secret-identity.md
+mv website/source/api/secret/identity/group.html.md group.html-website-source-api-secret-identity.md
+mv website/source/api/secret/identity/identity-groups.html.md identity-groups.html-website-source-api-secret-identity.md
+mv website/source/api/secret/identity/index.html.md index.html-website-source-api-secret-identity.md
+mv website/source/api/secret/identity/lookup.html.md lookup.html-website-source-api-secret-identity.md
+mv website/source/api/secret/kv/index.html.md index.html-website-source-api-secret-kv.md
+mv website/source/api/secret/kv/kv-v1.html.md kv-v1.html-website-source-api-secret-kv.md
+mv website/source/api/secret/kv/kv-v2.html.md kv-v2.html-website-source-api-secret-kv.md
+mv website/source/api/secret/mongodb/index.html.md index.html-website-source-api-secret-mongodb.md
+mv website/source/api/secret/mssql/index.html.md index.html-website-source-api-secret-mssql.md
+mv website/source/api/secret/mysql/index.html.md index.html-website-source-api-secret-mysql.md
+mv website/source/api/secret/nomad/index.html.md index.html-website-source-api-secret-nomad.md
+mv website/source/api/secret/pki/index.html.md index.html-website-source-api-secret-pki.md
+mv website/source/api/secret/postgresql/index.html.md index.html-website-source-api-secret-postgresql.md
+mv website/source/api/secret/rabbitmq/index.html.md index.html-website-source-api-secret-rabbitmq.md
+mv website/source/api/secret/ssh/index.html.md index.html-website-source-api-secret-ssh.md
+mv website/source/api/secret/totp/index.html.md index.html-website-source-api-secret-totp.md
+mv website/source/api/secret/transit/index.html.md index.html-website-source-api-secret-transit.md
+mv website/source/api/secret/alicloud/index.html.md index.html-website-source-api-secret-alicloud.md
+mv website/source/api/secret/azure/index.html.md index.html-website-source-api-secret-azure.md
+mv website/source/api/secret/gcpkms/index.html.md index.html-website-source-api-secret-gcpkms.md
+mv website/source/api/system/init.html.md init.html-website-source-api-system.md
+mv website/source/api/system/internal-specs-openapi.html.md internal-specs-openapi.html-website-source-api-system.md
+mv website/source/api/system/key-status.html.md key-status.html-website-source-api-system.md
+mv website/source/api/system/leader.html.md leader.html-website-source-api-system.md
+mv website/source/api/system/leases.html.md leases.html-website-source-api-system.md
+mv website/source/api/system/mounts.html.md mounts.html-website-source-api-system.md
+mv website/source/api/system/namespaces.html.md namespaces.html-website-source-api-system.md
+mv website/source/api/system/plugins-catalog.html.md plugins-catalog.html-website-source-api-system.md
+mv website/source/api/system/plugins-reload-backend.html.md plugins-reload-backend.html-website-source-api-system.md
+mv website/source/api/system/policies.html.md policies.html-website-source-api-system.md
+mv website/source/api/system/policy.html.md policy.html-website-source-api-system.md
+mv website/source/api/system/raw.html.md raw.html-website-source-api-system.md
+mv website/source/api/system/rekey-recovery-key.html.md rekey-recovery-key.html-website-source-api-system.md
+mv website/source/api/system/rekey.html.md rekey.html-website-source-api-system.md
+mv website/source/api/system/remount.html.md remount.html-website-source-api-system.md
+mv website/source/api/system/rotate.html.md rotate.html-website-source-api-system.md
+mv website/source/api/system/seal-status.html.md seal-status.html-website-source-api-system.md
+mv website/source/api/system/seal.html.md seal.html-website-source-api-system.md
+mv website/source/api/system/step-down.html.md step-down.html-website-source-api-system.md
+mv website/source/api/system/tools.html.md tools.html-website-source-api-system.md
+mv website/source/api/system/unseal.html.md unseal.html-website-source-api-system.md
+mv website/source/api/system/wrapping-lookup.html.md wrapping-lookup.html-website-source-api-system.md
+mv website/source/api/system/wrapping-rewrap.html.md wrapping-rewrap.html-website-source-api-system.md
+mv website/source/api/system/wrapping-unwrap.html.md wrapping-unwrap.html-website-source-api-system.md
+mv website/source/api/system/wrapping-wrap.html.md wrapping-wrap.html-website-source-api-system.md
+mv website/source/api/system/audit-hash.html.md audit-hash.html-website-source-api-system.md
+mv website/source/api/system/audit.html.md audit.html-website-source-api-system.md
+mv website/source/api/system/auth.html.md auth.html-website-source-api-system.md
+mv website/source/api/system/capabilities-accessor.html.md capabilities-accessor.html-website-source-api-system.md
+mv website/source/api/system/capabilities-self.html.md capabilities-self.html-website-source-api-system.md
+mv website/source/api/system/capabilities.html.md capabilities.html-website-source-api-system.md
+mv website/source/api/system/config-auditing.html.md config-auditing.html-website-source-api-system.md
+mv website/source/api/system/config-control-group.html.md config-control-group.html-website-source-api-system.md
+mv website/source/api/system/config-cors.html.md config-cors.html-website-source-api-system.md
+mv website/source/api/system/config-ui.html.md config-ui.html-website-source-api-system.md
+mv website/source/api/system/control-group.html.md control-group.html-website-source-api-system.md
+mv website/source/api/system/generate-root.html.md generate-root.html-website-source-api-system.md
+mv website/source/api/system/health.html.md health.html-website-source-api-system.md
+mv website/source/api/system/index.html.md index.html-website-source-api-system.md
+mv website/source/api/system/internal-ui-mounts.html.md internal-ui-mounts.html-website-source-api-system.md
+mv website/source/api/system/mfa/duo.html.md duo.html-website-source-api-system-mfa.md
+mv website/source/api/system/mfa/index.html.md index.html-website-source-api-system-mfa.md
+mv website/source/api/system/mfa/okta.html.md okta.html-website-source-api-system-mfa.md
+mv website/source/api/system/mfa/pingid.html.md pingid.html-website-source-api-system-mfa.md
+mv website/source/api/system/mfa/totp.html.md totp.html-website-source-api-system-mfa.md
+mv website/source/api/system/replication/index.html.md index.html-website-source-api-system-replication.md
+mv website/source/api/system/replication/replication-dr.html.md replication-dr.html-website-source-api-system-replication.md
+mv website/source/api/system/replication/replication-performance.html.md replication-performance.html-website-source-api-system-replication.md
+mv website/source/guides/index.html.md index.html-website-source-guides.md
+mv website/source/guides/encryption/index.html.md index.html-website-source-guides-encryption.md
+mv website/source/guides/encryption/spring-demo.html.md spring-demo.html-website-source-guides-encryption.md
+mv website/source/guides/encryption/transit-rewrap.html.md transit-rewrap.html-website-source-guides-encryption.md
+mv website/source/guides/encryption/transit.html.md transit.html-website-source-guides-encryption.md
+mv website/source/guides/getting-started/index.html.md index.html-website-source-guides-getting-started.md
+mv website/source/guides/identity/approle-trusted-entities.html.md approle-trusted-entities.html-website-source-guides-identity.md
+mv website/source/guides/identity/authentication.html.md authentication.html-website-source-guides-identity.md
+mv website/source/guides/identity/control-groups.html.md control-groups.html-website-source-guides-identity.md
+mv website/source/guides/identity/identity.html.md identity.html-website-source-guides-identity.md
+mv website/source/guides/identity/index.html.md index.html-website-source-guides-identity.md
+mv website/source/guides/identity/lease.html.md lease.html-website-source-guides-identity.md
+mv website/source/guides/identity/policies.html.md policies.html-website-source-guides-identity.md
+mv website/source/guides/identity/policy-templating.html.md policy-templating.html-website-source-guides-identity.md
+mv website/source/guides/identity/secure-intro.html.md secure-intro.html-website-source-guides-identity.md
+mv website/source/guides/identity/sentinel.html.md sentinel.html-website-source-guides-identity.md
+mv website/source/guides/operations/autounseal-aws-kms.html.md autounseal-aws-kms.html-website-source-guides-operations.md
+mv website/source/guides/operations/deployment-guide.html.md deployment-guide.html-website-source-guides-operations.md
+mv website/source/guides/operations/disaster-recovery.html.md disaster-recovery.html-website-source-guides-operations.md
+mv website/source/guides/operations/generate-root.html.md generate-root.html-website-source-guides-operations.md
+mv website/source/guides/operations/index.html.md index.html-website-source-guides-operations.md
+mv website/source/guides/operations/monitoring.html.md monitoring.html-website-source-guides-operations.md
+mv website/source/guides/operations/mount-filter.html.md mount-filter.html-website-source-guides-operations.md
+mv website/source/guides/operations/multi-tenant.html.md multi-tenant.html-website-source-guides-operations.md
+mv website/source/guides/operations/performance-nodes.html.md performance-nodes.html-website-source-guides-operations.md
+mv website/source/guides/operations/plugin-backends.html.md plugin-backends.html-website-source-guides-operations.md
+mv website/source/guides/operations/production.html.md production.html-website-source-guides-operations.md
+mv website/source/guides/operations/reference-architecture.html.md reference-architecture.html-website-source-guides-operations.md
+mv website/source/guides/operations/rekeying-and-rotating.html.md rekeying-and-rotating.html-website-source-guides-operations.md
+mv website/source/guides/operations/replication.html.md replication.html-website-source-guides-operations.md
+mv website/source/guides/operations/seal-wrap.html.md seal-wrap.html-website-source-guides-operations.md
+mv website/source/guides/operations/vault-ha-consul.html.md vault-ha-consul.html-website-source-guides-operations.md
+mv website/source/guides/secret-mgmt/app-integration.html.md app-integration.html-website-source-guides-secret-mgmt.md
+mv website/source/guides/secret-mgmt/cubbyhole.html.md cubbyhole.html-website-source-guides-secret-mgmt.md
+mv website/source/guides/secret-mgmt/db-root-rotation.html.md db-root-rotation.html-website-source-guides-secret-mgmt.md
+mv website/source/guides/secret-mgmt/dynamic-secrets.html.md dynamic-secrets.html-website-source-guides-secret-mgmt.md
+mv website/source/guides/secret-mgmt/index.html.md index.html-website-source-guides-secret-mgmt.md
+mv website/source/guides/secret-mgmt/pki-engine.html.md pki-engine.html-website-source-guides-secret-mgmt.md
+mv website/source/guides/secret-mgmt/ssh-otp.html.md ssh-otp.html-website-source-guides-secret-mgmt.md
+mv website/source/guides/secret-mgmt/static-secrets.html.md static-secrets.html-website-source-guides-secret-mgmt.md
+mv website/source/guides/secret-mgmt/versioned-kv.html.md versioned-kv.html-website-source-guides-secret-mgmt.md
+mv website/source/intro/getting-started/apis.html.md apis.html-website-source-intro-getting-started.md
+mv website/source/intro/getting-started/authentication.html.md authentication.html-website-source-intro-getting-started.md
+mv website/source/intro/getting-started/deploy.html.md deploy.html-website-source-intro-getting-started.md
+mv website/source/intro/getting-started/dev-server.html.md dev-server.html-website-source-intro-getting-started.md
+mv website/source/intro/getting-started/dynamic-secrets.html.md dynamic-secrets.html-website-source-intro-getting-started.md
+mv website/source/intro/getting-started/first-secret.html.md first-secret.html-website-source-intro-getting-started.md
+mv website/source/intro/getting-started/help.html.md help.html-website-source-intro-getting-started.md
+mv website/source/intro/getting-started/index.html.md index.html-website-source-intro-getting-started.md
+mv website/source/intro/getting-started/next-steps.html.md next-steps.html-website-source-intro-getting-started.md
+mv website/source/intro/getting-started/policies.html.md policies.html-website-source-intro-getting-started.md
+mv website/source/intro/getting-started/secrets-engines.html.md secrets-engines.html-website-source-intro-getting-started.md
+mv terraform/aws/README.md README-terraform-aws.md
 
 %build
 %gobuild -o %{gobuilddir}/bin/api %{goipath}
-for cmd in plugins/database/cassandra/cassandra-database-plugin plugins/database/hana/hana-database-plugin plugins/database/influxdb/influxdb-database-plugin plugins/database/mongodb/mongodb-database-plugin plugins/database/mssql/mssql-database-plugin plugins/database/mysql/mysql-database-plugin plugins/database/mysql/mysql-legacy-database-plugin plugins/database/postgresql/postgresql-database-plugin plugins/database/redshift/redshift-database-plugin; do
+for cmd in logical/plugin/mock/mock-plugin plugins/database/cassandra/cassandra-database-plugin plugins/database/hana/hana-database-plugin plugins/database/influxdb/influxdb-database-plugin plugins/database/mongodb/mongodb-database-plugin plugins/database/mssql/mssql-database-plugin plugins/database/mysql/mysql-database-plugin plugins/database/mysql/mysql-legacy-database-plugin plugins/database/postgresql/postgresql-database-plugin; do
   %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
 done
 
@@ -982,278 +573,172 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %license license-ui-app-controllers-vault-cluster.js license-ui-app-models.js
 %license license-ui-app-routes-vault-cluster.js
 %license license-info-ui-app-templates-components.hbs
-%license license-ui-app-templates-vault-cluster.hbs
-%license license-website-content-api-docs-system.mdx
-%doc CHANGELOG.md CONTRIBUTING.md README.md README-api.md
-%doc generate-builtin-credential-cert-test-fixtures.txt README-command-agent.md
-%doc README-physical-foundationdb.md README-plugins-database-mongodb.md
-%doc README-plugins-database-mssql.md MODULE_REPORT-ui.md README-ui.md
-%doc changelog-url-for-ui-lib-core-addon-helpers.js
-%doc changelog-url-for-ui-lib-core-app-helpers.js
-%doc alert-banner-ui-lib-core-stories.md alert-inline-ui-lib-core-stories.md
-%doc box-radio-ui-lib-core-stories.md chevron-ui-lib-core-stories.md
-%doc confirm-action-ui-lib-core-stories.md confirm-ui-lib-core-stories.md
-%doc doc-link-ui-lib-core-stories.md empty-state-ui-lib-core-stories.md
-%doc form-field-groups-ui-lib-core-stories.md form-field-ui-lib-core-stories.md
-%doc form-save-buttons-ui-lib-core-stories.md icon-ui-lib-core-stories.md
-%doc info-table-row-ui-lib-core-stories.md info-table-ui-lib-core-stories.md
-%doc layout-loading-ui-lib-core-stories.md list-view-ui-lib-core-stories.md
-%doc masked-input-ui-lib-core-stories.md message-error-ui-lib-core-stories.md
-%doc message-ui-lib-core-stories.md popup-menu-ui-lib-core-stories.md
-%doc search-select-ui-lib-core-stories.md select-ui-lib-core-stories.md
-%doc toggle-button-ui-lib-core-stories.md ttl-form-ui-lib-core-stories.md
-%doc ttl-picker-ui-lib-core-stories.md ttl-picker2-ui-lib-core-stories.md
-%doc vault-logo-spinner-ui-lib-core-stories.md
-%doc toolbar-actions-ui-lib-core-stories-toolbar.md
-%doc toolbar-download-button-ui-lib-core-stories-toolbar.md
-%doc toolbar-filters-ui-lib-core-stories-toolbar.md
-%doc toolbar-link-ui-lib-core-stories-toolbar.md
-%doc toolbar-secret-link-ui-lib-core-stories-toolbar.md
-%doc toolbar-ui-lib-core-stories-toolbar.md robots-ui-public.txt
-%doc alert-popup-ui-stories.md auth-form-ui-stories.md
-%doc file-to-array-buffer-ui-stories.md selectable-card-ui-stories.md
-%doc toggle-ui-stories.md config-ui-stories-auth-config-form.md
-%doc options-ui-stories-auth-config-form.md README-website.md
-%doc README-website-components-columns.md
-%doc README-website-components-inline-tag.md docs security-website-content.mdx
-%doc index-website-content-api-docs.mdx libraries-website-content-api-docs.mdx
-%doc relatedtools-website-content-api-docs.mdx
-%doc alicloud-website-content-api-docs-auth.mdx
-%doc app-id-website-content-api-docs-auth.mdx
-%doc approle-website-content-api-docs-auth.mdx
-%doc aws-website-content-api-docs-auth.mdx
-%doc azure-website-content-api-docs-auth.mdx
-%doc cert-website-content-api-docs-auth.mdx cf-website-content-api-docs-auth.mdx
-%doc gcp-website-content-api-docs-auth.mdx
-%doc github-website-content-api-docs-auth.mdx
-%doc index-website-content-api-docs-auth.mdx
-%doc jwt-website-content-api-docs-auth.mdx
-%doc kerberos-website-content-api-docs-auth.mdx
-%doc kubernetes-website-content-api-docs-auth.mdx
-%doc ldap-website-content-api-docs-auth.mdx
-%doc oci-website-content-api-docs-auth.mdx
-%doc okta-website-content-api-docs-auth.mdx
-%doc radius-website-content-api-docs-auth.mdx
-%doc token-website-content-api-docs-auth.mdx
-%doc userpass-website-content-api-docs-auth.mdx
-%doc ad-website-content-api-docs-secret.mdx
-%doc alicloud-website-content-api-docs-secret.mdx
-%doc aws-website-content-api-docs-secret.mdx
-%doc azure-website-content-api-docs-secret.mdx
-%doc cassandra-website-content-api-docs-secret.mdx
-%doc consul-website-content-api-docs-secret.mdx
-%doc cubbyhole-website-content-api-docs-secret.mdx
-%doc gcp-website-content-api-docs-secret.mdx
-%doc gcpkms-website-content-api-docs-secret.mdx
-%doc index-website-content-api-docs-secret.mdx
-%doc key-management-website-content-api-docs-secret.mdx
-%doc kmip-website-content-api-docs-secret.mdx
-%doc mongodbatlas-website-content-api-docs-secret.mdx
-%doc nomad-website-content-api-docs-secret.mdx
-%doc openldap-website-content-api-docs-secret.mdx
-%doc pki-website-content-api-docs-secret.mdx
-%doc rabbitmq-website-content-api-docs-secret.mdx
-%doc ssh-website-content-api-docs-secret.mdx
-%doc terraform-website-content-api-docs-secret.mdx
-%doc totp-website-content-api-docs-secret.mdx
-%doc transform-website-content-api-docs-secret.mdx
-%doc transit-website-content-api-docs-secret.mdx
-%doc cassandra-website-content-api-docs-secret-databases.mdx
-%doc couchbase-website-content-api-docs-secret-databases.mdx
-%doc elasticdb-website-content-api-docs-secret-databases.mdx
-%doc hanadb-website-content-api-docs-secret-databases.mdx
-%doc index-website-content-api-docs-secret-databases.mdx
-%doc influxdb-website-content-api-docs-secret-databases.mdx
-%doc mongodb-website-content-api-docs-secret-databases.mdx
-%doc mongodbatlas-website-content-api-docs-secret-databases.mdx
-%doc mssql-website-content-api-docs-secret-databases.mdx
-%doc mysql-maria-website-content-api-docs-secret-databases.mdx
-%doc oracle-website-content-api-docs-secret-databases.mdx
-%doc postgresql-website-content-api-docs-secret-databases.mdx
-%doc redshift-website-content-api-docs-secret-databases.mdx
-%doc snowflake-website-content-api-docs-secret-databases.mdx
-%doc entity-alias-website-content-api-docs-secret-identity.mdx
-%doc entity-website-content-api-docs-secret-identity.mdx
-%doc group-alias-website-content-api-docs-secret-identity.mdx
-%doc group-website-content-api-docs-secret-identity.mdx
-%doc index-website-content-api-docs-secret-identity.mdx
-%doc lookup-website-content-api-docs-secret-identity.mdx
-%doc tokens-website-content-api-docs-secret-identity.mdx
-%doc index-website-content-api-docs-secret-kv.mdx
-%doc kv-v1-website-content-api-docs-secret-kv.mdx
-%doc kv-v2-website-content-api-docs-secret-kv.mdx
-%doc audit-hash-website-content-api-docs-system.mdx
-%doc audit-website-content-api-docs-system.mdx
-%doc auth-website-content-api-docs-system.mdx
-%doc capabilities-accessor-website-content-api-docs-system.mdx
-%doc capabilities-self-website-content-api-docs-system.mdx
-%doc capabilities-website-content-api-docs-system.mdx
-%doc config-auditing-website-content-api-docs-system.mdx
-%doc config-control-group-website-content-api-docs-system.mdx
-%doc config-cors-website-content-api-docs-system.mdx
-%doc config-state-website-content-api-docs-system.mdx
-%doc config-ui-website-content-api-docs-system.mdx
-%doc control-group-website-content-api-docs-system.mdx
-%doc generate-recovery-token-website-content-api-docs-system.mdx
-%doc generate-root-website-content-api-docs-system.mdx
-%doc health-website-content-api-docs-system.mdx
-%doc host-info-website-content-api-docs-system.mdx
-%doc index-website-content-api-docs-system.mdx
-%doc init-website-content-api-docs-system.mdx
-%doc internal-counters-website-content-api-docs-system.mdx
-%doc internal-specs-openapi-website-content-api-docs-system.mdx
-%doc internal-ui-feature-website-content-api-docs-system.mdx
-%doc internal-ui-mounts-website-content-api-docs-system.mdx
-%doc key-status-website-content-api-docs-system.mdx
-%doc leader-website-content-api-docs-system.mdx
-%doc lease-count-quotas-website-content-api-docs-system.mdx
-%doc leases-website-content-api-docs-system.mdx
-%doc metrics-website-content-api-docs-system.mdx
-%doc monitor-website-content-api-docs-system.mdx
-%doc mounts-website-content-api-docs-system.mdx
-%doc namespaces-website-content-api-docs-system.mdx
-%doc plugins-catalog-website-content-api-docs-system.mdx
-%doc plugins-reload-backend-website-content-api-docs-system.mdx
-%doc policies-password-website-content-api-docs-system.mdx
-%doc policies-website-content-api-docs-system.mdx
-%doc policy-website-content-api-docs-system.mdx
-%doc pprof-website-content-api-docs-system.mdx
-%doc quotas-config-website-content-api-docs-system.mdx
-%doc rate-limit-quotas-website-content-api-docs-system.mdx
-%doc raw-website-content-api-docs-system.mdx
-%doc rekey-recovery-key-website-content-api-docs-system.mdx
-%doc rekey-website-content-api-docs-system.mdx
-%doc remount-website-content-api-docs-system.mdx
-%doc rotate-config-website-content-api-docs-system.mdx
-%doc rotate-website-content-api-docs-system.mdx
-%doc seal-status-website-content-api-docs-system.mdx
-%doc seal-website-content-api-docs-system.mdx
-%doc sealwrap-rewrap-website-content-api-docs-system.mdx
-%doc step-down-website-content-api-docs-system.mdx
-%doc tools-website-content-api-docs-system.mdx
-%doc unseal-website-content-api-docs-system.mdx
-%doc wrapping-lookup-website-content-api-docs-system.mdx
-%doc wrapping-rewrap-website-content-api-docs-system.mdx
-%doc wrapping-unwrap-website-content-api-docs-system.mdx
-%doc wrapping-wrap-website-content-api-docs-system.mdx
-%doc duo-website-content-api-docs-system-mfa.mdx
-%doc index-website-content-api-docs-system-mfa.mdx
-%doc okta-website-content-api-docs-system-mfa.mdx
-%doc pingid-website-content-api-docs-system-mfa.mdx
-%doc totp-website-content-api-docs-system-mfa.mdx
-%doc index-website-content-api-docs-system-replication.mdx
-%doc replication-dr-website-content-api-docs-system-replication.mdx
-%doc replication-performance-website-content-api-docs-system-replication.mdx
-%doc index-website-content-api-docs-system-storage.mdx
-%doc raft-website-content-api-docs-system-storage.mdx
-%doc raftautosnapshots-website-content-api-docs-system-storage.mdx
-%doc getting-started-website-content-guides.mdx index-website-content-guides.mdx
-%doc index-website-content-guides-encryption.mdx
-%doc spring-demo-website-content-guides-encryption.mdx
-%doc transit-rewrap-website-content-guides-encryption.mdx
-%doc transit-website-content-guides-encryption.mdx
-%doc approle-trusted-entities-website-content-guides-identity.mdx
-%doc authentication-website-content-guides-identity.mdx
-%doc control-groups-website-content-guides-identity.mdx
-%doc identity-website-content-guides-identity.mdx
-%doc index-website-content-guides-identity.mdx
-%doc lease-website-content-guides-identity.mdx
-%doc policies-website-content-guides-identity.mdx
-%doc policy-templating-website-content-guides-identity.mdx
-%doc secure-intro-website-content-guides-identity.mdx
-%doc sentinel-website-content-guides-identity.mdx
-%doc autounseal-aws-kms-website-content-guides-operations.mdx
-%doc deployment-guide-website-content-guides-operations.mdx
-%doc disaster-recovery-website-content-guides-operations.mdx
-%doc generate-root-website-content-guides-operations.mdx
-%doc index-website-content-guides-operations.mdx
-%doc monitoring-website-content-guides-operations.mdx
-%doc mount-filter-website-content-guides-operations.mdx
-%doc multi-tenant-website-content-guides-operations.mdx
-%doc performance-nodes-website-content-guides-operations.mdx
-%doc plugin-backends-website-content-guides-operations.mdx
-%doc production-website-content-guides-operations.mdx
-%doc reference-architecture-website-content-guides-operations.mdx
-%doc rekeying-and-rotating-website-content-guides-operations.mdx
-%doc replication-website-content-guides-operations.mdx
-%doc seal-wrap-website-content-guides-operations.mdx
-%doc vault-ha-consul-website-content-guides-operations.mdx
-%doc app-integration-website-content-guides-secret-mgmt.mdx
-%doc cubbyhole-website-content-guides-secret-mgmt.mdx
-%doc db-root-rotation-website-content-guides-secret-mgmt.mdx
-%doc dynamic-secrets-website-content-guides-secret-mgmt.mdx
-%doc index-website-content-guides-secret-mgmt.mdx
-%doc pki-engine-website-content-guides-secret-mgmt.mdx
-%doc ssh-otp-website-content-guides-secret-mgmt.mdx
-%doc static-secrets-website-content-guides-secret-mgmt.mdx
-%doc versioned-kv-website-content-guides-secret-mgmt.mdx
-%doc index-website-content-intro.mdx
-%doc apis-website-content-intro-getting-started.mdx
-%doc authentication-website-content-intro-getting-started.mdx
-%doc deploy-website-content-intro-getting-started.mdx
-%doc dev-server-website-content-intro-getting-started.mdx
-%doc dynamic-secrets-website-content-intro-getting-started.mdx
-%doc first-secret-website-content-intro-getting-started.mdx
-%doc help-website-content-intro-getting-started.mdx
-%doc index-website-content-intro-getting-started.mdx
-%doc next-steps-website-content-intro-getting-started.mdx
-%doc policies-website-content-intro-getting-started.mdx
-%doc secrets-engines-website-content-intro-getting-started.mdx
-%doc aws-auth-metadata-fix-website-content-partials.mdx
-%doc aws-auth-metadata-issue-website-content-partials.mdx
-%doc aws-imds-timeout-upgrade-website-content-partials.mdx
-%doc aws-imds-timeout-website-content-partials.mdx
-%doc aws-invalid-header-fix-website-content-partials.mdx
-%doc aws-invalid-header-website-content-partials.mdx
-%doc aws-sts-issue-website-content-partials.mdx
-%doc builds-without-ui-website-content-partials.mdx
-%doc enterprise-licenses-website-content-partials.mdx
-%doc ldap-upndomain-issue-website-content-partials.mdx
-%doc okta-group-pagination-website-content-partials.mdx
-%doc primary-cluster-addr-change-website-content-partials.mdx
-%doc tokenfields-website-content-partials.mdx
-%doc tokenstorefields-website-content-partials.mdx docs docs 10072-changelog.txt
-%doc 10077-changelog.txt 10131-changelog.txt 10231-changelog.txt
-%doc 10365-changelog.txt 10375-changelog.txt 10384-changelog.txt
-%doc 10386-changelog.txt 10416-changelog.txt 10417-changelog.txt
-%doc 10424-changelog.txt 10433-changelog.txt 10444-changelog.txt
-%doc 10456-changelog.txt 10487-changelog.txt 10489-changelog.txt
-%doc 10490-changelog.txt 10491-changelog.txt 10498-changelog.txt
-%doc 10514-changelog.txt 10520-changelog.txt 10536-changelog.txt
-%doc 10537-changelog.txt 10546-changelog.txt 10556-changelog.txt
-%doc 10558-changelog.txt 10579-changelog.txt 10588-changelog.txt
-%doc 10596-changelog.txt 10603-changelog.txt 10609-changelog.txt
-%doc 10613-changelog.txt 10644-changelog.txt 10650-changelog.txt
-%doc 10653-changelog.txt 10655-changelog.txt 10677-changelog.txt
-%doc 10684-changelog.txt 10689-changelog.txt 10705-changelog.txt
-%doc 10708-changelog.txt 10725-changelog.txt 10726-changelog.txt
-%doc 10730-changelog.txt 10743-changelog.txt 10744-changelog.txt
-%doc 10756-changelog.txt 10757-changelog.txt 10758-changelog.txt
-%doc 10759-changelog.txt 10766-changelog.txt 10767-changelog.txt
-%doc 10812-changelog.txt 10826-changelog.txt 10833-changelog.txt
-%doc 10834-changelog.txt 10848-changelog.txt 10850-changelog.txt
-%doc 10855-changelog.txt 10858-changelog.txt 10877-changelog.txt
-%doc 10901-changelog.txt 10904-changelog.txt 10906-changelog.txt
-%doc 10919-changelog.txt 10927-changelog.txt 10931-changelog.txt
-%doc 10938-changelog.txt 10942-changelog.txt 10949-changelog.txt
-%doc 10951-changelog.txt 10952-changelog.txt 10953-changelog.txt
-%doc 10964-changelog.txt 10980-changelog.txt 10982-changelog.txt
-%doc 10992-changelog.txt 10995-changelog.txt 10996-changelog.txt
-%doc 10997-changelog.txt 11011-changelog.txt 11015-changelog.txt
-%doc 11018-changelog.txt 11022-changelog.txt 11060-changelog.txt
-%doc 11094-changelog.txt 11113-changelog.txt 11119-changelog.txt
-%doc 11127-changelog.txt 11142-changelog.txt 11173-changelog.txt
-%doc 11182-changelog.txt 11213-changelog.txt 11226-changelog.txt
-%doc 9972-changelog.txt README-changelog.md _-changelog 1686.txt
-%doc _-changelog1622.txt _-changelog1633.txt _-changelog1637.txt
-%doc _-changelog1642.txt _-changelog1656.txt _-changelog1659.txt
-%doc _-changelog1663.txt _-changelog1680.txt _-changelog1705.txt
-%doc _-changelog1712.txt _-changelog1739.txt _-changelog2021Jan20.txt
-%doc _-changelog2021Jan26.txt changelog-changelog.tmpl
-%doc deps-upgrade-output-dependencies-2-25-21.txt
-%doc deps-upgrade-dependencies-2-25-21.txt README-internalshared.md
-%doc README-sdk.md README-sdk-database-dbplugin.md README-sdk-queue.md
-%doc README-serviceregistration-kubernetes-testing.md README-terraform.md
+%license license-ui-app-templates-vault-cluster.hbs LICENSE-website.md
+%license license.html-website-source-api-system.md
+%doc CONTRIBUTING.md CHANGELOG.md README.md
+%doc generate-builtin-credential-cert-test-fixtures.txt
+%doc README-physical-foundationdb.md README-plugins-database-mssql.md
+%doc README-ui.md robots-ui-public.txt README-website.md docs
+%doc 404.html-website-source.md robots-website-source.txt
+%doc libraries.html-website-source-api.md overview.html-website-source-api.md
+%doc relatedtools.html-website-source-api.md
+%doc index.html-website-source-api-auth.md
+%doc index.html-website-source-api-auth-app-id.md
+%doc index.html-website-source-api-auth-approle.md
+%doc index.html-website-source-api-auth-aws.md
+%doc index.html-website-source-api-auth-azure.md
+%doc index.html-website-source-api-auth-cert.md
+%doc index.html-website-source-api-auth-gcp.md
+%doc index.html-website-source-api-auth-github.md
+%doc index.html-website-source-api-auth-kubernetes.md
+%doc index.html-website-source-api-auth-ldap.md
+%doc index.html-website-source-api-auth-okta.md
+%doc index.html-website-source-api-auth-radius.md
+%doc index.html-website-source-api-auth-token.md
+%doc index.html-website-source-api-auth-userpass.md
+%doc index.html-website-source-api-auth-alicloud.md
+%doc index.html-website-source-api-auth-jwt.md
+%doc index_beta.html-website-source-api-auth-jwt.md
+%doc index.html-website-source-api-secret.md
+%doc index.html-website-source-api-secret-ad.md
+%doc index.html-website-source-api-secret-aws.md
+%doc index.html-website-source-api-secret-cassandra.md
+%doc index.html-website-source-api-secret-consul.md
+%doc index.html-website-source-api-secret-cubbyhole.md
+%doc cassandra.html-website-source-api-secret-databases.md
+%doc hanadb.html-website-source-api-secret-databases.md
+%doc index.html-website-source-api-secret-databases.md
+%doc influxdb.html-website-source-api-secret-databases.md
+%doc mongodb.html-website-source-api-secret-databases.md
+%doc mssql.html-website-source-api-secret-databases.md
+%doc mysql-maria.html-website-source-api-secret-databases.md
+%doc oracle.html-website-source-api-secret-databases.md
+%doc postgresql.html-website-source-api-secret-databases.md
+%doc index.html-website-source-api-secret-gcp.md
+%doc entity-alias.html-website-source-api-secret-identity.md
+%doc entity.html-website-source-api-secret-identity.md
+%doc group-alias.html-website-source-api-secret-identity.md
+%doc group.html-website-source-api-secret-identity.md
+%doc identity-groups.html-website-source-api-secret-identity.md
+%doc index.html-website-source-api-secret-identity.md
+%doc lookup.html-website-source-api-secret-identity.md
+%doc index.html-website-source-api-secret-kv.md
+%doc kv-v1.html-website-source-api-secret-kv.md
+%doc kv-v2.html-website-source-api-secret-kv.md
+%doc index.html-website-source-api-secret-mongodb.md
+%doc index.html-website-source-api-secret-mssql.md
+%doc index.html-website-source-api-secret-mysql.md
+%doc index.html-website-source-api-secret-nomad.md
+%doc index.html-website-source-api-secret-pki.md
+%doc index.html-website-source-api-secret-postgresql.md
+%doc index.html-website-source-api-secret-rabbitmq.md
+%doc index.html-website-source-api-secret-ssh.md
+%doc index.html-website-source-api-secret-totp.md
+%doc index.html-website-source-api-secret-transit.md
+%doc index.html-website-source-api-secret-alicloud.md
+%doc index.html-website-source-api-secret-azure.md
+%doc index.html-website-source-api-secret-gcpkms.md
+%doc init.html-website-source-api-system.md
+%doc internal-specs-openapi.html-website-source-api-system.md
+%doc key-status.html-website-source-api-system.md
+%doc leader.html-website-source-api-system.md
+%doc leases.html-website-source-api-system.md
+%doc mounts.html-website-source-api-system.md
+%doc namespaces.html-website-source-api-system.md
+%doc plugins-catalog.html-website-source-api-system.md
+%doc plugins-reload-backend.html-website-source-api-system.md
+%doc policies.html-website-source-api-system.md
+%doc policy.html-website-source-api-system.md
+%doc raw.html-website-source-api-system.md
+%doc rekey-recovery-key.html-website-source-api-system.md
+%doc rekey.html-website-source-api-system.md
+%doc remount.html-website-source-api-system.md
+%doc rotate.html-website-source-api-system.md
+%doc seal-status.html-website-source-api-system.md
+%doc seal.html-website-source-api-system.md
+%doc step-down.html-website-source-api-system.md
+%doc tools.html-website-source-api-system.md
+%doc unseal.html-website-source-api-system.md
+%doc wrapping-lookup.html-website-source-api-system.md
+%doc wrapping-rewrap.html-website-source-api-system.md
+%doc wrapping-unwrap.html-website-source-api-system.md
+%doc wrapping-wrap.html-website-source-api-system.md
+%doc audit-hash.html-website-source-api-system.md
+%doc audit.html-website-source-api-system.md
+%doc auth.html-website-source-api-system.md
+%doc capabilities-accessor.html-website-source-api-system.md
+%doc capabilities-self.html-website-source-api-system.md
+%doc capabilities.html-website-source-api-system.md
+%doc config-auditing.html-website-source-api-system.md
+%doc config-control-group.html-website-source-api-system.md
+%doc config-cors.html-website-source-api-system.md
+%doc config-ui.html-website-source-api-system.md
+%doc control-group.html-website-source-api-system.md
+%doc generate-root.html-website-source-api-system.md
+%doc health.html-website-source-api-system.md
+%doc index.html-website-source-api-system.md
+%doc internal-ui-mounts.html-website-source-api-system.md
+%doc duo.html-website-source-api-system-mfa.md
+%doc index.html-website-source-api-system-mfa.md
+%doc okta.html-website-source-api-system-mfa.md
+%doc pingid.html-website-source-api-system-mfa.md
+%doc totp.html-website-source-api-system-mfa.md
+%doc index.html-website-source-api-system-replication.md
+%doc replication-dr.html-website-source-api-system-replication.md
+%doc replication-performance.html-website-source-api-system-replication.md
+%doc index.html-website-source-guides.md
+%doc index.html-website-source-guides-encryption.md
+%doc spring-demo.html-website-source-guides-encryption.md
+%doc transit-rewrap.html-website-source-guides-encryption.md
+%doc transit.html-website-source-guides-encryption.md
+%doc index.html-website-source-guides-getting-started.md
+%doc approle-trusted-entities.html-website-source-guides-identity.md
+%doc authentication.html-website-source-guides-identity.md
+%doc control-groups.html-website-source-guides-identity.md
+%doc identity.html-website-source-guides-identity.md
+%doc index.html-website-source-guides-identity.md
+%doc lease.html-website-source-guides-identity.md
+%doc policies.html-website-source-guides-identity.md
+%doc policy-templating.html-website-source-guides-identity.md
+%doc secure-intro.html-website-source-guides-identity.md
+%doc sentinel.html-website-source-guides-identity.md
+%doc autounseal-aws-kms.html-website-source-guides-operations.md
+%doc deployment-guide.html-website-source-guides-operations.md
+%doc disaster-recovery.html-website-source-guides-operations.md
+%doc generate-root.html-website-source-guides-operations.md
+%doc index.html-website-source-guides-operations.md
+%doc monitoring.html-website-source-guides-operations.md
+%doc mount-filter.html-website-source-guides-operations.md
+%doc multi-tenant.html-website-source-guides-operations.md
+%doc performance-nodes.html-website-source-guides-operations.md
+%doc plugin-backends.html-website-source-guides-operations.md
+%doc production.html-website-source-guides-operations.md
+%doc reference-architecture.html-website-source-guides-operations.md
+%doc rekeying-and-rotating.html-website-source-guides-operations.md
+%doc replication.html-website-source-guides-operations.md
+%doc seal-wrap.html-website-source-guides-operations.md
+%doc vault-ha-consul.html-website-source-guides-operations.md
+%doc app-integration.html-website-source-guides-secret-mgmt.md
+%doc cubbyhole.html-website-source-guides-secret-mgmt.md
+%doc db-root-rotation.html-website-source-guides-secret-mgmt.md
+%doc dynamic-secrets.html-website-source-guides-secret-mgmt.md
+%doc index.html-website-source-guides-secret-mgmt.md
+%doc pki-engine.html-website-source-guides-secret-mgmt.md
+%doc ssh-otp.html-website-source-guides-secret-mgmt.md
+%doc static-secrets.html-website-source-guides-secret-mgmt.md
+%doc versioned-kv.html-website-source-guides-secret-mgmt.md
+%doc apis.html-website-source-intro-getting-started.md
+%doc authentication.html-website-source-intro-getting-started.md
+%doc deploy.html-website-source-intro-getting-started.md
+%doc dev-server.html-website-source-intro-getting-started.md
+%doc dynamic-secrets.html-website-source-intro-getting-started.md
+%doc first-secret.html-website-source-intro-getting-started.md
+%doc help.html-website-source-intro-getting-started.md
+%doc index.html-website-source-intro-getting-started.md
+%doc next-steps.html-website-source-intro-getting-started.md
+%doc policies.html-website-source-intro-getting-started.md
+%doc secrets-engines.html-website-source-intro-getting-started.md
+%doc README-terraform-aws.md
 %{_bindir}/*
 
 %gopkgfiles

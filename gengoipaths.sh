@@ -90,7 +90,7 @@ for MOD in $(cat packages.txt); do
         COMMIT=""
     fi
 
-    grep -q -P "^.*,${FORGE},.*" goipaths.txt
+    grep -q -P "^${IPATH},${FORGE},.*" goipaths.txt
     if [ $? -ne 0 -a "${SUBDIR}" == "" ]; then
         LINE="${IPATH},${FORGE},${SUBDIR},${ALTIPATHS},${VERSION},${TAG},${COMMIT},${SRCTGZ},${DSTTGZ},${TYPE}"
         echo -n "ENTRY: "
@@ -100,7 +100,7 @@ for MOD in $(cat packages.txt); do
         SUMMARY=$(echo ${DESCRIPTION} | cut -d\. -f1)
         DOCS="${IPATH},${SUMMARY},${DESCRIPTION}"
         echo -n "DOCS: "
-        echo "${DOCS}" | tee -a goipaths-docs.txt
+        echo "${DOCS}" | sed -e 's/\ $//g' | tee -a goipaths-docs.txt
     fi
 
     rm ${PKGGODEVFILE} ${GITFILE}
