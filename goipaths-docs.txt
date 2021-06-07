@@ -22,3 +22,32 @@ github.com/jefferai/isbadcipher,,
 github.com/joyent/triton-go,,
 gopkg.in/ory-am/dockertest.v2,Package dockertest contains helper functions for setting up and tearing down docker containers to aid in testing,Package dockertest contains helper functions for setting up and tearing down docker containers to aid in testing. dockertest supports spinning up MySQL&#44; PostgreSQL and MongoDB out of the box.  Dockertest provides two environment variables
 layeh.com/radius,Package radius provides a RADIUS client and server (RFC 2865&#44; RFC 2866),Package radius provides a RADIUS client and server (RFC 2865&#44; RFC 2866).
+github.com/Azure/azure-sdk-for-go,Package sdk provides Go packages for managing and using Azure services,Package sdk provides Go packages for managing and using Azure services.  GitHub repo: https://github.com/Azure/azure-sdk-for-go
+github.com/nicolai86/scaleway-sdk,,
+github.com/softlayer/softlayer-go,,
+github.com/influxdata/influxdb,Package influxdb is the root package of InfluxDB&#44; the scalable datastore for metrics&#44; events&#44; and real-time analytics,Package influxdb is the root package of InfluxDB&#44; the scalable datastore for metrics&#44; events&#44; and real-time analytics.  If you're looking for the Go HTTP client for InfluxDB&#44;
+github.com/dancannon/gorethink,Package gorethink implements a Go driver for RethinkDB Current version: v3,Package gorethink implements a Go driver for RethinkDB  Current version: v3.0.2 (RethinkDB v2.3)
+github.com/go-stomp/stomp,Package stomp provides operations that allow communication with a message broker that supports the STOMP protocol,Package stomp provides operations that allow communication with a message broker that supports the STOMP protocol. STOMP is the Streaming Text-Oriented Messaging Protocol. See http://stomp.github.com/ for more details.  This package provides support for all STOMP protocol features in the STOMP protocol specifications&#44;
+github.com/abdullin/seq,,
+github.com/sean-/conswriter,,
+github.com/coredns/caddy,Package caddy implements the Caddy server manager,Package caddy implements the Caddy server manager.  To use this package:
+github.com/dnstap/golang-dnstap,,
+github.com/farsightsec/golang-framestream,,
+go.etcd.io/etcd/client/v3,Package clientv3 implements the official Go etcd client for v3,Package clientv3 implements the official Go etcd client for v3.  Create client using `clientv3.New`:
+github.com/LK4D4/joincontext,Package joincontext provides a way to combine two contexts,Package joincontext provides a way to combine two contexts. For example it might be useful for grpc server to cancel all handlers in addition to provided handler context.
+github.com/hashicorp/cronexpr,,
+github.com/hashicorp/go-envparse,Package envparse is a minimal environment variable parser,Package envparse is a minimal environment variable parser. It handles empty lines&#44; comments&#44; single quotes&#44; double quotes&#44; and JSON escape sequences.  Non-empty or comment lines should be of the form:
+github.com/hashicorp/go-getter,getter is a package for downloading files or directories from a variety of protocols,getter is a package for downloading files or directories from a variety of protocols.  getter is unique in its ability to download both directories and files.
+github.com/mitchellh/go-ps,ps provides an API for finding and listing processes in a platform-agnostic way,ps provides an API for finding and listing processes in a platform-agnostic way.  NOTE: If you're reading these docs online via GoDocs or some other system&#44;
+github.com/zclconf/go-cty-yaml,Package yaml can marshal and unmarshal cty values in YAML format,Package yaml can marshal and unmarshal cty values in YAML format.
+github.com/mattbaird/elastigo,Copyright 2012 Matthew Baird Licensed under the Apache License&#44; Version 2,Copyright 2012 Matthew Baird  Licensed under the Apache License&#44; Version 2.0 (the "License");
+github.com/ory-am/common,,
+github.com/apparentlymart/go-cidr,,
+github.com/infobloxopen/go-trees,,
+go.etcd.io/etcd/api/v3,,
+gopkg.in/DataDog/dd-trace-go.v1,,
+k8s.io/api,,
+github.com/NVIDIA/gpu-monitoring-tools,,
+github.com/hashicorp/consul-template,,
+github.com/hashicorp/go-cty-funcs,,
+github.com/hashicorp/vault/sdk,,

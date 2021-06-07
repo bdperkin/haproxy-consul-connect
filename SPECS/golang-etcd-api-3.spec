@@ -4,13 +4,11 @@
 # https://github.com/etcd-io/etcd
 %global goipath         go.etcd.io/etcd/api/v3
 %global forgeurl        https://github.com/etcd-io/etcd
-Version:                3.5.0~beta.4
-%global tag             api/v3.5.0-beta.4
-%global commit          68fa42ae07ab6115102c6d107d784657be939fe0
+Version:                3.5.0~rc.0
 
 %gometa
 
-%global goaltipaths     github.com/etcd-io/etcd
+%global goaltipaths     github.com/etcd-io/etcd github.com/etcd-io/etcd/api/v3
 
 %global common_description %{expand:
 Distributed reliable key-value store for the most critical data of a

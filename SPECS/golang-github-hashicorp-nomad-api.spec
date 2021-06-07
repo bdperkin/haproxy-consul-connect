@@ -11,10 +11,7 @@ Version:                1.0.6
 %global goaltipaths     github.com/hashicorp/nomad
 
 %global common_description %{expand:
-Nomad is an easy-to-use, flexible, and performant workload orchestrator that
-can deploy a mix of microservice, batch, containerized, and non-containerized
-applications. Nomad is easy to operate and scale and has native Consul and
-Vault integrations.}
+# FIXME}
 
 %global golicenses      LICENSE license-command.go license_get-command.go\\\
                         license_get_test-command.go license_put-command.go\\\
@@ -97,7 +94,7 @@ Vault integrations.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Nomad is an easy-to-use, flexible, and performant workload orchestrator that can deploy a mix of microservice, batch, containerized, and non-containerized applications. Nomad is easy to operate and scale and has native Consul and Vault integrations
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

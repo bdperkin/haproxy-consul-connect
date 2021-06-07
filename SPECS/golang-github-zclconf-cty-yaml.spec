@@ -8,14 +8,14 @@ Version:                1.0.2
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+YAML marshalling and unmarshalling for go-cty.}
 
 %global golicenses      LICENSE LICENSE.libyaml NOTICE
 %global godocs          CHANGELOG.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        YAML marshalling and unmarshalling for go-cty
 
 # Upstream license specification: Apache-2.0 and MIT
 License:        ASL 2.0 and MIT

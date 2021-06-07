@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Join contexts like never before!}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Join contexts like never before
 
 License:        MIT
 URL:            %{gourl}

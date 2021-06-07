@@ -62,12 +62,12 @@ for MOD in $(cat packages.txt); do
     TYPE=${DTYPE}
 
     if [ "${FORGEALTIPATH}" != "${IPATH}" ]; then
-        ALTIPATHS+=" ${FORGEALTIPATH}"
+        ALTIPATHS+="_${FORGEALTIPATH}"
     fi
     if [ "${REPOALTIPATH}" != "${IPATH}" -a "${FORGEALTIPATH}" != "${REPOALTIPATH}" ]; then
-        ALTIPATHS+=" ${REPOALTIPATH}"
+        ALTIPATHS+="_${REPOALTIPATH}"
     fi
-    ALTIPATHS=$(echo ${ALTIPATHS} | sed -e 's/^ //g')
+    ALTIPATHS=$(echo ${ALTIPATHS} | sed -e 's/^_//g')
 
     GITFILE=$(mktemp)
     git ls-remote ${FORGE} > ${GITFILE}

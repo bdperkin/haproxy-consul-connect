@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -x
 
 set -eu
 
@@ -11,15 +11,15 @@ for SPEC in $(ls SPECS/*); do
 done
 
 for LINE in $(grep -v '^#' goipaths.txt | tac); do
-    IPATH=$(echo ${LINE} | cut -d\, -f1)
-    FORGE=$(echo ${LINE} | cut -d\, -f2)
-    SUBDIR=$(echo ${LINE} | cut -d\, -f3)
-    ALTIPATHS=$(echo ${LINE} | cut -d\, -f4)
-    VERSION=$(echo ${LINE} | cut -d\, -f5)
-    TAG=$(echo ${LINE} | cut -d\, -f6)
-    COMMIT=$(echo ${LINE} | cut -d\, -f7)
-    SRC=$(echo ${LINE} | cut -d\, -f8)
-    DST=$(echo ${LINE} | cut -d\, -f9)
+    IPATH=$(echo "${LINE}" | cut -d\, -f1)
+    FORGE=$(echo "${LINE}" | cut -d\, -f2)
+    SUBDIR=$(echo "${LINE}" | cut -d\, -f3)
+    ALTIPATHS=$(echo "${LINE}" | cut -d\, -f4)
+    VERSION=$(echo "${LINE}" | cut -d\, -f5)
+    TAG=$(echo "${LINE}" | cut -d\, -f6)
+    COMMIT=$(echo "${LINE}" | cut -d\, -f7)
+    SRC=$(echo "${LINE}" | cut -d\, -f8)
+    DST=$(echo "${LINE}" | cut -d\, -f9)
     pushd SPECS
     ARGUMENTS="--no-auto-changelog-entry --clean "
     if [ "${IPATH}" == "" ]; then
@@ -33,7 +33,8 @@ for LINE in $(grep -v '^#' goipaths.txt | tac); do
         ARGUMENTS+="--subdir ${SUBDIR} "
     fi
     if [ "${ALTIPATHS}" != "" ]; then
-        ARGUMENTS+="--altipaths "${ALTIPATHS}" "
+        ALTIPATHS=$(echo "${ALTIPATHS}" | sed -e 's/_/\ /g')
+        ARGUMENTS+="--altipaths ${ALTIPATHS} "
     fi
     if [ "${VERSION}" != "" ]; then
         ARGUMENTS+="--version ${VERSION} "
@@ -46,10 +47,10 @@ for LINE in $(grep -v '^#' goipaths.txt | tac); do
     fi
     CMD="go2rpm ${ARGUMENTS} ${IPATH}"
     echo "${CMD}"
-    ${CMD}
+    bash -c "${CMD}"
     SPEC=$(grep -H "^%global goipath         ${IPATH}$" *.spec | cut -d: -f1)
     if [ "https://${IPATH}" != "${FORGE}" ]; then
-        ESCFORGE=$(echo ${FORGE} | sed -e 's/\//\\\//g')
+        ESCFORGE=$(echo "${FORGE}" | sed -e 's/\//\\\//g')
         sed -i -e '/%global forgeurl /d' ${SPEC}
         sed -i -e "/^%global goipath .*/a %global forgeurl        ${ESCFORGE}" ${SPEC}
     fi
