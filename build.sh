@@ -33,7 +33,7 @@ for LINE in $(grep -v '^#' goipaths.txt | tac); do
         ARGUMENTS+="--subdir ${SUBDIR} "
     fi
     if [ "${ALTIPATHS}" != "" ]; then
-        ARGUMENTS+="--altipaths ${ALTIPATHS} "
+        ARGUMENTS+="--altipaths "${ALTIPATHS}" "
     fi
     if [ "${VERSION}" != "" ]; then
         ARGUMENTS+="--version ${VERSION} "

@@ -8,8 +8,6 @@ github.com/hashicorp/consul/testrpc
 gopkg.in/d4l3k/messagediff.v1
 zvelo.io/ttlru
 github.com/hashicorp/consul
-github.com/d4l3k/messagediff/testdata
-github.com/d4l3k/messagediff
 github.com/coredns/coredns/plugin/pkg/dnsutil
 github.com/google/tcpproxy
 github.com/hashicorp/go-bexpr
@@ -22,7 +20,9 @@ github.com/hashicorp/raft-autopilot
 github.com/hashicorp/vault/api
 github.com/mitchellh/pointerstructure
 github.com/rboyer/safeio
+github.com/d4l3k/messagediff/testdata
 github.com/coredns/coredns
+github.com/d4l3k/messagediff
 github.com/Azure/azure-sdk-for-go/arm/network
 github.com/nicolai86/scaleway-sdk/api
 github.com/softlayer/softlayer-go/filter

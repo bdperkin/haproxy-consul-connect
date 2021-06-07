@@ -18,8 +18,16 @@ for MOD in $(cat packages.txt); do
     VCS=$(echo ${GOIMPORT} | awk '{print $2}')
     REPOURL=$(echo ${GOIMPORT} | awk '{print $3}' | sed -e 's/\.git//g')
 
-    PKGGODEVFILE=$(mktemp)
+    ESCROOTPATH=$(echo "${ROOTPATH}" | sed -e 's/\//\\\//g' | sed -e 's/\./\\\./g')
+    ROOTSUBDIR=$(echo "${MOD}" | sed -e "s/^${ESCROOTPATH}//g" | sed -e 's/^\///g')
     PKGGODEVURL="https://pkg.go.dev/${ROOTPATH}"
+
+    if [ "${ROOTSUBDIR}" != "" ]; then
+        PKGGODEVURL="${PKGGODEVURL}/${ROOTSUBDIR}"
+        REPOURL="${REPOURL}/${ROOTSUBDIR}"
+    fi
+
+    PKGGODEVFILE=$(mktemp)
     CURLRET=1
     while [ ${CURLRET} -ne 0 ]; do
         curl -f -s "${PKGGODEVURL}" > ${PKGGODEVFILE}
@@ -81,7 +89,7 @@ for MOD in $(cat packages.txt); do
     COMMIT=$(echo ${GITREFS} | awk '{print $1}')
     TAGREF=$(echo ${GITREFS} | awk '{print $2}')
 
-    for D in MOD GOIMPORT ROOTPATH VCS REPOURL PKGGODEVURL DVERSION DMODPATH DPKGPATH DTYPE SUBDIR FORGE IPATH ALTIPATHS VERSION TAG COMMIT TYPE; do
+    for D in MOD GOIMPORT ROOTPATH VCS REPOURL ROOTSUBDIR PKGGODEVURL DVERSION DMODPATH DPKGPATH DTYPE SUBDIR FORGE IPATH ALTIPATHS VERSION TAG COMMIT TYPE; do
         echo "${D}: ${!D}"
     done
 
