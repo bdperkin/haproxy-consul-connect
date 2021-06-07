@@ -42,15 +42,8 @@ mv backoff/LICENSE LICENSE-backoff
 mv uritemplates/LICENSE LICENSE-uritemplates
 mv cluster-test/README.md README-cluster-test.md
 
-%build
-for cmd in cluster-test; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -61,7 +54,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %license LICENSE LICENSE-backoff LICENSE-uritemplates
 %doc CHANGELOG-3.0.md CODE_OF_CONDUCT.md ISSUE_TEMPLATE.md README.md
 %doc CONTRIBUTING.md CONTRIBUTORS README-cluster-test.md
-%{_bindir}/*
 
 %gopkgfiles
 

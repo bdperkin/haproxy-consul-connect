@@ -11,8 +11,7 @@ Version:                0.2.0
 %global goaltipaths     github.com/hashicorp/vault
 
 %global common_description %{expand:
-A tool for secrets management, encryption as a service, and privileged access
-management.}
+# FIXME}
 
 %global golicenses      LICENSE LICENSE-website.md
 %global godocs          CHANGELOG.md README.md SPEC-api.md README-website.md\\\
@@ -42,7 +41,7 @@ management.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        A tool for secrets management, encryption as a service, and privileged access management
+Summary:        None
 
 # Upstream license specification: BSD-3-Clause and MIT and MPL-2.0
 License:        BSD and MIT and MPLv2.0
@@ -123,13 +122,8 @@ mv website/source/intro/vs/keywhiz.html.md keywhiz.html-website-source-intro-vs.
 mv website/source/intro/vs/kms.html.md kms.html-website-source-intro-vs.md
 mv terraform/aws/README.md README-terraform-aws.md
 
-%build
-%gobuild -o %{gobuilddir}/bin/sdk %{goipath}
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -159,7 +153,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc custom.html-website-source-intro-vs.markdown
 %doc hsm.html-website-source-intro-vs.md keywhiz.html-website-source-intro-vs.md
 %doc kms.html-website-source-intro-vs.md README-terraform-aws.md
-%{_bindir}/*
 
 %gopkgfiles
 

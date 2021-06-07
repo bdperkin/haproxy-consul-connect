@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Go packages for radix and other trees.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@ Go packages for radix and other trees.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Go packages for radix and other trees
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -38,15 +38,8 @@ BuildRequires:  golang(github.com/pmezard/go-difflib/difflib)
 %prep
 %goprep
 
-%build
-for cmd in etc; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -56,7 +49,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license LICENSE
 %doc README.md
-%{_bindir}/*
 
 %gopkgfiles
 

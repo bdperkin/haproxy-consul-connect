@@ -3,12 +3,14 @@
 
 # https://github.com/influxdata/flux
 %global goipath         github.com/influxdata/flux
-Version:                0.117.1
+Version:                0.117.3
 
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Flux is a lightweight scripting language for querying databases (like InfluxDB)
+and working with data. It's part of InfluxDB 1.7 and 2.0, but can be run
+independently of those.}
 
 %global golicenses      LICENSE
 %global godocs          docs examples TODO.txt CONTRIBUTING.md README.md\\\
@@ -58,7 +60,7 @@ Version:                0.117.1
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Flux is a lightweight scripting language for querying databases (like InfluxDB) and working with data. It's part of InfluxDB 1.7 and 2.0, but can be run independently of those
 
 License:        MIT
 URL:            %{gourl}
@@ -189,18 +191,8 @@ mv stdlib/contrib/bonitoo-io/zenoss/README.md README-stdlib-contrib-bonitoo-io-z
 mv stdlib/contrib/rhajek/bigpanda/README.md README-stdlib-contrib-rhajek-bigpanda.md
 mv stdlib/experimental/geo/README.md README-stdlib-experimental-geo.md
 
-%build
-for cmd in cmd/* ; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-for cmd in libflux/go/libflux; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -249,7 +241,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc README-stdlib-contrib-bonitoo-io-victorops.md
 %doc README-stdlib-contrib-bonitoo-io-zenoss.md
 %doc README-stdlib-contrib-rhajek-bigpanda.md README-stdlib-experimental-geo.md
-%{_bindir}/*
 
 %gopkgfiles
 

@@ -8,13 +8,13 @@ Version:                1.1.1
 %gometa
 
 %global common_description %{expand:
-Cron expression parser in Go language (golang).}
+# FIXME}
 
 %global godocs          README.md cronexpr/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Cron expression parser in Go language (golang)
+Summary:        None
 
 License:        # FIXME
 
@@ -36,15 +36,8 @@ BuildRequires:  golang(github.com/stretchr/testify/require)
 %prep
 %goprep
 
-%build
-for cmd in cronexpr; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -53,7 +46,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %doc README.md cronexpr/README.md
-%{_bindir}/*
 
 %gopkgfiles
 

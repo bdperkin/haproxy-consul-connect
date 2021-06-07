@@ -11,8 +11,8 @@ Version:                3.5.0~rc.0
 %global goaltipaths     github.com/etcd-io/etcd github.com/etcd-io/etcd/client/v3
 
 %global common_description %{expand:
-Distributed reliable key-value store for the most critical data of a
-distributed system.}
+Package clientv3 implements the official Go etcd client for v3. Create client
+using `clientv3.New`:}
 
 %global golicenses      LICENSE LICENSE-api LICENSE-client-pkg\\\
                         LICENSE-client-v2 LICENSE-client-v3 LICENSE-etcdctl\\\
@@ -43,7 +43,7 @@ distributed system.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Distributed reliable key-value store for the most critical data of a distributed system
+Summary:        Package clientv3 implements the official Go etcd client for v3
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -278,16 +278,8 @@ mv tools/etcd-dump-logs/README.md README-tools-etcd-dump-logs.md
 mv tools/etcd-dump-metrics/README README-tools-etcd-dump-metrics
 mv tools/local-tester/README.md README-tools-local-tester.md
 
-%build
-%gobuild -o %{gobuilddir}/bin/v3 %{goipath}
-for cmd in contrib/lock/client contrib/lock/storage contrib/raftexample etcdctl etcdutl server tools/benchmark tools/etcd-dump-db tools/etcd-dump-logs tools/etcd-dump-metrics tools/local-tester/bridge; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -311,7 +303,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc README-tools-benchmark.md README-tools-etcd-dump-db.md
 %doc README-tools-etcd-dump-logs.md README-tools-etcd-dump-metrics
 %doc README-tools-local-tester.md
-%{_bindir}/*
 
 %gopkgfiles
 

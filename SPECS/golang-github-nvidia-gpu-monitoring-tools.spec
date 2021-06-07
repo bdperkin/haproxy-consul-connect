@@ -9,7 +9,7 @@ Version:                2.4.0~rc.2
 %gometa
 
 %global common_description %{expand:
-Tools for monitoring NVIDIA GPUs on Linux.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md README.md RELEASE.md\\\
@@ -20,7 +20,7 @@ Tools for monitoring NVIDIA GPUs on Linux.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Tools for monitoring NVIDIA GPUs on Linux
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -53,15 +53,8 @@ mv bindings/go/samples/dcgm/restApi/README.md README-bindings-go-samples-dcgm-re
 mv bindings/go/samples/nvml/README.md README-bindings-go-samples-nvml.md
 mv deployment/dcgm-exporter/templates/NOTES.txt NOTES-deployment-dcgm-exporter-templates.txt
 
-%build
-for cmd in bindings/go/samples/dcgm/deviceInfo bindings/go/samples/dcgm/dmon bindings/go/samples/dcgm/health bindings/go/samples/dcgm/hostengineStatus bindings/go/samples/dcgm/policy bindings/go/samples/dcgm/processInfo bindings/go/samples/dcgm/restApi bindings/go/samples/dcgm/topology bindings/go/samples/nvml/deviceInfo bindings/go/samples/nvml/dmon bindings/go/samples/nvml/processInfo pkg; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -74,7 +67,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc README-bindings-go-samples-dcgm-restApi.md
 %doc README-bindings-go-samples-nvml.md
 %doc NOTES-deployment-dcgm-exporter-templates.txt
-%{_bindir}/*
 
 %gopkgfiles
 

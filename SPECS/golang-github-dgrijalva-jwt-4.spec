@@ -34,15 +34,8 @@ Source0:        %{gosource}
 %goprep
 mv cmd/jwt/README.md README-cmd-jwt.md
 
-%build
-for cmd in cmd/* ; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -52,7 +45,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license LICENSE
 %doc MIGRATION_GUIDE.md README.md VERSION_HISTORY.md README-cmd-jwt.md
-%{_bindir}/*
 
 %gopkgfiles
 

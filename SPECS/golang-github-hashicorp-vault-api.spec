@@ -551,16 +551,8 @@ mv website/source/intro/getting-started/policies.html.md policies.html-website-s
 mv website/source/intro/getting-started/secrets-engines.html.md secrets-engines.html-website-source-intro-getting-started.md
 mv terraform/aws/README.md README-terraform-aws.md
 
-%build
-%gobuild -o %{gobuilddir}/bin/api %{goipath}
-for cmd in logical/plugin/mock/mock-plugin plugins/database/cassandra/cassandra-database-plugin plugins/database/hana/hana-database-plugin plugins/database/influxdb/influxdb-database-plugin plugins/database/mongodb/mongodb-database-plugin plugins/database/mssql/mssql-database-plugin plugins/database/mysql/mysql-database-plugin plugins/database/mysql/mysql-legacy-database-plugin plugins/database/postgresql/postgresql-database-plugin; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -738,7 +730,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc policies.html-website-source-intro-getting-started.md
 %doc secrets-engines.html-website-source-intro-getting-started.md
 %doc README-terraform-aws.md
-%{_bindir}/*
 
 %gopkgfiles
 

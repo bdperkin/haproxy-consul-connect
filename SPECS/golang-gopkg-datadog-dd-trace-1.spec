@@ -11,7 +11,7 @@ Version:                1.31.1
 %global goaltipaths     github.com/DataDog/dd-trace-go
 
 %global common_description %{expand:
-A Go tracing package for Datadog APM.}
+# FIXME}
 
 %global golicenses      LICENSE LICENSE-3rdparty.csv LICENSE-APACHE\\\
                         LICENSE-BSD3 NOTICE
@@ -20,7 +20,7 @@ A Go tracing package for Datadog APM.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        A Go tracing package for Datadog APM
+Summary:        None
 
 # Upstream license specification: Apache-2.0 and BSD-3-Clause
 License:        ASL 2.0 and BSD
@@ -138,16 +138,8 @@ BuildRequires:  golang(k8s.io/client-go/tools/clientcmd/api)
 %goprep
 mv contrib/README.md README-contrib.md
 
-%build
-%gobuild -o %{gobuilddir}/bin/dd-trace-go.v1 %{goipath}
-for cmd in contrib/google.golang.org/api; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -157,7 +149,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license LICENSE LICENSE-3rdparty.csv LICENSE-APACHE LICENSE-BSD3 NOTICE
 %doc CONTRIBUTING.md MIGRATING.md README.md README-contrib.md
-%{_bindir}/*
 
 %gopkgfiles
 

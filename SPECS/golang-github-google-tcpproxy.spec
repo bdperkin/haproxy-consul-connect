@@ -39,28 +39,17 @@ BuildRequires:  golang(github.com/armon/go-proxyproto)
 %goprep
 mv cmd/tlsrouter/README.md README-cmd-tlsrouter.md
 
-%build
-for cmd in cmd/* ; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-for cmd in scripts; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*tcpproxy.*
 %endif
 
 %files
 %license LICENSE
 %doc CONTRIBUTING.md README.md README-cmd-tlsrouter.md
-%{_bindir}/*
 
 %gopkgfiles
 

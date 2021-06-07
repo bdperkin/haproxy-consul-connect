@@ -38,15 +38,8 @@ BuildRequires:  golang(github.com/jarcoal/httpmock)
 %prep
 %goprep
 
-%build
-for cmd in tools; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -56,7 +49,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license LICENSE
 %doc examples README.md
-%{_bindir}/*
 
 %gopkgfiles
 

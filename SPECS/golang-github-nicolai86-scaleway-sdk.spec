@@ -64,15 +64,8 @@ BuildRequires:  golang(github.com/stretchr/testify/assert)
 mv dist/README.md README-dist.md
 mv pkg/api/README.md README-pkg-api.md
 
-%build
-for cmd in cmd/* ; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -82,7 +75,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license LICENSE.md
 %doc examples README.md README-dist.md README-pkg-api.md
-%{_bindir}/*
 
 %gopkgfiles
 

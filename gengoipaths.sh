@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -x
 
 echo "#IPATH,FORGE,SUBDIR,ALTIPATHS,VERSION,TAG,COMMIT,SRCTGZ,DSTTGZ,TYPE" > goipaths.txt
 echo "#IPATH,SUMMARY,DESCRIPTION" > goipaths-docs.txt
@@ -30,7 +30,7 @@ for MOD in $(cat packages.txt); do
     PKGGODEVFILE=$(mktemp)
     CURLRET=1
     while [ ${CURLRET} -ne 0 ]; do
-        curl -f -s "${PKGGODEVURL}" > ${PKGGODEVFILE}
+        curl -L -f -s "${PKGGODEVURL}" > ${PKGGODEVFILE}
         CURLRET=$?
         if [ ${CURLRET} -ne 0 ]; then
             PKGGODEVURL=$(dirname ${PKGGODEVURL})

@@ -20,6 +20,11 @@ for SPEC in $@; do
         sed -i -e "s/^# FIXME}$/${DESCRIPTION}}/g" ${SPEC}
     fi
 
+    GOPREP=$(grep "^${IPATH}," ../goipaths-goprep.txt | cut -d\, -f2-)
+    if [ "${GOPREP}" != "" ]; then
+        sed -i -e "s/^%goprep/${GOPREP}/g" ${SPEC}
+    fi
+
     GOCHECK=$(grep "^${IPATH}," ../goipaths-gocheck.txt | cut -d\, -f2-)
     if [ "${GOCHECK}" != "" ]; then
         sed -i -e "s/^%gocheck/${GOCHECK}/g" ${SPEC}
@@ -28,6 +33,13 @@ for SPEC in $@; do
     VERSION=$(basename $(grep ^Version ${SPEC} | awk '{print $2}') | sed -e 's/^v//g' | sed -e 's/\-/\~/g')
     if [ "${VERSION}" != "" ]; then
         sed -i -e "s/^Version:                .*/Version:                ${VERSION}/g" ${SPEC}
+    fi
+
+    echo "${VERSION}" | grep -q '~'
+    if [ $? -eq 0 ]; then
+        GOPREPNAME=$(basename $(grep "^${IPATH}," ../goipaths.txt | cut -d\, -f2))
+        GOPREPVERSION=$(echo "${VERSION}" | sed -e 's/~/-/g')
+	sed -i -e "s/^%goprep$/%goprep -s ${GOPREPNAME}-${GOPREPVERSION}/g" ${SPEC}
     fi
 
     UNSORTED=$(grep -v '^for cmd in cmd/\* ; do$' ${SPEC} | grep -P '^for cmd in .*; do$')

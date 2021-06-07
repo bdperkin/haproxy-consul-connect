@@ -4,14 +4,15 @@
 # https://github.com/etcd-io/etcd
 %global goipath         go.etcd.io/etcd/pkg/v3
 %global forgeurl        https://github.com/etcd-io/etcd
-Version:                3.5.0~beta.4
-%global tag             pkg/v3.5.0-beta.4
-%global commit          95f98c4d3bd625a01fde5c18fdb5af2d8b66bdf4
+Version:                3.5.0~rc.0
 
 %gometa
 
+%global goaltipaths     github.com/etcd-io/etcd github.com/etcd-io/etcd/pkg/v3
+
 %global common_description %{expand:
-# FIXME}
+Distributed reliable key-value store for the most critical data of a
+distributed system.}
 
 %global golicenses      LICENSE LICENSE-api LICENSE-client-pkg\\\
                         LICENSE-client-v2 LICENSE-client-v3 LICENSE-etcdctl\\\
@@ -42,7 +43,7 @@ Version:                3.5.0~beta.4
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Distributed reliable key-value store for the most critical data of a distributed system
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -268,16 +269,8 @@ mv tools/etcd-dump-logs/README.md README-tools-etcd-dump-logs.md
 mv tools/etcd-dump-metrics/README README-tools-etcd-dump-metrics
 mv tools/local-tester/README.md README-tools-local-tester.md
 
-%build
-%gobuild -o %{gobuilddir}/bin/v3 %{goipath}
-for cmd in contrib/lock/client contrib/lock/storage contrib/raftexample etcdctl etcdutl server tools/benchmark tools/etcd-dump-db tools/etcd-dump-logs tools/etcd-dump-metrics tools/local-tester/bridge; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -301,7 +294,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc README-tools-benchmark.md README-tools-etcd-dump-db.md
 %doc README-tools-etcd-dump-logs.md README-tools-etcd-dump-metrics
 %doc README-tools-local-tester.md
-%{_bindir}/*
 
 %gopkgfiles
 

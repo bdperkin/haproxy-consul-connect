@@ -819,12 +819,7 @@ repo: https://github.com/Azure/azure-sdk-for-go}
                         CHANGELOG-services-web-mgmt-2020-09-01-web.md\\\
                         CHANGELOG-services-web-mgmt-2020-12-01-web.md\\\
                         CHANGELOG-services-windowsiot-mgmt-2019-06-01-windowsiot.md\\\
-                        README-storage.md changelog-tools-apidiff-cmd.go\\\
-                        changelog-tools-generator-autorest.go\\\
-                        readmeFiles-tools-generator-autorest.go\\\
-                        readmeFiles_test-tools-generator-autorest.go\\\
-                        changelog-tools-generator-autorest-model.go\\\
-                        exceptions-tools-pkgchk.txt\\\
+                        README-storage.md exceptions-tools-pkgchk.txt\\\
                         README-tools-profileBuilder.md
 
 Name:           %{goname}
@@ -1680,23 +1675,16 @@ mv services/web/mgmt/2020-09-01/web/CHANGELOG.md CHANGELOG-services-web-mgmt-202
 mv services/web/mgmt/2020-12-01/web/CHANGELOG.md CHANGELOG-services-web-mgmt-2020-12-01-web.md
 mv services/windowsiot/mgmt/2019-06-01/windowsiot/CHANGELOG.md CHANGELOG-services-windowsiot-mgmt-2019-06-01-windowsiot.md
 mv storage/README.md README-storage.md
-mv tools/apidiff/cmd/changelog.go changelog-tools-apidiff-cmd.go
-mv tools/generator/autorest/changelog.go changelog-tools-generator-autorest.go
-mv tools/generator/autorest/readmeFiles.go readmeFiles-tools-generator-autorest.go
-mv tools/generator/autorest/readmeFiles_test.go readmeFiles_test-tools-generator-autorest.go
-mv tools/generator/autorest/model/changelog.go changelog-tools-generator-autorest-model.go
+rm tools/apidiff/cmd/changelog.go
+rm tools/generator/autorest/changelog.go
+rm tools/generator/autorest/readmeFiles.go
+rm tools/generator/autorest/readmeFiles_test.go
+rm tools/generator/autorest/model/changelog.go
 mv tools/pkgchk/exceptions.txt exceptions-tools-pkgchk.txt
 mv tools/profileBuilder/README.md README-tools-profileBuilder.md
 
-%build
-for cmd in profiles/latest/maintenance/mgmt/maintenance profiles/latest/maintenance/mgmt/maintenance/maintenanceapi profiles/preview/maintenance/mgmt/maintenance profiles/preview/maintenance/mgmt/maintenance/maintenanceapi profiles/preview/preview/maintenance/mgmt/maintenance profiles/preview/preview/maintenance/mgmt/maintenance/maintenanceapi sdk/samples/azidentity/manual-tests/managed-identity services/maintenance/mgmt/2020-04-01/maintenance services/maintenance/mgmt/2020-04-01/maintenance/maintenanceapi services/maintenance/mgmt/2021-05-01/maintenance services/maintenance/mgmt/2021-05-01/maintenance/maintenanceapi services/preview/maintenance/mgmt/2018-06-01-preview/maintenance services/preview/maintenance/mgmt/2018-06-01-preview/maintenance/maintenanceapi tools/apidiff tools/deprecate tools/generator tools/indexer tools/pkgchk tools/profileBuilder; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -2501,13 +2489,9 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc CHANGELOG-services-web-mgmt-2020-09-01-web.md
 %doc CHANGELOG-services-web-mgmt-2020-12-01-web.md
 %doc CHANGELOG-services-windowsiot-mgmt-2019-06-01-windowsiot.md
-%doc README-storage.md changelog-tools-apidiff-cmd.go
-%doc changelog-tools-generator-autorest.go
-%doc readmeFiles-tools-generator-autorest.go
-%doc readmeFiles_test-tools-generator-autorest.go
-%doc changelog-tools-generator-autorest-model.go exceptions-tools-pkgchk.txt
+%doc README-storage.md
+%doc exceptions-tools-pkgchk.txt
 %doc README-tools-profileBuilder.md
-%{_bindir}/*
 
 %gopkgfiles
 

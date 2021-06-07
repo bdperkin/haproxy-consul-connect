@@ -8,14 +8,14 @@ Version:                0.3.0
 %gometa
 
 %global common_description %{expand:
-Frame Streams implementation in Go.}
+# FIXME}
 
 %global golicenses      COPYRIGHT LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Frame Streams implementation in Go
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -30,15 +30,8 @@ Source0:        %{gosource}
 %prep
 %goprep
 
-%build
-for cmd in framestream_dump; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -48,7 +41,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license COPYRIGHT LICENSE
 %doc README.md
-%{_bindir}/*
 
 %gopkgfiles
 

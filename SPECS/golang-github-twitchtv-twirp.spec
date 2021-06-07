@@ -61,15 +61,8 @@ mv _tools/src/github.com/kisielk/gotool/README.md README-_tools-src-github.com-k
 mv _tools/src/github.com/twitchtv/retool/README.md README-_tools-src-github.com-twitchtv-retool.md
 mv clientcompat/README.md README-clientcompat.md
 
-%build
-for cmd in clientcompat clientcompat/gocompat protoc-gen-twirp protoc-gen-twirp_python _tools/src/github.com/kisielk/errcheck _tools/src/github.com/twitchtv/retool; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -85,7 +78,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc README-_tools-src-github.com-kisielk-errcheck.md
 %doc README-_tools-src-github.com-kisielk-gotool.md
 %doc README-_tools-src-github.com-twitchtv-retool.md README-clientcompat.md
-%{_bindir}/*
 
 %gopkgfiles
 

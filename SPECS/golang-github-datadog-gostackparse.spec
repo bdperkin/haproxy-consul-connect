@@ -56,18 +56,8 @@ mv test-fixtures/partial_createdby.txt partial_createdby-test-fixtures.txt
 mv test-fixtures/partial_stack.txt partial_stack-test-fixtures.txt
 mv test-fixtures/waitsince.txt waitsince-test-fixtures.txt
 
-%build
-for cmd in cmd/* ; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-for cmd in test-fixtures; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -82,7 +72,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc frameselided_goroutine-test-fixtures.txt lockedm-test-fixtures.txt
 %doc partial_createdby-test-fixtures.txt partial_stack-test-fixtures.txt
 %doc waitsince-test-fixtures.txt
-%{_bindir}/*
 
 %gopkgfiles
 

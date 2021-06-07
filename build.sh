@@ -54,6 +54,7 @@ for LINE in $(grep -v '^#' goipaths.txt | tac); do
         sed -i -e '/%global forgeurl /d' ${SPEC}
         sed -i -e "/^%global goipath .*/a %global forgeurl        ${ESCFORGE}" ${SPEC}
     fi
+    ../go2rpm-build ${SPEC}
     ../go2rpm-sort ${SPEC}
     ../go2rpm-docs ${SPEC}
     popd

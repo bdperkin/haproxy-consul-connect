@@ -191,7 +191,6 @@ Version:                1.9.6
                         raft-website-content-api-docs-operator.mdx\\\
                         segment-website-content-api-docs-operator.mdx\\\
                         agent-website-content-commands.mdx\\\
-                        debug-website-content-commands.mdx\\\
                         event-website-content-commands.mdx\\\
                         exec-website-content-commands.mdx\\\
                         force-leave-website-content-commands.mdx\\\
@@ -212,6 +211,7 @@ Version:                1.9.6
                         validate-website-content-commands.mdx\\\
                         version-website-content-commands.mdx\\\
                         watch-website-content-commands.mdx\\\
+                        debug-website-content-commands.mdx\\\
                         bootstrap-website-content-commands-acl.mdx\\\
                         index-website-content-commands-acl.mdx\\\
                         translate-rules-website-content-commands-acl.mdx\\\
@@ -736,7 +736,6 @@ mv website/content/api-docs/operator/keyring.mdx keyring-website-content-api-doc
 mv website/content/api-docs/operator/raft.mdx raft-website-content-api-docs-operator.mdx
 mv website/content/api-docs/operator/segment.mdx segment-website-content-api-docs-operator.mdx
 mv website/content/commands/agent.mdx agent-website-content-commands.mdx
-mv website/content/commands/debug.mdx debug-website-content-commands.mdx
 mv website/content/commands/event.mdx event-website-content-commands.mdx
 mv website/content/commands/exec.mdx exec-website-content-commands.mdx
 mv website/content/commands/force-leave.mdx force-leave-website-content-commands.mdx
@@ -757,6 +756,7 @@ mv website/content/commands/rtt.mdx rtt-website-content-commands.mdx
 mv website/content/commands/validate.mdx validate-website-content-commands.mdx
 mv website/content/commands/version.mdx version-website-content-commands.mdx
 mv website/content/commands/watch.mdx watch-website-content-commands.mdx
+mv website/content/commands/debug.mdx debug-website-content-commands.mdx
 mv website/content/commands/acl/bootstrap.mdx bootstrap-website-content-commands-acl.mdx
 mv website/content/commands/acl/index.mdx index-website-content-commands-acl.mdx
 mv website/content/commands/acl/translate-rules.mdx translate-rules-website-content-commands-acl.mdx
@@ -1006,17 +1006,17 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc keyring-website-content-api-docs-operator.mdx
 %doc raft-website-content-api-docs-operator.mdx
 %doc segment-website-content-api-docs-operator.mdx
-%doc agent-website-content-commands.mdx debug-website-content-commands.mdx
-%doc event-website-content-commands.mdx exec-website-content-commands.mdx
-%doc force-leave-website-content-commands.mdx index-website-content-commands.mdx
-%doc info-website-content-commands.mdx join-website-content-commands.mdx
-%doc keygen-website-content-commands.mdx keyring-website-content-commands.mdx
-%doc leave-website-content-commands.mdx lock-website-content-commands.mdx
-%doc login-website-content-commands.mdx logout-website-content-commands.mdx
-%doc maint-website-content-commands.mdx members-website-content-commands.mdx
-%doc monitor-website-content-commands.mdx reload-website-content-commands.mdx
-%doc rtt-website-content-commands.mdx validate-website-content-commands.mdx
-%doc version-website-content-commands.mdx watch-website-content-commands.mdx
+%doc agent-website-content-commands.mdx event-website-content-commands.mdx
+%doc exec-website-content-commands.mdx force-leave-website-content-commands.mdx
+%doc index-website-content-commands.mdx info-website-content-commands.mdx
+%doc join-website-content-commands.mdx keygen-website-content-commands.mdx
+%doc keyring-website-content-commands.mdx leave-website-content-commands.mdx
+%doc lock-website-content-commands.mdx login-website-content-commands.mdx
+%doc logout-website-content-commands.mdx maint-website-content-commands.mdx
+%doc members-website-content-commands.mdx monitor-website-content-commands.mdx
+%doc reload-website-content-commands.mdx rtt-website-content-commands.mdx
+%doc validate-website-content-commands.mdx version-website-content-commands.mdx
+%doc watch-website-content-commands.mdx debug-website-content-commands.mdx
 %doc bootstrap-website-content-commands-acl.mdx
 %doc index-website-content-commands-acl.mdx
 %doc translate-rules-website-content-commands-acl.mdx

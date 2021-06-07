@@ -3,110 +3,122 @@
 
 # https://github.com/docker/docker
 %global goipath         github.com/docker/docker
-Version:                1.12.6
+Version:                20.10.7
 
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Moby Project - a collaborative project for the container ecosystem to assemble
+container-based systems.}
 
-%global golicenses      LICENSE NOTICE LICENSE-contrib-syntax-vim\\\
-                        LICENSE-contrib-selinux-fedora-24-docker-engine-selinux\\\
-                        LICENSE-contrib-selinux-oraclelinux-7-docker-engine-selinux\\\
-                        LICENSE-contrib-selinux-docker-engine-selinux\\\
-                        LICENSE-pkg-mflag LICENSE-pkg-symlink.APACHE\\\
-                        LICENSE-pkg-symlink.BSD
+%global golicenses      LICENSE NOTICE LICENSE-contrib-busybox
 %global godocs          docs AUTHORS CHANGELOG.md CONTRIBUTING.md README.md\\\
-                        ROADMAP.md VENDORING.md README-api.md\\\
+                        ROADMAP.md SECURITY.md TESTING.md VENDORING.md\\\
+                        README-api.md README-api-types-versions.md\\\
                         README-cmd-dockerd.md README-contrib.md\\\
                         README-contrib-docker-device-tool.md\\\
                         README-contrib-syntax-nano.md\\\
-                        README-contrib-syntax-textmate.md doc\\\
+                        README-contrib-syntax-textmate.md\\\
                         README-contrib-syntax-vim.md\\\
-                        README-contrib-builder-deb-amd64.md\\\
-                        README-contrib-builder-rpm-amd64.md\\\
-                        README-contrib-desktop-integration.md\\\
-                        README-contrib-selinux-fedora-24-docker-engine-selinux.md\\\
-                        README-contrib-selinux-oraclelinux-7-docker-engine-selinux.md\\\
-                        README-contrib-vagrant-docker.md\\\
                         README-daemon-graphdriver-devmapper.md\\\
-                        README-hack-make.md readme-hack-Jenkins.md\\\
-                        v1.1-image-spec.md v1.2-image-spec.md\\\
-                        v1-image-spec.md README-pkg.md README-pkg-archive.md\\\
-                        README-pkg-discovery.md README-pkg-locker.md\\\
+                        README-hack.md README-hack-make.md\\\
+                        changelog-date-descending-hack-validate\\\
+                        changelog-well-formed-hack-validate\\\
+                        README-image-spec.md v1.1-image-spec.md\\\
+                        v1.2-image-spec.md v1-image-spec.md README-pkg.md\\\
+                        README-pkg-archive.md README-pkg-discovery.md\\\
                         README-pkg-plugins-pluginrpc-gen.md\\\
                         README-pkg-reexec.md README-pkg-signal.md\\\
                         README-pkg-stringid.md README-pkg-sysinfo.md\\\
                         tarsum_spec-pkg-tarsum.md README-pkg-useragent.md\\\
-                        example README-pkg-mflag.md\\\
-                        README-pkg-stringutils.md README-pkg-symlink.md\\\
                         BRANCHES-AND-TAGS-project.md\\\
                         PATCH-RELEASES-project.md PRINCIPLES-project.md\\\
-                        ARM-project.md CONTRIBUTORS-project.md\\\
-                        GOVERNANCE-project.md IRC-ADMINISTRATION-project.md\\\
-                        ISSUE-TRIAGE-project.md\\\
-                        PACKAGE-REPO-MAINTENANCE-project.md\\\
+                        GOVERNANCE-project.md ISSUE-TRIAGE-project.md\\\
                         PACKAGERS-project.md README-project.md\\\
-                        RELEASE-CHECKLIST-project.md\\\
                         RELEASE-PROCESS-project.md REVIEWING-project.md\\\
-                        TOOLS-project.md README-experimental.md\\\
-                        docker-stacks-and-bundles-experimental.md\\\
-                        plugins_graphdriver-experimental.md\\\
-                        vlan-networks-experimental.md Dockerfile.5-man.md\\\
-                        README-man.md docker-attach.1-man.md\\\
-                        docker-build.1-man.md docker-commit.1-man.md\\\
-                        docker-config-json.5-man.md docker-cp.1-man.md\\\
-                        docker-create.1-man.md docker-diff.1-man.md\\\
-                        docker-events.1-man.md docker-exec.1-man.md\\\
-                        docker-export.1-man.md docker-history.1-man.md\\\
-                        docker-images.1-man.md docker-import.1-man.md\\\
-                        docker-info.1-man.md docker-inspect.1-man.md\\\
-                        docker-kill.1-man.md docker-load.1-man.md\\\
-                        docker-login.1-man.md docker-logout.1-man.md\\\
-                        docker-logs.1-man.md docker-network-connect.1-man.md\\\
-                        docker-network-create.1-man.md\\\
-                        docker-network-disconnect.1-man.md\\\
-                        docker-network-inspect.1-man.md\\\
-                        docker-network-ls.1-man.md\\\
-                        docker-network-rm.1-man.md docker-pause.1-man.md\\\
-                        docker-port.1-man.md docker-ps.1-man.md\\\
-                        docker-pull.1-man.md docker-push.1-man.md\\\
-                        docker-rename.1-man.md docker-restart.1-man.md\\\
-                        docker-rm.1-man.md docker-rmi.1-man.md\\\
-                        docker-run.1-man.md docker-save.1-man.md\\\
-                        docker-search.1-man.md docker-start.1-man.md\\\
-                        docker-stats.1-man.md docker-stop.1-man.md\\\
-                        docker-tag.1-man.md docker-top.1-man.md\\\
-                        docker-unpause.1-man.md docker-update.1-man.md\\\
-                        docker-version.1-man.md docker-wait.1-man.md\\\
-                        docker.1-man.md dockerd.8-man.md
+                        README-client.md 2017-05-01-reports.md\\\
+                        2017-05-08-reports.md 2017-05-15-reports.md\\\
+                        2017-06-05-reports.md 2017-06-12-reports.md\\\
+                        2017-06-26-reports.md 2017-05-01-reports-builder.md\\\
+                        2017-05-08-reports-builder.md\\\
+                        2017-05-15-reports-builder.md\\\
+                        2017-05-22-reports-builder.md\\\
+                        2017-05-29-reports-builder.md\\\
+                        2017-06-05-reports-builder.md\\\
+                        2017-06-12-reports-builder.md\\\
+                        2017-06-26-reports-builder.md\\\
+                        2017-07-10-reports-builder.md\\\
+                        2017-07-17-reports-builder.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Moby Project - a collaborative project for the container ecosystem to assemble container-based systems
 
-# Upstream license specification: Apache-2.0 and BSD-2-Clause and BSD-3-Clause and GPL-2.0-only
-License:        ASL 2.0 and BSD and GPL-2.0-only
-# FIXME: Upstream uses unknown SPDX tag GPL-2.0-only!
+# Upstream license specification: Apache-2.0 and MIT
+License:        ASL 2.0 and MIT
 URL:            %{gourl}
 Source0:        %{gosource}
 
+BuildRequires:  golang(cloud.google.com/go/compute/metadata)
+BuildRequires:  golang(cloud.google.com/go/logging)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/awserr)
+BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/credentials/endpointcreds)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/ec2metadata)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/request)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/session)
 BuildRequires:  golang(github.com/aws/aws-sdk-go/service/cloudwatchlogs)
-BuildRequires:  golang(github.com/Azure/go-ansiterm)
-BuildRequires:  golang(github.com/boltdb/bolt)
-BuildRequires:  golang(github.com/coreos/go-systemd/activation)
-BuildRequires:  golang(github.com/coreos/go-systemd/daemon)
-BuildRequires:  golang(github.com/coreos/go-systemd/journal)
-BuildRequires:  golang(github.com/docker/containerd/api/grpc/types)
+BuildRequires:  golang(github.com/bsphere/le_go)
+BuildRequires:  golang(github.com/BurntSushi/toml)
+BuildRequires:  golang(github.com/containerd/cgroups)
+BuildRequires:  golang(github.com/containerd/cgroups/stats/v1)
+BuildRequires:  golang(github.com/containerd/cgroups/v2)
+BuildRequires:  golang(github.com/containerd/cgroups/v2/stats)
+BuildRequires:  golang(github.com/containerd/containerd)
+BuildRequires:  golang(github.com/containerd/containerd/api/events)
+BuildRequires:  golang(github.com/containerd/containerd/api/types)
+BuildRequires:  golang(github.com/containerd/containerd/archive)
+BuildRequires:  golang(github.com/containerd/containerd/cio)
+BuildRequires:  golang(github.com/containerd/containerd/containers)
+BuildRequires:  golang(github.com/containerd/containerd/content)
+BuildRequires:  golang(github.com/containerd/containerd/content/local)
+BuildRequires:  golang(github.com/containerd/containerd/contrib/nvidia)
+BuildRequires:  golang(github.com/containerd/containerd/defaults)
+BuildRequires:  golang(github.com/containerd/containerd/errdefs)
+BuildRequires:  golang(github.com/containerd/containerd/events)
+BuildRequires:  golang(github.com/containerd/containerd/gc)
+BuildRequires:  golang(github.com/containerd/containerd/images)
+BuildRequires:  golang(github.com/containerd/containerd/leases)
+BuildRequires:  golang(github.com/containerd/containerd/log)
+BuildRequires:  golang(github.com/containerd/containerd/metadata)
+BuildRequires:  golang(github.com/containerd/containerd/mount)
+BuildRequires:  golang(github.com/containerd/containerd/namespaces)
+BuildRequires:  golang(github.com/containerd/containerd/oci)
+BuildRequires:  golang(github.com/containerd/containerd/pkg/dialer)
+BuildRequires:  golang(github.com/containerd/containerd/platforms)
+BuildRequires:  golang(github.com/containerd/containerd/reference)
+BuildRequires:  golang(github.com/containerd/containerd/remotes)
+BuildRequires:  golang(github.com/containerd/containerd/remotes/docker)
+BuildRequires:  golang(github.com/containerd/containerd/remotes/docker/schema1)
+BuildRequires:  golang(github.com/containerd/containerd/rootfs)
+BuildRequires:  golang(github.com/containerd/containerd/runtime/linux/runctypes)
+BuildRequires:  golang(github.com/containerd/containerd/runtime/v1/linux)
+BuildRequires:  golang(github.com/containerd/containerd/runtime/v2/runc/options)
+BuildRequires:  golang(github.com/containerd/containerd/services/server/config)
+BuildRequires:  golang(github.com/containerd/containerd/snapshots)
+BuildRequires:  golang(github.com/containerd/containerd/sys)
+BuildRequires:  golang(github.com/containerd/continuity/driver)
+BuildRequires:  golang(github.com/containerd/continuity/fs)
+BuildRequires:  golang(github.com/containerd/continuity/pathdriver)
+BuildRequires:  golang(github.com/containerd/fifo)
+BuildRequires:  golang(github.com/containerd/typeurl)
+BuildRequires:  golang(github.com/coreos/go-systemd/v22/activation)
+BuildRequires:  golang(github.com/coreos/go-systemd/v22/daemon)
+BuildRequires:  golang(github.com/coreos/go-systemd/v22/journal)
 BuildRequires:  golang(github.com/docker/distribution)
-BuildRequires:  golang(github.com/docker/distribution/context)
-BuildRequires:  golang(github.com/docker/distribution/digest)
+BuildRequires:  golang(github.com/docker/distribution/digestset)
 BuildRequires:  golang(github.com/docker/distribution/manifest/manifestlist)
+BuildRequires:  golang(github.com/docker/distribution/manifest/ocischema)
 BuildRequires:  golang(github.com/docker/distribution/manifest/schema1)
 BuildRequires:  golang(github.com/docker/distribution/manifest/schema2)
 BuildRequires:  golang(github.com/docker/distribution/reference)
@@ -114,25 +126,12 @@ BuildRequires:  golang(github.com/docker/distribution/registry/api/errcode)
 BuildRequires:  golang(github.com/docker/distribution/registry/api/v2)
 BuildRequires:  golang(github.com/docker/distribution/registry/client)
 BuildRequires:  golang(github.com/docker/distribution/registry/client/auth)
+BuildRequires:  golang(github.com/docker/distribution/registry/client/auth/challenge)
 BuildRequires:  golang(github.com/docker/distribution/registry/client/transport)
-BuildRequires:  golang(github.com/docker/distribution/uuid)
-BuildRequires:  golang(github.com/docker/engine-api/client)
-BuildRequires:  golang(github.com/docker/engine-api/types)
-BuildRequires:  golang(github.com/docker/engine-api/types/blkiodev)
-BuildRequires:  golang(github.com/docker/engine-api/types/container)
-BuildRequires:  golang(github.com/docker/engine-api/types/events)
-BuildRequires:  golang(github.com/docker/engine-api/types/filters)
-BuildRequires:  golang(github.com/docker/engine-api/types/network)
-BuildRequires:  golang(github.com/docker/engine-api/types/registry)
-BuildRequires:  golang(github.com/docker/engine-api/types/strslice)
-BuildRequires:  golang(github.com/docker/engine-api/types/swarm)
-BuildRequires:  golang(github.com/docker/engine-api/types/time)
-BuildRequires:  golang(github.com/docker/engine-api/types/versions)
-BuildRequires:  golang(github.com/docker/engine-api/types/versions/v1p19)
-BuildRequires:  golang(github.com/docker/engine-api/types/versions/v1p20)
 BuildRequires:  golang(github.com/docker/go-connections/nat)
 BuildRequires:  golang(github.com/docker/go-connections/sockets)
 BuildRequires:  golang(github.com/docker/go-connections/tlsconfig)
+BuildRequires:  golang(github.com/docker/go-metrics)
 BuildRequires:  golang(github.com/docker/go-units)
 BuildRequires:  golang(github.com/docker/libkv)
 BuildRequires:  golang(github.com/docker/libkv/store)
@@ -142,78 +141,154 @@ BuildRequires:  golang(github.com/docker/libkv/store/zookeeper)
 BuildRequires:  golang(github.com/docker/libnetwork)
 BuildRequires:  golang(github.com/docker/libnetwork/cluster)
 BuildRequires:  golang(github.com/docker/libnetwork/config)
+BuildRequires:  golang(github.com/docker/libnetwork/datastore)
+BuildRequires:  golang(github.com/docker/libnetwork/driverapi)
 BuildRequires:  golang(github.com/docker/libnetwork/drivers/bridge)
+BuildRequires:  golang(github.com/docker/libnetwork/ipamapi)
+BuildRequires:  golang(github.com/docker/libnetwork/ipamutils)
 BuildRequires:  golang(github.com/docker/libnetwork/netlabel)
 BuildRequires:  golang(github.com/docker/libnetwork/netutils)
+BuildRequires:  golang(github.com/docker/libnetwork/networkdb)
 BuildRequires:  golang(github.com/docker/libnetwork/options)
 BuildRequires:  golang(github.com/docker/libnetwork/portallocator)
-BuildRequires:  golang(github.com/docker/libnetwork/resolvconf/dns)
+BuildRequires:  golang(github.com/docker/libnetwork/resolvconf)
 BuildRequires:  golang(github.com/docker/libnetwork/types)
 BuildRequires:  golang(github.com/docker/libtrust)
-BuildRequires:  golang(github.com/docker/notary/client)
-BuildRequires:  golang(github.com/docker/notary/passphrase)
-BuildRequires:  golang(github.com/docker/notary/trustmanager)
-BuildRequires:  golang(github.com/docker/notary/trustpinning)
-BuildRequires:  golang(github.com/docker/notary/tuf/data)
-BuildRequires:  golang(github.com/docker/notary/tuf/signed)
-BuildRequires:  golang(github.com/docker/notary/tuf/store)
 BuildRequires:  golang(github.com/docker/swarmkit/agent)
 BuildRequires:  golang(github.com/docker/swarmkit/agent/exec)
 BuildRequires:  golang(github.com/docker/swarmkit/api)
+BuildRequires:  golang(github.com/docker/swarmkit/api/genericresource)
+BuildRequires:  golang(github.com/docker/swarmkit/api/naming)
+BuildRequires:  golang(github.com/docker/swarmkit/ca)
 BuildRequires:  golang(github.com/docker/swarmkit/log)
-BuildRequires:  golang(github.com/docker/swarmkit/protobuf/ptypes)
+BuildRequires:  golang(github.com/docker/swarmkit/manager/allocator/cnmallocator)
+BuildRequires:  golang(github.com/docker/swarmkit/manager/encryption)
+BuildRequires:  golang(github.com/docker/swarmkit/node)
+BuildRequires:  golang(github.com/docker/swarmkit/template)
 BuildRequires:  golang(github.com/fluent/fluent-logger-golang/fluent)
-BuildRequires:  golang(github.com/flynn-archive/go-shlex)
-BuildRequires:  golang(github.com/go-check/check)
-BuildRequires:  golang(github.com/golang/protobuf/ptypes)
-BuildRequires:  golang(github.com/golang/protobuf/ptypes/timestamp)
+BuildRequires:  golang(github.com/fsnotify/fsnotify)
+BuildRequires:  golang(github.com/gogo/protobuf/proto)
+BuildRequires:  golang(github.com/gogo/protobuf/sortkeys)
+BuildRequires:  golang(github.com/gogo/protobuf/types)
+BuildRequires:  golang(github.com/golang/gddo/httputil)
+BuildRequires:  golang(github.com/google/uuid)
 BuildRequires:  golang(github.com/gorilla/mux)
 BuildRequires:  golang(github.com/Graylog2/go-gelf/gelf)
+BuildRequires:  golang(github.com/hashicorp/go-immutable-radix)
+BuildRequires:  golang(github.com/hashicorp/go-memdb)
 BuildRequires:  golang(github.com/imdario/mergo)
-BuildRequires:  golang(github.com/mattn/go-shellwords)
-BuildRequires:  golang(github.com/mattn/go-sqlite3)
 BuildRequires:  golang(github.com/mistifyio/go-zfs)
+BuildRequires:  golang(github.com/moby/buildkit/api/services/control)
+BuildRequires:  golang(github.com/moby/buildkit/cache)
+BuildRequires:  golang(github.com/moby/buildkit/cache/metadata)
+BuildRequires:  golang(github.com/moby/buildkit/cache/remotecache)
+BuildRequires:  golang(github.com/moby/buildkit/cache/remotecache/inline)
+BuildRequires:  golang(github.com/moby/buildkit/cache/remotecache/local)
+BuildRequires:  golang(github.com/moby/buildkit/cache/remotecache/registry)
+BuildRequires:  golang(github.com/moby/buildkit/cache/remotecache/v1)
+BuildRequires:  golang(github.com/moby/buildkit/client)
+BuildRequires:  golang(github.com/moby/buildkit/client/llb)
+BuildRequires:  golang(github.com/moby/buildkit/cmd/buildkitd/config)
+BuildRequires:  golang(github.com/moby/buildkit/control)
+BuildRequires:  golang(github.com/moby/buildkit/executor)
+BuildRequires:  golang(github.com/moby/buildkit/executor/oci)
+BuildRequires:  golang(github.com/moby/buildkit/executor/runcexecutor)
+BuildRequires:  golang(github.com/moby/buildkit/exporter)
+BuildRequires:  golang(github.com/moby/buildkit/exporter/containerimage/exptypes)
+BuildRequires:  golang(github.com/moby/buildkit/exporter/local)
+BuildRequires:  golang(github.com/moby/buildkit/exporter/tar)
+BuildRequires:  golang(github.com/moby/buildkit/frontend)
+BuildRequires:  golang(github.com/moby/buildkit/frontend/dockerfile/builder)
+BuildRequires:  golang(github.com/moby/buildkit/frontend/dockerfile/dockerignore)
+BuildRequires:  golang(github.com/moby/buildkit/frontend/dockerfile/instructions)
+BuildRequires:  golang(github.com/moby/buildkit/frontend/dockerfile/parser)
+BuildRequires:  golang(github.com/moby/buildkit/frontend/dockerfile/shell)
+BuildRequires:  golang(github.com/moby/buildkit/frontend/gateway)
+BuildRequires:  golang(github.com/moby/buildkit/frontend/gateway/forwarder)
+BuildRequires:  golang(github.com/moby/buildkit/identity)
+BuildRequires:  golang(github.com/moby/buildkit/session)
+BuildRequires:  golang(github.com/moby/buildkit/snapshot)
+BuildRequires:  golang(github.com/moby/buildkit/snapshot/containerd)
+BuildRequires:  golang(github.com/moby/buildkit/solver)
+BuildRequires:  golang(github.com/moby/buildkit/solver/bboltcachestorage)
+BuildRequires:  golang(github.com/moby/buildkit/solver/llbsolver/mounts)
+BuildRequires:  golang(github.com/moby/buildkit/solver/llbsolver/ops)
+BuildRequires:  golang(github.com/moby/buildkit/solver/pb)
+BuildRequires:  golang(github.com/moby/buildkit/source)
+BuildRequires:  golang(github.com/moby/buildkit/source/git)
+BuildRequires:  golang(github.com/moby/buildkit/source/http)
+BuildRequires:  golang(github.com/moby/buildkit/source/local)
+BuildRequires:  golang(github.com/moby/buildkit/util/apicaps)
+BuildRequires:  golang(github.com/moby/buildkit/util/archutil)
+BuildRequires:  golang(github.com/moby/buildkit/util/compression)
+BuildRequires:  golang(github.com/moby/buildkit/util/contentutil)
+BuildRequires:  golang(github.com/moby/buildkit/util/entitlements)
+BuildRequires:  golang(github.com/moby/buildkit/util/flightcontrol)
+BuildRequires:  golang(github.com/moby/buildkit/util/imageutil)
+BuildRequires:  golang(github.com/moby/buildkit/util/leaseutil)
+BuildRequires:  golang(github.com/moby/buildkit/util/network)
+BuildRequires:  golang(github.com/moby/buildkit/util/progress)
+BuildRequires:  golang(github.com/moby/buildkit/util/resolver)
+BuildRequires:  golang(github.com/moby/buildkit/util/system)
+BuildRequires:  golang(github.com/moby/buildkit/util/tracing)
+BuildRequires:  golang(github.com/moby/buildkit/worker)
+BuildRequires:  golang(github.com/moby/locker)
+BuildRequires:  golang(github.com/moby/sys/mount)
+BuildRequires:  golang(github.com/moby/sys/mountinfo)
+BuildRequires:  golang(github.com/moby/sys/symlink)
+BuildRequires:  golang(github.com/moby/term)
+BuildRequires:  golang(github.com/morikuni/aec)
+BuildRequires:  golang(github.com/opencontainers/go-digest)
+BuildRequires:  golang(github.com/opencontainers/image-spec/identity)
+BuildRequires:  golang(github.com/opencontainers/image-spec/specs-go/v1)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/apparmor)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/cgroups)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/configs)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/devices)
-BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/label)
-BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/selinux)
-BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/system)
 BuildRequires:  golang(github.com/opencontainers/runc/libcontainer/user)
-BuildRequires:  golang(github.com/opencontainers/specs/specs-go)
+BuildRequires:  golang(github.com/opencontainers/runtime-spec/specs-go)
+BuildRequires:  golang(github.com/opencontainers/selinux/go-selinux)
+BuildRequires:  golang(github.com/opencontainers/selinux/go-selinux/label)
 BuildRequires:  golang(github.com/pkg/errors)
+BuildRequires:  golang(github.com/prometheus/client_golang/prometheus)
 BuildRequires:  golang(github.com/RackSec/srslog)
-BuildRequires:  golang(github.com/Sirupsen/logrus)
+BuildRequires:  golang(github.com/sirupsen/logrus)
 BuildRequires:  golang(github.com/spf13/cobra)
-BuildRequires:  golang(github.com/spf13/cobra/doc)
 BuildRequires:  golang(github.com/spf13/pflag)
 BuildRequires:  golang(github.com/syndtr/gocapability/capability)
 BuildRequires:  golang(github.com/tchap/go-patricia/patricia)
-BuildRequires:  golang(github.com/tonistiigi/fifo)
+BuildRequires:  golang(github.com/tonistiigi/fsutil)
 BuildRequires:  golang(github.com/vbatts/tar-split/tar/asm)
 BuildRequires:  golang(github.com/vbatts/tar-split/tar/storage)
-BuildRequires:  golang(github.com/vdemeester/shakers)
-BuildRequires:  golang(golang.org/x/net/context)
+BuildRequires:  golang(github.com/vishvananda/netlink)
+BuildRequires:  golang(go.etcd.io/bbolt)
+BuildRequires:  golang(golang.org/x/net/http2)
 BuildRequires:  golang(golang.org/x/net/websocket)
-BuildRequires:  golang(google.golang.org/cloud/compute/metadata)
-BuildRequires:  golang(google.golang.org/cloud/logging)
+BuildRequires:  golang(golang.org/x/sync/errgroup)
+BuildRequires:  golang(golang.org/x/sync/semaphore)
+BuildRequires:  golang(golang.org/x/sync/syncmap)
+BuildRequires:  golang(golang.org/x/sys/execabs)
+BuildRequires:  golang(golang.org/x/sys/unix)
+BuildRequires:  golang(golang.org/x/time/rate)
+BuildRequires:  golang(google.golang.org/genproto/googleapis/api/monitoredres)
 BuildRequires:  golang(google.golang.org/grpc)
-BuildRequires:  golang(google.golang.org/grpc/grpclog)
-BuildRequires:  golang(google.golang.org/grpc/transport)
-BuildRequires:  golang(gopkg.in/fsnotify.v1)
+BuildRequires:  golang(google.golang.org/grpc/backoff)
+BuildRequires:  golang(google.golang.org/grpc/codes)
+BuildRequires:  golang(google.golang.org/grpc/metadata)
+BuildRequires:  golang(google.golang.org/grpc/status)
+BuildRequires:  golang(gotest.tools/v3/assert)
+BuildRequires:  golang(gotest.tools/v3/assert/cmp)
+BuildRequires:  golang(gotest.tools/v3/fs)
+BuildRequires:  golang(gotest.tools/v3/icmd)
+BuildRequires:  golang(gotest.tools/v3/poll)
+BuildRequires:  golang(gotest.tools/v3/skip)
 
 %if %{with check}
 # Tests
-BuildRequires:  golang(github.com/docker/distribution/manifest)
-BuildRequires:  golang(github.com/docker/libnetwork/driverapi)
-BuildRequires:  golang(github.com/docker/libnetwork/drivers/remote/api)
-BuildRequires:  golang(github.com/docker/libnetwork/ipamapi)
-BuildRequires:  golang(github.com/docker/libnetwork/ipams/remote/api)
-BuildRequires:  golang(github.com/docker/libnetwork/iptables)
-BuildRequires:  golang(github.com/docker/libnetwork/resolvconf)
-BuildRequires:  golang(github.com/kr/pty)
-BuildRequires:  golang(github.com/vishvananda/netlink)
+BuildRequires:  golang(github.com/gogo/protobuf/io)
+BuildRequires:  golang(github.com/google/go-cmp/cmp)
+BuildRequires:  golang(github.com/google/go-cmp/cmp/cmpopts)
+BuildRequires:  golang(gotest.tools/v3/env)
 %endif
 
 %description
@@ -223,36 +298,27 @@ BuildRequires:  golang(github.com/vishvananda/netlink)
 
 %prep
 %goprep
-mv contrib/syntax/vim/LICENSE LICENSE-contrib-syntax-vim
-mv contrib/selinux-fedora-24/docker-engine-selinux/LICENSE LICENSE-contrib-selinux-fedora-24-docker-engine-selinux
-mv contrib/selinux-oraclelinux-7/docker-engine-selinux/LICENSE LICENSE-contrib-selinux-oraclelinux-7-docker-engine-selinux
-mv contrib/selinux/docker-engine-selinux/LICENSE LICENSE-contrib-selinux-docker-engine-selinux
-mv pkg/mflag/LICENSE LICENSE-pkg-mflag
-mv pkg/symlink/LICENSE.APACHE LICENSE-pkg-symlink.APACHE
-mv pkg/symlink/LICENSE.BSD LICENSE-pkg-symlink.BSD
+mv contrib/busybox/LICENSE LICENSE-contrib-busybox
 mv api/README.md README-api.md
+mv api/types/versions/README.md README-api-types-versions.md
 mv cmd/dockerd/README.md README-cmd-dockerd.md
 mv contrib/README.md README-contrib.md
 mv contrib/docker-device-tool/README.md README-contrib-docker-device-tool.md
 mv contrib/syntax/nano/README.md README-contrib-syntax-nano.md
 mv contrib/syntax/textmate/README.md README-contrib-syntax-textmate.md
 mv contrib/syntax/vim/README.md README-contrib-syntax-vim.md
-mv contrib/builder/deb/amd64/README.md README-contrib-builder-deb-amd64.md
-mv contrib/builder/rpm/amd64/README.md README-contrib-builder-rpm-amd64.md
-mv contrib/desktop-integration/README.md README-contrib-desktop-integration.md
-mv contrib/selinux-fedora-24/docker-engine-selinux/README.md README-contrib-selinux-fedora-24-docker-engine-selinux.md
-mv contrib/selinux-oraclelinux-7/docker-engine-selinux/README.md README-contrib-selinux-oraclelinux-7-docker-engine-selinux.md
-mv contrib/vagrant-docker/README.md README-contrib-vagrant-docker.md
 mv daemon/graphdriver/devmapper/README.md README-daemon-graphdriver-devmapper.md
+mv hack/README.md README-hack.md
 mv hack/make/README.md README-hack-make.md
-mv hack/Jenkins/readme.md readme-hack-Jenkins.md
+mv hack/validate/changelog-date-descending changelog-date-descending-hack-validate
+mv hack/validate/changelog-well-formed changelog-well-formed-hack-validate
+mv image/spec/README.md README-image-spec.md
 mv image/spec/v1.1.md v1.1-image-spec.md
 mv image/spec/v1.2.md v1.2-image-spec.md
 mv image/spec/v1.md v1-image-spec.md
 mv pkg/README.md README-pkg.md
 mv pkg/archive/README.md README-pkg-archive.md
 mv pkg/discovery/README.md README-pkg-discovery.md
-mv pkg/locker/README.md README-pkg-locker.md
 mv pkg/plugins/pluginrpc-gen/README.md README-pkg-plugins-pluginrpc-gen.md
 mv pkg/reexec/README.md README-pkg-reexec.md
 mv pkg/signal/README.md README-pkg-signal.md
@@ -260,92 +326,35 @@ mv pkg/stringid/README.md README-pkg-stringid.md
 mv pkg/sysinfo/README.md README-pkg-sysinfo.md
 mv pkg/tarsum/tarsum_spec.md tarsum_spec-pkg-tarsum.md
 mv pkg/useragent/README.md README-pkg-useragent.md
-mv pkg/mflag/README.md README-pkg-mflag.md
-mv pkg/stringutils/README.md README-pkg-stringutils.md
-mv pkg/symlink/README.md README-pkg-symlink.md
 mv project/BRANCHES-AND-TAGS.md BRANCHES-AND-TAGS-project.md
 mv project/PATCH-RELEASES.md PATCH-RELEASES-project.md
 mv project/PRINCIPLES.md PRINCIPLES-project.md
-mv project/ARM.md ARM-project.md
-mv project/CONTRIBUTORS.md CONTRIBUTORS-project.md
 mv project/GOVERNANCE.md GOVERNANCE-project.md
-mv project/IRC-ADMINISTRATION.md IRC-ADMINISTRATION-project.md
 mv project/ISSUE-TRIAGE.md ISSUE-TRIAGE-project.md
-mv project/PACKAGE-REPO-MAINTENANCE.md PACKAGE-REPO-MAINTENANCE-project.md
 mv project/PACKAGERS.md PACKAGERS-project.md
 mv project/README.md README-project.md
-mv project/RELEASE-CHECKLIST.md RELEASE-CHECKLIST-project.md
 mv project/RELEASE-PROCESS.md RELEASE-PROCESS-project.md
 mv project/REVIEWING.md REVIEWING-project.md
-mv project/TOOLS.md TOOLS-project.md
-mv experimental/README.md README-experimental.md
-mv experimental/docker-stacks-and-bundles.md docker-stacks-and-bundles-experimental.md
-mv experimental/plugins_graphdriver.md plugins_graphdriver-experimental.md
-mv experimental/vlan-networks.md vlan-networks-experimental.md
-mv man/Dockerfile.5.md Dockerfile.5-man.md
-mv man/README.md README-man.md
-mv man/docker-attach.1.md docker-attach.1-man.md
-mv man/docker-build.1.md docker-build.1-man.md
-mv man/docker-commit.1.md docker-commit.1-man.md
-mv man/docker-config-json.5.md docker-config-json.5-man.md
-mv man/docker-cp.1.md docker-cp.1-man.md
-mv man/docker-create.1.md docker-create.1-man.md
-mv man/docker-diff.1.md docker-diff.1-man.md
-mv man/docker-events.1.md docker-events.1-man.md
-mv man/docker-exec.1.md docker-exec.1-man.md
-mv man/docker-export.1.md docker-export.1-man.md
-mv man/docker-history.1.md docker-history.1-man.md
-mv man/docker-images.1.md docker-images.1-man.md
-mv man/docker-import.1.md docker-import.1-man.md
-mv man/docker-info.1.md docker-info.1-man.md
-mv man/docker-inspect.1.md docker-inspect.1-man.md
-mv man/docker-kill.1.md docker-kill.1-man.md
-mv man/docker-load.1.md docker-load.1-man.md
-mv man/docker-login.1.md docker-login.1-man.md
-mv man/docker-logout.1.md docker-logout.1-man.md
-mv man/docker-logs.1.md docker-logs.1-man.md
-mv man/docker-network-connect.1.md docker-network-connect.1-man.md
-mv man/docker-network-create.1.md docker-network-create.1-man.md
-mv man/docker-network-disconnect.1.md docker-network-disconnect.1-man.md
-mv man/docker-network-inspect.1.md docker-network-inspect.1-man.md
-mv man/docker-network-ls.1.md docker-network-ls.1-man.md
-mv man/docker-network-rm.1.md docker-network-rm.1-man.md
-mv man/docker-pause.1.md docker-pause.1-man.md
-mv man/docker-port.1.md docker-port.1-man.md
-mv man/docker-ps.1.md docker-ps.1-man.md
-mv man/docker-pull.1.md docker-pull.1-man.md
-mv man/docker-push.1.md docker-push.1-man.md
-mv man/docker-rename.1.md docker-rename.1-man.md
-mv man/docker-restart.1.md docker-restart.1-man.md
-mv man/docker-rm.1.md docker-rm.1-man.md
-mv man/docker-rmi.1.md docker-rmi.1-man.md
-mv man/docker-run.1.md docker-run.1-man.md
-mv man/docker-save.1.md docker-save.1-man.md
-mv man/docker-search.1.md docker-search.1-man.md
-mv man/docker-start.1.md docker-start.1-man.md
-mv man/docker-stats.1.md docker-stats.1-man.md
-mv man/docker-stop.1.md docker-stop.1-man.md
-mv man/docker-tag.1.md docker-tag.1-man.md
-mv man/docker-top.1.md docker-top.1-man.md
-mv man/docker-unpause.1.md docker-unpause.1-man.md
-mv man/docker-update.1.md docker-update.1-man.md
-mv man/docker-version.1.md docker-version.1-man.md
-mv man/docker-wait.1.md docker-wait.1-man.md
-mv man/docker.1.md docker.1-man.md
-mv man/dockerd.8.md dockerd.8-man.md
-
-%build
-for cmd in cmd/* ; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-for cmd in builder/dockerfile/parser/dumper contrib/apparmor contrib/docker-device-tool contrib/httpserver integration-cli man pkg/archive pkg/plugins/pluginrpc-gen profiles/seccomp; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
+mv client/README.md README-client.md
+mv reports/2017-05-01.md 2017-05-01-reports.md
+mv reports/2017-05-08.md 2017-05-08-reports.md
+mv reports/2017-05-15.md 2017-05-15-reports.md
+mv reports/2017-06-05.md 2017-06-05-reports.md
+mv reports/2017-06-12.md 2017-06-12-reports.md
+mv reports/2017-06-26.md 2017-06-26-reports.md
+mv reports/builder/2017-05-01.md 2017-05-01-reports-builder.md
+mv reports/builder/2017-05-08.md 2017-05-08-reports-builder.md
+mv reports/builder/2017-05-15.md 2017-05-15-reports-builder.md
+mv reports/builder/2017-05-22.md 2017-05-22-reports-builder.md
+mv reports/builder/2017-05-29.md 2017-05-29-reports-builder.md
+mv reports/builder/2017-06-05.md 2017-06-05-reports-builder.md
+mv reports/builder/2017-06-12.md 2017-06-12-reports-builder.md
+mv reports/builder/2017-06-26.md 2017-06-26-reports-builder.md
+mv reports/builder/2017-07-10.md 2017-07-10-reports-builder.md
+mv reports/builder/2017-07-17.md 2017-07-17-reports-builder.md
 
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -353,54 +362,30 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%license LICENSE NOTICE LICENSE-contrib-syntax-vim
-%license LICENSE-contrib-selinux-fedora-24-docker-engine-selinux
-%license LICENSE-contrib-selinux-oraclelinux-7-docker-engine-selinux
-%license LICENSE-contrib-selinux-docker-engine-selinux LICENSE-pkg-mflag
-%license LICENSE-pkg-symlink.APACHE LICENSE-pkg-symlink.BSD
-%doc docs AUTHORS CHANGELOG.md CONTRIBUTING.md README.md ROADMAP.md VENDORING.md
-%doc README-api.md README-cmd-dockerd.md README-contrib.md
+%license LICENSE NOTICE LICENSE-contrib-busybox
+%doc docs AUTHORS CHANGELOG.md CONTRIBUTING.md README.md ROADMAP.md SECURITY.md
+%doc TESTING.md VENDORING.md README-api.md README-api-types-versions.md
+%doc README-cmd-dockerd.md README-contrib.md
 %doc README-contrib-docker-device-tool.md README-contrib-syntax-nano.md
-%doc README-contrib-syntax-textmate.md doc README-contrib-syntax-vim.md
-%doc README-contrib-builder-deb-amd64.md README-contrib-builder-rpm-amd64.md
-%doc README-contrib-desktop-integration.md
-%doc README-contrib-selinux-fedora-24-docker-engine-selinux.md
-%doc README-contrib-selinux-oraclelinux-7-docker-engine-selinux.md
-%doc README-contrib-vagrant-docker.md README-daemon-graphdriver-devmapper.md
-%doc README-hack-make.md readme-hack-Jenkins.md v1.1-image-spec.md
-%doc v1.2-image-spec.md v1-image-spec.md README-pkg.md README-pkg-archive.md
-%doc README-pkg-discovery.md README-pkg-locker.md
+%doc README-contrib-syntax-textmate.md README-contrib-syntax-vim.md
+%doc README-daemon-graphdriver-devmapper.md README-hack.md README-hack-make.md
+%doc changelog-date-descending-hack-validate changelog-well-formed-hack-validate
+%doc README-image-spec.md v1.1-image-spec.md v1.2-image-spec.md v1-image-spec.md
+%doc README-pkg.md README-pkg-archive.md README-pkg-discovery.md
 %doc README-pkg-plugins-pluginrpc-gen.md README-pkg-reexec.md
 %doc README-pkg-signal.md README-pkg-stringid.md README-pkg-sysinfo.md
-%doc tarsum_spec-pkg-tarsum.md README-pkg-useragent.md example
-%doc README-pkg-mflag.md README-pkg-stringutils.md README-pkg-symlink.md
+%doc tarsum_spec-pkg-tarsum.md README-pkg-useragent.md
 %doc BRANCHES-AND-TAGS-project.md PATCH-RELEASES-project.md
-%doc PRINCIPLES-project.md ARM-project.md CONTRIBUTORS-project.md
-%doc GOVERNANCE-project.md IRC-ADMINISTRATION-project.md ISSUE-TRIAGE-project.md
-%doc PACKAGE-REPO-MAINTENANCE-project.md PACKAGERS-project.md README-project.md
-%doc RELEASE-CHECKLIST-project.md RELEASE-PROCESS-project.md
-%doc REVIEWING-project.md TOOLS-project.md README-experimental.md
-%doc docker-stacks-and-bundles-experimental.md
-%doc plugins_graphdriver-experimental.md vlan-networks-experimental.md
-%doc Dockerfile.5-man.md README-man.md docker-attach.1-man.md
-%doc docker-build.1-man.md docker-commit.1-man.md docker-config-json.5-man.md
-%doc docker-cp.1-man.md docker-create.1-man.md docker-diff.1-man.md
-%doc docker-events.1-man.md docker-exec.1-man.md docker-export.1-man.md
-%doc docker-history.1-man.md docker-images.1-man.md docker-import.1-man.md
-%doc docker-info.1-man.md docker-inspect.1-man.md docker-kill.1-man.md
-%doc docker-load.1-man.md docker-login.1-man.md docker-logout.1-man.md
-%doc docker-logs.1-man.md docker-network-connect.1-man.md
-%doc docker-network-create.1-man.md docker-network-disconnect.1-man.md
-%doc docker-network-inspect.1-man.md docker-network-ls.1-man.md
-%doc docker-network-rm.1-man.md docker-pause.1-man.md docker-port.1-man.md
-%doc docker-ps.1-man.md docker-pull.1-man.md docker-push.1-man.md
-%doc docker-rename.1-man.md docker-restart.1-man.md docker-rm.1-man.md
-%doc docker-rmi.1-man.md docker-run.1-man.md docker-save.1-man.md
-%doc docker-search.1-man.md docker-start.1-man.md docker-stats.1-man.md
-%doc docker-stop.1-man.md docker-tag.1-man.md docker-top.1-man.md
-%doc docker-unpause.1-man.md docker-update.1-man.md docker-version.1-man.md
-%doc docker-wait.1-man.md docker.1-man.md dockerd.8-man.md
-%{_bindir}/*
+%doc PRINCIPLES-project.md GOVERNANCE-project.md ISSUE-TRIAGE-project.md
+%doc PACKAGERS-project.md README-project.md RELEASE-PROCESS-project.md
+%doc REVIEWING-project.md README-client.md 2017-05-01-reports.md
+%doc 2017-05-08-reports.md 2017-05-15-reports.md 2017-06-05-reports.md
+%doc 2017-06-12-reports.md 2017-06-26-reports.md 2017-05-01-reports-builder.md
+%doc 2017-05-08-reports-builder.md 2017-05-15-reports-builder.md
+%doc 2017-05-22-reports-builder.md 2017-05-29-reports-builder.md
+%doc 2017-06-05-reports-builder.md 2017-06-12-reports-builder.md
+%doc 2017-06-26-reports-builder.md 2017-07-10-reports-builder.md
+%doc 2017-07-17-reports-builder.md
 
 %gopkgfiles
 

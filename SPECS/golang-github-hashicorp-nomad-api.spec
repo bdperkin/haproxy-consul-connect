@@ -365,16 +365,8 @@ mv website/content/partials/general_options.mdx general_options-website-content-
 mv website/public/robots.txt robots-website-public.txt
 mv dist/README.md README-dist.md
 
-%build
-%gobuild -o %{gobuilddir}/bin/api %{goipath}
-for cmd in demo/digitalocean/app e2e/cli tools/ec2info; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -439,7 +431,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc envvars-website-content-partials.mdx
 %doc general_options-website-content-partials.mdx docs robots-website-public.txt
 %doc README-dist.md
-%{_bindir}/*
 
 %gopkgfiles
 

@@ -8,7 +8,7 @@ Version:                0.4.0
 %gometa
 
 %global common_description %{expand:
-Ory's cross-project go libraries, intended for internal use.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md compiler/README.md env/README.md\\\
@@ -16,7 +16,7 @@ Ory's cross-project go libraries, intended for internal use.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Ory's cross-project go libraries, intended for internal use
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

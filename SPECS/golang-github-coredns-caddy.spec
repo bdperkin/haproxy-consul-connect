@@ -8,14 +8,14 @@ Version:                1.1.1
 %gometa
 
 %global common_description %{expand:
-Fast, multi-platform web server with automatic HTTPS.}
+Package caddy implements the Caddy server manager. To use this package:}
 
 %global golicenses      LICENSE.txt
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Fast, multi-platform web server with automatic HTTPS
+Summary:        Package caddy implements the Caddy server manager
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

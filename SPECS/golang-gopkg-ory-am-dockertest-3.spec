@@ -89,15 +89,8 @@ mv docker/pkg/README.md README-docker-pkg.md
 mv docker/pkg/archive/README.md README-docker-pkg-archive.md
 mv docker/types/versions/README.md README-docker-types-versions.md
 
-%build
-for cmd in docker/pkg/archive; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -109,7 +102,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc docs examples CONTRIBUTING.md README.md SECURITY.md AUTHORS-docker
 %doc README-docker.markdown README-docker-pkg.md README-docker-pkg-archive.md
 %doc README-docker-types-versions.md
-%{_bindir}/*
 
 %gopkgfiles
 

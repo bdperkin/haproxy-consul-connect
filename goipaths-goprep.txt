@@ -1,0 +1,1 @@
+gopkg.in/gorethink/gorethink.v4,%goprep -s rethinkdb-go-%{version}

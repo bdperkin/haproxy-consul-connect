@@ -8,7 +8,9 @@ Version:                1.9.1
 %gometa
 
 %global common_description %{expand:
-Scalable datastore for metrics, events, and real-time analytics.}
+Package influxdb is the root package of InfluxDB, the scalable datastore for
+metrics, events, and real-time analytics. If you're looking for the Go HTTP
+client for InfluxDB,}
 
 %global golicenses      LICENSE
 %global godocs          CODING_GUIDELINES.md QUERIES.md TODO.md\\\
@@ -35,7 +37,7 @@ Scalable datastore for metrics, events, and real-time analytics.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Scalable datastore for metrics, events, and real-time analytics
+Summary:        Package influxdb is the root package of InfluxDB, the scalable datastore for metrics, events, and real-time analytics
 
 License:        MIT
 URL:            %{gourl}
@@ -172,19 +174,8 @@ mv importer/README.md README-importer.md
 mv tsdb/README.md README-tsdb.md
 mv tsdb/engine/tsm1/DESIGN.md DESIGN-tsdb-engine-tsm1.md
 
-%build
-for cmd in cmd/* ; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-%gobuild -o %{gobuilddir}/bin/influxdb %{goipath}
-for cmd in kit/feature/_codegen services/collectd/test_client _tools/tmpl; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -207,7 +198,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc README-services-precreator.md README-services-udp.md README-pkg.md
 %doc README-pkg-snowflake.md README-client.md README-importer.md README-tsdb.md
 %doc DESIGN-tsdb-engine-tsm1.md
-%{_bindir}/*
 
 %gopkgfiles
 

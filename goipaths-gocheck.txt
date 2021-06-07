@@ -1,0 +1,9 @@
+gopkg.in/d4l3k/messagediff.v1,%gocheck -r .*messagediff.*
+github.com/google/tcpproxy,%gocheck -r .*tcpproxy.*
+github.com/go-ldap/ldap,%gocheck -r .*ldap.*
+k8s.io/api,%gocheck -r .*generated.* -r .*objectreference.* -r .*types.*
+github.com/hashicorp/go-getter,%gocheck -r .*get_gcs.* -r .*get_s3.*
+github.com/bmatcuk/doublestar,%gocheck -r .*doublestar.*
+gopkg.in/olivere/elastic.v3,%gocheck -r .*example.*
+github.com/mattbaird/elastigo,%gocheck -r .*clusterreroute.*
+gopkg.in/jinzhu/gorm.v1,%gocheck -r .*main.*

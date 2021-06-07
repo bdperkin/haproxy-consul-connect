@@ -8,14 +8,18 @@ Version:                2.1.4
 %gometa
 
 %global common_description %{expand:
-Go language library for STOMP protocol.}
+Package stomp provides operations that allow communication with a message
+broker that supports the STOMP protocol. STOMP is the Streaming Text-Oriented
+Messaging Protocol. See http://stomp.github.com/ for more details. This
+package provides support for all STOMP protocol features in the STOMP protocol
+specifications,}
 
 %global golicenses      LICENSE.txt
 %global godocs          examples AUTHORS.md README.md breaking_changes.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Go language library for STOMP protocol
+Summary:        Package stomp provides operations that allow communication with a message broker that supports the STOMP protocol
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -32,15 +36,8 @@ BuildRequires:  golang(gopkg.in/check.v1)
 %prep
 %goprep
 
-%build
-for cmd in stompd; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -50,7 +47,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license LICENSE.txt
 %doc examples AUTHORS.md README.md breaking_changes.md
-%{_bindir}/*
 
 %gopkgfiles
 

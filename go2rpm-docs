@@ -27,7 +27,7 @@ for SPEC in $@; do
 
     LINE="%global golicenses     "
     for LIC in ${LICS}; do
-    NEWLIC=${LIC}
+        NEWLIC=${LIC}
         echo "${LIC}" | grep -q '/'
         if [ $? -eq 0 ]; then
             ESCLIC=$(echo "${LIC}" | sed -e 's/\//\\\//g')
@@ -47,21 +47,21 @@ for SPEC in $@; do
             fi
             echo "mv ${LIC} ${NEWLIC}" >> ${TMPFILE2}
         fi
-    LEN1=$(echo "${LINE}" | wc -c)
-    LEN2=$(echo "${NEWLIC}" | wc -c)
-    let LINELEN=${LEN1}+${LEN2}
-    if [ ${LINELEN} -gt 77 ]; then
-        echo "${LINE}\\\\\\" >> ${TMPFILE3}
-        LINE="                        ${NEWLIC}"
-    else
-        LINE="${LINE} ${NEWLIC}"
-    fi
+        LEN1=$(echo "${LINE}" | wc -c)
+        LEN2=$(echo "${NEWLIC}" | wc -c)
+        let LINELEN=${LEN1}+${LEN2}
+        if [ ${LINELEN} -gt 77 ]; then
+            echo "${LINE}\\\\\\" >> ${TMPFILE3}
+            LINE="                        ${NEWLIC}"
+        else
+            LINE="${LINE} ${NEWLIC}"
+        fi
     done
     echo "${LINE}" >> ${TMPFILE3}
 
     LINE="%global godocs         "
     for DOC in ${DOCS}; do
-    NEWDOC=${DOC}
+        NEWDOC=${DOC}
         echo "${DOC}" | grep -q '/'
         if [ $? -eq 0 ]; then
             ESCDOC=$(echo "${DOC}" | sed -e 's/\//\\\//g')
@@ -75,21 +75,31 @@ for SPEC in $@; do
                 EXT=$(echo "${BASE}" | rev | cut -d\. -f1 | rev)
                 NEWDOC="${NAME}-${FLAT}.${EXT}"
             fi
+            echo "${NEWDOC}" | grep -q '\.go$'
+            if [ $? -eq 0 ]; then
+                NEWDOC=""
+            fi
             sed -i -e "s/${ESCDOC}/${NEWDOC}/g" ${TMPFILE1}
             if [ $? -ne 0 ]; then
                 exit 1
             fi
-            echo "mv ${DOC} ${NEWDOC}" >> ${TMPFILE2}
+            if [ "${NEWDOC}" != "" ]; then
+                echo "mv ${DOC} ${NEWDOC}" >> ${TMPFILE2}
+            else
+                echo "rm ${DOC}" >> ${TMPFILE2}
+            fi
         fi
-    LEN1=$(echo "${LINE}" | wc -c)
-    LEN2=$(echo "${NEWDOC}" | wc -c)
-    let LINELEN=${LEN1}+${LEN2}
-    if [ ${LINELEN} -gt 77 ]; then
-        echo "${LINE}\\\\\\" >> ${TMPFILE3}
-        LINE="                        ${NEWDOC}"
-    else
-        LINE="${LINE} ${NEWDOC}"
-    fi
+        LEN1=$(echo "${LINE}" | wc -c)
+        LEN2=$(echo "${NEWDOC}" | wc -c)
+        let LINELEN=${LEN1}+${LEN2}
+        if [ ${LINELEN} -gt 77 ]; then
+            echo "${LINE}\\\\\\" >> ${TMPFILE3}
+            LINE="                        ${NEWDOC}"
+        else
+            if [ "${NEWDOC}" != "" ]; then
+                LINE="${LINE} ${NEWDOC}"
+            fi
+        fi
     done
     echo "${LINE}" >> ${TMPFILE3}
 
@@ -100,6 +110,23 @@ for SPEC in $@; do
     grep -B 10000 '^%goprep$' ${TMPFILE1} | grep -A 10000 '^Name: ' >> ${SPEC}
     cat ${TMPFILE2} >> ${SPEC}
     grep -A 10000 '^%goprep$' ${TMPFILE1} | grep -v '^%goprep$' >> ${SPEC}
+
+    sed -i -e "/^%doc\ $/d" ${SPEC}
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+    sed -i -e "s/^%doc\ \ /%doc\ /g" ${SPEC}
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+    sed -i -e "s/ docs docs//g" ${SPEC}
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+    sed -i -e "s/\ $//g" ${SPEC}
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
 
     rm ${TMPFILE1}
     rm ${TMPFILE2}

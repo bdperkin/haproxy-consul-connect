@@ -8,15 +8,14 @@ Version:                0.4.0
 %gometa
 
 %global common_description %{expand:
-Flexible, structured event replication format for DNS servers (command-line
-tool and Golang package).}
+# FIXME}
 
 %global golicenses      COPYRIGHT LICENSE LICENSE-dnstap.pb
 %global godocs          README README-dnstap.pb.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Flexible, structured event replication format for DNS servers (command-line tool and Golang package)
+Summary:        None
 
 # Upstream license specification: Apache-2.0 and CC0-1.0
 License:        ASL 2.0 and CC0
@@ -39,15 +38,8 @@ BuildRequires:  golang(google.golang.org/protobuf/runtime/protoimpl)
 mv dnstap.pb/LICENSE LICENSE-dnstap.pb
 mv dnstap.pb/README.md README-dnstap.pb.md
 
-%build
-for cmd in dnstap; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -57,7 +49,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license COPYRIGHT LICENSE LICENSE-dnstap.pb
 %doc README README-dnstap.pb.md
-%{_bindir}/*
 
 %gopkgfiles
 
