@@ -8,8 +8,10 @@ Version:                4.0.0~preview1
 
 %gometa
 
+%global goaltipaths     github.com/dgrijalva/jwt-go
+
 %global common_description %{expand:
-# FIXME}
+Golang implementation of JSON Web Tokens (JWT).}
 
 %global golicenses      LICENSE
 %global godocs          MIGRATION_GUIDE.md README.md VERSION_HISTORY.md\\\
@@ -17,7 +19,7 @@ Version:                4.0.0~preview1
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Golang implementation of JSON Web Tokens (JWT)
 
 License:        MIT
 URL:            %{gourl}

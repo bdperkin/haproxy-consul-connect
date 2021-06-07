@@ -8,15 +8,17 @@ Version:                7.4.0
 
 %gometa
 
+%global goaltipaths     github.com/go-redis/redis
+
 %global common_description %{expand:
-# FIXME}
+Type-safe Redis client for Golang.}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Type-safe Redis client for Golang
 
 # Upstream license specification: BSD-2-Clause
 License:        BSD

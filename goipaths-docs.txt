@@ -51,3 +51,32 @@ github.com/NVIDIA/gpu-monitoring-tools,,
 github.com/hashicorp/consul-template,,
 github.com/hashicorp/go-cty-funcs,,
 github.com/hashicorp/vault/sdk,,
+github.com/sean-/pager,,
+github.com/softlayer/xmlrpc,,
+github.com/araddon/gou,,
+github.com/bitly/go-hostpool,A Go package to intelligently and flexibly pool among multiple hosts from your Go application,A Go package to intelligently and flexibly pool among multiple hosts from your Go application. Host selection can operate in round robin or epsilon greedy mode&#44; and unresponsive hosts are avoided. A good overview of Epsilon Greedy is here http://stevehanov.ca/blog/index.php?id=132
+github.com/bmatcuk/doublestar,,
+github.com/oleiade/reflections,Package reflections provides high level abstractions above the reflect library,Package reflections provides high level abstractions above the reflect library.  Reflect library is very low-level and as can be quite complex when it comes to do simple things like accessing a structure field value&#44; a field tag...
+github.com/ory-am/dockertest,,
+gopkg.in/ory-am/dockertest.v3,,
+github.com/cheggaaa/pb,Simple console progress bars,Simple console progress bars
+github.com/hashicorp/go-gatedio,gatedio provides wrappers around the io,gatedio provides wrappers around the io.ReadWriter&#44; io.Writer&#44; and io.Reader interfaces to support concurrent usage and access across multiple goroutines.
+gopkg.in/gorethink/gorethink.v4,Package gorethink implements a Go driver for RethinkDB Current version: v3,Package gorethink implements a Go driver for RethinkDB  Current version: v3.0.2 (RethinkDB v2.3)
+github.com/moul/anonuuid,,
+github.com/moul/gotty-client,,
+github.com/moul/http2curl,,
+github.com/dgrijalva/jwt-go/v4,Package jwt is a Go implementation of JSON Web Tokens: http://self-issued,Package jwt is a Go implementation of JSON Web Tokens: http://self-issued.info/docs/draft-jones-json-web-token.html  See README.md for more info.
+github.com/DataDog/gostackparse,Package gostackparse parses goroutines stack traces as produced by panic() or debug,Package gostackparse parses goroutines stack traces as produced by panic() or debug.Stack() at ~300 MiB/s.
+github.com/go-pg/pg/v10,pg provides PostgreSQL client,pg provides PostgreSQL client.
+github.com/go-redis/redis/v7,Package redis implements a Redis client,Package redis implements a Redis client.
+github.com/gofiber/fiber/v2,,
+github.com/labstack/echo,Package echo implements high performance&#44; minimalist Go web framework,Package echo implements high performance&#44; minimalist Go web framework.  Example:
+github.com/tidwall/buntdb,Package buntdb implements a low-level in-memory key/value store in pure Go,Package buntdb implements a low-level in-memory key/value store in pure Go. It persists to disk&#44; is ACID compliant&#44; and uses locking for multiple readers and a single writer. Bunt is ideal for projects that need a dependable database&#44; and favor speed over data size.
+github.com/twitchtv/twirp,Copyright 2018 Twitch Interactive&#44; Inc,Copyright 2018 Twitch Interactive&#44; Inc. All Rights Reserved.  Licensed under the Apache License&#44; Version 2.0 (the "License"). You may not
+gopkg.in/jinzhu/gorm.v1,,
+gopkg.in/olivere/elastic.v3,Package elastic provides an interface to the Elasticsearch server (http://www,Package elastic provides an interface to the Elasticsearch server (http://www.elasticsearch.org/).  The first thing you do is to create a Client. If you have Elasticsearch
+gorm.io/driver/mysql,,
+gorm.io/driver/postgres,,
+go.etcd.io/etcd/client/v2,Package client provides bindings for the etcd APIs,Package client provides bindings for the etcd APIs.  Create a Config and exchange it for a Client:
+go.etcd.io/etcd/raft/v3,,
+go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc,,

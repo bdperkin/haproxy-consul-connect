@@ -8,14 +8,14 @@ Version:                1.0.29
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Console progress bar for Golang.}
 
 %global golicenses      LICENSE v3/LICENSE
 %global godocs          README_V1.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Console progress bar for Golang
 
 # Upstream license specification: BSD-3-Clause
 License:        BSD

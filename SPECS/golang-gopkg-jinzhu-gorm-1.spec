@@ -8,14 +8,16 @@ Version:                1.9.2
 
 %gometa
 
+%global goaltipaths     github.com/jinzhu/gorm
+
 %global common_description %{expand:
-# FIXME}
+GORM V1,  V2 moved to https://github.com/go-gorm/gorm.}
 
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        GORM V1,  V2 moved to https://github.com/go-gorm/gorm
 
 License:        # FIXME
 

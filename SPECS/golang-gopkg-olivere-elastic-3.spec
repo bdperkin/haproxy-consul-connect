@@ -8,8 +8,10 @@ Version:                3.0.75
 
 %gometa
 
+%global goaltipaths     github.com/olivere/elastic
+
 %global common_description %{expand:
-# FIXME}
+Elasticsearch client for Go.}
 
 %global golicenses      LICENSE LICENSE-backoff LICENSE-uritemplates
 %global godocs          CHANGELOG-3.0.md CODE_OF_CONDUCT.md\\\
@@ -18,7 +20,7 @@ Version:                3.0.75
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Elasticsearch client for Go
 
 License:        MIT
 URL:            %{gourl}

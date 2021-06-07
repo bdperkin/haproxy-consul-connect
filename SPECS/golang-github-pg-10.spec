@@ -4,19 +4,21 @@
 # https://github.com/go-pg/pg
 %global goipath         github.com/go-pg/pg/v10
 %global forgeurl        https://github.com/go-pg/pg
-Version:                10.9.3
+Version:                10.10.0
 
 %gometa
 
+%global goaltipaths     github.com/go-pg/pg
+
 %global common_description %{expand:
-# FIXME}
+Golang ORM with focus on PostgreSQL features and performance.}
 
 %global golicenses      LICENSE
-%global godocs          README.md CHANGELOG.md example extra/pgotel/README.md
+%global godocs          CHANGELOG.md README.md example extra/pgotel/README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Golang ORM with focus on PostgreSQL features and performance
 
 # Upstream license specification: BSD-2-Clause
 License:        BSD

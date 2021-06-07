@@ -8,14 +8,16 @@ Version:                1.1.0
 
 %gometa
 
+%global goaltipaths     github.com/go-gorm/postgres
+
 %global common_description %{expand:
-# FIXME}
+GORM PostgreSQL driver.}
 
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        GORM PostgreSQL driver
 
 License:        # FIXME
 

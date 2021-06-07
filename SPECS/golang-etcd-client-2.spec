@@ -4,14 +4,15 @@
 # https://github.com/etcd-io/etcd
 %global goipath         go.etcd.io/etcd/client/v2
 %global forgeurl        https://github.com/etcd-io/etcd
-Version:                2.305.0~beta.4
-%global tag             client/v2.305.0-beta.4
-%global commit          8752910e47232fcdfc8f03b64fc25230bbe235df
+Version:                3.5.0~rc.0
 
 %gometa
 
+%global goaltipaths     github.com/etcd-io/etcd github.com/etcd-io/etcd/client/v2
+
 %global common_description %{expand:
-# FIXME}
+Distributed reliable key-value store for the most critical data of a
+distributed system.}
 
 %global golicenses      LICENSE LICENSE-api LICENSE-client-pkg\\\
                         LICENSE-client-v2 LICENSE-client-v3 LICENSE-etcdctl\\\
@@ -42,7 +43,7 @@ Version:                2.305.0~beta.4
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Distributed reliable key-value store for the most critical data of a distributed system
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

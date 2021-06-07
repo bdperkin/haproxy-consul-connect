@@ -11,7 +11,7 @@
 %global goaltipaths     github.com/layeh/radius
 
 %global common_description %{expand:
-A Go (golang) RADIUS client and server implementation.}
+Package radius provides a RADIUS client and server (RFC 2865, RFC 2866).}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -19,7 +19,7 @@ A Go (golang) RADIUS client and server implementation.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        A Go (golang) RADIUS client and server implementation
+Summary:        Package radius provides a RADIUS client and server (RFC 2865, RFC 2866)
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0
