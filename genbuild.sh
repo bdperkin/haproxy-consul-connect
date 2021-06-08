@@ -6,5 +6,7 @@ set -eu
  
 ./gengoipaths.sh 2>&1 | tee gengoipaths.log
 
+./gengocheck.sh 2>&1 | tee gengocheck.log
+
 ./build.sh
 

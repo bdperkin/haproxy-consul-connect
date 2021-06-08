@@ -8,14 +8,14 @@ Version:                1.3.0
 %gometa
 
 %global common_description %{expand:
-Golang gRPC Middlewares: interceptor chaining, auth, logging, retries and more.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md CONTRIBUTING.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Golang gRPC Middlewares: interceptor chaining, auth, logging, retries and more
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

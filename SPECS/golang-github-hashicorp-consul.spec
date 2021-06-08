@@ -180,9 +180,9 @@ Version:                1.9.6
                         ca-website-content-api-docs-connect.mdx\\\
                         index-website-content-api-docs-connect.mdx\\\
                         intentions-website-content-api-docs-connect.mdx\\\
-                        blocking-website-content-api-docs-features.mdx\\\
                         caching-website-content-api-docs-features.mdx\\\
                         consistency-website-content-api-docs-features.mdx\\\
+                        blocking-website-content-api-docs-features.mdx\\\
                         filtering-website-content-api-docs-features.mdx\\\
                         area-website-content-api-docs-operator.mdx\\\
                         autopilot-website-content-api-docs-operator.mdx\\\
@@ -725,9 +725,9 @@ mv website/content/api-docs/agent/service.mdx service-website-content-api-docs-a
 mv website/content/api-docs/connect/ca.mdx ca-website-content-api-docs-connect.mdx
 mv website/content/api-docs/connect/index.mdx index-website-content-api-docs-connect.mdx
 mv website/content/api-docs/connect/intentions.mdx intentions-website-content-api-docs-connect.mdx
-mv website/content/api-docs/features/blocking.mdx blocking-website-content-api-docs-features.mdx
 mv website/content/api-docs/features/caching.mdx caching-website-content-api-docs-features.mdx
 mv website/content/api-docs/features/consistency.mdx consistency-website-content-api-docs-features.mdx
+mv website/content/api-docs/features/blocking.mdx blocking-website-content-api-docs-features.mdx
 mv website/content/api-docs/features/filtering.mdx filtering-website-content-api-docs-features.mdx
 mv website/content/api-docs/operator/area.mdx area-website-content-api-docs-operator.mdx
 mv website/content/api-docs/operator/autopilot.mdx autopilot-website-content-api-docs-operator.mdx
@@ -996,9 +996,9 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc ca-website-content-api-docs-connect.mdx
 %doc index-website-content-api-docs-connect.mdx
 %doc intentions-website-content-api-docs-connect.mdx
-%doc blocking-website-content-api-docs-features.mdx
 %doc caching-website-content-api-docs-features.mdx
 %doc consistency-website-content-api-docs-features.mdx
+%doc blocking-website-content-api-docs-features.mdx
 %doc filtering-website-content-api-docs-features.mdx
 %doc area-website-content-api-docs-operator.mdx
 %doc autopilot-website-content-api-docs-operator.mdx

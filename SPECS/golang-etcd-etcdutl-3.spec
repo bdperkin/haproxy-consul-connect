@@ -12,8 +12,8 @@ Version:                3.5.0~rc.0
 %global goaltipaths     github.com/etcd-io/etcd github.com/etcd-io/etcd/etcdutl/v3
 
 %global common_description %{expand:
-Distributed reliable key-value store for the most critical data of a
-distributed system.}
+Package etcdutl contains the main entry point for the etcdutl. etcdutl is a
+command line application that operates on etcd files.}
 
 %global golicenses      LICENSE LICENSE-api LICENSE-client-pkg\\\
                         LICENSE-client-v2 LICENSE-client-v3 LICENSE-etcdctl\\\
@@ -44,7 +44,7 @@ distributed system.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Distributed reliable key-value store for the most critical data of a distributed system
+Summary:        Package etcdutl contains the main entry point for the etcdutl
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
