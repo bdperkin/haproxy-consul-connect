@@ -1,0 +1,1 @@
+gopkg.in/d4l3k/messagediff.v1,%gocheck -r .*messagediff.*
