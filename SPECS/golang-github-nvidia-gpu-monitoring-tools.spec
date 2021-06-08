@@ -7,9 +7,10 @@ Version:                2.4.0~rc.2
 %global tag             2.4.0-rc.2
 
 %gometa
+%global extractdir      gpu-monitoring-tools-2.4.0-rc.2
 
 %global common_description %{expand:
-Tools for monitoring NVIDIA GPUs on Linux.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md README.md RELEASE.md\\\
@@ -20,7 +21,7 @@ Tools for monitoring NVIDIA GPUs on Linux.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Tools for monitoring NVIDIA GPUs on Linux
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -47,7 +48,7 @@ BuildRequires:  golang(k8s.io/kubernetes/pkg/kubelet/util)
 %gopkg
 
 %prep
-%goprep -s gpu-monitoring-tools-2.4.0-rc.2
+%goprep
 mv bindings/go/samples/dcgm/README.md README-bindings-go-samples-dcgm.md
 mv bindings/go/samples/dcgm/restApi/README.md README-bindings-go-samples-dcgm-restApi.md
 mv bindings/go/samples/nvml/README.md README-bindings-go-samples-nvml.md

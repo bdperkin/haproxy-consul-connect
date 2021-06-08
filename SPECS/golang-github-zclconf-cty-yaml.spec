@@ -8,14 +8,14 @@ Version:                1.0.2
 %gometa
 
 %global common_description %{expand:
-YAML marshalling and unmarshalling for go-cty.}
+Package yaml can marshal and unmarshal cty values in YAML format.}
 
 %global golicenses      LICENSE LICENSE.libyaml NOTICE
 %global godocs          CHANGELOG.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        YAML marshalling and unmarshalling for go-cty
+Summary:        Package yaml can marshal and unmarshal cty values in YAML format
 
 # Upstream license specification: Apache-2.0 and MIT
 License:        ASL 2.0 and MIT

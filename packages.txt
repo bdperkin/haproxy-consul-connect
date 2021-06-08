@@ -302,12 +302,6 @@ go.etcd.io/etcd/client/v3/naming/endpoints
 go.etcd.io/etcd/client/v3/naming/endpoints/internal
 go.etcd.io/etcd/client/v3/ordering
 go.etcd.io/etcd/client/v3/snapshot
-k8s.io/apimachinery/pkg/api/resource
-k8s.io/apimachinery/pkg/apis/meta/v1
-k8s.io/apimachinery/pkg/runtime
-k8s.io/apimachinery/pkg/runtime/schema
-k8s.io/apimachinery/pkg/types
-k8s.io/apimachinery/pkg/util/intstr
 k8s.io/kubelet
 github.com/coreos/go-etcd
 github.com/hashicorp/aws-sdk-go
@@ -319,4 +313,3 @@ go.opentelemetry.io/otel
 go.opentelemetry.io/contrib/propagators
 go.opentelemetry.io/otel/metric
 go.opentelemetry.io/otel/sdk/metric
-k8s.io/apimachinery

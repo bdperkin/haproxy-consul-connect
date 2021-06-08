@@ -7,3 +7,5 @@ github.com/bmatcuk/doublestar,%gocheck -r .*doublestar.*
 gopkg.in/olivere/elastic.v3,%gocheck -r .*example.*
 github.com/mattbaird/elastigo,%gocheck -r .*clusterreroute.*
 gopkg.in/jinzhu/gorm.v1,%gocheck -r .*main.*
+github.com/hashicorp/go-cty-funcs,%gocheck -r .*filesystem.*
+gopkg.in/gorethink/gorethink.v4,%gocheck -r .*decoder.*

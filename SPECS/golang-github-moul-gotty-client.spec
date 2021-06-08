@@ -8,14 +8,14 @@ Version:                1.10.0
 %gometa
 
 %global common_description %{expand:
-:wrench: terminal client for GoTTY.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md AUTHORS
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        :wrench: terminal client for GoTTY
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

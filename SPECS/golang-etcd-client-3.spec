@@ -7,12 +7,13 @@
 Version:                3.5.0~rc.0
 
 %gometa
+%global extractdir      etcd-3.5.0-rc.0
 
 %global goaltipaths     github.com/etcd-io/etcd github.com/etcd-io/etcd/client/v3
 
 %global common_description %{expand:
-Distributed reliable key-value store for the most critical data of a
-distributed system.}
+Package clientv3 implements the official Go etcd client for v3. Create client
+using `clientv3.New`:}
 
 %global golicenses      LICENSE LICENSE-api LICENSE-client-pkg\\\
                         LICENSE-client-v2 LICENSE-client-v3 LICENSE-etcdctl\\\
@@ -43,7 +44,7 @@ distributed system.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Distributed reliable key-value store for the most critical data of a distributed system
+Summary:        Package clientv3 implements the official Go etcd client for v3
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -237,7 +238,7 @@ BuildRequires:  golang(golang.org/x/sync/errgroup)
 %gopkg
 
 %prep
-%goprep -s etcd-3.5.0-rc.0
+%goprep
 mv api/LICENSE LICENSE-api
 mv client/pkg/LICENSE LICENSE-client-pkg
 mv client/v2/LICENSE LICENSE-client-v2

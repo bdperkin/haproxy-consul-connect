@@ -8,14 +8,14 @@ Version:                1.0.0
 %gometa
 
 %global common_description %{expand:
-:triangular_ruler: Convert Golang's http.Request to CURL command line.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        :triangular_ruler: Convert Golang's http.Request to CURL command line
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

@@ -8,14 +8,15 @@ Version:                1.0.0
 %gometa
 
 %global common_description %{expand:
-Find, list, and inspect processes from Go (golang).}
+ps provides an API for finding and listing processes in a platform-agnostic
+way. NOTE: If you're reading these docs online via GoDocs or some other system,}
 
 %global golicenses      LICENSE.md
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Find, list, and inspect processes from Go (golang)
+Summary:        ps provides an API for finding and listing processes in a platform-agnostic way
 
 License:        MIT
 URL:            %{gourl}

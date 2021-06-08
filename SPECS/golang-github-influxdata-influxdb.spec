@@ -8,14 +8,20 @@ Version:                1.9.1
 %gometa
 
 %global common_description %{expand:
-Scalable datastore for metrics, events, and real-time analytics.}
+Package influxdb is the root package of InfluxDB, the scalable datastore for
+metrics, events, and real-time analytics. If you're looking for the Go HTTP
+client for InfluxDB,}
 
 %global golicenses      LICENSE
-%global godocs          CODING_GUIDELINES.md QUERIES.md TODO.md\\\
-                        CONTRIBUTING.md DEPENDENCIES.md CHANGELOG.md\\\
-                        README.md errors-kit-platform-errors.md\\\
-                        README-monitor.md README-releng.md\\\
-                        style_guide-logger.md README-cmd-influx_inspect.md\\\
+%global godocs          CHANGELOG.md DEPENDENCIES.md CODING_GUIDELINES.md\\\
+                        CONTRIBUTING.md QUERIES.md README.md TODO.md\\\
+                        README-services-collectd.md\\\
+                        README-services-collectd-test_client.md\\\
+                        continuous_queries-services-continuous_querier.md\\\
+                        README-services-graphite.md\\\
+                        README-services-opentsdb.md\\\
+                        README-services-precreator.md README-services-udp.md\\\
+                        README-releng.md README-cmd-influx_inspect.md\\\
                         README-cmd-influx_tsm.md\\\
                         README-cmd-influx_tools-export.md\\\
                         README-cmd-influx_tools-importer.md README-man.md\\\
@@ -23,19 +29,15 @@ Scalable datastore for metrics, events, and real-time analytics.}
                         influx_tsm-man.txt influxd-backup-man.txt\\\
                         influxd-config-man.txt influxd-restore-man.txt\\\
                         influxd-run-man.txt influxd-version-man.txt\\\
-                        influxd-man.txt README-services-collectd.md\\\
-                        README-services-collectd-test_client.md\\\
-                        continuous_queries-services-continuous_querier.md\\\
-                        README-services-graphite.md\\\
-                        README-services-opentsdb.md\\\
-                        README-services-precreator.md README-services-udp.md\\\
-                        README-pkg.md README-pkg-snowflake.md\\\
-                        README-client.md README-importer.md README-tsdb.md\\\
+                        influxd-man.txt README-client.md README-importer.md\\\
+                        errors-kit-platform-errors.md README-pkg.md\\\
+                        README-pkg-snowflake.md README-monitor.md\\\
+                        style_guide-logger.md README-tsdb.md\\\
                         DESIGN-tsdb-engine-tsm1.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Scalable datastore for metrics, events, and real-time analytics
+Summary:        Package influxdb is the root package of InfluxDB, the scalable datastore for metrics, events, and real-time analytics
 
 License:        MIT
 URL:            %{gourl}
@@ -139,10 +141,14 @@ BuildRequires:  golang(go.uber.org/zap/zaptest)
 
 %prep
 %goprep
-mv kit/platform/errors/errors.md errors-kit-platform-errors.md
-mv monitor/README.md README-monitor.md
+mv services/collectd/README.md README-services-collectd.md
+mv services/collectd/test_client/README.md README-services-collectd-test_client.md
+mv services/continuous_querier/continuous_queries.md continuous_queries-services-continuous_querier.md
+mv services/graphite/README.md README-services-graphite.md
+mv services/opentsdb/README.md README-services-opentsdb.md
+mv services/precreator/README.md README-services-precreator.md
+mv services/udp/README.md README-services-udp.md
 mv releng/README.md README-releng.md
-mv logger/style_guide.md style_guide-logger.md
 mv cmd/influx_inspect/README.md README-cmd-influx_inspect.md
 mv cmd/influx_tsm/README.md README-cmd-influx_tsm.md
 mv cmd/influx_tools/export/README.md README-cmd-influx_tools-export.md
@@ -158,17 +164,13 @@ mv man/influxd-restore.txt influxd-restore-man.txt
 mv man/influxd-run.txt influxd-run-man.txt
 mv man/influxd-version.txt influxd-version-man.txt
 mv man/influxd.txt influxd-man.txt
-mv services/collectd/README.md README-services-collectd.md
-mv services/collectd/test_client/README.md README-services-collectd-test_client.md
-mv services/continuous_querier/continuous_queries.md continuous_queries-services-continuous_querier.md
-mv services/graphite/README.md README-services-graphite.md
-mv services/opentsdb/README.md README-services-opentsdb.md
-mv services/precreator/README.md README-services-precreator.md
-mv services/udp/README.md README-services-udp.md
-mv pkg/README.md README-pkg.md
-mv pkg/snowflake/README.md README-pkg-snowflake.md
 mv client/README.md README-client.md
 mv importer/README.md README-importer.md
+mv kit/platform/errors/errors.md errors-kit-platform-errors.md
+mv pkg/README.md README-pkg.md
+mv pkg/snowflake/README.md README-pkg-snowflake.md
+mv monitor/README.md README-monitor.md
+mv logger/style_guide.md style_guide-logger.md
 mv tsdb/README.md README-tsdb.md
 mv tsdb/engine/tsm1/DESIGN.md DESIGN-tsdb-engine-tsm1.md
 
@@ -182,19 +184,20 @@ mv tsdb/engine/tsm1/DESIGN.md DESIGN-tsdb-engine-tsm1.md
 
 %files
 %license LICENSE
-%doc CODING_GUIDELINES.md QUERIES.md TODO.md CONTRIBUTING.md DEPENDENCIES.md
-%doc CHANGELOG.md README.md errors-kit-platform-errors.md README-monitor.md
-%doc README-releng.md style_guide-logger.md README-cmd-influx_inspect.md
-%doc README-cmd-influx_tsm.md README-cmd-influx_tools-export.md
-%doc README-cmd-influx_tools-importer.md README-man.md footer-man.txt
-%doc influx-man.txt influx_inspect-man.txt influx_tsm-man.txt
-%doc influxd-backup-man.txt influxd-config-man.txt influxd-restore-man.txt
-%doc influxd-run-man.txt influxd-version-man.txt influxd-man.txt
-%doc README-services-collectd.md README-services-collectd-test_client.md
+%doc CHANGELOG.md DEPENDENCIES.md CODING_GUIDELINES.md CONTRIBUTING.md
+%doc QUERIES.md README.md TODO.md README-services-collectd.md
+%doc README-services-collectd-test_client.md
 %doc continuous_queries-services-continuous_querier.md
 %doc README-services-graphite.md README-services-opentsdb.md
-%doc README-services-precreator.md README-services-udp.md README-pkg.md
-%doc README-pkg-snowflake.md README-client.md README-importer.md README-tsdb.md
+%doc README-services-precreator.md README-services-udp.md README-releng.md
+%doc README-cmd-influx_inspect.md README-cmd-influx_tsm.md
+%doc README-cmd-influx_tools-export.md README-cmd-influx_tools-importer.md
+%doc README-man.md footer-man.txt influx-man.txt influx_inspect-man.txt
+%doc influx_tsm-man.txt influxd-backup-man.txt influxd-config-man.txt
+%doc influxd-restore-man.txt influxd-run-man.txt influxd-version-man.txt
+%doc influxd-man.txt README-client.md README-importer.md
+%doc errors-kit-platform-errors.md README-pkg.md README-pkg-snowflake.md
+%doc README-monitor.md style_guide-logger.md README-tsdb.md
 %doc DESIGN-tsdb-engine-tsm1.md
 
 %gopkgfiles

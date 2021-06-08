@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Pager support for Go.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@ Pager support for Go.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Pager support for Go
+Summary:        None
 
 # Upstream license specification: BSD-2-Clause
 License:        BSD
