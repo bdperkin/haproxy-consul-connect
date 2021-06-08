@@ -22,7 +22,7 @@ for SPEC in $@; do
 
     GOPREP=$(grep "^${IPATH}," ../goipaths-goprep.txt | cut -d\, -f2-)
     if [ "${GOPREP}" != "" ]; then
-        sed -i -e "s/^%goprep/${GOPREP}/g" ${SPEC}
+        sed -i -e "s/^%goprep$/${GOPREP}/g" ${SPEC}
     fi
 
     GOCHECK=$(grep "^${IPATH}," ../goipaths-gocheck.txt | cut -d\, -f2-)
