@@ -8,14 +8,15 @@ Version:                0.9.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+HaProxy Connector for Consul Connect. Enables Service Mesh with Consul and
+HaProxy using TLS and Consul Discovery.}
 
 %global golicenses      LICENSE
 %global godocs          docs CHANGELOG.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        HaProxy Connector for Consul Connect. Enables Service Mesh with Consul and HaProxy using TLS and Consul Discovery
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
