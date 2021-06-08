@@ -1,4 +1,4 @@
-#! /bin/bash -x
+#! /bin/bash
 
 echo "#IPATH,FORGE,SUBDIR,ALTIPATHS,VERSION,TAG,COMMIT,SRCTGZ,DSTTGZ,TYPE" > goipaths.txt
 echo "#IPATH,SUMMARY,DESCRIPTION" > goipaths-docs.txt
