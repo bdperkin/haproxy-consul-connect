@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Console Writer for Go applications that supports a pager.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Console Writer for Go applications that supports a pager
 
 # Upstream license specification: BSD-2-Clause
 License:        BSD
