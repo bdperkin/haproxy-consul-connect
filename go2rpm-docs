@@ -107,9 +107,9 @@ for SPEC in $@; do
 
     grep -B 10000 '^%global golicenses ' ${TMPFILE1} | grep -v '^%global golicenses ' > ${SPEC}
     cat ${TMPFILE3} >> ${SPEC}
-    grep -B 10000 '^%goprep$' ${TMPFILE1} | grep -A 10000 '^Name: ' >> ${SPEC}
+    grep -B 10000 '^%goprep' ${TMPFILE1} | grep -A 10000 '^Name: ' >> ${SPEC}
     cat ${TMPFILE2} >> ${SPEC}
-    grep -A 10000 '^%goprep$' ${TMPFILE1} | grep -v '^%goprep$' >> ${SPEC}
+    grep -A 10000 '^%goprep' ${TMPFILE1} | grep -v '^%goprep' >> ${SPEC}
 
     sed -i -e "/^%doc\ $/d" ${SPEC}
     if [ $? -ne 0 ]; then
