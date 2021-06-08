@@ -141,3 +141,13 @@ github.com/benbjohnson/tmpl,,
 github.com/foxcpp/go-mockdns,,
 github.com/goreleaser/goreleaser,,
 github.com/influxdata/changelog,,
+github.com/segmentio/encoding,,
+github.com/ssdb/gossdb,,
+go.opentelemetry.io/proto/otlp,,
+github.com/gotestyourself/gotestyourself,Package gotesttools is a collection of packages to augment `testing` and support common patterns,Package gotesttools is a collection of packages to augment `testing` and support common patterns.
+github.com/ory/dockertest,,
+github.com/influxdata/influxdb-client-go/v2,Package influxdb2 provides API for using InfluxDB client in Go,Package influxdb2 provides API for using InfluxDB client in Go. It's intended to use with InfluxDB 2 server. WriteAPI&#44; QueryAPI and Health work also with InfluxDB 1.8
+honnef.co/go/tools,,
+go.opentelemetry.io/otel/example/namedtracer,,
+go.opentelemetry.io/otel/exporters/trace/jaeger,Package jaeger contains an OpenTelemetry tracing exporter for Jaeger,Package jaeger contains an OpenTelemetry tracing exporter for Jaeger.  This package is currently in a pre-GA phase. Backwards incompatible changes
+go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc/example,,

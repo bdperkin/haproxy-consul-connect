@@ -62,10 +62,16 @@ for MOD in $(cat packages.txt); do
     TYPE=${DTYPE}
 
     if [ "${FORGEALTIPATH}" != "${IPATH}" ]; then
-        ALTIPATHS+="_${FORGEALTIPATH}"
+        echo "${IPATH}" | grep -q "^${FORGEALTIPATH}"
+        if [ $? -ne 0 ]; then
+            ALTIPATHS+="_${FORGEALTIPATH}"
+        fi
     fi
     if [ "${REPOALTIPATH}" != "${IPATH}" -a "${FORGEALTIPATH}" != "${REPOALTIPATH}" ]; then
-        ALTIPATHS+="_${REPOALTIPATH}"
+        echo "${IPATH}" | grep -q "^${REPOALTIPATH}"
+        if [ $? -ne 0 ]; then
+            ALTIPATHS+="_${REPOALTIPATH}"
+        fi
     fi
     ALTIPATHS=$(echo ${ALTIPATHS} | sed -e 's/^_//g')
 
