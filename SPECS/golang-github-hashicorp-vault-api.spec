@@ -11,7 +11,8 @@ Version:                1.1.0
 %global goaltipaths     github.com/hashicorp/vault
 
 %global common_description %{expand:
-# FIXME}
+A tool for secrets management, encryption as a service, and privileged access
+management.}
 
 %global golicenses      LICENSE license-ui-app-adapters.js\\\
                         license-info-ui-app-components.js\\\
@@ -191,7 +192,7 @@ Version:                1.1.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        A tool for secrets management, encryption as a service, and privileged access management
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0
