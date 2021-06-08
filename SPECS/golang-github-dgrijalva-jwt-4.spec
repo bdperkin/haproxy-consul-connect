@@ -31,7 +31,7 @@ Source0:        %{gosource}
 %gopkg
 
 %prep
-%goprep
+%goprep -s jwt-go-4.0.0-preview1
 mv cmd/jwt/README.md README-cmd-jwt.md
 
 %install

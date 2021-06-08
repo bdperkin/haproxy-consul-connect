@@ -11,7 +11,8 @@ Version:                3.5.0~rc.0
 %global goaltipaths     github.com/etcd-io/etcd github.com/etcd-io/etcd/api/v3
 
 %global common_description %{expand:
-# FIXME}
+Distributed reliable key-value store for the most critical data of a
+distributed system.}
 
 %global golicenses      LICENSE LICENSE-api LICENSE-client-pkg\\\
                         LICENSE-client-v2 LICENSE-client-v3 LICENSE-etcdctl\\\
@@ -42,7 +43,7 @@ Version:                3.5.0~rc.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Distributed reliable key-value store for the most critical data of a distributed system
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -241,7 +242,7 @@ BuildRequires:  golang(golang.org/x/sync/errgroup)
 %gopkg
 
 %prep
-%goprep
+%goprep -s etcd-3.5.0-rc.0
 mv api/LICENSE LICENSE-api
 mv client/pkg/LICENSE LICENSE-client-pkg
 mv client/v2/LICENSE LICENSE-client-v2
