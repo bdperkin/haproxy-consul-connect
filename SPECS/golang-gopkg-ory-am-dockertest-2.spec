@@ -11,17 +11,15 @@ Version:                2.2.3
 %global goaltipaths     github.com/ory-am/dockertest
 
 %global common_description %{expand:
-Package dockertest contains helper functions for setting up and tearing down
-docker containers to aid in testing. dockertest supports spinning up MySQL,
-PostgreSQL and MongoDB out of the box. Dockertest provides two environment
-variables}
+Write better integration tests! Dockertest helps you boot up ephermal docker
+images for your Go tests with minimal work.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package dockertest contains helper functions for setting up and tearing down docker containers to aid in testing
+Summary:        Write better integration tests! Dockertest helps you boot up ephermal docker images for your Go tests with minimal work
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

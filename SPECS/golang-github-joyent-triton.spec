@@ -8,14 +8,14 @@ Version:                1.8.5
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Go SDK for Joyent Triton (Compute) and Triton Object Storage (Manta).}
 
 %global golicenses      LICENSE
 %global godocs          examples README.md CHANGELOG.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Go SDK for Joyent Triton (Compute) and Triton Object Storage (Manta)
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0
