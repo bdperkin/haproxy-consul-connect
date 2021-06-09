@@ -9,10 +9,7 @@ Version:                1.0.6
 %gometa
 
 %global common_description %{expand:
-Nomad is an easy-to-use, flexible, and performant workload orchestrator that
-can deploy a mix of microservice, batch, containerized, and non-containerized
-applications. Nomad is easy to operate and scale and has native Consul and
-Vault integrations.}
+# FIXME}
 
 %global golicenses      LICENSE license-command.go license_get-command.go\\\
                         license_get_test-command.go license_put-command.go\\\
@@ -21,11 +18,10 @@ Vault integrations.}
 %global godocs          README.md CHANGELOG.md\\\
                         test-client-allocdir-input.txt\\\
                         checklist-command-contributing.md\\\
-                        issue-labels-contributing.md\\\
+                        issue-labels-contributing.md README-contributing.md\\\
                         checklist-jobspec-contributing.md\\\
                         checklist-rpc-endpoint-contributing.md\\\
-                        golang-contributing.md README-contributing.md\\\
-                        README-demo-csi.md\\\
+                        golang-contributing.md README-demo-csi.md\\\
                         README-demo-csi-ceph-csi-plugin.md\\\
                         README-demo-csi-cinder-csi-plugin.md\\\
                         README-demo-csi-digitalocean.md README-demo-tls.md\\\
@@ -96,7 +92,7 @@ Vault integrations.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Nomad is an easy-to-use, flexible, and performant workload orchestrator that can deploy a mix of microservice, batch, containerized, and non-containerized applications. Nomad is easy to operate and scale and has native Consul and Vault integrations
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0
@@ -282,10 +278,10 @@ mv website/content/api-docs/operator/license.mdx license-website-content-api-doc
 mv client/allocdir/input/test.txt test-client-allocdir-input.txt
 mv contributing/checklist-command.md checklist-command-contributing.md
 mv contributing/issue-labels.md issue-labels-contributing.md
+mv contributing/README.md README-contributing.md
 mv contributing/checklist-jobspec.md checklist-jobspec-contributing.md
 mv contributing/checklist-rpc-endpoint.md checklist-rpc-endpoint-contributing.md
 mv contributing/golang.md golang-contributing.md
-mv contributing/README.md README-contributing.md
 mv demo/csi/README.md README-demo-csi.md
 mv demo/csi/ceph-csi-plugin/README.md README-demo-csi-ceph-csi-plugin.md
 mv demo/csi/cinder-csi-plugin/README.md README-demo-csi-cinder-csi-plugin.md
@@ -382,12 +378,13 @@ mv dist/README.md README-dist.md
 %license license-website-content-api-docs-operator.mdx
 %doc README.md CHANGELOG.md test-client-allocdir-input.txt
 %doc checklist-command-contributing.md issue-labels-contributing.md
-%doc checklist-jobspec-contributing.md checklist-rpc-endpoint-contributing.md
-%doc golang-contributing.md README-contributing.md README-demo-csi.md
-%doc README-demo-csi-ceph-csi-plugin.md README-demo-csi-cinder-csi-plugin.md
-%doc README-demo-csi-digitalocean.md README-demo-tls.md README-demo-vagrant.md
-%doc README-dev.md README-dev-docker-clients.md README-dev-tls_cluster.md
-%doc README-dev-vault.md releasing-dev-guides.md README-devices-gpu-nvidia.md
+%doc README-contributing.md checklist-jobspec-contributing.md
+%doc checklist-rpc-endpoint-contributing.md golang-contributing.md
+%doc README-demo-csi.md README-demo-csi-ceph-csi-plugin.md
+%doc README-demo-csi-cinder-csi-plugin.md README-demo-csi-digitalocean.md
+%doc README-demo-tls.md README-demo-vagrant.md README-dev.md
+%doc README-dev-docker-clients.md README-dev-tls_cluster.md README-dev-vault.md
+%doc releasing-dev-guides.md README-devices-gpu-nvidia.md
 %doc README-drivers-shared-executor-test-resources-busybox example README-e2e.md
 %doc README-e2e-consulacls.md README-e2e-terraform.md
 %doc README-e2e-terraform-config-shared.md README-e2e-terraform-packer.md

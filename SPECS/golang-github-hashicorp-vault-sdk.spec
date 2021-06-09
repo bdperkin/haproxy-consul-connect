@@ -9,7 +9,8 @@ Version:                0.2.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+A tool for secrets management, encryption as a service, and privileged access
+management.}
 
 %global golicenses      LICENSE LICENSE-website.md
 %global godocs          CHANGELOG.md README.md SPEC-api.md README-website.md\\\
@@ -39,7 +40,7 @@ Version:                0.2.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        A tool for secrets management, encryption as a service, and privileged access management
 
 # Upstream license specification: BSD-3-Clause and MIT and MPL-2.0
 License:        BSD and MIT and MPLv2.0

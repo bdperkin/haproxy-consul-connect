@@ -9,7 +9,7 @@ Version:                3.5.0~rc.0
 %gometa
 %global extractdir      etcd-3.5.0-rc.0
 
-%global goaltipaths     github.com/etcd-io/etcd github.com/etcd-io/etcd/api/v3
+%global goaltipaths     github.com/etcd-io/etcd/api/v3
 
 %global common_description %{expand:
 # FIXME}

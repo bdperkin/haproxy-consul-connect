@@ -8,14 +8,17 @@ Version:                0.1.8
 %gometa
 
 %global common_description %{expand:
-Generic boolean expression evaluation in Go.}
+bexpr is an implementation of a generic boolean expression evaluator. The
+general goal is to be able to evaluate some expression against some arbitrary
+data and get back a boolean of whether or not the data was matched by the
+expression}
 
 %global golicenses      LICENSE
 %global godocs          examples README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Generic boolean expression evaluation in Go
+Summary:        bexpr is an implementation of a generic boolean expression evaluator
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

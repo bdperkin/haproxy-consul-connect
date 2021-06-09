@@ -8,7 +8,9 @@
 %gometa
 
 %global common_description %{expand:
-Minimal environment variable parser for Go.}
+Package envparse is a minimal environment variable parser. It handles empty
+lines, comments, single quotes, double quotes, and JSON escape sequences.
+Non-empty or comment lines should be of the form:}
 
 %global golicenses      LICENSE NOTICES.txt
 %global godocs          README.md
@@ -16,7 +18,7 @@ Minimal environment variable parser for Go.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Minimal environment variable parser for Go
+Summary:        Package envparse is a minimal environment variable parser
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

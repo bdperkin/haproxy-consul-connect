@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Structural equality library for golang.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          Readme.md
@@ -16,7 +16,7 @@ Structural equality library for golang.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Structural equality library for golang
+Summary:        None
 
 # Upstream license specification: BSD-2-Clause
 License:        BSD

@@ -8,7 +8,9 @@ Version:                1.9.2
 %gometa
 
 %global common_description %{expand:
-Scalable datastore for metrics, events, and real-time analytics.}
+Package influxdb is the root package of InfluxDB, the scalable datastore for
+metrics, events, and real-time analytics. If you're looking for the Go HTTP
+client for InfluxDB,}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md DEPENDENCIES.md CODING_GUIDELINES.md\\\
@@ -35,7 +37,7 @@ Scalable datastore for metrics, events, and real-time analytics.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Scalable datastore for metrics, events, and real-time analytics
+Summary:        Package influxdb is the root package of InfluxDB, the scalable datastore for metrics, events, and real-time analytics
 
 License:        MIT
 URL:            %{gourl}
