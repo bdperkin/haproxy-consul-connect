@@ -8,16 +8,14 @@ Version:                1.5.3
 %gometa
 
 %global common_description %{expand:
-getter is a package for downloading files or directories from a variety of
-protocols. getter is unique in its ability to download both directories and
-files.}
+Package for downloading things from a string URL using a variety of protocols.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        getter is a package for downloading files or directories from a variety of protocols
+Summary:        Package for downloading things from a string URL using a variety of protocols
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0
@@ -60,7 +58,7 @@ BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/awserr)
 
 %if %{with check}
 %check
-%gocheck -r .*get_gcs.* -r .*get_s3.*
+%gocheck
 %endif
 
 %files

@@ -36,7 +36,7 @@ BuildRequires:  golang(gopkg.in/asn1-ber.v1)
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*ldap.*
 %endif
 
 %gopkgfiles
