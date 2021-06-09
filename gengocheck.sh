@@ -21,7 +21,7 @@ for IPATH in $(cut -d, -f1 goipaths.txt); do
         if [ "${REGEXP}" != "" ]; then
                 LINE="${IPATH},%gocheck"
                 for R in ${REGEXP}; do
-                        LINE+=" -r .*${REGEXP}.*"
+                        LINE+=" -r .*${R}.*"
                 done
                 echo "${LINE}" >> goipaths-gocheck.txt
         fi

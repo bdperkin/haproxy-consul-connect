@@ -11,7 +11,9 @@ Version:                3.0.75
 %global goaltipaths     github.com/olivere/elastic
 
 %global common_description %{expand:
-Elasticsearch client for Go.}
+Package elastic provides an interface to the Elasticsearch server
+(http://www.elasticsearch.org/). The first thing you do is to create a Client.
+If you have Elasticsearch}
 
 %global golicenses      LICENSE LICENSE-backoff LICENSE-uritemplates
 %global godocs          CHANGELOG-3.0.md CODE_OF_CONDUCT.md\\\
@@ -20,7 +22,7 @@ Elasticsearch client for Go.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Elasticsearch client for Go
+Summary:        Package elastic provides an interface to the Elasticsearch server (http://www
 
 License:        MIT
 URL:            %{gourl}
