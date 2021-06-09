@@ -8,14 +8,14 @@ Version:                1.1.0
 %gometa
 
 %global common_description %{expand:
-:wrench: Anonymize UUIDs outputs (written in Golang).}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        :wrench: Anonymize UUIDs outputs (written in Golang)
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

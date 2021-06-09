@@ -8,7 +8,7 @@ Version:                0.20.0
 
 %gometa
 
-%global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/runtime
+%global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/runtime
 
 %global common_description %{expand:
 Collection of extensions for OpenTelemetry-Go.}

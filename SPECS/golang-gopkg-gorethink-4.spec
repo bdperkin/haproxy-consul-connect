@@ -12,14 +12,15 @@ Version:                4.1.0
 %global goaltipaths     github.com/gorethink/gorethink
 
 %global common_description %{expand:
-Go language driver for RethinkDB.}
+Package gorethink implements a Go driver for RethinkDB Current version: v3.0.2
+(RethinkDB v2.3)}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Go language driver for RethinkDB
+Summary:        Package gorethink implements a Go driver for RethinkDB Current version: v3
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -59,7 +60,7 @@ BuildRequires:  golang(github.com/stretchr/testify/mock)
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*encoding.*
 %endif
 
 %gopkgfiles

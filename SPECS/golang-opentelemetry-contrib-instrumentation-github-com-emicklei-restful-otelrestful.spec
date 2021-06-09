@@ -8,11 +8,10 @@ Version:                0.20.0
 
 %gometa
 
-%global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/github.com/emicklei/go-restful/otelrestful
+%global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/github.com/emicklei/go-restful/otelrestful
 
 %global common_description %{expand:
-Package otelrestful instruments github.com/emicklei/go-restful.
-Instrumentation is provided to trace the emicklei/go-restful/v3}
+Collection of extensions for OpenTelemetry-Go.}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -25,7 +24,7 @@ Instrumentation is provided to trace the emicklei/go-restful/v3}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package otelrestful instruments github
+Summary:        Collection of extensions for OpenTelemetry-Go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

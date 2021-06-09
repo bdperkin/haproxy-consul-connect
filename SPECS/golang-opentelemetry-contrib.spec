@@ -11,9 +11,7 @@ Version:                0.20.0
 %global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib
 
 %global common_description %{expand:
-Package contrib contains common values used across all instrumentation,
-exporter, and detector contributions. This package provides all of its
-functionality through its}
+Collection of extensions for OpenTelemetry-Go.}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -26,7 +24,7 @@ functionality through its}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package contrib contains common values used across all instrumentation, exporter, and detector contributions
+Summary:        Collection of extensions for OpenTelemetry-Go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

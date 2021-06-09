@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-gofail is a tool for enabling/disabling failpoints in go code.}
+Failpoints for go.}
 
 %global golicenses      LICENSE NOTICE
 %global godocs          examples README.md code-of-conduct.md
@@ -16,7 +16,7 @@ gofail is a tool for enabling/disabling failpoints in go code.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        gofail is a tool for enabling/disabling failpoints in go code
+Summary:        Failpoints for go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

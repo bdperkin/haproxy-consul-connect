@@ -60,7 +60,7 @@ BuildRequires:  golang(github.com/aws/aws-sdk-go/aws/awserr)
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*go-getter.*
 %endif
 
 %files
