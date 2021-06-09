@@ -11,14 +11,14 @@ Version:                1.2.1
 %global goaltipaths     github.com/d4l3k/messagediff
 
 %global common_description %{expand:
-# FIXME}
+A library for doing diffs of arbitrary Golang structs.}
 
 %global golicenses      LICENSE
 %global godocs          example CHANGELOG.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        A library for doing diffs of arbitrary Golang structs
 
 License:        MIT
 URL:            %{gourl}
@@ -43,7 +43,7 @@ BuildRequires:  golang(golang.org/x/net/html/atom)
 
 %if %{with check}
 %check
-%gocheck -r .*messagediff.*
+%gocheck
 %endif
 
 %gopkgfiles
