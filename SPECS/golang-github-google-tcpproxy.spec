@@ -8,8 +8,9 @@
 %gometa
 
 %global common_description %{expand:
-Proxy TCP connections based on static rules, HTTP Host headers, and SNI server
-names (Go package or binary).}
+Package tcpproxy lets users build TCP proxies, optionally making routing
+decisions based on HTTP/1 Host headers and the SNI hostname in TLS
+connections. Typical usage:}
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md README.md README-cmd-tlsrouter.md
@@ -17,7 +18,7 @@ names (Go package or binary).}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Proxy TCP connections based on static rules, HTTP Host headers, and SNI server names (Go package or binary)
+Summary:        Package tcpproxy lets users build TCP proxies, optionally making routing decisions based on HTTP/1 Host headers and the SNI hostname in TLS connections
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -43,7 +44,7 @@ mv cmd/tlsrouter/README.md README-cmd-tlsrouter.md
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*tcpproxy.*
 %endif
 
 %files
