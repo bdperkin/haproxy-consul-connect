@@ -8,14 +8,14 @@ Version:                1.0.1
 %gometa
 
 %global common_description %{expand:
-:pig: Tiny and fast fuzzy search in Go.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        :pig: Tiny and fast fuzzy search in Go
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

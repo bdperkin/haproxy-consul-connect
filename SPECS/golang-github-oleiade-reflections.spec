@@ -8,14 +8,17 @@ Version:                1.0.1
 %gometa
 
 %global common_description %{expand:
-Golang high level abstractions over reflect library.}
+Package reflections provides high level abstractions above the reflect
+library. Reflect library is very low-level and as can be quite complex when it
+comes to do simple things like accessing a structure field value, a field
+tag...}
 
 %global golicenses      LICENSE
 %global godocs          AUTHORS.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Golang high level abstractions over reflect library
+Summary:        Package reflections provides high level abstractions above the reflect library
 
 License:        MIT
 URL:            %{gourl}

@@ -8,15 +8,14 @@ Version:                1.3.4
 %gometa
 
 %global common_description %{expand:
-Implements support for double star (**) matches in golang's path.Match and
-filepath.Glob.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          examples README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Implements support for double star (**) matches in golang's path.Match and filepath.Glob
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}
@@ -35,7 +34,7 @@ Source0:        %{gosource}
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*doublestar.*
 %endif
 
 %gopkgfiles

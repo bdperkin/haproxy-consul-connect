@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Go Utilities - logging and json helpers.}
+# FIXME}
 
 %global golicenses      LICENSE.md
 %global godocs          README.md
@@ -16,7 +16,7 @@ Go Utilities - logging and json helpers.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Go Utilities - logging and json helpers
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

@@ -8,8 +8,6 @@ Version:                5.3.4
 
 %gometa
 
-%global goaltipaths     github.com/vmihailenco/msgpack
-
 %global common_description %{expand:
 Msgpack.org[Go] MessagePack encoding for Golang.}
 
