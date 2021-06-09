@@ -8,7 +8,9 @@ Version:                0.117.3
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Flux is a lightweight scripting language for querying databases (like InfluxDB)
+and working with data. It's part of InfluxDB 1.7 and 2.0, but can be run
+independently of those.}
 
 %global golicenses      LICENSE
 %global godocs          docs examples TODO.txt CONTRIBUTING.md README.md\\\
@@ -58,7 +60,7 @@ Version:                0.117.3
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Flux is a lightweight scripting language for querying databases (like InfluxDB) and working with data. It's part of InfluxDB 1.7 and 2.0, but can be run independently of those
 
 License:        MIT
 URL:            %{gourl}

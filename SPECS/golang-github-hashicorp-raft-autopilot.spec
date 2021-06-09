@@ -8,14 +8,15 @@ Version:                0.1.5
 %gometa
 
 %global common_description %{expand:
-Raft Autopilot.}
+This code was taken from the same implementation in a branch from Consul and
+then had the package updated and the mutex type unexported.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Raft Autopilot
+Summary:        This code was taken from the same implementation in a branch from Consul and then had the package updated and the mutex type unexported
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

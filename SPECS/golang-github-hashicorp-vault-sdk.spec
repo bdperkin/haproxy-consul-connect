@@ -8,8 +8,6 @@ Version:                0.2.0
 
 %gometa
 
-%global goaltipaths     github.com/hashicorp/vault
-
 %global common_description %{expand:
 # FIXME}
 

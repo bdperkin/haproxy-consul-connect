@@ -8,8 +8,6 @@ Version:                2.12.0
 
 %gometa
 
-%global goaltipaths     github.com/gofiber/fiber
-
 %global common_description %{expand:
 ⚡️ Express inspired web framework written in Go.}
 

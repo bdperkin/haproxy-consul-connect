@@ -9,12 +9,8 @@ Version:                4.0.0~preview1
 %gometa
 %global extractdir      jwt-go-4.0.0-preview1
 
-%global goaltipaths     github.com/dgrijalva/jwt-go
-
 %global common_description %{expand:
-Package jwt is a Go implementation of JSON Web Tokens:
-http://self-issued.info/docs/draft-jones-json-web-token.html See README.md for
-more info.}
+Golang implementation of JSON Web Tokens (JWT).}
 
 %global golicenses      LICENSE
 %global godocs          MIGRATION_GUIDE.md README.md VERSION_HISTORY.md\\\
@@ -22,7 +18,7 @@ more info.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package jwt is a Go implementation of JSON Web Tokens: http://self-issued
+Summary:        Golang implementation of JSON Web Tokens (JWT)
 
 License:        MIT
 URL:            %{gourl}

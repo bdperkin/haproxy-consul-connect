@@ -8,8 +8,6 @@ Version:                10.10.0
 
 %gometa
 
-%global goaltipaths     github.com/go-pg/pg
-
 %global common_description %{expand:
 Golang ORM with focus on PostgreSQL features and performance.}
 

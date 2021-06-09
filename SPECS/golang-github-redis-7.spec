@@ -8,8 +8,6 @@ Version:                7.4.0
 
 %gometa
 
-%global goaltipaths     github.com/go-redis/redis
-
 %global common_description %{expand:
 Type-safe Redis client for Golang.}
 
