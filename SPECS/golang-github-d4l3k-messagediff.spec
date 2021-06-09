@@ -2,13 +2,10 @@
 %bcond_without check
 
 # https://github.com/d4l3k/messagediff
-%global goipath         gopkg.in/d4l3k/messagediff.v1
-%global forgeurl        https://github.com/d4l3k/messagediff
+%global goipath         github.com/d4l3k/messagediff
 Version:                1.2.1
 
 %gometa
-
-%global goaltipaths     github.com/d4l3k/messagediff
 
 %global common_description %{expand:
 A library for doing diffs of arbitrary Golang structs.}
@@ -43,7 +40,7 @@ BuildRequires:  golang(golang.org/x/net/html/atom)
 
 %if %{with check}
 %check
-%gocheck -r .*messagediff.*
+%gocheck
 %endif
 
 %gopkgfiles
