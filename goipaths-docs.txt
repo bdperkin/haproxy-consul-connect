@@ -164,3 +164,16 @@ github.com/campoy/unique,Package unique provides primitives for sorting slices r
 github.com/goreleaser/fileglob,Package fileglob provides a filesystem glob API,Package fileglob provides a filesystem glob API.
 github.com/goreleaser/nfpm/v2,Package nfpm provides ways to package programs in some linux packaging formats,Package nfpm provides ways to package programs in some linux packaging formats.
 github.com/xanzy/go-gitlab,Package gitlab implements a GitLab API client,Package gitlab implements a GitLab API client.
+github.com/dghubble/go-twitter,,
+github.com/matryer/is,,
+,,
+github.com/klauspost/cpuid/v2,Package cpuid provides information about the CPU running the current program,Package cpuid provides information about the CPU running the current program.  CPU features are detected on startup&#44; and kept for fast access through the life of the application.
+github.com/caarlos0/testfs,Package testfs provides a simple fs,Package testfs provides a simple fs.FS which is contained in a test (using testing.TB's TempDir) and with a few helper methods.  The temporary FS is auto-cleaned once the test and all its children finish.
+github.com/tj/go-buffer,Package buffer provides a generic buffer or batching mechanism for flushing entries at a given size or interval&#44; useful for cases such as batching log events,Package buffer provides a generic buffer or batching mechanism for flushing entries at a given size or interval&#44; useful for cases such as batching log events.
+github.com/tj/go-kinesis,Package kinesis implements a batch producer built on top of the official AWS SDK,Package kinesis implements a batch producer built on top of the official AWS SDK.
+github.com/tj/go-spin,,
+github.com/AlekSi/pointer,Package pointer provides helpers to get pointers to values of built-in types,Package pointer provides helpers to get pointers to values of built-in types.
+github.com/google/rpmpack,Package rpmpack packs files to rpm files,Package rpmpack packs files to rpm files. It is designed to be simple to use and deploy&#44; not requiring any filesystem access to create rpm files.
+github.com/goreleaser/chglog,Package chglog contains the public API for working with a changlog,Package chglog contains the public API for working with a changlog.yml file
+github.com/sassoftware/go-rpmutils,,
+github.com/checkpoint-restore/go-criu/v4,,

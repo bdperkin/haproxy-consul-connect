@@ -48,6 +48,9 @@ for MOD in $(cat packages.txt); do
     SUBDIR=$(echo ${DPKGPATH} | sed -e "s/^${ESCDMODPATH}//g" | sed -e 's/^\///g')
     FORGEALTIPATH=$(echo ${FORGE} | sed -e 's/^http:\/\///g' | sed -e 's/^https:\/\///g')
     REPOALTIPATH=$(echo ${REPOURL} | sed -e 's/^http:\/\///g' | sed -e 's/^https:\/\///g')
+    if [ "${DPKGPATH}" == "" ]; then
+        continue
+    fi
     if [ "${DVERSION}" == "" ]; then
         DVERSION="HEAD"
     fi

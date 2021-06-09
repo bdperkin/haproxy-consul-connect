@@ -2,7 +2,7 @@
 
 touch build.log
 
-for i in $(grep '^No matching package to install: ' build.log  | cut -d\( -f2 | cut -d\) -f1); do
+for i in $(grep -P -o 'golang\(.*\)' build.log | sed -e 's/^golang(//g' | sed -e 's/)$//g'); do
     grep ^${i}$ packages.txt
     if [ $? -ne 0 ]; then
         echo ${i} >> packages.txt
