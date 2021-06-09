@@ -8,9 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Package joincontext provides a way to combine two contexts. For example it
-might be useful for grpc server to cancel all handlers in addition to provided
-handler context.}
+Join contexts like never before!}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -18,7 +16,7 @@ handler context.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Package joincontext provides a way to combine two contexts
+Summary:        Join contexts like never before
 
 License:        MIT
 URL:            %{gourl}
