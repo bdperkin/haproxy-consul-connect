@@ -9,13 +9,13 @@ Version:                2.0
 %gometa
 
 %global common_description %{expand:
-YAML for Golang.}
+# FIXME}
 
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        YAML for Golang
+Summary:        None
 
 License:        # FIXME
 

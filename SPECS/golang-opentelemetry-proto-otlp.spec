@@ -8,7 +8,7 @@ Version:                0.9.0
 
 %gometa
 
-%global goaltipaths     github.com/open-telemetry/opentelemetry-proto-go github.com/open-telemetry/opentelemetry-proto-go/otlp
+%global goaltipaths     github.com/open-telemetry/opentelemetry-proto-go/otlp
 
 %global common_description %{expand:
 Generated code for OpenTelemetry protobuf data model.}

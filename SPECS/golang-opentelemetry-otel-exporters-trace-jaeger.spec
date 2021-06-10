@@ -8,7 +8,7 @@ Version:                0.20.0
 
 %gometa
 
-%global goaltipaths     github.com/open-telemetry/opentelemetry-go github.com/open-telemetry/opentelemetry-go/exporters/trace/jaeger
+%global goaltipaths     github.com/open-telemetry/opentelemetry-go/exporters/trace/jaeger
 
 %global common_description %{expand:
 OpenTelemetry Go API and SDK.}

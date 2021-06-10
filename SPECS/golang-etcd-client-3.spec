@@ -4,10 +4,10 @@
 # https://github.com/etcd-io/etcd
 %global goipath         go.etcd.io/etcd/client/v3
 %global forgeurl        https://github.com/etcd-io/etcd
-Version:                3.5.0~rc.0
+Version:                3.5.0~rc.1
 
 %gometa
-%global extractdir      etcd-3.5.0-rc.0
+%global extractdir      etcd-3.5.0-rc.1
 
 %global goaltipaths     github.com/etcd-io/etcd/client/v3
 

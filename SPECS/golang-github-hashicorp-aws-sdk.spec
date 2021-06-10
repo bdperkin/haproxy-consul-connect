@@ -9,15 +9,14 @@ Version:                tf0.4.0
 %gometa
 
 %global common_description %{expand:
-A fork of awslabs/aws-sdk-go to keep hashicorp/terraform stable. You should use
-awslabs/aws-sdk-go instead.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        A fork of awslabs/aws-sdk-go to keep hashicorp/terraform stable. You should use awslabs/aws-sdk-go instead
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

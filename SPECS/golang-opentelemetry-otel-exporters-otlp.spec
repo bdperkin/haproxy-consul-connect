@@ -11,8 +11,7 @@ Version:                0.20.0
 %global goaltipaths     github.com/open-telemetry/opentelemetry-go/exporters/otlp
 
 %global common_description %{expand:
-Package otlp contains an exporter for the OpenTelemetry protocol buffers. This
-package is currently in a pre-GA phase. Backwards incompatible changes}
+OpenTelemetry Go API and SDK.}
 
 %global golicenses      LICENSE
 %global godocs          example VERSIONING.md CHANGELOG.md CONTRIBUTING.md\\\
@@ -27,7 +26,7 @@ package is currently in a pre-GA phase. Backwards incompatible changes}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package otlp contains an exporter for the OpenTelemetry protocol buffers
+Summary:        OpenTelemetry Go API and SDK
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

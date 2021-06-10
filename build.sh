@@ -1,7 +1,5 @@
 #! /bin/bash
 
-set -eu
-
 rm -rf {RPMS,SOURCES,SPECS,SRPMS}
 mkdir {RPMS,SOURCES,SPECS,SRPMS}
 
@@ -48,19 +46,18 @@ for LINE in $(grep -v '^#' goipaths.txt | tac); do
     CMD="go2rpm ${ARGUMENTS} ${IPATH}"
     echo "${CMD}"
     SLEEP=0
+    SUMMARY=0
     SPEC=""
-    while [ ${SLEEP} -lt 51 ]; do
-        bash -c "${CMD}"
-        SPEC=$(grep -H "^%global goipath         ${IPATH}$" *.spec | cut -d: -f1)
-        grep '^Summary:        None$' ${SPEC}
-        if [ $? -ne 0 ]; then
-            continue
-        fi
-        let SLEEP=${SLEEP}+10
+    while [ ${SLEEP} -lt 31 -a ${SUMMARY} -eq 0 ]; do
         echo -n "sleeping for ${SLEEP} seconds..."
         sleep ${SLEEP}
         echo "done."
-        echo "retrying ${CMD}"
+        echo "trying ${CMD}"
+        bash -c "${CMD}"
+        SPEC=$(grep -H "^%global goipath         ${IPATH}$" *.spec | cut -d: -f1)
+        grep '^Summary:        None$' ${SPEC}
+        SUMMARY=$?
+        let SLEEP=${SLEEP}+10
     done
     if [ "https://${IPATH}" != "${FORGE}" ]; then
         ESCFORGE=$(echo "${FORGE}" | sed -e 's/\//\\\//g')

@@ -11,7 +11,7 @@ Version:                0.20.0
 %global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/google.golang.org/grpc/otelgrpc
 
 %global common_description %{expand:
-# FIXME}
+Collection of extensions for OpenTelemetry-Go.}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -24,7 +24,7 @@ Version:                0.20.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Collection of extensions for OpenTelemetry-Go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

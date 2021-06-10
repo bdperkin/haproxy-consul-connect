@@ -8,14 +8,14 @@ Version:                1.8.0
 %gometa
 
 %global common_description %{expand:
-Get JSON values quickly - JSON parser for Go.}
+Package gjson provides searching for json strings.}
 
 %global golicenses      LICENSE
 %global godocs          README.md SYNTAX.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Get JSON values quickly - JSON parser for Go
+Summary:        Package gjson provides searching for json strings
 
 License:        MIT
 URL:            %{gourl}

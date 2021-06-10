@@ -6,6 +6,7 @@
 Version:                2.2.0
 
 %gometa
+%global extractdir      gotest.tools-%{version}
 
 %global common_description %{expand:
 A collection of packages to augment the go testing package and support common

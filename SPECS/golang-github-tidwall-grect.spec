@@ -8,14 +8,14 @@ Version:                0.1.1
 %gometa
 
 %global common_description %{expand:
-Get the outer rectangle from GeoJSON, WKT, WKB.}
+# FIXME}
 
 %global golicenses      LICENSE.md
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Get the outer rectangle from GeoJSON, WKT, WKB
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

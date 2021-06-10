@@ -8,14 +8,14 @@ Version:                0.1.2
 %gometa
 
 %global common_description %{expand:
-RTree implementation for Go.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        RTree implementation for Go
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

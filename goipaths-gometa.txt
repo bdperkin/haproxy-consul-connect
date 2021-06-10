@@ -1,3 +1,4 @@
 gopkg.in/gorethink/gorethink.v4,%global extractdir      rethinkdb-go-%{version}
 github.com/gotestyourself/gotestyourself,%global extractdir      gotest.tools-%{version}
 github.com/docker/docker,%global extractdir      moby-%{version}
+github.com/dancannon/gorethink,%global extractdir      rethinkdb-go-%{version}

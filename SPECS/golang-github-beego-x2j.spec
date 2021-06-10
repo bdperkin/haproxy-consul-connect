@@ -8,8 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Unmarshal an anonymous XML doc and extract values (using wildcards, if
-necessary) for the Go programming language.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          examples README
@@ -17,7 +16,7 @@ necessary) for the Go programming language.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Unmarshal an anonymous XML doc and extract values (using wildcards, if necessary) for the Go programming language
+Summary:        None
 
 # Upstream license specification: BSD-3-Clause
 License:        BSD
@@ -39,7 +38,7 @@ BuildRequires:  golang(github.com/clbanning/x2j)
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*x2j.*
 %endif
 
 %gopkgfiles

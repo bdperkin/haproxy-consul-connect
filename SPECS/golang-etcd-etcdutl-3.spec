@@ -4,16 +4,16 @@
 # https://github.com/etcd-io/etcd
 %global goipath         go.etcd.io/etcd/etcdutl/v3
 %global forgeurl        https://github.com/etcd-io/etcd
-Version:                3.5.0~rc.0
+Version:                3.5.0~rc.1
 
 %gometa
-%global extractdir      etcd-3.5.0-rc.0
+%global extractdir      etcd-3.5.0-rc.1
 
 %global goaltipaths     github.com/etcd-io/etcd/etcdutl/v3
 
 %global common_description %{expand:
-Package etcdutl contains the main entry point for the etcdutl. etcdutl is a
-command line application that operates on etcd files.}
+Distributed reliable key-value store for the most critical data of a
+distributed system.}
 
 %global golicenses      LICENSE LICENSE-api LICENSE-client-pkg\\\
                         LICENSE-client-v2 LICENSE-client-v3 LICENSE-etcdctl\\\
@@ -44,7 +44,7 @@ command line application that operates on etcd files.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package etcdutl contains the main entry point for the etcdutl
+Summary:        Distributed reliable key-value store for the most critical data of a distributed system
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

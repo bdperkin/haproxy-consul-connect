@@ -8,7 +8,7 @@ Version:                1.7.0
 %gometa
 
 %global common_description %{expand:
-Confluent's Apache Kafka Golang client.}
+# FIXME}
 
 %global golicenses      LICENSE LICENSES-kafka-librdkafka_vendor.txt
 %global godocs          examples CHANGELOG.md README.md README-kafka.md\\\
@@ -17,7 +17,7 @@ Confluent's Apache Kafka Golang client.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Confluent's Apache Kafka Golang client
+Summary:        None
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
