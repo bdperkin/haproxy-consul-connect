@@ -36,7 +36,7 @@ Source0:        %{gosource}
 
 %if %{with check}
 %check
-%gocheck -r .*etcd.*
+%gocheck
 %endif
 
 %gopkgfiles

@@ -40,7 +40,7 @@ BuildRequires:  golang(github.com/davecgh/go-spew/spew)
 
 %if %{with check}
 %check
-%gocheck -r .*parser.*
+%gocheck
 %endif
 
 %gopkgfiles

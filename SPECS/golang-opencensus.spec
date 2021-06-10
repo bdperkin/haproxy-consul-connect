@@ -55,7 +55,7 @@ BuildRequires:  golang(golang.org/x/net/http2)
 
 %if %{with check}
 %check
-%gocheck -r .*ochttp.*
+%gocheck
 %endif
 
 %gopkgfiles

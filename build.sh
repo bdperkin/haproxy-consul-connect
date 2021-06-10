@@ -47,8 +47,21 @@ for LINE in $(grep -v '^#' goipaths.txt | tac); do
     fi
     CMD="go2rpm ${ARGUMENTS} ${IPATH}"
     echo "${CMD}"
-    bash -c "${CMD}"
-    SPEC=$(grep -H "^%global goipath         ${IPATH}$" *.spec | cut -d: -f1)
+    SLEEP=0
+    SPEC=""
+    while [ ${SLEEP} -lt 51 ]; do
+        bash -c "${CMD}"
+        SPEC=$(grep -H "^%global goipath         ${IPATH}$" *.spec | cut -d: -f1)
+        grep '^Summary:        None$' ${SPEC}
+        if [ $? -ne 0 ]; then
+            continue
+        fi
+        let SLEEP=${SLEEP}+10
+        echo -n "sleeping for ${SLEEP} seconds..."
+        sleep ${SLEEP}
+        echo "done."
+        echo "retrying ${CMD}"
+    done
     if [ "https://${IPATH}" != "${FORGE}" ]; then
         ESCFORGE=$(echo "${FORGE}" | sed -e 's/\//\\\//g')
         sed -i -e '/%global forgeurl /d' ${SPEC}

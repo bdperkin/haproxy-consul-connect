@@ -8,7 +8,7 @@ Version:                0.20.0
 
 %gometa
 
-%global goaltipaths     github.com/open-telemetry/opentelemetry-go github.com/open-telemetry/opentelemetry-go/metric
+%global goaltipaths     github.com/open-telemetry/opentelemetry-go/metric
 
 %global common_description %{expand:
 OpenTelemetry Go API and SDK.}

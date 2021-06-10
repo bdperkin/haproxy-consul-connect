@@ -12,8 +12,10 @@ Version:                3.5.0~rc.0
 %global goaltipaths     github.com/etcd-io/etcd/server/v3
 
 %global common_description %{expand:
-Distributed reliable key-value store for the most critical data of a
-distributed system.}
+Package main is a simple wrapper of the real etcd entrypoint package (located
+at go.etcd.io/etcd/etcdmain) to ensure that etcd is still "go getable"; e.g.
+`go get go.etcd.io/etcd` works as expected and builds a binary in $GOBIN/etcd
+This package should NOT be extended or modified in any way; to modify the}
 
 %global golicenses      LICENSE LICENSE-api LICENSE-client-pkg\\\
                         LICENSE-client-v2 LICENSE-client-v3 LICENSE-etcdctl\\\
@@ -44,7 +46,7 @@ distributed system.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Distributed reliable key-value store for the most critical data of a distributed system
+Summary:        Package main is a simple wrapper of the real etcd entrypoint package (located at go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

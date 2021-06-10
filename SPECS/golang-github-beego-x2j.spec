@@ -39,7 +39,7 @@ BuildRequires:  golang(github.com/clbanning/x2j)
 
 %if %{with check}
 %check
-%gocheck -r .*x2j.*
+%gocheck
 %endif
 
 %gopkgfiles

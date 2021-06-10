@@ -2,4 +2,9 @@ gopkg.in/d4l3k/messagediff.v1,%gocheck -r .*messagediff.*
 github.com/google/tcpproxy,%gocheck -r .*tcpproxy.*
 github.com/go-ldap/ldap,%gocheck -r .*ldap.*
 github.com/hashicorp/go-getter,%gocheck -r .*go-getter.*
-gopkg.in/gorethink/gorethink.v4,%gocheck -r .*encoding.*
+github.com/mattbaird/elastigo,%gocheck -r .*lib.*
+gopkg.in/gorethink/gorethink.v4,%gocheck -r .*encoding.* -r .*reql_tests.*
+github.com/bmatcuk/doublestar,%gocheck -r .*doublestar.*
+github.com/go-redis/redis/v7,%gocheck -r .*v7.*
+gopkg.in/jinzhu/gorm.v1,%gocheck -r .*gorm.*
+gopkg.in/olivere/elastic.v3,%gocheck -r .*elastic.*

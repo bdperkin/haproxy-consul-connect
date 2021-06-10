@@ -59,7 +59,7 @@ BuildRequires:  golang(k8s.io/component-base/config/testing)
 
 %if %{with check}
 %check
-%gocheck -r .*v1beta1.*
+%gocheck
 %endif
 
 %gopkgfiles

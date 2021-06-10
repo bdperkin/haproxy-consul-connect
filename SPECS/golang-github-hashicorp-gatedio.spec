@@ -8,14 +8,15 @@ Version:                0.5.0
 %gometa
 
 %global common_description %{expand:
-Provides a unified interface for wrapping io objects in a mutex.}
+gatedio provides wrappers around the io.ReadWriter, io.Writer, and io.Reader
+interfaces to support concurrent usage and access across multiple goroutines.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Provides a unified interface for wrapping io objects in a mutex
+Summary:        gatedio provides wrappers around the io
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0
