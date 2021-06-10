@@ -17,7 +17,7 @@ github.com/mitchellh/pointerstructure,https://github.com/mitchellh/pointerstruct
 github.com/rboyer/safeio,https://github.com/rboyer/safeio,,,0.2.1,,,,,package
 github.com/coredns/coredns,https://github.com/coredns/coredns,,,1.8.4,,,,,command
 github.com/go-ldap/ldap,https://github.com/go-ldap/ldap,,,3.0.3,,,,,package
-github.com/hashicorp/nomad/api,https://github.com/hashicorp/nomad,,,0.0.0-20210609231845-122a4cb84486,,,,,package
+github.com/hashicorp/nomad/api,https://github.com/hashicorp/nomad,,,0.0.0-20210610125730-91c6193bf18b,,,,,package
 github.com/jefferai/isbadcipher,https://github.com/jefferai/isbadcipher,,,0.0.0-20190226160619-51d2077c035f,,,,,package
 github.com/joyent/triton-go,https://github.com/joyent/triton-go,,,1.8.5,,,,,package
 gopkg.in/ory-am/dockertest.v2,https://github.com/ory-am/dockertest,,github.com/ory-am/dockertest,2.2.3,,,,,package
@@ -183,3 +183,9 @@ github.com/AlekSi/pointer,https://github.com/AlekSi/pointer,,,1.1.0,,,,,package
 github.com/google/rpmpack,https://github.com/google/rpmpack,,,0.0.0-20210518075352-dc539ef4f2ea,,,,,package
 github.com/goreleaser/chglog,https://github.com/goreleaser/chglog,,,0.1.2,,,,,package
 github.com/sassoftware/go-rpmutils,https://github.com/sassoftware/go-rpmutils,,,0.2.0,,,,,package
+github.com/tj/go-elastic,https://github.com/tj/go-elastic,,,0.0.0-20171221160941-36157cbbebc2,,,,,package
+github.com/ProtonMail/go-crypto,https://github.com/ProtonMail/go-crypto,,,0.0.0-20210512092938-c05353c2d58c,,,,,module
+github.com/ProtonMail/gopenpgp/v2,https://github.com/ProtonMail/gopenpgp,,,2.1.9,,,,,module
+github.com/cavaliercoder/go-cpio,https://github.com/cavaliercoder/go-cpio,,,0.0.0-20180626203310-925f9528c45e,,,,,package
+github.com/go-git/go-git/v5,https://github.com/go-git/go-git,,,5.4.2,,,,,package
+github.com/ahmetb/go-linq/v3,https://github.com/ahmetb/go-linq,,,3.2.0,,,,,package

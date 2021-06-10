@@ -63,7 +63,7 @@ BuildRequires:  golang(gopkg.in/gorethink/gorethink.v4/internal/integration/test
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*gorethink.*
 %endif
 
 %gopkgfiles

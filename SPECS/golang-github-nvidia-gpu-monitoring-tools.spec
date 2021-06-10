@@ -3,11 +3,11 @@
 
 # https://github.com/NVIDIA/gpu-monitoring-tools
 %global goipath         github.com/NVIDIA/gpu-monitoring-tools
-Version:                2.4.0~rc.2
-%global tag             2.4.0-rc.2
+Version:                2.4.0~rc.3
+%global tag             2.4.0-rc.3
 
 %gometa
-%global extractdir      gpu-monitoring-tools-2.4.0-rc.2
+%global extractdir      gpu-monitoring-tools-2.4.0-rc.3
 
 %global common_description %{expand:
 Tools for monitoring NVIDIA GPUs on Linux.}
@@ -59,7 +59,7 @@ mv deployment/dcgm-exporter/templates/NOTES.txt NOTES-deployment-dcgm-exporter-t
 
 %if %{with check}
 %check
-%gocheck -r .*dcgm.*
+%gocheck -r .*dcgm.* -r .*nvml.*
 %endif
 
 %files
