@@ -3,12 +3,13 @@
 
 # https://github.com/Azure/azure-sdk-for-go
 %global goipath         github.com/Azure/azure-sdk-for-go
-Version:                55.1.0
+Version:                55.2.0
 
 %gometa
 
 %global common_description %{expand:
-Microsoft Azure SDK for Go.}
+Package sdk provides Go packages for managing and using Azure services. GitHub
+repo: https://github.com/Azure/azure-sdk-for-go}
 
 %global golicenses      LICENSE.txt NOTICE LICENSE-sdk-agfood-armagfood.txt\\\
                         LICENSE-sdk-armcore.txt\\\
@@ -204,10 +205,12 @@ Microsoft Azure SDK for Go.}
                         CHANGELOG-services-containerservice-mgmt-2020-12-01-containerservice.md\\\
                         CHANGELOG-services-containerservice-mgmt-2021-02-01-containerservice.md\\\
                         CHANGELOG-services-containerservice-mgmt-2021-03-01-containerservice.md\\\
+                        CHANGELOG-services-containerservice-mgmt-2021-05-01-containerservice.md\\\
                         CHANGELOG-services-cosmos-db-mgmt-2015-04-08-documentdb.md\\\
                         CHANGELOG-services-cosmos-db-mgmt-2019-08-01-documentdb.md\\\
                         CHANGELOG-services-cosmos-db-mgmt-2021-01-15-documentdb.md\\\
                         CHANGELOG-services-cosmos-db-mgmt-2021-03-15-documentdb.md\\\
+                        CHANGELOG-services-cosmos-db-mgmt-2021-05-15-documentdb.md\\\
                         CHANGELOG-services-costmanagement-mgmt-2018-05-31-costmanagement.md\\\
                         CHANGELOG-services-costmanagement-mgmt-2019-01-01-costmanagement.md\\\
                         CHANGELOG-services-costmanagement-mgmt-2019-10-01-costmanagement.md\\\
@@ -346,6 +349,7 @@ Microsoft Azure SDK for Go.}
                         CHANGELOG-services-netapp-mgmt-2020-11-01-netapp.md\\\
                         CHANGELOG-services-netapp-mgmt-2020-12-01-netapp.md\\\
                         CHANGELOG-services-netapp-mgmt-2021-02-01-netapp.md\\\
+                        CHANGELOG-services-netapp-mgmt-2021-04-01-netapp.md\\\
                         CHANGELOG-services-network-mgmt-2015-06-15-network.md\\\
                         CHANGELOG-services-network-mgmt-2016-03-30-network.md\\\
                         CHANGELOG-services-network-mgmt-2016-06-01-network.md\\\
@@ -818,17 +822,19 @@ Microsoft Azure SDK for Go.}
                         CHANGELOG-services-web-mgmt-2020-09-01-web.md\\\
                         CHANGELOG-services-web-mgmt-2020-12-01-web.md\\\
                         CHANGELOG-services-windowsiot-mgmt-2019-06-01-windowsiot.md\\\
-                        README-storage.md exceptions-tools-pkgchk.txt\\\
+                        README-storage.md README-tools-generator.md\\\
+                        exceptions-tools-pkgchk.txt\\\
                         README-tools-profileBuilder.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Microsoft Azure SDK for Go
+Summary:        Package sdk provides Go packages for managing and using Azure services
 
 License:        MIT
 URL:            %{gourl}
 Source0:        %{gosource}
 
+BuildRequires:  golang(github.com/ahmetb/go-linq/v3)
 BuildRequires:  golang(github.com/Azure/go-autorest/autorest)
 BuildRequires:  golang(github.com/Azure/go-autorest/autorest/adal)
 BuildRequires:  golang(github.com/Azure/go-autorest/autorest/azure)
@@ -839,12 +845,16 @@ BuildRequires:  golang(github.com/Azure/go-autorest/autorest/validation)
 BuildRequires:  golang(github.com/Azure/go-autorest/tracing)
 BuildRequires:  golang(github.com/globalsign/mgo)
 BuildRequires:  golang(github.com/gofrs/uuid)
+BuildRequires:  golang(github.com/google/go-github/v32/github)
+BuildRequires:  golang(github.com/hashicorp/go-multierror)
 BuildRequires:  golang(github.com/Masterminds/semver)
 BuildRequires:  golang(github.com/pkg/browser)
 BuildRequires:  golang(github.com/shopspring/decimal)
 BuildRequires:  golang(github.com/spf13/cobra)
+BuildRequires:  golang(github.com/spf13/pflag)
 BuildRequires:  golang(golang.org/x/crypto/pkcs12)
 BuildRequires:  golang(golang.org/x/net/http/httpguts)
+BuildRequires:  golang(golang.org/x/oauth2)
 BuildRequires:  golang(golang.org/x/tools/imports)
 
 %if %{with check}
@@ -1059,10 +1069,12 @@ mv services/containerservice/mgmt/2020-11-01/containerservice/CHANGELOG.md CHANG
 mv services/containerservice/mgmt/2020-12-01/containerservice/CHANGELOG.md CHANGELOG-services-containerservice-mgmt-2020-12-01-containerservice.md
 mv services/containerservice/mgmt/2021-02-01/containerservice/CHANGELOG.md CHANGELOG-services-containerservice-mgmt-2021-02-01-containerservice.md
 mv services/containerservice/mgmt/2021-03-01/containerservice/CHANGELOG.md CHANGELOG-services-containerservice-mgmt-2021-03-01-containerservice.md
+mv services/containerservice/mgmt/2021-05-01/containerservice/CHANGELOG.md CHANGELOG-services-containerservice-mgmt-2021-05-01-containerservice.md
 mv services/cosmos-db/mgmt/2015-04-08/documentdb/CHANGELOG.md CHANGELOG-services-cosmos-db-mgmt-2015-04-08-documentdb.md
 mv services/cosmos-db/mgmt/2019-08-01/documentdb/CHANGELOG.md CHANGELOG-services-cosmos-db-mgmt-2019-08-01-documentdb.md
 mv services/cosmos-db/mgmt/2021-01-15/documentdb/CHANGELOG.md CHANGELOG-services-cosmos-db-mgmt-2021-01-15-documentdb.md
 mv services/cosmos-db/mgmt/2021-03-15/documentdb/CHANGELOG.md CHANGELOG-services-cosmos-db-mgmt-2021-03-15-documentdb.md
+mv services/cosmos-db/mgmt/2021-05-15/documentdb/CHANGELOG.md CHANGELOG-services-cosmos-db-mgmt-2021-05-15-documentdb.md
 mv services/costmanagement/mgmt/2018-05-31/costmanagement/CHANGELOG.md CHANGELOG-services-costmanagement-mgmt-2018-05-31-costmanagement.md
 mv services/costmanagement/mgmt/2019-01-01/costmanagement/CHANGELOG.md CHANGELOG-services-costmanagement-mgmt-2019-01-01-costmanagement.md
 mv services/costmanagement/mgmt/2019-10-01/costmanagement/CHANGELOG.md CHANGELOG-services-costmanagement-mgmt-2019-10-01-costmanagement.md
@@ -1201,6 +1213,7 @@ mv services/netapp/mgmt/2020-09-01/netapp/CHANGELOG.md CHANGELOG-services-netapp
 mv services/netapp/mgmt/2020-11-01/netapp/CHANGELOG.md CHANGELOG-services-netapp-mgmt-2020-11-01-netapp.md
 mv services/netapp/mgmt/2020-12-01/netapp/CHANGELOG.md CHANGELOG-services-netapp-mgmt-2020-12-01-netapp.md
 mv services/netapp/mgmt/2021-02-01/netapp/CHANGELOG.md CHANGELOG-services-netapp-mgmt-2021-02-01-netapp.md
+mv services/netapp/mgmt/2021-04-01/netapp/CHANGELOG.md CHANGELOG-services-netapp-mgmt-2021-04-01-netapp.md
 mv services/network/mgmt/2015-06-15/network/CHANGELOG.md CHANGELOG-services-network-mgmt-2015-06-15-network.md
 mv services/network/mgmt/2016-03-30/network/CHANGELOG.md CHANGELOG-services-network-mgmt-2016-03-30-network.md
 mv services/network/mgmt/2016-06-01/network/CHANGELOG.md CHANGELOG-services-network-mgmt-2016-06-01-network.md
@@ -1675,6 +1688,7 @@ mv services/web/mgmt/2020-12-01/web/CHANGELOG.md CHANGELOG-services-web-mgmt-202
 mv services/windowsiot/mgmt/2019-06-01/windowsiot/CHANGELOG.md CHANGELOG-services-windowsiot-mgmt-2019-06-01-windowsiot.md
 mv storage/README.md README-storage.md
 rm tools/apidiff/cmd/changelog.go
+mv tools/generator/README.md README-tools-generator.md
 rm tools/generator/autorest/changelog.go
 rm tools/generator/autorest/readmeFiles.go
 rm tools/generator/autorest/readmeFiles_test.go
@@ -1874,10 +1888,12 @@ mv tools/profileBuilder/README.md README-tools-profileBuilder.md
 %doc CHANGELOG-services-containerservice-mgmt-2020-12-01-containerservice.md
 %doc CHANGELOG-services-containerservice-mgmt-2021-02-01-containerservice.md
 %doc CHANGELOG-services-containerservice-mgmt-2021-03-01-containerservice.md
+%doc CHANGELOG-services-containerservice-mgmt-2021-05-01-containerservice.md
 %doc CHANGELOG-services-cosmos-db-mgmt-2015-04-08-documentdb.md
 %doc CHANGELOG-services-cosmos-db-mgmt-2019-08-01-documentdb.md
 %doc CHANGELOG-services-cosmos-db-mgmt-2021-01-15-documentdb.md
 %doc CHANGELOG-services-cosmos-db-mgmt-2021-03-15-documentdb.md
+%doc CHANGELOG-services-cosmos-db-mgmt-2021-05-15-documentdb.md
 %doc CHANGELOG-services-costmanagement-mgmt-2018-05-31-costmanagement.md
 %doc CHANGELOG-services-costmanagement-mgmt-2019-01-01-costmanagement.md
 %doc CHANGELOG-services-costmanagement-mgmt-2019-10-01-costmanagement.md
@@ -2016,6 +2032,7 @@ mv tools/profileBuilder/README.md README-tools-profileBuilder.md
 %doc CHANGELOG-services-netapp-mgmt-2020-11-01-netapp.md
 %doc CHANGELOG-services-netapp-mgmt-2020-12-01-netapp.md
 %doc CHANGELOG-services-netapp-mgmt-2021-02-01-netapp.md
+%doc CHANGELOG-services-netapp-mgmt-2021-04-01-netapp.md
 %doc CHANGELOG-services-network-mgmt-2015-06-15-network.md
 %doc CHANGELOG-services-network-mgmt-2016-03-30-network.md
 %doc CHANGELOG-services-network-mgmt-2016-06-01-network.md
@@ -2488,7 +2505,7 @@ mv tools/profileBuilder/README.md README-tools-profileBuilder.md
 %doc CHANGELOG-services-web-mgmt-2020-09-01-web.md
 %doc CHANGELOG-services-web-mgmt-2020-12-01-web.md
 %doc CHANGELOG-services-windowsiot-mgmt-2019-06-01-windowsiot.md
-%doc README-storage.md
+%doc README-storage.md  README-tools-generator.md
 %doc exceptions-tools-pkgchk.txt
 %doc README-tools-profileBuilder.md
 

@@ -8,12 +8,13 @@ Version:                1.1.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Go library for various manipulations of CIDR netmasks and their associated
+addresses.}
 
 %global golicenses      LICENSE
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Go library for various manipulations of CIDR netmasks and their associated addresses
 
 License:        MIT
 URL:            %{gourl}

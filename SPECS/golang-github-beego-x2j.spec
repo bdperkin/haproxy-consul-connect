@@ -8,7 +8,8 @@
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Unmarshal an anonymous XML doc and extract values (using wildcards, if
+necessary) for the Go programming language.}
 
 %global golicenses      LICENSE
 %global godocs          examples README
@@ -16,7 +17,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        None
+Summary:        Unmarshal an anonymous XML doc and extract values (using wildcards, if necessary) for the Go programming language
 
 # Upstream license specification: BSD-3-Clause
 License:        BSD

@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-Package hex is an efficient hexadecimal implementation for Golang.}
+An efficient assembly hexadecimal implementation for Golang.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
@@ -16,7 +16,7 @@ Package hex is an efficient hexadecimal implementation for Golang.}
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Package hex is an efficient hexadecimal implementation for Golang
+Summary:        An efficient assembly hexadecimal implementation for Golang
 
 License:        Sleepycat
 URL:            %{gourl}

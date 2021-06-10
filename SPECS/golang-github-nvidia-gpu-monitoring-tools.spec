@@ -10,7 +10,7 @@ Version:                2.4.0~rc.2
 %global extractdir      gpu-monitoring-tools-2.4.0-rc.2
 
 %global common_description %{expand:
-# FIXME}
+Tools for monitoring NVIDIA GPUs on Linux.}
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md README.md RELEASE.md\\\
@@ -21,7 +21,7 @@ Version:                2.4.0~rc.2
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Tools for monitoring NVIDIA GPUs on Linux
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -59,7 +59,7 @@ mv deployment/dcgm-exporter/templates/NOTES.txt NOTES-deployment-dcgm-exporter-t
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*dcgm.*
 %endif
 
 %files

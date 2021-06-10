@@ -6,6 +6,7 @@
 Version:                4.0.0
 
 %gometa
+%global extractdir      rethinkdb-go-%{version}
 
 %global common_description %{expand:
 Package gorethink implements a Go driver for RethinkDB Current version: v3.0.2

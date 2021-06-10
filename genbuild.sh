@@ -8,5 +8,7 @@ set -eu
 
 ./gengocheck.sh 2>&1 | tee gengocheck.log
 
+./gengometa.sh 2>&1 | tee gengometa.log
+
 ./build.sh
 

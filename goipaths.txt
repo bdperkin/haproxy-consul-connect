@@ -22,7 +22,7 @@ github.com/jefferai/isbadcipher,https://github.com/jefferai/isbadcipher,,,0.0.0-
 github.com/joyent/triton-go,https://github.com/joyent/triton-go,,,1.8.5,,,,,package
 gopkg.in/ory-am/dockertest.v2,https://github.com/ory-am/dockertest,,github.com/ory-am/dockertest,2.2.3,,,,,package
 layeh.com/radius,https://github.com/layeh/radius,,github.com/layeh/radius,0.0.0-20201203135236-838e26d0c9be,,,,,package
-github.com/Azure/azure-sdk-for-go,https://github.com/Azure/azure-sdk-for-go,,,55.1.0,,,,,package
+github.com/Azure/azure-sdk-for-go,https://github.com/Azure/azure-sdk-for-go,,,55.2.0,,,,,package
 github.com/nicolai86/scaleway-sdk,https://github.com/nicolai86/scaleway-sdk,,,1.11.1,,,,,package
 github.com/softlayer/softlayer-go,https://github.com/softlayer/softlayer-go,,,1.0.3,,,,,module
 github.com/influxdata/influxdb,https://github.com/influxdata/influxdb,,,1.9.2,,,,,package
@@ -173,3 +173,13 @@ github.com/goreleaser/nfpm/v2,https://github.com/goreleaser/nfpm,,,2.5.1,,,,,pac
 github.com/xanzy/go-gitlab,https://github.com/xanzy/go-gitlab,,,0.50.0,,,,,package
 github.com/dghubble/go-twitter,https://github.com/dghubble/go-twitter,,,0.0.0-20201011215211-4b180d0cc78d,,,,,module
 github.com/stretchr/testify,https://github.com/stretchr/testify,,,1.7.0,,,,,package
+github.com/matryer/is,https://github.com/matryer/is,,,1.4.0,,,,,package
+github.com/klauspost/cpuid/v2,https://github.com/klauspost/cpuid,,,2.0.6,,,,,package
+github.com/caarlos0/testfs,https://github.com/caarlos0/testfs,,,0.4.4,,,,,package
+github.com/tj/go-buffer,https://github.com/tj/go-buffer,,,1.2.0,,,,,package
+github.com/tj/go-kinesis,https://github.com/tj/go-kinesis,,,0.0.0-20171128231115-08b17f58cb1b,,,,,package
+github.com/tj/go-spin,https://github.com/tj/go-spin,,,1.1.0,,,,,package
+github.com/AlekSi/pointer,https://github.com/AlekSi/pointer,,,1.1.0,,,,,package
+github.com/google/rpmpack,https://github.com/google/rpmpack,,,0.0.0-20210518075352-dc539ef4f2ea,,,,,package
+github.com/goreleaser/chglog,https://github.com/goreleaser/chglog,,,0.1.2,,,,,package
+github.com/sassoftware/go-rpmutils,https://github.com/sassoftware/go-rpmutils,,,0.2.0,,,,,package

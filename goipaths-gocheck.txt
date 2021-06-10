@@ -3,16 +3,21 @@ github.com/google/tcpproxy,%gocheck -r .*tcpproxy.*
 github.com/go-ldap/ldap,%gocheck -r .*ldap.*
 github.com/hashicorp/go-getter,%gocheck -r .*go-getter.*
 github.com/mattbaird/elastigo,%gocheck -r .*lib.*
+k8s.io/api,%gocheck -r .*managedfields.*
+github.com/NVIDIA/gpu-monitoring-tools,%gocheck -r .*dcgm.*
 github.com/hashicorp/go-cty-funcs,%gocheck -r .*filesystem.*
 gopkg.in/gorethink/gorethink.v4,%gocheck -r .*encoding.* -r .*reql_tests.* -r .*tests.*
+github.com/docker/docker,%gocheck -r .*git.*
 github.com/bmatcuk/doublestar,%gocheck -r .*doublestar.*
 github.com/go-redis/redis/v7,%gocheck -r .*v7.*
 gopkg.in/jinzhu/gorm.v1,%gocheck -r .*gorm.*
 gopkg.in/olivere/elastic.v3,%gocheck -r .*elastic.*
 k8s.io/kubelet,%gocheck -r .*v1beta1.*
 github.com/coreos/go-etcd,%gocheck -r .*etcd.*
+github.com/hashicorp/aws-sdk-go,%gocheck -r .*aws.*
 github.com/hashicorp/hcl,%gocheck -r .*parser.*
 go.opencensus.io,%gocheck -r .*ochttp.*
+k8s.io/apimachinery,%gocheck -r .*managedfields.*
 github.com/vmihailenco/bufpool,%gocheck -r .*bufpool.*
 github.com/beego/x2j,%gocheck -r .*x2j.*
 github.com/cloudflare/golz4,%gocheck -r .*golz4.*

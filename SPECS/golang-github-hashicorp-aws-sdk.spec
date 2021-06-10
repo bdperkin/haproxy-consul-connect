@@ -40,7 +40,7 @@ BuildRequires:  golang(golang.org/x/net/html)
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*aws.*
 %endif
 
 %files

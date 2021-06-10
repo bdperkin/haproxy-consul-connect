@@ -9,14 +9,14 @@ Version:                5.3.4
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Msgpack.org[Go] MessagePack encoding for Golang.}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Msgpack.org[Go] MessagePack encoding for Golang
 
 # Upstream license specification: BSD-2-Clause
 License:        BSD

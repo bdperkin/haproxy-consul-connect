@@ -11,16 +11,14 @@ Version:                0.2.1
 %global goaltipaths     github.com/mellium/sasl
 
 %global common_description %{expand:
-Package sasl implements the Simple Authentication and Security Layer (SASL) as
-defined by RFC 4422. Most users of this package will only need to create a
-Negotiator using}
+An implementation of the Simple Authentication and Security Layer (SASL).}
 
 %global golicenses      LICENSE.md
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package sasl implements the Simple Authentication and Security Layer (SASL) as defined by RFC 4422
+Summary:        An implementation of the Simple Authentication and Security Layer (SASL)
 
 # Upstream license specification: BSD-2-Clause
 License:        BSD

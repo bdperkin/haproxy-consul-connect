@@ -11,7 +11,12 @@ Version:                0.20.0
 %global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/host
 
 %global common_description %{expand:
-Collection of extensions for OpenTelemetry-Go.}
+Package host provides the conventional host metric instruments specified by
+OpenTelemetry. Host metric events are sometimes collected through the
+OpenTelemetry Collector "hostmetrics" receiver running as an agent; this
+instrumentation is an alternative for processes that want to record the same
+information without an agent. The metric events produced are listed here with
+attribute dimensions.}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -24,7 +29,7 @@ Collection of extensions for OpenTelemetry-Go.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Collection of extensions for OpenTelemetry-Go
+Summary:        Package host provides the conventional host metric instruments specified by OpenTelemetry
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
