@@ -48,7 +48,7 @@ go.etcd.io/etcd/api/v3,https://github.com/etcd-io/etcd,,github.com/etcd-io/etcd/
 gopkg.in/DataDog/dd-trace-go.v1,https://github.com/DataDog/dd-trace-go,,github.com/DataDog/dd-trace-go,1.31.1,,,,,module
 k8s.io/api,https://github.com/kubernetes/api,,github.com/kubernetes/api,0.21.1,,,,,module
 github.com/NVIDIA/gpu-monitoring-tools,https://github.com/NVIDIA/gpu-monitoring-tools,,,0.0.0-20210525204842-7fbe8db26700,,,,,module
-github.com/hashicorp/consul-template,https://github.com/hashicorp/consul-template,,,0.25.2,,,,,command
+github.com/hashicorp/consul-template,https://github.com/hashicorp/consul-template,,,0.26.0,,,,,command
 github.com/hashicorp/go-cty-funcs,https://github.com/hashicorp/go-cty-funcs,,,0.0.0-20200930094925-2721b1e36840,,,,,module
 github.com/hashicorp/vault/sdk,https://github.com/hashicorp/vault,,,0.2.0,,,,,module
 github.com/sean-/pager,https://github.com/sean-/pager,,,0.0.0-20180208200047-666be9bf53b5,,,,,package

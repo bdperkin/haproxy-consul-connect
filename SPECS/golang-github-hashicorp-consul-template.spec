@@ -3,7 +3,7 @@
 
 # https://github.com/hashicorp/consul-template
 %global goipath         github.com/hashicorp/consul-template
-Version:                0.25.2
+Version:                0.26.0
 
 %gometa
 
@@ -25,6 +25,7 @@ URL:            %{gourl}
 Source0:        %{gosource}
 
 BuildRequires:  golang(github.com/BurntSushi/toml)
+BuildRequires:  golang(github.com/davecgh/go-spew/spew)
 BuildRequires:  golang(github.com/hashicorp/consul/api)
 BuildRequires:  golang(github.com/hashicorp/consul/sdk/testutil)
 BuildRequires:  golang(github.com/hashicorp/go-multierror)

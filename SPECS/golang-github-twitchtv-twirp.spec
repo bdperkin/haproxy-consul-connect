@@ -14,8 +14,8 @@ A simple RPC framework with protobuf service definitions.}
                         LICENSE-_tools-src-github.com-kisielk-errcheck\\\
                         LICENSE-_tools-src-github.com-kisielk-gotool\\\
                         LICENSE-_tools-src-github.com-twitchtv-retool
-%global godocs          docs example CONTRIBUTING.md PROTOCOL.md\\\
-                        requirements.txt README.md\\\
+%global godocs          docs example PROTOCOL.md CONTRIBUTING.md README.md\\\
+                        requirements.txt\\\
                         README-_tools-src-github.com-kisielk-errcheck.md\\\
                         README-_tools-src-github.com-kisielk-gotool.md\\\
                         README-_tools-src-github.com-twitchtv-retool.md\\\
@@ -74,7 +74,7 @@ mv clientcompat/README.md README-clientcompat.md
 %license LICENSE-_tools-src-github.com-kisielk-errcheck
 %license LICENSE-_tools-src-github.com-kisielk-gotool
 %license LICENSE-_tools-src-github.com-twitchtv-retool
-%doc docs example CONTRIBUTING.md PROTOCOL.md requirements.txt README.md
+%doc docs example PROTOCOL.md CONTRIBUTING.md README.md requirements.txt
 %doc README-_tools-src-github.com-kisielk-errcheck.md
 %doc README-_tools-src-github.com-kisielk-gotool.md
 %doc README-_tools-src-github.com-twitchtv-retool.md README-clientcompat.md
