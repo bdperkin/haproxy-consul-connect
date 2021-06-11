@@ -452,3 +452,11 @@ github.com/go-git/go-git/v5/plumbing/storer
 github.com/ahmetb/go-linq/v3
 github.com/google/go-github/v32/github
 github.com/google/go-github/v32
+github.com/apex/log/handlers/logfmt
+github.com/ProtonMail/go-mime
+github.com/go-git/gcfg
+github.com/go-git/go-billy/v5
+github.com/go-git/go-billy/v5/memfs
+github.com/go-git/go-billy/v5/osfs
+github.com/go-git/go-billy/v5/util
+golang.org/x/crypto/ssh/testdata

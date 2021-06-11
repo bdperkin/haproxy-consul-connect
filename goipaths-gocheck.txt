@@ -4,8 +4,8 @@ github.com/go-ldap/ldap,%gocheck -r .*ldap.*
 github.com/dancannon/gorethink,%gocheck -r .*gorethink.*
 github.com/hashicorp/go-getter,%gocheck -r .*go-getter.*
 github.com/mattbaird/elastigo,%gocheck -r .*lib.*
-k8s.io/api,%gocheck -r .*managedfields.* -r .*strategicpatch.*
-github.com/NVIDIA/gpu-monitoring-tools,%gocheck -r .*dcgm.* -r .*nvml.*
+k8s.io/api,%gocheck -r .*managedfields.* -r .*strategicpatch.* -r .*v1.*
+github.com/NVIDIA/gpu-monitoring-tools,%gocheck -r .*dcgm.* -r .*nvml.* -r .*pkg.*
 github.com/hashicorp/go-cty-funcs,%gocheck -r .*filesystem.*
 gopkg.in/gorethink/gorethink.v4,%gocheck -r .*encoding.* -r .*reql_tests.* -r .*tests.*
 github.com/docker/docker,%gocheck -r .*git.*
@@ -23,3 +23,5 @@ k8s.io/apimachinery,%gocheck -r .*managedfields.* -r .*strategicpatch.*
 github.com/vmihailenco/bufpool,%gocheck -r .*bufpool.*
 github.com/beego/x2j,%gocheck -r .*x2j.*
 github.com/cloudflare/golz4,%gocheck -r .*golz4.*
+github.com/gotestyourself/gotestyourself,%gocheck -r .*assert.*
+code.gitea.io/sdk/gitea,%gocheck -r .*gitea.*
