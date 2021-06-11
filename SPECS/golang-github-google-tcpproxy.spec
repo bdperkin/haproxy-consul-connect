@@ -43,7 +43,7 @@ mv cmd/tlsrouter/README.md README-cmd-tlsrouter.md
 
 %if %{with check}
 %check
-%gocheck -r .*tcpproxy.*
+%gocheck
 %endif
 
 %files

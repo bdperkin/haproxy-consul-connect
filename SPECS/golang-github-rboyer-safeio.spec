@@ -8,15 +8,14 @@ Version:                0.2.1
 %gometa
 
 %global common_description %{expand:
-Package safeio provides functions to perform atomic, fsync-safe disk
-operations.}
+Provides functions to perform atomic, fsync-safe disk operations.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package safeio provides functions to perform atomic, fsync-safe disk operations
+Summary:        Provides functions to perform atomic, fsync-safe disk operations
 
 License:        MIT
 URL:            %{gourl}
