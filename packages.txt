@@ -8,3 +8,5 @@ github.com/hashicorp/consul/testrpc
 gopkg.in/d4l3k/messagediff.v1
 zvelo.io/ttlru
 github.com/hashicorp/consul
+github.com/d4l3k/messagediff/testdata
+github.com/d4l3k/messagediff
