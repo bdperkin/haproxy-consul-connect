@@ -8,14 +8,14 @@ Version:                1.0.3
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+SoftLayer API Client for the Go Language.}
 
 %global golicenses      LICENSE
 %global godocs          examples README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        SoftLayer API Client for the Go Language
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
