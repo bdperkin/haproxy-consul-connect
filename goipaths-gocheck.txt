@@ -23,5 +23,5 @@ k8s.io/apimachinery,%gocheck -r .*managedfields.* -r .*strategicpatch.*
 github.com/vmihailenco/bufpool,%gocheck -r .*bufpool.*
 github.com/beego/x2j,%gocheck -r .*x2j.*
 github.com/cloudflare/golz4,%gocheck -r .*golz4.*
-github.com/gotestyourself/gotestyourself,%gocheck -r .*assert.*
+github.com/gotestyourself/gotestyourself,%gocheck -r .*assert.* -r .*env.*
 code.gitea.io/sdk/gitea,%gocheck -r .*gitea.*

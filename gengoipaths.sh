@@ -116,6 +116,10 @@ for MOD in $(cat packages.txt); do
     grep -q -P "^${IPATH},${FORGE},.*" goipaths.txt
     if [ $? -ne 0 -a "${SUBDIR}" == "" ]; then
         LINE="${IPATH},${FORGE},${SUBDIR},${ALTIPATHS},${VERSION},${TAG},${COMMIT},${SRCTGZ},${DSTTGZ},${TYPE}"
+        grep "^${IPATH}," goipaths-overrides.txt >> goipaths.txt
+        if [ $? -eq 0 ]; then
+                LINE="#${LINE}"
+        fi
         echo -n "ENTRY: "
         echo "${LINE}" | tee -a goipaths.txt
 

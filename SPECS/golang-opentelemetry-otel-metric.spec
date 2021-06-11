@@ -20,8 +20,8 @@ incompatible changes}
                         README.md RELEASING.md bridge/opencensus/README.md\\\
                         exporters/README.md\\\
                         exporters/metric/prometheus/README.md\\\
-                        exporters/otlp/README.md\\\
-                        exporters/trace/jaeger/README.md sdk/README.md\\\
+                        exporters/trace/jaeger/README.md\\\
+                        exporters/otlp/README.md sdk/README.md\\\
                         website_docs/_index.md website_docs/exporting_data.md\\\
                         website_docs/getting-started.md\\\
                         website_docs/instrumentation.md

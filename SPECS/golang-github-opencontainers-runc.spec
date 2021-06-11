@@ -73,13 +73,8 @@ mv man/runc-start.8.md runc-start.8-man.md
 mv man/runc-state.8.md runc-state.8-man.md
 mv man/runc.8.md runc.8-man.md
 
-%build
-%gobuild -o %{gobuilddir}/bin/runc %{goipath}
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -95,7 +90,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %doc runc-list.8-man.md runc-pause.8-man.md runc-restore.8-man.md
 %doc runc-resume.8-man.md runc-spec.8-man.md runc-start.8-man.md
 %doc runc-state.8-man.md runc.8-man.md
-%{_bindir}/*
 
 %gopkgfiles
 

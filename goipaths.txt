@@ -17,7 +17,7 @@ github.com/mitchellh/pointerstructure,https://github.com/mitchellh/pointerstruct
 github.com/rboyer/safeio,https://github.com/rboyer/safeio,,,0.2.1,,,,,package
 github.com/coredns/coredns,https://github.com/coredns/coredns,,,1.8.4,,,,,command
 github.com/go-ldap/ldap,https://github.com/go-ldap/ldap,,,3.0.3,,,,,package
-github.com/hashicorp/nomad/api,https://github.com/hashicorp/nomad,,,0.0.0-20210610205303-398d81ccf13b,,,,,package
+github.com/hashicorp/nomad/api,https://github.com/hashicorp/nomad,,,0.0.0-20210611152303-88e456d962d0,,,,,package
 github.com/jefferai/isbadcipher,https://github.com/jefferai/isbadcipher,,,0.0.0-20190226160619-51d2077c035f,,,,,package
 github.com/joyent/triton-go,https://github.com/joyent/triton-go,,,1.8.5,,,,,package
 gopkg.in/ory-am/dockertest.v2,https://github.com/ory-am/dockertest,,github.com/ory-am/dockertest,2.2.3,,,,,package
@@ -142,7 +142,8 @@ github.com/cloudflare/golz4,https://github.com/cloudflare/golz4,,,0.0.0-20150217
 github.com/benbjohnson/tmpl,https://github.com/benbjohnson/tmpl,,,1.1.0,,,,,command
 github.com/foxcpp/go-mockdns,https://github.com/foxcpp/go-mockdns,,,0.0.0-20201212160233-ede2f9158d15,,,,,package
 github.com/goreleaser/goreleaser,https://github.com/goreleaser/goreleaser,,,0.169.0,,,,,command
-github.com/influxdata/changelog,https://github.com/influxdata/changelog,,,1.1.0,,,,,command
+github.com/influxdata/changelog,https://github.com/influxdata/changelog,,,1.1.0,,,,,module
+#github.com/influxdata/changelog,https://github.com/influxdata/changelog,,,1.1.0,,,,,command
 github.com/checkpoint-restore/go-criu/v4,https://github.com/checkpoint-restore/go-criu,,,4.1.0,,,,,package
 github.com/erikstmartin/go-testdb,https://github.com/erikstmartin/go-testdb,,,0.0.0-20160219214506-8d10e4a1bae5,,,,,package
 github.com/segmentio/encoding,https://github.com/segmentio/encoding,,,0.2.19,,,,,module
@@ -155,7 +156,8 @@ honnef.co/go/tools,https://github.com/dominikh/go-tools,,github.com/dominikh/go-
 go.opentelemetry.io/otel/example/namedtracer,https://github.com/open-telemetry/opentelemetry-go,,github.com/open-telemetry/opentelemetry-go/example/namedtracer,0.20.0,,,,,command
 go.opentelemetry.io/otel/exporters/trace/jaeger,https://github.com/open-telemetry/opentelemetry-go,,github.com/open-telemetry/opentelemetry-go/exporters/trace/jaeger,0.20.0,,,,,package
 go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc/example,https://github.com/open-telemetry/opentelemetry-go-contrib,,github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/google.golang.org/grpc/otelgrpc/example,0.20.0,,,,,module
-github.com/opencontainers/runc,https://github.com/opencontainers/runc,,,0.1.1,,,,,command
+github.com/opencontainers/runc,https://github.com/opencontainers/runc,,,0.1.1,,,,,module
+#github.com/opencontainers/runc,https://github.com/opencontainers/runc,,,0.1.1,,,,,command
 golang.org/x/sync,https://github.com/golang/sync,,github.com/golang/sync_go.googlesource.com/sync,0.0.0-20210220032951-036812b2e83c,,,,,module
 github.com/wendal/errors,https://github.com/wendal/errors,,,0.0.0-20181209125328-7f31f4b264ec,,,,,package
 github.com/tidwall/tinyqueue,https://github.com/tidwall/tinyqueue,,,0.1.1,,,,,package

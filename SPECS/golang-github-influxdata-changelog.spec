@@ -34,16 +34,8 @@ BuildRequires:  golang(gopkg.in/src-d/go-git.v4/plumbing/object)
 %prep
 %goprep
 
-%build
-for cmd in cmd/* ; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-%gobuild -o %{gobuilddir}/bin/changelog %{goipath}
-
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -51,7 +43,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
-%{_bindir}/*
 
 %gopkgfiles
 
