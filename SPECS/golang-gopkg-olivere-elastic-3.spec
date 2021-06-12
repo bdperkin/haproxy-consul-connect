@@ -47,7 +47,7 @@ mv cluster-test/README.md README-cluster-test.md
 
 %if %{with check}
 %check
-%gocheck -r .*elastic.*
+%gocheck
 %endif
 
 %files

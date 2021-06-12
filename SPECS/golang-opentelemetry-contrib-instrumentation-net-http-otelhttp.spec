@@ -11,9 +11,7 @@ Version:                0.20.0
 %global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/net/http/otelhttp
 
 %global common_description %{expand:
-Package otelhttp provides an http.Handler and functions that are intended to
-be used to add tracing by wrapping existing handlers (with Handler) and routes
-WithRouteTag.}
+Collection of extensions for OpenTelemetry-Go.}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -26,7 +24,7 @@ WithRouteTag.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package otelhttp provides an http
+Summary:        Collection of extensions for OpenTelemetry-Go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

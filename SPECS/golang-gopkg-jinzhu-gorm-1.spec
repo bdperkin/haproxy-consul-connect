@@ -44,7 +44,7 @@ BuildRequires:  golang(github.com/mattn/go-sqlite3)
 
 %if %{with check}
 %check
-%gocheck -r .*gorm.*
+%gocheck
 %endif
 
 %gopkgfiles

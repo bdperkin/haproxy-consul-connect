@@ -11,8 +11,7 @@ Version:                0.20.0
 %global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/gopkg.in/macaron.v1/otelmacaron
 
 %global common_description %{expand:
-Package otelmacaron instruments gopkg.in/macaron.v1. Currently only the
-routing of a received message can be instrumented. To do}
+Collection of extensions for OpenTelemetry-Go.}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -25,7 +24,7 @@ routing of a received message can be instrumented. To do}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package otelmacaron instruments gopkg
+Summary:        Collection of extensions for OpenTelemetry-Go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

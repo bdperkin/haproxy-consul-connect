@@ -11,8 +11,7 @@ Version:                0.20.0
 %global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/github.com/gin-gonic/gin/otelgin
 
 %global common_description %{expand:
-Package otelgin instruments the github.com/gin-gonic/gin package. Currently
-there are two ways the code can be instrumented. One is}
+Collection of extensions for OpenTelemetry-Go.}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -25,7 +24,7 @@ there are two ways the code can be instrumented. One is}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package otelgin instruments the github
+Summary:        Collection of extensions for OpenTelemetry-Go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

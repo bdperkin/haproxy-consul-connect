@@ -61,7 +61,7 @@ BuildRequires:  golang(github.com/valyala/fasthttp/fasthttputil)
 
 %if %{with check}
 %check
-%gocheck -r .*cache.*
+%gocheck
 %endif
 
 %gopkgfiles

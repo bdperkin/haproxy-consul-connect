@@ -11,8 +11,7 @@ Version:                0.20.0
 %global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/runtime
 
 %global common_description %{expand:
-package runtime implements the conventional runtime metrics specified by
-OpenTelemetry. The metric events produced are:}
+Collection of extensions for OpenTelemetry-Go.}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -25,7 +24,7 @@ OpenTelemetry. The metric events produced are:}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        package runtime implements the conventional runtime metrics specified by OpenTelemetry
+Summary:        Collection of extensions for OpenTelemetry-Go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

@@ -42,7 +42,7 @@ BuildRequires:  golang(github.com/onsi/gomega)
 
 %if %{with check}
 %check
-%gocheck -r .*v7.*
+%gocheck
 %endif
 
 %gopkgfiles

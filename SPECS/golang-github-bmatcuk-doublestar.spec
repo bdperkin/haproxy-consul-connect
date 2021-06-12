@@ -35,7 +35,7 @@ Source0:        %{gosource}
 
 %if %{with check}
 %check
-%gocheck -r .*doublestar.*
+%gocheck
 %endif
 
 %gopkgfiles
