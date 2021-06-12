@@ -10,13 +10,7 @@ for MOD in $(cat packages.txt); do
     if [ "${GOIMPORT}" == "" ]; then
         GOIMPORT=$(curl -s "http://${MOD}?go-get=1" | grep '<meta ' | grep ' name="go-import"' | grep -P -o ' content=".*"' | cut -d\" -f2)
         if [ "${GOIMPORT}" == "" ]; then
-            GOIMPORT=$(curl -s "https://$(dirname ${MOD})?go-get=1" | grep '<meta ' | grep ' name="go-import"' | grep -P -o ' content=".*"' | cut -d\" -f2)
-            if [ "${GOIMPORT}" == "" ]; then
-                GOIMPORT=$(curl -s "http://$(dirname ${MOD})?go-get=1" | grep '<meta ' | grep ' name="go-import"' | grep -P -o ' content=".*"' | cut -d\" -f2)
-                if [ "${GOIMPORT}" == "" ]; then
-                    GOIMPORT="${MOD} git https://${MOD}.git"
-                fi
-            fi
+            GOIMPORT="${MOD} git https://${MOD}.git"
         fi
     fi
 
@@ -44,7 +38,7 @@ for MOD in $(cat packages.txt); do
         fi
     done
 
-    FORGE=$(grep -A 7 Repository ${PKGGODEVFILE} | grep -P -o '<a href=".*" ' | cut -d\" -f2 | grep -P -o "https:\/\/.*")
+    FORGE=$(grep -A 7 '>Repository<' ${PKGGODEVFILE} | grep -P -o '<a href=".*" ' | cut -d\" -f2 | grep -P -o "https:\/\/.*")
     DVERSION=$(grep -P 'data-version=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2 | sed -e 's/\+incompatible//g')
     DMODPATH=$(grep -P 'data-mpath=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2)
     DPKGPATH=$(grep -P 'data-ppath=".*"' ${PKGGODEVFILE} | head -1 | cut -d\" -f2)
