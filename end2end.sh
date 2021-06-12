@@ -1,4 +1,4 @@
-#! /bin/bash -x
+#! /bin/bash
 
 touch end2end.log end2end.txt
 
