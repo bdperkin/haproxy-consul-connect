@@ -9,8 +9,7 @@ Version:                1.0
 %gometa
 
 %global common_description %{expand:
-Copyright 2012 Matthew Baird Licensed under the Apache License, Version 2.0
-(the "License");}
+A Go (golang) based Elasticsearch client library.}
 
 %global golicenses      LICENSE LICENSE-cookbooks-build-essential\\\
                         LICENSE-cookbooks-git LICENSE-cookbooks-mercurial
@@ -24,7 +23,7 @@ Copyright 2012 Matthew Baird Licensed under the Apache License, Version 2.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Copyright 2012 Matthew Baird Licensed under the Apache License, Version 2
+Summary:        A Go (golang) based Elasticsearch client library
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -72,7 +71,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
-%gocheck -r .*lib.*
+%gocheck
 %endif
 
 %files

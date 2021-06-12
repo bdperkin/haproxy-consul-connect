@@ -46,7 +46,7 @@ BuildRequires:  golang(golang.org/x/crypto/bcrypt)
 
 %if %{with check}
 %check
-%gocheck -r .*filesystem.*
+%gocheck
 %endif
 
 %gopkgfiles

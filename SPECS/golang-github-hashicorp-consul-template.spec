@@ -12,7 +12,7 @@ Template rendering, notifier, and supervisor for @HashiCorp Consul and Vault
 data.}
 
 %global golicenses      LICENSE
-%global godocs          docs examples CHANGELOG.md README.md\\\
+%global godocs          docs examples README.md CHANGELOG.md\\\
                         readme-toc-scripts.sh
 
 Name:           %{goname}
@@ -73,7 +73,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc docs examples CHANGELOG.md README.md readme-toc-scripts.sh
+%doc docs examples README.md CHANGELOG.md readme-toc-scripts.sh
 %{_bindir}/*
 
 %gopkgfiles
