@@ -1,1 +1,7 @@
 github.com/haproxytech/haproxy-consul-connect
+github.com/dancannon/gorethink
+github.com/docker/docker
+github.com/gotestyourself/gotestyourself
+github.com/influxdata/changelog
+github.com/opencontainers/runc
+gopkg.in/gorethink/gorethink.v4

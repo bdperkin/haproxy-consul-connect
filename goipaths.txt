@@ -1,2 +1,1 @@
 #IPATH,FORGE,SUBDIR,ALTIPATHS,VERSION,TAG,COMMIT,SRCTGZ,DSTTGZ,TYPE
-github.com/haproxytech/haproxy-consul-connect,https://github.com/haproxytech/haproxy-consul-connect,,,0.9.0,,,,,command
