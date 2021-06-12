@@ -23,7 +23,6 @@ DIFF=1
 PASS=0
 echo "${PASS}" | tee end2end.log
 touch end2end-{curr,prev}.log
-wc *.txt | tee end2end-curr.log | tee -a end2end.log
 echo "github.com/haproxytech/haproxy-consul-connect" | tee packages.txt | tee -a end2end.log
 
 while [ ${DIFF} -ne 0 ]; do
@@ -47,8 +46,8 @@ while [ ${DIFF} -ne 0 ]; do
         git commit -m "pass ${PASS}" ${MODIFIED} | tee -a end2end.log
     fi
 
-    mv -v end2end-{curr,prev}.log | tee -a end2end.log
-    wc *.txt | tee end2end-curr.log | tee -a end2end.log
+    mv -v end2end-{curr,prev}.log
+    wc *.txt | tee end2end-curr.log
     diff -u end2end-{curr,prev}.log
     DIFF=$?
 done
