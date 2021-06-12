@@ -9,15 +9,14 @@ Version:                4.0.0
 %global extractdir      rethinkdb-go-%{version}
 
 %global common_description %{expand:
-Package gorethink implements a Go driver for RethinkDB Current version: v3.0.2
-(RethinkDB v2.3)}
+Go language driver for RethinkDB.}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package gorethink implements a Go driver for RethinkDB Current version: v3
+Summary:        Go language driver for RethinkDB
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -63,7 +62,7 @@ BuildRequires:  golang(gopkg.in/gorethink/gorethink.v4/internal/integration/test
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*gorethink.*
 %endif
 
 %gopkgfiles

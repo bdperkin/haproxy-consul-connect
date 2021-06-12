@@ -22,3 +22,10 @@ github.com/hashicorp/raft-autopilot,This code was taken from the same implementa
 github.com/hashicorp/vault/api,,
 github.com/mitchellh/pointerstructure,Package pointerstructure provides functions for identifying a specific value within any Go structure using a string syntax,Package pointerstructure provides functions for identifying a specific value within any Go structure using a string syntax.  The syntax used is based on JSON Pointer (RFC 6901).
 github.com/rboyer/safeio,Package safeio provides functions to perform atomic&#44; fsync-safe disk operations,Package safeio provides functions to perform atomic&#44; fsync-safe disk operations.
+github.com/coredns/coredns,,
+github.com/go-ldap/ldap,,
+github.com/hashicorp/nomad/api,,
+github.com/jefferai/isbadcipher,,
+github.com/joyent/triton-go,,
+gopkg.in/ory-am/dockertest.v2,Package dockertest contains helper functions for setting up and tearing down docker containers to aid in testing,Package dockertest contains helper functions for setting up and tearing down docker containers to aid in testing. dockertest supports spinning up MySQL&#44; PostgreSQL and MongoDB out of the box.  Dockertest provides two environment variables
+layeh.com/radius,Package radius provides a RADIUS client and server (RFC 2865&#44; RFC 2866),Package radius provides a RADIUS client and server (RFC 2865&#44; RFC 2866).

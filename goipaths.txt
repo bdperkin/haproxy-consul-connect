@@ -24,3 +24,10 @@ github.com/hashicorp/raft-autopilot,https://github.com/hashicorp/raft-autopilot,
 github.com/hashicorp/vault/api,https://github.com/hashicorp/vault,,,1.1.0,,,,,package
 github.com/mitchellh/pointerstructure,https://github.com/mitchellh/pointerstructure,,,1.2.0,,,,,package
 github.com/rboyer/safeio,https://github.com/rboyer/safeio,,,0.2.1,,,,,package
+github.com/coredns/coredns,https://github.com/coredns/coredns,,,1.8.4,,,,,command
+github.com/go-ldap/ldap,https://github.com/go-ldap/ldap,,,3.0.3,,,,,package
+github.com/hashicorp/nomad/api,https://github.com/hashicorp/nomad,,,0.0.0-20210611223809-ff2e2c113ba8,,,,,package
+github.com/jefferai/isbadcipher,https://github.com/jefferai/isbadcipher,,,0.0.0-20190226160619-51d2077c035f,,,,,package
+github.com/joyent/triton-go,https://github.com/joyent/triton-go,,,1.8.5,,,,,package
+gopkg.in/ory-am/dockertest.v2,https://github.com/ory-am/dockertest,,github.com/ory-am/dockertest,2.2.3,,,,,package
+layeh.com/radius,https://github.com/layeh/radius,,github.com/layeh/radius,0.0.0-20201203135236-838e26d0c9be,,,,,package
