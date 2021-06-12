@@ -29,7 +29,7 @@ while [ ${DIFF} -ne 0 ]; do
     let PASS=${PASS}+1
     echo "${PASS}" | tee -a end2end.log
 
-    ./genbuild.sh
+    bash -c "./genbuild.sh"
 
     git status | tee -a end2end.log
     git diff | tee -a end2end.log
