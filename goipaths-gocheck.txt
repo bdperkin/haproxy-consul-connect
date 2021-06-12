@@ -1,0 +1,2 @@
+github.com/gotestyourself/gotestyourself,%gocheck -r .*assert.*
+gopkg.in/gorethink/gorethink.v4,%gocheck -r .*encoding.*
