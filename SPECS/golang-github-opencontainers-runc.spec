@@ -78,7 +78,7 @@ mv man/runc.8.md runc.8-man.md
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*libcontainer.*
 %endif
 
 %files

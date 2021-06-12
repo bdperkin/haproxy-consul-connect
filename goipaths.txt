@@ -13,3 +13,5 @@ github.com/criteo/haproxy-spoe-go,https://github.com/criteo/haproxy-spoe-go,,,1.
 github.com/facebookgo/freeport,https://github.com/facebookgo/freeport,,,0.0.0-20150612182905-d4adf43b75b9,,,,,package
 gopkg.in/d4l3k/messagediff.v1,https://github.com/d4l3k/messagediff,,github.com/d4l3k/messagediff,1.2.1,,,,,package
 zvelo.io/ttlru,https://github.com/zvelo/ttlru,,github.com/zvelo/ttlru,1.0.10,,,,,package
+github.com/hashicorp/consul,https://github.com/hashicorp/consul,,,1.9.6,,,,,command
+github.com/d4l3k/messagediff,https://github.com/d4l3k/messagediff,,,1.2.1,,,,,package

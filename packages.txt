@@ -44,3 +44,5 @@ github.com/docker/docker/api/types/mount
 github.com/docker/docker/api/types/volume
 github.com/docker/docker/pkg/fileutils
 github.com/hashicorp/consul
+github.com/d4l3k/messagediff/testdata
+github.com/d4l3k/messagediff

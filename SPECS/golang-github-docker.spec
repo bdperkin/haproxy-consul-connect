@@ -359,7 +359,7 @@ mv reports/builder/2017-07-17.md 2017-07-17-reports-builder.md
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*git.*
 %endif
 
 %files

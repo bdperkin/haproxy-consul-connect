@@ -43,7 +43,7 @@ BuildRequires:  golang(golang.org/x/net/html/atom)
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*messagediff.*
 %endif
 
 %gopkgfiles
