@@ -9,15 +9,15 @@ Version:                2.2.0
 %global extractdir      gotest.tools-%{version}
 
 %global common_description %{expand:
-A collection of packages to augment the go testing package and support common
-patterns.}
+Package gotesttools is a collection of packages to augment `testing` and
+support common patterns.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        A collection of packages to augment the go testing package and support common patterns
+Summary:        Package gotesttools is a collection of packages to augment `testing` and support common patterns
 
 # Upstream license specification: Apache-2.0 and BSD-3-Clause
 License:        ASL 2.0 and BSD
@@ -59,7 +59,7 @@ BuildRequires:  golang(gotest.tools/skip)
 
 %if %{with check}
 %check
-%gocheck -r .*assert.* -r .*env.*
+%gocheck -r .*assert.* -r .*env.* -r .*fs.*
 %endif
 
 %gopkgfiles
