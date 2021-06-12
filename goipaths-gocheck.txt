@@ -1,3 +1,6 @@
 gopkg.in/d4l3k/messagediff.v1,%gocheck -r .*messagediff.*
 github.com/google/tcpproxy,%gocheck -r .*tcpproxy.*
 github.com/go-ldap/ldap,%gocheck -r .*ldap.*
+github.com/hashicorp/go-getter,%gocheck -r .*go-getter.*
+k8s.io/api,%gocheck -r .*v1.*
+gopkg.in/gorethink/gorethink.v4,%gocheck -r .*encoding.*

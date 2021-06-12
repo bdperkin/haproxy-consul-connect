@@ -8,8 +8,7 @@ Version:                55.2.0
 %gometa
 
 %global common_description %{expand:
-Package sdk provides Go packages for managing and using Azure services. GitHub
-repo: https://github.com/Azure/azure-sdk-for-go}
+Microsoft Azure SDK for Go.}
 
 %global golicenses      LICENSE.txt NOTICE LICENSE-sdk-agfood-armagfood.txt\\\
                         LICENSE-sdk-armcore.txt\\\
@@ -828,7 +827,7 @@ repo: https://github.com/Azure/azure-sdk-for-go}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package sdk provides Go packages for managing and using Azure services
+Summary:        Microsoft Azure SDK for Go
 
 License:        MIT
 URL:            %{gourl}

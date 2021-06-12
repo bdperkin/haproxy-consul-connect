@@ -8,18 +8,14 @@ Version:                2.1.4
 %gometa
 
 %global common_description %{expand:
-Package stomp provides operations that allow communication with a message
-broker that supports the STOMP protocol. STOMP is the Streaming Text-Oriented
-Messaging Protocol. See http://stomp.github.com/ for more details. This
-package provides support for all STOMP protocol features in the STOMP protocol
-specifications,}
+Go language library for STOMP protocol.}
 
 %global golicenses      LICENSE.txt
 %global godocs          examples AUTHORS.md README.md breaking_changes.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package stomp provides operations that allow communication with a message broker that supports the STOMP protocol
+Summary:        Go language library for STOMP protocol
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
