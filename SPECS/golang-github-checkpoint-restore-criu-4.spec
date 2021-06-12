@@ -9,14 +9,14 @@ Version:                4.1.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Go Bindings for CRIU.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Go Bindings for CRIU
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

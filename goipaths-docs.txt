@@ -46,3 +46,25 @@ github.com/hashicorp/go-envparse,Package envparse is a minimal environment varia
 github.com/hashicorp/go-getter,getter is a package for downloading files or directories from a variety of protocols,getter is a package for downloading files or directories from a variety of protocols.  getter is unique in its ability to download both directories and files.
 github.com/mitchellh/go-ps,ps provides an API for finding and listing processes in a platform-agnostic way,ps provides an API for finding and listing processes in a platform-agnostic way.  NOTE: If you're reading these docs online via GoDocs or some other system&#44;
 github.com/zclconf/go-cty-yaml,Package yaml can marshal and unmarshal cty values in YAML format,Package yaml can marshal and unmarshal cty values in YAML format.
+github.com/mattbaird/elastigo,Copyright 2012 Matthew Baird Licensed under the Apache License&#44; Version 2,Copyright 2012 Matthew Baird  Licensed under the Apache License&#44; Version 2.0 (the "License");
+github.com/ory-am/common,,
+github.com/apparentlymart/go-cidr,,
+github.com/infobloxopen/go-trees,,
+go.etcd.io/etcd/api/v3,,
+gopkg.in/DataDog/dd-trace-go.v1,,
+k8s.io/api,,
+github.com/NVIDIA/gpu-monitoring-tools,,
+github.com/hashicorp/consul-template,,
+github.com/hashicorp/go-cty-funcs,,
+github.com/hashicorp/vault/sdk,,
+github.com/sean-/pager,,
+github.com/softlayer/xmlrpc,,
+github.com/cheggaaa/pb,Simple console progress bars,Simple console progress bars
+github.com/ahmetb/go-linq/v3,Package linq provides methods for querying and manipulating slices&#44; arrays&#44; maps&#44; strings&#44; channels and collections,Package linq provides methods for querying and manipulating slices&#44; arrays&#44; maps&#44; strings&#44; channels and collections.  Authors: Alexander Kalankhodzhaev (kalan)&#44; Ahmet Alp Balkan&#44; Cleiton Marques
+github.com/moul/anonuuid,,
+github.com/moul/gotty-client,,
+github.com/moul/http2curl,,
+github.com/dgrijalva/jwt-go/v4,Package jwt is a Go implementation of JSON Web Tokens: http://self-issued,Package jwt is a Go implementation of JSON Web Tokens: http://self-issued.info/docs/draft-jones-json-web-token.html  See README.md for more info.
+go.etcd.io/etcd/client/v2,Package client provides bindings for the etcd APIs,Package client provides bindings for the etcd APIs.  Create a Config and exchange it for a Client:
+go.etcd.io/etcd/raft/v3,,
+go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc,,

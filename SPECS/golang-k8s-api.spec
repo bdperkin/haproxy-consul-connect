@@ -41,7 +41,7 @@ BuildRequires:  golang(github.com/gogo/protobuf/sortkeys)
 
 %if %{with check}
 %check
-%gocheck -r .*v1.*
+%gocheck
 %endif
 
 %gopkgfiles
