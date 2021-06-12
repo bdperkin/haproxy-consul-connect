@@ -8,14 +8,14 @@ Version:                3.0.3
 %gometa
 
 %global common_description %{expand:
-Basic LDAP v3 functionality for the GO programming language.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Basic LDAP v3 functionality for the GO programming language
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}
@@ -36,7 +36,7 @@ BuildRequires:  golang(gopkg.in/asn1-ber.v1)
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*ldap.*
 %endif
 
 %gopkgfiles

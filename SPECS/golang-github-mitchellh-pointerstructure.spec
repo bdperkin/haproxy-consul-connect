@@ -8,15 +8,16 @@ Version:                1.2.0
 %gometa
 
 %global common_description %{expand:
-Go library for addressing and reading/writing a specific value within any Go
-structure using a string syntax.}
+Package pointerstructure provides functions for identifying a specific value
+within any Go structure using a string syntax. The syntax used is based on
+JSON Pointer (RFC 6901).}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Go library for addressing and reading/writing a specific value within any Go structure using a string syntax
+Summary:        Package pointerstructure provides functions for identifying a specific value within any Go structure using a string syntax
 
 License:        MIT
 URL:            %{gourl}
