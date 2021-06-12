@@ -2,6 +2,13 @@
 
 touch build.log
 
+for i in $(cut -d\, -f1 goipaths-{gometa,overrides}.txt | grep -v '^#' | sort -u); do
+    grep ^${i}$ packages.txt
+    if [ $? -ne 0 ]; then
+        echo ${i} >> packages.txt
+    fi
+done
+
 for i in $(grep -P -o 'golang\(.*\)' build.log | sed -e 's/^golang(//g' | sed -e 's/)$//g'); do
     grep ^${i}$ packages.txt
     if [ $? -ne 0 ]; then
