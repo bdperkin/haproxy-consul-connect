@@ -21,14 +21,13 @@ git restore goipaths-gometa.txt goipaths-overrides.txt 2>&1 | tee -a end2end.log
 echo "Initialize end2end.txt and packages.txt..."
 DIFF=1
 PASS=0
-echo "${PASS}" | tee end2end.log
+echo "${PASS}" | tee -a end2end.log
 touch end2end-{curr,prev}.log
 echo "github.com/haproxytech/haproxy-consul-connect" | tee packages.txt | tee -a end2end.log
 
 while [ ${DIFF} -ne 0 ]; do
-    echo "in loop"
     let PASS=${PASS}+1
-    echo "${PASS}" | tee end2end.log | tee -a end2end.log
+    echo "${PASS}" | tee -a end2end.log
 
     ./genbuild.sh
 
@@ -47,7 +46,7 @@ while [ ${DIFF} -ne 0 ]; do
     fi
 
     mv -v end2end-{curr,prev}.log
-    wc *.txt > tee end2end-curr.log
+    wc *.txt > end2end-curr.log
     diff -u end2end-{curr,prev}.log
     DIFF=$?
 done
