@@ -1,1 +1,10 @@
 #IPATH,FORGE,SUBDIR,ALTIPATHS,VERSION,TAG,COMMIT,SRCTGZ,DSTTGZ,TYPE
+github.com/haproxytech/haproxy-consul-connect,https://github.com/haproxytech/haproxy-consul-connect,,,0.9.0,,,,,command
+github.com/dancannon/gorethink,https://github.com/dancannon/gorethink,,,4.0.0,,,,,package
+github.com/docker/docker,https://github.com/docker/docker,,,20.10.7,,,,,module
+github.com/gotestyourself/gotestyourself,https://github.com/gotestyourself/gotestyourself,,,2.2.0,,,,,package
+github.com/influxdata/changelog,https://github.com/influxdata/changelog,,,1.1.0,,,,,module
+#github.com/influxdata/changelog,https://github.com/influxdata/changelog,,,1.1.0,,,,,command
+github.com/opencontainers/runc,https://github.com/opencontainers/runc,,,0.1.1,,,,,module
+#github.com/opencontainers/runc,https://github.com/opencontainers/runc,,,0.1.1,,,,,command
+gopkg.in/gorethink/gorethink.v4,https://github.com/gorethink/gorethink,,github.com/gorethink/gorethink,4.1.0,,,,,package

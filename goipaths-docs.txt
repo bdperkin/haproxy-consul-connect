@@ -1,1 +1,8 @@
 #IPATH,SUMMARY,DESCRIPTION
+github.com/haproxytech/haproxy-consul-connect,,
+github.com/dancannon/gorethink,Package gorethink implements a Go driver for RethinkDB Current version: v3,Package gorethink implements a Go driver for RethinkDB  Current version: v3.0.2 (RethinkDB v2.3)
+github.com/docker/docker,,
+github.com/gotestyourself/gotestyourself,Package gotesttools is a collection of packages to augment `testing` and support common patterns,Package gotesttools is a collection of packages to augment `testing` and support common patterns.
+github.com/influxdata/changelog,,
+github.com/opencontainers/runc,,
+gopkg.in/gorethink/gorethink.v4,Package gorethink implements a Go driver for RethinkDB Current version: v3,Package gorethink implements a Go driver for RethinkDB  Current version: v3.0.2 (RethinkDB v2.3)
