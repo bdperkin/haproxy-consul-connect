@@ -1,6 +1,6 @@
 #! /bin/bash
 
-set -eu
+set -euf -o pipefail
 
 ./genpackages.sh 2>&1 | tee genpackages.log
  

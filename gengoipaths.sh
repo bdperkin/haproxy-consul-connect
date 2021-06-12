@@ -10,7 +10,13 @@ for MOD in $(cat packages.txt); do
     if [ "${GOIMPORT}" == "" ]; then
         GOIMPORT=$(curl -s "http://${MOD}?go-get=1" | grep '<meta ' | grep ' name="go-import"' | grep -P -o ' content=".*"' | cut -d\" -f2)
         if [ "${GOIMPORT}" == "" ]; then
-            GOIMPORT="${MOD} git https://${MOD}.git"
+            GOIMPORT=$(curl -s "https://$(dirname ${MOD})?go-get=1" | grep '<meta ' | grep ' name="go-import"' | grep -P -o ' content=".*"' | cut -d\" -f2)
+            if [ "${GOIMPORT}" == "" ]; then
+                GOIMPORT=$(curl -s "http://$(dirname ${MOD})?go-get=1" | grep '<meta ' | grep ' name="go-import"' | grep -P -o ' content=".*"' | cut -d\" -f2)
+                if [ "${GOIMPORT}" == "" ]; then
+                    GOIMPORT="${MOD} git https://${MOD}.git"
+                fi
+            fi
         fi
     fi
 
