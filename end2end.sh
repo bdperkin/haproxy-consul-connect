@@ -47,7 +47,7 @@ while [ ${DIFF} -ne 0 ]; do
     fi
 
     mv -v end2end-{curr,prev}.log
-    wc *.txt | tee end2end-curr.log
+    wc *.txt > tee end2end-curr.log
     diff -u end2end-{curr,prev}.log
     DIFF=$?
 done
