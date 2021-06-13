@@ -19,3 +19,5 @@ gopkg.in/gorethink/gorethink.v4/internal/integration/tests
 gopkg.in/gorethink/gorethink.v4/ql2
 gopkg.in/gorethink/gorethink.v4/types
 github.com/hashicorp/consul
+github.com/d4l3k/messagediff/testdata
+github.com/d4l3k/messagediff
