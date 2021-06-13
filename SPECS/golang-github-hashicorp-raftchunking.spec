@@ -8,12 +8,12 @@ Version:                0.6.2
 %gometa
 
 %global common_description %{expand:
-Chunking middleware for use by Raft clients.}
+# FIXME}
 
 %global golicenses      LICENSE
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Chunking middleware for use by Raft clients
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

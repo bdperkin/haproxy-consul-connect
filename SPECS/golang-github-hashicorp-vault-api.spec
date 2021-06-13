@@ -9,8 +9,7 @@ Version:                1.1.0
 %gometa
 
 %global common_description %{expand:
-A tool for secrets management, encryption as a service, and privileged access
-management.}
+# FIXME}
 
 %global golicenses      LICENSE license-ui-app-adapters.js\\\
                         license-info-ui-app-components.js\\\
@@ -190,7 +189,7 @@ management.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        A tool for secrets management, encryption as a service, and privileged access management
+Summary:        None
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

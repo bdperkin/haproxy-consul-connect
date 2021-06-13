@@ -8,8 +8,7 @@ Version:                0.1.1
 %gometa
 
 %global common_description %{expand:
-CLI tool for spawning and running containers according to the OCI
-specification.}
+# FIXME}
 
 %global golicenses      LICENSE NOTICE
 %global godocs          PRINCIPLES.md CONTRIBUTING.md MAINTAINERS_GUIDE.md\\\
@@ -25,7 +24,7 @@ specification.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        CLI tool for spawning and running containers according to the OCI specification
+Summary:        None
 
 # Upstream license specification: Apache-2.0 and BSD-2-Clause and BSD-3-Clause and MIT
 License:        ASL 2.0 and BSD and MIT
