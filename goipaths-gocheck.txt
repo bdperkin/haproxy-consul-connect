@@ -1,5 +1,5 @@
 github.com/docker/docker,%gocheck -r .*git.*
-github.com/gotestyourself/gotestyourself,%gocheck -r .*assert.* -r .*env.*
+github.com/gotestyourself/gotestyourself,%gocheck -r .*assert.* -r .*env.* -r .*fs.*
 github.com/opencontainers/runc,%gocheck -r .*libcontainer.*
-gopkg.in/gorethink/gorethink.v4,%gocheck -r .*encoding.* -r .*reql_tests.*
+gopkg.in/gorethink/gorethink.v4,%gocheck -r .*encoding.* -r .*reql_tests.* -r .*tests.*
 gopkg.in/d4l3k/messagediff.v1,%gocheck -r .*messagediff.*

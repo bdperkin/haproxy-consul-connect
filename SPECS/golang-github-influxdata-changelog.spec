@@ -8,11 +8,11 @@ Version:                1.1.0
 %gometa
 
 %global common_description %{expand:
-Manage a changelog using git/github metadata.}
+# FIXME}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Manage a changelog using git/github metadata
+Summary:        None
 
 License:        # FIXME
 
