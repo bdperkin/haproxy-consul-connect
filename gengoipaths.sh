@@ -93,13 +93,13 @@ for MOD in $(cat packages.txt); do
     elif [ ${GITENTS} -gt 2 ]; then
         echo "TOO MANY VERSIONS:"
         echo "${GITREFS}"
-        exit 1
+        IPATH="#FIXME-TOO_MANY_VERSIONS:${IPATH}"
     fi
     GITENTS=$(echo ${GITREFS} | wc -w)
     if [ ${GITENTS} -ne 2 ]; then
         echo "INVALID VERSION:"
         cat ${GITFILE}
-        exit 1
+        IPATH="#FIXME-INVALID_VERSION:${IPATH}"
     fi
     COMMIT=$(echo ${GITREFS} | awk '{print $1}')
     TAGREF=$(echo ${GITREFS} | awk '{print $2}')

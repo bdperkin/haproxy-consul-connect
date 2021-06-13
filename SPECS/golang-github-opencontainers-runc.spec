@@ -8,7 +8,8 @@ Version:                0.1.1
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+CLI tool for spawning and running containers according to the OCI
+specification.}
 
 %global golicenses      LICENSE NOTICE
 %global godocs          PRINCIPLES.md CONTRIBUTING.md MAINTAINERS_GUIDE.md\\\
@@ -24,7 +25,7 @@ Version:                0.1.1
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        CLI tool for spawning and running containers according to the OCI specification
 
 # Upstream license specification: Apache-2.0 and BSD-2-Clause and BSD-3-Clause and MIT
 License:        ASL 2.0 and BSD and MIT
@@ -77,7 +78,7 @@ mv man/runc.8.md runc.8-man.md
 
 %if %{with check}
 %check
-%gocheck -r .*libcontainer.*
+%gocheck
 %endif
 
 %files

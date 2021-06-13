@@ -9,7 +9,8 @@ Version:                20.10.7
 %global extractdir      moby-%{version}
 
 %global common_description %{expand:
-# FIXME}
+Moby Project - a collaborative project for the container ecosystem to assemble
+container-based systems.}
 
 %global golicenses      LICENSE NOTICE LICENSE-contrib-busybox
 %global godocs          docs AUTHORS CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -52,7 +53,7 @@ Version:                20.10.7
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Moby Project - a collaborative project for the container ecosystem to assemble container-based systems
 
 # Upstream license specification: Apache-2.0 and MIT
 License:        ASL 2.0 and MIT
@@ -358,7 +359,7 @@ mv reports/builder/2017-07-17.md 2017-07-17-reports-builder.md
 
 %if %{with check}
 %check
-%gocheck -r .*git.*
+%gocheck
 %endif
 
 %files
