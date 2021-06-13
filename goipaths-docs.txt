@@ -119,3 +119,32 @@ go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace,,
 go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp,Package otelhttp provides an http,Package otelhttp provides an http.Handler and functions that are intended to be used to add tracing by wrapping existing handlers (with Handler) and routes WithRouteTag.
 go.opentelemetry.io/contrib/instrumentation/runtime,package runtime implements the conventional runtime metrics specified by OpenTelemetry,package runtime implements the conventional runtime metrics specified by OpenTelemetry.  The metric events produced are:
 go.opentelemetry.io/otel,Package otel provides global access to the OpenTelemetry API,Package otel provides global access to the OpenTelemetry API. The subpackages of the otel package provide an implementation of the OpenTelemetry API.  This package is currently in a pre-GA phase. Backwards incompatible changes
+k8s.io/kubelet,,
+github.com/coreos/go-etcd,,
+github.com/hashicorp/aws-sdk-go,,
+github.com/hashicorp/hcl,Package hcl decodes HCL into usable Go structures,Package hcl decodes HCL into usable Go structures.  hcl input can come in either pure HCL format or JSON format.
+github.com/confluentinc/confluent-kafka-go,,
+go.opencensus.io,Package opencensus contains Go support for OpenCensus,Package opencensus contains Go support for OpenCensus.
+go.opentelemetry.io/contrib/exporters/metric/dogstatsd,,
+go.opentelemetry.io/contrib/propagators,This module contains all of its functionality in its subpackages,This module contains all of its functionality in its subpackages. This top-level package is to allow clients to pull in all propagator implementations at once using require go.opentelemetry.io/contrib/propagators
+go.opentelemetry.io/otel/metric,Package metric provides an implementation of the metrics part of the OpenTelemetry API,Package metric provides an implementation of the metrics part of the OpenTelemetry API.  This package is currently in a pre-GA phase. Backwards incompatible changes
+go.opentelemetry.io/otel/sdk/metric,,
+k8s.io/apimachinery,,
+github.com/tidwall/btree,,
+github.com/tidwall/gjson,Package gjson provides searching for json strings,Package gjson provides searching for json strings.
+github.com/tidwall/grect,,
+github.com/tidwall/lotsa,,
+github.com/tidwall/match,Package match provides a simple pattern matcher with unicode support,Package match provides a simple pattern matcher with unicode support.
+github.com/tidwall/rtred,,
+github.com/go-pg/zerochecker,,
+github.com/tmthrgd/go-hex,Package hex is an efficient hexadecimal implementation for Golang,Package hex is an efficient hexadecimal implementation for Golang.
+github.com/vmihailenco/bufpool,,
+github.com/vmihailenco/msgpack/v5,,
+mellium.im/sasl,Package sasl implements the Simple Authentication and Security Layer (SASL) as defined by RFC 4422,Package sasl implements the Simple Authentication and Security Layer (SASL) as defined by RFC 4422.  Most users of this package will only need to create a Negotiator using
+github.com/beego/goyaml2,,
+github.com/beego/x2j,,
+github.com/cloudflare/golz4,Package lz4 implements compression using lz4,Package lz4 implements compression using lz4.c and lz4hc.c  Copyright (c) 2013 CloudFlare&#44; Inc.
+github.com/benbjohnson/tmpl,,
+github.com/foxcpp/go-mockdns,,
+github.com/goreleaser/goreleaser,,
+github.com/erikstmartin/go-testdb,,

@@ -76,7 +76,7 @@ BuildRequires:  golang(golang.org/x/net/websocket)
 
 %if %{with check}
 %check
-%gocheck -r .*managedfields.* -r .*strategicpatch.*
+%gocheck
 %endif
 
 %gopkgfiles

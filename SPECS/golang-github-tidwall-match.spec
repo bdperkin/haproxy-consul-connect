@@ -8,14 +8,14 @@ Version:                1.0.3
 %gometa
 
 %global common_description %{expand:
-Package match provides a simple pattern matcher with unicode support.}
+Simple string pattern matcher for Go.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package match provides a simple pattern matcher with unicode support
+Summary:        Simple string pattern matcher for Go
 
 License:        MIT
 URL:            %{gourl}

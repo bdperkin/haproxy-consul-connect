@@ -8,14 +8,14 @@ Version:                0.5.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+B-tree implementation for Go.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        B-tree implementation for Go
 
 License:        MIT
 URL:            %{gourl}

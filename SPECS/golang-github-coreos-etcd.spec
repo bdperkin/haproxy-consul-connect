@@ -8,14 +8,15 @@ Version:                2.0.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+DEPRECATED - please use the official client at
+https://github.com/coreos/etcd/tree/master/client.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        DEPRECATED - please use the official client at https://github.com/coreos/etcd/tree/master/client
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -35,7 +36,7 @@ Source0:        %{gosource}
 
 %if %{with check}
 %check
-%gocheck -r .*etcd.*
+%gocheck
 %endif
 
 %gopkgfiles

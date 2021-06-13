@@ -8,14 +8,17 @@ Version:                0.1.0
 %gometa
 
 %global common_description %{expand:
-Intelligently and flexibly pool among multiple hosts from your Go application.}
+A Go package to intelligently and flexibly pool among multiple hosts from your
+Go application. Host selection can operate in round robin or epsilon greedy
+mode, and unresponsive hosts are avoided. A good overview of Epsilon Greedy is
+here http://stevehanov.ca/blog/index.php?id=132}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Intelligently and flexibly pool among multiple hosts from your Go application
+Summary:        A Go package to intelligently and flexibly pool among multiple hosts from your Go application
 
 License:        MIT
 URL:            %{gourl}

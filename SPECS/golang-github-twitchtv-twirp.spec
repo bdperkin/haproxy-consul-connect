@@ -8,7 +8,8 @@ Version:                8.0.0
 %gometa
 
 %global common_description %{expand:
-A simple RPC framework with protobuf service definitions.}
+Copyright 2018 Twitch Interactive, Inc. All Rights Reserved. Licensed under
+the Apache License, Version 2.0 (the "License"). You may not}
 
 %global golicenses      LICENSE NOTICE license_test.go\\\
                         LICENSE-_tools-src-github.com-kisielk-errcheck\\\
@@ -23,7 +24,7 @@ A simple RPC framework with protobuf service definitions.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        A simple RPC framework with protobuf service definitions
+Summary:        Copyright 2018 Twitch Interactive, Inc
 
 # Upstream license specification: Apache-2.0 and MIT
 License:        ASL 2.0 and MIT

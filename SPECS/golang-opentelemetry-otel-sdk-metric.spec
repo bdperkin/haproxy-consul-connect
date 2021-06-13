@@ -11,7 +11,7 @@ Version:                0.20.0
 %global goaltipaths     github.com/open-telemetry/opentelemetry-go/sdk/metric
 
 %global common_description %{expand:
-# FIXME}
+OpenTelemetry Go API and SDK.}
 
 %global golicenses      LICENSE
 %global godocs          example VERSIONING.md CHANGELOG.md CONTRIBUTING.md\\\
@@ -26,7 +26,7 @@ Version:                0.20.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        OpenTelemetry Go API and SDK
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

@@ -11,14 +11,14 @@ Version:                0.21.1
 %global goaltipaths     github.com/kubernetes/kubelet
 
 %global common_description %{expand:
-# FIXME}
+Kubelet component configs.}
 
 %global golicenses      LICENSE
 %global godocs          CONTRIBUTING.md code-of-conduct.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Kubelet component configs
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
@@ -59,7 +59,7 @@ BuildRequires:  golang(k8s.io/component-base/config/testing)
 
 %if %{with check}
 %check
-%gocheck -r .*v1beta1.*
+%gocheck
 %endif
 
 %gopkgfiles

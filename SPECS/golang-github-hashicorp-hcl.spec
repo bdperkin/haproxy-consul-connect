@@ -8,15 +8,14 @@ Version:                1.0.0
 %gometa
 
 %global common_description %{expand:
-Package hcl decodes HCL into usable Go structures. hcl input can come in
-either pure HCL format or JSON format.}
+HCL is the HashiCorp configuration language.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package hcl decodes HCL into usable Go structures
+Summary:        HCL is the HashiCorp configuration language
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0
@@ -41,7 +40,7 @@ BuildRequires:  golang(github.com/davecgh/go-spew/spew)
 
 %if %{with check}
 %check
-%gocheck -r .*parser.*
+%gocheck
 %endif
 
 %gopkgfiles

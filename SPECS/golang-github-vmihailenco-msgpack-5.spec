@@ -12,7 +12,7 @@ Version:                5.3.4
 Msgpack.org[Go] MessagePack encoding for Golang.}
 
 %global golicenses      LICENSE
-%global godocs          CHANGELOG.md README.md
+%global godocs          README.md CHANGELOG.md
 
 Name:           %{goname}
 Release:        1%{?dist}

@@ -34,7 +34,7 @@ Source0:        %{gosource}
 
 %if %{with check}
 %check
-%gocheck -r .*bufpool.*
+%gocheck
 %endif
 
 %gopkgfiles

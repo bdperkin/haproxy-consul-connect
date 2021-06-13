@@ -37,7 +37,7 @@ BuildRequires:  golang(gopkg.in/check.v1)
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*server.*
 %endif
 
 %files

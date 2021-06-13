@@ -11,13 +11,13 @@ Version:                1.1.0
 %global goaltipaths     github.com/go-gorm/mysql
 
 %global common_description %{expand:
-GORM mysql driver.}
+# FIXME}
 
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        GORM mysql driver
+Summary:        None
 
 License:        # FIXME
 
