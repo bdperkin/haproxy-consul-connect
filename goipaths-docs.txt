@@ -67,3 +67,55 @@ github.com/dgrijalva/jwt-go/v4,Package jwt is a Go implementation of JSON Web To
 go.etcd.io/etcd/client/v2,Package client provides bindings for the etcd APIs,Package client provides bindings for the etcd APIs.  Create a Config and exchange it for a Client:
 go.etcd.io/etcd/raft/v3,,
 go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc,,
+github.com/google/go-github/v32,,
+github.com/renstrom/fuzzysearch,,
+github.com/scaleway/scaleway-cli,,
+github.com/influxdata/flux,,
+github.com/etcd-io/gofail,gofail is a tool for enabling/disabling failpoints in go code,gofail is a tool for enabling/disabling failpoints in go code.
+github.com/grpc-ecosystem/go-grpc-middleware,,
+go.etcd.io/etcd/client/pkg/v3,,
+go.etcd.io/etcd/etcdctl/v3,etcdctl is a command line application that controls etcd,etcdctl is a command line application that controls etcd.
+go.etcd.io/etcd/etcdutl/v3,Package etcdutl contains the main entry point for the etcdutl,Package etcdutl contains the main entry point for the etcdutl.  etcdutl is a command line application that operates on etcd files.
+go.etcd.io/etcd/pkg/v3,,
+go.etcd.io/etcd/server/v3,Package main is a simple wrapper of the real etcd entrypoint package (located at go,Package main is a simple wrapper of the real etcd entrypoint package (located at go.etcd.io/etcd/etcdmain) to ensure that etcd is still "go getable"; e.g. `go get go.etcd.io/etcd` works as expected and builds a binary in $GOBIN/etcd  This package should NOT be extended or modified in any way; to modify the
+go.etcd.io/etcd/tests/v3,,
+go.opentelemetry.io/otel/exporters/otlp,Package otlp contains an exporter for the OpenTelemetry protocol buffers,Package otlp contains an exporter for the OpenTelemetry protocol buffers.  This package is currently in a pre-GA phase. Backwards incompatible changes
+github.com/araddon/gou,,
+github.com/bitly/go-hostpool,A Go package to intelligently and flexibly pool among multiple hosts from your Go application,A Go package to intelligently and flexibly pool among multiple hosts from your Go application. Host selection can operate in round robin or epsilon greedy mode&#44; and unresponsive hosts are avoided. A good overview of Epsilon Greedy is here http://stevehanov.ca/blog/index.php?id=132
+github.com/bmatcuk/doublestar,,
+github.com/oleiade/reflections,Package reflections provides high level abstractions above the reflect library,Package reflections provides high level abstractions above the reflect library.  Reflect library is very low-level and as can be quite complex when it comes to do simple things like accessing a structure field value&#44; a field tag...
+github.com/ory-am/dockertest,,
+gopkg.in/ory-am/dockertest.v3,,
+github.com/hashicorp/go-gatedio,gatedio provides wrappers around the io,gatedio provides wrappers around the io.ReadWriter&#44; io.Writer&#44; and io.Reader interfaces to support concurrent usage and access across multiple goroutines.
+github.com/DataDog/gostackparse,Package gostackparse parses goroutines stack traces as produced by panic() or debug,Package gostackparse parses goroutines stack traces as produced by panic() or debug.Stack() at ~300 MiB/s.
+github.com/go-pg/pg/v10,pg provides PostgreSQL client,pg provides PostgreSQL client.
+github.com/go-redis/redis/v7,Package redis implements a Redis client,Package redis implements a Redis client.
+github.com/gofiber/fiber/v2,,
+github.com/labstack/echo,Package echo implements high performance&#44; minimalist Go web framework,Package echo implements high performance&#44; minimalist Go web framework.  Example:
+github.com/tidwall/buntdb,Package buntdb implements a low-level in-memory key/value store in pure Go,Package buntdb implements a low-level in-memory key/value store in pure Go. It persists to disk&#44; is ACID compliant&#44; and uses locking for multiple readers and a single writer. Bunt is ideal for projects that need a dependable database&#44; and favor speed over data size.
+github.com/twitchtv/twirp,Copyright 2018 Twitch Interactive&#44; Inc,Copyright 2018 Twitch Interactive&#44; Inc. All Rights Reserved.  Licensed under the Apache License&#44; Version 2.0 (the "License"). You may not
+gopkg.in/jinzhu/gorm.v1,,
+gopkg.in/olivere/elastic.v3,Package elastic provides an interface to the Elasticsearch server (http://www,Package elastic provides an interface to the Elasticsearch server (http://www.elasticsearch.org/).  The first thing you do is to create a Client. If you have Elasticsearch
+gorm.io/driver/mysql,,
+gorm.io/driver/postgres,,
+github.com/astaxie/beego,Package beego provide a MVC framework beego: an open-source&#44; high-performance&#44; modular&#44; full-stack web framework It is used for rapid development of RESTful APIs&#44; web apps and backend services in Go,Package beego provide a MVC framework beego: an open-source&#44; high-performance&#44; modular&#44; full-stack web framework  It is used for rapid development of RESTful APIs&#44; web apps and backend services in Go.
+go.opentelemetry.io/contrib,Package contrib contains common values used across all instrumentation&#44; exporter&#44; and detector contributions,Package contrib contains common values used across all instrumentation&#44; exporter&#44; and detector contributions.  This package provides all of its functionality through its
+go.opentelemetry.io/contrib/exporters/metric/cortex,,
+go.opentelemetry.io/contrib/exporters/metric/cortex/utils,,
+go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama,Package otelsarama instruments the github,Package otelsarama instruments the github.com/Shopify/sarama package.  The consumer's span will be created as a child of the producer's span.
+go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama/example,,
+go.opentelemetry.io/contrib/instrumentation/github.com/astaxie/beego/otelbeego,Package otelbeego instruments the github,Package otelbeego instruments the github.com/astaxie/beego package.
+go.opentelemetry.io/contrib/instrumentation/github.com/aws/aws-sdk-go-v2/otelaws,,
+go.opentelemetry.io/contrib/instrumentation/github.com/bradfitz/gomemcache/memcache/otelmemcache,Package otelmemcache instruments github,Package otelmemcache instruments github.com/bradfitz/gomemcache/memcache.  This instrumentation provided is tracing instrumentation for the memcached
+go.opentelemetry.io/contrib/instrumentation/github.com/emicklei/go-restful/otelrestful,Package otelrestful instruments github,Package otelrestful instruments github.com/emicklei/go-restful.  Instrumentation is provided to trace the emicklei/go-restful/v3
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin,Package otelgin instruments the github,Package otelgin instruments the github.com/gin-gonic/gin package.  Currently there are two ways the code can be instrumented. One is
+go.opentelemetry.io/contrib/instrumentation/github.com/go-kit/kit/otelkit,Package otelkit instruments the github,Package otelkit instruments the github.com/go-kit/kit package.  Compared to other instrumentation libraries provided by go-kit itself&#44;
+go.opentelemetry.io/contrib/instrumentation/github.com/gocql/gocql/otelgocql,Package otelgocql instruments the github,Package otelgocql instruments the github.com/gocql/gocql package.
+go.opentelemetry.io/contrib/instrumentation/github.com/gorilla/mux/otelmux,Package otelmux instruments the github,Package otelmux instruments the github.com/gorilla/mux package.  Currently only the routing of a received message can be instrumented. To do
+go.opentelemetry.io/contrib/instrumentation/github.com/labstack/echo/otelecho,Package otelecho instruments the labstack/echo package (https://github,Package otelecho instruments the labstack/echo package (https://github.com/labstack/echo).  Currently only the routing of a received message can be instrumented. To do
+go.opentelemetry.io/contrib/instrumentation/gopkg.in/macaron.v1/otelmacaron,Package otelmacaron instruments gopkg,Package otelmacaron instruments gopkg.in/macaron.v1.  Currently only the routing of a received message can be instrumented. To do
+go.opentelemetry.io/contrib/instrumentation/host,Package host provides the conventional host metric instruments specified by OpenTelemetry,Package host provides the conventional host metric instruments specified by OpenTelemetry. Host metric events are sometimes collected through the OpenTelemetry Collector "hostmetrics" receiver running as an agent; this instrumentation is an alternative for processes that want to record the same information without an agent.  The metric events produced are listed here with attribute dimensions.
+go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace,,
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp,Package otelhttp provides an http,Package otelhttp provides an http.Handler and functions that are intended to be used to add tracing by wrapping existing handlers (with Handler) and routes WithRouteTag.
+go.opentelemetry.io/contrib/instrumentation/runtime,package runtime implements the conventional runtime metrics specified by OpenTelemetry,package runtime implements the conventional runtime metrics specified by OpenTelemetry.  The metric events produced are:
+go.opentelemetry.io/otel,Package otel provides global access to the OpenTelemetry API,Package otel provides global access to the OpenTelemetry API. The subpackages of the otel package provide an implementation of the OpenTelemetry API.  This package is currently in a pre-GA phase. Backwards incompatible changes
