@@ -5,3 +5,17 @@ github.com/gotestyourself/gotestyourself
 github.com/influxdata/changelog
 github.com/opencontainers/runc
 gopkg.in/gorethink/gorethink.v4
+github.com/criteo/haproxy-spoe-go
+github.com/facebookgo/freeport
+github.com/hashicorp/consul/agent
+github.com/hashicorp/consul/agent/connect
+github.com/hashicorp/consul/command/connect/proxy
+github.com/hashicorp/consul/testrpc
+gopkg.in/d4l3k/messagediff.v1
+zvelo.io/ttlru
+gopkg.in/gorethink/gorethink.v4/encoding
+gopkg.in/gorethink/gorethink.v4/internal/compare
+gopkg.in/gorethink/gorethink.v4/internal/integration/tests
+gopkg.in/gorethink/gorethink.v4/ql2
+gopkg.in/gorethink/gorethink.v4/types
+github.com/hashicorp/consul

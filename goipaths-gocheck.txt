@@ -1,0 +1,4 @@
+github.com/docker/docker,%gocheck -r .*git.*
+github.com/gotestyourself/gotestyourself,%gocheck -r .*assert.*
+github.com/opencontainers/runc,%gocheck -r .*libcontainer.*
+gopkg.in/gorethink/gorethink.v4,%gocheck -r .*encoding.*

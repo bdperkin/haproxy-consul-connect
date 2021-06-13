@@ -59,7 +59,7 @@ BuildRequires:  golang(github.com/stretchr/testify/mock)
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*encoding.*
 %endif
 
 %gopkgfiles

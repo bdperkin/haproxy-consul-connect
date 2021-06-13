@@ -59,7 +59,7 @@ BuildRequires:  golang(gotest.tools/skip)
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*assert.*
 %endif
 
 %gopkgfiles
