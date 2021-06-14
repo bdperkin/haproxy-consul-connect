@@ -42,7 +42,7 @@ BuildRequires:  golang(github.com/pkg/errors)
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*types.*
 %endif
 
 %gopkgfiles

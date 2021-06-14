@@ -23,7 +23,6 @@ License:        BSD
 URL:            %{gourl}
 Source0:        %{gosource}
 
-BuildRequires:  golang(./ssdb)
 
 %description
 %{common_description}

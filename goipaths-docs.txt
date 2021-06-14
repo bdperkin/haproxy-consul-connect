@@ -193,3 +193,4 @@ github.com/go-git/go-git/v5,A highly extensible git implementation in pure Go,A 
 github.com/ProtonMail/go-mime,,
 github.com/go-git/gcfg,,
 github.com/go-git/go-billy/v5,,
+#FIXME-INVALID_VERSION:golang.org/x/crypto,,

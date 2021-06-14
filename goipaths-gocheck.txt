@@ -30,3 +30,4 @@ github.com/cloudflare/golz4,%gocheck -r .*golz4.*
 github.com/ory/dockertest,%gocheck -r .*dockertest.*
 code.gitea.io/sdk/gitea,%gocheck -r .*gitea.*
 github.com/google/go-github/v28,%gocheck -r .*github.*
+github.com/go-git/gcfg,%gocheck -r .*types.*
