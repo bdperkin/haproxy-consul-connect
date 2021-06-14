@@ -424,3 +424,8 @@ github.com/sassoftware/go-rpmutils/cpio
 github.com/tj/go-elastic
 github.com/ProtonMail/go-crypto
 github.com/ProtonMail/gopenpgp/v2
+github.com/cavaliercoder/go-cpio
+github.com/go-git/go-git/v5
+github.com/go-git/go-git/v5/plumbing
+github.com/go-git/go-git/v5/plumbing/object
+github.com/go-git/go-git/v5/plumbing/storer

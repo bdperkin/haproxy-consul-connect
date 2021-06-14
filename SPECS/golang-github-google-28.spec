@@ -45,7 +45,7 @@ mv github/licenses_test.go licenses_test-github.go
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*github.*
 %endif
 
 %files

@@ -185,3 +185,8 @@ github.com/AlekSi/pointer,Package pointer provides helpers to get pointers to va
 github.com/google/rpmpack,Package rpmpack packs files to rpm files,Package rpmpack packs files to rpm files. It is designed to be simple to use and deploy&#44; not requiring any filesystem access to create rpm files.
 github.com/goreleaser/chglog,Package chglog contains the public API for working with a changlog,Package chglog contains the public API for working with a changlog.yml file
 github.com/sassoftware/go-rpmutils,,
+github.com/tj/go-elastic,Package elastic provides an Elasticsearch client with AWS sigv4 support,Package elastic provides an Elasticsearch client with AWS sigv4 support.
+github.com/ProtonMail/go-crypto,,
+github.com/ProtonMail/gopenpgp/v2,,
+github.com/cavaliercoder/go-cpio,Package cpio implements access to CPIO archives,Package cpio implements access to CPIO archives. Currently&#44; only the SVR4 (New ASCII) format is supported&#44; both with and without checksums.  References:
+github.com/go-git/go-git/v5,A highly extensible git implementation in pure Go,A highly extensible git implementation in pure Go.  go-git aims to reach the completeness of libgit2 or jgit&#44; nowadays covers the

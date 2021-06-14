@@ -8,9 +8,8 @@ Version:                1.12.3
 %gometa
 
 %global common_description %{expand:
-Package beego provide a MVC framework beego: an open-source, high-performance,
-modular, full-stack web framework It is used for rapid development of RESTful
-APIs, web apps and backend services in Go.}
+Beego is an open-source, high-performance web framework for the Go programming
+language.}
 
 %global golicenses      LICENSE utils/captcha/LICENSE
 %global godocs          CONTRIBUTING.md README.md validation/README.md\\\
@@ -20,7 +19,7 @@ APIs, web apps and backend services in Go.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package beego provide a MVC framework beego: an open-source, high-performance, modular, full-stack web framework It is used for rapid development of RESTful APIs, web apps and backend services in Go
+Summary:        Beego is an open-source, high-performance web framework for the Go programming language
 
 # Upstream license specification: Apache-2.0 and MIT
 License:        ASL 2.0 and MIT

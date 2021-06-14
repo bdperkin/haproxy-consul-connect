@@ -8,15 +8,14 @@ Version:                1.0.2
 %gometa
 
 %global common_description %{expand:
-Simple Go library for executing lots of operations spread over any number of
-threads.}
+# FIXME}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Simple Go library for executing lots of operations spread over any number of threads
+Summary:        None
 
 License:        MIT
 URL:            %{gourl}

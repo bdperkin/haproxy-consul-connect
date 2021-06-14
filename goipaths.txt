@@ -187,3 +187,8 @@ github.com/AlekSi/pointer,https://github.com/AlekSi/pointer,,,1.1.0,,,,,package
 github.com/google/rpmpack,https://github.com/google/rpmpack,,,0.0.0-20210518075352-dc539ef4f2ea,,,,,package
 github.com/goreleaser/chglog,https://github.com/goreleaser/chglog,,,0.1.2,,,,,package
 github.com/sassoftware/go-rpmutils,https://github.com/sassoftware/go-rpmutils,,,0.2.0,,,,,package
+github.com/tj/go-elastic,https://github.com/tj/go-elastic,,,0.0.0-20171221160941-36157cbbebc2,,,,,package
+github.com/ProtonMail/go-crypto,https://github.com/ProtonMail/go-crypto,,,0.0.0-20210512092938-c05353c2d58c,,,,,module
+github.com/ProtonMail/gopenpgp/v2,https://github.com/ProtonMail/gopenpgp,,,2.1.9,,,,,module
+github.com/cavaliercoder/go-cpio,https://github.com/cavaliercoder/go-cpio,,,0.0.0-20180626203310-925f9528c45e,,,,,package
+github.com/go-git/go-git/v5,https://github.com/go-git/go-git,,,5.4.2,,,,,package
