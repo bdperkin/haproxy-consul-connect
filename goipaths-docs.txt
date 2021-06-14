@@ -148,3 +148,27 @@ github.com/benbjohnson/tmpl,,
 github.com/foxcpp/go-mockdns,,
 github.com/goreleaser/goreleaser,,
 github.com/erikstmartin/go-testdb,,
+github.com/segmentio/encoding,,
+github.com/ssdb/gossdb,,
+go.opentelemetry.io/proto/otlp,,
+github.com/ory/dockertest,,
+github.com/influxdata/influxdb-client-go/v2,Package influxdb2 provides API for using InfluxDB client in Go,Package influxdb2 provides API for using InfluxDB client in Go. It's intended to use with InfluxDB 2 server. WriteAPI&#44; QueryAPI and Health work also with InfluxDB 1.8
+honnef.co/go/tools,,
+go.opentelemetry.io/otel/example/namedtracer,,
+go.opentelemetry.io/otel/exporters/trace/jaeger,Package jaeger contains an OpenTelemetry tracing exporter for Jaeger,Package jaeger contains an OpenTelemetry tracing exporter for Jaeger.  This package is currently in a pre-GA phase. Backwards incompatible changes
+go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc/example,,
+#FIXME-INVALID_VERSION:golang.org/x/sync,,
+github.com/wendal/errors,Package errors implements functions to manipulate errors,Package errors implements functions to manipulate errors.
+github.com/tidwall/tinyqueue,,
+github.com/vmihailenco/tagparser/v2,,
+github.com/aarzilli/sandblast,Library that uses Readability-like heuristics to extract text from an HTML document,Library that uses Readability-like heuristics to extract text from an HTML document
+github.com/moby/spdystream,,
+code.gitea.io/sdk/gitea,,
+github.com/apex/log,Package log implements a simple structured logging API designed with few assumptions,Package log implements a simple structured logging API designed with few assumptions. Designed for centralized logging solutions such as Kinesis which require encoding and decoding before fanning-out to handlers.  You may use this package with inline handlers&#44; much like Logrus&#44; however a centralized solution
+github.com/caarlos0/ctrlc,Package ctrlc provides an easy way of having a task that is context-aware and that also deals with interrupt and term signals,Package ctrlc provides an easy way of having a task that is context-aware and that also deals with interrupt and term signals.
+github.com/caarlos0/env/v6,,
+github.com/caarlos0/go-shellwords,,
+github.com/campoy/unique,Package unique provides primitives for sorting slices removing repeated elements,Package unique provides primitives for sorting slices removing repeated elements.
+github.com/goreleaser/fileglob,Package fileglob provides a filesystem glob API,Package fileglob provides a filesystem glob API.
+github.com/goreleaser/nfpm/v2,Package nfpm provides ways to package programs in some linux packaging formats,Package nfpm provides ways to package programs in some linux packaging formats.
+github.com/xanzy/go-gitlab,Package gitlab implements a GitLab API client,Package gitlab implements a GitLab API client.

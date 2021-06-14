@@ -45,7 +45,7 @@ BuildRequires:  golang(github.com/stretchr/testify/assert)
 
 %if %{with check}
 %check
-%gocheck -r .*gitea.*
+%gocheck
 %endif
 
 %gopkgfiles

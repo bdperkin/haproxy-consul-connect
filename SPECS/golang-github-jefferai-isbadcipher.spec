@@ -8,7 +8,7 @@
 %gometa
 
 %global common_description %{expand:
-[mirror] Go supplementary network libraries.}
+# FIXME}
 
 %global golicenses      LICENSE PATENTS
 %global godocs          AUTHORS CONTRIBUTORS README.md
@@ -16,7 +16,7 @@
 Name:           %{goname}
 Version:        0
 Release:        0.1%{?dist}
-Summary:        [mirror] Go supplementary network libraries
+Summary:        None
 
 # Upstream license specification: BSD-3-Clause
 License:        BSD

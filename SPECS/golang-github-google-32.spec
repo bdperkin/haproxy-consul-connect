@@ -9,7 +9,7 @@ Version:                32.1.0
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Go library for accessing the GitHub API.}
 
 %global golicenses      LICENSE licenses-github.go licenses_test-github.go
 %global godocs          example AUTHORS CONTRIBUTING.md README.md example\\\
@@ -17,7 +17,7 @@ Version:                32.1.0
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        None
+Summary:        Go library for accessing the GitHub API
 
 # Upstream license specification: BSD-3-Clause
 License:        BSD

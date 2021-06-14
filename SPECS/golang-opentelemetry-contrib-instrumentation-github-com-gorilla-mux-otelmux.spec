@@ -11,7 +11,8 @@ Version:                0.20.0
 %global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/github.com/gorilla/mux/otelmux
 
 %global common_description %{expand:
-Collection of extensions for OpenTelemetry-Go.}
+Package otelmux instruments the github.com/gorilla/mux package. Currently only
+the routing of a received message can be instrumented. To do}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -24,7 +25,7 @@ Collection of extensions for OpenTelemetry-Go.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Collection of extensions for OpenTelemetry-Go
+Summary:        Package otelmux instruments the github
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
