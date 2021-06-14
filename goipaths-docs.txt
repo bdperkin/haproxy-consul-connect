@@ -190,3 +190,6 @@ github.com/ProtonMail/go-crypto,,
 github.com/ProtonMail/gopenpgp/v2,,
 github.com/cavaliercoder/go-cpio,Package cpio implements access to CPIO archives,Package cpio implements access to CPIO archives. Currently&#44; only the SVR4 (New ASCII) format is supported&#44; both with and without checksums.  References:
 github.com/go-git/go-git/v5,A highly extensible git implementation in pure Go,A highly extensible git implementation in pure Go.  go-git aims to reach the completeness of libgit2 or jgit&#44; nowadays covers the
+github.com/ProtonMail/go-mime,,
+github.com/go-git/gcfg,,
+github.com/go-git/go-billy/v5,,

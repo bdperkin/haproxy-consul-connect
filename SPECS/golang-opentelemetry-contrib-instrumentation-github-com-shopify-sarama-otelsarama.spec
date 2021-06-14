@@ -11,8 +11,7 @@ Version:                0.20.0
 %global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib/instrumentation/github.com/Shopify/sarama/otelsarama
 
 %global common_description %{expand:
-Package otelsarama instruments the github.com/Shopify/sarama package. The
-consumer's span will be created as a child of the producer's span.}
+Collection of extensions for OpenTelemetry-Go.}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -25,7 +24,7 @@ consumer's span will be created as a child of the producer's span.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package otelsarama instruments the github
+Summary:        Collection of extensions for OpenTelemetry-Go
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

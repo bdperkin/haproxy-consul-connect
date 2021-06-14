@@ -11,7 +11,7 @@ github.com/go-stomp/stomp,%gocheck -r .*server.*
 github.com/hashicorp/go-getter,%gocheck -r .*go-getter.*
 github.com/mattbaird/elastigo,%gocheck -r .*lib.*
 k8s.io/api,%gocheck -r .*managedfields.* -r .*strategicpatch.* -r .*v1.*
-github.com/NVIDIA/gpu-monitoring-tools,%gocheck -r .*dcgm.* -r .*nvml.*
+github.com/NVIDIA/gpu-monitoring-tools,%gocheck -r .*dcgm.* -r .*nvml.* -r .*pkg.*
 github.com/hashicorp/go-cty-funcs,%gocheck -r .*filesystem.*
 github.com/google/go-github/v32,%gocheck -r .*github.*
 github.com/bmatcuk/doublestar,%gocheck -r .*doublestar.*
