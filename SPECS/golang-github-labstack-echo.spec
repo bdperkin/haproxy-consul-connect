@@ -8,14 +8,14 @@ Version:                3.3.10
 %gometa
 
 %global common_description %{expand:
-Package echo implements high performance, minimalist Go web framework. Example:}
+High performance, minimalist Go web framework.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Package echo implements high performance, minimalist Go web framework
+Summary:        High performance, minimalist Go web framework
 
 License:        MIT
 URL:            %{gourl}

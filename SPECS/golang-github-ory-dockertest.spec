@@ -68,7 +68,7 @@ mv docker/types/versions/README.md README-docker-types-versions.md
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*dockertest.*
 %endif
 
 %files

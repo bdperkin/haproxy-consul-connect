@@ -11,7 +11,9 @@ Version:                0.20.0
 %global goaltipaths     github.com/open-telemetry/opentelemetry-go-contrib/propagators
 
 %global common_description %{expand:
-Collection of extensions for OpenTelemetry-Go.}
+This module contains all of its functionality in its subpackages. This
+top-level package is to allow clients to pull in all propagator
+implementations at once using require go.opentelemetry.io/contrib/propagators}
 
 %global golicenses      LICENSE
 %global godocs          RELEASING.md CHANGELOG.md CONTRIBUTING.md README.md\\\
@@ -24,7 +26,7 @@ Collection of extensions for OpenTelemetry-Go.}
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        Collection of extensions for OpenTelemetry-Go
+Summary:        This module contains all of its functionality in its subpackages
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0

@@ -8,14 +8,15 @@ Version:                1.0.0
 %gometa
 
 %global common_description %{expand:
-HCL is the HashiCorp configuration language.}
+Package hcl decodes HCL into usable Go structures. hcl input can come in
+either pure HCL format or JSON format.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        HCL is the HashiCorp configuration language
+Summary:        Package hcl decodes HCL into usable Go structures
 
 # Upstream license specification: MPL-2.0
 License:        MPLv2.0

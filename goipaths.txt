@@ -174,3 +174,16 @@ github.com/campoy/unique,https://github.com/campoy/unique,,,0.0.0-20180121183637
 github.com/goreleaser/fileglob,https://github.com/goreleaser/fileglob,,,1.2.0,,,,,package
 github.com/goreleaser/nfpm/v2,https://github.com/goreleaser/nfpm,,,2.5.1,,,,,package
 github.com/xanzy/go-gitlab,https://github.com/xanzy/go-gitlab,,,0.50.0,,,,,package
+github.com/google/go-github/v28,https://github.com/google/go-github,,,28.1.1,,,,,module
+github.com/dghubble/go-twitter,https://github.com/dghubble/go-twitter,,,0.0.0-20201011215211-4b180d0cc78d,,,,,module
+github.com/stretchr/testify,https://github.com/stretchr/testify,,,1.7.0,,,,,package
+github.com/matryer/is,https://github.com/matryer/is,,,1.4.0,,,,,package
+github.com/klauspost/cpuid/v2,https://github.com/klauspost/cpuid,,,2.0.6,,,,,package
+github.com/caarlos0/testfs,https://github.com/caarlos0/testfs,,,0.4.4,,,,,package
+github.com/tj/go-buffer,https://github.com/tj/go-buffer,,,1.2.0,,,,,package
+github.com/tj/go-kinesis,https://github.com/tj/go-kinesis,,,0.0.0-20171128231115-08b17f58cb1b,,,,,package
+github.com/tj/go-spin,https://github.com/tj/go-spin,,,1.1.0,,,,,package
+github.com/AlekSi/pointer,https://github.com/AlekSi/pointer,,,1.1.0,,,,,package
+github.com/google/rpmpack,https://github.com/google/rpmpack,,,0.0.0-20210518075352-dc539ef4f2ea,,,,,package
+github.com/goreleaser/chglog,https://github.com/goreleaser/chglog,,,0.1.2,,,,,package
+github.com/sassoftware/go-rpmutils,https://github.com/sassoftware/go-rpmutils,,,0.2.0,,,,,package

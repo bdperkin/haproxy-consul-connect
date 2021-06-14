@@ -59,7 +59,7 @@ mv deployment/dcgm-exporter/templates/NOTES.txt NOTES-deployment-dcgm-exporter-t
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*dcgm.*
 %endif
 
 %files

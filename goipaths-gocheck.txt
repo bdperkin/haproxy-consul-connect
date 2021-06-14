@@ -10,7 +10,8 @@ github.com/go-ldap/ldap,%gocheck -r .*ldap.*
 github.com/go-stomp/stomp,%gocheck -r .*server.*
 github.com/hashicorp/go-getter,%gocheck -r .*go-getter.*
 github.com/mattbaird/elastigo,%gocheck -r .*lib.*
-k8s.io/api,%gocheck -r .*v1.*
+k8s.io/api,%gocheck -r .*managedfields.* -r .*v1.*
+github.com/NVIDIA/gpu-monitoring-tools,%gocheck -r .*dcgm.*
 github.com/hashicorp/go-cty-funcs,%gocheck -r .*filesystem.*
 github.com/google/go-github/v32,%gocheck -r .*github.*
 github.com/bmatcuk/doublestar,%gocheck -r .*doublestar.*
@@ -19,8 +20,12 @@ gopkg.in/jinzhu/gorm.v1,%gocheck -r .*gorm.*
 gopkg.in/olivere/elastic.v3,%gocheck -r .*elastic.*
 k8s.io/kubelet,%gocheck -r .*v1beta1.*
 github.com/coreos/go-etcd,%gocheck -r .*etcd.*
+github.com/hashicorp/aws-sdk-go,%gocheck -r .*aws.*
 github.com/hashicorp/hcl,%gocheck -r .*parser.*
 go.opencensus.io,%gocheck -r .*ochttp.*
+k8s.io/apimachinery,%gocheck -r .*managedfields.*
 github.com/vmihailenco/bufpool,%gocheck -r .*bufpool.*
 github.com/beego/x2j,%gocheck -r .*x2j.*
 github.com/cloudflare/golz4,%gocheck -r .*golz4.*
+github.com/ory/dockertest,%gocheck -r .*dockertest.*
+code.gitea.io/sdk/gitea,%gocheck -r .*gitea.*

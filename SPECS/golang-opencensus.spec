@@ -11,14 +11,14 @@ Version:                0.23.0
 %global goaltipaths     github.com/census-instrumentation/opencensus-go
 
 %global common_description %{expand:
-A stats collection and distributed tracing framework.}
+Package opencensus contains Go support for OpenCensus.}
 
 %global golicenses      LICENSE
 %global godocs          examples AUTHORS CONTRIBUTING.md README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
-Summary:        A stats collection and distributed tracing framework
+Summary:        Package opencensus contains Go support for OpenCensus
 
 # Upstream license specification: Apache-2.0
 License:        ASL 2.0
