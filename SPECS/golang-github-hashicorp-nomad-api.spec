@@ -17,12 +17,11 @@ Version:                1.1.1
                         license-website-content-api-docs-operator.mdx
 %global godocs          README.md CHANGELOG.md\\\
                         test-client-allocdir-input.txt\\\
-                        README-contributing.md\\\
                         checklist-command-contributing.md\\\
+                        issue-labels-contributing.md README-contributing.md\\\
                         checklist-jobspec-contributing.md\\\
                         checklist-rpc-endpoint-contributing.md\\\
-                        golang-contributing.md issue-labels-contributing.md\\\
-                        README-demo-csi.md\\\
+                        golang-contributing.md README-demo-csi.md\\\
                         README-demo-csi-ceph-csi-plugin.md\\\
                         README-demo-csi-cinder-csi-plugin.md\\\
                         README-demo-csi-digitalocean.md\\\
@@ -87,10 +86,10 @@ Version:                1.1.1
                         index-website-content-intro-vs.mdx\\\
                         mesos-website-content-intro-vs.mdx\\\
                         terraform-website-content-intro-vs.mdx\\\
-                        envvars-website-content-partials.mdx\\\
-                        general_options-website-content-partials.mdx\\\
                         general_options_no_namespace-website-content-partials.mdx\\\
-                        docs robots-website-public.txt
+                        envvars-website-content-partials.mdx\\\
+                        general_options-website-content-partials.mdx docs\\\
+                        robots-website-public.txt
 
 Name:           %{goname}
 Release:        1%{?dist}
@@ -279,12 +278,12 @@ mv helper/exptime/LICENSE.md LICENSE-helper-exptime.md
 mv website/LICENSE.md LICENSE-website.md
 mv website/content/api-docs/operator/license.mdx license-website-content-api-docs-operator.mdx
 mv client/allocdir/input/test.txt test-client-allocdir-input.txt
-mv contributing/README.md README-contributing.md
 mv contributing/checklist-command.md checklist-command-contributing.md
+mv contributing/issue-labels.md issue-labels-contributing.md
+mv contributing/README.md README-contributing.md
 mv contributing/checklist-jobspec.md checklist-jobspec-contributing.md
 mv contributing/checklist-rpc-endpoint.md checklist-rpc-endpoint-contributing.md
 mv contributing/golang.md golang-contributing.md
-mv contributing/issue-labels.md issue-labels-contributing.md
 mv demo/csi/README.md README-demo-csi.md
 mv demo/csi/ceph-csi-plugin/README.md README-demo-csi-ceph-csi-plugin.md
 mv demo/csi/cinder-csi-plugin/README.md README-demo-csi-cinder-csi-plugin.md
@@ -360,9 +359,9 @@ mv website/content/intro/vs/ecs.mdx ecs-website-content-intro-vs.mdx
 mv website/content/intro/vs/index.mdx index-website-content-intro-vs.mdx
 mv website/content/intro/vs/mesos.mdx mesos-website-content-intro-vs.mdx
 mv website/content/intro/vs/terraform.mdx terraform-website-content-intro-vs.mdx
+mv website/content/partials/general_options_no_namespace.mdx general_options_no_namespace-website-content-partials.mdx
 mv website/content/partials/envvars.mdx envvars-website-content-partials.mdx
 mv website/content/partials/general_options.mdx general_options-website-content-partials.mdx
-mv website/content/partials/general_options_no_namespace.mdx general_options_no_namespace-website-content-partials.mdx
 mv website/public/robots.txt robots-website-public.txt
 
 %install
@@ -378,14 +377,14 @@ mv website/public/robots.txt robots-website-public.txt
 %license license_get_test-command.go LICENSE-helper-exptime.md
 %license LICENSE-website.md license-website-content-api-docs-operator.mdx
 %doc README.md CHANGELOG.md test-client-allocdir-input.txt
-%doc README-contributing.md checklist-command-contributing.md
-%doc checklist-jobspec-contributing.md checklist-rpc-endpoint-contributing.md
-%doc golang-contributing.md issue-labels-contributing.md README-demo-csi.md
-%doc README-demo-csi-ceph-csi-plugin.md README-demo-csi-cinder-csi-plugin.md
-%doc README-demo-csi-digitalocean.md README-demo-csi-hostpath.md
-%doc README-demo-tls.md README-demo-vagrant.md README-dev.md
-%doc README-dev-docker-clients.md README-dev-tls_cluster.md README-dev-vault.md
-%doc README-devices-gpu-nvidia.md
+%doc checklist-command-contributing.md issue-labels-contributing.md
+%doc README-contributing.md checklist-jobspec-contributing.md
+%doc checklist-rpc-endpoint-contributing.md golang-contributing.md
+%doc README-demo-csi.md README-demo-csi-ceph-csi-plugin.md
+%doc README-demo-csi-cinder-csi-plugin.md README-demo-csi-digitalocean.md
+%doc README-demo-csi-hostpath.md README-demo-tls.md README-demo-vagrant.md
+%doc README-dev.md README-dev-docker-clients.md README-dev-tls_cluster.md
+%doc README-dev-vault.md README-devices-gpu-nvidia.md
 %doc README-drivers-shared-executor-test-resources-busybox example README-e2e.md
 %doc README-e2e-consulacls.md README-e2e-terraform.md
 %doc README-e2e-terraform-config-shared.md README-e2e-terraform-packer.md
@@ -426,10 +425,9 @@ mv website/public/robots.txt robots-website-public.txt
 %doc index-website-content-intro.mdx use-cases-website-content-intro.mdx
 %doc ecs-website-content-intro-vs.mdx index-website-content-intro-vs.mdx
 %doc mesos-website-content-intro-vs.mdx terraform-website-content-intro-vs.mdx
+%doc general_options_no_namespace-website-content-partials.mdx
 %doc envvars-website-content-partials.mdx
-%doc general_options-website-content-partials.mdx
-%doc general_options_no_namespace-website-content-partials.mdx docs
-%doc robots-website-public.txt
+%doc general_options-website-content-partials.mdx docs robots-website-public.txt
 
 %gopkgfiles
 
